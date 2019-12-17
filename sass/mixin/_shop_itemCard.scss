@@ -1,0 +1,90 @@
+@mixin itemCardRow1($sum) {
+    @for $i from 1 through $sum {
+
+        //從1跑到5
+        .itemCard#{$i} {
+            width: 150px;
+            height: 150px;
+            margin: 0 20px;
+            border: 5px solid black;
+            background-color: #fff;
+        }
+    }
+}
+
+@mixin itemCardRow2($sum) {
+    @for $i from 1 through $sum {
+
+        //從1跑到3
+        .itemCard2_#{$i} {
+            width: 150px;
+            height: 150px;
+            margin: 0 20px;
+            border: 5px solid black;
+            background-color: #fff;
+        }
+    }
+}
+
+
+@mixin itemCardRow1_lg($sum) {
+    @for $i from 1 through $sum {
+
+        //從1跑到5
+        .itemCard#{$i} {
+            width: 130px;
+            height: 130px;
+            margin: 0 20px;
+            border: 5px solid black;
+            background-color: #fff;
+        }
+    }
+}
+
+@mixin itemCardRow2_lg($sum) {
+    @for $i from 1 through $sum {
+
+        //從1跑到3
+        .itemCard2_#{$i} {
+            width: 130px;
+            height: 130px;
+            margin: 0 20px;
+            border: 5px solid black;
+            background-color: #fff;
+        }
+    }
+}
+
+@mixin itemCardRow1_md($sum) {
+    @for $i from 1 through $sum {
+
+        //從1跑到5
+        .itemCard#{$i} {
+            width: 130px;
+            height: 130px;
+            margin: 0 15px;
+            border: 5px solid black;
+            background-color: #fff;
+        }
+    }
+}
+
+@mixin itemCardRow2_md($sum) {
+    @for $i from 1 through $sum {
+
+        //從1跑到3
+        .itemCard2_#{$i} {
+            width: 130px;
+            height: 130px;
+            margin: 0 15px;
+            border: 5px solid black;
+            background-color: #fff;
+        }
+    }
+}
+
+
+
+
+
+

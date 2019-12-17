@@ -1,0 +1,8 @@
+$boxStyle:(
+    yellow: $main-yellow,
+    blue: $main-blue,
+    red: $main-red,
+    white: $main-white,
+);
+
+@include box-modul($boxStyle,50vw,60vw);

@@ -1,0 +1,44 @@
+
+/* 
+ *  @keyframes
+ */
+ @keyframes bscale {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes shad-anim {
+    0% {background-position: 0 0}
+    0% {background-position: 100% -100%}
+}
+
+/* 
+ *  clouds moves
+ */
+@keyframes cloud_move_left {
+    0%{
+        transform: translateX(0) translateY(0);
+    }
+    50%{
+        transform: translateY(-10px) translateX(-10px);
+    }
+    100%{
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes cloud_move_right {
+    0%{
+        transform: translateX(0) translateY(0);
+    }
+    50%{
+        transform: translateY(10px) translateX(10px);
+    }
+    100%{
+        transform: translateX(0) translateY(0);
+    }
+}

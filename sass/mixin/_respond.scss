@@ -1,0 +1,37 @@
+@mixin respond($breakpoint) {
+
+
+    @if $breakpoint=="iphone" {
+        @media all and (max-width:$phone) {
+            @content;
+        }
+    }
+    @else if $breakpoint=="note" {
+        @media all and (max-width:$note-max)and(min-width:$note-min) {
+            @content;
+        }
+    }
+    @else if $breakpoint=="small" {
+        @media all and (max-width:$ipad-max)and(min-width:$ipad-min) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint=="mediumSize" {
+        @media all and (max-width:$laptop-max)and(min-width:$laptop-min) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint=="desktop" {
+        @media all and (max-width:$desktop-max)and(min-width:$desktop-min) {
+            @content;
+        }
+    }
+    @else if $breakpoint=="desktopXl" {
+        @media all and (max-width:$desktopXl-max)and(min-width:$desktopXl-min) {
+            @content;
+        }
+    }
+
+}

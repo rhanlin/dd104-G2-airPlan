@@ -1,0 +1,26 @@
+@mixin controlBox($sum) {
+    @for $i from 1 through $sum {
+
+        //從1跑到8
+        .controlBox#{$i} {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff;
+        }
+    }
+}
+
+@mixin controlBox_md($sum) {
+    @for $i from 1 through $sum {
+
+        //從1跑到8
+        .controlBox#{$i} {
+            text-align: center;
+            width: 20%;
+            border: 2.5px solid black;
+            background-color: #fff;
+        }
+    }
+}
+

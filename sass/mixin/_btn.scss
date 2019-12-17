@@ -1,0 +1,174 @@
+.btn-wrapper-center {
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+}
+.btn-wrapper-right {
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    top: 20%;
+    left: 20%;
+    transform: translate(-50%);
+}
+.btn-wrapper-left {
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    top: 80%;
+    left: 80%;
+    transform: translate(-50%);
+}
+
+
+/* 
+ *  3D按鈕: 基本款
+ */
+//  說明:外面要包一層<div>去控制按鈕的位置
+//  e.g.<div class="btn-wrapper-center">
+//      <div class="btn btn-顏色">按鈕文字</div>
+//      </div>
+//  p.s 顏色在 module/_btn.scss 管理
+@mixin btn_basic_module($btn-module) {
+    @each $title,$color in $btn-module{ 
+        .btn-basic-#{$title} {
+            font-family: Roboto Mono;
+            letter-spacing: 0.4em;
+            position: absolute;
+            border: none;
+            outline: none;
+            width: 120px;
+            height: 40px;
+            background-color: $color;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            color: white;
+            // border: 1px solid black;
+            z-index: 1;
+            &:before {
+                content: '';
+                position: absolute;
+                width: 40px;
+                height: 10px;
+                left: -25px;
+                bottom: 10px;
+                background-color: $color + #111 ;
+                transform: rotate(90deg) skew(45deg);
+
+                background:  linear-gradient(45deg,$color + #111 45%,black 45%,black 55%,$color + #111 10%);
+                background-size: 7px 7px;
+                // border: 1px solid black;
+                // border: 1px solid black;
+                // animation: shad-anim 5s linear infinite;
+                z-index: -1;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                width: 120px;
+                height: 10px;
+                bottom: -10px;
+                left: -5px;
+                background-color: $color - #111;
+                transform: skew(-45deg) rotate(0deg);
+                // border: 1px solid black;
+                background:  linear-gradient(80deg,$color - #111 40%,black 40%,black 55%,$color - #111 20%);
+                background-size: 7px 7px;
+                // animation: shad-anim 10s linear infinite;
+                // border: 1px solid black;
+
+                z-index: -1;
+            }
+            &.clicked {
+                left: -5px;
+                bottom: -5px;
+                &:before {
+                    height: 5px;
+                    left: -22px;
+                    bottom: 15px;
+                }
+                &:after {
+                    height: 5px;
+                    bottom: -5px;
+                    left: -2px;
+                }
+            }
+        }
+    }
+   
+}
+/* 
+ *  3D按鈕: 重要按鈕(打賞、留言、購買)
+ */
+@mixin btn_big_module($btn-module){
+    @each $title,$color in $btn-module{
+        .btn-big-#{$title} {
+            font-family: Roboto Mono;
+            letter-spacing: 0.4em;
+            position: absolute;
+            border: none;
+            outline: none;
+            width: 150px;
+            height: 70px;
+            background-color: $color;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            color: white;
+            // border: 1px solid black;
+            z-index: 1;
+            &:before {
+                content: '';
+                position: absolute;
+                width: 40px;
+                height: 10px;
+                left: -25px;
+                bottom: 10px;
+                background-color: $color + #111 ;
+                transform: rotate(90deg) skew(45deg);
+
+                background:  linear-gradient(45deg,$color + #111 45%,black 45%,black 55%,$color + #111 10%);
+                background-size: 7px 7px;
+                // border: 1px solid black;
+                // border: 1px solid black;
+                // animation: shad-anim 5s linear infinite;
+                z-index: -1;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                width: 150px;
+                height: 10px;
+                bottom: -10px;
+                left: -5px;
+                background-color: $color - #111;
+                transform: skew(-45deg) rotate(0deg);
+                // border: 1px solid black;
+                background:  linear-gradient(80deg,$color - #111 40%,black 40%,black 55%,$color - #111 20%);
+                background-size: 7px 7px;
+                // animation: shad-anim 10s linear infinite;
+                // border: 1px solid black;
+
+                z-index: -1;
+            }
+            &.clicked {
+                left: -5px;
+                bottom: -5px;
+                &:before {
+                    height: 5px;
+                    left: -22px;
+                    bottom: 15px;
+                }
+                &:after {
+                    height: 5px;
+                    bottom: -5px;
+                    left: -2px;
+                }
+            }
+        }
+    }
+ }

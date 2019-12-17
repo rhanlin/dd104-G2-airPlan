@@ -1,0 +1,7 @@
+$btnstyle:(
+    yellow: $main-yellow,
+    blue:$main-blue,
+    red:$main-red,
+);
+@include btn_basic_module($btnstyle);
+@include btn_big_module($btnstyle);

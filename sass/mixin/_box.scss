@@ -1,0 +1,14 @@
+/* 
+ *  color header box
+ */
+@mixin box-modul($box-module,$width:70vw,$height:30vw){
+    @each $title,$color in $box-module{ 
+        .box-#{$title}{
+            border: .4vw solid #212121;
+            background-color: $color;
+            width: $width;
+            height: $height;
+            margin: 0 auto;
+        }
+    }
+}

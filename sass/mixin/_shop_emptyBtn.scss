@@ -1,0 +1,11 @@
+@mixin emptyBtn($sum) {
+    @for $i from 1 through $sum {
+
+        //從1跑到8
+        .emptyBtn#{$i} {
+            display: inline-block;
+            width: 25%;
+            height: 80px;
+        }
+    }
+}
