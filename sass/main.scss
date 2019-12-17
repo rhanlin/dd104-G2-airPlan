@@ -1,6 +1,5 @@
 /*
  *  base
- 
  */
 @import "base/var";
 @import "base/color";
@@ -25,6 +24,12 @@
 @import "./page/write-letter";
 @import "./page/shop";
 
+/*
+ *  layout
+ */
+@import "./layout/header";
+@import "./layout/footer";
+@import "./layout/nav";
 /*
  *  vender
  */

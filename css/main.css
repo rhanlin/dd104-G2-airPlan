@@ -1,7 +1,6 @@
 @charset "UTF-8";
 /*
  *  base
- 
  */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -125,25 +124,27 @@ table {
  */
 .clouds {
   position: relative;
-  top: -300px;
+  top: -210px;
   left: -210px;
   bottom: 0px; }
   .clouds .cloud_1 {
     width: 350px;
-    height: 120px;
-    background: linear-gradient(#fff 11%, #f5f5f5 100%);
+    height: 110px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
+    box-shadow: 0 37px 64px -40px rgba(0, 0, 0, 0.6);
     border-radius: 100px;
     position: absolute;
-    margin: 120px auto 20px;
-    top: 50px;
-    left: 60.12vmax;
+    margin: 140px auto 20px;
+    top: 8vw;
+    left: 88.21vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_1:after, .clouds .cloud_1:before {
       content: '';
       position: absolute;
-      background: #fff;
-      z-index: -11; }
+      background: #fdfeff;
+      z-index: -11;
+      box-shadow: 0px -5px 136px -40px rgba(0, 0, 0, 0.2); }
     .clouds .cloud_1:after {
       width: 100px;
       height: 100px;
@@ -158,20 +159,22 @@ table {
       border-radius: 200px; }
   .clouds .cloud_2 {
     width: 350px;
-    height: 120px;
-    background: linear-gradient(#fff 11%, #f5f5f5 100%);
+    height: 110px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
+    box-shadow: 0 37px 64px -40px rgba(0, 0, 0, 0.6);
     border-radius: 100px;
     position: absolute;
-    margin: 120px auto 20px;
-    top: 50px;
-    left: 21.24vmax;
+    margin: 140px auto 20px;
+    top: 8vw;
+    left: 50.42vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_2:after, .clouds .cloud_2:before {
       content: '';
       position: absolute;
-      background: #fff;
-      z-index: -11; }
+      background: #fdfeff;
+      z-index: -11;
+      box-shadow: 0px -5px 136px -40px rgba(0, 0, 0, 0.2); }
     .clouds .cloud_2:after {
       width: 100px;
       height: 100px;
@@ -186,20 +189,22 @@ table {
       border-radius: 200px; }
   .clouds .cloud_3 {
     width: 350px;
-    height: 120px;
-    background: linear-gradient(#fff 11%, #f5f5f5 100%);
+    height: 110px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
+    box-shadow: 0 37px 64px -40px rgba(0, 0, 0, 0.6);
     border-radius: 100px;
     position: absolute;
-    margin: 120px auto 20px;
-    top: 50px;
-    left: 21.36vmax;
+    margin: 140px auto 20px;
+    top: 8vw;
+    left: 100.63vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_3:after, .clouds .cloud_3:before {
       content: '';
       position: absolute;
-      background: #fff;
-      z-index: -11; }
+      background: #fdfeff;
+      z-index: -11;
+      box-shadow: 0px -5px 136px -40px rgba(0, 0, 0, 0.2); }
     .clouds .cloud_3:after {
       width: 100px;
       height: 100px;
@@ -214,20 +219,22 @@ table {
       border-radius: 200px; }
   .clouds .cloud_4 {
     width: 350px;
-    height: 120px;
-    background: linear-gradient(#fff 11%, #f5f5f5 100%);
+    height: 110px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
+    box-shadow: 0 37px 64px -40px rgba(0, 0, 0, 0.6);
     border-radius: 100px;
     position: absolute;
-    margin: 120px auto 20px;
-    top: 50px;
-    left: 22.48vmax;
+    margin: 140px auto 20px;
+    top: 8vw;
+    left: 56.84vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_4:after, .clouds .cloud_4:before {
       content: '';
       position: absolute;
-      background: #fff;
-      z-index: -11; }
+      background: #fdfeff;
+      z-index: -11;
+      box-shadow: 0px -5px 136px -40px rgba(0, 0, 0, 0.2); }
     .clouds .cloud_4:after {
       width: 100px;
       height: 100px;
@@ -242,20 +249,22 @@ table {
       border-radius: 200px; }
   .clouds .cloud_5 {
     width: 350px;
-    height: 120px;
-    background: linear-gradient(#fff 11%, #f5f5f5 100%);
+    height: 110px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
+    box-shadow: 0 37px 64px -40px rgba(0, 0, 0, 0.6);
     border-radius: 100px;
     position: absolute;
-    margin: 120px auto 20px;
-    top: 50px;
-    left: 95.6vmax;
+    margin: 140px auto 20px;
+    top: 8vw;
+    left: 77.05vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_5:after, .clouds .cloud_5:before {
       content: '';
       position: absolute;
-      background: #fff;
-      z-index: -11; }
+      background: #fdfeff;
+      z-index: -11;
+      box-shadow: 0px -5px 136px -40px rgba(0, 0, 0, 0.2); }
     .clouds .cloud_5:after {
       width: 100px;
       height: 100px;
@@ -270,20 +279,22 @@ table {
       border-radius: 200px; }
   .clouds .cloud_6 {
     width: 350px;
-    height: 120px;
-    background: linear-gradient(#fff 11%, #f5f5f5 100%);
+    height: 110px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
+    box-shadow: 0 37px 64px -40px rgba(0, 0, 0, 0.6);
     border-radius: 100px;
     position: absolute;
-    margin: 120px auto 20px;
-    top: 50px;
-    left: 80.72vmax;
+    margin: 140px auto 20px;
+    top: 8vw;
+    left: 80.26vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_6:after, .clouds .cloud_6:before {
       content: '';
       position: absolute;
-      background: #fff;
-      z-index: -11; }
+      background: #fdfeff;
+      z-index: -11;
+      box-shadow: 0px -5px 136px -40px rgba(0, 0, 0, 0.2); }
     .clouds .cloud_6:after {
       width: 100px;
       height: 100px;
@@ -298,20 +309,22 @@ table {
       border-radius: 200px; }
   .clouds .cloud_7 {
     width: 350px;
-    height: 120px;
-    background: linear-gradient(#fff 11%, #f5f5f5 100%);
+    height: 110px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
+    box-shadow: 0 37px 64px -40px rgba(0, 0, 0, 0.6);
     border-radius: 100px;
     position: absolute;
-    margin: 120px auto 20px;
-    top: 50px;
-    left: 16.84vmax;
+    margin: 140px auto 20px;
+    top: 8vw;
+    left: 83.47vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_7:after, .clouds .cloud_7:before {
       content: '';
       position: absolute;
-      background: #fff;
-      z-index: -11; }
+      background: #fdfeff;
+      z-index: -11;
+      box-shadow: 0px -5px 136px -40px rgba(0, 0, 0, 0.2); }
     .clouds .cloud_7:after {
       width: 100px;
       height: 100px;
@@ -326,20 +339,22 @@ table {
       border-radius: 200px; }
   .clouds .cloud_8 {
     width: 350px;
-    height: 120px;
-    background: linear-gradient(#fff 11%, #f5f5f5 100%);
+    height: 110px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
+    box-shadow: 0 37px 64px -40px rgba(0, 0, 0, 0.6);
     border-radius: 100px;
     position: absolute;
-    margin: 120px auto 20px;
-    top: 50px;
-    left: 48.96vmax;
+    margin: 140px auto 20px;
+    top: 8vw;
+    left: 86.68vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_8:after, .clouds .cloud_8:before {
       content: '';
       position: absolute;
-      background: #fff;
-      z-index: -11; }
+      background: #fdfeff;
+      z-index: -11;
+      box-shadow: 0px -5px 136px -40px rgba(0, 0, 0, 0.2); }
     .clouds .cloud_8:after {
       width: 100px;
       height: 100px;
@@ -354,20 +369,22 @@ table {
       border-radius: 200px; }
   .clouds .cloud_9 {
     width: 350px;
-    height: 120px;
-    background: linear-gradient(#fff 11%, #f5f5f5 100%);
+    height: 110px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
+    box-shadow: 0 37px 64px -40px rgba(0, 0, 0, 0.6);
     border-radius: 100px;
     position: absolute;
-    margin: 120px auto 20px;
-    top: 50px;
-    left: 6.08vmax;
+    margin: 140px auto 20px;
+    top: 8vw;
+    left: 121.89vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_9:after, .clouds .cloud_9:before {
       content: '';
       position: absolute;
-      background: #fff;
-      z-index: -11; }
+      background: #fdfeff;
+      z-index: -11;
+      box-shadow: 0px -5px 136px -40px rgba(0, 0, 0, 0.2); }
     .clouds .cloud_9:after {
       width: 100px;
       height: 100px;
@@ -382,20 +399,22 @@ table {
       border-radius: 200px; }
   .clouds .cloud_10 {
     width: 350px;
-    height: 120px;
-    background: linear-gradient(#fff 11%, #f5f5f5 100%);
+    height: 110px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
+    box-shadow: 0 37px 64px -40px rgba(0, 0, 0, 0.6);
     border-radius: 100px;
     position: absolute;
-    margin: 120px auto 20px;
-    top: 50px;
-    left: 9.2vmax;
+    margin: 140px auto 20px;
+    top: 8vw;
+    left: 55.1vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_10:after, .clouds .cloud_10:before {
       content: '';
       position: absolute;
-      background: #fff;
-      z-index: -11; }
+      background: #fdfeff;
+      z-index: -11;
+      box-shadow: 0px -5px 136px -40px rgba(0, 0, 0, 0.2); }
     .clouds .cloud_10:after {
       width: 100px;
       height: 100px;
@@ -410,20 +429,22 @@ table {
       border-radius: 200px; }
   .clouds .cloud_11 {
     width: 350px;
-    height: 120px;
-    background: linear-gradient(#fff 11%, #f5f5f5 100%);
+    height: 110px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
+    box-shadow: 0 37px 64px -40px rgba(0, 0, 0, 0.6);
     border-radius: 100px;
     position: absolute;
-    margin: 120px auto 20px;
-    top: 50px;
-    left: 117.32vmax;
+    margin: 140px auto 20px;
+    top: 8vw;
+    left: 83.31vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_11:after, .clouds .cloud_11:before {
       content: '';
       position: absolute;
-      background: #fff;
-      z-index: -11; }
+      background: #fdfeff;
+      z-index: -11;
+      box-shadow: 0px -5px 136px -40px rgba(0, 0, 0, 0.2); }
     .clouds .cloud_11:after {
       width: 100px;
       height: 100px;
@@ -438,20 +459,22 @@ table {
       border-radius: 200px; }
   .clouds .cloud_12 {
     width: 350px;
-    height: 120px;
-    background: linear-gradient(#fff 11%, #f5f5f5 100%);
+    height: 110px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
+    box-shadow: 0 37px 64px -40px rgba(0, 0, 0, 0.6);
     border-radius: 100px;
     position: absolute;
-    margin: 120px auto 20px;
-    top: 50px;
-    left: 75.44vmax;
+    margin: 140px auto 20px;
+    top: 8vw;
+    left: 54.52vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_12:after, .clouds .cloud_12:before {
       content: '';
       position: absolute;
-      background: #fff;
-      z-index: -11; }
+      background: #fdfeff;
+      z-index: -11;
+      box-shadow: 0px -5px 136px -40px rgba(0, 0, 0, 0.2); }
     .clouds .cloud_12:after {
       width: 100px;
       height: 100px;
@@ -466,20 +489,22 @@ table {
       border-radius: 200px; }
   .clouds .cloud_13 {
     width: 350px;
-    height: 120px;
-    background: linear-gradient(#fff 11%, #f5f5f5 100%);
+    height: 110px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
+    box-shadow: 0 37px 64px -40px rgba(0, 0, 0, 0.6);
     border-radius: 100px;
     position: absolute;
-    margin: 120px auto 20px;
-    top: 50px;
-    left: 42.56vmax;
+    margin: 140px auto 20px;
+    top: 8vw;
+    left: 111.73vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_13:after, .clouds .cloud_13:before {
       content: '';
       position: absolute;
-      background: #fff;
-      z-index: -11; }
+      background: #fdfeff;
+      z-index: -11;
+      box-shadow: 0px -5px 136px -40px rgba(0, 0, 0, 0.2); }
     .clouds .cloud_13:after {
       width: 100px;
       height: 100px;
@@ -494,20 +519,22 @@ table {
       border-radius: 200px; }
   .clouds .cloud_14 {
     width: 350px;
-    height: 120px;
-    background: linear-gradient(#fff 11%, #f5f5f5 100%);
+    height: 110px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
+    box-shadow: 0 37px 64px -40px rgba(0, 0, 0, 0.6);
     border-radius: 100px;
     position: absolute;
-    margin: 120px auto 20px;
-    top: 50px;
-    left: 116.68vmax;
+    margin: 140px auto 20px;
+    top: 8vw;
+    left: 9.94vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_14:after, .clouds .cloud_14:before {
       content: '';
       position: absolute;
-      background: #fff;
-      z-index: -11; }
+      background: #fdfeff;
+      z-index: -11;
+      box-shadow: 0px -5px 136px -40px rgba(0, 0, 0, 0.2); }
     .clouds .cloud_14:after {
       width: 100px;
       height: 100px;
@@ -522,20 +549,22 @@ table {
       border-radius: 200px; }
   .clouds .cloud_15 {
     width: 350px;
-    height: 120px;
-    background: linear-gradient(#fff 11%, #f5f5f5 100%);
+    height: 110px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
+    box-shadow: 0 37px 64px -40px rgba(0, 0, 0, 0.6);
     border-radius: 100px;
     position: absolute;
-    margin: 120px auto 20px;
-    top: 50px;
-    left: 51.8vmax;
+    margin: 140px auto 20px;
+    top: 8vw;
+    left: 46.15vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_15:after, .clouds .cloud_15:before {
       content: '';
       position: absolute;
-      background: #fff;
-      z-index: -11; }
+      background: #fdfeff;
+      z-index: -11;
+      box-shadow: 0px -5px 136px -40px rgba(0, 0, 0, 0.2); }
     .clouds .cloud_15:after {
       width: 100px;
       height: 100px;
@@ -550,20 +579,22 @@ table {
       border-radius: 200px; }
   .clouds .cloud_16 {
     width: 350px;
-    height: 120px;
-    background: linear-gradient(#fff 11%, #f5f5f5 100%);
+    height: 110px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
+    box-shadow: 0 37px 64px -40px rgba(0, 0, 0, 0.6);
     border-radius: 100px;
     position: absolute;
-    margin: 120px auto 20px;
-    top: 50px;
-    left: 8.92vmax;
+    margin: 140px auto 20px;
+    top: 8vw;
+    left: 8.36vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_16:after, .clouds .cloud_16:before {
       content: '';
       position: absolute;
-      background: #fff;
-      z-index: -11; }
+      background: #fdfeff;
+      z-index: -11;
+      box-shadow: 0px -5px 136px -40px rgba(0, 0, 0, 0.2); }
     .clouds .cloud_16:after {
       width: 100px;
       height: 100px;
@@ -578,20 +609,22 @@ table {
       border-radius: 200px; }
   .clouds .cloud_17 {
     width: 350px;
-    height: 120px;
-    background: linear-gradient(#fff 11%, #f5f5f5 100%);
+    height: 110px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
+    box-shadow: 0 37px 64px -40px rgba(0, 0, 0, 0.6);
     border-radius: 100px;
     position: absolute;
-    margin: 120px auto 20px;
-    top: 50px;
-    left: 97.04vmax;
+    margin: 140px auto 20px;
+    top: 8vw;
+    left: 114.57vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_17:after, .clouds .cloud_17:before {
       content: '';
       position: absolute;
-      background: #fff;
-      z-index: -11; }
+      background: #fdfeff;
+      z-index: -11;
+      box-shadow: 0px -5px 136px -40px rgba(0, 0, 0, 0.2); }
     .clouds .cloud_17:after {
       width: 100px;
       height: 100px;
@@ -606,20 +639,22 @@ table {
       border-radius: 200px; }
   .clouds .cloud_18 {
     width: 350px;
-    height: 120px;
-    background: linear-gradient(#fff 11%, #f5f5f5 100%);
+    height: 110px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
+    box-shadow: 0 37px 64px -40px rgba(0, 0, 0, 0.6);
     border-radius: 100px;
     position: absolute;
-    margin: 120px auto 20px;
-    top: 50px;
-    left: 13.16vmax;
+    margin: 140px auto 20px;
+    top: 8vw;
+    left: 57.78vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_18:after, .clouds .cloud_18:before {
       content: '';
       position: absolute;
-      background: #fff;
-      z-index: -11; }
+      background: #fdfeff;
+      z-index: -11;
+      box-shadow: 0px -5px 136px -40px rgba(0, 0, 0, 0.2); }
     .clouds .cloud_18:after {
       width: 100px;
       height: 100px;
@@ -634,20 +669,22 @@ table {
       border-radius: 200px; }
   .clouds .cloud_19 {
     width: 350px;
-    height: 120px;
-    background: linear-gradient(#fff 11%, #f5f5f5 100%);
+    height: 110px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
+    box-shadow: 0 37px 64px -40px rgba(0, 0, 0, 0.6);
     border-radius: 100px;
     position: absolute;
-    margin: 120px auto 20px;
-    top: 50px;
-    left: 44.28vmax;
+    margin: 140px auto 20px;
+    top: 8vw;
+    left: 98.99vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_19:after, .clouds .cloud_19:before {
       content: '';
       position: absolute;
-      background: #fff;
-      z-index: -11; }
+      background: #fdfeff;
+      z-index: -11;
+      box-shadow: 0px -5px 136px -40px rgba(0, 0, 0, 0.2); }
     .clouds .cloud_19:after {
       width: 100px;
       height: 100px;
@@ -965,38 +1002,54 @@ table {
       left: -2px; }
 
 .box-yellow {
-  border: .4vw solid #212121;
-  background-color: #f3de6b;
-  width: 50vw;
-  height: 60vw;
-  margin: 0 auto; }
+  border: .2vw solid #212121;
+  width: 65vw;
+  height: 20vw;
+  margin: 0 auto;
+  z-index: 9;
+  position: relative;
+  top: -5vw;
+  background: radial-gradient(#000000 15%, #f3de6b 15%);
+  background-size: 15px 15px; }
 
 .box-blue {
-  border: .4vw solid #212121;
-  background-color: #82afd9;
-  width: 50vw;
-  height: 60vw;
-  margin: 0 auto; }
+  border: .2vw solid #212121;
+  width: 65vw;
+  height: 20vw;
+  margin: 0 auto;
+  z-index: 9;
+  position: relative;
+  top: -5vw;
+  background: radial-gradient(#000000 15%, #82afd9 15%);
+  background-size: 15px 15px; }
 
 .box-red {
-  border: .4vw solid #212121;
-  background-color: #f08b8c;
-  width: 50vw;
-  height: 60vw;
-  margin: 0 auto; }
+  border: .2vw solid #212121;
+  width: 65vw;
+  height: 20vw;
+  margin: 0 auto;
+  z-index: 9;
+  position: relative;
+  top: -5vw;
+  background: radial-gradient(#000000 15%, #f08b8c 15%);
+  background-size: 15px 15px; }
 
 .box-white {
-  border: .4vw solid #212121;
-  background-color: #ffffff;
-  width: 50vw;
-  height: 60vw;
-  margin: 0 auto; }
+  border: .2vw solid #212121;
+  width: 65vw;
+  height: 20vw;
+  margin: 0 auto;
+  z-index: 9;
+  position: relative;
+  top: -5vw;
+  background: radial-gradient(#000000 15%, #ffffff 15%);
+  background-size: 15px 15px; }
 
 /*
  *  pages
  */
 .wrletter-body {
-  background: radial-gradient(#000000 20%, #f08b8c 20%);
+  background: radial-gradient(#000000 20%, #fff 20%);
   background-size: 6px 6px;
   height: 200vw; }
 
@@ -2649,6 +2702,33 @@ table {
         height: 300px;
         margin: 50px auto;
         background: #e5e5e5; } }
+
+/*
+ *  layout
+ */
+header {
+  width: 100vw;
+  height: 25vw;
+  font-size: 0; }
+  header #myClouds {
+    width: 100vw; }
+  header .white-space-bg {
+    width: 100vw;
+    height: 150px;
+    background: linear-gradient(180deg, white 25%, rgba(235, 255, 255, 0) 100%); }
+
+nav {
+  position: fixed; }
+  nav ul {
+    border: 1px solid red;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+    nav ul li {
+      padding: 20px 10px;
+      border: 1px solid green;
+      margin: 0 5px; }
 
 /*
  *  vender
