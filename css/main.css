@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /*
  *  base
+ 
  */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -135,7 +136,7 @@ table {
     position: absolute;
     margin: 120px auto 20px;
     top: 50px;
-    left: 73.12vmax;
+    left: 60.12vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_1:after, .clouds .cloud_1:before {
@@ -163,7 +164,7 @@ table {
     position: absolute;
     margin: 120px auto 20px;
     top: 50px;
-    left: 101.24vmax;
+    left: 21.24vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_2:after, .clouds .cloud_2:before {
@@ -191,7 +192,7 @@ table {
     position: absolute;
     margin: 120px auto 20px;
     top: 50px;
-    left: 41.36vmax;
+    left: 21.36vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_3:after, .clouds .cloud_3:before {
@@ -219,7 +220,7 @@ table {
     position: absolute;
     margin: 120px auto 20px;
     top: 50px;
-    left: 98.48vmax;
+    left: 22.48vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_4:after, .clouds .cloud_4:before {
@@ -247,7 +248,7 @@ table {
     position: absolute;
     margin: 120px auto 20px;
     top: 50px;
-    left: 26.6vmax;
+    left: 95.6vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_5:after, .clouds .cloud_5:before {
@@ -275,7 +276,7 @@ table {
     position: absolute;
     margin: 120px auto 20px;
     top: 50px;
-    left: 33.72vmax;
+    left: 80.72vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_6:after, .clouds .cloud_6:before {
@@ -303,7 +304,7 @@ table {
     position: absolute;
     margin: 120px auto 20px;
     top: 50px;
-    left: 32.84vmax;
+    left: 16.84vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_7:after, .clouds .cloud_7:before {
@@ -331,7 +332,7 @@ table {
     position: absolute;
     margin: 120px auto 20px;
     top: 50px;
-    left: 26.96vmax;
+    left: 48.96vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_8:after, .clouds .cloud_8:before {
@@ -359,7 +360,7 @@ table {
     position: absolute;
     margin: 120px auto 20px;
     top: 50px;
-    left: 83.08vmax;
+    left: 6.08vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_9:after, .clouds .cloud_9:before {
@@ -387,7 +388,7 @@ table {
     position: absolute;
     margin: 120px auto 20px;
     top: 50px;
-    left: 100.2vmax;
+    left: 9.2vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_10:after, .clouds .cloud_10:before {
@@ -415,7 +416,7 @@ table {
     position: absolute;
     margin: 120px auto 20px;
     top: 50px;
-    left: 108.32vmax;
+    left: 117.32vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_11:after, .clouds .cloud_11:before {
@@ -443,7 +444,7 @@ table {
     position: absolute;
     margin: 120px auto 20px;
     top: 50px;
-    left: 62.44vmax;
+    left: 75.44vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_12:after, .clouds .cloud_12:before {
@@ -471,7 +472,7 @@ table {
     position: absolute;
     margin: 120px auto 20px;
     top: 50px;
-    left: 90.56vmax;
+    left: 42.56vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_13:after, .clouds .cloud_13:before {
@@ -499,7 +500,7 @@ table {
     position: absolute;
     margin: 120px auto 20px;
     top: 50px;
-    left: 23.68vmax;
+    left: 116.68vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_14:after, .clouds .cloud_14:before {
@@ -527,7 +528,7 @@ table {
     position: absolute;
     margin: 120px auto 20px;
     top: 50px;
-    left: 9.8vmax;
+    left: 51.8vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_15:after, .clouds .cloud_15:before {
@@ -555,7 +556,7 @@ table {
     position: absolute;
     margin: 120px auto 20px;
     top: 50px;
-    left: 67.92vmax;
+    left: 8.92vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_16:after, .clouds .cloud_16:before {
@@ -583,7 +584,7 @@ table {
     position: absolute;
     margin: 120px auto 20px;
     top: 50px;
-    left: 54.04vmax;
+    left: 97.04vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_17:after, .clouds .cloud_17:before {
@@ -611,7 +612,7 @@ table {
     position: absolute;
     margin: 120px auto 20px;
     top: 50px;
-    left: 29.16vmax;
+    left: 13.16vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_18:after, .clouds .cloud_18:before {
@@ -639,7 +640,7 @@ table {
     position: absolute;
     margin: 120px auto 20px;
     top: 50px;
-    left: 47.28vmax;
+    left: 44.28vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_19:after, .clouds .cloud_19:before {
@@ -660,6 +661,9 @@ table {
       right: 50px;
       border-radius: 200px; }
 
+/*
+ *  module
+ */
 .btn-basic-yellow {
   font-family: Roboto Mono;
   letter-spacing: 0.4em;
@@ -989,15 +993,1662 @@ table {
   margin: 0 auto; }
 
 /*
- *  module
- */
-/*
  *  pages
  */
-body {
+.wrletter-body {
   background: radial-gradient(#000000 20%, #f08b8c 20%);
   background-size: 6px 6px;
   height: 200vw; }
+
+.shop-body {
+  background-color: #eeddd6;
+  width: 100%; }
+  .shop-body .shop-header {
+    width: 100%;
+    height: 100vh;
+    background-image: url("/image/point.jpg");
+    opacity: 0.05; }
+  .shop-body .shop-main {
+    width: 100%; }
+    .shop-body .shop-main #section1 {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1500px; }
+      .shop-body .shop-main #section1 .container .row .shopTitleText {
+        transform: translate(0, 80%);
+        width: 75%;
+        margin: 0 auto;
+        position: relative;
+        font-weight: 900;
+        font-size: 140px;
+        color: #dbcd00;
+        text-shadow: -2px -2px 0 #0f0f0f, -2px -1px 0 #0f0f0f, -2px 0px 0 #0f0f0f, -2px 1px 0 #0f0f0f, -2px 2px 0 #0f0f0f, -1px -2px 0 #0f0f0f, -1px -1px 0 #0f0f0f, -1px 0px 0 #0f0f0f, -1px 1px 0 #0f0f0f, -1px 2px 0 #0f0f0f, 0px -2px 0 #0f0f0f, 0px -1px 0 #0f0f0f, 0px 0px 0 #0f0f0f, 0px 1px 0 #0f0f0f, 0px 2px 0 #0f0f0f, 1px -2px 0 #0f0f0f, 1px -1px 0 #0f0f0f, 1px 0px 0 #0f0f0f, 1px 1px 0 #0f0f0f, 1px 2px 0 #0f0f0f, 2px -2px 0 #0f0f0f, 2px -1px 0 #0f0f0f, 2px 0px 0 #0f0f0f, 2px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f;
+        z-index: 10; }
+        .shop-body .shop-main #section1 .container .row .shopTitleText::before {
+          content: '客製化商城';
+          position: absolute;
+          left: -3%;
+          font-weight: 900;
+          font-size: 140px;
+          color: #83afd9;
+          text-shadow: -2px -2px 0 #0f0f0f, -2px -1px 0 #0f0f0f, -2px 0px 0 #0f0f0f, -2px 1px 0 #0f0f0f, -2px 2px 0 #0f0f0f, -1px -2px 0 #0f0f0f, -1px -1px 0 #0f0f0f, -1px 0px 0 #0f0f0f, -1px 1px 0 #0f0f0f, -1px 2px 0 #0f0f0f, 0px -2px 0 #0f0f0f, 0px -1px 0 #0f0f0f, 0px 0px 0 #0f0f0f, 0px 1px 0 #0f0f0f, 0px 2px 0 #0f0f0f, 1px -2px 0 #0f0f0f, 1px -1px 0 #0f0f0f, 1px 0px 0 #0f0f0f, 1px 1px 0 #0f0f0f, 1px 2px 0 #0f0f0f, 2px -2px 0 #0f0f0f, 2px -1px 0 #0f0f0f, 2px 0px 0 #0f0f0f, 2px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f; }
+      .shop-body .shop-main #section1 .container .row .shopTitle {
+        width: 100%;
+        height: 340px; }
+        .shop-body .shop-main #section1 .container .row .shopTitle .shopTitleContainer {
+          margin: 0 auto;
+          width: 100%;
+          position: relative; }
+          .shop-body .shop-main #section1 .container .row .shopTitle .shopTitleContainer .titlePage1 {
+            position: absolute;
+            width: 92%;
+            height: 350px;
+            top: -30px;
+            left: -20px;
+            border: 5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .container .row .shopTitle .shopTitleContainer .titlePage2 {
+            position: absolute;
+            width: 92%;
+            height: 350px;
+            top: -60px;
+            left: 10px;
+            border: 5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .container .row .shopTitle .shopTitleContainer .titlePage3 {
+            position: absolute;
+            width: 92%;
+            height: 350px;
+            top: -90px;
+            left: 40px;
+            border: 5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .container .row .shopTitle .shopTitleContainer .titlePage4 {
+            position: absolute;
+            width: 92%;
+            height: 350px;
+            top: -120px;
+            left: 70px;
+            border: 5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .container .row .shopTitle .shopTitleContainer .titlePagePic {
+            width: 90%;
+            position: absolute;
+            top: 85px;
+            left: 6%; }
+            .shop-body .shop-main #section1 .container .row .shopTitle .shopTitleContainer .titlePagePic img {
+              width: 100%; }
+      .shop-body .shop-main #section1 .container .row #conectionLine {
+        margin: 0 auto;
+        position: relative;
+        height: 200px;
+        margin: 0 auto; }
+        .shop-body .shop-main #section1 .container .row #conectionLine .iron_clip1 {
+          width: 15%;
+          position: absolute;
+          left: 20%;
+          top: -29%;
+          z-index: 10; }
+        .shop-body .shop-main #section1 .container .row #conectionLine .iron_clip2 {
+          width: 15%;
+          position: absolute;
+          right: 5%;
+          top: -29%;
+          z-index: 10; }
+      .shop-body .shop-main #section1 .shopItemContainer {
+        margin: 0 auto;
+        width: 85%;
+        position: relative; }
+        .shop-body .shop-main #section1 .shopItemContainer .itemPage1 {
+          position: absolute;
+          width: 100%;
+          height: 900px;
+          top: 30px;
+          left: -30px;
+          border: 5px solid black;
+          background-color: #fff; }
+        .shop-body .shop-main #section1 .shopItemContainer .itemPage2 {
+          position: absolute;
+          width: 100%;
+          height: 900px;
+          top: 60px;
+          left: -60px;
+          border: 5px solid black;
+          background-color: #fff; }
+        .shop-body .shop-main #section1 .shopItemContainer .itemPage0 {
+          position: absolute;
+          width: 90%;
+          height: 750px;
+          background-color: #82afd9;
+          top: 170px;
+          left: 15%;
+          border: 5px solid black; }
+      .shop-body .shop-main #section1 .itemCardBox {
+        margin-top: 100px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap; }
+        .shop-body .shop-main #section1 .itemCardBox .itemCardAside {
+          width: 20%;
+          height: 900px;
+          padding: 90px;
+          border: 2px solid red; }
+          .shop-body .shop-main #section1 .itemCardBox .itemCardAside h2 {
+            font-weight: 900; }
+          .shop-body .shop-main #section1 .itemCardBox .itemCardAside h3 {
+            font-weight: 900;
+            margin: 40px 0; }
+        .shop-body .shop-main #section1 .itemCardBox .itemCardContainer {
+          width: 80%;
+          padding-top: 150px;
+          padding-left: 20px;
+          border: 2px solid #01ac3a; }
+          .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCard1 {
+            width: 150px;
+            height: 150px;
+            margin: 0 20px;
+            border: 5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCard2 {
+            width: 150px;
+            height: 150px;
+            margin: 0 20px;
+            border: 5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCard3 {
+            width: 150px;
+            height: 150px;
+            margin: 0 20px;
+            border: 5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCard4 {
+            width: 150px;
+            height: 150px;
+            margin: 0 20px;
+            border: 5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCard5 {
+            width: 150px;
+            height: 150px;
+            margin: 0 20px;
+            border: 5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCard2_1 {
+            width: 150px;
+            height: 150px;
+            margin: 0 20px;
+            border: 5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCard2_2 {
+            width: 150px;
+            height: 150px;
+            margin: 0 20px;
+            border: 5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCard2_3 {
+            width: 150px;
+            height: 150px;
+            margin: 0 20px;
+            border: 5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .line_top {
+            width: 820px;
+            transform: translate(5%, -10%); }
+          .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow {
+            display: flex; }
+            .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard1 {
+              transform: translate(0, -50%) rotate(15deg); }
+              .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard1 img {
+                transform: translate(0%, -70%) rotate(330deg); }
+            .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard2 {
+              transform: translate(0, -30%) rotate(355deg); }
+              .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard2 img {
+                transform: translate(70%, -70%) rotate(360deg); }
+            .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 {
+              transform: translate(0, -10%) rotate(360deg); }
+              .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 .itemCard3Img_1 {
+                transform: translate(5%, -70%) rotate(350deg); }
+              .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 .itemCard3Img_2 {
+                transform: translate(5%, -70%) rotate(350deg); }
+            .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard4 {
+              transform: translate(0, 0%) rotate(350deg); }
+              .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard4 img {
+                transform: translate(90%, -70%) rotate(0deg); }
+            .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard5 {
+              transform: translate(0, -10%) rotate(360deg); }
+              .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard5 img {
+                transform: translate(0%, -80%) rotate(350deg); }
+          .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .line_bottom {
+            width: 600px;
+            transform: translate(10%, 30%); }
+          .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow {
+            display: flex; }
+            .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_1 {
+              transform: translate(30%, 0%) rotate(350deg);
+              margin-top: 50px; }
+              .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_1 img {
+                transform: translate(100%, -80%) rotate(360deg); }
+            .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_2 {
+              transform: translate(40%, 0%) rotate(15deg);
+              margin-top: 30px; }
+              .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_2 img {
+                transform: translate(0%, -70%) rotate(340deg); }
+            .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_3 {
+              transform: translate(30%, 0%) rotate(0deg); }
+              .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_3 img {
+                transform: translate(15%, -70%) rotate(330deg); }
+        .shop-body .shop-main #section1 .itemCardBox .filter_forSamll {
+          display: none; }
+      .shop-body .shop-main #section1 #pile {
+        width: 100%;
+        height: 500px; }
+        .shop-body .shop-main #section1 #pile .pileBox {
+          width: 100%;
+          height: 800px;
+          position: relative; }
+          .shop-body .shop-main #section1 #pile .pileBox .pile {
+            margin: 0 auto;
+            top: 0;
+            left: 0;
+            width: 90%;
+            position: absolute; }
+          .shop-body .shop-main #section1 #pile .pileBox .clock {
+            width: 18%;
+            position: absolute;
+            left: 0%;
+            top: 22%; }
+          .shop-body .shop-main #section1 #pile .pileBox .redWheel {
+            width: 18%;
+            position: absolute;
+            left: 52%;
+            top: 6%; }
+          .shop-body .shop-main #section1 #pile .pileBox .perpul {
+            width: 18%;
+            position: absolute;
+            left: 75%;
+            top: 50%; }
+      .shop-body .shop-main #section1 .container .customize .customizeTitleText {
+        padding-top: 5%;
+        transform: translate(0, 80%);
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+        font-weight: 900;
+        font-size: 140px;
+        color: #dbcd00;
+        text-shadow: -2px -2px 0 #0f0f0f, -2px -1px 0 #0f0f0f, -2px 0px 0 #0f0f0f, -2px 1px 0 #0f0f0f, -2px 2px 0 #0f0f0f, -1px -2px 0 #0f0f0f, -1px -1px 0 #0f0f0f, -1px 0px 0 #0f0f0f, -1px 1px 0 #0f0f0f, -1px 2px 0 #0f0f0f, 0px -2px 0 #0f0f0f, 0px -1px 0 #0f0f0f, 0px 0px 0 #0f0f0f, 0px 1px 0 #0f0f0f, 0px 2px 0 #0f0f0f, 1px -2px 0 #0f0f0f, 1px -1px 0 #0f0f0f, 1px 0px 0 #0f0f0f, 1px 1px 0 #0f0f0f, 1px 2px 0 #0f0f0f, 2px -2px 0 #0f0f0f, 2px -1px 0 #0f0f0f, 2px 0px 0 #0f0f0f, 2px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f;
+        z-index: 10; }
+        .shop-body .shop-main #section1 .container .customize .customizeTitleText::before {
+          content: 'NEXT';
+          text-align: center;
+          position: absolute;
+          left: -1%;
+          font-weight: 900;
+          font-size: 140px;
+          color: #83afd9;
+          text-shadow: -2px -2px 0 #0f0f0f, -2px -1px 0 #0f0f0f, -2px 0px 0 #0f0f0f, -2px 1px 0 #0f0f0f, -2px 2px 0 #0f0f0f, -1px -2px 0 #0f0f0f, -1px -1px 0 #0f0f0f, -1px 0px 0 #0f0f0f, -1px 1px 0 #0f0f0f, -1px 2px 0 #0f0f0f, 0px -2px 0 #0f0f0f, 0px -1px 0 #0f0f0f, 0px 0px 0 #0f0f0f, 0px 1px 0 #0f0f0f, 0px 2px 0 #0f0f0f, 1px -2px 0 #0f0f0f, 1px -1px 0 #0f0f0f, 1px 0px 0 #0f0f0f, 1px 1px 0 #0f0f0f, 1px 2px 0 #0f0f0f, 2px -2px 0 #0f0f0f, 2px -1px 0 #0f0f0f, 2px 0px 0 #0f0f0f, 2px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f; }
+      .shop-body .shop-main #section1 .container .customize .customizeTitle {
+        width: 80%;
+        height: 250px;
+        border: 5px solid black;
+        background: #fff;
+        margin-bottom: 3%; }
+      .shop-body .shop-main #section1 .customizeArea {
+        margin: 0 auto;
+        display: flex;
+        width: 85%;
+        flex-wrap: wrap; }
+        .shop-body .shop-main #section1 .customizeArea .controlTool {
+          display: flex;
+          flex-wrap: wrap;
+          width: 17%;
+          margin-right: 3%;
+          border: 5px solid black;
+          background: #fff; }
+          .shop-body .shop-main #section1 .customizeArea .controlTool .controlBox1 {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .customizeArea .controlTool .controlBox2 {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .customizeArea .controlTool .controlBox3 {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .customizeArea .controlTool .controlBox4 {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .customizeArea .controlTool .controlBox5 {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .customizeArea .controlTool .controlBox6 {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .customizeArea .controlTool .controlBox7 {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .customizeArea .controlTool .controlBox8 {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .customizeArea .controlTool .controlBox9 {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .customizeArea .controlTool .controlBox10 {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff; }
+          .shop-body .shop-main #section1 .customizeArea .controlTool img {
+            padding-top: 25%;
+            width: 50%; }
+          .shop-body .shop-main #section1 .customizeArea .controlTool .controlBoxBottom {
+            width: 100%;
+            height: 230px;
+            border: 5px solid black;
+            background: #fff; }
+        .shop-body .shop-main #section1 .customizeArea .controlBoxRight {
+          display: none; }
+        .shop-body .shop-main #section1 .customizeArea .drawingBoardBox {
+          width: 80%;
+          border: 5px solid black;
+          background: #8ebfbf; }
+          .shop-body .shop-main #section1 .customizeArea .drawingBoardBox .drawingBoard {
+            width: 90%;
+            height: 50%;
+            margin: 50px auto;
+            background: #e5e5e5; }
+          .shop-body .shop-main #section1 .customizeArea .drawingBoardBox .btns {
+            width: 100%;
+            display: flex; }
+            .shop-body .shop-main #section1 .customizeArea .drawingBoardBox .btns #switchBtn {
+              width: 20%; }
+              .shop-body .shop-main #section1 .customizeArea .drawingBoardBox .btns #switchBtn img {
+                width: 100%;
+                padding: 0 5%; }
+            .shop-body .shop-main #section1 .customizeArea .drawingBoardBox .btns #emptyBtnBox {
+              width: 40%; }
+              .shop-body .shop-main #section1 .customizeArea .drawingBoardBox .btns #emptyBtnBox .emptyBtn1 {
+                display: inline-block;
+                width: 25%;
+                height: 80px; }
+              .shop-body .shop-main #section1 .customizeArea .drawingBoardBox .btns #emptyBtnBox .emptyBtn2 {
+                display: inline-block;
+                width: 25%;
+                height: 80px; }
+              .shop-body .shop-main #section1 .customizeArea .drawingBoardBox .btns #emptyBtnBox .emptyBtn3 {
+                display: inline-block;
+                width: 25%;
+                height: 80px; }
+              .shop-body .shop-main #section1 .customizeArea .drawingBoardBox .btns #emptyBtnBox .emptyBtn4 {
+                display: inline-block;
+                width: 25%;
+                height: 80px; }
+              .shop-body .shop-main #section1 .customizeArea .drawingBoardBox .btns #emptyBtnBox .emptyBtn5 {
+                display: inline-block;
+                width: 25%;
+                height: 80px; }
+              .shop-body .shop-main #section1 .customizeArea .drawingBoardBox .btns #emptyBtnBox .emptyBtn6 {
+                display: inline-block;
+                width: 25%;
+                height: 80px; }
+    .shop-body .shop-main #section2 {
+      width: 100%; }
+      .shop-body .shop-main #section2 .matbase {
+        background-color: #fff;
+        border: 5px solid black;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%; }
+        .shop-body .shop-main #section2 .matbase .matbaseBox1 {
+          width: 8%;
+          height: 150px;
+          border: 2.5px solid black;
+          transform: skew(350deg);
+          background-color: #fff; }
+        .shop-body .shop-main #section2 .matbase .matbaseBox2 {
+          width: 8%;
+          height: 150px;
+          border: 2.5px solid black;
+          transform: skew(350deg);
+          background-color: #fff; }
+        .shop-body .shop-main #section2 .matbase .matbaseBox3 {
+          width: 8%;
+          height: 150px;
+          border: 2.5px solid black;
+          transform: skew(350deg);
+          background-color: #fff; }
+        .shop-body .shop-main #section2 .matbase .matbaseBox4 {
+          width: 8%;
+          height: 150px;
+          border: 2.5px solid black;
+          transform: skew(350deg);
+          background-color: #fff; }
+        .shop-body .shop-main #section2 .matbase .matbaseBox5 {
+          width: 8%;
+          height: 150px;
+          border: 2.5px solid black;
+          transform: skew(350deg);
+          background-color: #fff; }
+        .shop-body .shop-main #section2 .matbase .matbaseBox6 {
+          width: 8%;
+          height: 150px;
+          border: 2.5px solid black;
+          transform: skew(350deg);
+          background-color: #fff; }
+        .shop-body .shop-main #section2 .matbase .matbaseBox7 {
+          width: 8%;
+          height: 150px;
+          border: 2.5px solid black;
+          transform: skew(350deg);
+          background-color: #fff; }
+        .shop-body .shop-main #section2 .matbase .matbaseBox8 {
+          width: 8%;
+          height: 150px;
+          border: 2.5px solid black;
+          transform: skew(350deg);
+          background-color: #fff; }
+        .shop-body .shop-main #section2 .matbase .matbaseBox9 {
+          width: 8%;
+          height: 150px;
+          border: 2.5px solid black;
+          transform: skew(350deg);
+          background-color: #fff; }
+        .shop-body .shop-main #section2 .matbase .matbaseBox10 {
+          width: 8%;
+          height: 150px;
+          border: 2.5px solid black;
+          transform: skew(350deg);
+          background-color: #fff; }
+        .shop-body .shop-main #section2 .matbase .matbaseBox11 {
+          width: 8%;
+          height: 150px;
+          border: 2.5px solid black;
+          transform: skew(350deg);
+          background-color: #fff; }
+        .shop-body .shop-main #section2 .matbase .matbaseBox12 {
+          width: 8%;
+          height: 150px;
+          border: 2.5px solid black;
+          transform: skew(350deg);
+          background-color: #fff; }
+        .shop-body .shop-main #section2 .matbase .owl-prev {
+          background-image: url("../../image/control_bar-01.svg");
+          width: 100px;
+          height: 50px;
+          background-repeat: no-repeat; }
+          .shop-body .shop-main #section2 .matbase .owl-prev span {
+            display: none; }
+        .shop-body .shop-main #section2 .matbase .owl-next {
+          background-image: url("../../image/control_bar-01.svg");
+          width: 100px;
+          height: 50px;
+          background-repeat: no-repeat; }
+          .shop-body .shop-main #section2 .matbase .owl-next span {
+            display: none; }
+
+@media all and (max-width: 1199px) and (min-width: 992px) {
+  body main #section1 .container .row .shopTitleText {
+    width: 75%;
+    font-size: 120px; }
+    body main #section1 .container .row .shopTitleText::before {
+      font-size: 120px; }
+  body main #section1 .container .row .shopTitle {
+    height: 290px; }
+    body main #section1 .container .row .shopTitle .shopTitleContainer .titlePagePic {
+      width: 90%;
+      position: absolute;
+      top: 125px;
+      left: 5%; }
+  body main #section1 .container .row #conectionLine {
+    margin: 0 auto;
+    position: relative;
+    height: 200px;
+    margin: 0 auto; }
+    body main #section1 .container .row #conectionLine .iron_clip1 {
+      top: 0%; }
+    body main #section1 .container .row #conectionLine .iron_clip2 {
+      top: 0%;
+      right: 10%; }
+  body main #section1 .itemCardBox .itemCardContainer {
+    width: 80%;
+    padding-top: 180px; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard1 {
+      width: 130px;
+      height: 130px;
+      margin: 0 20px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard2 {
+      width: 130px;
+      height: 130px;
+      margin: 0 20px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard3 {
+      width: 130px;
+      height: 130px;
+      margin: 0 20px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard4 {
+      width: 130px;
+      height: 130px;
+      margin: 0 20px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard2_1 {
+      width: 130px;
+      height: 130px;
+      margin: 0 20px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard2_2 {
+      width: 130px;
+      height: 130px;
+      margin: 0 20px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard2_3 {
+      width: 130px;
+      height: 130px;
+      margin: 0 20px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .line_top {
+      width: 720px;
+      transform: translate(0, -15%); }
+    body main #section1 .itemCardBox .itemCardContainer .line_bottom {
+      width: 500px;
+      transform: translate(10%, 30%); }
+    body main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 {
+      transform: translate(0, -10%) rotate(360deg); }
+      body main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 .itemCard3Img_1 {
+        transform: translate(2%, -70%) rotate(350deg); }
+      body main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 .itemCard3Img_2 {
+        transform: translate(80%, -170%) rotate(350deg); }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard5 {
+      display: none; }
+  body main #section1 .itemCardBox .filter_forSamll {
+    display: none; }
+  body main .customizeArea {
+    margin: 0 auto;
+    width: 95%; }
+  body main #section2 .matbase {
+    margin: 0 auto; }
+    body main #section2 .matbase .matbaseBox1 {
+      width: 10%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox2 {
+      width: 10%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox3 {
+      width: 10%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox4 {
+      width: 10%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox5 {
+      width: 10%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox6 {
+      width: 10%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox7 {
+      width: 10%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox8 {
+      width: 10%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox9 {
+      width: 10%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox10 {
+      width: 10%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox11 {
+      width: 10%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox12 {
+      width: 10%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; } }
+
+@media all and (max-width: 991px) and (min-width: 768px) {
+  body main #section1 .container .row .shopTitleText {
+    width: 75%;
+    font-size: 90px; }
+    body main #section1 .container .row .shopTitleText::before {
+      font-size: 90px; }
+  body main #section1 .container .row .shopTitle {
+    height: 197px; }
+    body main #section1 .container .row .shopTitle .shopTitleContainer .itemCard1 {
+      width: 130px;
+      height: 130px;
+      margin: 0 15px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .container .row .shopTitle .shopTitleContainer .itemCard2 {
+      width: 130px;
+      height: 130px;
+      margin: 0 15px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .container .row .shopTitle .shopTitleContainer .itemCard3 {
+      width: 130px;
+      height: 130px;
+      margin: 0 15px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .container .row .shopTitle .shopTitleContainer .itemCard2_1 {
+      width: 130px;
+      height: 130px;
+      margin: 0 15px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .container .row .shopTitle .shopTitleContainer .itemCard2_2 {
+      width: 130px;
+      height: 130px;
+      margin: 0 15px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .container .row .shopTitle .shopTitleContainer .itemCard2_3 {
+      width: 130px;
+      height: 130px;
+      margin: 0 15px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .container .row .shopTitle .shopTitleContainer .titlePagePic {
+      width: 90%;
+      position: absolute;
+      top: 175px;
+      left: 3%; }
+  body main #section1 .container .row #conectionLine {
+    width: 40%; }
+    body main #section1 .container .row #conectionLine .iron_clip1 {
+      top: 50%; }
+    body main #section1 .container .row #conectionLine .iron_clip2 {
+      top: 50%;
+      right: 10%; }
+  body main #section1 .shopItemContainer .itemPage0 {
+    width: 100%;
+    left: 5%; }
+  body main #section1 .itemCardBox .itemCardAside {
+    display: none; }
+  body main #section1 .itemCardBox .itemCardContainer {
+    width: 100%;
+    padding-left: 80px; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard1 {
+      width: 130px;
+      height: 130px;
+      margin: 0 15px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard2 {
+      width: 130px;
+      height: 130px;
+      margin: 0 15px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard3 {
+      width: 130px;
+      height: 130px;
+      margin: 0 15px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard4 {
+      width: 130px;
+      height: 130px;
+      margin: 0 15px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard2_1 {
+      width: 130px;
+      height: 130px;
+      margin: 0 15px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard2_2 {
+      width: 130px;
+      height: 130px;
+      margin: 0 15px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard2_3 {
+      width: 130px;
+      height: 130px;
+      margin: 0 15px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .line_top {
+      width: 600px;
+      transform: translate(5%, -25%); }
+    body main #section1 .itemCardBox .itemCardContainer .line_bottom {
+      width: 500px;
+      transform: translate(10%, 80%); }
+    body main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 {
+      transform: translate(0, -10%) rotate(360deg); }
+      body main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 .itemCard3Img_1 {
+        transform: translate(2%, -70%) rotate(350deg); }
+      body main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 .itemCard3Img_2 {
+        transform: translate(80%, -170%) rotate(350deg); }
+    body main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard5 {
+      display: none; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_1 {
+      margin-top: 100px; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_2 {
+      margin-top: 80px; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_3 {
+      margin-top: 50px; }
+  body main #section1 .itemCardBox .filter_forSamll {
+    margin-top: 5%;
+    width: 70%;
+    border: 5px solid black;
+    height: 200px;
+    background-color: #fffcfa;
+    display: block;
+    z-index: 15; }
+    body main #section1 .itemCardBox .filter_forSamll h2 {
+      display: inline-block; }
+    body main #section1 .itemCardBox .filter_forSamll h3 {
+      display: inline-block; }
+  body main #section1 .customizeArea {
+    margin: 0 auto;
+    display: flex;
+    width: 95%;
+    flex-wrap: wrap; }
+    body main #section1 .customizeArea .controlTool {
+      display: flex;
+      flex-wrap: wrap;
+      width: 60%;
+      height: 200px;
+      margin-right: 0;
+      border: 2.5px solid black;
+      background: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox1 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox2 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox3 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox4 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox5 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox6 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox7 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox8 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox9 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox10 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool img {
+        width: 50%; }
+      body main #section1 .customizeArea .controlTool .controlBoxBottom {
+        display: none; }
+    body main #section1 .customizeArea .controlBoxRight {
+      display: block;
+      width: 40%;
+      height: 200px;
+      border: 5px solid black;
+      background: #fff; }
+    body main #section1 .customizeArea .drawingBoardBox {
+      width: 100%; }
+      body main #section1 .customizeArea .drawingBoardBox .drawingBoard {
+        width: 90%;
+        height: 500px;
+        margin: 50px auto;
+        background: #e5e5e5; }
+  body main #section2 .matbase {
+    margin: 0 auto; }
+    body main #section2 .matbase .matbaseBox1 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox2 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox3 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox4 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox5 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox6 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox7 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox8 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox9 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox10 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox11 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox12 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; } }
+
+@media all and (max-width: 767px) and (min-width: 576px) {
+  body main #section1 .container .row .shopTitleText {
+    z-index: 16;
+    transform: translate(0, 140%);
+    width: 85%;
+    font-size: 70px; }
+    body main #section1 .container .row .shopTitleText::before {
+      font-size: 70px; }
+  body main #section1 .container .row .shopTitle {
+    height: 140px; }
+    body main #section1 .container .row .shopTitle .shopTitleContainer .titlePage1 {
+      z-index: 15;
+      width: 100%; }
+    body main #section1 .container .row .shopTitle .shopTitleContainer .titlePage2 {
+      z-index: 15;
+      width: 100%; }
+    body main #section1 .container .row .shopTitle .shopTitleContainer .titlePage3 {
+      display: none; }
+    body main #section1 .container .row .shopTitle .shopTitleContainer .titlePage4 {
+      display: none; }
+    body main #section1 .container .row .shopTitle .shopTitleContainer .titlePagePic {
+      width: 90%;
+      position: absolute;
+      top: 210px;
+      left: 10%; }
+  body main #section1 .container .row #conectionLine {
+    width: 40%; }
+    body main #section1 .container .row #conectionLine .iron_clip1 {
+      width: 20%;
+      top: 30%; }
+    body main #section1 .container .row #conectionLine .iron_clip2 {
+      width: 20%;
+      right: 2%;
+      top: 30%; }
+  body main #section1 .shopItemContainer {
+    width: 95%; }
+    body main #section1 .shopItemContainer .itemPage0 {
+      top: 130px;
+      width: 95%;
+      left: 5%; }
+  body main #section1 .itemCardBox .itemCardAside {
+    display: none; }
+  body main #section1 .itemCardBox .itemCardContainer {
+    width: 95%;
+    padding-left: 50px; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard1 {
+      width: 130px;
+      height: 130px;
+      margin: 0 15px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard2 {
+      width: 130px;
+      height: 130px;
+      margin: 0 15px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard3 {
+      width: 130px;
+      height: 130px;
+      margin: 0 15px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard2_1 {
+      width: 130px;
+      height: 130px;
+      margin: 0 15px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard2_2 {
+      width: 130px;
+      height: 130px;
+      margin: 0 15px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCard2_3 {
+      width: 130px;
+      height: 130px;
+      margin: 0 15px;
+      border: 5px solid black;
+      background-color: #fff; }
+    body main #section1 .itemCardBox .itemCardContainer .line_top {
+      width: 450px;
+      transform: translate(5%, -50%); }
+    body main #section1 .itemCardBox .itemCardContainer .line_bottom {
+      width: 450px;
+      transform: translate(5%, 100%); }
+    body main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard4 {
+      display: none; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard5 {
+      display: none; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_1 {
+      margin-top: 100px; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_2 {
+      margin-top: 80px; }
+    body main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_3 {
+      margin-top: 50px; }
+  body main #section1 .itemCardBox .filter_forSamll {
+    margin-top: 5%;
+    width: 85%;
+    border: 5px solid black;
+    height: 200px;
+    background-color: #fffcfa;
+    display: block;
+    z-index: 15; }
+    body main #section1 .itemCardBox .filter_forSamll h2 {
+      display: inline-block; }
+    body main #section1 .itemCardBox .filter_forSamll h3 {
+      display: inline-block; }
+  body main #section1 .customizeArea {
+    margin: 0 auto;
+    display: flex;
+    width: 95%;
+    flex-wrap: wrap; }
+    body main #section1 .customizeArea .controlTool {
+      display: flex;
+      flex-wrap: wrap;
+      width: 60%;
+      height: 200px;
+      margin-right: 0;
+      border: 2.5px solid black;
+      background: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox1 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox2 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox3 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox4 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox5 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox6 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox7 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox8 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox9 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox10 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool img {
+        width: 50%; }
+      body main #section1 .customizeArea .controlTool .controlBoxBottom {
+        display: none; }
+    body main #section1 .customizeArea .controlBoxRight {
+      display: block;
+      width: 40%;
+      height: 200px;
+      border: 5px solid black;
+      background: #fff; }
+    body main #section1 .customizeArea .drawingBoardBox {
+      width: 100%; }
+      body main #section1 .customizeArea .drawingBoardBox .drawingBoard {
+        width: 90%;
+        height: 500px;
+        margin: 50px auto;
+        background: #e5e5e5; }
+  body main #section2 .matbase {
+    margin: 0 auto; }
+    body main #section2 .matbase .matbaseBox1 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox2 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox3 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox4 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox5 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox6 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; } }
+
+@media all and (max-width: 575px) and (min-width: 376px) {
+  body main #section1 .container .row .shopTitleText {
+    transform: translate(0, 120%);
+    width: 85%;
+    font-size: 45px; }
+    body main #section1 .container .row .shopTitleText::before {
+      font-size: 45px; }
+  body main #section1 .container .row .shopTitle {
+    height: 0px; }
+    body main #section1 .container .row .shopTitle .shopTitleContainer .titlePage1 {
+      width: 100%;
+      height: 200px; }
+    body main #section1 .container .row .shopTitle .shopTitleContainer .titlePage2 {
+      width: 100%;
+      height: 200px; }
+    body main #section1 .container .row .shopTitle .shopTitleContainer .titlePage3 {
+      display: none; }
+    body main #section1 .container .row .shopTitle .shopTitleContainer .titlePage4 {
+      display: none; }
+    body main #section1 .container .row .shopTitle .shopTitleContainer .titlePagePic {
+      width: 90%;
+      position: absolute;
+      top: 110px;
+      left: 10%; }
+  body main #section1 .container .row #conectionLine .iron_clip1 {
+    display: none; }
+  body main #section1 .container .row #conectionLine .iron_clip2 {
+    display: none; }
+  body main #section1 .shopItemContainer {
+    width: 95%; }
+    body main #section1 .shopItemContainer .itemPage0 {
+      width: 100%;
+      left: 0%;
+      top: 100px; }
+  body main #section1 .itemCardBox {
+    margin-top: 0px; }
+    body main #section1 .itemCardBox .itemCardAside {
+      display: none; }
+    body main #section1 .itemCardBox .itemCardContainer {
+      width: 100%;
+      padding-left: 0; }
+      body main #section1 .itemCardBox .itemCardContainer .itemCard1 {
+        width: 130px;
+        height: 130px;
+        margin: 0 20px;
+        border: 5px solid black;
+        background-color: #fff; }
+      body main #section1 .itemCardBox .itemCardContainer .itemCard2 {
+        width: 130px;
+        height: 130px;
+        margin: 0 20px;
+        border: 5px solid black;
+        background-color: #fff; }
+      body main #section1 .itemCardBox .itemCardContainer .itemCard3 {
+        width: 130px;
+        height: 130px;
+        margin: 0 20px;
+        border: 5px solid black;
+        background-color: #fff; }
+      body main #section1 .itemCardBox .itemCardContainer .itemCard4 {
+        width: 130px;
+        height: 130px;
+        margin: 0 20px;
+        border: 5px solid black;
+        background-color: #fff; }
+      body main #section1 .itemCardBox .itemCardContainer .itemCard2_1 {
+        width: 130px;
+        height: 130px;
+        margin: 0 20px;
+        border: 5px solid black;
+        background-color: #fff; }
+      body main #section1 .itemCardBox .itemCardContainer .itemCard2_2 {
+        width: 130px;
+        height: 130px;
+        margin: 0 20px;
+        border: 5px solid black;
+        background-color: #fff; }
+      body main #section1 .itemCardBox .itemCardContainer .line_top {
+        display: none; }
+      body main #section1 .itemCardBox .itemCardContainer .line_bottom {
+        display: none; }
+      body main #section1 .itemCardBox .itemCardContainer .itemCardTopRow {
+        display: flex;
+        flex-wrap: wrap; }
+        body main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard1 {
+          margin: 40px 5%;
+          transform: translate(0, 0%) rotate(10deg); }
+          body main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard1 img {
+            display: none; }
+        body main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard2 {
+          margin: 40px 5%;
+          transform: translate(0, 0%) rotate(355deg); }
+          body main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard2 img {
+            display: none; }
+        body main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 {
+          margin: 40px 5%;
+          transform: translate(0, 0%) rotate(10deg); }
+          body main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 img {
+            display: none; }
+        body main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard4 {
+          margin: 40px 5%;
+          transform: translate(0, 0%) rotate(355deg); }
+          body main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard4 img {
+            display: none; }
+        body main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard5 {
+          display: none; }
+      body main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow {
+        display: flex; }
+        body main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_1 {
+          margin: 40px 5%;
+          transform: translate(0%, 0%) rotate(350deg); }
+          body main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_1 img {
+            display: none; }
+        body main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_2 {
+          transform: translate(0%, 0%) rotate(15deg);
+          margin: 40px 5%; }
+          body main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_2 img {
+            display: none; }
+        body main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_3 {
+          display: none; }
+    body main #section1 .itemCardBox .filter_forSamll {
+      margin-top: 5%;
+      width: 100%;
+      border: 5px solid black;
+      height: 200px;
+      background-color: #fffcfa;
+      display: block;
+      z-index: 15; }
+      body main #section1 .itemCardBox .filter_forSamll h2 {
+        display: inline-block; }
+      body main #section1 .itemCardBox .filter_forSamll h3 {
+        display: inline-block; }
+  body main #section1 .customizeArea {
+    margin: 0 auto;
+    display: flex;
+    width: 95%;
+    flex-wrap: wrap; }
+    body main #section1 .customizeArea .controlTool {
+      display: flex;
+      flex-wrap: wrap;
+      width: 60%;
+      height: 200px;
+      margin-right: 0;
+      border: 2.5px solid black;
+      background: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox1 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox2 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox3 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox4 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox5 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox6 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox7 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox8 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox9 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool .controlBox10 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main #section1 .customizeArea .controlTool img {
+        width: 50%; }
+      body main #section1 .customizeArea .controlTool .controlBoxBottom {
+        display: none; }
+    body main #section1 .customizeArea .controlBoxRight {
+      display: block;
+      width: 40%;
+      height: 200px;
+      border: 5px solid black;
+      background: #fff; }
+    body main #section1 .customizeArea .drawingBoardBox {
+      width: 100%; }
+      body main #section1 .customizeArea .drawingBoardBox .drawingBoard {
+        width: 90%;
+        height: 300px;
+        margin: 50px auto;
+        background: #e5e5e5; }
+  body main #section2 .matbase {
+    margin: 0 auto; }
+    body main #section2 .matbase .matbaseBox1 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox2 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox3 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox4 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox5 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; }
+    body main #section2 .matbase .matbaseBox6 {
+      width: 15%;
+      height: 100px;
+      border: 2.5px solid black;
+      transform: skew(350deg);
+      background-color: #fff; } }
+
+@media all and (max-width: 375px) {
+  body main section .container .row .shopTitleText {
+    transform: translate(0, 120%);
+    width: 80%;
+    font-size: 45px; }
+    body main section .container .row .shopTitleText::before {
+      font-size: 45px; }
+  body main section .container .row .shopTitle {
+    height: 0px; }
+    body main section .container .row .shopTitle .shopTitleContainer .titlePage1 {
+      width: 100%;
+      height: 200px; }
+    body main section .container .row .shopTitle .shopTitleContainer .titlePage2 {
+      width: 100%;
+      height: 200px; }
+    body main section .container .row .shopTitle .shopTitleContainer .titlePage3 {
+      display: none; }
+    body main section .container .row .shopTitle .shopTitleContainer .titlePage4 {
+      display: none; }
+    body main section .container .row .shopTitle .shopTitleContainer .titlePagePic {
+      width: 95%;
+      position: absolute;
+      top: 110px;
+      left: 10%; }
+  body main section .container .row #conectionLine .iron_clip1 {
+    display: none; }
+  body main section .container .row #conectionLine .iron_clip2 {
+    display: none; }
+  body main section .shopItemContainer {
+    width: 95%; }
+    body main section .shopItemContainer .itemPage0 {
+      width: 100%;
+      left: 0%;
+      top: 100px; }
+  body main section .itemCardBox {
+    margin-top: 0px; }
+    body main section .itemCardBox .itemCardAside {
+      display: none; }
+    body main section .itemCardBox .itemCardContainer {
+      width: 95%;
+      padding-left: 0; }
+      body main section .itemCardBox .itemCardContainer .itemCard1 {
+        width: 130px;
+        height: 130px;
+        margin: 0 20px;
+        border: 5px solid black;
+        background-color: #fff; }
+      body main section .itemCardBox .itemCardContainer .itemCard2 {
+        width: 130px;
+        height: 130px;
+        margin: 0 20px;
+        border: 5px solid black;
+        background-color: #fff; }
+      body main section .itemCardBox .itemCardContainer .itemCard3 {
+        width: 130px;
+        height: 130px;
+        margin: 0 20px;
+        border: 5px solid black;
+        background-color: #fff; }
+      body main section .itemCardBox .itemCardContainer .itemCard4 {
+        width: 130px;
+        height: 130px;
+        margin: 0 20px;
+        border: 5px solid black;
+        background-color: #fff; }
+      body main section .itemCardBox .itemCardContainer .itemCard2_1 {
+        width: 130px;
+        height: 130px;
+        margin: 0 20px;
+        border: 5px solid black;
+        background-color: #fff; }
+      body main section .itemCardBox .itemCardContainer .itemCard2_2 {
+        width: 130px;
+        height: 130px;
+        margin: 0 20px;
+        border: 5px solid black;
+        background-color: #fff; }
+      body main section .itemCardBox .itemCardContainer .line_top {
+        display: none; }
+      body main section .itemCardBox .itemCardContainer .line_bottom {
+        display: none; }
+      body main section .itemCardBox .itemCardContainer .itemCardTopRow {
+        display: flex;
+        flex-wrap: wrap; }
+        body main section .itemCardBox .itemCardContainer .itemCardTopRow .itemCard1 {
+          margin: 40px 3%;
+          transform: translate(0, 0%) rotate(10deg); }
+          body main section .itemCardBox .itemCardContainer .itemCardTopRow .itemCard1 img {
+            display: none; }
+        body main section .itemCardBox .itemCardContainer .itemCardTopRow .itemCard2 {
+          margin: 40px 3%;
+          transform: translate(0, 0%) rotate(355deg); }
+          body main section .itemCardBox .itemCardContainer .itemCardTopRow .itemCard2 img {
+            display: none; }
+        body main section .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 {
+          margin: 40px 3%;
+          transform: translate(0, 0%) rotate(10deg); }
+          body main section .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 img {
+            display: none; }
+        body main section .itemCardBox .itemCardContainer .itemCardTopRow .itemCard4 {
+          margin: 40px 3%;
+          transform: translate(0, 0%) rotate(355deg); }
+          body main section .itemCardBox .itemCardContainer .itemCardTopRow .itemCard4 img {
+            display: none; }
+        body main section .itemCardBox .itemCardContainer .itemCardTopRow .itemCard5 {
+          display: none; }
+      body main section .itemCardBox .itemCardContainer .itemCardBottomRow {
+        display: flex; }
+        body main section .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_1 {
+          margin: 40px 3%;
+          transform: translate(0%, 0%) rotate(350deg); }
+          body main section .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_1 img {
+            display: none; }
+        body main section .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_2 {
+          transform: translate(0%, 0%) rotate(15deg);
+          margin: 40px 3%; }
+          body main section .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_2 img {
+            display: none; }
+        body main section .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_3 {
+          display: none; }
+    body main section .itemCardBox .filter_forSamll {
+      margin-top: 5%;
+      width: 100%;
+      border: 5px solid black;
+      height: 200px;
+      background-color: #fffcfa;
+      display: block;
+      z-index: 15; }
+      body main section .itemCardBox .filter_forSamll h2 {
+        display: inline-block; }
+      body main section .itemCardBox .filter_forSamll h3 {
+        display: inline-block; }
+  body main section .customizeArea {
+    margin: 0 auto;
+    display: flex;
+    width: 95%;
+    flex-wrap: wrap; }
+    body main section .customizeArea .controlTool {
+      display: flex;
+      flex-wrap: wrap;
+      width: 60%;
+      height: 200px;
+      margin-right: 0;
+      border: 2.5px solid black;
+      background: #fff; }
+      body main section .customizeArea .controlTool .controlBox1 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main section .customizeArea .controlTool .controlBox2 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main section .customizeArea .controlTool .controlBox3 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main section .customizeArea .controlTool .controlBox4 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main section .customizeArea .controlTool .controlBox5 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main section .customizeArea .controlTool .controlBox6 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main section .customizeArea .controlTool .controlBox7 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main section .customizeArea .controlTool .controlBox8 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main section .customizeArea .controlTool .controlBox9 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main section .customizeArea .controlTool .controlBox10 {
+        text-align: center;
+        width: 20%;
+        border: 2.5px solid black;
+        background-color: #fff; }
+      body main section .customizeArea .controlTool img {
+        width: 50%; }
+      body main section .customizeArea .controlTool .controlBoxBottom {
+        display: none; }
+    body main section .customizeArea .controlBoxRight {
+      display: block;
+      width: 40%;
+      height: 200px;
+      border: 5px solid black;
+      background: #fff; }
+    body main section .customizeArea .drawingBoardBox {
+      width: 100%; }
+      body main section .customizeArea .drawingBoardBox .drawingBoard {
+        width: 90%;
+        height: 300px;
+        margin: 50px auto;
+        background: #e5e5e5; } }
 
 /*
  *  vender
