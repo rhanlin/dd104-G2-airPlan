@@ -1,6 +1,8 @@
 /*
  *  base
+ 
  */
+@import "base/var";
 @import "base/color";
 @import "base/reset";
 @import "base/keyframe";
@@ -11,6 +13,14 @@
 @import "./mixin/mixins";
 @import "./module/btn";
 @import "./module/box";
+@import "./mixin/3dtext"; //標題3D文字
+@import "./mixin/respond"; //響應式尺寸判斷式
+@import "./mixin/shop_titlePage"; //header標題的紙張
+@import "./mixin/shop_itemPage"; //商城素材的紙張
+@import "./mixin/shop_itemCard"; //商城素材卡片
+@import "./mixin/shop_controlBox"; //商城工具元件
+@import "./mixin/shop_matbaseBox"; //商城客製slide
+@import "./mixin/shop_emptyBtn"; //商城客製空白按鈕
 
 /*
  *  module
@@ -19,9 +29,10 @@
 /*
  *  pages
  */
- @import "./page/index";
- @import "./page/write-letter";
+@import "./page/index";
+@import "./page/write-letter";
+@import "./page/shop";
 
- /*
+/*
  *  vender
  */
