@@ -10075,6 +10075,95 @@ a.text-dark:hover, a.text-dark:focus {
         margin: 50px auto;
         background: #e5e5e5; } }
 
+/* 我的倉庫CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+main {
+  border: 1px solid royalblue;
+  display: flex;
+  width: 1200px;
+  margin: 0 auto; }
+
+.cav_leftWrap {
+  border: 1px solid black;
+  display: inline-block;
+  width: 40%; }
+  .cav_leftWrap .cav_topBlock {
+    border: 1px solid green;
+    display: inline-block; }
+  .cav_leftWrap .cav_prodWrap {
+    border: 1px solid firebrick;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+
+.cav_prod {
+  border: 1px solid darkcyan;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  overflow: hidden; }
+
+.cav_rightWrap {
+  border: 1px solid black;
+  display: inline-block;
+  width: 55%;
+  margin-left: 5%; }
+  .cav_rightWrap > ul {
+    border: 1px solid black;
+    list-style: none;
+    display: flex;
+    justify-content: space-between; }
+    .cav_rightWrap > ul > li {
+      border: 1px solid black;
+      width: 33.33%;
+      text-align: center; }
+      .cav_rightWrap > ul > li > a {
+        cursor: pointer; }
+  .cav_rightWrap .cav_tabWrap {
+    border: 2px solid black; }
+    .cav_rightWrap .cav_tabWrap .cav_prodWrap {
+      border: 1px solid red;
+      width: 100%;
+      height: 580px;
+      overflow: scroll;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; }
+    .cav_rightWrap .cav_tabWrap .tab {
+      display: none; }
+    .cav_rightWrap .cav_tabWrap .tab.-on {
+      display: inline-block; }
+  .cav_rightWrap .cav_pc {
+    border: 2px solid black;
+    width: 80%;
+    margin: 0 auto;
+    display: flex; }
+    .cav_rightWrap .cav_pc .cav_paper {
+      width: 50%; }
+    .cav_rightWrap .cav_pc .cav_coin {
+      width: 50%; }
+
+.userSetting_body {
+  margin: 0 auto; }
+  .userSetting_body .userSetting_main .userSetting_mem {
+    height: 800px; }
+    .userSetting_body .userSetting_main .userSetting_mem .userSetting_memKanban {
+      width: 45%;
+      background-color: #8fc5b0; }
+      .userSetting_body .userSetting_main .userSetting_mem .userSetting_memKanban .userSetting_memData, .userSetting_body .userSetting_main .userSetting_mem .userSetting_memKanban .userSetting_airCoin, .userSetting_body .userSetting_main .userSetting_mem .userSetting_memKanban .userSetting_color {
+        width: 30%;
+        background-color: goldenrod;
+        display: inline-block;
+        border-bottom: 2px solid black;
+        text-align: center; }
+      .userSetting_body .userSetting_main .userSetting_mem .userSetting_memKanban .userSetting_robotB1, .userSetting_body .userSetting_main .userSetting_mem .userSetting_memKanban .userSetting_conveyorB1 {
+        display: block; }
+
 .chat-body {
   margin: 0; }
 
