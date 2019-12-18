@@ -4,11 +4,16 @@
 @mixin box-modul($box-module,$width:70vw,$height:30vw){
     @each $title,$color in $box-module{ 
         .box-#{$title}{
-            border: .4vw solid #212121;
-            background-color: $color;
+            border: .2vw solid #212121;
+            // background-color: $color;
             width: $width;
             height: $height;
             margin: 0 auto;
+            z-index: 9;
+            position: relative;
+            top: -5vw;
+            background: radial-gradient(#000000 15%, $color 15%);
+            background-size: 15px 15px;
         }
     }
 }

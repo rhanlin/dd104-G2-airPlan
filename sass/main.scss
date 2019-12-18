@@ -1,6 +1,7 @@
 /*
  *  base
  */
+@import "base/var";
 @import "base/color";
 @import "base/reset";
 @import "base/keyframe";
@@ -9,19 +10,26 @@
  *  mixin
  */
 @import "./mixin/mixins";
-@import "./module/btn";
-@import "./module/box";
 
 /*
  *  module
  */
+@import "./module/btn";
+@import "./module/box";
 
 /*
  *  pages
  */
- @import "./page/index";
- @import "./page/write-letter";
+@import "./page/index";
+@import "./page/write-letter";
+@import "./page/shop";
 
- /*
+/*
+ *  layout
+ */
+@import "./layout/header";
+@import "./layout/footer";
+@import "./layout/nav";
+/*
  *  vender
  */
