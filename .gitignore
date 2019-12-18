@@ -4,5 +4,6 @@ gulpfile.js
 node_modules/
 package-lock.json
 package.json
-js/
+js/clouds.js
+js/main.js
 dist/

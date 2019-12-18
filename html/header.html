@@ -1,28 +1,23 @@
-<link
-    href="./css/main.css"
-    rel="stylesheet"
-    type="text/css"
->
-<link
-    href="./css/style.css"
-    rel="stylesheet"
-    type="text/css"
->
+<link href="./css/main.css" rel="stylesheet" type="text/css">
+<link href="./css/style.css" rel="stylesheet" type="text/css">
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script src="./js/kloud.min.js"></script>
-<header class="header">
+
+<header>
     <canvas id="myClouds"></canvas>
     <div class="view">
         <div class="clouds">
             <div class="cloud_1"></div>
             <div class="cloud_2"></div>
+            <div class="cloud_3"></div>
+            <div class="cloud_4"></div>
             <div class="cloud_5"></div>
-            <div class="cloud_6"></div>
-            <div class="cloud_7"></div>
-            <div class="cloud_8"></div>
+
             <div class="cloud_10"></div>
             <div class="cloud_11"></div>
             <div class="cloud_12"></div>
+            <div class="cloud_13"></div>
+            <div class="cloud_14"></div>
             <div class="cloud_15"></div>
             <div class="cloud_16"></div>
             <div class="cloud_17"></div>
@@ -30,20 +25,21 @@
             <div class="cloud_19"></div>
             <div class="cloud_20"></div>
         </div>
-        </div>
+    </div>
+    <div class="white-space-bg"></div>
+
     <div class="box-blue">
         <!-- <div class="box-white"></div>
             <div class="box-white"></div> -->
     </div>
     <script>
         $('#myClouds').Klouds({
-            layerCount: 5,
             speed: 1,
-            layerCount: 6,
-
-            cloudColor1: '#f3de6b',
-            cloudColor2: 'rgba(240, 138, 139, 0.1)',
-            bgColor: '#82afd9',
+            layerCount: 4,
+            cloudColor1: '#82afd9',
+            cloudColor2: '#F7FAFD',
+            // bgColor1: '#82afd9',
+            bgColor: '#ffffff',
         })
     </script>
 </header>
