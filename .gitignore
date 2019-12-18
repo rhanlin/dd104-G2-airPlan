@@ -2,8 +2,8 @@
 btn_all.html
 gulpfile.js
 node_modules/
-package-lock.json
-package.json
 js/clouds.js
 js/main.js
 dist/
+css/main.css.map
+

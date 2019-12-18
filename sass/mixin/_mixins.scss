@@ -1,6 +1,6 @@
-@import "btn";
-@import "box";
-@import "cloud";
+@import "btn"; //按鈕
+@import "box"; //每一個框的產生器
+@import "cloud";//浮動的雲
 
 
 @import "3dtext"; //標題3D文字
@@ -11,3 +11,7 @@
 @import "shop_controlBox"; //商城工具元件
 @import "shop_matbaseBox"; //商城客製slide
 @import "shop_emptyBtn"; //商城客製空白按鈕
+
+
+@import "chatroom_marginAuto";//聊天室..
+@import "chatroom_border";//聊天室...

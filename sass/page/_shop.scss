@@ -1,1560 +1,1594 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/owl.carousel/src/scss/owl.carousel.scss";
+@import "../../node_modules/owl.carousel/src/scss/owl.theme.default.scss";
+
 .shop-body {
-    background-color: #eeddd6;
+  background-color: #eeddd6;
+  width: 100%;
+
+  .shop-header {
+    width: 100%;
+    height: 100vh;
+    background-image: url('/image/point.jpg');
+    opacity: 0.05;
+
+  }
+
+  .shop-main {
     width: 100%;
 
-    .shop-header {
-        width: 100%;
-        height: 100vh;
-        background-image: url('/image/point.jpg');
-        opacity: 0.05;
+    #section1 {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1500px;
 
-    }
-
-    .shop-main {
-        width: 100%;
-
-        #section1 {
+      .container {
+        .row {
+          .shopTitleText {
+            transform: translate(0, 80%);
+            width: 75%;
             margin: 0 auto;
+            position: relative;
+            font-weight: 900;
+            font-size: 140px;
+            color: #dbcd00;
+            @include stroke(2, #0f0f0f);
+            z-index: 10;
+
+            &::before {
+              content: '客製化商城';
+              position: absolute;
+              left: -1%;
+              top: -0.5%;
+              font-weight: 900;
+              font-size: 140px;
+              color: #83afd9;
+              @include stroke(2, #0f0f0f);
+            }
+          }
+
+          .shopTitle {
             width: 100%;
-            max-width: 1500px;
+            height: 340px;
 
-            .container {
-                .row {
-                    .shopTitleText {
-                        transform: translate(0, 80%);
-                        width: 75%;
-                        margin: 0 auto;
-                        position: relative;
-                        font-weight: 900;
-                        font-size: 140px;
-                        color: #dbcd00;
-                        @include stroke(2, #0f0f0f);
-                        z-index: 10;
+            .shopTitleContainer {
+              margin: 0 auto;
+              width: 100%;
+              position: relative;
+              @include titlePage(4);
 
-                        &::before {
-                            content: '客製化商城';
-                            position: absolute;
-                            left: -3%;
-                            font-weight: 900;
-                            font-size: 140px;
-                            color: #83afd9;
-                            @include stroke(2, #0f0f0f);
-                        }
-                    }
+              .titlePagePic {
+                width: 90%;
+                position: absolute;
+                top: 85px;
+                left: 6%;
 
-                    .shopTitle {
-                        width: 100%;
-                        height: 340px;
-
-                        .shopTitleContainer {
-                            margin: 0 auto;
-                            width: 100%;
-                            position: relative;
-                            @include titlePage(4);
-
-                            .titlePagePic {
-                                width: 90%;
-                                position: absolute;
-                                top: 85px;
-                                left: 6%;
-
-                                img {
-                                    width: 100%;
-                                }
-                            }
-                        }
-                    }
+                img {
+                  width: 100%;
                 }
+              }
+            }
+          }
+        }
 
-                .row {
-                    #conectionLine {
-                        margin: 0 auto;
-                        position: relative;
-                        height: 200px;
-                        margin: 0 auto;
+        .row {
+          #conectionLine {
+            margin: 0 auto;
+            position: relative;
+            height: 200px;
+            margin: 0 auto;
 
 
-                        .iron_clip1 {
-                            width: 15%;
-                            position: absolute;
-                            left: 20%;
-                            top: -29%;
-                            z-index: 10;
-                        }
-
-                        .iron_clip2 {
-                            width: 15%;
-                            position: absolute;
-                            right: 5%;
-                            top: -29%;
-                            z-index: 10;
-                        }
-
-                    }
-                }
+            .iron_clip1 {
+              width: 15%;
+              position: absolute;
+              left: 20%;
+              top: -29%;
+              z-index: 10;
             }
 
-            .shopItemContainer {
-                margin: 0 auto;
-                width: 85%;
-                position: relative;
-                @include itemPage(2);
-
-
-                .itemPage0 {
-                    position: absolute;
-                    width: 90%;
-                    height: 750px;
-                    background-color: #82afd9;
-                    top: 170px;
-                    left: 15%;
-                    border: 5px solid black;
-
-                }
+            .iron_clip2 {
+              width: 15%;
+              position: absolute;
+              right: 5%;
+              top: -29%;
+              z-index: 10;
             }
 
-
-
-
-            .itemCardBox {
-                margin-top: 100px;
-                width: 100%;
-                display: flex;
-                flex-wrap: wrap;
-
-                .itemCardAside {
-                    width: 20%;
-                    height: 900px;
-                    padding: 90px;
-                    border: 2px solid red;
-
-                    h2 {
-                        font-weight: 900;
-                    }
-
-                    h3 {
-                        font-weight: 900;
-                        margin: 40px 0;
-                    }
-                }
-
-
-                .itemCardContainer {
-                    width: 80%;
-                    padding-top: 150px;
-                    padding-left: 20px;
-                    border: 2px solid rgb(1, 172, 58);
-
-                    @include itemCardRow1(5);
-                    @include itemCardRow2(3);
-
-                    .line_top {
-                        width: 820px;
-                        transform: translate(5%, -10%);
-                    }
-
-
-
-                    .itemCardTopRow {
-                        display: flex;
-
-                        .itemCard1 {
-                            transform: translate(0, -50%) rotate(15deg);
-
-                            img {
-                                transform: translate(0%, -70%) rotate(330deg);
-                            }
-                        }
-
-                        ;
-
-                        .itemCard2 {
-                            transform: translate(0, -30%) rotate(355deg);
-
-                            img {
-                                transform: translate(70%, -70%) rotate(360deg);
-                            }
-                        }
-
-                        ;
-
-                        .itemCard3 {
-                            transform: translate(0, -10%) rotate(360deg);
-
-                            .itemCard3Img_1 {
-                                transform: translate(5%, -70%) rotate(350deg);
-                            }
-
-                            .itemCard3Img_2 {
-                                transform: translate(5%, -70%) rotate(350deg);
-                            }
-
-                        }
-
-                        ;
-
-                        .itemCard4 {
-                            transform: translate(0, 0%) rotate(350deg);
-
-                            img {
-
-                                transform: translate(90%, -70%) rotate(0deg);
-                            }
-                        }
-
-                        ;
-
-                        .itemCard5 {
-                            transform: translate(0, -10%) rotate(360deg);
-
-                            img {
-                                transform: translate(0%, -80%) rotate(350deg);
-                            }
-                        }
-
-                        ;
-                    }
-
-                    .line_bottom {
-                        width: 600px;
-                        transform: translate(10%, 30%);
-                    }
-
-                    .itemCardBottomRow {
-                        display: flex;
-
-                        .itemCard2_1 {
-                            transform: translate(30%, 0%) rotate(350deg);
-                            margin-top: 50px;
-
-                            img {
-
-                                transform: translate(100%, -80%) rotate(360deg);
-                            }
-                        }
-
-                        ;
-
-                        .itemCard2_2 {
-                            transform: translate(40%, 0%) rotate(15deg);
-                            margin-top: 30px;
-
-                            img {
-
-                                transform: translate(0%, -70%) rotate(340deg);
-                            }
-                        }
-
-                        ;
-
-                        .itemCard2_3 {
-                            transform: translate(30%, 0%) rotate(0deg);
-
-                            img {
-
-                                transform: translate(15%, -70%) rotate(330deg);
-                            }
-                        }
-
-                        ;
-                    }
-                }
-
-                .filter_forSamll {
-                    display: none;
-
-                }
-            }
-
-
-
-
-
-            #pile {
-                width: 100%;
-                height: 500px;
-
-                .pileBox {
-                    width: 100%;
-                    height: 800px;
-                    position: relative;
-
-
-                    .pile {
-                        margin: 0 auto;
-                        top: 0;
-                        left: 0;
-                        width: 90%;
-                        position: absolute;
-                    }
-
-
-                    .clock {
-                        width: 18%;
-                        position: absolute;
-                        left: 0%;
-                        top: 22%
-                    }
-
-                    .redWheel {
-                        width: 18%;
-                        position: absolute;
-                        left: 52%;
-                        top: 6%
-                    }
-
-                    .perpul {
-                        width: 18%;
-                        position: absolute;
-                        left: 75%;
-                        top: 50%
-                    }
-                }
-            }
-
-            .container {
-                .customize {
-
-                    .customizeTitleText {
-                        padding-top: 5%;
-                        transform: translate(0, 80%);
-                        width: 90%;
-                        margin: 0 auto;
-                        position: relative;
-                        font-weight: 900;
-                        font-size: 140px;
-                        color: #dbcd00;
-                        @include stroke(2, #0f0f0f);
-                        z-index: 10;
-
-                        &::before {
-                            content: 'NEXT';
-                            text-align: center;
-                            position: absolute;
-                            left: -1%;
-                            font-weight: 900;
-                            font-size: 140px;
-                            color: #83afd9;
-                            @include stroke(2, #0f0f0f);
-                        }
-                    }
-
-                    .customizeTitle {
-
-                        width: 80%;
-                        height: 250px;
-                        border: 5px solid black;
-                        background: #fff;
-                        margin-bottom: 3%;
-
-                    }
-                }
-            }
-
-            .customizeArea {
-                margin: 0 auto;
-                display: flex;
-                width: 85%;
-                flex-wrap: wrap;
-
-                .controlTool {
-
-                    display: flex;
-                    flex-wrap: wrap;
-                    width: 17%;
-                    margin-right: 3%;
-                    border: 5px solid black;
-                    background: #fff;
-
-                    @include controlBox(10);
-
-                    img {
-                        padding-top: 25%;
-                        width: 50%;
-                    }
-
-                    .controlBoxBottom {
-                        width: 100%;
-                        height: 230px;
-                        border: 5px solid black;
-                        background: #fff;
-                    }
-                }
-
-                .controlBoxRight {
-                    display: none;
-                }
-
-
-                .drawingBoardBox {
-                    width: 80%;
-                    border: 5px solid black;
-                    background: #8ebfbf;
-
-                    .drawingBoard {
-                        width: 90%;
-                        height: 50%;
-                        margin: 50px auto;
-                        background: #e5e5e5;
-
-                    }
-
-                    .btns {
-                        width: 100%;
-                        display: flex;
-
-                        #switchBtn {
-                            width: 20%;
-
-                            img {
-                                width: 100%;
-                                padding: 0 5%;
-                            }
-                        }
-
-                        #emptyBtnBox {
-                            width: 40%;
-                            @include emptyBtn(6);
-                        }
-
-                    }
-
-
-                }
-            }
-
+          }
+        }
+      }
+
+      .shopItemContainer {
+        margin: 0 auto;
+        width: 85%;
+        position: relative;
+        @include itemPage(2);
+
+
+        .itemPage0 {
+          position: absolute;
+          width: 90%;
+          height: 750px;
+          background-color: #82afd9;
+          top: 170px;
+          left: 15%;
+          border: 5px solid black;
+
+        }
+      }
+
+
+
+
+      .itemCardBox {
+        margin-top: 100px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+
+        .itemCardAside {
+          width: 20%;
+          height: 900px;
+          padding: 90px;
+          border: 2px solid red;
+
+          h2 {
+            font-weight: 900;
+          }
+
+          h3 {
+            font-weight: 900;
+            margin: 40px 0;
+          }
         }
 
 
-        #section2 {
-            width: 100%;
+        .itemCardContainer {
+          width: 80%;
+          padding-top: 150px;
+          padding-left: 20px;
+          border: 2px solid rgb(1, 172, 58);
 
-            .matbase {
-                background-color: #fff;
-                border: 5px solid black;
-                display: flex;
-                flex-wrap: wrap;
-                width: 100%;
-                @include matbaseBox(12);
+          @include itemCardRow1(5);
+          @include itemCardRow2(3);
 
-                .owl-prev {
-                    background-image: url('../../image/control_bar-01.svg');
-                    width: 100px;
-                    height: 50px;
-                    background-repeat: no-repeat;
+          .line_top {
+            width: 820px;
+            transform: translate(5%, -10%);
+          }
 
-                    span {
-                        display: none;
-                    }
-                }
 
-                .owl-next {
-                    background-image: url('../../image/control_bar-01.svg');
-                    width: 100px;
-                    height: 50px;
-                    background-repeat: no-repeat;
 
-                    span {
-                        display: none;
-                    }
-                }
+          .itemCardTopRow {
+            display: flex;
+
+            .itemCard1 {
+              transform: translate(0, -50%) rotate(15deg);
+
+              img {
+                transform: translate(0%, -70%) rotate(330deg);
+              }
             }
+
+            ;
+
+            .itemCard2 {
+              transform: translate(0, -30%) rotate(355deg);
+
+              img {
+                transform: translate(70%, -70%) rotate(360deg);
+              }
+            }
+
+            ;
+
+            .itemCard3 {
+              transform: translate(0, -10%) rotate(360deg);
+
+              .itemCard3Img_1 {
+                transform: translate(5%, -70%) rotate(350deg);
+              }
+
+              .itemCard3Img_2 {
+                transform: translate(5%, -70%) rotate(350deg);
+              }
+
+            }
+
+            ;
+
+            .itemCard4 {
+              transform: translate(0, 0%) rotate(350deg);
+
+              img {
+
+                transform: translate(90%, -70%) rotate(0deg);
+              }
+            }
+
+            ;
+
+            .itemCard5 {
+              transform: translate(0, -10%) rotate(360deg);
+
+              img {
+                transform: translate(0%, -80%) rotate(350deg);
+              }
+            }
+
+            ;
+          }
+
+          .line_bottom {
+            width: 600px;
+            transform: translate(10%, 30%);
+          }
+
+          .itemCardBottomRow {
+            display: flex;
+
+            .itemCard2_1 {
+              transform: translate(30%, 0%) rotate(350deg);
+              margin-top: 50px;
+
+              img {
+
+                transform: translate(100%, -80%) rotate(360deg);
+              }
+            }
+
+            ;
+
+            .itemCard2_2 {
+              transform: translate(40%, 0%) rotate(15deg);
+              margin-top: 30px;
+
+              img {
+
+                transform: translate(0%, -70%) rotate(340deg);
+              }
+            }
+
+            ;
+
+            .itemCard2_3 {
+              transform: translate(30%, 0%) rotate(0deg);
+
+              img {
+
+                transform: translate(15%, -70%) rotate(330deg);
+              }
+            }
+
+            ;
+          }
         }
+
+        .filter_forSamll {
+          display: none;
+
+        }
+      }
+
     }
+
+
+
+    #pile {
+      margin-left: 15%;
+      width:85%;
+      height: 500px;
+      margin: 0 auto;
+
+
+      .pile {
+        margin-left: 10%;
+        width: 90%;
+        min-width: 1920px;
+        margin: 0 auto;
+        height: 2000px;
+        background-image: url("/img/product/decorate/pile.png");
+        background-repeat: no-repeat;
+        position: relative;
+        z-index: 15;
+
+
+
+        .clock {
+          // width: 100%;
+          padding: 100%;
+          background-image: url("../../img/product/decorate/clock.png");
+          background-repeat: no-repeat;
+          position: absolute;
+          left: 0%;
+          top: 21%
+        }
+
+        .redWheel{
+          // width: 100%;
+          padding: 100%;
+          background-image: url("../../img/product/decorate/redWheel.png");
+          background-repeat: no-repeat;
+          position: absolute;
+          left: 44%;
+          top:6%
+        }
+
+        .perpul {
+        //  width: 100%;
+         padding: 100%;
+          background-image: url("../../img/product/decorate/perpul.png");
+          background-repeat: no-repeat;
+          position: absolute;
+          left:65%;
+          top: 29%
+        }
+      }
+    }
+
+    .container {
+      .customize {
+
+        .customizeTitleText {
+          padding-top: 5%;
+          transform: translate(0, 80%);
+          width: 90%;
+          margin: 0 auto;
+          position: relative;
+          font-weight: 900;
+          font-size: 140px;
+          color: #dbcd00;
+          @include stroke(2, #0f0f0f);
+          z-index: 10;
+
+          &::before {
+            content: 'NEXT';
+            text-align: center;
+            position: absolute;
+            left: -1%;
+            font-weight: 900;
+            font-size: 140px;
+            color: #83afd9;
+            @include stroke(2, #0f0f0f);
+          }
+        }
+
+        .customizeTitle {
+
+          width: 80%;
+          height: 250px;
+          border: 5px solid black;
+          background: #fff;
+          margin-bottom: 3%;
+
+        }
+      }
+    }
+
+    #section2 {
+      max-width: 1500px;
+      margin: 0 auto;
+      .customizeArea {
+        margin: 0 auto;
+        display: flex;
+        width: 85%;
+        flex-wrap: wrap;
+
+        .controlTool {
+
+          display: flex;
+          flex-wrap: wrap;
+          width: 17%;
+          margin-right: 3%;
+          border: 5px solid black;
+          background: #fff;
+
+          @include controlBox(10);
+
+          img {
+            padding: 25% 0;
+            width: 50%;
+          }
+
+          .controlBoxBottom {
+            width: 100%;
+            height: 450px;
+            border: 5px solid black;
+            background: #fff;
+          }
+        }
+
+        .controlBoxRight {
+          display: none;
+        }
+
+
+        .drawingBoardBox {
+          width: 80%;
+          border: 5px solid black;
+          background: #8ebfbf;
+
+          .drawingBoard {
+            width: 90%;
+            height: 50%;
+            margin: 50px auto;
+            background: #e5e5e5;
+
+          }
+
+          .btns {
+            width: 100%;
+            display: flex;
+
+            #switchBtn {
+              width: 20%;
+
+              img {
+                width: 100%;
+                padding: 0 5%;
+              }
+            }
+
+            #emptyBtnBox {
+              width: 40%;
+              @include emptyBtn(6);
+            }
+
+          }
+
+
+        }
+      }
+
+
+
+    }
+
+    #section3 {
+      width: 100%;
+
+      .matbase {
+        background-color: #fff;
+        border: 5px solid black;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        @include matbaseBox(12);
+
+        .owl-prev {
+          background-image: url('/img/product/decorate/tool/control_bar-01.svg');
+          width: 100px;
+          height: 50px;
+          background-repeat: no-repeat;
+
+          span {
+            display: none;
+          }
+        }
+
+        .owl-next {
+          background-image: url('/img/product/decorate/tool/control_bar-01.svg');
+          width: 100px;
+          height: 50px;
+          background-repeat: no-repeat;
+
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }
 
 @include respond(desktop) {
-    //992px------1199px;
+  //992px------1199px;
 
-    body {
-        main {
-            #section1 {
-
-
-                .container {
-                    .row {
-
-                        .shopTitleText {
-                            width: 75%;
-                            font-size: 120px;
-
-                            &::before {
-                                font-size: 120px;
-                            }
-                        }
-
-                        .shopTitle {
-                            height: 290px;
-
-                            .shopTitleContainer {
-
-                                .titlePagePic {
-                                    width: 90%;
-                                    position: absolute;
-                                    top: 125px;
-                                    left: 5%;
-                                }
-                            }
-                        }
-                    }
-
-                    .row {
-                        #conectionLine {
-                            margin: 0 auto;
-                            position: relative;
-                            height: 200px;
-                            margin: 0 auto;
-
-                            .iron_clip1 {
-                                top: 0%;
-                            }
-
-                            .iron_clip2 {
-                                top: 0%;
-                                right: 10%;
-                            }
-
-                        }
-                    }
+  .shop-body {
+    .shop-main {
+      #section1 {
 
 
-                }
+        .container {
+          .row {
 
-                .itemCardBox {
+            .shopTitleText {
+              width: 75%;
+              font-size: 120px;
 
-
-                    .itemCardContainer {
-                        width: 80%;
-                        padding-top: 180px;
-                        @include itemCardRow1_lg(4);
-                        @include itemCardRow2_lg(3);
-
-                        .line_top {
-                            width: 720px;
-                            transform: translate(0, -15%);
-                        }
-
-                        .line_bottom {
-                            width: 500px;
-                            transform: translate(10%, 30%);
-                        }
-
-                        .itemCardTopRow {
-                            .itemCard3 {
-                                transform: translate(0, -10%) rotate(360deg);
-
-                                .itemCard3Img_1 {
-                                    transform: translate(2%, -70%) rotate(350deg);
-                                }
-
-                                .itemCard3Img_2 {
-                                    transform: translate(80%, -170%) rotate(350deg);
-                                }
-                            }
-
-                            ;
-
-                        }
-
-                        .itemCard5 {
-                            display: none;
-                        }
-
-                    }
-
-                    .filter_forSamll {
-                        display: none;
-                    }
-                }
+              &::before {
+                font-size: 120px;
+              }
             }
 
+            .shopTitle {
+              height: 290px;
 
+              .shopTitleContainer {
 
-            .customizeArea {
-
-                margin: 0 auto;
-                width: 95%;
-
-            }
-
-            #section2 {
-                .matbase {
-                    margin: 0 auto;
-                    @include matbaseBox_lg(12);
+                .titlePagePic {
+                  width: 90%;
+                  position: absolute;
+                  top: 125px;
+                  left: 5%;
                 }
+              }
             }
+          }
+
+          .row {
+            #conectionLine {
+              margin: 0 auto;
+              position: relative;
+              height: 200px;
+              margin: 0 auto;
+
+              .iron_clip1 {
+                top: 0%;
+              }
+
+              .iron_clip2 {
+                top: 0%;
+                right: 10%;
+              }
+
+            }
+          }
+
 
         }
+
+        .itemCardBox {
+
+
+          .itemCardContainer {
+            width: 80%;
+            padding-top: 180px;
+            @include itemCardRow1_lg(4);
+            @include itemCardRow2_lg(3);
+
+            .line_top {
+              width: 720px;
+              transform: translate(0, -15%);
+            }
+
+            .line_bottom {
+              width: 500px;
+              transform: translate(10%, 30%);
+            }
+
+            .itemCardTopRow {
+              .itemCard3 {
+                transform: translate(0, -10%) rotate(360deg);
+
+                .itemCard3Img_1 {
+                  transform: translate(2%, -70%) rotate(350deg);
+                }
+
+                .itemCard3Img_2 {
+                  transform: translate(80%, -170%) rotate(350deg);
+                }
+              }
+
+              ;
+
+            }
+
+            .itemCard5 {
+              display: none;
+            }
+
+          }
+
+          .filter_forSamll {
+            display: none;
+          }
+        }
+      }
+
+
+      #section2 {
+        .customizeArea {
+
+          margin: 0 auto;
+          width: 95%;
+
+        }
+      }
+
+      #section3 {
+
+        .matbase {
+          margin: 0 auto;
+          @include matbaseBox_lg(12);
+        }
+      }
+
     }
+  }
 
 }
 
 @include respond(mediumSize) {
 
-    //768px------991px;
-    body {
-        main {
-            #section1 {
+  //768px------991px;
+  .shop-body {
+    .shop-main {
+      #section1 {
 
 
-                .container {
-                    .row {
-                        .shopTitleText {
-                            width: 75%;
-                            font-size: 90px;
+        .container {
+          .row {
+            .shopTitleText {
+              width: 75%;
+              font-size: 90px;
 
-                            &::before {
-                                font-size: 90px;
-                            }
-                        }
-
-                        .shopTitle {
-                            height: 197px;
-
-                            .shopTitleContainer {
-                                @include itemCardRow1_md(3);
-                                @include itemCardRow2_md(3);
-
-                                .titlePagePic {
-                                    width: 90%;
-                                    // transform: translate(-10%, 0);
-                                    position: absolute;
-                                    top: 175px;
-                                    left: 3%;
-                                }
-                            }
-                        }
-                    }
-
-                    .row {
-                        #conectionLine {
-                            width: 40%;
-
-
-                            .iron_clip1 {
-                                top: 50%;
-                            }
-
-                            .iron_clip2 {
-                                top: 50%;
-                                right: 10%;
-                            }
-
-                        }
-                    }
-                }
-
-
-
-                .shopItemContainer {
-
-
-                    .itemPage0 {
-                        width: 100%;
-                        left: 5%;
-                    }
-                }
-
-
-
-
-                .itemCardBox {
-
-                    .itemCardAside {
-                        display: none;
-                    }
-
-                    .itemCardContainer {
-                        width: 100%;
-                        padding-left: 80px;
-                        @include itemCardRow1_md(4);
-                        @include itemCardRow2_md(3);
-
-                        .line_top {
-                            width: 600px;
-                            transform: translate(5%, -25%);
-                        }
-
-                        .line_bottom {
-                            width: 500px;
-                            transform: translate(10%, 80%);
-                        }
-
-                        .itemCardTopRow {
-                            .itemCard3 {
-                                transform: translate(0, -10%) rotate(360deg);
-
-                                .itemCard3Img_1 {
-                                    transform: translate(2%, -70%) rotate(350deg);
-                                }
-
-                                .itemCard3Img_2 {
-                                    transform: translate(80%, -170%) rotate(350deg);
-                                }
-                            }
-
-                            ;
-
-                            .itemCard5 {
-                                display: none;
-                            }
-
-                        }
-
-                        .itemCardBottomRow {
-
-                            .itemCard2_1 {
-                                margin-top: 100px;
-
-                            }
-
-                            ;
-
-                            .itemCard2_2 {
-
-                                margin-top: 80px;
-                            }
-
-                            ;
-
-                            .itemCard2_3 {
-
-                                margin-top: 50px;
-
-                            }
-
-                            ;
-                        }
-                    }
-
-                    .filter_forSamll {
-                        margin-top: 5%;
-                        width: 70%;
-                        border: 5px solid black;
-                        height: 200px;
-                        background-color: rgb(255, 252, 250);
-                        display: block;
-                        z-index: 15;
-
-                        h2 {
-                            display: inline-block;
-                        }
-
-                        h3 {
-                            display: inline-block;
-                        }
-                    }
-                }
-
-                .customizeArea {
-                    margin: 0 auto;
-                    display: flex;
-                    width: 95%;
-                    flex-wrap: wrap;
-
-                    .controlTool {
-                        display: flex;
-                        flex-wrap: wrap;
-                        width: 60%;
-                        height: 200px;
-                        margin-right: 0;
-                        border: 2.5px solid black;
-                        background: #fff;
-
-                        @include controlBox_md(10);
-
-                        img {
-                            width: 50%;
-                        }
-
-                        .controlBoxBottom {
-                            display: none;
-                        }
-                    }
-
-                    .controlBoxRight {
-                        display: block;
-                        width: 40%;
-                        height: 200px;
-                        border: 5px solid black;
-                        background: #fff;
-                    }
-
-                    .drawingBoardBox {
-                        width: 100%;
-
-                        .drawingBoard {
-                            width: 90%;
-                            height: 500px;
-                            margin: 50px auto;
-                            background: #e5e5e5;
-
-                        }
-                    }
-                }
+              &::before {
+                font-size: 90px;
+              }
             }
 
-            #section2 {
-                .matbase {
-                    margin: 0 auto;
-                    @include matbaseBox_md(12);
+            .shopTitle {
+              height: 197px;
+
+              .shopTitleContainer {
+                @include itemCardRow1_md(3);
+                @include itemCardRow2_md(3);
+
+                .titlePagePic {
+                  width: 90%;
+                  // transform: translate(-10%, 0);
+                  position: absolute;
+                  top: 175px;
+                  left: 3%;
                 }
+              }
             }
+          }
+
+          .row {
+            #conectionLine {
+              width: 40%;
 
 
+              .iron_clip1 {
+                top: 50%;
+              }
+
+              .iron_clip2 {
+                top: 50%;
+                right: 10%;
+              }
+
+            }
+          }
         }
+
+
+
+        .shopItemContainer {
+
+
+          .itemPage0 {
+            width: 100%;
+            left: 5%;
+          }
+        }
+
+
+
+
+        .itemCardBox {
+
+          .itemCardAside {
+            display: none;
+          }
+
+          .itemCardContainer {
+            width: 100%;
+            padding-left: 80px;
+            @include itemCardRow1_md(4);
+            @include itemCardRow2_md(3);
+
+            .line_top {
+              width: 600px;
+              transform: translate(5%, -25%);
+            }
+
+            .line_bottom {
+              width: 500px;
+              transform: translate(10%, 80%);
+            }
+
+            .itemCardTopRow {
+              .itemCard3 {
+                transform: translate(0, -10%) rotate(360deg);
+
+                .itemCard3Img_1 {
+                  transform: translate(2%, -70%) rotate(350deg);
+                }
+
+                .itemCard3Img_2 {
+                  transform: translate(80%, -170%) rotate(350deg);
+                }
+              }
+
+              ;
+
+              .itemCard5 {
+                display: none;
+              }
+
+            }
+
+            .itemCardBottomRow {
+
+              .itemCard2_1 {
+                margin-top: 100px;
+
+              }
+
+              ;
+
+              .itemCard2_2 {
+
+                margin-top: 80px;
+              }
+
+              ;
+
+              .itemCard2_3 {
+
+                margin-top: 50px;
+
+              }
+
+              ;
+            }
+          }
+
+          .filter_forSamll {
+            margin-top: 5%;
+            width: 70%;
+            border: 5px solid black;
+            height: 200px;
+            background-color: rgb(255, 252, 250);
+            display: block;
+            z-index: 15;
+
+            h2 {
+              display: inline-block;
+            }
+
+            h3 {
+              display: inline-block;
+            }
+          }
+        }
+
+        #section2 {
+          .customizeArea {
+            margin: 0 auto;
+            display: flex;
+            width: 95%;
+            flex-wrap: wrap;
+
+            .controlTool {
+              display: flex;
+              flex-wrap: wrap;
+              width: 60%;
+              height: 200px;
+              margin-right: 0;
+              border: 2.5px solid black;
+              background: #fff;
+
+              @include controlBox_md(10);
+
+              img {
+                width: 50%;
+              }
+
+              .controlBoxBottom {
+                display: none;
+              }
+            }
+
+            .controlBoxRight {
+              display: block;
+              width: 40%;
+              height: 200px;
+              border: 5px solid black;
+              background: #fff;
+            }
+
+            .drawingBoardBox {
+              width: 100%;
+
+              .drawingBoard {
+                width: 90%;
+                height: 500px;
+                margin: 50px auto;
+                background: #e5e5e5;
+
+              }
+            }
+          }
+        }
+      }
+
+      #section3 {
+
+        .matbase {
+          margin: 0 auto;
+          @include matbaseBox_md(12);
+        }
+      }
+
+
     }
+  }
 }
 
 @include respond(small) {
 
-    //576px--767px
-    body {
-        main {
-            #section1 {
+  //576px--767px
+  .shop-body {
+    .shop-main {
+      #section1 {
 
 
-                .container {
-                    .row {
-                        .shopTitleText {
-                            z-index: 16;
-                            transform: translate(0, 140%);
-                            width: 85%;
-                            font-size: 70px;
+        .container {
+          .row {
+            .shopTitleText {
+              z-index: 16;
+              transform: translate(0, 140%);
+              width: 85%;
+              font-size: 70px;
 
-                            &::before {
-                                font-size: 70px;
-                            }
-                        }
-
-                        .shopTitle {
-                            height: 140px;
-
-                            .shopTitleContainer {
-
-                                .titlePage1 {
-                                    z-index: 15;
-                                    width: 100%;
-                                }
-
-                                .titlePage2 {
-                                    z-index: 15;
-                                    width: 100%;
-                                }
-
-                                .titlePage3 {
-                                    display: none;
-                                }
-
-                                .titlePage4 {
-                                    display: none;
-                                }
-
-                                .titlePagePic {
-                                    width: 90%;
-                                    // transform: translate(-10%, 0);
-                                    position: absolute;
-                                    top: 210px;
-                                    left: 10%;
-                                }
-                            }
-                        }
-                    }
-
-                    .row {
-                        #conectionLine {
-                            width: 40%;
-
-                            .iron_clip1 {
-                                width: 20%;
-                                top: 30%;
-                            }
-
-                            .iron_clip2 {
-                                width: 20%;
-                                right: 2%;
-                                top: 30%;
-                            }
-
-                        }
-                    }
-                }
-
-
-                .shopItemContainer {
-
-                    width: 95%;
-
-                    .itemPage0 {
-                        top: 130px;
-                        width: 95%;
-                        left: 5%;
-                    }
-                }
-
-
-
-
-
-                .itemCardBox {
-
-                    .itemCardAside {
-                        display: none;
-                    }
-
-                    .itemCardContainer {
-                        width: 95%;
-
-                        padding-left: 50px;
-                        @include itemCardRow1_md(3);
-                        @include itemCardRow2_md(3);
-
-                        .line_top {
-                            width: 450px;
-                            transform: translate(5%, -50%);
-                        }
-
-                        .line_bottom {
-                            width: 450px;
-                            transform: translate(5%, 100%);
-                        }
-
-                        .itemCardTopRow {
-                            .itemCard4 {
-                                display: none;
-                            }
-
-                            ;
-
-                            .itemCard5 {
-                                display: none;
-                            }
-                        }
-
-                        .itemCardBottomRow {
-
-                            .itemCard2_1 {
-                                margin-top: 100px;
-
-                            }
-
-                            ;
-
-                            .itemCard2_2 {
-
-                                margin-top: 80px;
-                            }
-
-                            ;
-
-                            .itemCard2_3 {
-
-                                margin-top: 50px;
-
-                            }
-
-                            ;
-                        }
-                    }
-
-                    .filter_forSamll {
-                        margin-top: 5%;
-                        width: 85%;
-                        border: 5px solid black;
-                        height: 200px;
-                        background-color: rgb(255, 252, 250);
-                        display: block;
-                        z-index: 15;
-
-                        h2 {
-                            display: inline-block;
-                        }
-
-                        h3 {
-                            display: inline-block;
-                        }
-                    }
-                }
-
-                .customizeArea {
-                    margin: 0 auto;
-                    display: flex;
-                    width: 95%;
-                    flex-wrap: wrap;
-
-                    .controlTool {
-                        display: flex;
-                        flex-wrap: wrap;
-                        width: 60%;
-                        height: 200px;
-                        margin-right: 0;
-                        border: 2.5px solid black;
-                        background: #fff;
-
-                        @include controlBox_md(10);
-
-                        img {
-                            width: 50%;
-                        }
-
-                        .controlBoxBottom {
-                            display: none;
-                        }
-                    }
-
-                    .controlBoxRight {
-                        display: block;
-                        width: 40%;
-                        height: 200px;
-                        border: 5px solid black;
-                        background: #fff;
-                    }
-
-
-                    .drawingBoardBox {
-                        width: 100%;
-
-                        .drawingBoard {
-                            width: 90%;
-                            height: 500px;
-                            margin: 50px auto;
-                            background: #e5e5e5;
-
-                        }
-                    }
-                }
+              &::before {
+                font-size: 70px;
+              }
             }
 
-            #section2 {
-                .matbase {
-                    margin: 0 auto;
-                    @include matbaseBox_md(6);
-                }
-            }
+            .shopTitle {
+              height: 140px;
 
+              .shopTitleContainer {
+
+                .titlePage1 {
+                  z-index: 15;
+                  width: 100%;
+                }
+
+                .titlePage2 {
+                  z-index: 15;
+                  width: 100%;
+                }
+
+                .titlePage3 {
+                  display: none;
+                }
+
+                .titlePage4 {
+                  display: none;
+                }
+
+                .titlePagePic {
+                  width: 90%;
+                  // transform: translate(-10%, 0);
+                  position: absolute;
+                  top: 210px;
+                  left: 10%;
+                }
+              }
+            }
+          }
+
+          .row {
+            #conectionLine {
+              width: 40%;
+
+              .iron_clip1 {
+                width: 20%;
+                top: 30%;
+              }
+
+              .iron_clip2 {
+                width: 20%;
+                right: 2%;
+                top: 30%;
+              }
+
+            }
+          }
         }
+
+
+        .shopItemContainer {
+
+          width: 95%;
+
+          .itemPage0 {
+            top: 130px;
+            width: 95%;
+            left: 5%;
+          }
+        }
+
+
+
+
+
+        .itemCardBox {
+
+          .itemCardAside {
+            display: none;
+          }
+
+          .itemCardContainer {
+            width: 95%;
+
+            padding-left: 50px;
+            @include itemCardRow1_md(3);
+            @include itemCardRow2_md(3);
+
+            .line_top {
+              width: 450px;
+              transform: translate(5%, -50%);
+            }
+
+            .line_bottom {
+              width: 450px;
+              transform: translate(5%, 100%);
+            }
+
+            .itemCardTopRow {
+              .itemCard4 {
+                display: none;
+              }
+
+              ;
+
+              .itemCard5 {
+                display: none;
+              }
+            }
+
+            .itemCardBottomRow {
+
+              .itemCard2_1 {
+                margin-top: 100px;
+
+              }
+
+              ;
+
+              .itemCard2_2 {
+
+                margin-top: 80px;
+              }
+
+              ;
+
+              .itemCard2_3 {
+
+                margin-top: 50px;
+
+              }
+
+              ;
+            }
+          }
+
+          .filter_forSamll {
+            margin-top: 5%;
+            width: 85%;
+            border: 5px solid black;
+            height: 200px;
+            background-color: rgb(255, 252, 250);
+            display: block;
+            z-index: 15;
+
+            h2 {
+              display: inline-block;
+            }
+
+            h3 {
+              display: inline-block;
+            }
+          }
+        }
+
+        #section2 {
+          .customizeArea {
+            margin: 0 auto;
+            display: flex;
+            width: 95%;
+            flex-wrap: wrap;
+
+            .controlTool {
+              display: flex;
+              flex-wrap: wrap;
+              width: 60%;
+              height: 200px;
+              margin-right: 0;
+              border: 2.5px solid black;
+              background: #fff;
+
+              @include controlBox_md(10);
+
+              img {
+                width: 50%;
+              }
+
+              .controlBoxBottom {
+                display: none;
+              }
+            }
+
+            .controlBoxRight {
+              display: block;
+              width: 40%;
+              height: 200px;
+              border: 5px solid black;
+              background: #fff;
+            }
+
+
+            .drawingBoardBox {
+              width: 100%;
+
+              .drawingBoard {
+                width: 90%;
+                height: 500px;
+                margin: 50px auto;
+                background: #e5e5e5;
+
+              }
+            }
+          }
+        }
+      }
+
+      #section3 {
+
+        .matbase {
+          margin: 0 auto;
+          @include matbaseBox_md(6);
+        }
+      }
+
     }
+  }
 }
 
 @include respond(note) {
 
-    //376px------576px;
-    body {
-        main {
-            #section1 {
-                .container {
-                    .row {
-                        .shopTitleText {
-                            transform: translate(0, 120%);
-                            width: 85%;
-                            font-size: 45px;
+  //376px------576px;
+  .shop-body {
+    .shop-main {
+      #section1 {
+        .container {
+          .row {
+            .shopTitleText {
+              transform: translate(0, 120%);
+              width: 85%;
+              font-size: 45px;
 
-                            &::before {
-                                font-size: 45px;
-                            }
-                        }
-
-
-                        .shopTitle {
-                            height: 0px;
-
-                            .shopTitleContainer {
-                                .titlePage1 {
-                                    width: 100%;
-                                    height: 200px;
-                                }
-
-                                .titlePage2 {
-                                    width: 100%;
-                                    height: 200px;
-                                }
-
-                                .titlePage3 {
-                                    display: none;
-                                }
-
-                                .titlePage4 {
-                                    display: none;
-                                }
-
-                                .titlePagePic {
-                                    width: 90%;
-                                    position: absolute;
-                                    top: 110px;
-                                    left: 10%;
-                                }
-                            }
-                        }
-                    }
-
-                    .row {
-                        #conectionLine {
-
-                            .iron_clip1 {
-                                display: none;
-                            }
-
-                            .iron_clip2 {
-                                display: none;
-                            }
-                        }
-                    }
-                }
-
-
-
-                .shopItemContainer {
-                    width: 95%;
-
-                    .itemPage0 {
-                        width: 100%;
-                        left: 0%;
-                        top: 100px;
-                    }
-                }
-
-
-
-
-                .itemCardBox {
-                    margin-top: 0px;
-
-                    .itemCardAside {
-                        display: none;
-                    }
-
-                    .itemCardContainer {
-                        width: 100%;
-
-                        padding-left: 0;
-                        @include itemCardRow1_lg(4);
-                        @include itemCardRow2_lg(2);
-
-                        .line_top {
-                            display: none;
-                        }
-
-                        .line_bottom {
-                            display: none;
-                        }
-
-                        .itemCardTopRow {
-                            display: flex;
-                            flex-wrap: wrap;
-                            ;
-
-                            .itemCard1 {
-                                margin: 40px 5%;
-                                transform: translate(0, 0%) rotate(10deg);
-
-                                img {
-                                    display: none;
-                                }
-                            }
-
-                            ;
-
-                            .itemCard2 {
-                                margin: 40px 5%;
-                                transform: translate(0, 0%) rotate(355deg);
-
-                                img {
-                                    display: none;
-                                }
-                            }
-
-                            ;
-
-                            .itemCard3 {
-                                margin: 40px 5%;
-                                transform: translate(0, 0%) rotate(10deg);
-
-                                img {
-                                    display: none;
-                                }
-                            }
-
-                            .itemCard4 {
-                                margin: 40px 5%;
-                                transform: translate(0, 0%) rotate(355deg);
-
-                                img {
-                                    display: none;
-                                }
-                            }
-
-                            ;
-
-                            .itemCard5 {
-                                display: none;
-                            }
-                        }
-
-                        .itemCardBottomRow {
-                            display: flex;
-
-                            .itemCard2_1 {
-                                margin: 40px 5%;
-                                transform: translate(0%, 0%) rotate(350deg);
-
-                                img {
-                                    display: none;
-                                }
-                            }
-
-                            ;
-
-                            .itemCard2_2 {
-                                transform: translate(0%, 0%) rotate(15deg);
-                                margin: 40px 5%;
-
-                                img {
-                                    display: none;
-                                }
-                            }
-
-                            ;
-
-                            .itemCard2_3 {
-                                display: none;
-                            }
-
-                        }
-                    }
-
-                    .filter_forSamll {
-                        margin-top: 5%;
-                        width: 100%;
-                        border: 5px solid black;
-                        height: 200px;
-                        background-color: rgb(255, 252, 250);
-                        display: block;
-                        z-index: 15;
-
-                        h2 {
-                            display: inline-block;
-                        }
-
-                        h3 {
-                            display: inline-block;
-                        }
-                    }
-                }
-
-                .customizeArea {
-                    margin: 0 auto;
-                    display: flex;
-                    width: 95%;
-                    flex-wrap: wrap;
-
-                    .controlTool {
-                        display: flex;
-                        flex-wrap: wrap;
-                        width: 60%;
-                        height: 200px;
-                        margin-right: 0;
-                        border: 2.5px solid black;
-                        background: #fff;
-
-                        @include controlBox_md(10);
-
-                        img {
-                            width: 50%;
-                        }
-
-                        .controlBoxBottom {
-                            display: none;
-                        }
-                    }
-
-                    .controlBoxRight {
-                        display: block;
-                        width: 40%;
-                        height: 200px;
-                        border: 5px solid black;
-                        background: #fff;
-                    }
-
-
-                    .drawingBoardBox {
-                        width: 100%;
-
-                        .drawingBoard {
-                            width: 90%;
-                            height: 300px;
-                            margin: 50px auto;
-                            background: #e5e5e5;
-
-                        }
-                    }
-                }
+              &::before {
+                font-size: 45px;
+              }
             }
 
-            #section2 {
-                .matbase {
-                    margin: 0 auto;
-                    @include matbaseBox_md(6);
+
+            .shopTitle {
+              height: 0px;
+
+              .shopTitleContainer {
+                .titlePage1 {
+                  width: 100%;
+                  height: 200px;
                 }
+
+                .titlePage2 {
+                  width: 100%;
+                  height: 200px;
+                }
+
+                .titlePage3 {
+                  display: none;
+                }
+
+                .titlePage4 {
+                  display: none;
+                }
+
+                .titlePagePic {
+                  width: 90%;
+                  position: absolute;
+                  top: 110px;
+                  left: 10%;
+                }
+              }
             }
+          }
+
+          .row {
+            #conectionLine {
+
+              .iron_clip1 {
+                display: none;
+              }
+
+              .iron_clip2 {
+                display: none;
+              }
+            }
+          }
         }
+
+
+
+        .shopItemContainer {
+          width: 95%;
+
+          .itemPage0 {
+            width: 100%;
+            left: 0%;
+            top: 100px;
+          }
+        }
+
+
+
+
+        .itemCardBox {
+          margin-top: 0px;
+
+          .itemCardAside {
+            display: none;
+          }
+
+          .itemCardContainer {
+            width: 100%;
+
+            padding-left: 0;
+            @include itemCardRow1_lg(4);
+            @include itemCardRow2_lg(2);
+
+            .line_top {
+              display: none;
+            }
+
+            .line_bottom {
+              display: none;
+            }
+
+            .itemCardTopRow {
+              display: flex;
+              flex-wrap: wrap;
+              ;
+
+              .itemCard1 {
+                margin: 40px 5%;
+                transform: translate(0, 0%) rotate(10deg);
+
+                img {
+                  display: none;
+                }
+              }
+
+              ;
+
+              .itemCard2 {
+                margin: 40px 5%;
+                transform: translate(0, 0%) rotate(355deg);
+
+                img {
+                  display: none;
+                }
+              }
+
+              ;
+
+              .itemCard3 {
+                margin: 40px 5%;
+                transform: translate(0, 0%) rotate(10deg);
+
+                img {
+                  display: none;
+                }
+              }
+
+              .itemCard4 {
+                margin: 40px 5%;
+                transform: translate(0, 0%) rotate(355deg);
+
+                img {
+                  display: none;
+                }
+              }
+
+              ;
+
+              .itemCard5 {
+                display: none;
+              }
+            }
+
+            .itemCardBottomRow {
+              display: flex;
+
+              .itemCard2_1 {
+                margin: 40px 5%;
+                transform: translate(0%, 0%) rotate(350deg);
+
+                img {
+                  display: none;
+                }
+              }
+
+              ;
+
+              .itemCard2_2 {
+                transform: translate(0%, 0%) rotate(15deg);
+                margin: 40px 5%;
+
+                img {
+                  display: none;
+                }
+              }
+
+              ;
+
+              .itemCard2_3 {
+                display: none;
+              }
+
+            }
+          }
+
+          .filter_forSamll {
+            margin-top: 5%;
+            width: 100%;
+            border: 5px solid black;
+            height: 200px;
+            background-color: rgb(255, 252, 250);
+            display: block;
+            z-index: 15;
+
+            h2 {
+              display: inline-block;
+            }
+
+            h3 {
+              display: inline-block;
+            }
+          }
+        }
+
+        #section2 {
+          .customizeArea {
+            margin: 0 auto;
+            display: flex;
+            width: 95%;
+            flex-wrap: wrap;
+
+            .controlTool {
+              display: flex;
+              flex-wrap: wrap;
+              width: 60%;
+              height: 200px;
+              margin-right: 0;
+              border: 2.5px solid black;
+              background: #fff;
+
+              @include controlBox_md(10);
+
+              img {
+                width: 50%;
+              }
+
+              .controlBoxBottom {
+                display: none;
+              }
+            }
+
+            .controlBoxRight {
+              display: block;
+              width: 40%;
+              height: 200px;
+              border: 5px solid black;
+              background: #fff;
+            }
+
+
+            .drawingBoardBox {
+              width: 100%;
+
+              .drawingBoard {
+                width: 90%;
+                height: 300px;
+                margin: 50px auto;
+                background: #e5e5e5;
+
+              }
+            }
+          }
+        }
+      }
+
+      #section3 {
+
+        .matbase {
+          margin: 0 auto;
+          @include matbaseBox_md(6);
+        }
+      }
     }
+  }
 }
 
 @include respond(iphone) {
 
-    //375px;
-    body {
-        main {
-            section {
+  //375px;
+  .shop-body {
+    .shop-main {
+      #section1 {
 
 
-                .container {
-                    .row {
-                        .shopTitleText {
-                            transform: translate(0, 120%);
-                            width: 80%;
-                            font-size: 45px;
+        .container {
+          .row {
+            .shopTitleText {
+              transform: translate(0, 120%);
+              width: 80%;
+              font-size: 45px;
 
-                            &::before {
-                                font-size: 45px;
-                            }
-                        }
-
-                        .shopTitle {
-                            height: 0px;
-
-                            .shopTitleContainer {
-                                .titlePage1 {
-                                    width: 100%;
-                                    height: 200px;
-                                }
-
-                                .titlePage2 {
-                                    width: 100%;
-                                    height: 200px;
-                                }
-
-                                .titlePage3 {
-                                    display: none;
-                                }
-
-                                .titlePage4 {
-                                    display: none;
-                                }
-
-                                .titlePagePic {
-                                    width: 95%;
-                                    // transform: translate(-10%, 0);
-                                    position: absolute;
-                                    top: 110px;
-                                    left: 10%;
-                                }
-                            }
-                        }
-                    }
-
-                    .row {
-                        #conectionLine {
-
-                            .iron_clip1 {
-                                display: none;
-                            }
-
-                            .iron_clip2 {
-                                display: none;
-                            }
-                        }
-                    }
-                }
-
-
-                .shopItemContainer {
-                    width: 95%;
-
-                    .itemPage0 {
-                        width: 100%;
-                        left: 0%;
-                        top: 100px;
-                    }
-                }
-
-
-
-
-                .itemCardBox {
-                    margin-top: 0px;
-
-                    .itemCardAside {
-                        display: none;
-                    }
-
-                    .itemCardContainer {
-                        width: 95%;
-
-                        padding-left: 0;
-                        @include itemCardRow1_lg(4);
-                        @include itemCardRow2_lg(2);
-
-                        .line_top {
-                            display: none;
-                        }
-
-                        .line_bottom {
-                            display: none;
-                        }
-
-                        .itemCardTopRow {
-                            display: flex;
-                            flex-wrap: wrap;
-                            ;
-
-                            .itemCard1 {
-                                margin: 40px 3%;
-                                transform: translate(0, 0%) rotate(10deg);
-
-                                img {
-                                    display: none;
-                                }
-                            }
-
-                            ;
-
-                            .itemCard2 {
-                                margin: 40px 3%;
-                                transform: translate(0, 0%) rotate(355deg);
-
-                                img {
-                                    display: none;
-                                }
-                            }
-
-                            ;
-
-                            .itemCard3 {
-                                margin: 40px 3%;
-                                transform: translate(0, 0%) rotate(10deg);
-
-                                img {
-                                    display: none;
-                                }
-                            }
-
-                            .itemCard4 {
-                                margin: 40px 3%;
-                                transform: translate(0, 0%) rotate(355deg);
-
-                                img {
-                                    display: none;
-                                }
-                            }
-
-                            ;
-
-                            .itemCard5 {
-                                display: none;
-                            }
-                        }
-
-                        .itemCardBottomRow {
-                            display: flex;
-
-                            .itemCard2_1 {
-                                margin: 40px 3%;
-                                transform: translate(0%, 0%) rotate(350deg);
-
-                                img {
-                                    display: none;
-                                }
-                            }
-
-                            ;
-
-                            .itemCard2_2 {
-                                transform: translate(0%, 0%) rotate(15deg);
-                                margin: 40px 3%;
-
-                                img {
-                                    display: none;
-                                }
-                            }
-
-                            ;
-
-                            .itemCard2_3 {
-                                display: none;
-                            }
-
-                        }
-                    }
-
-
-                    .filter_forSamll {
-                        margin-top: 5%;
-                        width: 100%;
-                        border: 5px solid black;
-                        height: 200px;
-                        background-color: rgb(255, 252, 250);
-                        display: block;
-                        z-index: 15;
-
-                        h2 {
-                            display: inline-block;
-                        }
-
-                        h3 {
-                            display: inline-block;
-                        }
-                    }
-                }
-
-                .customizeArea {
-                    margin: 0 auto;
-                    display: flex;
-                    width: 95%;
-                    flex-wrap: wrap;
-
-                    .controlTool {
-                        display: flex;
-                        flex-wrap: wrap;
-                        width: 60%;
-                        height: 200px;
-                        margin-right: 0;
-                        border: 2.5px solid black;
-                        background: #fff;
-
-                        @include controlBox_md(10);
-
-                        img {
-                            width: 50%;
-                        }
-
-                        .controlBoxBottom {
-                            display: none;
-                        }
-                    }
-
-                    .controlBoxRight {
-                        display: block;
-                        width: 40%;
-                        height: 200px;
-                        border: 5px solid black;
-                        background: #fff;
-                    }
-
-
-                    .drawingBoardBox {
-                        width: 100%;
-
-                        .drawingBoard {
-                            width: 90%;
-                            height: 300px;
-                            margin: 50px auto;
-                            background: #e5e5e5;
-
-                        }
-                    }
-                }
+              &::before {
+                font-size: 45px;
+              }
             }
+
+            .shopTitle {
+              height: 0px;
+
+              .shopTitleContainer {
+                .titlePage1 {
+                  width: 100%;
+                  height: 200px;
+                }
+
+                .titlePage2 {
+                  width: 100%;
+                  height: 200px;
+                }
+
+                .titlePage3 {
+                  display: none;
+                }
+
+                .titlePage4 {
+                  display: none;
+                }
+
+                .titlePagePic {
+                  width: 95%;
+                  // transform: translate(-10%, 0);
+                  position: absolute;
+                  top: 110px;
+                  left: 10%;
+                }
+              }
+            }
+          }
+
+          .row {
+            #conectionLine {
+
+              .iron_clip1 {
+                display: none;
+              }
+
+              .iron_clip2 {
+                display: none;
+              }
+            }
+          }
         }
+
+
+        .shopItemContainer {
+          width: 95%;
+
+          .itemPage0 {
+            width: 100%;
+            left: 0%;
+            top: 100px;
+          }
+        }
+
+
+
+
+        .itemCardBox {
+          margin-top: 0px;
+
+          .itemCardAside {
+            display: none;
+          }
+
+          .itemCardContainer {
+            width: 95%;
+
+            padding-left: 0;
+            @include itemCardRow1_lg(4);
+            @include itemCardRow2_lg(2);
+
+            .line_top {
+              display: none;
+            }
+
+            .line_bottom {
+              display: none;
+            }
+
+            .itemCardTopRow {
+              display: flex;
+              flex-wrap: wrap;
+              ;
+
+              .itemCard1 {
+                margin: 40px 3%;
+                transform: translate(0, 0%) rotate(10deg);
+
+                img {
+                  display: none;
+                }
+              }
+
+              ;
+
+              .itemCard2 {
+                margin: 40px 3%;
+                transform: translate(0, 0%) rotate(355deg);
+
+                img {
+                  display: none;
+                }
+              }
+
+              ;
+
+              .itemCard3 {
+                margin: 40px 3%;
+                transform: translate(0, 0%) rotate(10deg);
+
+                img {
+                  display: none;
+                }
+              }
+
+              .itemCard4 {
+                margin: 40px 3%;
+                transform: translate(0, 0%) rotate(355deg);
+
+                img {
+                  display: none;
+                }
+              }
+
+              ;
+
+              .itemCard5 {
+                display: none;
+              }
+            }
+
+            .itemCardBottomRow {
+              display: flex;
+
+              .itemCard2_1 {
+                margin: 40px 3%;
+                transform: translate(0%, 0%) rotate(350deg);
+
+                img {
+                  display: none;
+                }
+              }
+
+              ;
+
+              .itemCard2_2 {
+                transform: translate(0%, 0%) rotate(15deg);
+                margin: 40px 3%;
+
+                img {
+                  display: none;
+                }
+              }
+
+              ;
+
+              .itemCard2_3 {
+                display: none;
+              }
+
+            }
+          }
+
+
+          .filter_forSamll {
+            margin-top: 5%;
+            width: 100%;
+            border: 5px solid black;
+            height: 200px;
+            background-color: rgb(255, 252, 250);
+            display: block;
+            z-index: 15;
+
+            h2 {
+              display: inline-block;
+            }
+
+            h3 {
+              display: inline-block;
+            }
+          }
+        }
+      }
+
+      #section2 {
+
+
+        .customizeArea {
+          margin: 0 auto;
+          display: flex;
+          width: 95%;
+          flex-wrap: wrap;
+
+          .controlTool {
+            display: flex;
+            flex-wrap: wrap;
+            width: 60%;
+            height: 200px;
+            margin-right: 0;
+            border: 2.5px solid black;
+            background: #fff;
+
+            @include controlBox_md(10);
+
+            img {
+              width: 50%;
+            }
+
+            .controlBoxBottom {
+              display: none;
+            }
+          }
+
+          .controlBoxRight {
+            display: block;
+            width: 40%;
+            height: 200px;
+            border: 5px solid black;
+            background: #fff;
+          }
+
+
+          .drawingBoardBox {
+            width: 100%;
+
+            .drawingBoard {
+              width: 90%;
+              height: 300px;
+              margin: 50px auto;
+              background: #e5e5e5;
+
+            }
+          }
+        }
+      }
     }
+  }
 }
