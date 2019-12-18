@@ -1,0 +1,15 @@
+nav{
+    position: fixed;
+    ul{
+        border: 1px solid red;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        li{
+            padding: 20px 10px;
+            border: 1px solid green;
+            margin: 0 5px;
+        }
+    }
+}
