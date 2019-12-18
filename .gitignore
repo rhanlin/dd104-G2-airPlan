@@ -7,4 +7,5 @@ package.json
 js/clouds.js
 js/main.js
 dist/
-css/
+css/main.css.map
+
