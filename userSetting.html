@@ -5,9 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>userSetting</title>
 </head>
-<body>
+<body class="userSetting_body">
     
+    @@include("./html/nav.html")
+    @@include("./html/header.html")
+    <main class="userSetting_main">
+        <section class="userSetting_mem"><!--airPlan會員資訊-->
+            <div class="userSetting_memKanban" id="memKanban"><!--會員資訊資訊頁籤-->
+                <div class="userSetting_memData" @click="content='memData'"><h1>會員資料</h1></div>
+                <div class="userSetting_airCoin" @click="content='airCoin'"><h1>打賞紀錄</h1></div>
+                <div class="userSetting_color" @click="content='color'"><h1>外觀設定</h1></div>
+                
+                
+                <!--資料保留標籤-->
+                <keep-alive>
+                    <component :is="content"></component>
+                </keep-alive>
+            </div>
+            <img class="userSetting_robotB1" src="" alt="userSetting_robotB1">
+            <img class="userSetting_conveyorB1" src="" alt="userSetting_conveyorB1">
+            <script>
+                Vue.component('memData',{
+                    template:`
+                        <div>
+                            <div class="mem01pic">
+                                <img src="" alt="mem01pic">
+                            </div>
+                            <div class="mem01coint">
+                                <h1>Air幣</h1>
+                                <h1>信紙</h1>
+                            </div>
+                        </div>
+                        
+                    `,
+                });
+                Vue.component('airCoin',{
+                    template:`
+                        <div>
+                            <h1>airCoin</h1>
+                            <h1>airCoin</h1>
+                            <h1>airCoin</h1>
+                            <h1>airCoin</h1>
+                            <h1>airCoin</h1>
+                        </div>
+                    `,
+                });
+                Vue.component('color',{
+                    template:`
+                        <ul>
+                            <h1>airCoin</h1>
+                            <h1>airCoin</h1>
+                            <h1>airCoin</h1>
+                            <li>外觀設定</li>
+                            <li>CSS2</li>
+                            <li>JavaScript2</li>
+                            <li>jQuery2</li>
+                            <li>HTML52</li>
+                            <li>VueJS2</li>
+                        </ul>
+                    `,
+                });
+                new Vue({
+                    el: '#memKanban',
+                    data:{
+                        content:'memData',
+                    },
+                });
+                </script>
+                
+            
+            
+        </section>
+        <section class="userSetting_sys"><!--airPlan系統資訊-->
+            <div class="userSetting_sysKanban"><!--系統資訊頁籤-->
+                <div class="userSetting_manu"><!--操作說明分頁-->
+                    <div class="userSetting_witeLetter"><!--寫信-->
+
+                    </div>
+                    <div class="userSetting_"><!--撈信-->
+
+                    </div>
+                    <div class="userSetting_cave"><!--倉庫-->
+
+                    </div>
+                    <div class="userSetting_shop"><!--商店-->
+
+                    </div>
+                    <div class="userSetting_"><!--聊天-->
+
+                    </div>
+                    <div class="userSetting_"><!--精華-->
+
+                    </div>
+                    <div class="userSetting_userSetting"><!--會員-->
+
+                    </div>
+                </div>
+                <div class="userSetting_Ver"><!--版本資料分頁-->
+
+                </div>
+            </div>
+            <img src="" alt="userSetting_robotB2">
+        </section>
+        <section class="userSetting_adm"><!--airPlan開發者資訊-->
+            <div class="userSetting_Spencer"><!--宗翰-->
+
+            </div>
+            <div class="userSetting_Sharon"><!--香菇-->
+
+            </div>
+            <div class="userSetting_Howard"><!--阿康-->
+
+            </div>
+            <div class="userSetting_Grace"><!--小鴨-->
+
+            </div>
+            <div class="userSetting_Allen"><!--耀輝-->
+
+            </div>
+            <div class="userSetting_Mike"><!--峻瑜-->
+
+            </div>
+            <img src="" alt="userSetting_conveyorB3">
+            <img src="" alt="userSetting_light">
+        </section>
+    </main>
+    @@include("./html/footer.html")
 </body>
 </html>
