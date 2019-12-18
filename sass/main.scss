@@ -1,4 +1,9 @@
 /*
+ *  plugin
+ */
+
+
+/*
  *  base
  */
 @import "base/var";
@@ -6,10 +11,12 @@
 @import "base/reset";
 @import "base/keyframe";
 
+
 /*
  *  mixin
  */
 @import "./mixin/mixins";
+
 
 /*
  *  module
