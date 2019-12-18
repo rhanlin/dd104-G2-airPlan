@@ -136,7 +136,7 @@ table {
     position: absolute;
     margin: 140px auto 20px;
     top: 8vw;
-    left: 88.21vmax;
+    left: 92.1vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_1:after, .clouds .cloud_1:before {
@@ -166,7 +166,7 @@ table {
     position: absolute;
     margin: 140px auto 20px;
     top: 8vw;
-    left: 50.42vmax;
+    left: 67.2vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_2:after, .clouds .cloud_2:before {
@@ -196,7 +196,7 @@ table {
     position: absolute;
     margin: 140px auto 20px;
     top: 8vw;
-    left: 100.63vmax;
+    left: 71.3vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_3:after, .clouds .cloud_3:before {
@@ -226,7 +226,7 @@ table {
     position: absolute;
     margin: 140px auto 20px;
     top: 8vw;
-    left: 56.84vmax;
+    left: 20.4vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_4:after, .clouds .cloud_4:before {
@@ -256,7 +256,7 @@ table {
     position: absolute;
     margin: 140px auto 20px;
     top: 8vw;
-    left: 77.05vmax;
+    left: 118.5vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_5:after, .clouds .cloud_5:before {
@@ -286,7 +286,7 @@ table {
     position: absolute;
     margin: 140px auto 20px;
     top: 8vw;
-    left: 80.26vmax;
+    left: 30.6vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_6:after, .clouds .cloud_6:before {
@@ -316,7 +316,7 @@ table {
     position: absolute;
     margin: 140px auto 20px;
     top: 8vw;
-    left: 83.47vmax;
+    left: 79.7vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_7:after, .clouds .cloud_7:before {
@@ -346,7 +346,7 @@ table {
     position: absolute;
     margin: 140px auto 20px;
     top: 8vw;
-    left: 86.68vmax;
+    left: 88.8vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_8:after, .clouds .cloud_8:before {
@@ -376,7 +376,7 @@ table {
     position: absolute;
     margin: 140px auto 20px;
     top: 8vw;
-    left: 121.89vmax;
+    left: 60.9vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_9:after, .clouds .cloud_9:before {
@@ -406,7 +406,7 @@ table {
     position: absolute;
     margin: 140px auto 20px;
     top: 8vw;
-    left: 55.1vmax;
+    left: 66vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_10:after, .clouds .cloud_10:before {
@@ -436,7 +436,7 @@ table {
     position: absolute;
     margin: 140px auto 20px;
     top: 8vw;
-    left: 83.31vmax;
+    left: 62.1vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_11:after, .clouds .cloud_11:before {
@@ -466,7 +466,7 @@ table {
     position: absolute;
     margin: 140px auto 20px;
     top: 8vw;
-    left: 54.52vmax;
+    left: 61.2vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_12:after, .clouds .cloud_12:before {
@@ -496,7 +496,7 @@ table {
     position: absolute;
     margin: 140px auto 20px;
     top: 8vw;
-    left: 111.73vmax;
+    left: 87.3vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_13:after, .clouds .cloud_13:before {
@@ -526,7 +526,7 @@ table {
     position: absolute;
     margin: 140px auto 20px;
     top: 8vw;
-    left: 9.94vmax;
+    left: 108.4vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_14:after, .clouds .cloud_14:before {
@@ -556,7 +556,7 @@ table {
     position: absolute;
     margin: 140px auto 20px;
     top: 8vw;
-    left: 46.15vmax;
+    left: 70.5vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_15:after, .clouds .cloud_15:before {
@@ -586,7 +586,7 @@ table {
     position: absolute;
     margin: 140px auto 20px;
     top: 8vw;
-    left: 8.36vmax;
+    left: 119.6vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_16:after, .clouds .cloud_16:before {
@@ -616,7 +616,7 @@ table {
     position: absolute;
     margin: 140px auto 20px;
     top: 8vw;
-    left: 114.57vmax;
+    left: 68.7vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_17:after, .clouds .cloud_17:before {
@@ -646,7 +646,7 @@ table {
     position: absolute;
     margin: 140px auto 20px;
     top: 8vw;
-    left: 57.78vmax;
+    left: 58.8vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_right 10.0s 1s infinite; }
     .clouds .cloud_18:after, .clouds .cloud_18:before {
@@ -676,7 +676,7 @@ table {
     position: absolute;
     margin: 140px auto 20px;
     top: 8vw;
-    left: 98.99vmax;
+    left: 110.9vmax;
     transition: all 0.2s ease-in-out;
     animation: cloud_move_left 10.0s 1s infinite; }
     .clouds .cloud_19:after, .clouds .cloud_19:before {
@@ -2703,17 +2703,226 @@ table {
         margin: 50px auto;
         background: #e5e5e5; } }
 
+.chat-body {
+  margin: 0; }
+
+.chat-header .line1 {
+  width: 5px;
+  height: 100px;
+  background-color: #212121;
+  margin-left: 500px;
+  display: inline-block; }
+
+.chat-header .clip1 {
+  display: inline-block;
+  width: 80px;
+  margin-left: 465px; }
+
+.chat-header .line2 {
+  width: 5px;
+  height: 100px;
+  background-color: #212121;
+  margin-left: 920px;
+  display: inline-block; }
+
+.chat-header .clip2 {
+  display: inline-block;
+  width: 80px;
+  margin-left: 840px; }
+
+.chat-header .title_bg {
+  width: 1100px;
+  height: 200px;
+  border: 5px solid #353535;
+  margin: 0 auto;
+  margin-left: 365px;
+  margin-top: 65px;
+  background-image: url(../images/dot.svg);
+  background-size: 100px; }
+
+.chat-header .title1 {
+  width: 1100px;
+  height: 200px;
+  margin-left: -5px;
+  margin-top: -35px;
+  border: 5px solid #353535;
+  background-color: #fff; }
+
+.chat-header .title2, .chat-header .tilte3, .chat-header .title4 {
+  width: 1100px;
+  height: 200px;
+  margin-left: 15px;
+  margin-top: -22px;
+  border: 5px solid #353535;
+  background-color: #fff; }
+
+.chat-header .title4 h1 {
+  font-family: "微軟正黑體";
+  font-size: 48px;
+  text-align: center;
+  line-height: 125px;
+  color: #82afd9; }
+
+.chat-main {
+  position: relative;
+  width: 1300px;
+  margin: 100px auto 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 0px; }
+  .chat-main .chat-section {
+    float: left;
+    width: 205px;
+    height: 612px;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+    overflow-y: scroll; }
+    .chat-main .chat-section .mark1 {
+      width: 105px;
+      height: 105px;
+      border: 5px solid #353535;
+      padding: 20px;
+      margin-left: 50px;
+      background-color: #f08b8c;
+      text-align: center; }
+    .chat-main .chat-section .mark2 {
+      width: 105px;
+      height: 105px;
+      border: 5px solid #353535;
+      padding: 20px;
+      margin-top: 17px;
+      margin-left: 28px;
+      background-color: #39ac72;
+      text-align: center; }
+    .chat-main .chat-section .mark3 {
+      width: 105px;
+      height: 105px;
+      border: 5px solid #353535;
+      padding: 20px;
+      margin-top: 17px;
+      margin-left: 28px;
+      background-color: #39ac72;
+      text-align: center; }
+    .chat-main .chat-section .mark4 {
+      width: 105px;
+      height: 105px;
+      border: 5px solid #353535;
+      padding: 20px;
+      margin-top: 17px;
+      margin-left: 28px;
+      background-color: #39ac72;
+      text-align: center; }
+    .chat-main .chat-section .mark1 img, .chat-main .chat-section .mark2 img, .chat-main .chat-section .mark3 img, .chat-main .chat-section .mark4 img {
+      width: 80px; }
+    .chat-main .chat-section .mark1 p, .chat-main .chat-section .mark2 p, .chat-main .chat-section .mark3 p, .chat-main .chat-section .mark4 p {
+      font-size: 18px;
+      font-family: Arial, Helvetica, sans-serif; }
+  .chat-main .book {
+    border: 5px solid #353535;
+    border-radius: 50px;
+    width: 1200px;
+    padding: 25px;
+    margin-left: -200px;
+    float: left;
+    background-color: #82afd9; }
+    .chat-main .book .dashed {
+      width: 1115px;
+      border: 3px dashed brown;
+      border-radius: 50px;
+      padding: 50px 40px; }
+      .chat-main .book .dashed .page1 {
+        width: 1100px;
+        height: 600px;
+        border: 5px solid #353535;
+        background-color: #f3de6b; }
+        .chat-main .book .dashed .page1 .page2 {
+          width: 1050px;
+          height: 600px;
+          border: 5px solid #353535;
+          background-color: #f3de6b;
+          margin-top: -5px;
+          margin-left: 20px; }
+          .chat-main .book .dashed .page1 .page2 .page3 {
+            width: 1000px;
+            height: 600px;
+            border: 5px solid #353535;
+            background-color: #f3de6b;
+            margin-top: -5px;
+            margin-left: 20px; }
+            .chat-main .book .dashed .page1 .page2 .page3 .page4 {
+              width: 950px;
+              height: 600px;
+              border: 5px solid #353535;
+              background-color: #f3de6b;
+              margin-top: -5px;
+              margin-left: 20px; }
+              .chat-main .book .dashed .page1 .page2 .page3 .page4 .page5 {
+                width: 860px;
+                height: 560px;
+                border: 5px solid #353535;
+                background-color: #fff;
+                margin: -5px auto 0;
+                padding: 20px;
+                margin-top: -5px;
+                margin-left: 20px; }
+                .chat-main .book .dashed .page1 .page2 .page3 .page4 .page5 .content .your, .chat-main .book .dashed .page1 .page2 .page3 .page4 .page5 .content .your_1, .chat-main .book .dashed .page1 .page2 .page3 .page4 .page5 .content .your_2 {
+                  margin-left: 50px;
+                  margin-bottom: 50px; }
+                .chat-main .book .dashed .page1 .page2 .page3 .page4 .page5 .content .content img {
+                  width: 70px;
+                  display: block; }
+                .chat-main .book .dashed .page1 .page2 .page3 .page4 .page5 .content .your p, .chat-main .book .dashed .page1 .page2 .page3 .page4 .page5 .content .your_1 p, .chat-main .book .dashed .page1 .page2 .page3 .page4 .page5 .content .your_2 p {
+                  margin: 0;
+                  margin-left: 100px;
+                  border: 2px solid #353535;
+                  background-color: #d7e6f5;
+                  font-size: 16px;
+                  font-family: "微軟正黑體";
+                  padding: 10px;
+                  border-radius: 15px;
+                  display: inline; }
+                .chat-main .book .dashed .page1 .page2 .page3 .page4 .page5 .content .me {
+                  margin-left: 700px; }
+                .chat-main .book .dashed .page1 .page2 .page3 .page4 .page5 .content .me p {
+                  border: 2px solid #353535;
+                  background-color: #fcf1ad;
+                  font-size: 16px;
+                  font-family: "微軟正黑體";
+                  padding: 10px;
+                  border-radius: 15px;
+                  display: inline; }
+                .chat-main .book .dashed .page1 .page2 .page3 .page4 .page5 .send {
+                  margin-left: 500px;
+                  border: 2px solid #353535;
+                  border-radius: 30px;
+                  vertical-align: top;
+                  padding: 5px;
+                  text-align: center; }
+                .chat-main .book .dashed .page1 .page2 .page3 .page4 .page5 .text {
+                  width: 290px;
+                  height: 50px;
+                  border: none;
+                  border-radius: 10px;
+                  float: left; }
+                .chat-main .book .dashed .page1 .page2 .page3 .page4 .page5 .send img {
+                  width: 40px;
+                  margin-top: 10px;
+                  float: left;
+                  display: block; }
+
+.clearfix {
+  clear: both; }
+
 /*
  *  layout
  */
 header {
-  width: 100vw;
   height: 25vw;
   font-size: 0; }
   header #myClouds {
     width: 100vw; }
   header .white-space-bg {
-    width: 100vw;
     height: 150px;
     background: linear-gradient(180deg, white 25%, rgba(235, 255, 255, 0) 100%); }
 

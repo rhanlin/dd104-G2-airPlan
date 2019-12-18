@@ -43,7 +43,7 @@
         & .cloud_#{$y} {
             @include cloud();
             top: 8vw;
-            left: random(120)+$y*0.21vmax;
+            left: random(120)+$y*0.1vmax;
             // left: random(120)+$y*0.01vw;
             // left: random()+$y*10vw;
             transition: all 0.2s ease-in-out;
