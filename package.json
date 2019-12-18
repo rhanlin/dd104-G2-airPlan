@@ -1,0 +1,32 @@
+{
+  "name": "dd104-g2-airplan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "klouds": "^2.0.0",
+    "owl.carousel": "^2.3.4"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-file-include": "^2.1.1",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhanlin/dd104-G2-airPlan.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rhanlin/dd104-G2-airPlan/issues"
+  },
+  "homepage": "https://github.com/rhanlin/dd104-G2-airPlan#readme"
+}

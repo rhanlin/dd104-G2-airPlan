@@ -9,7 +9,9 @@ header{
     };
     .white-space-bg{
         // width: 100vw;
-        height: 150px;
+        height: 200px;
         background: linear-gradient(180deg, rgba(255, 255, 255, 1)25%, rgba(235, 255, 255, 0)100%);
+        position: relative;
+        z-index: 99;
     };
 }
