@@ -4,7 +4,8 @@
     background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
     // background: radial-gradient(#000000 10%, #ffffff 10%);
     // background-size: 10px 10px;
-    box-shadow: 0 37px 64px -40px rgba($color: #000000, $alpha: 0.6);
+    // box-shadow: 0 37px 64px -40px rgba($color: #000000, $alpha: 0.6);
+    box-shadow: 10px 10px 20px rgba($color: #000000, $alpha: .1);
     border-radius: 100px;
     position: absolute;
     margin: 140px auto 20px;
@@ -13,9 +14,10 @@
     &:before {
         content: '';
         position: absolute;
-        background: #fdfeff;
+        background: #F7FAFD;
         z-index: -11;
-        box-shadow: 0px -5px 136px -40px rgba($color: #000000, $alpha: 0.2);
+        // box-shadow: 0px -5px 136px -40px rgba($color: #000000, $alpha: 0.2);
+        box-shadow: 10px 10px 20px rgba($color: #000000, $alpha: .1);
     }
 
     &:after {
@@ -35,18 +37,19 @@
     }
 }
 .clouds {
-    position: relative;
-    top: -210px;
-    left: -210px;
-    bottom: 0px;
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    top: -200px;
+    overflow-x: hidden;
     @for $y from 1 to 20 {
         & .cloud_#{$y} {
             @include cloud();
-            top: 8vw;
-            left: random(120)+$y*0.21vmax;
-            // left: random(120)+$y*0.01vw;
-            // left: random()+$y*10vw;
-            transition: all 0.2s ease-in-out;
+            // top: 8vw;
+            // // left: random(120)+$y*0.1vmax;
+            // // left: random(120)+$y*0.01vw;
+            // // left: random()+$y*10vw;
+            // transition: all 0.2s ease-in-out;
             @if $y%2==0 {
                 animation: cloud_move_right 10.0s 1s infinite;
             }

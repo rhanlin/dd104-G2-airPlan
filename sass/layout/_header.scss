@@ -1,5 +1,5 @@
 header{
-    width: 100vw;
+    // width: 100vw;
     height: 25vw;
     font-size: 0;
     #myClouds{
@@ -8,8 +8,10 @@ header{
     .view{
     };
     .white-space-bg{
-        width: 100vw;
-        height: 150px;
+        // width: 100vw;
+        height: 200px;
         background: linear-gradient(180deg, rgba(255, 255, 255, 1)25%, rgba(235, 255, 255, 0)100%);
+        position: relative;
+        z-index: 99;
     };
 }
