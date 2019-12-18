@@ -1,8 +1,8 @@
-/* 
- *  color header box
+/*
+ *  有網點的矩形框 
  */
-
-
+//使用說明："dot-box-COLOR"
+//author: Rhan0
 @mixin dot-box-modul($box-module,$width:70vw,$height:30vw){
     @each $title,$color in $box-module{ 
         .dot-box-#{$title}{
@@ -18,7 +18,11 @@
         }
     }
 }
-
+/*
+ *  沒有網點的矩形框 
+ */
+//使用說明："box-COLOR"
+//author: Rhan0
 @mixin box-modul($box-module,$width:70vw,$height:30vw){
     @each $title,$color in $box-module{ 
         .box-#{$title}{
