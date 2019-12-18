@@ -5,15 +5,14 @@
 <header>
     <canvas id="myClouds"></canvas>
     
-        <div class="view">
-            <div id="clouds" class="clouds">
-                <template  v-for="cloud in 10">
-                    <div class="cloud_1">{{cloud}}</div>
-                </template>
-            </div>
+    <div class="white-space-bg">
+        <div id="clouds" class="clouds">
+            <template  v-for="(cloud, index) in 10">
+                <div :class=`cloud_${index}` :style="{left: `${Math.random() * innerWidth}px`}"></div>
+            </template>
         </div>
+    </div>
 
-    <div class="white-space-bg"></div>
 
     <div class="box-blue">
         <!-- <div class="box-white"></div>
