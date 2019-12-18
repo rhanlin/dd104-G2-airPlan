@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  border: 1px solid royalblue;
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+}
+.cav_leftWrap {
+  border: 1px solid black;
+  display: inline-block;
+  width: 40%;
+
+  .cav_topBlock {
+    border: 1px solid green;
+    display: inline-block;
+  }
+
+  .cav_prodWrap {
+    border: 1px solid firebrick;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+.cav_prod {
+  border: 1px solid darkcyan;
+  display: inline-block;
+}
+.cav_rightWrap {
+  border: 1px solid black;
+  display: inline-block;
+  width: 55%;
+  margin-left: 5%;
+  > ul {
+    border: 1px solid black;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    > li {
+      border: 1px solid black;
+      width: 33.33%;
+      text-align: center;
+    }
+  }
+  .cav_tabWrap{
+
+    .tab{
+      display: none;
+    }
+    .tab.-on{
+      display: inline-block;
+    }
+  }
+}
