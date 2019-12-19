@@ -86,7 +86,7 @@
     box-sizing: border-box;
     font-size: 0px;
     .chat-section {
-        // border:1px solid forestgreen;
+        border:1px solid forestgreen;
         float: left;
         width: 205px;
         height: 612px;
@@ -97,8 +97,9 @@
         
 
         .mark1 {
+            // border:1px solid forestgreen;
             width: 105px;
-            height: 105px;
+            height: 0px;
             @include border();
             padding: 20px;
             margin-left: 50px;
