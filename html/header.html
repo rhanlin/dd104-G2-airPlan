@@ -4,20 +4,29 @@
 
 <header>
     <canvas id="myClouds"></canvas>
-    
+    <!-- 漂浮的雲 -->
     <div class="white-space-bg">
+        <div class="head-box">
+            <div class="dot-box-blue bottom-bg">
+                <div class="box-white top-left-bg">
+                    <div class="box-white top-left-bg">
+                        <h1 class="threed-text-blue">寫信</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div id="clouds" class="clouds">
-            <template  v-for="(cloud, index) in 10">
+            <div class="cloud_1"></div>
+            <template  v-for="(cloud, index) in 15">
                 <div :class=`cloud_${index}` :style="{left: `${Math.random() * innerWidth}px`}"></div>
             </template>
+            
         </div>
     </div>
 
 
-    <div class="box-blue">
-        <!-- <div class="box-white"></div>
-            <div class="box-white"></div> -->
-    </div>
+    
     <script>
         $('#myClouds').Klouds({
             speed: 1,

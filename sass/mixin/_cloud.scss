@@ -1,11 +1,12 @@
+/*
+ *  用在header區的雲 
+ */
+//author: Rhan0
 @mixin cloud() {
-    width: 350px;
-    height: 110px;
+    width: 300px;
+    height: 95px;
     background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #F7FAFD), to(#ffffff));
-    // background: radial-gradient(#000000 10%, #ffffff 10%);
-    // background-size: 10px 10px;
-    // box-shadow: 0 37px 64px -40px rgba($color: #000000, $alpha: 0.6);
-    box-shadow: 10px 10px 20px rgba($color: #000000, $alpha: .1);
+    box-shadow: 10px 10px 20px rgba($color: #2f2f2f, $alpha: .1);
     border-radius: 100px;
     position: absolute;
     margin: 140px auto 20px;
@@ -17,7 +18,7 @@
         background: #F7FAFD;
         z-index: -11;
         // box-shadow: 0px -5px 136px -40px rgba($color: #000000, $alpha: 0.2);
-        box-shadow: 10px 10px 20px rgba($color: #000000, $alpha: .1);
+        box-shadow: 0px 10px 20px rgba($color: #000000, $alpha: .1);
     }
 
     &:after {
@@ -29,8 +30,8 @@
     }
 
     &:before {
-        width: 180px;
-        height: 180px;
+        width: 150px;
+        height: 150px;
         top: -90px;
         right: 50px;
         border-radius: 200px;
@@ -40,7 +41,7 @@
     position: absolute;
     width: 100%;
     height: 300px;
-    top: -200px;
+    top: -4vw;
     overflow-x: hidden;
     @for $y from 1 to 20 {
         & .cloud_#{$y} {
