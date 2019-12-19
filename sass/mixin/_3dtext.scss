@@ -18,13 +18,13 @@
 
 
 /*
- *  3D文字 
+ *  3D文字 : 任意色+黃色立體
  */
 //使用說明："threed-text-COLOR"
 //author: Rhan0
  @mixin threed-text($threed-text) {
     @each $title,$color in $threed-text{
-        .threed-text-#{$title} {
+        .threed-text-#{$title}{
                 font-family: '微軟正黑體', sans-serif;
                 text-transform: uppercase;
                 font-size: 7vw;
@@ -39,6 +39,35 @@
                         
                         1px 0px 0px $main-yellow, 0px 1px 0px $main-yellow, 2px 1px 0px $main-yellow, 1px 2px 0px $main-yellow, 3px 2px 0px $main-yellow, 2px 3px 0px $main-yellow, 4px 3px 0px $main-yellow, 3px 4px 0px 
                         $main-yellow, 5px 4px 0px $main-yellow,
+                        
+                        3px 5px 0px $main-black, 6px 5px 0px $main-black, 
+                        -1px 2px 0 black, 0 3px 0 $main-black, 1px 4px 0 $main-black, 2px 5px 0px $main-black,
+                        2px -1px 0 $main-black, 3px 0 0 $main-black, 4px 1px 0 $main-black, 5px 2px 0px $main-black, 6px 3px 0 $main-black, 7px 4px 0 $main-black;
+        }
+    }
+ }
+/*
+ *  3D文字 : 任意色+白色立體
+ */
+//使用說明："threed-text-COLOR-endWhite"
+//author: Rhan0
+ @mixin threed-text-white($threed-text) {
+    @each $title,$color in $threed-text{
+        .threed-text-#{$title}-endWhite{
+                font-family: '微軟正黑體', sans-serif;
+                text-transform: uppercase;
+                font-size: 7vw;
+                text-align: center;
+                line-height: 1;
+                letter-spacing: 2vw;
+                font-weight: bold;
+                margin: 0;
+                color: $color;
+                text-shadow: 
+                        -1px -1px 0 $main-black, 1px -1px 0 $main-black, -1px 1px 0 $main-black, 1px 1px 0 $main-black, 
+                        
+                        1px 0px 0px $main-white, 0px 1px 0px $main-white, 2px 1px 0px $main-white, 1px 2px 0px $main-white, 3px 2px 0px $main-white, 2px 3px 0px $main-white, 4px 3px 0px $main-white, 3px 4px 0px 
+                        $main-white, 5px 4px 0px $main-white,
                         
                         3px 5px 0px $main-black, 6px 5px 0px $main-black, 
                         -1px 2px 0 black, 0 3px 0 $main-black, 1px 4px 0 $main-black, 2px 5px 0px $main-black,
