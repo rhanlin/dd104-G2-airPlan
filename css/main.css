@@ -655,6 +655,9 @@ table {
       border-radius: 200px; }
 
 /*
+ *  裝飾用 文件夾 
+ */
+/*
  *  3D文字 
  */
 /*
@@ -1055,6 +1058,8 @@ table {
   text-align: center;
   line-height: 1;
   letter-spacing: 2vw;
+  font-weight: bold;
+  -webkit-text-stroke: 2px #212121;
   margin: 0;
   top: 50%;
   left: 50%;
@@ -1070,6 +1075,8 @@ table {
   text-align: center;
   line-height: 1;
   letter-spacing: 2vw;
+  font-weight: bold;
+  -webkit-text-stroke: 2px #212121;
   margin: 0;
   top: 50%;
   left: 50%;
@@ -1085,6 +1092,8 @@ table {
   text-align: center;
   line-height: 1;
   letter-spacing: 2vw;
+  font-weight: bold;
+  -webkit-text-stroke: 2px #212121;
   margin: 0;
   top: 50%;
   left: 50%;
@@ -1100,6 +1109,8 @@ table {
   text-align: center;
   line-height: 1;
   letter-spacing: 2vw;
+  font-weight: bold;
+  -webkit-text-stroke: 2px #212121;
   margin: 0;
   top: 50%;
   left: 50%;
@@ -1107,6 +1118,18 @@ table {
   position: absolute;
   color: #ffffff;
   text-shadow: -1px -1px 0 #212121, 1px -1px 0 #212121, -1px 1px 0 #212121, 1px 1px 0 #212121, 1px 0px 0px #f3de6b, 0px 1px 0px #f3de6b, 2px 1px 0px #f3de6b, 1px 2px 0px #f3de6b, 3px 2px 0px #f3de6b, 2px 3px 0px #f3de6b, 4px 3px 0px #f3de6b, 3px 4px 0px #f3de6b, 5px 4px 0px #f3de6b, 3px 5px 0px #212121, 6px 5px 0px #212121, -1px 2px 0 black, 0 3px 0 #212121, 1px 4px 0 #212121, 2px 5px 0px #212121, 2px -1px 0 #212121, 3px 0 0 #212121, 4px 1px 0 #212121, 5px 2px 0px #212121, 6px 3px 0 #212121, 7px 4px 0 #212121; }
+
+.share-clip {
+  display: inline-block;
+  width: 10%;
+  height: 80%;
+  min-height: 100px;
+  z-index: 999;
+  background-image: url("../../img/share/share-clip.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute; }
 
 /*
  *  pages
@@ -10150,7 +10173,7 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 0;
   box-sizing: border-box; }
 
-main {
+.cave-main {
   border: 1px solid royalblue;
   display: flex;
   width: 1200px;
@@ -10468,10 +10491,16 @@ header {
       header .white-space-bg .head-box .bottom-bg {
         width: auto;
         height: 20vw; }
+        header .white-space-bg .head-box .bottom-bg .clip-left {
+          top: -65%;
+          left: 18%; }
+        header .white-space-bg .head-box .bottom-bg .clip-right {
+          top: -65%;
+          right: 18%; }
         header .white-space-bg .head-box .bottom-bg .top-left-bg {
           position: relative;
-          top: 20px;
-          left: -20px;
+          top: 10px;
+          left: -15px;
           height: 15vw; }
 
 nav {
