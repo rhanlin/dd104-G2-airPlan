@@ -3,6 +3,8 @@ $threed-text:(
     blue: $main-blue,
     red: $main-red,
     white: $main-white,
+    black: $main-black,
 );
 
 @include threed-text($threed-text);
+@include threed-text-white($threed-text);

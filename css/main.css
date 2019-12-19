@@ -93,6 +93,9 @@ table {
     transform: translateX(0) translateY(0); } }
 
 /*
+ *  隨機網點svg產生碼(base64)
+ */
+/*
  *  mixin
  */
 /* 
@@ -658,13 +661,16 @@ table {
  *  裝飾用 文件夾 
  */
 /*
- *  3D文字 
+ *  3D文字 : 任意色+黃色立體
+ */
+/*
+ *  3D文字 : 任意色+白色立體
  */
 /*
  *  module
  */
 .btn-basic-yellow {
-  font-family: Roboto Mono;
+  font-family: '微軟正黑體',Roboto Mono;
   letter-spacing: 0.4em;
   position: absolute;
   border: none;
@@ -714,7 +720,7 @@ table {
       left: -2px; }
 
 .btn-basic-blue {
-  font-family: Roboto Mono;
+  font-family: '微軟正黑體',Roboto Mono;
   letter-spacing: 0.4em;
   position: absolute;
   border: none;
@@ -764,7 +770,7 @@ table {
       left: -2px; }
 
 .btn-basic-red {
-  font-family: Roboto Mono;
+  font-family: '微軟正黑體',Roboto Mono;
   letter-spacing: 0.4em;
   position: absolute;
   border: none;
@@ -813,155 +819,74 @@ table {
       bottom: -5px;
       left: -2px; }
 
-.btn-big-yellow {
-  font-family: Roboto Mono;
-  letter-spacing: 0.4em;
-  position: absolute;
-  border: none;
-  outline: none;
-  width: 150px;
-  height: 70px;
-  background-color: #f3de6b;
-  text-align: center;
-  line-height: 40px;
-  cursor: pointer;
-  color: white;
-  z-index: 1; }
-  .btn-big-yellow:before {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 10px;
-    left: -25px;
-    bottom: 10px;
-    background-color: #ffef7c;
-    transform: rotate(90deg) skew(45deg);
-    background: linear-gradient(45deg, #ffef7c 45%, black 45%, black 55%, #ffef7c 10%);
-    background-size: 7px 7px;
-    z-index: -1; }
-  .btn-big-yellow:after {
-    content: '';
-    position: absolute;
-    width: 150px;
-    height: 10px;
-    bottom: -10px;
-    left: -5px;
-    background-color: #e2cd5a;
-    transform: skew(-45deg) rotate(0deg);
-    background: linear-gradient(80deg, #e2cd5a 40%, black 40%, black 55%, #e2cd5a 20%);
-    background-size: 7px 7px;
-    z-index: -1; }
-  .btn-big-yellow.clicked {
-    left: -5px;
-    bottom: -5px; }
-    .btn-big-yellow.clicked:before {
-      height: 5px;
-      left: -22px;
-      bottom: 15px; }
-    .btn-big-yellow.clicked:after {
-      height: 5px;
-      bottom: -5px;
-      left: -2px; }
+.btn-big-test {
+  --color: #f3de6b;
+  --color-dark: #e7cc56;
+  --color-dark-side-way: #e7cc56;
+  --box-height: 5rem;
+  --box-width: 10rem;
+  --box-deep: 3rem;
+  --light: #212121;
+  --light-2: #f08b8c; }
 
-.btn-big-blue {
-  font-family: Roboto Mono;
-  letter-spacing: 0.4em;
-  position: absolute;
-  border: none;
-  outline: none;
-  width: 150px;
-  height: 70px;
-  background-color: #82afd9;
-  text-align: center;
-  line-height: 40px;
-  cursor: pointer;
-  color: white;
-  z-index: 1; }
-  .btn-big-blue:before {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 10px;
-    left: -25px;
-    bottom: 10px;
-    background-color: #93c0ea;
-    transform: rotate(90deg) skew(45deg);
-    background: linear-gradient(45deg, #93c0ea 45%, black 45%, black 55%, #93c0ea 10%);
-    background-size: 7px 7px;
-    z-index: -1; }
-  .btn-big-blue:after {
-    content: '';
-    position: absolute;
-    width: 150px;
-    height: 10px;
-    bottom: -10px;
-    left: -5px;
-    background-color: #719ec8;
-    transform: skew(-45deg) rotate(0deg);
-    background: linear-gradient(80deg, #719ec8 40%, black 40%, black 55%, #719ec8 20%);
-    background-size: 7px 7px;
-    z-index: -1; }
-  .btn-big-blue.clicked {
-    left: -5px;
-    bottom: -5px; }
-    .btn-big-blue.clicked:before {
-      height: 5px;
-      left: -22px;
-      bottom: 15px; }
-    .btn-big-blue.clicked:after {
-      height: 5px;
-      bottom: -5px;
-      left: -2px; }
+.side-way,
+.btn-big-test {
+  width: 10em;
+  height: 5em;
+  border: 0.2vw solid #212121; }
 
-.btn-big-red {
-  font-family: Roboto Mono;
-  letter-spacing: 0.4em;
+.side-way {
   position: absolute;
-  border: none;
-  outline: none;
-  width: 150px;
-  height: 70px;
-  background-color: #f08b8c;
-  text-align: center;
-  line-height: 40px;
-  cursor: pointer;
-  color: white;
-  z-index: 1; }
-  .btn-big-red:before {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 10px;
-    left: -25px;
-    bottom: 10px;
-    background-color: #ff9c9d;
-    transform: rotate(90deg) skew(45deg);
-    background: linear-gradient(45deg, #ff9c9d 45%, black 45%, black 55%, #ff9c9d 10%);
-    background-size: 7px 7px;
-    z-index: -1; }
-  .btn-big-red:after {
-    content: '';
-    position: absolute;
-    width: 150px;
-    height: 10px;
-    bottom: -10px;
-    left: -5px;
-    background-color: #df7a7b;
-    transform: skew(-45deg) rotate(0deg);
-    background: linear-gradient(80deg, #df7a7b 40%, black 40%, black 55%, #df7a7b 20%);
-    background-size: 7px 7px;
-    z-index: -1; }
-  .btn-big-red.clicked {
-    left: -5px;
-    bottom: -5px; }
-    .btn-big-red.clicked:before {
-      height: 5px;
-      left: -22px;
-      bottom: 15px; }
-    .btn-big-red.clicked:after {
-      height: 5px;
-      bottom: -5px;
-      left: -2px; }
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.btn-big-test {
+  perspective: 1000px;
+  transition: transform .5s linear;
+  transform-style: preserve-3d;
+  transform: rotateX(30deg) rotateZ(-180deg) rotateY(180deg);
+  perspective-origin: 50% 0rem; }
+  .btn-big-test .back {
+    transform: translateY(calc(var(--box-height) - (var(--box-deep) * (0.5)))) translateZ(calc(var(--box-deep) * (-0.5))) rotateX(90deg);
+    background: var(--color-dark);
+    height: var(--box-deep); }
+  .btn-big-test .left {
+    transform: translateX(calc(var(--box-deep) * (-0.5))) translateZ(calc(var(--box-deep) * (-0.5))) rotateY(90deg);
+    background: var(--color-dark-side-way);
+    width: var(--box-deep); }
+  .btn-big-test .right {
+    transform: translateX(calc(var(--box-width) - var(--box-deep) * (0.5))) translateZ(calc(var(--box-deep) * (-0.5))) rotateY(90deg);
+    background: var(--color-dark-side-way);
+    width: var(--box-deep); }
+  .btn-big-test .top {
+    background: var(color-dark);
+    width: 10em;
+    height: 5em;
+    box-shadow: 0 -3px 5px 0 black; }
+  .btn-big-test .bottom {
+    transform: translateZ(calc(var(--box-deep) * (-1)));
+    background: var(--color);
+    width: 10em;
+    height: 5em;
+    border-radius: 2px;
+    box-sizing: comtainer; }
+    .btn-big-test .bottom .side-way__text {
+      transform: rotateX(30deg) rotateZ(-180deg) rotateY(180deg);
+      font: bold 4vw "微軟正黑體";
+      color: white; }
+  .btn-big-test .front {
+    transform: translateY(calc(var(--box-deep) * (-0.5))) translateZ(calc(var(--box-deep) * (-0.5))) rotateX(90deg);
+    background: var(--color-dark);
+    height: var(--box-deep); }
+
+.bigBtnActive {
+  --box-deep: 1rem !important; }
+
+@keyframes rotate {
+  100% {
+    transform: rotateX(360deg) rotateY(360deg); } }
 
 .dot-box-yellow {
   border: .2vw solid #212121;
@@ -1099,6 +1024,78 @@ table {
   color: #ffffff;
   text-shadow: -1px -1px 0 #212121, 1px -1px 0 #212121, -1px 1px 0 #212121, 1px 1px 0 #212121, 1px 0px 0px #f3de6b, 0px 1px 0px #f3de6b, 2px 1px 0px #f3de6b, 1px 2px 0px #f3de6b, 3px 2px 0px #f3de6b, 2px 3px 0px #f3de6b, 4px 3px 0px #f3de6b, 3px 4px 0px #f3de6b, 5px 4px 0px #f3de6b, 3px 5px 0px #212121, 6px 5px 0px #212121, -1px 2px 0 black, 0 3px 0 #212121, 1px 4px 0 #212121, 2px 5px 0px #212121, 2px -1px 0 #212121, 3px 0 0 #212121, 4px 1px 0 #212121, 5px 2px 0px #212121, 6px 3px 0 #212121, 7px 4px 0 #212121; }
 
+.threed-text-black {
+  font-family: '微軟正黑體', sans-serif;
+  text-transform: uppercase;
+  font-size: 7vw;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: 2vw;
+  font-weight: bold;
+  margin: 0;
+  color: #212121;
+  text-shadow: -1px -1px 0 #212121, 1px -1px 0 #212121, -1px 1px 0 #212121, 1px 1px 0 #212121, 1px 0px 0px #f3de6b, 0px 1px 0px #f3de6b, 2px 1px 0px #f3de6b, 1px 2px 0px #f3de6b, 3px 2px 0px #f3de6b, 2px 3px 0px #f3de6b, 4px 3px 0px #f3de6b, 3px 4px 0px #f3de6b, 5px 4px 0px #f3de6b, 3px 5px 0px #212121, 6px 5px 0px #212121, -1px 2px 0 black, 0 3px 0 #212121, 1px 4px 0 #212121, 2px 5px 0px #212121, 2px -1px 0 #212121, 3px 0 0 #212121, 4px 1px 0 #212121, 5px 2px 0px #212121, 6px 3px 0 #212121, 7px 4px 0 #212121; }
+
+.threed-text-yellow-endWhite {
+  font-family: '微軟正黑體', sans-serif;
+  text-transform: uppercase;
+  font-size: 7vw;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: 2vw;
+  font-weight: bold;
+  margin: 0;
+  color: #f3de6b;
+  text-shadow: -1px -1px 0 #212121, 1px -1px 0 #212121, -1px 1px 0 #212121, 1px 1px 0 #212121, 1px 0px 0px #ffffff, 0px 1px 0px #ffffff, 2px 1px 0px #ffffff, 1px 2px 0px #ffffff, 3px 2px 0px #ffffff, 2px 3px 0px #ffffff, 4px 3px 0px #ffffff, 3px 4px 0px #ffffff, 5px 4px 0px #ffffff, 3px 5px 0px #212121, 6px 5px 0px #212121, -1px 2px 0 black, 0 3px 0 #212121, 1px 4px 0 #212121, 2px 5px 0px #212121, 2px -1px 0 #212121, 3px 0 0 #212121, 4px 1px 0 #212121, 5px 2px 0px #212121, 6px 3px 0 #212121, 7px 4px 0 #212121; }
+
+.threed-text-blue-endWhite {
+  font-family: '微軟正黑體', sans-serif;
+  text-transform: uppercase;
+  font-size: 7vw;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: 2vw;
+  font-weight: bold;
+  margin: 0;
+  color: #82afd9;
+  text-shadow: -1px -1px 0 #212121, 1px -1px 0 #212121, -1px 1px 0 #212121, 1px 1px 0 #212121, 1px 0px 0px #ffffff, 0px 1px 0px #ffffff, 2px 1px 0px #ffffff, 1px 2px 0px #ffffff, 3px 2px 0px #ffffff, 2px 3px 0px #ffffff, 4px 3px 0px #ffffff, 3px 4px 0px #ffffff, 5px 4px 0px #ffffff, 3px 5px 0px #212121, 6px 5px 0px #212121, -1px 2px 0 black, 0 3px 0 #212121, 1px 4px 0 #212121, 2px 5px 0px #212121, 2px -1px 0 #212121, 3px 0 0 #212121, 4px 1px 0 #212121, 5px 2px 0px #212121, 6px 3px 0 #212121, 7px 4px 0 #212121; }
+
+.threed-text-red-endWhite {
+  font-family: '微軟正黑體', sans-serif;
+  text-transform: uppercase;
+  font-size: 7vw;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: 2vw;
+  font-weight: bold;
+  margin: 0;
+  color: #f08b8c;
+  text-shadow: -1px -1px 0 #212121, 1px -1px 0 #212121, -1px 1px 0 #212121, 1px 1px 0 #212121, 1px 0px 0px #ffffff, 0px 1px 0px #ffffff, 2px 1px 0px #ffffff, 1px 2px 0px #ffffff, 3px 2px 0px #ffffff, 2px 3px 0px #ffffff, 4px 3px 0px #ffffff, 3px 4px 0px #ffffff, 5px 4px 0px #ffffff, 3px 5px 0px #212121, 6px 5px 0px #212121, -1px 2px 0 black, 0 3px 0 #212121, 1px 4px 0 #212121, 2px 5px 0px #212121, 2px -1px 0 #212121, 3px 0 0 #212121, 4px 1px 0 #212121, 5px 2px 0px #212121, 6px 3px 0 #212121, 7px 4px 0 #212121; }
+
+.threed-text-white-endWhite {
+  font-family: '微軟正黑體', sans-serif;
+  text-transform: uppercase;
+  font-size: 7vw;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: 2vw;
+  font-weight: bold;
+  margin: 0;
+  color: #ffffff;
+  text-shadow: -1px -1px 0 #212121, 1px -1px 0 #212121, -1px 1px 0 #212121, 1px 1px 0 #212121, 1px 0px 0px #ffffff, 0px 1px 0px #ffffff, 2px 1px 0px #ffffff, 1px 2px 0px #ffffff, 3px 2px 0px #ffffff, 2px 3px 0px #ffffff, 4px 3px 0px #ffffff, 3px 4px 0px #ffffff, 5px 4px 0px #ffffff, 3px 5px 0px #212121, 6px 5px 0px #212121, -1px 2px 0 black, 0 3px 0 #212121, 1px 4px 0 #212121, 2px 5px 0px #212121, 2px -1px 0 #212121, 3px 0 0 #212121, 4px 1px 0 #212121, 5px 2px 0px #212121, 6px 3px 0 #212121, 7px 4px 0 #212121; }
+
+.threed-text-black-endWhite {
+  font-family: '微軟正黑體', sans-serif;
+  text-transform: uppercase;
+  font-size: 7vw;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: 2vw;
+  font-weight: bold;
+  margin: 0;
+  color: #212121;
+  text-shadow: -1px -1px 0 #212121, 1px -1px 0 #212121, -1px 1px 0 #212121, 1px 1px 0 #212121, 1px 0px 0px #ffffff, 0px 1px 0px #ffffff, 2px 1px 0px #ffffff, 1px 2px 0px #ffffff, 3px 2px 0px #ffffff, 2px 3px 0px #ffffff, 4px 3px 0px #ffffff, 3px 4px 0px #ffffff, 5px 4px 0px #ffffff, 3px 5px 0px #212121, 6px 5px 0px #212121, -1px 2px 0 black, 0 3px 0 #212121, 1px 4px 0 #212121, 2px 5px 0px #212121, 2px -1px 0 #212121, 3px 0 0 #212121, 4px 1px 0 #212121, 5px 2px 0px #212121, 6px 3px 0 #212121, 7px 4px 0 #212121; }
+
 .share-clip {
   display: inline-block;
   width: 10%;
@@ -1122,9 +1119,27 @@ table {
   background-size: 5px 5px; }
 
 .wrletter-body {
-  background: radial-gradient(#000000 20%, #fff 20%);
-  background-size: 6px 6px;
+  background: radial-gradient(#000000 10%, #fff 20%);
+  background-size: 8px 8px;
   height: 200vw; }
+  .wrletter-body main {
+    margin-top: 25vw; }
+    .wrletter-body main .select-category {
+      height: 28vw; }
+      .wrletter-body main .select-category .num-one {
+        width: 60%;
+        height: 30%;
+        margin: 0 auto;
+        border: 1px solid orange;
+        background-image: url("../../img/share/number-one.svg");
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: 18vw;
+        margin-top: 5%; }
+        .wrletter-body main .select-category .num-one h2 {
+          font-size: 4vw;
+          letter-spacing: 1vw;
+          text-align: right; }
 
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
@@ -10250,23 +10265,71 @@ a.text-dark:hover, a.text-dark:focus {
     .cav_rightWrap .cav_pc .cav_coin {
       width: 50%; }
 
+h1, td {
+  font-size: 24px; }
+
 .userSetting_body {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 0; }
+  .userSetting_body .userSetting_main {
+    width: 100%; }
+    .userSetting_body .userSetting_main .userSetting_mem {
+      width: 100%;
+      height: 800px;
+      background-color: #bee9fa; }
+      .userSetting_body .userSetting_main .userSetting_mem .userSetting_memKanban {
+        width: 50%;
+        background-color: #8fc5b0;
+        margin: 0 auto; }
+        .userSetting_body .userSetting_main .userSetting_mem .userSetting_memKanban .userSetting_memData, .userSetting_body .userSetting_main .userSetting_mem .userSetting_memKanban .userSetting_airCoin, .userSetting_body .userSetting_main .userSetting_mem .userSetting_memKanban .userSetting_memcolor {
+          width: 33.33%;
+          background-color: goldenrod;
+          display: inline-block;
+          text-align: center; }
+        .userSetting_body .userSetting_main .userSetting_mem .userSetting_memKanban .userSetting_robotB1, .userSetting_body .userSetting_main .userSetting_mem .userSetting_memKanban .userSetting_conveyorB1 {
+          display: block; }
+    .userSetting_body .userSetting_main .userSetting_sys {
+      width: 100%;
+      height: 800px;
+      background-color: wheat; }
+      .userSetting_body .userSetting_main .userSetting_sys .userSetting_sysKanban {
+        width: 50%;
+        background-color: #9b8fc5;
+        margin: 0 auto; }
+        .userSetting_body .userSetting_main .userSetting_sys .userSetting_sysKanban .userSetting_manu, .userSetting_body .userSetting_main .userSetting_sys .userSetting_sysKanban .userSetting_ver {
+          width: 50%;
+          background-color: #e48fb9;
+          display: inline-block;
+          border-bottom: 2px solid black;
+          text-align: center; }
+
+.memData, .airCoin, .memcolor, .manu, .ver {
+  height: 400px;
+  margin: 0 auto;
+  width: 100%; }
+
+.memDataTable, .airCoinTable {
+  width: 70%;
   margin: 0 auto; }
-  .userSetting_body .userSetting_main .userSetting_mem {
-    height: 800px; }
-    .userSetting_body .userSetting_main .userSetting_mem .userSetting_memKanban {
-      width: 45%;
-      background-color: #8fc5b0; }
-      .userSetting_body .userSetting_main .userSetting_mem .userSetting_memKanban .userSetting_memData, .userSetting_body .userSetting_main .userSetting_mem .userSetting_memKanban .userSetting_airCoin, .userSetting_body .userSetting_main .userSetting_mem .userSetting_memKanban .userSetting_color {
-        width: 30%;
-        background-color: goldenrod;
-        display: inline-block;
-        border-bottom: 2px solid black;
-        text-align: center; }
-      .userSetting_body .userSetting_main .userSetting_mem .userSetting_memKanban .userSetting_robotB1, .userSetting_body .userSetting_main .userSetting_mem .userSetting_memKanban .userSetting_conveyorB1 {
-        display: block; }
-  .userSetting_body .userSetting_main .userSetting_sys {
-    background-color: brown; }
+
+.memData td, .airCoin td, .memcolor td, .manu td, .ver td {
+  width: 50%;
+  border: 1px solid black; }
+
+.airCoin {
+  text-align: center; }
+
+.airCoin table td {
+  text-align: center;
+  width: 33.33%;
+  border: 1px solid black; }
+
+.memcolor {
+  text-align: center; }
+
+.memcolorBlack, .memcolorWhite {
+  height: 50%; }
 
 .chat-body {
   margin: 0; }

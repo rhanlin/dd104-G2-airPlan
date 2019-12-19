@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 176 193" style="enable-background:new 0 0 176 193;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#120A33;}
+	.st1{fill:#82AFD9;stroke:#212121;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#82AFD9;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st3{fill:#FFFFFF;}
+	.st4{fill:#212121;}
+	.st5{fill:#FFE559;}
+	.st6{fill:#B8A248;}
+	.st7{fill:#F08B8C;}
+	.st8{fill:#F3DE6B;}
+	.st9{fill:#F3DE6B;stroke:#212121;stroke-width:3;stroke-miterlimit:10;}
+	.st10{fill:#FEFEFE;}
+</style>
+<path class="st0" d="M25.5,50.5V83h77.3c5.1,0,9.2,4.1,9.2,9.2v73.6c0,1.7-0.5,3.3-1.3,4.7h61.8v-120H25.5z"/>
+<path class="st1" d="M2.5,68.5v120h147v-120H2.5z M112,165.8c0,5.1-4.1,9.2-9.2,9.2H22.2c-5.1,0-9.2-4.1-9.2-9.2V92.2
+	c0-5.1,4.1-9.2,9.2-9.2h80.6c5.1,0,9.2,4.1,9.2,9.2V165.8z"/>
+<polygon class="st0" points="172.5,170.5 149.5,188.5 149.5,68.5 172.5,50.5 "/>
+<polygon class="st0" points="149.5,68.5 2.5,68.5 25.5,50.5 172.5,50.5 "/>
+<polyline class="st2" points="2.5,68.5 25.5,50.5 172.5,50.5 172.5,170.5 149.5,188.5 "/>
+<polygon class="st3" points="164,118.5 151.5,126.5 151.5,120.5 164,112.5 "/>
+<polygon class="st3" points="164,134.5 151.5,142.5 151.5,136.5 164,128.5 "/>
+<polygon class="st3" points="164,150.5 151.5,158.5 151.5,152.5 164,144.5 "/>
+<polygon class="st3" points="164,166.5 151.5,174.5 151.5,168.5 164,160.5 "/>
+<circle class="st4" cx="131" cy="99" r="11"/>
+<circle class="st4" cx="131" cy="129" r="11"/>
+<ellipse class="st5" cx="131" cy="99" rx="3" ry="10"/>
+<path class="st6" d="M134,99c0-5.5-1.3-10-3-10v20C132.7,109,134,104.5,134,99z"/>
+<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -52.8478 130.4142)" class="st5" cx="131" cy="129" rx="10" ry="3"/>
+<path class="st6" d="M133.1,131.1c3.9-3.9,6.1-8,4.9-9.2l-14.1,14.1C125.1,137.2,129.2,135,133.1,131.1z"/>
+<rect x="121" y="147" class="st5" width="19" height="26"/>
+<g>
+	<rect x="123" y="150" class="st7" width="15" height="4"/>
+	<rect x="123" y="155.3" class="st7" width="15" height="4"/>
+	<rect x="123" y="160.7" class="st7" width="15" height="4"/>
+	<rect x="123" y="166" class="st7" width="15" height="4"/>
+</g>
+<g>
+	<g>
+		<rect x="63.1" y="2.7" transform="matrix(0.8405 -0.5418 0.5418 0.8405 -3.7327 39.225)" class="st0" width="3.2" height="46.6"/>
+		
+			<rect x="112.1" y="2.7" transform="matrix(-0.8405 -0.5418 0.5418 -0.8405 195.3084 109.3999)" class="st0" width="3.2" height="46.6"/>
+		<circle class="st8" cx="54" cy="9" r="7.5"/>
+		<circle class="st0" cx="54" cy="9" r="3.5"/>
+		<circle class="st8" cx="123" cy="12" r="7.5"/>
+		<circle class="st0" cx="123" cy="12" r="3.5"/>
+	</g>
+	<path class="st9" d="M93,41.5c-11.9,0-21.5,9.6-21.5,21.5h43C114.5,51.1,104.9,41.5,93,41.5z"/>
+	<path class="st9" d="M83,41.5c-11.9,0-21.5,9.6-21.5,21.5h43C104.5,51.1,94.9,41.5,83,41.5z"/>
+	<path class="st10" d="M65,59.5h7c0,0,5-13,19-9C91,50.5,78,34.5,65,59.5z"/>
+</g>
+</svg>
