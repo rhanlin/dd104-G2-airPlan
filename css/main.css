@@ -1134,6 +1134,13 @@ table {
 /*
  *  pages
  */
+.home_skyPoint {
+  width: 100%;
+  height: 500px;
+  background: -webkit-radial-gradient(#000000 50%, #ffffff 50%);
+  background: radial-gradient(#000000 50%, #ffffff 50%);
+  background-size: 5px 5px; }
+
 .wrletter-body {
   background: radial-gradient(#000000 20%, #fff 20%);
   background-size: 6px 6px;
