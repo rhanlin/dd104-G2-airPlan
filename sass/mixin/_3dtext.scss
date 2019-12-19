@@ -27,15 +27,12 @@
         .threed-text-#{$title} {
                 font-family: '微軟正黑體', sans-serif;
                 text-transform: uppercase;
-                font-size: 8vw;
+                font-size: 7vw;
                 text-align: center;
                 line-height: 1;
                 letter-spacing: 2vw;
+                font-weight: bold;
                 margin: 0;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                position: absolute;
                 color: $color;
                 text-shadow: 
                         -1px -1px 0 $main-black, 1px -1px 0 $main-black, -1px 1px 0 $main-black, 1px 1px 0 $main-black, 

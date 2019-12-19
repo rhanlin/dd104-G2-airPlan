@@ -944,6 +944,9 @@ table {
 }
 
 /*
+ *  裝飾用 文件夾 
+ */
+/*
  *  3D文字 
  */
 /*
@@ -1426,16 +1429,20 @@ table {
 .threed-text-yellow {
   font-family: '微軟正黑體', sans-serif;
   text-transform: uppercase;
-  font-size: 8vw;
+  font-size: 7vw;
   text-align: center;
   line-height: 1;
   letter-spacing: 2vw;
+  font-weight: bold;
   margin: 0;
+<<<<<<< HEAD
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   position: absolute;
+=======
+>>>>>>> dev
   color: #f3de6b;
   text-shadow: -1px -1px 0 #212121, 1px -1px 0 #212121, -1px 1px 0 #212121, 1px 1px 0 #212121, 1px 0px 0px #f3de6b, 0px 1px 0px #f3de6b, 2px 1px 0px #f3de6b, 1px 2px 0px #f3de6b, 3px 2px 0px #f3de6b, 2px 3px 0px #f3de6b, 4px 3px 0px #f3de6b, 3px 4px 0px #f3de6b, 5px 4px 0px #f3de6b, 3px 5px 0px #212121, 6px 5px 0px #212121, -1px 2px 0 black, 0 3px 0 #212121, 1px 4px 0 #212121, 2px 5px 0px #212121, 2px -1px 0 #212121, 3px 0 0 #212121, 4px 1px 0 #212121, 5px 2px 0px #212121, 6px 3px 0 #212121, 7px 4px 0 #212121;
 }
@@ -1443,16 +1450,20 @@ table {
 .threed-text-blue {
   font-family: '微軟正黑體', sans-serif;
   text-transform: uppercase;
-  font-size: 8vw;
+  font-size: 7vw;
   text-align: center;
   line-height: 1;
   letter-spacing: 2vw;
+  font-weight: bold;
   margin: 0;
+<<<<<<< HEAD
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   position: absolute;
+=======
+>>>>>>> dev
   color: #82afd9;
   text-shadow: -1px -1px 0 #212121, 1px -1px 0 #212121, -1px 1px 0 #212121, 1px 1px 0 #212121, 1px 0px 0px #f3de6b, 0px 1px 0px #f3de6b, 2px 1px 0px #f3de6b, 1px 2px 0px #f3de6b, 3px 2px 0px #f3de6b, 2px 3px 0px #f3de6b, 4px 3px 0px #f3de6b, 3px 4px 0px #f3de6b, 5px 4px 0px #f3de6b, 3px 5px 0px #212121, 6px 5px 0px #212121, -1px 2px 0 black, 0 3px 0 #212121, 1px 4px 0 #212121, 2px 5px 0px #212121, 2px -1px 0 #212121, 3px 0 0 #212121, 4px 1px 0 #212121, 5px 2px 0px #212121, 6px 3px 0 #212121, 7px 4px 0 #212121;
 }
@@ -1460,16 +1471,20 @@ table {
 .threed-text-red {
   font-family: '微軟正黑體', sans-serif;
   text-transform: uppercase;
-  font-size: 8vw;
+  font-size: 7vw;
   text-align: center;
   line-height: 1;
   letter-spacing: 2vw;
+  font-weight: bold;
   margin: 0;
+<<<<<<< HEAD
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   position: absolute;
+=======
+>>>>>>> dev
   color: #f08b8c;
   text-shadow: -1px -1px 0 #212121, 1px -1px 0 #212121, -1px 1px 0 #212121, 1px 1px 0 #212121, 1px 0px 0px #f3de6b, 0px 1px 0px #f3de6b, 2px 1px 0px #f3de6b, 1px 2px 0px #f3de6b, 3px 2px 0px #f3de6b, 2px 3px 0px #f3de6b, 4px 3px 0px #f3de6b, 3px 4px 0px #f3de6b, 5px 4px 0px #f3de6b, 3px 5px 0px #212121, 6px 5px 0px #212121, -1px 2px 0 black, 0 3px 0 #212121, 1px 4px 0 #212121, 2px 5px 0px #212121, 2px -1px 0 #212121, 3px 0 0 #212121, 4px 1px 0 #212121, 5px 2px 0px #212121, 6px 3px 0 #212121, 7px 4px 0 #212121;
 }
@@ -1477,23 +1492,46 @@ table {
 .threed-text-white {
   font-family: '微軟正黑體', sans-serif;
   text-transform: uppercase;
-  font-size: 8vw;
+  font-size: 7vw;
   text-align: center;
   line-height: 1;
   letter-spacing: 2vw;
+  font-weight: bold;
   margin: 0;
+<<<<<<< HEAD
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   position: absolute;
+=======
+>>>>>>> dev
   color: #ffffff;
   text-shadow: -1px -1px 0 #212121, 1px -1px 0 #212121, -1px 1px 0 #212121, 1px 1px 0 #212121, 1px 0px 0px #f3de6b, 0px 1px 0px #f3de6b, 2px 1px 0px #f3de6b, 1px 2px 0px #f3de6b, 3px 2px 0px #f3de6b, 2px 3px 0px #f3de6b, 4px 3px 0px #f3de6b, 3px 4px 0px #f3de6b, 5px 4px 0px #f3de6b, 3px 5px 0px #212121, 6px 5px 0px #212121, -1px 2px 0 black, 0 3px 0 #212121, 1px 4px 0 #212121, 2px 5px 0px #212121, 2px -1px 0 #212121, 3px 0 0 #212121, 4px 1px 0 #212121, 5px 2px 0px #212121, 6px 3px 0 #212121, 7px 4px 0 #212121;
 }
 
+.share-clip {
+  display: inline-block;
+  width: 10%;
+  height: 80%;
+  min-height: 100px;
+  z-index: 999;
+  background-image: url("../../img/share/share-clip.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute; }
+
 /*
  *  pages
  */
+.home_skyPoint {
+  width: 100%;
+  height: 500px;
+  background: -webkit-radial-gradient(#000000 50%, #ffffff 50%);
+  background: radial-gradient(#000000 50%, #ffffff 50%);
+  background-size: 5px 5px; }
+
 .wrletter-body {
   background: radial-gradient(#000000 20%, #fff 20%);
   background-size: 6px 6px;
@@ -14909,7 +14947,7 @@ a.text-dark:hover, a.text-dark:focus {
           box-sizing: border-box;
 }
 
-main {
+.cave-main {
   border: 1px solid royalblue;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15384,6 +15422,7 @@ h1, td {
  */
 header {
   height: 14vw;
+<<<<<<< HEAD
   font-size: 0;
 }
 
@@ -15418,6 +15457,43 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg {
   left: -20px;
   height: 15vw;
 }
+=======
+  font-size: 0; }
+  header #myClouds {
+    width: 100vw; }
+  header .white-space-bg {
+    height: 300px;
+    background: linear-gradient(180deg, white 60%, rgba(235, 255, 255, 0) 100%);
+    position: relative;
+    z-index: 99; }
+    header .white-space-bg .head-box {
+      width: 60vw;
+      height: auto;
+      margin: 0 auto;
+      border: 1px solid red;
+      text-align: center; }
+      header .white-space-bg .head-box .bottom-bg {
+        width: auto;
+        height: 20vw; }
+        header .white-space-bg .head-box .bottom-bg .clip-left {
+          top: -65%;
+          left: 18%; }
+        header .white-space-bg .head-box .bottom-bg .clip-right {
+          top: -65%;
+          right: 18%; }
+        header .white-space-bg .head-box .bottom-bg .top-left-bg {
+          position: relative;
+          top: 10px;
+          left: -15px;
+          height: 15vw; }
+          header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            padding: 0 2vw;
+            display: flex;
+            justify-content: space-between; }
+>>>>>>> dev
 
 nav {
   position: fixed;

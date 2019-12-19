@@ -10,8 +10,8 @@ var reload = browserSync.reload;
  *  搬家: concat
  */
 gulp.task('concat',function(){
-    return gulp.src('./js/*')
-    .pipe(gulp.dest('./dist/js/'))
+    return gulp.src(['./img/*','./img/**/*'])
+    .pipe(gulp.dest('./dist/img/'))
 });
 
 /*
