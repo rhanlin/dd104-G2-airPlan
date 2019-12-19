@@ -8501,6 +8501,7 @@ a.text-dark:hover, a.text-dark:focus {
     background-image: url("/image/point.jpg");
     opacity: 0.05; }
   .shop-body .shop-main {
+    overflow: hidden;
     width: 100%; }
     .shop-body .shop-main #section1 {
       margin: 0 auto;
@@ -8515,7 +8516,7 @@ a.text-dark:hover, a.text-dark:focus {
         font-size: 140px;
         color: #dbcd00;
         text-shadow: -2px -2px 0 #0f0f0f, -2px -1px 0 #0f0f0f, -2px 0px 0 #0f0f0f, -2px 1px 0 #0f0f0f, -2px 2px 0 #0f0f0f, -1px -2px 0 #0f0f0f, -1px -1px 0 #0f0f0f, -1px 0px 0 #0f0f0f, -1px 1px 0 #0f0f0f, -1px 2px 0 #0f0f0f, 0px -2px 0 #0f0f0f, 0px -1px 0 #0f0f0f, 0px 0px 0 #0f0f0f, 0px 1px 0 #0f0f0f, 0px 2px 0 #0f0f0f, 1px -2px 0 #0f0f0f, 1px -1px 0 #0f0f0f, 1px 0px 0 #0f0f0f, 1px 1px 0 #0f0f0f, 1px 2px 0 #0f0f0f, 2px -2px 0 #0f0f0f, 2px -1px 0 #0f0f0f, 2px 0px 0 #0f0f0f, 2px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f;
-        z-index: 10; }
+        z-index: 25; }
         .shop-body .shop-main #section1 .container .row .shopTitleText::before {
           content: '客製化商城';
           position: absolute;
@@ -8531,7 +8532,8 @@ a.text-dark:hover, a.text-dark:focus {
         .shop-body .shop-main #section1 .container .row .shopTitle .shopTitleContainer {
           margin: 0 auto;
           width: 100%;
-          position: relative; }
+          position: relative;
+          z-index: 20; }
           .shop-body .shop-main #section1 .container .row .shopTitle .shopTitleContainer .titlePage1 {
             position: absolute;
             width: 92%;
@@ -8580,13 +8582,13 @@ a.text-dark:hover, a.text-dark:focus {
           width: 15%;
           position: absolute;
           left: 20%;
-          top: -29%;
+          top: -50%;
           z-index: 10; }
         .shop-body .shop-main #section1 .container .row #conectionLine .iron_clip2 {
           width: 15%;
           position: absolute;
           right: 5%;
-          top: -29%;
+          top: -50%;
           z-index: 10; }
       .shop-body .shop-main #section1 .shopItemContainer {
         margin: 0 auto;
@@ -8698,11 +8700,16 @@ a.text-dark:hover, a.text-dark:focus {
               .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard2 img {
                 transform: translate(70%, -70%) rotate(360deg); }
             .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 {
+              font-size: 0;
               transform: translate(0, -10%) rotate(360deg); }
               .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 .itemCard3Img_1 {
-                transform: translate(5%, -70%) rotate(350deg); }
+                display: inline-block;
+                width: 50%;
+                transform: translate(2%, -70%) rotate(350deg); }
               .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 .itemCard3Img_2 {
-                transform: translate(5%, -70%) rotate(350deg); }
+                display: inline-block;
+                width: 50%;
+                transform: translate(15%, -70%) rotate(350deg); }
             .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard4 {
               transform: translate(0, 0%) rotate(350deg); }
               .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard4 img {
@@ -8733,40 +8740,56 @@ a.text-dark:hover, a.text-dark:focus {
         .shop-body .shop-main #section1 .itemCardBox .filter_forSamll {
           display: none; }
     .shop-body .shop-main #pile {
-      margin-left: 15%;
-      width: 85%;
-      height: 500px;
+      max-width: 100%;
+      height: 600px;
       margin: 0 auto; }
+      .shop-body .shop-main #pile .pilePaper {
+        margin-left: 20%;
+        width: 150px;
+        height: 150px;
+        border: 5px solid black;
+        transform: skew(20deg) translateY(10%) rotate(15deg);
+        background-color: #fff;
+        text-align: center; }
+        .shop-body .shop-main #pile .pilePaper span {
+          font-size: 20px; }
+        .shop-body .shop-main #pile .pilePaper .innerBox {
+          margin: 0 auto;
+          margin-top: 10%;
+          width: 60%;
+          height: 30%;
+          border: 2px dotted black; }
       .shop-body .shop-main #pile .pile {
-        margin-left: 10%;
-        width: 90%;
-        min-width: 1920px;
-        margin: 0 auto;
+        margin-left: 15%;
+        width: 1700px;
         height: 2000px;
         background-image: url("/img/product/decorate/pile.png");
         background-repeat: no-repeat;
         position: relative;
         z-index: 15; }
         .shop-body .shop-main #pile .pile .clock {
-          padding: 100%;
-          background-image: url("../../img/product/decorate/clock.png");
+          width: 18%;
+          padding-top: 100%;
+          background-image: url("../../img/product/decorate/clock-04.svg");
           background-repeat: no-repeat;
           position: absolute;
-          left: 0%;
-          top: 21%; }
+          left: -2%;
+          top: 20%; }
         .shop-body .shop-main #pile .pile .redWheel {
-          padding: 100%;
-          background-image: url("../../img/product/decorate/redWheel.png");
+          width: 18%;
+          padding-top: 100%;
+          background-image: url("../../img/product/decorate/redWheel-04.svg");
           background-repeat: no-repeat;
           position: absolute;
-          left: 44%;
-          top: 6%; }
+          left: 48%;
+          top: 5%; }
         .shop-body .shop-main #pile .pile .perpul {
-          padding: 100%;
+          width: 20%;
+          padding-top: 100%;
           background-image: url("../../img/product/decorate/perpul.png");
           background-repeat: no-repeat;
           position: absolute;
-          left: 65%;
+          left: 73%;
           top: 29%; }
     .shop-body .shop-main .container .customize .customizeTitleText {
       padding-top: 5%;
@@ -8778,7 +8801,7 @@ a.text-dark:hover, a.text-dark:focus {
       font-size: 140px;
       color: #dbcd00;
       text-shadow: -2px -2px 0 #0f0f0f, -2px -1px 0 #0f0f0f, -2px 0px 0 #0f0f0f, -2px 1px 0 #0f0f0f, -2px 2px 0 #0f0f0f, -1px -2px 0 #0f0f0f, -1px -1px 0 #0f0f0f, -1px 0px 0 #0f0f0f, -1px 1px 0 #0f0f0f, -1px 2px 0 #0f0f0f, 0px -2px 0 #0f0f0f, 0px -1px 0 #0f0f0f, 0px 0px 0 #0f0f0f, 0px 1px 0 #0f0f0f, 0px 2px 0 #0f0f0f, 1px -2px 0 #0f0f0f, 1px -1px 0 #0f0f0f, 1px 0px 0 #0f0f0f, 1px 1px 0 #0f0f0f, 1px 2px 0 #0f0f0f, 2px -2px 0 #0f0f0f, 2px -1px 0 #0f0f0f, 2px 0px 0 #0f0f0f, 2px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f;
-      z-index: 10; }
+      z-index: 20; }
       .shop-body .shop-main .container .customize .customizeTitleText::before {
         content: 'NEXT';
         text-align: center;
@@ -8789,6 +8812,7 @@ a.text-dark:hover, a.text-dark:focus {
         color: #83afd9;
         text-shadow: -2px -2px 0 #0f0f0f, -2px -1px 0 #0f0f0f, -2px 0px 0 #0f0f0f, -2px 1px 0 #0f0f0f, -2px 2px 0 #0f0f0f, -1px -2px 0 #0f0f0f, -1px -1px 0 #0f0f0f, -1px 0px 0 #0f0f0f, -1px 1px 0 #0f0f0f, -1px 2px 0 #0f0f0f, 0px -2px 0 #0f0f0f, 0px -1px 0 #0f0f0f, 0px 0px 0 #0f0f0f, 0px 1px 0 #0f0f0f, 0px 2px 0 #0f0f0f, 1px -2px 0 #0f0f0f, 1px -1px 0 #0f0f0f, 1px 0px 0 #0f0f0f, 1px 1px 0 #0f0f0f, 1px 2px 0 #0f0f0f, 2px -2px 0 #0f0f0f, 2px -1px 0 #0f0f0f, 2px 0px 0 #0f0f0f, 2px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f; }
     .shop-body .shop-main .container .customize .customizeTitle {
+      z-index: 15;
       width: 80%;
       height: 250px;
       border: 5px solid black;
@@ -8875,9 +8899,14 @@ a.text-dark:hover, a.text-dark:focus {
           background: #8ebfbf; }
           .shop-body .shop-main #section2 .customizeArea .drawingBoardBox .drawingBoard {
             width: 90%;
-            height: 50%;
+            height: 70%;
             margin: 50px auto;
-            background: #e5e5e5; }
+            background: #e5e5e5;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            .shop-body .shop-main #section2 .customizeArea .drawingBoardBox .drawingBoard .planeBoard {
+              width: 90%; }
           .shop-body .shop-main #section2 .customizeArea .drawingBoardBox .btns {
             width: 100%;
             display: flex; }
@@ -9026,9 +9055,9 @@ a.text-dark:hover, a.text-dark:focus {
     height: 200px;
     margin: 0 auto; }
     .shop-body .shop-main #section1 .container .row #conectionLine .iron_clip1 {
-      top: 0%; }
+      top: -15%; }
     .shop-body .shop-main #section1 .container .row #conectionLine .iron_clip2 {
-      top: 0%;
+      top: -15%;
       right: 10%; }
   .shop-body .shop-main #section1 .itemCardBox .itemCardContainer {
     width: 80%;
@@ -9083,10 +9112,6 @@ a.text-dark:hover, a.text-dark:focus {
       transform: translate(10%, 30%); }
     .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 {
       transform: translate(0, -10%) rotate(360deg); }
-      .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 .itemCard3Img_1 {
-        transform: translate(2%, -70%) rotate(350deg); }
-      .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 .itemCard3Img_2 {
-        transform: translate(80%, -170%) rotate(350deg); }
     .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCard5 {
       display: none; }
   .shop-body .shop-main #section1 .itemCardBox .filter_forSamll {
@@ -9218,13 +9243,11 @@ a.text-dark:hover, a.text-dark:focus {
       position: absolute;
       top: 175px;
       left: 3%; }
-  .shop-body .shop-main #section1 .container .row #conectionLine {
-    width: 40%; }
-    .shop-body .shop-main #section1 .container .row #conectionLine .iron_clip1 {
-      top: 50%; }
-    .shop-body .shop-main #section1 .container .row #conectionLine .iron_clip2 {
-      top: 50%;
-      right: 10%; }
+  .shop-body .shop-main #section1 .container .row #conectionLine s .iron_clip1 {
+    top: 30%; }
+  .shop-body .shop-main #section1 .container .row #conectionLine .iron_clip2 {
+    top: 30%;
+    right: 10%; }
   .shop-body .shop-main #section1 .shopItemContainer .itemPage0 {
     width: 100%;
     left: 5%; }
@@ -9283,10 +9306,6 @@ a.text-dark:hover, a.text-dark:focus {
       transform: translate(10%, 80%); }
     .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 {
       transform: translate(0, -10%) rotate(360deg); }
-      .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 .itemCard3Img_1 {
-        transform: translate(2%, -70%) rotate(350deg); }
-      .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 .itemCard3Img_2 {
-        transform: translate(80%, -170%) rotate(350deg); }
     .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard5 {
       display: none; }
     .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_1 {
@@ -9491,11 +9510,11 @@ a.text-dark:hover, a.text-dark:focus {
     width: 40%; }
     .shop-body .shop-main #section1 .container .row #conectionLine .iron_clip1 {
       width: 20%;
-      top: 30%; }
+      top: 10%; }
     .shop-body .shop-main #section1 .container .row #conectionLine .iron_clip2 {
       width: 20%;
       right: 2%;
-      top: 30%; }
+      top: 10%; }
   .shop-body .shop-main #section1 .shopItemContainer {
     width: 95%; }
     .shop-body .shop-main #section1 .shopItemContainer .itemPage0 {
@@ -9700,11 +9719,13 @@ a.text-dark:hover, a.text-dark:focus {
   .shop-body .shop-main #section1 .container .row .shopTitle {
     height: 0px; }
     .shop-body .shop-main #section1 .container .row .shopTitle .shopTitleContainer .titlePage1 {
-      width: 100%;
-      height: 200px; }
+      width: 95%;
+      height: 200px;
+      margin: 0 auto; }
     .shop-body .shop-main #section1 .container .row .shopTitle .shopTitleContainer .titlePage2 {
-      width: 100%;
-      height: 200px; }
+      width: 95%;
+      height: 200px;
+      margin: 0 auto; }
     .shop-body .shop-main #section1 .container .row .shopTitle .shopTitleContainer .titlePage3 {
       display: none; }
     .shop-body .shop-main #section1 .container .row .shopTitle .shopTitleContainer .titlePage4 {
@@ -9787,7 +9808,9 @@ a.text-dark:hover, a.text-dark:focus {
         .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 {
           margin: 40px 5%;
           transform: translate(0, 0%) rotate(10deg); }
-          .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 img {
+          .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 .itemCard3Img_1 {
+            display: none; }
+          .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 .itemCard3Img_2 {
             display: none; }
         .shop-body .shop-main #section1 .itemCardBox .itemCardContainer .itemCardTopRow .itemCard4 {
           margin: 40px 5%;
