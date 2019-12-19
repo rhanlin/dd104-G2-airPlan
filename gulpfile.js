@@ -1,11 +1,14 @@
 var gulp = require('gulp'); //載入gulp
 var cleanCSS = require('gulp-clean-css');
+var clean = require('gulp-clean');
 var sass = require('gulp-sass');
+var jshint = require('gulp-jshint');//檢查JS
+var uglify = require('gulp-uglify')//壓縮JS
 var fileinclude = require('gulp-file-include');
-
+var imagemin = require('gulp-imagemin');
 var browserSync = require('browser-sync').create();//create一個瀏覽器物件
 var reload = browserSync.reload;
-
+var concat = require('gulp-concat');
 /*
  *  搬家: concat
  */
@@ -13,9 +16,16 @@ gulp.task('concat',function(){
     return gulp.src(['./img/*','./img/**/*'])
     .pipe(gulp.dest('./dist/img/'))
 });
-
 /*
- *  css壓縮處理: minicss
+ * img壓縮後輸出
+ */
+gulp.task('dist:img', () => {
+    gulp.src(['./img/**/*.jpg', './img/**/*.png' , './img/**/*.svg'])
+    .pipe(imagemin())
+    .pipe(gulp.dest('./dist/img'))
+})
+/*
+ *  css壓縮處理 轉存到dist/css
  */
 // https://www.npmjs.com/package/gulp-clean-css
 gulp.task('minicss',['sass'],function(){ 
@@ -25,13 +35,26 @@ gulp.task('minicss',['sass'],function(){
     .pipe(gulp.dest('./dist/css/'))
 });
 /*
- *  使用gulp 轉 Sass => 等於 VS Code的套件 watch Sass
+ *  Sass轉CSS  
  */
 //https://www.npmjs.com/package/gulp-sass
 gulp.task('sass',()=>{
-    return gulp.src('./sass/*.scss')
+    gulp.src('./css/*.css').pipe(clean());
+    return gulp.src(['./sass/*.scss','./sass/**/*.scss'])
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./css'));
+});
+/*
+ *  JS檢查->壓縮合併->存到dist/js
+ */
+gulp.task('dist:js', () => {
+    gulp.src('./dist/js/*.js').pipe(clean());
+    return gulp.src('./js/*.js')
+    // .pipe(jshint())
+    // .pipe(jshint.reporter('default'))
+    // .pipe(uglify())
+    // .pipe(concat('public.js'))
+    .pipe(gulp.dest('./dist/js/'))
 });
 /*
  *  watch 監看 
@@ -69,4 +92,5 @@ gulp.task('default', function () {
 
     gulp.watch(["./sass/*.scss", "./sass/**/*.scss"], ['minicss']).on('change', reload);
     gulp.watch(["./*.html" , "./**/*.html"] , ['fileinclude']).on('change', reload);
+    gulp.watch(["./img/*","./img/**/*","./img/**/**/*"] , ['concat']);
 });
