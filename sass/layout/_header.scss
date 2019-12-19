@@ -17,21 +17,38 @@ header{
             margin: 0 auto;
             border: 1px solid red;
             text-align: center;
+            
             .bottom-bg{
                 width: auto;
                 height: 20vw;
                 // animation: shad-anim 10s linear infinite;
+                .clip-left{
+                    top: -65%;
+                    left: 18%;
+                };
+                .clip-right{
+                    top: -65%;
+                    right: 18%;
+                }
                 .top-left-bg{
                     position: relative;
-                    top: 20px;
-                    left: -20px;
+                    top: 10px;
+                    left: -15px;
                     height: 15vw;
-                }
-            }
-            
-        }
+                    .headpg-name{
+                        width: 100%;
+                        height: 100%;
+                        text-align: left;
+                        padding: 0 2vw;
+                        display: flex;
+                        justify-content: space-between;
+                        // flex-wrap: wrap;
+                    };
+                };
+            };        
+        };
         .clouds{
             
-        }
+        };
     };
 }
