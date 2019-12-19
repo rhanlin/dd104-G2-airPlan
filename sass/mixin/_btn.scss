@@ -34,7 +34,7 @@
 @mixin btn_basic_module($btn-module) {
     @each $title,$color in $btn-module{ 
         .btn-basic-#{$title} {
-            font-family: Roboto Mono;
+            font-family: '微軟正黑體',Roboto Mono;
             letter-spacing: 0.4em;
             position: absolute;
             border: none;
@@ -103,71 +103,112 @@
 /* 
  *  3D按鈕: 重要按鈕(打賞、留言、購買)
  */
-@mixin btn_big_module($btn-module){
-    @each $title,$color in $btn-module{
-        .btn-big-#{$title} {
-            font-family: Roboto Mono;
-            letter-spacing: 0.4em;
-            position: absolute;
-            border: none;
-            outline: none;
-            width: 150px;
-            height: 70px;
-            background-color: $color;
-            text-align: center;
-            line-height: 40px;
-            cursor: pointer;
-            color: white;
-            // border: 1px solid black;
-            z-index: 1;
-            &:before {
-                content: '';
-                position: absolute;
-                width: 40px;
-                height: 10px;
-                left: -25px;
-                bottom: 10px;
-                background-color: $color + #111 ;
-                transform: rotate(90deg) skew(45deg);
+//  說明:照著下面的結構去使用就好...不用改
+//  e.g.<div class="btn-big-test">
+//          <div class="back side-way"></div>
+//          <div class="left side-way"></div>
+//          <div class="right side-way"></div>
+//          <div class="top side-way"></div>
+//          <div class="bottom side-way">
+//              <div class='side-way__text'> 要用的文字 </div>
+//          </div>
+//          <div class="front side-way"></div>
+//      </div>
+//author: Rhan0
+ @mixin btn_big_module(){
+    .btn-big-test {
+        --color: #f3de6b;
+        --color-dark: #e7cc56;
+        --color-dark-side-way: #e7cc56;
+        --box-height: 5rem;
+        --box-width: 10rem;
+        --box-deep: 3rem;
+        --light: #212121;
+        --light-2: #f08b8c;
+        }
+        
+        .side-way,
+        .btn-big-test {
+        width: 10em;
+        height: 5em;
+        border: .2vw solid $main-black;
+        }
+        
+        
+        .side-way {
+        position: absolute;
+        opacity: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
 
-                background:  linear-gradient(45deg,$color + #111 45%,black 45%,black 55%,$color + #111 10%);
-                background-size: 7px 7px;
-                // border: 1px solid black;
-                // border: 1px solid black;
-                // animation: shad-anim 5s linear infinite;
-                z-index: -1;
+        .btn-big-test {
+        perspective: 1000px;
+        transition: transform .5s linear;
+        transform-style: preserve-3d;
+        transform: rotateX(30deg) rotateZ(-180deg) rotateY(180deg);
+        perspective-origin: 50% 0rem;
+      // animation: rotate 10s ease-out infinite;
+        .back {
+            transform: translateY(calc(var(--box-height) - (var(--box-deep) * (0.5)))) translateZ(calc(var(--box-deep) * (-0.5)))  rotateX(90deg);
+            background: var(--color-dark);
+            height: var(--box-deep);
             }
-            &:after {
-                content: '';
-                position: absolute;
-                width: 150px;
-                height: 10px;
-                bottom: -10px;
-                left: -5px;
-                background-color: $color - #111;
-                transform: skew(-45deg) rotate(0deg);
-                // border: 1px solid black;
-                background:  linear-gradient(80deg,$color - #111 40%,black 40%,black 55%,$color - #111 20%);
-                background-size: 7px 7px;
-                // animation: shad-anim 10s linear infinite;
-                // border: 1px solid black;
+        .left {
+            transform: translateX(calc(var(--box-deep) * (-0.5))) translateZ(calc(var(--box-deep) * (-0.5))) rotateY(90deg);
+            background: var(--color-dark-side-way);
+            width: var(--box-deep);
+            }
+        .right {
+          transform: translateX(calc(var(--box-width) - var(--box-deep) * (0.5))) translateZ(calc(var(--box-deep) * (-0.5))) rotateY(90deg);
+            background: var(--color-dark-side-way);
+            width: var(--box-deep);
+            }
+        .top {
+            background: var(color-dark);
+            width: 10em;
+            height: 5em;
+            box-shadow: 0 -3px 5px 0 black;
+            }
+        .bottom {
+            transform: translateZ(calc(var(--box-deep) * (-1)));
+            background: var(--color);
+            width: 10em;
+            height: 5em;
+            border-radius: 2px;
+            box-sizing: comtainer;
 
-                z-index: -1;
+            .side-way__text {
+                transform: rotateX(30deg)   rotateZ(-180deg) rotateY(180deg);
+                font: bold 4vw "微軟正黑體";
+                color: white;
+                }
             }
-            &.clicked {
-                left: -5px;
-                bottom: -5px;
-                &:before {
-                    height: 5px;
-                    left: -22px;
-                    bottom: 15px;
-                }
-                &:after {
-                    height: 5px;
-                    bottom: -5px;
-                    left: -2px;
-                }
+        .front {
+            transform: translateY(calc(var(--box-deep) * (-0.5))) translateZ(calc(var(--box-deep) * (-0.5)))  rotateX(90deg);
+            background: var(--color-dark);
+            height: var(--box-deep);
             }
         }
-    }
+
+        // .btn-big-active{
+        //     --box-deep: 1rem !important;
+        // }
+        .bigBtnActive{
+            --box-deep: 1rem !important;
+        }
+    //   .btn-big-test:hover {
+    //     --box-deep: 1rem !important;
+    //    }
+
+    //    .btn-big-test:hover .top{
+    //        box-shadow: 0 -3px 5px 0 var(--light), 0 -5px 10px 0 var(--light-2);
+    //    }
+
+        @keyframes rotate {
+        100% {
+            transform: rotateX(360deg) rotateY(360deg);
+        }
+        }
  }
