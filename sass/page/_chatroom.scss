@@ -1,252 +1,238 @@
-// @import "base/var";
-// @import "base/color";
-// @import "layout/header";
-// @import "layout/footer";
-// @import "mixin/chatroom_mixins";
 
 .chat-body {
     margin: 0;
 }
 
-.chat-header {
-    .line1 {
-        width: 5px;
-        height: 100px;
-        background-color: $main-black;
-        margin-left: 500px;
-        display: inline-block;
-    }
+// .chat-header {
+//     .line1 {
+//         width: 5px;
+//         height: 100px;
+//         background-color: $main-black;
+//         margin-left: 500px;
+//         display: inline-block;
+//     }
 
-    .clip1 {
-        display: inline-block;
-        width: 80px;
-        margin-left: 465px;
-        // border:1px solid darkcyan;
-    }
+//     .clip1 {
+//         display: inline-block;
+//         width: 80px;
+//         margin-left: 465px;
+//         // border:1px solid darkcyan;
+//     }
 
-    .line2 {
-        width: 5px;
-        height: 100px;
-        background-color: $main-black;
-        margin-left: 920px;
-        display: inline-block;
-    }
+//     .line2 {
+//         width: 5px;
+//         height: 100px;
+//         background-color: $main-black;
+//         margin-left: 920px;
+//         display: inline-block;
+//     }
 
-    .clip2 {
-        display: inline-block;
-        width: 80px;
-        margin-left: 840px;
-        // border:1px solid darkcyan;
-    }
+//     .clip2 {
+//         display: inline-block;
+//         width: 80px;
+//         margin-left: 840px;
+//         // border:1px solid darkcyan;
+//     }
 
-    .title_bg {
-        width: 1100px;
-        height: 200px;
-        @include border();
-        margin: 0 auto;
-        margin-left: 365px;
-        margin-top: 65px;
-        background-image: url(../images/dot.svg);
-        background-size: 100px;
-    }
+//     .title_bg {
+//         width: 1100px;
+//         height: 200px;
+//         @include border();
+//         margin: 0 auto;
+//         margin-left: 365px;
+//         margin-top: 65px;
+//         background-image: url(../images/dot.svg);
+//         background-size: 100px;
+//     }
 
-    .title1 {
-        width: 1100px;
-        height: 200px;
-        margin-left: -5px;
-        margin-top: -35px;
-        @include border();
-        background-color: #fff;
-    }
+//     .title1 {
+//         width: 1100px;
+//         height: 200px;
+//         margin-left: -5px;
+//         margin-top: -35px;
+//         @include border();
+//         background-color: #fff;
+//     }
 
-    .title2,.tilte3,.title4 {
-        width: 1100px;
-        height: 200px;
-        margin-left: 15px;
-        margin-top: -22px;
-        @include border();
-        background-color: #fff;
-    }
+//     .title2,.tilte3,.title4 {
+//         width: 1100px;
+//         height: 200px;
+//         margin-left: 15px;
+//         margin-top: -22px;
+//         @include border();
+//         background-color: #fff;
+//     }
 
-    .title4 h1 {
-        font-family: "微軟正黑體";
-        font-size: 48px;
-        text-align: center;
-        line-height: 125px;
-        color: $main-blue;
-    }
-}
+//     .title4 h1 {
+//         font-family: "微軟正黑體";
+//         font-size: 48px;
+//         text-align: center;
+//         line-height: 125px;
+//         color: $main-blue;
+//     }
+// }
 
-.chat-main {
+.chatroom-main {
     position: relative;
     width: 1300px;
     margin: 100px auto 0;
-    // border: 1px solid gold;
+    // border: 10px solid gold;
     padding: 0 ;
     box-sizing: border-box;
     font-size: 0px;
-    .chat-section {
-        border:1px solid forestgreen;
+    .mainSection {
+        // border:1px solid forestgreen;
         float: left;
-        width: 205px;
-        height: 612px;
-        margin-top: 80px;
+        width: 193px;
+        height: 640px;
+        margin-top:68px;
         position: relative;
         overflow: hidden;
         overflow-y: scroll;
-        
+        &::-webkit-scrollbar{
+            // border:1px solid firebrick;
+            width: 9px;
+            background-color: #ccc;
+            border-radius: 2px;
+        }
 
-        .mark1 {
-            // border:1px solid forestgreen;
-            width: 105px;
-            height: 0px;
+        &::-webkit-scrollbar-thumb{
+            width: 5px;
+            background-color: slategrey;
+            border-radius: 10px;
+        }
+             
+        .sectionMark1,.sectionMark2,.sectionMark3,.sectionMark4,.sectionMark5,.sectionMark6,.sectionMark7,.sectionMark8,.sectionMark9 {
+            width: 130px;
+            height: 130px;
             @include border();
-            padding: 20px;
-            margin-left: 50px;
+            padding: 9px;
+            margin-top: 17px;
+            margin-left: 52px;
+            background-color: $main-green;
+            text-align: center;
+        }
+
+        .sectionMark1 {
             background-color: $main-red;
-            text-align: center;
         }
-                        
-        .mark2 {
-            width: 105px;
-            height: 105px;
-            @include border();
-            padding: 20px;
-            margin-top: 17px;
-            margin-left: 28px;
-            background-color: $main-green;
-            text-align: center;
-        }
-                        
-        .mark3 {
-            width: 105px;
-            height: 105px;
-            @include border();
-            padding: 20px;
-            margin-top: 17px;
-            margin-left: 28px;
-            background-color: $main-green;
-            text-align: center;
-        }
-                        
-        .mark4 {
-            width: 105px;
-            height: 105px;
-            @include border();
-            padding: 20px;
-            margin-top: 17px;
-            margin-left: 28px;
-            background-color: $main-green;
-            text-align: center;
-        }
-                        
-        .mark1 img, .mark2 img, .mark3 img, .mark4 img {
+                               
+        .sectionMark1 img, .sectionMark2 img, .sectionMark3 img, .sectionMark4 img,.sectionMark5 img,.sectionMark6 img,.sectionMark7 img,.sectionMark8 img,.sectionMark9 img {
             width: 80px;
+            border-radius: 50px;
+            background-color: #fff;
         }
                         
-        .mark1 p, .mark2 p, .mark3 p, .mark4 p {
+        .sectionMark1 p, .sectionMark2 p, .sectionMark3 p, .sectionMark4 p,.sectionMark5 p,.sectionMark6 p,.sectionMark7 p,.sectionMark8 p,.sectionMark9 p {
             font-size: 18px;
             font-family: Arial, Helvetica, sans-serif;
         }
                         
         
     }
-    .book {
+    .mainBook {
         @include border();
         border-radius: 50px;
-        width: 1200px;
+        width: 1260px;
         padding: 25px;
         margin-left:-200px;
         float: left;
         // border: 1px solid orange;
         background-color: $main-blue;
     
-        .dashed {
-            width: 1115px;
+        .bookDashed {
+            width: 1200px;
             border: 3px dashed brown;
             border-radius: 50px;
-            padding: 50px 40px;
+            padding: 30px 40px;
 
-            .page1 {
+            .dashPage1 {
                 width: 1100px;
-                height: 600px;
+                height: 650px;
                 @include border();
                 background-color: $main-yellow;
 
-                .page2 {
+                .dashPage2 {
                     width: 1050px;
-                    height: 600px;
+                    height: 650px;
                     @include border();
                     background-color: $main-yellow;
                     margin-top: -5px;
                     margin-left: 20px;
 
-                    .page3 {
+                    .dashPage3 {
                         width: 1000px;
-                        height: 600px;
+                        height: 650px;
                         @include border();
                         background-color: $main-yellow;
                         margin-top: -5px;
                         margin-left: 20px;
 
-                        .page4 {
+                        .dashPage4 {
                             width: 950px;
-                            height: 600px;
+                            height: 650px;
                             @include border();
                             background-color: $main-yellow;
                             margin-top: -5px;
                             margin-left: 20px;
 
-                            .page5 {
-                                width: 860px;
-                                height: 560px;
+                            .dashPage5 {
+                                width: 900px;
+                                height: 650px;
                                 @include border();
                                 background-color: #fff;
                                 margin: -5px auto 0;
-                                padding: 20px;
+                                padding: 0px;
                                 margin-top: -5px;
                                 margin-left: 20px;
-
-                                .content{
-                                    .your,.your_1,.your_2{
+                                // border: 1px solid lightseagreen;
+                                .pageContent{
+                                    .contentYour {
+                                        margin-top: 50px;
+                                    }
+                                    
+                                    .contentYour,.contentYour_1,.contentYour_2{
                                         margin-left: 50px;
                                         margin-bottom: 50px;
                                         // border:1px solid firebrick;
+                                        
+                                        p {
+                                            margin-top: 100px;
+                                            margin: 50px 5px 0;
+                                            border: 2px solid #353535;
+                                            background-color: rgb(215, 230, 245);
+                                            font-size: 16px;
+                                            font-family: "微軟正黑體";
+                                            padding: 10px;
+                                            border-radius: 0px 20px 20px 20px;
+                                            display: inline;
+                                        }
                                     }
                                                     
-                                    .content img {
+                                    .pageContent img {
                                         width: 70px;
                                         // border:1px solid dimgray;
                                         display: block;
                                     }
-                                                    
-                                    .your p,.your_1 p,.your_2 p {
-                                        margin: 0;
-                                        margin-left: 100px;
-                                        border: 2px solid #353535;
-                                        background-color: rgb(215, 230, 245);
-                                        font-size: 16px;
-                                        font-family: "微軟正黑體";
-                                        padding: 10px;
-                                        border-radius: 15px;
-                                        display: inline;
+                                                   
+                                    .contentMe {
+                                        margin-left: 720px;
+                                        margin-top: 0px;
+
+                                        p {
+                                            border: 2px solid #353535;
+                                            background-color: rgb(252, 241, 173);
+                                            font-size: 16px;
+                                            font-family: "微軟正黑體";
+                                            padding: 10px;
+                                            border-radius: 15px;
+                                            display: inline;
+                                            margin-top: -10px;
+                                        }   
                                     }
-                                                    
-                                    .me{
-                                        margin-left: 700px;
-                                    }
-                                                    
-                                    .me p {
-                                        border: 2px solid #353535;
-                                        background-color: rgb(252, 241, 173);
-                                        font-size: 16px;
-                                        font-family: "微軟正黑體";
-                                        padding: 10px;
-                                        border-radius: 15px;
-                                        display: inline;
-                                    }
-                                }                    
-                                .send {
+                                }
+            
+                                .contentSend {
                                     margin-left: 500px;
                                     border: 2px solid #353535;
                                     border-radius: 30px;
@@ -255,8 +241,12 @@
                                     text-align: center;
                                     
                                 }
+
+                                .sendClearfix{
+                                    clear: both;
+                                }
                                                     
-                                .text {
+                                .sendText {
                                     width: 290px;
                                     height: 50px;
                                     border: none;
@@ -264,7 +254,7 @@
                                     float: left;
                                 }
                                                     
-                                .send img {
+                                .contentSen img {
                                     width: 40px;
                                     // border: 1px solid dimgray;
                                     margin-top: 10px;
@@ -280,8 +270,7 @@
         }
     
     }
-   
-}
-.clearfix{
-    clear: both;
+    .mainClearfix{
+        clear: both;
+    }
 }
