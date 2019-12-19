@@ -1,19 +1,40 @@
-/* 
- *  color header box
+/*
+ *  有網點的矩形框 
  */
+//使用說明："dot-box-COLOR"
+//author: Rhan0
+@mixin dot-box-modul($box-module,$width:70vw,$height:30vw){
+    @each $title,$color in $box-module{ 
+        .dot-box-#{$title}{
+            border: .2vw solid #212121;
+            width: $width;
+            height: $height;
+            margin: 0 auto;
+            z-index: 99;
+            position: relative;
+            background: radial-gradient(#000000 15%, $color 15%);
+            background-size: 15px 15px;
+            display: inline-block;
+        }
+    }
+}
+/*
+ *  沒有網點的矩形框 
+ */
+//使用說明："box-COLOR"
+//author: Rhan0
 @mixin box-modul($box-module,$width:70vw,$height:30vw){
     @each $title,$color in $box-module{ 
         .box-#{$title}{
             border: .2vw solid #212121;
-            // background-color: $color;
+            background-color: $color;
             width: $width;
             height: $height;
             margin: 0 auto;
-            z-index: 9;
+            z-index: 99;
             position: relative;
-            top: -5vw;
-            background: radial-gradient(#000000 15%, $color 15%);
             background-size: 15px 15px;
+            display: inline-block;
         }
     }
 }

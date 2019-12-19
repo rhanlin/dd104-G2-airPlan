@@ -5,4 +5,5 @@ $boxStyle:(
     white: $main-white,
 );
 
-@include box-modul($boxStyle,65vw,20vw);
+@include dot-box-modul($boxStyle,48vw,15vw);
+@include box-modul($boxStyle,48vw,15vw);

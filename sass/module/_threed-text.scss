@@ -1,0 +1,8 @@
+$threed-text:(
+    yellow: $main-yellow,
+    blue: $main-blue,
+    red: $main-red,
+    white: $main-white,
+);
+
+@include threed-text($threed-text);
