@@ -15,6 +15,7 @@
   }
 
   .shop-main {
+    overflow: hidden;
     width: 100%;
 
     #section1 {
@@ -33,7 +34,7 @@
             font-size: 140px;
             color: #dbcd00;
             @include stroke(2, #0f0f0f);
-            z-index: 10;
+            z-index: 25;
 
             &::before {
               content: '客製化商城';
@@ -56,6 +57,7 @@
               width: 100%;
               position: relative;
               @include titlePage(4);
+              z-index: 20;
 
               .titlePagePic {
                 width: 90%;
@@ -83,7 +85,7 @@
               width: 15%;
               position: absolute;
               left: 20%;
-              top: -29%;
+              top: -50%;
               z-index: 10;
             }
 
@@ -91,7 +93,7 @@
               width: 15%;
               position: absolute;
               right: 5%;
-              top: -29%;
+              top: -50%;
               z-index: 10;
             }
 
@@ -184,14 +186,19 @@
             ;
 
             .itemCard3 {
+              font-size: 0;
               transform: translate(0, -10%) rotate(360deg);
 
               .itemCard3Img_1 {
-                transform: translate(5%, -70%) rotate(350deg);
+                display: inline-block;
+                width: 50%;
+                transform: translate(2%, -70%) rotate(350deg);
               }
 
               .itemCard3Img_2 {
-                transform: translate(5%, -70%) rotate(350deg);
+                display: inline-block;
+                width: 50%;
+                transform: translate(15%, -70%) rotate(350deg);
               }
 
             }
@@ -276,17 +283,38 @@
 
 
     #pile {
-      margin-left: 15%;
-      width:85%;
-      height: 500px;
+      max-width: 100%;
+      height: 600px;
       margin: 0 auto;
+
+      .pilePaper {
+        margin-left: 20%;
+        width: 150px;
+        height: 150px;
+        border: 5px solid black;
+        transform: skew(20deg) translateY(10%) rotate(15deg);
+        background-color: #fff;
+        text-align: center;
+
+        span {
+          font-size: 20px;
+        }
+
+        .innerBox {
+          margin: 0 auto;
+          margin-top: 10%;
+          width: 60%;
+          height: 30%;
+          border: 2px dotted black;
+        }
+      }
+
+
 
 
       .pile {
-        margin-left: 10%;
-        width: 90%;
-        min-width: 1920px;
-        margin: 0 auto;
+        margin-left: 15%;
+        width: 1700px;
         height: 2000px;
         background-image: url("/img/product/decorate/pile.png");
         background-repeat: no-repeat;
@@ -296,41 +324,44 @@
 
 
         .clock {
-          // width: 100%;
-          padding: 100%;
-          background-image: url("../../img/product/decorate/clock.png");
+          width: 18%;
+          padding-top: 100%;
+          background-image: url("../../img/product/decorate/clock-04.svg");
           background-repeat: no-repeat;
           position: absolute;
-          left: 0%;
-          top: 21%
+          left:-2%;
+          top: 20%;
         }
 
-        .redWheel{
-          // width: 100%;
-          padding: 100%;
-          background-image: url("../../img/product/decorate/redWheel.png");
+        .redWheel {
+          width: 18%;
+          padding-top: 100%;
+          background-image: url("../../img/product/decorate/redWheel-04.svg");
           background-repeat: no-repeat;
           position: absolute;
-          left: 44%;
-          top:6%
+          left: 48%;
+          top: 5%;
+
         }
 
         .perpul {
-        //  width: 100%;
-         padding: 100%;
+          width: 20%;
+          padding-top: 100%;
           background-image: url("../../img/product/decorate/perpul.png");
           background-repeat: no-repeat;
           position: absolute;
-          left:65%;
-          top: 29%
+          left: 73%;
+          top: 29%;
         }
       }
     }
 
     .container {
+
       .customize {
 
         .customizeTitleText {
+
           padding-top: 5%;
           transform: translate(0, 80%);
           width: 90%;
@@ -340,7 +371,7 @@
           font-size: 140px;
           color: #dbcd00;
           @include stroke(2, #0f0f0f);
-          z-index: 10;
+          z-index: 20;
 
           &::before {
             content: 'NEXT';
@@ -355,7 +386,7 @@
         }
 
         .customizeTitle {
-
+          z-index: 15;
           width: 80%;
           height: 250px;
           border: 5px solid black;
@@ -369,6 +400,7 @@
     #section2 {
       max-width: 1500px;
       margin: 0 auto;
+
       .customizeArea {
         margin: 0 auto;
         display: flex;
@@ -411,10 +443,17 @@
 
           .drawingBoard {
             width: 90%;
-            height: 50%;
+            height: 70%;
             margin: 50px auto;
             background: #e5e5e5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
+            .planeBoard {
+
+              width: 90%;
+            }
           }
 
           .btns {
@@ -525,11 +564,11 @@
               margin: 0 auto;
 
               .iron_clip1 {
-                top: 0%;
+                top: -15%;
               }
 
               .iron_clip2 {
-                top: 0%;
+                top: -15%;
                 right: 10%;
               }
 
@@ -562,13 +601,7 @@
               .itemCard3 {
                 transform: translate(0, -10%) rotate(360deg);
 
-                .itemCard3Img_1 {
-                  transform: translate(2%, -70%) rotate(350deg);
-                }
 
-                .itemCard3Img_2 {
-                  transform: translate(80%, -170%) rotate(350deg);
-                }
               }
 
               ;
@@ -649,15 +682,12 @@
 
           .row {
             #conectionLine {
-              width: 40%;
-
-
-              .iron_clip1 {
-                top: 50%;
+              s .iron_clip1 {
+                top: 30%;
               }
 
               .iron_clip2 {
-                top: 50%;
+                top: 30%;
                 right: 10%;
               }
 
@@ -705,13 +735,7 @@
               .itemCard3 {
                 transform: translate(0, -10%) rotate(360deg);
 
-                .itemCard3Img_1 {
-                  transform: translate(2%, -70%) rotate(350deg);
-                }
 
-                .itemCard3Img_2 {
-                  transform: translate(80%, -170%) rotate(350deg);
-                }
               }
 
               ;
@@ -891,13 +915,13 @@
 
               .iron_clip1 {
                 width: 20%;
-                top: 30%;
+                top: 10%;
               }
 
               .iron_clip2 {
                 width: 20%;
                 right: 2%;
-                top: 30%;
+                top: 10%;
               }
 
             }
@@ -1087,13 +1111,15 @@
 
               .shopTitleContainer {
                 .titlePage1 {
-                  width: 100%;
+                  width: 95%;
                   height: 200px;
+                  margin: 0 auto;
                 }
 
                 .titlePage2 {
-                  width: 100%;
+                  width: 95%;
                   height: 200px;
+                  margin: 0 auto;
                 }
 
                 .titlePage3 {
@@ -1196,7 +1222,11 @@
                 margin: 40px 5%;
                 transform: translate(0, 0%) rotate(10deg);
 
-                img {
+                .itemCard3Img_1 {
+                  display: none;
+                }
+
+                .itemCard3Img_2 {
                   display: none;
                 }
               }
