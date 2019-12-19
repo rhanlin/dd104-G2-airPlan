@@ -4,21 +4,42 @@
 
 <header>
     <canvas id="myClouds"></canvas>
-    
-        <div class="view">
-            <div id="clouds" class="clouds">
-                <template  v-for="cloud in 10">
-                    <div class="cloud_1">{{cloud}}</div>
-                </template>
+    <!-- 漂浮的雲 -->
+    <div class="white-space-bg">
+        <div class="head-box">
+            <div class="dot-box-blue bottom-bg">
+                <span class="share-clip clip-left"></span>
+                <span class="share-clip clip-right"></span>
+                <div class="box-white top-left-bg">
+                    <div class="box-white top-left-bg">
+                        <h1 class="headpg-name threed-text-blue" @change="getHeaderName">
+                            <div style="border: 1px solid red;">
+                            寫
+                            </div>
+                            <br>
+                            <div style="display:flex;flex-direction:column;justify-content:center;border: 1px solid red;">
+                                <img src="../img/share/line-paperPlane.svg" style="width:30%;">
+                                <span>
+                                一封信
+                                </span>
+                            </div>
+                        </h1>
+                    </div>
+                </div>
             </div>
         </div>
-
-    <div class="white-space-bg"></div>
-
-    <div class="box-blue">
-        <!-- <div class="box-white"></div>
-            <div class="box-white"></div> -->
+        
+        <div id="clouds" class="clouds">
+            <div class="cloud_1"></div>
+            <template  v-for="(cloud, index) in 15">
+                <div :class=`cloud_${index}` :style="{left: `${Math.random() * innerWidth}px`}"></div>
+            </template>
+            
+        </div>
     </div>
+
+
+    
     <script>
         $('#myClouds').Klouds({
             speed: 1,
@@ -33,6 +54,22 @@
     <script>
         let vm = new Vue({
             el:'#clouds',
+            data:{
+                pageName:{
+                    home:'air Plan',//home.html
+                    writeLetter:'寫信',//write-letter.html
+                    catchLetter:'撈信',//catch-letter.html
+                    cave:'我的倉庫',//cave.html
+                    chatroom:'聊天室',//chatroom.html
+                    shop:'客製化商城',//shop.html
+                    userSetting:'用戶設定',//userSetting.html
+                },
+                computed: {
+                    getHeaderName(){
+
+                    }
+                },
+            },
         });
     </script>
 </header>

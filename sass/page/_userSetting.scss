@@ -1,0 +1,60 @@
+// h1{
+//     font-size: 24px;
+// }
+.userSetting_body{
+    margin: 0 auto;
+    // font-size: 0;
+    .userSetting_main{
+        .userSetting_mem{
+            height: 800px;
+
+            .userSetting_memKanban{
+                width: 45%;
+                background-color: rgb(143, 197, 176);
+                
+                .userSetting_memData, .userSetting_airCoin, .userSetting_color{
+                    width: 30%;
+                    background-color: goldenrod;
+                    display: inline-block;
+                    border-bottom: 2px solid black;
+                    text-align: center;
+                }
+                .userSetting_robotB1, .userSetting_conveyorB1{
+                    display: block;
+                }
+            }
+        }
+        .userSetting_sys{
+            background-color: brown;
+            .userSetting_sysKanban{
+                .userSetting_manu{
+
+                }
+                .userSetting_Ver{
+
+                }
+            }
+        }
+        .userSetting_adm{
+            
+            .userSetting_Spencer{
+
+            }
+            .userSetting_Sharon{
+
+            }
+            .userSetting_Howard{
+
+            }
+            .userSetting_Grace{
+
+            }
+            .userSetting_Allen{
+
+            }
+            .userSetting_Mike{
+
+            }
+        }
+    }
+}

@@ -1,3 +1,12 @@
+
+/* 
+ *  3D按鈕: 基本款
+ */
+//  說明:外面要包一層<div>去控制按鈕的位置
+//  e.g.<div class="btn-wrapper-center">
+//      <div class="btn btn-COLOR">按鈕文字</div>
+//      </div>
+//author: Rhan0
 .btn-wrapper-center {
     position: absolute;
     width: 120px;
@@ -22,16 +31,6 @@
     left: 80%;
     transform: translate(-50%);
 }
-
-
-/* 
- *  3D按鈕: 基本款
- */
-//  說明:外面要包一層<div>去控制按鈕的位置
-//  e.g.<div class="btn-wrapper-center">
-//      <div class="btn btn-顏色">按鈕文字</div>
-//      </div>
-//  p.s 顏色在 module/_btn.scss 管理
 @mixin btn_basic_module($btn-module) {
     @each $title,$color in $btn-module{ 
         .btn-basic-#{$title} {
