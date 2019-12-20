@@ -73,8 +73,8 @@
 // }
 
 .chatroom-main {
-    position: relative;
-    width: 1300px;
+    width: 100%;
+    max-width: 1300px;
     margin: 100px auto 0;
     // border: 10px solid gold;
     padding: 0 ;
@@ -133,79 +133,108 @@
     .mainBook {
         @include border();
         border-radius: 50px;
-        width: 1260px;
+        width:100%;
+        max-width: 1260px;
         padding: 25px;
         margin-left:-200px;
         float: left;
         // border: 1px solid orange;
         background-color: $main-blue;
+        background: -webkit-radial-gradient(#000 20%, $main-blue 20%);
+        background: radial-gradient(#000 20%, $main-blue 20%);
+        background-size: 12px 12px;
     
         .bookDashed {
-            width: 1200px;
+            width: 100%;
+            max-width: 1200px;
             border: 3px dashed brown;
             border-radius: 50px;
             padding: 30px 40px;
 
             .dashPage1 {
-                width: 1100px;
+                width: 100%;
+                max-width: 1100px;
                 height: 650px;
                 @include border();
                 background-color: $main-yellow;
+                background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                background-size: 9px 12px;
+                padding: 0 20px;
 
                 .dashPage2 {
-                    width: 1050px;
+                    width: 100%;
+                    max-width: 1050px;
                     height: 650px;
                     @include border();
                     background-color: $main-yellow;
                     margin-top: -5px;
-                    margin-left: 20px;
+                    padding: 0 20px;
+                    background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                    background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                    background-size: 9px 12px;
 
                     .dashPage3 {
-                        width: 1000px;
+                        width: 100%;
+                        max-width: 1000px;
                         height: 650px;
                         @include border();
                         background-color: $main-yellow;
                         margin-top: -5px;
-                        margin-left: 20px;
+                        padding: 0 20px;
+                        background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                        background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                        background-size: 9px 12px;
 
                         .dashPage4 {
-                            width: 950px;
+                            width: 100%;
+                            max-width: 950px;
                             height: 650px;
                             @include border();
                             background-color: $main-yellow;
                             margin-top: -5px;
-                            margin-left: 20px;
+                            padding: 0 20px;
+                            background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                            background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                            background-size: 9px 12px;
 
                             .dashPage5 {
-                                width: 900px;
+                                width: 100%;;
+                                max-width: 900px;
                                 height: 650px;
                                 @include border();
                                 background-color: #fff;
                                 margin: -5px auto 0;
-                                padding: 0px;
-                                margin-top: -5px;
-                                margin-left: 20px;
+                                padding: 0 20px;
+                                padding: 20px;
                                 // border: 1px solid lightseagreen;
+                                position: relative;
+                                
+                                .pageImg {
+                                    position: absolute;
+                                    margin-left: 380px;
+                                    top: -30px;
+                                    height: 700px;
+                                    // border: 1px solid lightpink;
+                                }
                                 .pageContent{
-                                    .contentYour {
-                                        margin-top: 50px;
-                                    }
-                                    
-                                    .contentYour,.contentYour_1,.contentYour_2{
-                                        margin-left: 50px;
-                                        margin-bottom: 50px;
-                                        // border:1px solid firebrick;
-                                        
+                                    .contentYour,.contentYour_1,.contentYour_2{   
+                                        // border: 1px solid lightpink;
+                                        margin-left: 20px;
+                                        margin-bottom: 5px;                          
+                                        img{
+                                            vertical-align: top;
+                                        }
+
                                         p {
-                                            margin-top: 100px;
-                                            margin: 50px 5px 0;
+                                            margin: 80px 0 0 0;
                                             border: 2px solid #353535;
                                             background-color: rgb(215, 230, 245);
                                             font-size: 16px;
                                             font-family: "微軟正黑體";
                                             padding: 10px;
                                             border-radius: 0px 20px 20px 20px;
-                                            display: inline;
+                                            display: inline-block;
                                         }
                                     }
                                                     
@@ -216,8 +245,7 @@
                                     }
                                                    
                                     .contentMe {
-                                        margin-left: 720px;
-                                        margin-top: 0px;
+                                        float: right;
 
                                         p {
                                             border: 2px solid #353535;
@@ -225,21 +253,29 @@
                                             font-size: 16px;
                                             font-family: "微軟正黑體";
                                             padding: 10px;
-                                            border-radius: 15px;
-                                            display: inline;
-                                            margin-top: -10px;
+                                            border-radius: 20px 0 20px 20px;
+                                            display: inline-block;
+                                            margin-bottom: 0px;
                                         }   
+                                    }
+
+                                    .meClearfix {
+                                        clear: both;
                                     }
                                 }
             
                                 .contentSend {
-                                    margin-left: 500px;
+                                    width: 100%;
+                                    height: 50px;
+                                    max-width: 350px;
+                                    margin-left: 490px;
                                     border: 2px solid #353535;
                                     border-radius: 30px;
                                     vertical-align: top;
-                                    padding: 5px;
+                                    // padding: 5px;
                                     text-align: center;
-                                    
+                                    position: absolute;
+                                    bottom: 30px;
                                 }
 
                                 .sendClearfix{
@@ -247,17 +283,24 @@
                                 }
                                                     
                                 .sendText {
-                                    width: 290px;
-                                    height: 50px;
+                                    width: 100%;
+                                    max-width: 290px;
+                                    height: 46px;
                                     border: none;
-                                    border-radius: 10px;
+                                    border-radius: 30px;
                                     float: left;
+                                    outline: none;
+                                    font-size: 16px;
+                                    padding: 5px 10px;
+                                    font-family: 'Trebuchet MS', Arial,"微軟正黑體";
+                                    // margin-top: 6px;
+                                    // border:1px solid lightpink;
                                 }
                                                     
-                                .contentSen img {
+                                .contentSend img {
                                     width: 40px;
                                     // border: 1px solid dimgray;
-                                    margin-top: 10px;
+                                    margin-top: 5px;
                                     float: left;
                                     display: block;
                                 }
@@ -273,4 +316,29 @@
     .mainClearfix{
         clear: both;
     }
+}
+
+// @include respond(desktopXl) {
+// //1199px------992px;
+// }
+
+@include respond(desktop) {
+//991px------768px;
+
+}
+
+@include respond(mediumSize) {
+//767px------576px;
+}
+
+@include respond(small) {
+//575px------376px;
+}
+
+@include respond(note) {
+//575px------376px;
+}
+
+@include respond(iphone) {
+//375px;
 }
