@@ -1,9 +1,30 @@
 
 .wrletter-body {
-    // background: radial-gradient(#000000 20%, $main-red 20%);
-    background: radial-gradient(#000000 20%, #fff 20%);
-    background-size: 6px 6px;
+    background: radial-gradient(#000000 10%, #fff 20%);
+    background-size: 8px 8px;
     height: 200vw;
-    // -webkit-animation: bscale 60s infinite linear;
-    // animation: bscale 60s infinite linear;
+    main{
+        margin-top: 25vw;
+
+        .select-category{
+            height: 28vw;
+
+            .num-one{
+                width: 60%;
+                height: 30%;
+                margin: 0 auto;
+                border: 1px solid orange;
+                background-image: url('../../img/share/number-one.svg');
+                background-repeat: no-repeat;
+                background-position: left;
+                background-size: 18vw;
+                margin-top: 5%;
+                h2{
+                    font-size: 4vw;
+                    letter-spacing: 1vw;
+                    text-align: right;
+                }
+            }
+        }
+    }
 }

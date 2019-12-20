@@ -1,40 +1,64 @@
-// h1{
-//     font-size: 24px;
-// }
-.userSetting_body{
-    margin: 0 auto;
-    // font-size: 0;
-    .userSetting_main{
-        .userSetting_mem{
-            height: 800px;
+h1,td{
+    font-size: 24px;
+}
 
+//以上測試
+
+.userSetting_body{
+    width: 100%;
+    margin: 0 auto;
+    font-size: 0;
+    .userSetting_main{
+        width: 100%;
+
+        .userSetting_mem{
+            width: 100%;
+            height: 800px;
+            background-color: rgb(190, 233, 250);
             .userSetting_memKanban{
-                width: 45%;
+                width: 50%;
                 background-color: rgb(143, 197, 176);
-                
-                .userSetting_memData, .userSetting_airCoin, .userSetting_color{
-                    width: 30%;
+                margin: 0 auto;
+                .userSetting_memData{
+                    width: 33.33%;
                     background-color: goldenrod;
                     display: inline-block;
-                    border-bottom: 2px solid black;
                     text-align: center;
+                    // border-bottom: 2px solid black;
+                }
+                .userSetting_airCoin{
+                    @extend.userSetting_memData;
+                }
+                .userSetting_memcolor{
+                    @extend.userSetting_memData;
                 }
                 .userSetting_robotB1, .userSetting_conveyorB1{
                     display: block;
                 }
             }
         }
+
         .userSetting_sys{
-            background-color: brown;
+            width: 100%;
+            height: 800px;
+            background-color: wheat;
             .userSetting_sysKanban{
+                width: 50%;
+                background-color: rgb(155, 143, 197);
+                margin: 0 auto;
                 .userSetting_manu{
-
+                    width: 50%;
+                    background-color: rgb(228, 143, 185);
+                    display: inline-block;
+                    border-bottom: 2px solid black;
+                    text-align: center;
                 }
-                .userSetting_Ver{
-
+                .userSetting_ver{
+                    @extend.userSetting_manu;
                 }
             }
         }
+
         .userSetting_adm{
             
             .userSetting_Spencer{
@@ -57,4 +81,51 @@
             }
         }
     }
+}
+
+
+//userSetting_mem vue
+.memData{
+    height: 400px;
+    margin: 0 auto;
+    width: 100%;
+}
+.memDataTable{
+    width: 70%;
+    margin: 0 auto;
+}
+.memData td{
+    width: 50%;
+    border: 1px solid black;
+}
+.airCoin{
+    @extend.memData;
+    text-align: center;
+}
+.airCoinTable{
+    @extend.memDataTable
+}
+.airCoin table td{
+    text-align: center;
+    width: 33.33%;
+    border: 1px solid black;
+}
+.memcolor{
+    @extend.memData;
+    text-align: center;
+}
+.memcolorBlack{
+    height: 50%;
+}
+.memcolorWhite{
+    @extend.memcolorBlack;
+}
+
+
+//userSetting_mem vue
+.manu{
+    @extend.memData;
+}
+.ver{
+    @extend.memData;
 }
