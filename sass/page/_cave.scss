@@ -4,9 +4,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-.cav_main {
+.cav-main {
   border: 1px solid royalblue;
-  width: 1200px;
+  width:100%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 .cav-readLetterWrap {
@@ -14,44 +15,55 @@
   width: 100%;
 
   .cav-boxImg {
-    background-image: url(/img/cave/cav_letterBox.svg);
+    background-image: url(../../img/cave/letterBox.svg);
+    background-repeat: no-repeat;
     width: 100%;
+    // height: 40vw;
     height: 800px;
-    background-position: center;
+    min-height: 800px;
+    position: relative;
+    border: 1px solid palevioletred;
 
     .cav-boxFront {
       border: 5px solid $main-black;
-      width: 90%;
+      width: 93.5%;
+      height: 89%;
       display: flex;
       justify-content: space-between;
-      padding: 20px;
+      padding: 10px;
+      position: absolute;
+      top: 42px;
+      left: 40px;
 
       .cav-boxFrontLeft {
         border: 1px solid green;
         display: inline-block;
         width: 40%;
+        height: 100%;
+        padding: 10px;
 
         .cav-whoLetter {
           border: 1px solid fuchsia;
           display: flex;
           justify-content: space-around;
-          .cav-myLetter {
-          }
-          .cav-otherLetter {
-          }
+          // .cav-myLetter {
+          // }
+          // .cav-otherLetter {
+          // }
         }
         .cav-histLetter1 {
           border: 5px solid $main-black;
           background-color: #ddd;
           padding: 5px;
-          height: 600px;
+          // height: calc(100%-10px);
+          height: 97.7%;
 
-          .cav-histLetter2{
+          .cav-histLetter2 {
             border: 5px solid $main-black;
             background-color: rgb(74, 117, 112);
             padding: 10px;
-            height: 580px;
-            .cav-letters {
+            height: 100%;
+            > .cav-letters {
               border: 5px solid $main-black;
               height: 100px;
               margin: 0 auto 10px;
@@ -59,20 +71,53 @@
               border-radius: 20px;
               background-color: $main-yellow;
               overflow: hidden;
+              display: flex;
 
-              .cav-letWord{
+              .cav-letWord {
                 border: 1px solid blue;
-                width: 85%;
-                
-                div{
+                width: 80%;
 
+                .cav-letTitle {
+                  margin: 0;
+                }
+                .cav-letTime {
+                  margin: 0;
+                }
+              }
+              .cav-letSetting {
+                border: 1px solid blueviolet;
+                width: 20%;
+
+                > div {
+                  position: relative;
+                  height: 100%;
+                  img {
+                    border: 1px solid red;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 30px;
+                  }
                 }
               }
             }
           }
         }
       }
+      .cav-boxFrontRight {
+        border: 5px solid $main-black;
+        display: inline-block;
+        width: 57%;
+        background-color: #ddd;
+        padding: 5px;
 
+        .cav-showLetterBack {
+          border: 5px solid $main-black;
+          height: 100%;
+          background-color: rgb(74, 117, 112);
+        }
+      }
     }
   }
 }
@@ -80,33 +125,33 @@
 //我的裝備
 .cav-myItem {
   display: flex;
-  .cav_leftWrap {
+  .cav-leftWrap {
     border: 1px solid black;
     display: inline-block;
     width: 40%;
 
-    .cav_topBlock {
+    .cav-topBlock {
       border: 1px solid green;
       display: inline-block;
     }
 
-    .cav_prodWrap {
+    .cav-prodWrap {
       border: 1px solid firebrick;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
     }
   }
-  .cav_prod {
+  .cav-prod {
     border: 1px solid darkcyan;
     display: inline-block;
     width: 150px;
-    height: 150px;
+    height: 150px;  
     overflow: hidden;
   }
   .btn-basic-red {
   }
-  .cav_rightWrap {
+  .cav-rightWrap {
     border: 1px solid black;
     display: inline-block;
     width: 55%;
@@ -126,10 +171,10 @@
         }
       }
     }
-    .cav_tabWrap {
+    .cav-tabWrap {
       border: 2px solid black;
 
-      .cav_prodWrap {
+      .cav-prodWrap {
         border: 1px solid red;
         width: 100%;
         height: 580px;
@@ -146,18 +191,29 @@
         display: inline-block;
       }
     }
-    .cav_pc {
+    .cav-pc {
       border: 2px solid black;
       width: 80%;
       margin: 0 auto;
       display: flex;
 
-      .cav_paper {
+      .cav-paper {
         width: 50%;
       }
-      .cav_coin {
+      .cav-coin {
         width: 50%;
       }
     }
   }
 }
+
+
+// @include respond(iphone){
+//   .cav-main {
+//     width: 100px;
+//   }
+// }
+
+// @include respond(mediumSize){
+
+// }
