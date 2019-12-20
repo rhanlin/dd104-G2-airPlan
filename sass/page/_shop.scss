@@ -169,6 +169,7 @@
               transform: translate(0, -50%) rotate(15deg);
 
               img {
+                width: 40%;
                 transform: translate(0%, -70%) rotate(330deg);
               }
             }
@@ -179,6 +180,7 @@
               transform: translate(0, -30%) rotate(355deg);
 
               img {
+                width: 40%;
                 transform: translate(70%, -70%) rotate(360deg);
               }
             }
@@ -191,13 +193,13 @@
 
               .itemCard3Img_1 {
                 display: inline-block;
-                width: 50%;
+                width: 40%;
                 transform: translate(2%, -70%) rotate(350deg);
               }
 
               .itemCard3Img_2 {
                 display: inline-block;
-                width: 50%;
+                width: 40%;
                 transform: translate(15%, -70%) rotate(350deg);
               }
 
@@ -209,7 +211,7 @@
               transform: translate(0, 0%) rotate(350deg);
 
               img {
-
+                width: 40%;
                 transform: translate(90%, -70%) rotate(0deg);
               }
             }
@@ -220,6 +222,7 @@
               transform: translate(0, -10%) rotate(360deg);
 
               img {
+                width: 40%;
                 transform: translate(0%, -80%) rotate(350deg);
               }
             }
@@ -240,7 +243,7 @@
               margin-top: 50px;
 
               img {
-
+                width: 40%;
                 transform: translate(100%, -80%) rotate(360deg);
               }
             }
@@ -252,7 +255,7 @@
               margin-top: 30px;
 
               img {
-
+                width: 40%;
                 transform: translate(0%, -70%) rotate(340deg);
               }
             }
@@ -263,7 +266,7 @@
               transform: translate(30%, 0%) rotate(0deg);
 
               img {
-
+                width: 40%;
                 transform: translate(15%, -70%) rotate(330deg);
               }
             }
@@ -321,15 +324,13 @@
         position: relative;
         z-index: 15;
 
-
-
-        .clock {
+        itemCard2 .clock {
           width: 18%;
           padding-top: 100%;
           background-image: url("../../img/product/decorate/clock-04.svg");
           background-repeat: no-repeat;
           position: absolute;
-          left:-2%;
+          left: -2%;
           top: 20%;
         }
 
@@ -487,7 +488,12 @@
     #section3 {
       width: 100%;
 
+      .disabled {
+        display: block;
+      }
+
       .matbase {
+        position: relative;
         background-color: #fff;
         border: 5px solid black;
         display: flex;
@@ -495,25 +501,49 @@
         width: 100%;
         @include matbaseBox(12);
 
-        .owl-prev {
-          background-image: url('/img/product/decorate/tool/control_bar-01.svg');
-          width: 100px;
-          height: 50px;
-          background-repeat: no-repeat;
-
-          span {
-            display: none;
-          }
+        .owl-stage-outer {
+          width: 100%;
         }
 
-        .owl-next {
-          background-image: url('/img/product/decorate/tool/control_bar-01.svg');
-          width: 100px;
-          height: 50px;
-          background-repeat: no-repeat;
+        .owl-nav {
+          width: 500px;
+          height: 500px;
+          position: absolute;
+          top: -25%;
+          left: 50%;
 
-          span {
-            display: none;
+          .owl-prev {
+            background-image: url('/img/product/decorate/arrow_pre-04.svg');
+            width: 100%;
+            padding-top: 100%;
+            background-repeat: no-repeat;
+            display: block;
+
+            span {
+              font-size: 0;
+            }
+          }
+
+          .owl-next {
+            background-image: url('/img/product/decorate/arrow_next-04.svg');
+            width: 100%;
+            padding-top: 100%;
+            background-repeat: no-repeat;
+
+            span {
+              font-size: 0;
+            }
+
+          }
+
+
+        }
+
+        .owl-dots {
+          .owl-dot {
+            span {
+              display: none;
+            }
           }
         }
       }
@@ -682,7 +712,7 @@
 
           .row {
             #conectionLine {
-              s .iron_clip1 {
+              .iron_clip1 {
                 top: 30%;
               }
 
