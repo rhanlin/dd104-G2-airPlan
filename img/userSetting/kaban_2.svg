@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1142px" height="777px" viewBox="0 0 1142 777" enable-background="new 0 0 1142 777" xml:space="preserve">
+<g>
+	<g>
+		<g>
+			<path fill="#FFFFFF" stroke="#040000" stroke-width="5" stroke-miterlimit="10" d="M4.645,72.303v699.929h1131.859V72.303H4.645z
+				"/>
+			
+				<rect x="4.645" y="96.278" fill="none" stroke="#ACDBD7" stroke-width="2" stroke-miterlimit="10" width="1131.859" height="32"/>
+			
+				<rect x="4.645" y="162.278" fill="none" stroke="#ACDBD7" stroke-width="2" stroke-miterlimit="10" width="1131.859" height="32"/>
+			
+				<rect x="4.645" y="227.611" fill="none" stroke="#ACDBD7" stroke-width="2" stroke-miterlimit="10" width="1131.859" height="32"/>
+			
+				<rect x="4.645" y="293.611" fill="none" stroke="#ACDBD7" stroke-width="2" stroke-miterlimit="10" width="1131.859" height="32"/>
+			
+				<rect x="4.645" y="357.615" fill="none" stroke="#ACDBD7" stroke-width="2" stroke-miterlimit="10" width="1131.859" height="32"/>
+			
+				<rect x="4.645" y="423.615" fill="none" stroke="#ACDBD7" stroke-width="2" stroke-miterlimit="10" width="1131.859" height="32"/>
+			
+				<rect x="4.645" y="488.948" fill="none" stroke="#ACDBD7" stroke-width="2" stroke-miterlimit="10" width="1131.859" height="32"/>
+			
+				<rect x="4.645" y="554.948" fill="none" stroke="#ACDBD7" stroke-width="2" stroke-miterlimit="10" width="1131.859" height="32"/>
+			
+				<rect x="4.645" y="620.956" fill="none" stroke="#ACDBD7" stroke-width="2" stroke-miterlimit="10" width="1131.859" height="32"/>
+			
+				<rect x="4.645" y="686.956" fill="none" stroke="#ACDBD7" stroke-width="2" stroke-miterlimit="10" width="1131.859" height="32"/>
+			<path fill="none" stroke="#040000" stroke-width="5" stroke-miterlimit="10" d="M4.646,72.303v699.929h1131.858V72.303H4.646z"/>
+		</g>
+		<circle fill="#FFFFFF" stroke="#040000" stroke-width="5" stroke-miterlimit="10" cx="55.622" cy="123.669" r="17.391"/>
+		<circle fill="#FFFFFF" stroke="#040000" stroke-width="5" stroke-miterlimit="10" cx="1081.088" cy="123.669" r="17.391"/>
+	</g>
+	<path fill="#343535" stroke="#040000" stroke-width="5" stroke-miterlimit="10" d="M65.622,109.259c0,5.522-4.477,10-10,10l0,0
+		c-5.523,0-10-4.478-10-10v-94c0-5.522,4.477-10,10-10l0,0c5.523,0,10,4.478,10,10V109.259z"/>
+	<path fill="#343535" stroke="#040000" stroke-width="5" stroke-miterlimit="10" d="M1091.087,109.259c0,5.522-4.477,10-10,10l0,0
+		c-5.523,0-10-4.478-10-10v-94c0-5.522,4.477-10,10-10l0,0c5.523,0,10,4.478,10,10V109.259z"/>
+=======
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 955 649" style="enable-background:new 0 0 955 649;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#040000;stroke-width:5;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#ACDBD7;stroke-width:2;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#040000;stroke-width:5;stroke-miterlimit:10;}
+	.st3{fill:#343535;stroke:#040000;stroke-width:5;stroke-miterlimit:10;}
+</style>
+<g>
+	<g>
+		<g>
+			<path class="st0" d="M3.5,58.5v587.1h949.4V58.5H3.5z"/>
+			<rect x="3.5" y="78.7" class="st1" width="949.4" height="26.8"/>
+			<rect x="3.5" y="134" class="st1" width="949.4" height="26.8"/>
+			<rect x="3.5" y="188.8" class="st1" width="949.4" height="26.8"/>
+			<rect x="3.5" y="244.2" class="st1" width="949.4" height="26.8"/>
+			<rect x="3.5" y="297.9" class="st1" width="949.4" height="26.8"/>
+			<rect x="3.5" y="353.2" class="st1" width="949.4" height="26.8"/>
+			<rect x="3.5" y="408" class="st1" width="949.4" height="26.8"/>
+			<rect x="3.5" y="463.4" class="st1" width="949.4" height="26.8"/>
+			<rect x="3.5" y="518.7" class="st1" width="949.4" height="26.8"/>
+			<rect x="3.5" y="574.1" class="st1" width="949.4" height="26.8"/>
+			<path class="st2" d="M3.5,58.5v587.1h949.4V58.5H3.5z"/>
+		</g>
+		<circle class="st0" cx="46.3" cy="101.6" r="14.6"/>
+		<circle class="st0" cx="906.4" cy="101.6" r="14.6"/>
+	</g>
+	<path class="st3" d="M54.7,89.5c0,4.6-3.8,8.4-8.4,8.4l0,0c-4.6,0-8.4-3.8-8.4-8.4V10.7c0-4.6,3.8-8.4,8.4-8.4l0,0
+		c4.6,0,8.4,3.8,8.4,8.4V89.5z"/>
+	<path class="st3" d="M914.8,89.5c0,4.6-3.8,8.4-8.4,8.4l0,0c-4.6,0-8.4-3.8-8.4-8.4V10.7c0-4.6,3.8-8.4,8.4-8.4l0,0
+		c4.6,0,8.4,3.8,8.4,8.4V89.5z"/>
+>>>>>>> Howard
+</g>
+</svg>
