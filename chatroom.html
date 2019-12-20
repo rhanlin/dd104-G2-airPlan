@@ -9,8 +9,8 @@
     <link href="./css/main.css" rel="stylesheet" type="text/css">
 </head>
 
-<body class="chat-body">
-    <!-- <header class="chat-header">
+<body class="chatroom-body">
+    <!-- <header class="chatroom-header">
         <div>
             <div class="line1"></div>
             <div class="line2"></div>
@@ -35,56 +35,80 @@
 
     </header> -->
     @@include("./html/header.html")
-    <main class="chat-main">
-        <section class="chat-section">
-            <div class="mark1">
+    <main class="chatroom-main">
+        <section class="mainSection">
+            <div class="sectionMark1">
                 <img src="./img/chatroom/mark.png" alt="">
                 <p>XXX-1234</p>
             </div>
-            <div class="mark2">
+            <div class="sectionMark2">
                 <img src="./img/chatroom/mark_1.png" alt="">
                 <p>XXX-1234</p>
             </div>
-            <div class="mark3">
+            <div class="sectionMark3">
                 <img src="./img/chatroom/mark_2.png" alt="">
                 <p>XXX-1234</p>
             </div>
-            <div class="mark4">
+            <div class="sectionMark4">
                 <img src="./img/chatroom/mark_3.png" alt="">
                 <p>XXX-1234</p>
             </div>
+            <div class="sectionMark5">
+                <img src="./img/chatroom/mark.png" alt="">
+                <p>XXX-1234</p>
+            </div>
+            <div class="sectionMark6">
+                <img src="./img/chatroom/mark_1.png" alt="">
+                <p>XXX-1234</p>
+            </div>
+            <div class="sectionMark7">
+                <img src="./img/chatroom/mark_2.png" alt="">
+                <p>XXX-1234</p>
+            </div>
+            <div class="sectionMark8">
+                <img src="./img/chatroom/mark_3.png" alt="">
+                <p>XXX-1234</p>
+            </div>
+            <div class="sectionMark9">
+                <img src="./img/chatroom/mark_4.png" alt="">
+                <p>XXX-1234</p>
+            </div>
         </section>
-        <div class="book">
-            <div class="dashed">
-                <div class="page1">
-                    <div class="page2">
-                        <div class="page3">
-                            <div class="page4">
-                                <div class="page5">
-                                    <div class="content">
-                                        <div class="your">
+        <div class="mainBook">
+            <div class="bookDashed">
+                <div class="dashPage1">
+                    <div class="dashPage2">
+                        <div class="dashPage3">
+                            <div class="dashPage4">
+                                <div class="dashPage5">
+                                    <img class="pageImg" src="./img/chatroom/book.png" alt="book.png">
+                                    <div class="pageContent">
+                                        <div class="contentYour">
                                             <img src="./img/chatroom/mark.png" alt="">
                                             <p>分手應該體面</p>
                                         </div>
-                                        <div class="me">
+                                        <div class="contentMe">
                                             <p>誰都不要說抱歉</p>
                                         </div>
-                                        <div class="your_1">
+                                        <div class="meClearfix"></div>
+                                        <div class="contentYour_1">
                                             <img src="./img/chatroom/mark.png" alt="">
                                             <p>何來虧欠</p>
                                         </div>
-                                        <div class="me">
+                                        <div class="contentMe">
                                             <p>我敢給就敢心碎</p>
                                         </div>
-                                        <div class="your_2">
+                                        <div class="meClearfix"></div>
+                                        <div class="contentYour_2">
                                             <img src="./img/chatroom/mark.png" alt="">
                                             <p>鏡頭前面是從前的我們</p>
                                         </div>
+                                        
                                     </div>
-                                    <div class="send">
-                                        <input class="text" type="text">
+                                    <div class="contentSend">
+                                        <input class="sendText" type="text">
                                         <img src="./img/chatroom/send.png" alt="">
-                                        <div class="clearfix"></div>
+                                        <div class="sendClearfix"></div>
                                     </div>
                                 </div>
                             </div>
@@ -94,9 +118,9 @@
             </div>
         </div>
 
-        <div class="clearfix"></div>
+        <div class="mainClearfix"></div>
     </main>
-    <footer></footer>
+    @@include("./html/footer.html")
 </body>
 
 </html>
