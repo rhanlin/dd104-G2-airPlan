@@ -13,59 +13,61 @@
     @@include("./html/nav.html")
     @@include("./html/header.html")
     <main class="userSetting_main">
-        <section class="userSetting_mem"><!--airPlan會員資訊-->
-            <div class="userSetting_memKanban" id="memKanban"><!--會員資訊頁籤-->
-                <div class="userSetting_memData" @click="content='memData'"><h1>會員資料</h1></div>
-                <div class="userSetting_airCoin" @click="content='airCoin'"><h1>打賞紀錄</h1></div>
-                <div class="userSetting_memcolor" @click="content='memcolor'"><h1>外觀設定</h1></div>
-                <keep-alive><!--資料保留標籤-->
-                    <component :is="content"></component>
-                </keep-alive>
-            </div>
-            <img class="userSetting_robotB1" src="" alt="userSetting_robotB1">
-            <img class="userSetting_conveyorB1" src="" alt="userSetting_conveyorB1">
-        </section>
-
-        <section class="userSetting_sys"><!--airPlan系統資訊-->
-            <div class="userSetting_sysKanban" id="sysKanban"><!--系統資訊頁籤-->
-                <div class="userSetting_manu"  @click="content='manu'"><h1>操作說明</h1></div>
-                <div class="userSetting_ver" @click="content='ver'"><h1>版本資訊</h1></div>
-                <keep-alive>
-                    <component :is="content"></component>
-                </keep-alive>
-            </div>
-            <img src="" alt="userSetting_robotB2">
-        </section>
-
-        <section class="userSetting_adm"><!--airPlan開發者資訊-->
-            <div class="userSetting_Spencer">
-                <h1>宗翰</h1>
-            </div>
-            <div class="userSetting_Sharon">
-                <h1>香菇</h1>
-            </div>
-            <div class="userSetting_Howard">
-                <h1>阿康</h1>
-            </div>
-            <div class="userSetting_Grace">
-                <h1>小鴨</h1>
-            </div>
-            <div class="userSetting_Allen">
-                <h1>耀輝</h1>
-            </div>
-            <div class="userSetting_Mike">
-                <h1>峻瑜</h1>
-            </div>
-            <img src="" alt="userSetting_conveyorB3">
-            <img src="" alt="userSetting_light">
-        </section>
+        <div class="userSetting_floor">
+            <section class="userSetting_mem"><!--airPlan會員資訊-->
+                <div class="memKanban" id="memKanban"><!--會員資訊頁籤-->
+                    <div class="memData" @click="content='memData'"><h1>會員資料</h1></div>
+                    <div class="airCoin" @click="content='airCoin'"><h1>打賞紀錄</h1></div>
+                    <div class="memcolor" @click="content='memcolor'"><h1>外觀設定</h1></div>
+                    <keep-alive><!--資料保留標籤-->
+                        <component :is="content"></component>
+                    </keep-alive>
+                </div>
+                <img class="userSetting_robotB1" src="" alt="userSetting_robotB1">
+                <img class="userSetting_conveyorB1" src="" alt="userSetting_conveyorB1">
+            </section>
+            <div class="userSetting_space_B1">123</div>
+            <section class="userSetting_sys"><!--airPlan系統資訊-->
+                <div class="sysKanban" id="sysKanban"><!--系統資訊頁籤-->
+                    <div class="manu"  @click="content='manu'"><h1>操作說明</h1></div>
+                    <div class="ver" @click="content='ver'"><h1>版本資訊</h1></div>
+                    <keep-alive>
+                        <component :is="content"></component>
+                    </keep-alive>
+                </div>
+                <img src="" alt="userSetting_robotB2">
+            </section>
+            <div class="userSetting_space_B2"></div>
+            <section class="userSetting_adm"><!--airPlan開發者資訊-->
+                <div class="userSetting_Spencer">
+                    <h1>宗翰</h1>
+                </div>
+                <div class="userSetting_Sharon">
+                    <h1>香菇</h1>
+                </div>
+                <div class="userSetting_Howard">
+                    <h1>阿康</h1>
+                </div>
+                <div class="userSetting_Grace">
+                    <h1>小鴨</h1>
+                </div>
+                <div class="userSetting_Allen">
+                    <h1>耀輝</h1>
+                </div>
+                <div class="userSetting_Mike">
+                    <h1>峻瑜</h1>
+                </div>
+                <img src="" alt="userSetting_conveyorB3">
+                <img src="" alt="userSetting_light">
+            </section>
+        </div>
     </main>
     @@include("./html/footer.html")
     <script>
         Vue.component('memData',{
             template:`
-                <div class="memData">
-                    <table class="memDataTable">
+                <div class="userSetting_memData">
+                    <table class="userSetting_memDataTable">
                         <tr>
                             <td><img src="" alt="mempic"></td>
                             <td>Air幣 : 50</td>
@@ -96,8 +98,8 @@
         });
         Vue.component('airCoin',{
             template:`
-                <div class="airCoin">
-                    <table class="airCoinTable">
+                <div class="userSetting_airCoin">
+                    <table class="userSetting_airCoinTable">
                         <tr>
                             <td>時間</td>
                             <td>信件</td>
@@ -105,7 +107,7 @@
                         </tr>
                         <tr>
                             <td>2019/12/18 12:00</td>
-                            <td>誰來幫我R</td>
+                            <td>被遺忘的外套</td>
                             <td>不怕冷的小樺</td>
                         </tr>
                         <tr>
@@ -128,13 +130,18 @@
                             <td>&on旅社</td>
                             <td>咖啡翰</td>
                         </tr>
+                        <tr>
+                            <td>2019/12/07 08:46</td>
+                            <td>睡眠很重要</td>
+                            <td>早起的邱哥</td>
+                        </tr>
                     </table>
                 </div>
             `,
         });
         Vue.component('memcolor',{
             template:`
-                <div class="memcolor">
+                <div class="userSetting_memcolor">
                     <div class="memcolorBlack">
                         <h1>黑色</h1>
                         <img src="" alt="black">
@@ -155,7 +162,7 @@
     
         Vue.component('manu',{
             template:`
-                <div class="manu">
+                <div class="userSetting_manu">
                     <div class="userSetting_userSetting">
                         <h1>會員</h1>
                     </div>
@@ -182,7 +189,7 @@
         });
         Vue.component('ver',{
             template:`
-                <h1 class="ver">版本 : 1.0.0</h1>
+                <h1 class="userSetting_ver">版本 : 1.0.0</h1>
              `,
         });
     new Vue({
