@@ -10,74 +10,106 @@ h1,td{
     font-size: 0;
     .userSetting_main{
         width: 100%;
+        background-color: $main-blue;
+        border-bottom: 80px solid $main-blue;
+        .userSetting_floor{
+            background-size: auto;
+            width: 95%;
+            margin: 0 auto;
+            background: radial-gradient(rgb(100, 60, 91) 30%, rgb(248, 230, 228) 20%);
+            background-size: 10px 10px;
+            overflow: hidden;
+            position: relative;
 
-        .userSetting_mem{
-            width: 100%;
-            height: 800px;
-            background-color: rgb(190, 233, 250);
-            .userSetting_memKanban{
-                width: 50%;
-                background-color: rgb(143, 197, 176);
-                margin: 0 auto;
-                .userSetting_memData{
-                    width: 33.33%;
-                    background-color: goldenrod;
-                    display: inline-block;
-                    text-align: center;
-                    // border-bottom: 2px solid black;
-                }
-                .userSetting_airCoin{
-                    @extend.userSetting_memData;
-                }
-                .userSetting_memcolor{
-                    @extend.userSetting_memData;
-                }
-                .userSetting_robotB1, .userSetting_conveyorB1{
-                    display: block;
-                }
-            }
-        }
-
-        .userSetting_sys{
-            width: 100%;
-            height: 800px;
-            background-color: wheat;
-            .userSetting_sysKanban{
-                width: 50%;
-                background-color: rgb(155, 143, 197);
-                margin: 0 auto;
-                .userSetting_manu{
+            .userSetting_mem{
+                border-top: 80px solid $main-blue;
+                width: 100%;
+                height: 900px;
+                .memKanban{
                     width: 50%;
-                    background-color: rgb(228, 143, 185);
-                    display: inline-block;
-                    border-bottom: 2px solid black;
+                    min-width: 800px;
+                    margin: 0 auto;
+                    background-image: url("../../img/userSetting/kaban.svg");
+                    background-repeat: no-repeat;
                     text-align: center;
+                    .memData{
+                        margin:  100px 0 10px ;
+                        width: 33.33%;
+                        display: inline-block;
+                        text-align: center;
+                    }
+                    .airCoin{
+                        @extend.memData;
+                    }
+                    .memcolor{
+                        @extend.memData;
+                    }
+                    .userSetting_robotB1, .userSetting_conveyorB1{
+                        display: block;
+                    }
                 }
-                .userSetting_ver{
-                    @extend.userSetting_manu;
+            }
+            .userSetting_space_B1{
+                width: 20%;
+                height: 80px;
+                background: radial-gradient(rgb(100, 60, 91) 30%, rgb(248, 230, 228) 20%);
+                background-size: 10px 10px;
+                // overflow: hidden;
+                position: absolute;
+                right: 0;
+            }
+            .userSetting_sys{
+                border-top: 80px solid $main-blue;
+                width: 100%;
+                height: 900px;
+                .sysKanban{
+                    width: 50%;
+                    min-width: 800px;
+                    margin: 0 auto;
+                    background-image: url("../../img/userSetting/kaban_2.svg");
+                    background-repeat: no-repeat;
+                    text-align: center;
+                    .manu{
+                        margin:  100px 0 10px ;
+                        width: 50%;
+                        display: inline-block;
+                    }
+                    .ver{
+                        @extend.manu;
+                    }
                 }
             }
-        }
-
-        .userSetting_adm{
-            
-            .userSetting_Spencer{
-
+            .userSetting_space_B2{
+                width: 20%;
+                height: 80px;
+                background: radial-gradient(rgb(100, 60, 91) 30%, rgb(248, 230, 228) 20%);
+                background-size: 10px 10px;
+                // overflow: hidden;
+                position: absolute;
+                left: 0;
             }
-            .userSetting_Sharon{
-
-            }
-            .userSetting_Howard{
-
-            }
-            .userSetting_Grace{
-
-            }
-            .userSetting_Allen{
-
-            }
-            .userSetting_Mike{
-
+            .userSetting_adm{
+                border-top: 80px solid $main-blue;
+                width: 100%;
+                height: 900px;
+                .Spencer{
+    
+                }
+                .Sharon{
+    
+                }
+                .Howard{
+    
+                }
+                .Grace{
+    
+                }
+                .Allen{
+    
+                }
+                .Mike{
+    
+                }
             }
         }
     }
@@ -85,37 +117,38 @@ h1,td{
 
 
 //userSetting_mem vue
-.memData{
-    height: 400px;
+.userSetting_memData{
+    height: 800px;
     margin: 0 auto;
     width: 100%;
 }
-.memDataTable{
+.userSetting_memDataTable{
     width: 70%;
     margin: 0 auto;
 }
-.memData td{
+.userSetting_memData td{
     width: 50%;
     border: 1px solid black;
 }
-.airCoin{
-    @extend.memData;
+.userSetting_airCoin{
+    @extend.userSetting_memData;
     text-align: center;
 }
-.airCoinTable{
-    @extend.memDataTable
+.userSetting_airCoinTable{
+    @extend.userSetting_memDataTable
 }
-.airCoin table td{
+.userSetting_airCoin table td{
     text-align: center;
     width: 33.33%;
     border: 1px solid black;
 }
-.memcolor{
-    @extend.memData;
+.userSetting_memcolor{
+    @extend.userSetting_memData;
     text-align: center;
 }
 .memcolorBlack{
-    height: 50%;
+    width: 50%;
+    display: inline-block;
 }
 .memcolorWhite{
     @extend.memcolorBlack;
@@ -123,9 +156,12 @@ h1,td{
 
 
 //userSetting_mem vue
-.manu{
-    @extend.memData;
+.userSetting_manu{
+    height: 800px;
+    margin: 0 auto;
+    width: 70%;
+    text-align: left;
 }
-.ver{
-    @extend.memData;
+.userSetting_ver{
+    @extend.userSetting_manu;
 }
