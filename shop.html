@@ -105,8 +105,16 @@
     <section id="section2">
       <div class="customizeArea">
         <div class="controlTool">
-          <div class="controlBox1"><img src="/img/product/tool/control_bar-01.svg" alt=""></div>
-          <div class="controlBox2"><img src="/img/product/tool/control_combine-01.svg" alt=""></div>
+          <div class="controlBox1">
+            <div class="controlBox1_button">
+              <div class="controlBtn1"><img src="/img/product/tool/control_bar-01.svg" alt=""></div>
+            </div>
+          </div>
+          <div class="controlBox2">
+            <div class="controlBox2_button">
+              <div class="controlBtn2"><img src="/img/product/tool/control_combine-01.svg" alt=""></div>
+            </div>
+          </div>
           <div class="controlBox3"><img src="/img/product/tool/control_download.svg" alt=""></div>
           <div class="controlBox4"><img src="/img/product/tool/control_move-01.svg" alt=""></div>
           <div class="controlBox5"><img src="/img/product/tool/control_return-01.svg" alt=""></div>
@@ -122,77 +130,105 @@
           <div class="drawingBoard">
             <img src="/img/product/decorate/planeBoard-05.svg" alt="" class="planeBoard">
           </div>
-          <div class="btns">
-            <div id="switchBtn"> <img src="/img/product/decorate/switchBtn.png" alt=""></div>
-            <div id="emptyBtnBox">
-              <div class="mask-image"></div>
-              <div class="emptyBtn2"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
-              <div class="emptyBtn3"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
-              <div class="emptyBtn4"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
-              <div class="emptyBtn5"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
-              <div class="emptyBtn6"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+          <div id="btns" class="btns">
+            <div id="switchBtnBox">
+              <div class="switchBtn clicked">切換郵戳畫板</div>
             </div>
           </div>
         </div>
       </div>
     </section>
     <section id="section3">
-      <div class="matbase owl-carousel disabled">
-        <div class="item matbaseBox1"><img src="/img/product/decorate/emptyBtn.png" alt=""></div>
-        <div class="item matbaseBox2 "><img src="" alt=""></div>
-        <div class="item matbaseBox3"><img src="" alt=""></div>
-        <div class="item matbaseBox4"><img src="" alt=""></div>
-        <div class="item matbaseBox5"><img src="" alt=""></div>
-        <div class="item matbaseBox6"><img src="" alt=""></div>
-        <div class="item matbaseBox7"><img src="" alt=""></div>
-        <div class="item matbaseBox8"><img src="" alt=""></div>
-        <div class="item matbaseBox9"><img src="" alt=""></div>
-        <div class="item matbaseBox10"><img src="" alt=""></div>
-        <div class="item matbaseBox11"><img src="" alt=""></div>
-        <div class="item matbaseBox12"><img src="" alt=""></div>
-        <div class="item matbaseBox13"><img src="" alt=""></div>
-        <div class="item matbaseBox14"><img src="" alt=""></div>
-        <div class="item matbaseBox15"><img src="" alt=""></div>
-        <div class="item matbaseBox16"><img src="" alt=""></div>
-        <div class="item matbaseBox17"><img src="" alt=""></div>
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+        </div>
+        <div class="item">
+          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+        </div>
+        <div class="item">
+          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+        </div>
+        <div class="item">
+          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+        </div>
+        <div class="item">
+          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+        </div>
+        <div class="item">
+          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+        </div>
+        <div class="item">
+          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+        </div>
+        <div class="item">
+          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+        </div>
+        <div class="item">
+          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+        </div>
+        <div class="item">
+          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+        </div>
+        <div class="item">
+          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+        </div>
+        <div class="item">
+          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+        </div>
       </div>
     </section>
   </main>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
   <script src="../../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
   <script>
-    var owl = $('.owl-carousel');
-    owl.owlCarousel({
-      nav: true,
-      items: 17,
-      margin: 50,
-      autoplay: true,
-      autoplayTimeout: 2500,
-      autoplayHoverPause: true,
-      responsiveClass: true,
-      mouseDrag: true, // 滑鼠拖曳
-      touchDrag: true, // 觸控拖曳
-      responsive: {
-        300: {
-          items: 4,
-          loop: true
-        },
-        500: {
-          items: 4,
-          loop: true
-        },
-        900: {
-          items: 6,
-          loop: true
-        },
-        1200: {
-          items: 8,
-          loop: true
-        }
-
-      }
+    $('.switchBtn').mousedown(function () {
+      $(this).addClass('clicked');
+    });
+    $('.switchBtn').mouseup(function () {
+      $(this).removeClass('clicked');
     });
   </script>
+  <script>
+    $(document).ready(function () {
+      var owl = $('.owl-carousel');
+      owl.owlCarousel({
+        loop: true,
+        responsiveClass: true,
+        responsive: {
+          0: {
+            items: 4,
+            nav: true
+          },
+          575: {
+            items: 4,
+            nav: true,
+          },
+          767: {
+            items: 6,
+            nav: true,
+          },
+          991: {
+            items: 7,
+            nav: true,
+          },
+          1199: {
+            items: 8,
+            nav: true,
+          }
+        }
+      })
+    })
+    // owl.on('mousewheel', '.owl-stage', function (e) {
+    //   if (e.deltaY > 0) {
+    //     owl.trigger('next.owl');
+    //   } else {
+    //     owl.trigger('prev.owl');
+    //   }
+    //   e.preventDefault();
+    // });
+  </script>
+
 </body>
 
 </html>
