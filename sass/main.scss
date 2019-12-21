@@ -2,6 +2,10 @@
  *  plugin
  */
 
+/*
+ *  font
+ */
+@import "base/font";
 
 /*
  *  base
@@ -30,13 +34,13 @@
 /*
  *  pages
  */
-@import "./page/index";
-@import "./page/home";
-@import "./page/write-letter";
-@import "./page/shop";
-@import "./page/cave";
-@import "./page/userSetting";
-@import "./page/chatroom";
+ @import "./page/index";
+ @import "./page/home";
+ @import "./page/write-letter";
+ @import "./page/shop";
+ @import "./page/cave";
+ @import "./page/userSetting";
+ @import "./page/chatroom";
 /*
  *  layout
  */
