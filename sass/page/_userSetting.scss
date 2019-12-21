@@ -1,6 +1,4 @@
-h1,td{
-    font-size: 24px;
-}
+
 
 //以上測試
 
@@ -8,12 +6,14 @@ h1,td{
     width: 100%;
     margin: 0 auto;
     font-size: 0;
+    padding: 0;
+    margin: 0;
     .userSetting_main{
         width: 100%;
         background-color: $main-blue;
         border-bottom: 80px solid $main-blue;
-        .userSetting_floor{
-            background-size: auto;
+        .floor{
+            // background-size: auto;
             width: 95%;
             margin: 0 auto;
             background: radial-gradient(rgb(100, 60, 91) 30%, rgb(248, 230, 228) 20%);
@@ -24,101 +24,202 @@ h1,td{
             .userSetting_mem{
                 border-top: 80px solid $main-blue;
                 width: 100%;
-                height: 900px;
+                height: 800px;
+                position: relative;
+                .memtitle{
+                    position: absolute;
+                    bottom: 20px;
+                    left: 20px;
+                    z-index: 3;
+                }
                 .memKanban{
                     width: 50%;
-                    min-width: 800px;
-                    // margin: 0 auto;
-                    background-image: url("../../img/userSetting/kaban.svg");
-                    background-repeat: no-repeat;
+                    padding: 30px;
+                    min-width: 550px;
+                    max-width: 770px;
+                    background-color: $main-green;
                     text-align: center;
-                    border: 1px solid rgb(255, 0, 0);
+                    @include border;
+                    border-radius: 15px;
                     position: absolute;
+                    left: 50%;
+                    transform: translate(-50%,10%);
+                    .memKanbanIn{
+                        background-color: rgb(255, 255, 255);
+                        @include border;
+                        .memData{
+                            margin:  10% 0 10px ;
+                            width: 25%;
+                            display: inline-block;
+                            text-align: center;
+                            border: 1px solid rgb(255, 0, 0);
+                        }
+                        .airCoin{
+                            @extend.memData;
+                            border: 1px solid rgb(255, 0, 0);
+                        }
+                        .memcolor{
+                            @extend.memData;
+                            border: 1px solid rgb(255, 0, 0);
+                        }
+                    }
                     
-                    transform: translate(50%,10%);
-                    .memData{
-                        margin:  100px 0 10px ;
-                        width: 30%;
-                        display: inline-block;
-                        text-align: center;
-                        border: 1px solid rgb(255, 0, 0);
-                    }
-                    .airCoin{
-                        @extend.memData;
-                        border: 1px solid rgb(255, 0, 0);
-                    }
-                    .memcolor{
-                        @extend.memData;
-                        border: 1px solid rgb(255, 0, 0);
-                    }
-                    .robotB1, .robotB1_2{
-                        // display: block;
-                    }
+                }
+                .robotB1{
+                    width: 40%;
+                    position: absolute;
+                    left: 0px;
+                    bottom: 0;
+                }
+                .robotB1_2{
+                    width: 50%;
+                    position: absolute;
+                    left: 0px;
+                    bottom: 0;
+                    transform: translateX(60%)
+                }
+                .space_B1{
+                    width: 22%;
+                    height: 80px;
+                    background: radial-gradient(rgb(100, 60, 91) 30%, rgb(248, 230, 228) 20%);
+                    background-size: 10px 10px;
+                    position: absolute;
+                    right: 0;
+                    bottom: -80px;
+                    z-index: 1;
+
                 }
             }
-            .userSetting_space_B1{
-                width: 20%;
-                height: 80px;
-                background: radial-gradient(rgb(100, 60, 91) 30%, rgb(248, 230, 228) 20%);
-                background-size: 10px 10px;
-                position: absolute;
-                right: 0;
-            }
+            
             .userSetting_sys{
                 border-top: 80px solid $main-blue;
                 width: 100%;
-                height: 900px;
-                
+                height: 800px;
+                position: relative;
+                .systitle{
+                    
+                }
                 .sysKanban{
                     width: 50%;
-                    min-width: 800px;
-                    margin: 0 auto;
-                    background-image: url("../../img/userSetting/kaban_2.svg");
+                    min-width: 550px;
+                    max-width: 770px;
+                    // background-image: url("../../img/userSetting/kaban_2.svg");
                     background-repeat: no-repeat;
                     text-align: center;
-                    border: 1px solid rgb(7, 110, 46);
+                    position: absolute;
+                    // transform: translate(-50%,-2%);
+                    left: 10%;
+                    top: 5%;
+                    background: radial-gradient(rgba(238, 216, 233, .9) 30%, rgb(255, 255, 255) 20%);
+                    background-size: 1px 40px;
+                    @include border;
+                    
                     .manu{
-                        margin:  100px 0 10px ;
+                        margin:  5% 0 5% ;
                         width: 45%;
                         display: inline-block;
                         border: 1px solid rgb(7, 110, 46);
                     }
                     .ver{
                         @extend.manu;
-                        border: 1px solid rgb(7, 110, 46);
                     }
                 }
+                .robotB2{
+                    width: 80%;
+                    position: absolute;
+                    right: 0px;
+                    bottom: 0;
+                }
+                .space_B2{
+                    width: 22%;
+                    height: 80px;
+                    background: radial-gradient(rgb(100, 60, 91) 30%, rgb(248, 230, 228) 20%);
+                    background-size: 10px 10px;
+                    position: absolute;
+                    left: 0;
+                    bottom: -80px;
+                    z-index: 2;
+                }
             }
-            .userSetting_space_B2{
-                width: 20%;
-                height: 80px;
-                background: radial-gradient(rgb(100, 60, 91) 30%, rgb(248, 230, 228) 20%);
-                background-size: 10px 10px;
-                // overflow: hidden;
-                position: absolute;
-                left: 0;
-            }
+            
             .userSetting_adm{
                 border-top: 80px solid $main-blue;
                 width: 100%;
-                height: 900px;
-                .Spencer{
-
+                height: 800px;
+                position: relative;
+                .admtitle{
+                    
                 }
-                .Sharon{
-    
+                .developer{
+                    min-width: 550px;
+                    max-width: 770px;
+                    width: 40%;
+                    transform: translate(-45%,40%);
+                    overflow: hidden;
+                    @include border;
+                    background: radial-gradient(rgba(255, 229, 142, 0.9) 30%, rgb(255, 255, 255) 20%);
+                    background-size: 20px 10px;
+                    animation: dev 140s infinite linear;
+                    position: absolute;
+                    left: 50%;
+                    @keyframes dev {
+                        0% {
+                            background-position: 0 0;
+                        }
+                        100% {                        
+                            background-position: 0 -100%;
+                        }
+                    }
+                    .mike{
+                        height: 400px;
+                        width: 600px;
+                        background-image: url("../../img/userDeveloper/howard.png");
+                        opacity: .9;
+                        display: none;
+                        .Name{
+                            margin: 5% 10%;
+                        }
+                        .work{
+                            @extend.Name;
+                        }
+                        .portfolio{
+                            @extend.Name;
+                        }
+                    }
+                    .spencer{
+                        @extend.mike;
+                        background-image: url("../../img/userDeveloper/howard.png");
+                    }
+                    .grace{
+                        @extend.mike;
+                        background-image: url("../../img/userDeveloper/howard.png");
+                    }
+                    .allen{
+                        @extend.mike;
+                        background-image: url("../../img/userDeveloper/howard.png");
+                    }
+                    .sharon{
+                        @extend.mike;
+                        background-image: url("../../img/userDeveloper/howard.png");
+                    }
+                    .howard{
+                        @extend.mike;
+                        background-image: url("../../img/userDeveloper/howard.png");
+                        display: block;
+                    }
                 }
-                .Howard{
-    
+                .robotB3{
+                    width: 30%;
+                    position: absolute;
+                    left: 0px;
+                    bottom: 0;
                 }
-                .Grace{
-    
-                }
-                .Allen{
-    
-                }
-                .Mike{
-    
+                .light{
+                    width: 40%;
+                    position: absolute;
+                    right: 48%;
+                    top: 0;
+                    transform: translateX(50%);
                 }
             }
         }
@@ -128,12 +229,12 @@ h1,td{
 
 //userSetting_mem vue
 .userSetting_memData{
-    height: 500px;
+    height: 370px;
     margin: 0 auto;
     width: 100%;
 }
 .userSetting_memDataTable{
-    width: 70%;
+    width: 75%;
     margin: 0 auto;
 }
 .userSetting_memData td{
@@ -167,11 +268,21 @@ h1,td{
 
 //userSetting_mem vue
 .userSetting_manu{
-    height: 500px;
+    height: 375px;
     margin: 0 auto;
     width: 70%;
     text-align: left;
+    .userSetting_item{
+        height: 10%;
+    }
 }
 .userSetting_ver{
     @extend.userSetting_manu;
+}
+
+
+
+.userSetting_body li, .userSetting_body span, .userSetting_body td, .userSetting_body p{
+    font-size: 16px;
+    margin: 0;
 }

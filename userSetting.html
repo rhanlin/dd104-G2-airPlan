@@ -15,68 +15,172 @@
     @@include("./html/nav.html")
     @@include("./html/header.html")
     <main class="userSetting_main">
-        <div class="userSetting_floor">
+        <div class="floor">
             <section class="userSetting_mem">
                 <!--airPlan會員資訊-->
+                <h1 class="memtitle">會員資訊</h1>
                 <div class="memKanban" id="memKanban">
-                    <!--會員資訊頁籤-->
-                    <div class="memData" @click="content='memData'">
-                        <h1>會員資料</h1>
+                    <div class="memKanbanIn">
+                        <!--會員資訊頁籤-->
+                        <div class="memData" @click="content='memData'">
+                            <h2>會員資料</h2>
+                        </div>
+                        <div class="airCoin" @click="content='airCoin'">
+                            <h2>打賞紀錄</h2>
+                        </div>
+                        <div class="memcolor" @click="content='memcolor'">
+                            <h2>外觀設定</h2>
+                        </div>
+                        <keep-alive>
+                            <!--資料保留標籤-->
+                            <component :is="content"></component>
+                        </keep-alive>
                     </div>
-                    <div class="airCoin" @click="content='airCoin'">
-                        <h1>打賞紀錄</h1>
-                    </div>
-                    <div class="memcolor" @click="content='memcolor'">
-                        <h1>外觀設定</h1>
-                    </div>
-                    <keep-alive>
-                        <!--資料保留標籤-->
-                        <component :is="content"></component>
-                    </keep-alive>
                 </div>
                 <img class="robotB1" src="img/userSetting/robotB1.svg" alt="robotB1">
                 <img class="robotB1_2" src="img/userSetting/robotB1_2.svg" alt="robotB1_2">
+                <img class="box" src="" alt="">
+                <div class="space_B1"></div>
             </section>
-            <div class="userSetting_space_B1"></div>
+
             <section class="userSetting_sys">
                 <!--airPlan系統資訊-->
+                <h1 class="systitle">系統資訊</h1>
                 <div class="sysKanban" id="sysKanban">
                     <!--系統資訊頁籤-->
                     <div class="manu" @click="content='manu'">
-                        <h1>操作說明</h1>
+                        <h2>操作說明</h2>
                     </div>
                     <div class="ver" @click="content='ver'">
-                        <h1>版本資訊</h1>
+                        <h2>版本資訊</h2>
                     </div>
                     <keep-alive>
                         <component :is="content"></component>
                     </keep-alive>
                 </div>
                 <img class="robotB2" src="img/userSetting/robotB2.svg" alt="robotB2">
+                <div class="space_B2"></div>
             </section>
-            <div class="userSetting_space_B2"></div>
+
             <section class="userSetting_adm">
                 <!--airPlan開發者資訊-->
-                <div class="userSetting_Spencer">
-                    <h1>宗翰</h1>
-                </div>
-                <div class="userSetting_Sharon">
-                    <h1>香菇</h1>
-                </div>
-                <div class="userSetting_Howard">
-                    <h1>阿康</h1>
-                </div>
-                <div class="userSetting_Grace">
-                    <h1>小鴨</h1>
-                </div>
-                <div class="userSetting_Allen">
-                    <h1>耀輝</h1>
-                </div>
-                <div class="userSetting_Mike">
-                    <h1>峻瑜</h1>
+                <h1 class="admtitle">開發者資訊</h1>
+                <div class="developer">
+                    <div class="mike">
+                        <h2 class="Name">峻瑜</h2>
+                        <ul class="work">
+                            <h3>分工項目</h3>
+                            <li>用戶設定</li>
+                            <li>會員管理</li>
+                            <li>資料庫建置與控管</li>
+                        </ul>
+                        <div class="portfolio">
+                            <h3>作品</h3>
+                            <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
+                                <span>岳世界</span>
+                            </a><br>
+                            <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
+                                <span>Air Plan</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="spencer">
+                        <h2 class="Name">宗翰</h2>
+                        <ul class="work">
+                            <h3>分工項目</h3>
+                            <li>用戶設定</li>
+                            <li>會員管理</li>
+                            <li>資料庫建置與控管</li>
+                        </ul>
+                        <div class="portfolio">
+                            <h3>作品</h3>
+                            <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
+                                <span>岳世界</span>
+                            </a><br>
+                            <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
+                                <span>Air Plan</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="allen">
+                        <h2 class="Name">耀輝</h2>
+                        <ul class="work">
+                            <h3>分工項目</h3>
+                            <li>用戶設定</li>
+                            <li>會員管理</li>
+                            <li>資料庫建置與控管</li>
+                        </ul>
+                        <div class="portfolio">
+                            <h3>作品</h3>
+                            <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
+                                <span>岳世界</span>
+                            </a><br>
+                            <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
+                                <span>Air Plan</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grace">
+                        <h2 class="Name">小鴨</h2>
+                        <ul class="work">
+                            <h3>分工項目</h3>
+                            <li>用戶設定</li>
+                            <li>會員管理</li>
+                            <li>資料庫建置與控管</li>
+                        </ul>
+                        <div class="portfolio">
+                            <h3>作品</h3>
+                            <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
+                                <span>岳世界</span>
+                            </a><br>
+                            <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
+                                <span>Air Plan</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sharon">
+                        <h2 class="Name">香菇</h2>
+                        <ul class="work">
+                            <h3>分工項目</h3>
+                            <li>用戶設定</li>
+                            <li>會員管理</li>
+                            <li>資料庫建置與控管</li>
+                        </ul>
+                        <div class="portfolio">
+                            <h3>作品</h3>
+                            <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
+                                <span>岳世界</span>
+                            </a><br>
+                            <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
+                                <span>Air Plan</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="howard">
+                        <div class="Name">
+                            <h3>開發者</h3>
+                            <span>阿康</span>
+                        </div>
+                        <ul class="work">
+                            <h3>分工項目</h3>
+                            <li>用戶設定</li>
+                            <li>會員管理</li>
+                            <li>資料庫建置與控管</li>
+                        </ul>
+                        <div class="portfolio">
+                            <h3>作品</h3>
+                            <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
+                                <span>岳世界</span>
+                            </a><br>
+                            <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
+                                <span>Air Plan</span>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
                 <img class="robotB3" src="img/userSetting/robotB3.svg" alt="robotB3">
-                <img src="" alt="userSetting_light">
+                <img class="light" src="img/userSetting/light.svg" alt="light">
             </section>
         </div>
     </main>
@@ -141,7 +245,7 @@
                         <tr>
                             <td>2019/12/10 05:46</td>
                             <td>青鳥傳情</td>
-                            <td>香菇姑姑</td>
+                            <td>香菇姑姑咕咕咕</td>
                         </tr>
                         <tr>
                             <td>2019/12/09 05:46</td>
@@ -161,11 +265,11 @@
             template: `
                 <div class="userSetting_memcolor">
                     <div class="memcolorBlack">
-                        <h1>黑色</h1>
+                        <h3>黑色</h3>
                         <img src="" alt="black">
                     </div>
                     <div class="memcolorWhite">
-                        <h1>白色</h1>
+                        <h3>白色</h3>
                         <img src="" alt="white">
                     </div>
                 </div>
@@ -181,33 +285,40 @@
         Vue.component('manu', {
             template: `
                 <div class="userSetting_manu">
-                    <div class="userSetting_userSetting">
-                        <h1>會員</h1>
+                    <div class="userSetting_item">
+                        <p>會員</p>
                     </div>
-                    <div class="userSetting_witeLetter">
-                        <h1>寫信</h1>
+                    <div class="userSetting_item">
+                        <p>寫信</p>
                     </div>
-                    <div class="userSetting_">
-                        <h1>撈信</h1>
+                    <div class="userSetting_item">
+                        <p>撈信</p>
                     </div>
-                    <div class="userSetting_cave">
-                        <h1>倉庫</h1>
+                    <div class="userSetting_item">
+                        <p>倉庫</p>
                     </div>
-                    <div class="userSetting_shop">
-                        <h1>商店</h1>
+                    <div class="userSetting_item">
+                        <p>商店</p>
                     </div>
-                    <div class="userSetting_">
-                        <h1>聊天</h1>
+                    <div class="userSetting_item">
+                        <p>聊天</p>
                     </div>
-                    <div class="userSetting_">
-                        <h1>精華</h1>
+                    <div class="userSetting_item">
+                        <p>精華</p>
                     </div>
                 </div>
              `,
         });
         Vue.component('ver', {
             template: `
-                <h1 class="userSetting_ver">版本 : 1.0.0</h1>
+            
+                <div class="userSetting_ver">
+                    <h3>版本 : 1.0.0</h3>
+                    <h3>版本內容</h3>
+                    <p>飛出手的紙飛機，若再次回到手上，會帶回什麼樣的感受呢?</p>
+                </div>
+                    
+               
              `,
         });
         new Vue({
