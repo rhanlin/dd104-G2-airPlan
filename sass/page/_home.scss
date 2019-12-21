@@ -1,13 +1,15 @@
 .home_body {
     margin: 0 auto;
+    box-sizing: border-box;
+    font-size: 0;
 
     .home_skyPoint {
         width: 100%;
         background: -webkit-radial-gradient(rgb(62, 125, 184) 30%, rgb(195, 215, 233) 20%);
         background: radial-gradient(rgb(62, 125, 184) 30%, rgb(195, 215, 233) 20%);
         background-size: 10px 10px;
-        -webkit-animation: bscale 40s infinite linear;
-        animation: bscale 40s infinite linear;
+        -webkit-animation: bscale 100s infinite linear;
+        animation: bscale 100s infinite linear;
         overflow: hidden;
         position: relative;
 
@@ -81,51 +83,249 @@
             background-image: url(../../img/home/write/desk.png);
             background-repeat: no-repeat;
             // background-size: 100%;
-            margin-top: -200px;
+            margin-top: -10vw;
             padding-top: 180px;
+            display: flex;
 
-            .writeTitle {
-                width: 30vw;
-                height: 17.5vw;
-                border: 1px solid red;
-                position: relative;
-                margin-left: 11%;
-                ;
-                margin-top: -20px;
+            .write_L {
+                width: 47%;
+                // height: 100%;
+                // border: 1px solid pink;
+                margin-top: -1vw;
 
+                .writeTitle {
+                    width: 30vw;
+                    height: 17.5vw;
+                    // border: 1px solid red;
+                    position: relative;
+                    margin-left: 20%;
 
-                .writeTitleBg1,
-                .writeTitleBg2 {
-                    width: 95%;
-                    height: 90%;
-                    border: 6px solid $main-black;
-                    background-color: white;
+                    .writeTitleBg1,
+                    .writeTitleBg2 {
+                        width: 95%;
+                        height: 90%;
+                        border: 6px solid $main-black;
+                        background-color: white;
+                    }
+
+                    .writeTitleBg2 {
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
                 }
 
-                .writeTitleBg2 {
-                    position: absolute;
-                    bottom: 0;
-                    right: 0;
+                .black_box {
+                    // border: 1px solid green;
+                    width: 42vw;
+                    margin-left: 7%;
+                    margin-top: -2.75vw;
+
+                    .bottle {
+                        width: 17%;
+                        transform: rotate(125deg);
+                    }
+
+                    .blackWater {
+                        // border: 1px solid blue;
+                        width: 90%;
+                        height: 27vw;
+                        background-image: url(../../img/home/write/black-water.png);
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        margin-top: -17.5%;
+                        margin-left: 8%;
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        h1 {
+                            font-family: $font;
+                            font-size: 3vw;
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            .write_R {
+                width: 53%;
+                // border: 1px solid aqua;
+                margin-top: -1vw;
+
+                .write_Rbox {
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
+
+                    .write_many {
+                        margin-left: 10%;
+                        // border: 1px solid greenyellow;
+                        width: 68%;
+                        height: 44vw;
+                        background-image: url(../../img/home/write/writePaper.svg);
+                        background-repeat: no-repeat;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        .write_paper {
+                            border: 5px solid $main-black;
+                            width: 77%;
+                            height: 88%;
+                            background-image: url(../../img/home/write/letter.png);
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                        }
+                    }
+
+                    img {
+                        width: 32%;
+                        align-self: flex-end;
+                        margin-left: -15%;
+                    }
                 }
             }
+        }
 
-            .black_box {
-                border: 1px solid green;
-                width: 42vw;
-                margin-left: 5%;
-                margin-top: -55px;
+        .fold1,
+        .fold2,
+        .shoot {
+            width: 100%;
+            height: 935px;
+            background-image: url(../../img/home/write/desk.png);
+            background-repeat: no-repeat;
+            // background-size: cover;
+            background-position: bottom;
+            position: relative;
+            // display: flex;
 
-                .bottle {
-                    width: 20%;
-                    transform: rotate(125deg);
-                }
-                .blackWater{
-                    width:95%;
-                }
+            .foldPaper1 {
+                width: 27.5vw;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
             }
+
+            .left_hand1 {
+                // RWD手對不到紙 ; 方法一:單純用absolute; 方法二:absolute配上translate
+                width: 60%;
+                position: absolute;
+                left: -15%;
+                // bottom: -25%;
+                top: 73%;
+                transform: translate(0, -50%);
+            }
+
+            .right_hand1 {
+                width: 60%;
+                position: absolute;
+                right: -15%;
+                // bottom: -25%;
+                top: 73%;
+                transform: translate(0, -50%);
+            }
+
+            .foldPaper2 {
+                width: 27.5vw;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .left_hand2 {
+                width: 60%;
+                position: absolute;
+                left: -15%;
+                bottom: -50%;
+            }
+
+            .right_hand2 {
+                width: 60%;
+                position: absolute;
+                right: -15%;
+                bottom: -50%;
+            }
+
+            .shootHand {
+                width: 72.5%;
+                position: absolute;
+                left: -29%;
+                bottom: 28%;
+            }
+
+            .foldPaper3 {
+                width: 40vw;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    .home_catch {
+        width: 100%;
+        // height: 900px;
+        background: -webkit-linear-gradient(45deg, rgb(128, 169, 208) 45%, rgb(80, 136, 190) 45%, rgb(80, 136, 190) 55%, rgb(128, 169, 208) 55%);
+        background: linear-gradient(45deg, rgb(128, 169, 208) 45%, rgb(80, 136, 190) 45%, rgb(80, 136, 190) 55%, rgb(128, 169, 208) 55%);
+        background-size: 20px 20px;
+        -webkit-animation: bscale 40s infinite linear;
+        animation: bscale 40s infinite linear;
+        overflow: hidden;
+        position: relative;
+
+        @-webkit-keyframes bscale {
+            0% {
+                background-position: 0px 0px;
+            }
+
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
+        @keyframes bscale {
+            0% {
+                background-position: 0px 0px;
+            }
+
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
+        .grassBack {
+            width: 100%;
+            height: 800px;
+            background-image: url(../../img/home/catch/grassBack.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            border: 1px solid pink;
+            margin-top: 60px;
+        }
+
+        .grassMid {
+            width: 100%;
+            height: 800px;
+            background-image: url(../../img/home/catch/grassMid.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: -750px;;
+        }
+
+        .grassFront {
+            width: 100%;
+            height: 860px;
+            border: 1px solid red;
+            background-image: url(../../img/home/catch/grassFront.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: -650px;
         }
     }
 }

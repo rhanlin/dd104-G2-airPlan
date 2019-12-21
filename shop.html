@@ -56,20 +56,20 @@
         <div class=" itemCardContainer">
           <img src="/img/product/decorate/line_top.png" alt="" class="line_top">
           <div class="itemCardTopRow">
-            <div class="itemCard1"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
-            <div class="itemCard2"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
-            <div class="itemCard3">
+            <div class="itemCard itemCard1"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
+            <div class="itemCard itemCard2"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
+            <div class="itemCard itemCard3">
               <img src="/img/product/decorate/clip-04.svg" alt="" class="itemCard3Img_1">
               <img src="/img/product/decorate/clip-04.svg" alt="" class="itemCard3Img_2">
             </div>
-            <div class="itemCard4"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
-            <div class="itemCard5"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
+            <div class="itemCard itemCard4"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
+            <div class="itemCard itemCard5"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
           </div>
           <img src="/img/product/decorate/line_bottom.png" alt="" class="line_bottom">
           <div class="itemCardBottomRow">
-            <div class="itemCard2_1"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
-            <div class="itemCard2_2"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
-            <div class="itemCard2_3"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
+            <div class="itemCard itemCard2_1"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
+            <div class="itemCard itemCard2_2"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
+            <div class="itemCard itemCard2_3"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
           </div>
         </div>
         <div class="filter_forSamll">
@@ -82,7 +82,10 @@
         </div>
       </div>
     </section>
-
+    <div id="outshadow"></div>
+    <div id="medal">
+      <div class="cross"></div>
+    </div>
     <div id="pile">
       <div class="pilePaper"><span>xxxxxxxx xxxxxxx xxxxxx</span>
         <div class="innerBox"></div>
@@ -105,34 +108,108 @@
     <section id="section2">
       <div class="customizeArea">
         <div class="controlTool">
-          <div class="controlBox1">
-            <div class="controlBox1_button">
-              <div class="controlBtn1"><img src="/img/product/tool/control_bar-01.svg" alt=""></div>
+          <div id="mode" class="controlBox1">
+            <div class="controlBox1_button clicked">
+              <div class="controlBtn1 clicked"><img src="/img/product/tool/control_bar-01.svg" alt="" id="modeImg">
+              </div>
             </div>
           </div>
-          <div class="controlBox2">
+          <div id="clear" class="controlBox2">
             <div class="controlBox2_button">
-              <div class="controlBtn2"><img src="/img/product/tool/control_combine-01.svg" alt=""></div>
+              <div class="controlBtn2 "><img src="/img/product/tool/control_combine-01.svg" alt=""></div>
             </div>
           </div>
-          <div class="controlBox3"><img src="/img/product/tool/control_download.svg" alt=""></div>
-          <div class="controlBox4"><img src="/img/product/tool/control_move-01.svg" alt=""></div>
-          <div class="controlBox5"><img src="/img/product/tool/control_return-01.svg" alt=""></div>
-          <div class="controlBox6"><img src="/img/product/tool/control_write-01.svg" alt=""></div>
-          <div class="controlBox7"><img src="/img/product/tool/control_bar-01.svg" alt=""></div>
-          <div class="controlBox8"><img src="/img/product/tool/control_combine-01.svg" alt=""></div>
-          <div class="controlBox9"><img src="/img/product/tool/control_download.svg" alt=""></div>
-          <div class="controlBox10"><img src="/img/product/tool/control_return-01.svg" alt=""></div>
-          <div class="controlBoxBottom"></div>
-        </div>
-        <div class="controlBoxRight"></div>
-        <div class="drawingBoardBox">
-          <div class="drawingBoard">
-            <img src="/img/product/decorate/planeBoard-05.svg" alt="" class="planeBoard">
+          <div class="controlBox3">
+            <div class="controlBox3_button">
+              <div class="controlBtn3 "><img src="/img/product/tool/control_download.svg" alt=""></div>
+            </div>
           </div>
+          <div class="controlBox4">
+            <div class="controlBox4_button">
+              <div class="controlBtn4"><img src="/img/product/tool/control_return-01.svg" alt=""></div>
+            </div>
+          </div>
+          <div class="controlBox5">
+            <div class="controlBox5_button">
+              <div class="controlBtn5"><img src="/img/product/tool/control_return-01.svg" alt=""></div>
+            </div>
+          </div>
+          <div class="controlBox6">
+            <div class="controlBox6_button clicked">
+              <div class="controlBtn6 clicked"><img src="/img/product/tool/control_write-01.svg" alt=""></div>
+            </div>
+          </div>
+          <div class="controlBox7">
+            <div class="controlBox7_button clicked">
+              <div class="controlBtn7 clicked"><img src="/img/product/tool/control_bar-01.svg" alt=""></div>
+            </div>
+          </div>
+          <div class="controlBox8">
+            <div class="controlBox8_button">
+              <div class="controlBtn8"><img src="/img/product/tool/control_combine-01.svg" alt=""></div>
+            </div>
+          </div>
+          <div class="controlBox9">
+            <div class="controlBox9_button clicked">
+              <div class="controlBtn9 clicked"><img src="/img/product/tool/control_download.svg" alt=""></div>
+            </div>
+          </div>
+          <div id="outputPngBtn" class="controlBox10">
+            <div class="controlBox10_button clicked">
+              <div class="controlBtn10 clicked"><img src="/img/product/tool/control_download.svg" alt=""></div>
+            </div>
+          </div>
+          <div class="controlBoxBottom">
+            <div>
+              <select id="brushSelect">
+                <option value="Pencil">Pencil</option>
+                <option value="Circle">Circle</option>
+                <option value="Spray">Spray</option>
+                <option value="Square">Square</option>
+              </select>
+            </div>
+            <div>
+              <label>畫筆大小</label>
+              <input type="range" min="0" max="150" class="lineWidthInput" value="1">
+              <span class="lineWidthValue">1</span>
+            </div>
+            <div>
+              <label>選擇顏色</label>
+              <input type="color" min="0" max="150" id="lineColorInput">
+            </div>
+            <div>
+              <label>陰影顏色</label>
+              <input type="color" min="0" max="150" id="shadowColorInput">
+            </div>
+            <div>
+              <label>陰影模糊</label>
+              <input type="range" min="0" max="30" id="shadowBlurInput" value="1">
+              <span class="shadowBlurValue">1</span>
+            </div>
+            <div>
+              <label>陰影X軸 偏移</label>
+              <input type="range" min="0" max="50" id="shadowOffsetXInput" value="1">
+              <span id="shadowOffsetXValue">1</span>
+            </div>
+            <div>
+              <label>陰影Y軸 偏移</label>
+              <input type="range" min="0" max="50" id="shadowOffsetYInput" value="1">
+              <span id="shadowOffsetYValue">1</span>
+            </div>
+          </div>
+        </div>
+        <div class="controlBoxRight">
+
+
+        </div>
+        <div class="drawingBoardBox">
+          <canvas id="canvas" class="drawingBoard" width="800px" height="500px">
+            <div class="drawingPanel" id="drawingOptionArea"></div>
+            <!-- <img src="/img/product/decorate/planeBoard-05.svg" alt="" class="planeBoard" > -->
+          </canvas>
           <div id="btns" class="btns">
             <div id="switchBtnBox">
-              <div class="switchBtn clicked">切換郵戳畫板</div>
+              <div class="switchBtn">切換郵戳畫板</div>
             </div>
           </div>
         </div>
@@ -141,46 +218,49 @@
     <section id="section3">
       <div class="owl-carousel owl-theme">
         <div class="item">
-          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+          <div class="owl_img"><img src="/img/product/test_material/penguin.svg" alt="" class="figure"></div>
         </div>
         <div class="item">
-          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+          <div class="owl_img"><img src="/img/product/test_material/butterfly.svg" alt="" class="figure"></div>
         </div>
         <div class="item">
-          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+          <div class="owl_img"><img src="/img/product/test_material/zebra.svg" alt="" class="figure"></div>
         </div>
         <div class="item">
-          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+          <div class="owl_img"><img src="/img/product/test_material/fox.svg" alt="" class="figure"></div>
         </div>
         <div class="item">
-          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+          <div class="owl_img"><img src="/img/product/test_material/frog.svg" alt="" class="figure"></div>
         </div>
         <div class="item">
-          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+          <div class="owl_img"><img src="/img/product/test_material/owl.svg" alt="" class="figure"></div>
         </div>
         <div class="item">
-          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+          <div class="owl_img"><img src="/img/product/test_material/penguin.svg" alt="" class="figure"></div>
         </div>
         <div class="item">
-          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+          <div class="owl_img"><img src="/img/product/test_material/turtle.svg" alt="" class="figure"></div>
         </div>
         <div class="item">
-          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+          <div class="owl_img"><img src="/img/product/test_material/walrus.svg" alt="" class="figure"></div>
         </div>
         <div class="item">
-          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+          <div class="owl_img"><img src="/img/product/test_material/yak.svg" alt="" class="figure"></div>
         </div>
         <div class="item">
-          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+          <div class="owl_img"><img src="/img/product/test_material/zebra.svg" alt="" class="figure"></div>
         </div>
         <div class="item">
-          <div class="owl_img"><img src="/img/product/decorate/emptyBtn-02.svg" alt=""></div>
+          <div class="owl_img"><img src="/img/product/test_material/owl.svg" alt="" class="figure"></div>
         </div>
       </div>
     </section>
   </main>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
   <script src="../../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.0.1/fabric.js"></script>
+  <script src="/js/shop_carousel.js"></script>
+  <script src="/js/shop_draw.js"></script>
   <script>
     $('.switchBtn').mousedown(function () {
       $(this).addClass('clicked');
@@ -188,47 +268,17 @@
     $('.switchBtn').mouseup(function () {
       $(this).removeClass('clicked');
     });
-  </script>
-  <script>
-    $(document).ready(function () {
-      var owl = $('.owl-carousel');
-      owl.owlCarousel({
-        loop: true,
-        responsiveClass: true,
-        responsive: {
-          0: {
-            items: 4,
-            nav: true
-          },
-          575: {
-            items: 4,
-            nav: true,
-          },
-          767: {
-            items: 6,
-            nav: true,
-          },
-          991: {
-            items: 7,
-            nav: true,
-          },
-          1199: {
-            items: 8,
-            nav: true,
-          }
-        }
-      })
-    })
-    // owl.on('mousewheel', '.owl-stage', function (e) {
-    //   if (e.deltaY > 0) {
-    //     owl.trigger('next.owl');
-    //   } else {
-    //     owl.trigger('prev.owl');
-    //   }
-    //   e.preventDefault();
-    // });
-  </script>
 
+    $('.itemCard').click(function () {
+      $('#outshadow').css('opacity', '0.8');
+      $('#outshadow').css('visibility', 'visible');
+      $('#outshadow').css('zIndex', '20');
+      $('#medal').css('opacity', '1');
+      $('#medal').css('visibility', 'visible');
+      $('#medal').css('zIndex', '21');
+      e ? e.stopPropagation() : event.cancelBubble = true;
+    })
+  </script>
 </body>
 
 </html>
