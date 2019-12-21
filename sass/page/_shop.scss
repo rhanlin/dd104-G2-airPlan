@@ -291,7 +291,57 @@
 
     }
 
+    #outshadow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.7);
+      /* 預設：完全透明；設定 z-index: -1 會在整個頁面的後方，看不到，才不會擋到頁面元素。 */
+      z-index: -1;
+      transition: all 1.5s;
+      visibility: hidden;
+    }
 
+    #medal {
+      width: 500px;
+      height: 700px;
+      background-image: url('/img/product/decorate/model.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 99;
+      transform: translate(-50%, -50%);
+      position: fixed;
+      top: 50%;
+      left: 70%;
+      // transition: all 1s 0.5s;
+      visibility: visible;
+
+      .cross {
+        position: absolute;
+        right: 10%;
+        width: 10%;
+        height: 10%;
+        border: 2px solid red;
+
+        &:before {
+          content: '';
+          width: 10px;
+          height: 100%;
+          background-color: black;
+          transform: rotate(45deg);
+        }
+
+        &:after {
+          content: '';
+          width: 3px;
+          height: 100%;
+          background-color: black;
+          transform: rotate(315deg);
+        }
+      }
+    }
 
     #pile {
       max-width: 100%;
@@ -306,10 +356,12 @@
         transform: skew(20deg) translateY(10%) rotate(15deg);
         background-color: #fff;
         text-align: center;
+        z-index: -99;
 
         span {
           font-size: 20px;
           font-family: $font;
+
         }
 
         .innerBox {
@@ -318,6 +370,7 @@
           width: 60%;
           height: 30%;
           border: 2px dotted black;
+
         }
       }
 
@@ -331,7 +384,7 @@
         background-image: url("/img/product/decorate/pile.png");
         background-repeat: no-repeat;
         position: relative;
-        z-index: 15;
+        z-index: 0;
 
         .clock {
           width: 18%;
@@ -427,29 +480,30 @@
           background: #fff;
 
 
-          // @include controlBox(10);
-
           .controlBox1 {
             text-align: center;
             width: 50%;
             border: 2.5px solid black;
             background-color: #fff;
-            position: relative;
             z-index: 32;
 
             .controlBox1_button {
-              position: absolute;
+              position: relative;
               width: 100%;
-              top: -115%;
-              left: 62%;
+              top: -35%;
+              left: 30%;
 
+              &.clicked {
+                width: 100%;
+                top: -15%;
+                left: 15%;
+              }
 
               .controlBtn1 {
-                position: absolute;
                 outline: none;
                 width: 100%;
                 background-color: #FFD139;
-                border: 4px solid black;
+                border: 3px solid black;
                 text-align: center;
                 cursor: pointer;
 
@@ -460,54 +514,59 @@
                 &:before {
                   content: '';
                   position: absolute;
-                  width: 100%;
-                  height: 80%;
-                  left: -90%;
-                  bottom: -30%;
-                  border: 3px solid black;
+                  width: 97%;
+                  height: 35%;
+                  left: -65%;
+                  bottom: 14%;
+                  border: 5px solid black;
                   background-color: #FFD139;
                   background-image: url("/img/product/decorate/materail-04.svg");
                   background-size: cover;
                   transform: rotate(90deg) skew(45deg);
-                  // background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                  // background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                  // background-size: 9px 12px;
-
                 }
 
                 &:after {
                   content: '';
                   position: absolute;
-                  width: 115%;
-                  height: 75%;
-                  bottom: -80%;
-                  left: -42%;
+                  width: 100%;
+                  height: 35%;
+                  bottom: -35%;
+                  left: -17%;
                   background-color: #FFD139;
-                  border: 3px solid black;
+                  border: 5px solid black;
                   transform: skew(-45deg) rotate(0deg);
                   background-image: url("/img/product/decorate/materail-04.svg");
                   background-size: cover;
-                  // transform: rotate(90deg) skew(45deg);
-                  // background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                  // background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                  // background-size: 9px 12px;
                 }
 
-
                 &.clicked {
-                  left: -11px;
-                  bottom: -5px;
+                  background-color: rgb(0, 225, 255);
+
+
+
 
                   &:before {
-                    height: 14px;
-                    left: -30px;
-                    bottom: 2.5px;
+                    width: 100%;
+                    height: 17%;
+                    left: -57%;
+                    bottom: 31%;
+                    border: 5px solid black;
+                    background-color: rgb(0, 225, 255);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                    transform: rotate(90deg) skew(45deg);
                   }
 
                   &:after {
-                    height: 13px;
-                    bottom: -17px;
-                    left: -10px;
+                    width: 100%;
+                    height: 20%;
+                    bottom: -18%;
+                    left: -9%;
+                    background-color: rgb(0, 225, 255);
+                    border: 5px solid black;
+                    transform: skew(-45deg) rotate(0deg);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
                   }
                 }
               }
@@ -519,22 +578,25 @@
             width: 50%;
             border: 2.5px solid black;
             background-color: #fff;
-            position: relative;
             z-index: 31;
 
             .controlBox2_button {
-              position: absolute;
+              position: relative;
               width: 100%;
-              top: -115%;
-              left: 62%;
+              top: -35%;
+              left: 30%;
 
+              &.clicked {
+                width: 100%;
+                top: -15%;
+                left: 15%;
+              }
 
               .controlBtn2 {
-                position: absolute;
                 outline: none;
                 width: 100%;
                 background-color: #FFD139;
-                border: 4px solid black;
+                border: 3px solid black;
                 text-align: center;
                 cursor: pointer;
 
@@ -545,68 +607,920 @@
                 &:before {
                   content: '';
                   position: absolute;
-                  width: 100%;
-                  height: 80%;
-                  left: -90%;
-                  bottom: -30%;
-                  border: 3px solid black;
+                  width: 97%;
+                  height: 35%;
+                  left: -65%;
+                  bottom: 14%;
+                  border: 5px solid black;
                   background-color: #FFD139;
                   background-image: url("/img/product/decorate/materail-04.svg");
                   background-size: cover;
                   transform: rotate(90deg) skew(45deg);
-                  // background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                  // background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                  // background-size: 9px 12px;
-
                 }
 
                 &:after {
                   content: '';
                   position: absolute;
-                  width: 115%;
-                  height: 75%;
-                  bottom: -80%;
-                  left: -42%;
+                  width: 100%;
+                  height: 35%;
+                  bottom: -35%;
+                  left: -17%;
                   background-color: #FFD139;
-                  border: 3px solid black;
+                  border: 5px solid black;
                   transform: skew(-45deg) rotate(0deg);
                   background-image: url("/img/product/decorate/materail-04.svg");
                   background-size: cover;
-                  // transform: rotate(90deg) skew(45deg);
-                  // background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                  // background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                  // background-size: 9px 12px;
                 }
 
-
                 &.clicked {
-                  left: -11px;
-                  bottom: -5px;
+                  background-color: rgb(0, 225, 255);
+
+
+
 
                   &:before {
-                    height: 14px;
-                    left: -30px;
-                    bottom: 2.5px;
+                    width: 100%;
+                    height: 17%;
+                    left: -57%;
+                    bottom: 31%;
+                    border: 5px solid black;
+                    background-color: rgb(0, 225, 255);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                    transform: rotate(90deg) skew(45deg);
                   }
 
                   &:after {
-                    height: 13px;
-                    bottom: -17px;
-                    left: -10px;
+                    width: 100%;
+                    height: 20%;
+                    bottom: -18%;
+                    left: -9%;
+                    background-color: rgb(0, 225, 255);
+                    border: 5px solid black;
+                    transform: skew(-45deg) rotate(0deg);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
                   }
                 }
               }
             }
           }
 
+          .controlBox3 {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff;
+            z-index: 34;
+
+            .controlBox3_button {
+              position: relative;
+              width: 100%;
+              top: -35%;
+              left: 30%;
+
+              &.clicked {
+                width: 100%;
+                top: -15%;
+                left: 15%;
+              }
+
+              .controlBtn3 {
+                outline: none;
+                width: 100%;
+                background-color: #FFD139;
+                border: 3px solid black;
+                text-align: center;
+                cursor: pointer;
+
+                img {
+                  width: 100%;
+                }
+
+                &:before {
+                  content: '';
+                  position: absolute;
+                  width: 97%;
+                  height: 35%;
+                  left: -65%;
+                  bottom: 14%;
+                  border: 5px solid black;
+                  background-color: #FFD139;
+                  background-image: url("/img/product/decorate/materail-04.svg");
+                  background-size: cover;
+                  transform: rotate(90deg) skew(45deg);
+                }
+
+                &:after {
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: 35%;
+                  bottom: -35%;
+                  left: -17%;
+                  background-color: #FFD139;
+                  border: 5px solid black;
+                  transform: skew(-45deg) rotate(0deg);
+                  background-image: url("/img/product/decorate/materail-04.svg");
+                  background-size: cover;
+                }
+
+                &.clicked {
+                  background-color: rgb(0, 225, 255);
+
+
+
+
+                  &:before {
+                    width: 100%;
+                    height: 17%;
+                    left: -57%;
+                    bottom: 31%;
+                    border: 5px solid black;
+                    background-color: rgb(0, 225, 255);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                    transform: rotate(90deg) skew(45deg);
+                  }
+
+                  &:after {
+                    width: 100%;
+                    height: 20%;
+                    bottom: -18%;
+                    left: -9%;
+                    background-color: rgb(0, 225, 255);
+                    border: 5px solid black;
+                    transform: skew(-45deg) rotate(0deg);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                  }
+                }
+              }
+            }
+          }
+
+          .controlBox3 {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff;
+            z-index: 35;
+
+            .controlBox3_button {
+              position: relative;
+              width: 100%;
+              top: -35%;
+              left: 30%;
+
+              &.clicked {
+                width: 100%;
+                top: -15%;
+                left: 15%;
+              }
+
+              .controlBtn3 {
+                outline: none;
+                width: 100%;
+                background-color: #FFD139;
+                border: 3px solid black;
+                text-align: center;
+                cursor: pointer;
+
+                img {
+                  width: 100%;
+                }
+
+                &:before {
+                  content: '';
+                  position: absolute;
+                  width: 97%;
+                  height: 35%;
+                  left: -65%;
+                  bottom: 14%;
+                  border: 5px solid black;
+                  background-color: #FFD139;
+                  background-image: url("/img/product/decorate/materail-04.svg");
+                  background-size: cover;
+                  transform: rotate(90deg) skew(45deg);
+                }
+
+                &:after {
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: 35%;
+                  bottom: -35%;
+                  left: -17%;
+                  background-color: #FFD139;
+                  border: 5px solid black;
+                  transform: skew(-45deg) rotate(0deg);
+                  background-image: url("/img/product/decorate/materail-04.svg");
+                  background-size: cover;
+                }
+
+                &.clicked {
+                  background-color: rgb(0, 225, 255);
+
+
+
+
+                  &:before {
+                    width: 100%;
+                    height: 17%;
+                    left: -57%;
+                    bottom: 31%;
+                    border: 5px solid black;
+                    background-color: rgb(0, 225, 255);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                    transform: rotate(90deg) skew(45deg);
+                  }
+
+                  &:after {
+                    width: 100%;
+                    height: 20%;
+                    bottom: -18%;
+                    left: -9%;
+                    background-color: rgb(0, 225, 255);
+                    border: 5px solid black;
+                    transform: skew(-45deg) rotate(0deg);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                  }
+                }
+              }
+            }
+          }
+
+          .controlBox4 {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff;
+            z-index: 34;
+
+            .controlBox4_button {
+              position: relative;
+              width: 100%;
+              top: -35%;
+              left: 30%;
+
+              &.clicked {
+                width: 100%;
+                top: -15%;
+                left: 15%;
+              }
+
+              .controlBtn4 {
+                outline: none;
+                width: 100%;
+                background-color: #FFD139;
+                border: 3px solid black;
+                text-align: center;
+                cursor: pointer;
+
+                img {
+                  width: 100%;
+                }
+
+                &:before {
+                  content: '';
+                  position: absolute;
+                  width: 97%;
+                  height: 35%;
+                  left: -65%;
+                  bottom: 14%;
+                  border: 5px solid black;
+                  background-color: #FFD139;
+                  background-image: url("/img/product/decorate/materail-04.svg");
+                  background-size: cover;
+                  transform: rotate(90deg) skew(45deg);
+                }
+
+                &:after {
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: 35%;
+                  bottom: -35%;
+                  left: -17%;
+                  background-color: #FFD139;
+                  border: 5px solid black;
+                  transform: skew(-45deg) rotate(0deg);
+                  background-image: url("/img/product/decorate/materail-04.svg");
+                  background-size: cover;
+                }
+
+                &.clicked {
+                  background-color: rgb(0, 225, 255);
+
+
+
+
+                  &:before {
+                    width: 100%;
+                    height: 17%;
+                    left: -57%;
+                    bottom: 31%;
+                    border: 5px solid black;
+                    background-color: rgb(0, 225, 255);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                    transform: rotate(90deg) skew(45deg);
+                  }
+
+                  &:after {
+                    width: 100%;
+                    height: 20%;
+                    bottom: -18%;
+                    left: -9%;
+                    background-color: rgb(0, 225, 255);
+                    border: 5px solid black;
+                    transform: skew(-45deg) rotate(0deg);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                  }
+                }
+              }
+            }
+          }
+
+          .controlBox5 {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff;
+            z-index: 36;
+
+            .controlBox5_button {
+              position: relative;
+              width: 100%;
+              top: -35%;
+              left: 30%;
+
+              &.clicked {
+                width: 100%;
+                top: -15%;
+                left: 15%;
+              }
+
+              .controlBtn5 {
+                outline: none;
+                width: 100%;
+                background-color: #FFD139;
+                border: 3px solid black;
+                text-align: center;
+                cursor: pointer;
+
+                img {
+                  width: 100%;
+                }
+
+                &:before {
+                  content: '';
+                  position: absolute;
+                  width: 97%;
+                  height: 35%;
+                  left: -65%;
+                  bottom: 14%;
+                  border: 5px solid black;
+                  background-color: #FFD139;
+                  background-image: url("/img/product/decorate/materail-04.svg");
+                  background-size: cover;
+                  transform: rotate(90deg) skew(45deg);
+                }
+
+                &:after {
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: 35%;
+                  bottom: -35%;
+                  left: -17%;
+                  background-color: #FFD139;
+                  border: 5px solid black;
+                  transform: skew(-45deg) rotate(0deg);
+                  background-image: url("/img/product/decorate/materail-04.svg");
+                  background-size: cover;
+                }
+
+                &.clicked {
+                  background-color: rgb(0, 225, 255);
+
+
+
+
+                  &:before {
+                    width: 100%;
+                    height: 17%;
+                    left: -57%;
+                    bottom: 31%;
+                    border: 5px solid black;
+                    background-color: rgb(0, 225, 255);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                    transform: rotate(90deg) skew(45deg);
+                  }
+
+                  &:after {
+                    width: 100%;
+                    height: 20%;
+                    bottom: -18%;
+                    left: -9%;
+                    background-color: rgb(0, 225, 255);
+                    border: 5px solid black;
+                    transform: skew(-45deg) rotate(0deg);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                  }
+                }
+              }
+            }
+          }
+
+          .controlBox6 {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff;
+            z-index: 35;
+
+            .controlBox6_button {
+              position: relative;
+              width: 100%;
+              top: -35%;
+              left: 30%;
+
+              &.clicked {
+                width: 100%;
+                top: -15%;
+                left: 15%;
+              }
+
+              .controlBtn6 {
+                outline: none;
+                width: 100%;
+                background-color: #FFD139;
+                border: 3px solid black;
+                text-align: center;
+                cursor: pointer;
+
+                img {
+                  width: 100%;
+                }
+
+                &:before {
+                  content: '';
+                  position: absolute;
+                  width: 97%;
+                  height: 35%;
+                  left: -65%;
+                  bottom: 14%;
+                  border: 5px solid black;
+                  background-color: #FFD139;
+                  background-image: url("/img/product/decorate/materail-04.svg");
+                  background-size: cover;
+                  transform: rotate(90deg) skew(45deg);
+                }
+
+                &:after {
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: 35%;
+                  bottom: -35%;
+                  left: -17%;
+                  background-color: #FFD139;
+                  border: 5px solid black;
+                  transform: skew(-45deg) rotate(0deg);
+                  background-image: url("/img/product/decorate/materail-04.svg");
+                  background-size: cover;
+                }
+
+                &.clicked {
+                  background-color: rgb(0, 225, 255);
+
+
+
+
+                  &:before {
+                    width: 100%;
+                    height: 17%;
+                    left: -57%;
+                    bottom: 31%;
+                    border: 5px solid black;
+                    background-color: rgb(0, 225, 255);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                    transform: rotate(90deg) skew(45deg);
+                  }
+
+                  &:after {
+                    width: 100%;
+                    height: 20%;
+                    bottom: -18%;
+                    left: -9%;
+                    background-color: rgb(0, 225, 255);
+                    border: 5px solid black;
+                    transform: skew(-45deg) rotate(0deg);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                  }
+                }
+              }
+            }
+          }
+
+          .controlBox7 {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff;
+            z-index: 37;
+
+            .controlBox7_button {
+              position: relative;
+              width: 100%;
+              top: -35%;
+              left: 30%;
+
+              &.clicked {
+                width: 100%;
+                top: -15%;
+                left: 15%;
+              }
+
+              .controlBtn7 {
+                outline: none;
+                width: 100%;
+                background-color: #FFD139;
+                border: 3px solid black;
+                text-align: center;
+                cursor: pointer;
+
+                img {
+                  width: 100%;
+                }
+
+                &:before {
+                  content: '';
+                  position: absolute;
+                  width: 97%;
+                  height: 35%;
+                  left: -65%;
+                  bottom: 14%;
+                  border: 5px solid black;
+                  background-color: #FFD139;
+                  background-image: url("/img/product/decorate/materail-04.svg");
+                  background-size: cover;
+                  transform: rotate(90deg) skew(45deg);
+                }
+
+                &:after {
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: 35%;
+                  bottom: -35%;
+                  left: -17%;
+                  background-color: #FFD139;
+                  border: 5px solid black;
+                  transform: skew(-45deg) rotate(0deg);
+                  background-image: url("/img/product/decorate/materail-04.svg");
+                  background-size: cover;
+                }
+
+                &.clicked {
+                  background-color: rgb(0, 225, 255);
+
+
+
+
+                  &:before {
+                    width: 100%;
+                    height: 17%;
+                    left: -57%;
+                    bottom: 31%;
+                    border: 5px solid black;
+                    background-color: rgb(0, 225, 255);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                    transform: rotate(90deg) skew(45deg);
+                  }
+
+                  &:after {
+                    width: 100%;
+                    height: 20%;
+                    bottom: -18%;
+                    left: -9%;
+                    background-color: rgb(0, 225, 255);
+                    border: 5px solid black;
+                    transform: skew(-45deg) rotate(0deg);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                  }
+                }
+              }
+            }
+          }
+
+          .controlBox8 {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff;
+            z-index: 36;
+
+            .controlBox8_button {
+              position: relative;
+              width: 100%;
+              top: -35%;
+              left: 30%;
+
+              &.clicked {
+                width: 100%;
+                top: -15%;
+                left: 15%;
+              }
+
+              .controlBtn8 {
+                outline: none;
+                width: 100%;
+                background-color: #FFD139;
+                border: 3px solid black;
+                text-align: center;
+                cursor: pointer;
+
+                img {
+                  width: 100%;
+                }
+
+                &:before {
+                  content: '';
+                  position: absolute;
+                  width: 97%;
+                  height: 35%;
+                  left: -65%;
+                  bottom: 14%;
+                  border: 5px solid black;
+                  background-color: #FFD139;
+                  background-image: url("/img/product/decorate/materail-04.svg");
+                  background-size: cover;
+                  transform: rotate(90deg) skew(45deg);
+                }
+
+                &:after {
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: 35%;
+                  bottom: -35%;
+                  left: -17%;
+                  background-color: #FFD139;
+                  border: 5px solid black;
+                  transform: skew(-45deg) rotate(0deg);
+                  background-image: url("/img/product/decorate/materail-04.svg");
+                  background-size: cover;
+                }
+
+                &.clicked {
+                  background-color: rgb(0, 225, 255);
+
+
+
+
+                  &:before {
+                    width: 100%;
+                    height: 17%;
+                    left: -57%;
+                    bottom: 31%;
+                    border: 5px solid black;
+                    background-color: rgb(0, 225, 255);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                    transform: rotate(90deg) skew(45deg);
+                  }
+
+                  &:after {
+                    width: 100%;
+                    height: 20%;
+                    bottom: -18%;
+                    left: -9%;
+                    background-color: rgb(0, 225, 255);
+                    border: 5px solid black;
+                    transform: skew(-45deg) rotate(0deg);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                  }
+                }
+              }
+            }
+          }
+
+          .controlBox9 {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff;
+            z-index: 38;
+
+            .controlBox9_button {
+              position: relative;
+              width: 100%;
+              top: -35%;
+              left: 30%;
+
+              &.clicked {
+                width: 100%;
+                top: -15%;
+                left: 15%;
+              }
+
+              .controlBtn9 {
+                outline: none;
+                width: 100%;
+                background-color: #FFD139;
+                border: 3px solid black;
+                text-align: center;
+                cursor: pointer;
+
+                img {
+                  width: 100%;
+                }
+
+                &:before {
+                  content: '';
+                  position: absolute;
+                  width: 97%;
+                  height: 35%;
+                  left: -65%;
+                  bottom: 14%;
+                  border: 5px solid black;
+                  background-color: #FFD139;
+                  background-image: url("/img/product/decorate/materail-04.svg");
+                  background-size: cover;
+                  transform: rotate(90deg) skew(45deg);
+                }
+
+                &:after {
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: 35%;
+                  bottom: -35%;
+                  left: -17%;
+                  background-color: #FFD139;
+                  border: 5px solid black;
+                  transform: skew(-45deg) rotate(0deg);
+                  background-image: url("/img/product/decorate/materail-04.svg");
+                  background-size: cover;
+                }
+
+                &.clicked {
+                  background-color: rgb(0, 225, 255);
+
+
+
+
+                  &:before {
+                    width: 100%;
+                    height: 17%;
+                    left: -57%;
+                    bottom: 31%;
+                    border: 5px solid black;
+                    background-color: rgb(0, 225, 255);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                    transform: rotate(90deg) skew(45deg);
+                  }
+
+                  &:after {
+                    width: 100%;
+                    height: 20%;
+                    bottom: -18%;
+                    left: -9%;
+                    background-color: rgb(0, 225, 255);
+                    border: 5px solid black;
+                    transform: skew(-45deg) rotate(0deg);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                  }
+                }
+              }
+            }
+          }
+
+          .controlBox10 {
+            text-align: center;
+            width: 50%;
+            border: 2.5px solid black;
+            background-color: #fff;
+            z-index: 37;
+
+            .controlBox10_button {
+              position: relative;
+              width: 100%;
+              top: -35%;
+              left: 30%;
+
+              &.clicked {
+                width: 100%;
+                top: -15%;
+                left: 15%;
+              }
+
+              .controlBtn10 {
+                outline: none;
+                width: 100%;
+                background-color: #FFD139;
+                border: 3px solid black;
+                text-align: center;
+                cursor: pointer;
+
+                img {
+                  width: 100%;
+                }
+
+                &:before {
+                  content: '';
+                  position: absolute;
+                  width: 97%;
+                  height: 35%;
+                  left: -65%;
+                  bottom: 14%;
+                  border: 5px solid black;
+                  background-color: #FFD139;
+                  background-image: url("/img/product/decorate/materail-04.svg");
+                  background-size: cover;
+                  transform: rotate(90deg) skew(45deg);
+                }
+
+                &:after {
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: 35%;
+                  bottom: -35%;
+                  left: -17%;
+                  background-color: #FFD139;
+                  border: 5px solid black;
+                  transform: skew(-45deg) rotate(0deg);
+                  background-image: url("/img/product/decorate/materail-04.svg");
+                  background-size: cover;
+                }
+
+                &.clicked {
+                  background-color: rgb(0, 225, 255);
+
+
+
+
+                  &:before {
+                    width: 100%;
+                    height: 17%;
+                    left: -57%;
+                    bottom: 31%;
+                    border: 5px solid black;
+                    background-color: rgb(0, 225, 255);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                    transform: rotate(90deg) skew(45deg);
+                  }
+
+                  &:after {
+                    width: 100%;
+                    height: 20%;
+                    bottom: -18%;
+                    left: -9%;
+                    background-color: rgb(0, 225, 255);
+                    border: 5px solid black;
+                    transform: skew(-45deg) rotate(0deg);
+                    background-image: url("/img/product/decorate/materail-04.svg");
+                    background-size: cover;
+                  }
+                }
+              }
+            }
+          }
 
           .controlBoxBottom {
             width: 100%;
             height: 450px;
             border: 5px solid black;
             background: #fff;
+
+            label {
+              font-size: 16px;
+              font-family: $font;
+            }
+
+            span {
+              font-size: 16px;
+              font-family: $font;
+            }
           }
         }
+
 
         .controlBoxRight {
           display: none;
@@ -618,34 +1532,36 @@
           border: 5px solid black;
           background: #8ebfbf;
 
-          .drawingBoard {
-            width: 90%;
-            height: 70%;
-            margin: 50px auto;
+          #canvas {
+            // width: 90%;
+            // height: 70%;
+            margin: 50px 10%;
             background: #e5e5e5;
             display: flex;
             align-items: center;
             justify-content: center;
 
-            .planeBoard {
 
-              width: 90%;
+            .drawingPanel {
+              border: 3px solid red;
             }
+
+            // .planeBoard {
+            //   width: 90%;
+            // }
           }
 
           #btns {
-            width: 100%;
-            display: flex;
             position: relative;
-
+            top: 10%;
+            left: 10%;
 
             #switchBtnBox {
               position: absolute;
               width: 120px;
               height: 40px;
-              top: 0%;
-              left: 10%;
-              z-index: 20;
+              z-index: 1;
+
 
               .switchBtn {
                 font-family: $font;
@@ -751,6 +1667,9 @@
             margin: 0 auto;
             width: 70%;
 
+            img {
+              width: 100%
+            }
           }
         }
 
@@ -937,8 +1856,6 @@
   .shop-body {
     .shop-main {
       #section1 {
-
-
         .container {
           .row {
             .shopTitleText {
@@ -1076,56 +1993,149 @@
             }
           }
         }
+      }
 
-        #section2 {
-          .customizeArea {
-            margin: 0 auto;
+      #section2 {
+        .customizeArea {
+          margin: 0 auto;
+          display: flex;
+          width: 95%;
+          flex-wrap: wrap;
+
+          .controlTool {
             display: flex;
-            width: 95%;
             flex-wrap: wrap;
+            width: 60%;
+            margin-right: 0;
+            border: 2.5px solid black;
+            background: #fff;
 
-            .controlTool {
-              display: flex;
-              flex-wrap: wrap;
-              width: 60%;
-              height: 200px;
-              margin-right: 0;
+            .controlBox1 {
+              text-align: center;
+              width: 20%;
               border: 2.5px solid black;
-              background: #fff;
-
-              @include controlBox_md(10);
-
-              img {
-                width: 50%;
-              }
-
-              .controlBoxBottom {
-                display: none;
-              }
+              background-color: #fff;
+              z-index: 32;
             }
 
-            .controlBoxRight {
-              display: block;
-              width: 40%;
-              height: 200px;
-              border: 5px solid black;
-              background: #fff;
+            .controlBox2 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 31;
             }
 
-            .drawingBoardBox {
-              width: 100%;
+            .controlBox3 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 30;
+            }
 
-              .drawingBoard {
-                width: 90%;
-                height: 500px;
-                margin: 50px auto;
-                background: #e5e5e5;
+            .controlBox4 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 29;
+            }
 
-              }
+            .controlBox5 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 28;
+            }
+
+            .controlBox6 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 33;
+            }
+
+            .controlBox7 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 32;
+            }
+
+            .controlBox8 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 31;
+            }
+
+            .controlBox9 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 30;
+            }
+
+            .controlBox10 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 29;
+            }
+
+
+
+            .controlBoxBottom {
+              display: none;
+            }
+          }
+
+          .controlBoxRight {
+
+            display: block;
+            width: 40%;
+            border: 5px solid black;
+            background: #fff;
+
+            p {
+              width: 60%;
+              margin: 0 auto;
+              font-family: $font;
+
+            }
+          }
+
+          .drawingBoardBox {
+            padding: 50px 50px;
+            width: 100%;
+            z-index: 100;
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
+
+            #canvas {
+              margin: 0 auto;
+              // width: 90%;
+              // height: 500px;
+              margin: 50px 50px;
+              background: #e5e5e5;
+
+
+
+              .drawingPanel {}
+
             }
           }
         }
       }
+
 
       #section3 {
         // .matbase {
@@ -1309,57 +2319,132 @@
             }
           }
         }
+      }
 
-        #section2 {
-          .customizeArea {
-            margin: 0 auto;
+      #section2 {
+        .customizeArea {
+          margin: 0 auto;
+          display: flex;
+          width: 95%;
+          flex-wrap: wrap;
+
+          .controlTool {
             display: flex;
-            width: 95%;
             flex-wrap: wrap;
+            width: 60%;
+            margin-right: 0;
+            border: 2.5px solid black;
+            background: #fff;
 
-            .controlTool {
-              display: flex;
-              flex-wrap: wrap;
-              width: 60%;
-              height: 200px;
-              margin-right: 0;
+            .controlBox1 {
+              text-align: center;
+              width: 20%;
               border: 2.5px solid black;
-              background: #fff;
-
-              @include controlBox_md(10);
-
-              img {
-                width: 50%;
-              }
-
-              .controlBoxBottom {
-                display: none;
-              }
+              background-color: #fff;
+              z-index: 32;
             }
 
-            .controlBoxRight {
-              display: block;
-              width: 40%;
-              height: 200px;
-              border: 5px solid black;
-              background: #fff;
+            .controlBox2 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 31;
+            }
+
+            .controlBox3 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 30;
+            }
+
+            .controlBox4 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 29;
+            }
+
+            .controlBox5 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 28;
+            }
+
+            .controlBox6 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 33;
+            }
+
+            .controlBox7 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 32;
+            }
+
+            .controlBox8 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 31;
+            }
+
+            .controlBox9 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 30;
+            }
+
+            .controlBox10 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 29;
             }
 
 
-            .drawingBoardBox {
-              width: 100%;
 
-              .drawingBoard {
-                width: 90%;
-                height: 500px;
-                margin: 50px auto;
-                background: #e5e5e5;
+            .controlBoxBottom {
+              display: none;
+            }
+          }
 
-              }
+          .controlBoxRight {
+            display: block;
+            width: 40%;
+            border: 5px solid black;
+            background: #fff;
+          }
+
+
+          .drawingBoardBox {
+            width: 100%;
+
+            .drawingBoard {
+              width: 90%;
+              height: 500px;
+              margin: 50px auto;
+              background: #e5e5e5;
+
             }
           }
         }
       }
+
 
       #section3 {
         // .matbase {
@@ -1583,57 +2668,132 @@
             }
           }
         }
+      }
 
-        #section2 {
-          .customizeArea {
-            margin: 0 auto;
+      #section2 {
+        .customizeArea {
+          margin: 0 auto;
+          display: flex;
+          width: 95%;
+          flex-wrap: wrap;
+
+          .controlTool {
             display: flex;
-            width: 95%;
             flex-wrap: wrap;
+            width: 60%;
+            margin-right: 0;
+            border: 2.5px solid black;
+            background: #fff;
 
-            .controlTool {
-              display: flex;
-              flex-wrap: wrap;
-              width: 60%;
-              height: 200px;
-              margin-right: 0;
+            .controlBox1 {
+              text-align: center;
+              width: 20%;
               border: 2.5px solid black;
-              background: #fff;
-
-              @include controlBox_md(10);
-
-              img {
-                width: 50%;
-              }
-
-              .controlBoxBottom {
-                display: none;
-              }
+              background-color: #fff;
+              z-index: 32;
             }
 
-            .controlBoxRight {
-              display: block;
-              width: 40%;
-              height: 200px;
-              border: 5px solid black;
-              background: #fff;
+            .controlBox2 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 31;
+            }
+
+            .controlBox3 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 30;
+            }
+
+            .controlBox4 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 29;
+            }
+
+            .controlBox5 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 28;
+            }
+
+            .controlBox6 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 33;
+            }
+
+            .controlBox7 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 32;
+            }
+
+            .controlBox8 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 31;
+            }
+
+            .controlBox9 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 30;
+            }
+
+            .controlBox10 {
+              text-align: center;
+              width: 20%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 29;
             }
 
 
-            .drawingBoardBox {
-              width: 100%;
 
-              .drawingBoard {
-                width: 90%;
-                height: 300px;
-                margin: 50px auto;
-                background: #e5e5e5;
+            .controlBoxBottom {
+              display: none;
+            }
+          }
 
-              }
+          .controlBoxRight {
+            display: block;
+            width: 40%;
+            border: 5px solid black;
+            background: #fff;
+          }
+
+
+          .drawingBoardBox {
+            width: 100%;
+
+            .drawingBoard {
+              width: 90%;
+              height: 300px;
+              margin: 50px auto;
+              background: #e5e5e5;
+
             }
           }
         }
       }
+
 
       #section3 {
         // .matbase {
@@ -1852,60 +3012,135 @@
           }
         }
       }
+    }
 
-      #section2 {
+    #section2 {
 
 
-        .customizeArea {
-          margin: 0 auto;
+      .customizeArea {
+        margin: 0 auto;
+        display: flex;
+        width: 95%;
+        flex-wrap: wrap;
+
+        .controlTool {
           display: flex;
-          width: 95%;
           flex-wrap: wrap;
+          width: 60%;
+          margin-right: 0;
+          border: 2.5px solid black;
+          background: #fff;
 
-          .controlTool {
-            display: flex;
-            flex-wrap: wrap;
-            width: 60%;
-            height: 200px;
-            margin-right: 0;
+          .controlBox1 {
+            text-align: center;
+            width: 20%;
             border: 2.5px solid black;
-            background: #fff;
-
-            @include controlBox_md(10);
-
-            img {
-              width: 50%;
-            }
-
-            .controlBoxBottom {
-              display: none;
-            }
+            background-color: #fff;
+            z-index: 32;
           }
 
-          .controlBoxRight {
-            display: block;
-            width: 40%;
-            height: 200px;
-            border: 5px solid black;
-            background: #fff;
+          .controlBox2 {
+            text-align: center;
+            width: 20%;
+            border: 2.5px solid black;
+            background-color: #fff;
+            z-index: 31;
+          }
+
+          .controlBox3 {
+            text-align: center;
+            width: 20%;
+            border: 2.5px solid black;
+            background-color: #fff;
+            z-index: 30;
+          }
+
+          .controlBox4 {
+            text-align: center;
+            width: 20%;
+            border: 2.5px solid black;
+            background-color: #fff;
+            z-index: 29;
+          }
+
+          .controlBox5 {
+            text-align: center;
+            width: 20%;
+            border: 2.5px solid black;
+            background-color: #fff;
+            z-index: 28;
+          }
+
+          .controlBox6 {
+            text-align: center;
+            width: 20%;
+            border: 2.5px solid black;
+            background-color: #fff;
+            z-index: 33;
+          }
+
+          .controlBox7 {
+            text-align: center;
+            width: 20%;
+            border: 2.5px solid black;
+            background-color: #fff;
+            z-index: 32;
+          }
+
+          .controlBox8 {
+            text-align: center;
+            width: 20%;
+            border: 2.5px solid black;
+            background-color: #fff;
+            z-index: 31;
+          }
+
+          .controlBox9 {
+            text-align: center;
+            width: 20%;
+            border: 2.5px solid black;
+            background-color: #fff;
+            z-index: 30;
+          }
+
+          .controlBox10 {
+            text-align: center;
+            width: 20%;
+            border: 2.5px solid black;
+            background-color: #fff;
+            z-index: 29;
           }
 
 
-          .drawingBoardBox {
-            width: 100%;
 
-            .drawingBoard {
-              width: 90%;
-              height: 300px;
-              margin: 50px auto;
-              background: #e5e5e5;
-
-            }
+          .controlBoxBottom {
+            display: none;
           }
-
-
         }
+
+        .controlBoxRight {
+          display: block;
+          width: 40%;
+          border: 5px solid black;
+          background: #fff;
+        }
+
+
+        .drawingBoardBox {
+          width: 100%;
+
+          .drawingBoard {
+            width: 90%;
+            height: 300px;
+            margin: 50px auto;
+            background: #e5e5e5;
+
+          }
+        }
+
+
       }
+
 
       #section3 {
         // .matbase {

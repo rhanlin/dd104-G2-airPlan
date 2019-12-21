@@ -1,4 +1,3 @@
-
 .chat-body {
     margin: 0;
 }
@@ -74,41 +73,54 @@
 
 .chatroom-main {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1260px;
     margin: 100px auto 0;
     // border: 10px solid gold;
-    padding: 0 ;
+    padding: 0;
     box-sizing: border-box;
     font-size: 0px;
+
     .mainSection {
         // border:1px solid forestgreen;
         float: left;
-        width: 193px;
+        width: 180px;
         height: 640px;
-        margin-top:68px;
+        margin-top: 68px;
+        padding-left: 40px;
         position: relative;
         overflow: hidden;
+        margin-bottom: -5px;
         overflow-y: scroll;
-        &::-webkit-scrollbar{
+        z-index: 2;
+
+        &::-webkit-scrollbar {
             // border:1px solid firebrick;
-            width: 9px;
-            background-color: #ccc;
+            width: 10px;
+            background-color: #fff;
             border-radius: 2px;
         }
 
-        &::-webkit-scrollbar-thumb{
+        &::-webkit-scrollbar-thumb {
             width: 5px;
             background-color: slategrey;
             border-radius: 10px;
         }
-             
-        .sectionMark1,.sectionMark2,.sectionMark3,.sectionMark4,.sectionMark5,.sectionMark6,.sectionMark7,.sectionMark8,.sectionMark9 {
+
+        .sectionMark1,
+        .sectionMark2,
+        .sectionMark3,
+        .sectionMark4,
+        .sectionMark5,
+        .sectionMark6,
+        .sectionMark7,
+        .sectionMark8,
+        .sectionMark9 {
             width: 130px;
             height: 130px;
             @include border();
             padding: 9px;
             margin-top: 17px;
-            margin-left: 52px;
+            // margin-left: 52px;
             background-color: $main-green;
             text-align: center;
         }
@@ -116,37 +128,54 @@
         .sectionMark1 {
             background-color: $main-red;
         }
-                               
-        .sectionMark1 img, .sectionMark2 img, .sectionMark3 img, .sectionMark4 img,.sectionMark5 img,.sectionMark6 img,.sectionMark7 img,.sectionMark8 img,.sectionMark9 img {
+
+        .sectionMark1 img,
+        .sectionMark2 img,
+        .sectionMark3 img,
+        .sectionMark4 img,
+        .sectionMark5 img,
+        .sectionMark6 img,
+        .sectionMark7 img,
+        .sectionMark8 img,
+        .sectionMark9 img {
             width: 80px;
             border-radius: 50px;
             background-color: #fff;
         }
-                        
-        .sectionMark1 p, .sectionMark2 p, .sectionMark3 p, .sectionMark4 p,.sectionMark5 p,.sectionMark6 p,.sectionMark7 p,.sectionMark8 p,.sectionMark9 p {
+
+        .sectionMark1 p,
+        .sectionMark2 p,
+        .sectionMark3 p,
+        .sectionMark4 p,
+        .sectionMark5 p,
+        .sectionMark6 p,
+        .sectionMark7 p,
+        .sectionMark8 p,
+        .sectionMark9 p {
             font-size: 18px;
             font-family: Arial, Helvetica, sans-serif;
         }
-                        
-        
+
+
     }
+
     .mainBook {
         @include border();
         border-radius: 50px;
-        width:100%;
+        width: 100%;
         max-width: 1260px;
         padding: 25px;
-        margin-left:-200px;
+        margin-left: -187px;
         float: left;
         // border: 1px solid orange;
         background-color: $main-blue;
         background: -webkit-radial-gradient(#000 20%, $main-blue 20%);
         background: radial-gradient(#000 20%, $main-blue 20%);
         background-size: 12px 12px;
-    
+
         .bookDashed {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1300px;
             border: 3px dashed brown;
             border-radius: 50px;
             padding: 30px 40px;
@@ -199,7 +228,7 @@
                             background-size: 9px 12px;
 
                             .dashPage5 {
-                                width: 100%;;
+                                width: 100%;
                                 max-width: 900px;
                                 height: 650px;
                                 @include border();
@@ -209,20 +238,25 @@
                                 padding: 20px;
                                 // border: 1px solid lightseagreen;
                                 position: relative;
-                                
+
                                 .pageImg {
                                     position: absolute;
-                                    margin-left: 380px;
+                                    margin-left: 43%;
                                     top: -30px;
                                     height: 700px;
                                     // border: 1px solid lightpink;
                                 }
-                                .pageContent{
-                                    .contentYour,.contentYour_1,.contentYour_2{   
+
+                                .pageContent {
+
+                                    .contentYour,
+                                    .contentYour_1,
+                                    .contentYour_2 {
                                         // border: 1px solid lightpink;
                                         margin-left: 20px;
-                                        margin-bottom: 5px;                          
-                                        img{
+                                        margin-bottom: 5px;
+
+                                        img {
                                             vertical-align: top;
                                         }
 
@@ -237,13 +271,13 @@
                                             display: inline-block;
                                         }
                                     }
-                                                    
+
                                     .pageContent img {
                                         width: 70px;
                                         // border:1px solid dimgray;
                                         display: block;
                                     }
-                                                   
+
                                     .contentMe {
                                         float: right;
 
@@ -256,89 +290,467 @@
                                             border-radius: 20px 0 20px 20px;
                                             display: inline-block;
                                             margin-bottom: 0px;
-                                        }   
+                                        }
                                     }
 
                                     .meClearfix {
                                         clear: both;
                                     }
                                 }
-            
+
                                 .contentSend {
-                                    width: 100%;
+                                    width: 40%;
                                     height: 50px;
-                                    max-width: 350px;
-                                    margin-left: 490px;
                                     border: 2px solid #353535;
                                     border-radius: 30px;
-                                    vertical-align: top;
-                                    // padding: 5px;
                                     text-align: center;
                                     position: absolute;
+                                    right: 5px;
                                     bottom: 30px;
                                 }
 
-                                .sendClearfix{
+                                .sendClearfix {
                                     clear: both;
                                 }
-                                                    
+
                                 .sendText {
-                                    width: 100%;
-                                    max-width: 290px;
+                                    width: 88%;
                                     height: 46px;
                                     border: none;
                                     border-radius: 30px;
                                     float: left;
                                     outline: none;
-                                    font-size: 16px;
+                                    font-size: 18px;
                                     padding: 5px 10px;
-                                    font-family: 'Trebuchet MS', Arial,"微軟正黑體";
-                                    // margin-top: 6px;
+                                    font-family: 'Trebuchet MS', Arial, "微軟正黑體";
                                     // border:1px solid lightpink;
                                 }
-                                                    
+
                                 .contentSend img {
-                                    width: 40px;
+                                    width: 10%;
+                                    max-width: 40px;
                                     // border: 1px solid dimgray;
                                     margin-top: 5px;
                                     float: left;
                                     display: block;
                                 }
-                               
+
                             }
                         }
                     }
                 }
             }
         }
-    
+
     }
-    .mainClearfix{
+
+    .mainClearfix {
         clear: both;
     }
 }
 
-// @include respond(desktopXl) {
-// //1199px------992px;
-// }
-
 @include respond(desktop) {
-//991px------768px;
 
+    // 1199px------992px;
+    .chatroom-main {
+        .mainBook {
+            .bookDashed {
+                .dashPage1,.dashPage2,.dashPage3,.dashPage4 {
+                    .dashPage5 {
+                        .pageContent {
+                            .contentYour,.contentYour_1,.contentYour_2 {
+                                p {
+                                    max-width: 150px;
+                                }
+                            }
+                            .contentMe {
+                                p {
+                                    max-width: 150px;
+                                }
+                            }
+                            .contentSend {
+                                .sendText {
+                                    width: 85%;
+                                }
+                                img {
+                                    width: 25%;
+                                    max-width: 35px;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
 }
 
 @include respond(mediumSize) {
-//767px------576px;
+    //991px------768px;
+    .chatroom-main {
+        .mainSection {
+            width: 167px;
+            margin-top: 52px;
+            padding-left: 25px;
+            max-height: 691px;
+        }
+        .mainBook {
+            margin-left: -167px;
+            .bookDashed {
+                padding: 15px 20px;
+                .dashPage1{
+                    padding-right: 0;
+                    border-right: none;
+                    margin-bottom: -5px;
+                    .dashPage2 {
+                        padding-right: 0;
+                        border-right: none;
+                        margin-bottom: -5px;
+                        .dashPage3 {
+                            padding-right: 0;
+                            border-right: none;
+                            margin-bottom: -5px;
+                            .dashPage4 {
+                                padding-right: 0;
+                                border-right: none;
+                                margin-bottom: -5px;
+                                .dashPage5 {
+                                    padding-right: 50px;
+                                    width: 100%;
+                                    overflow: hidden;
+                                    .pageImg {
+                                        position: absolute;
+                                        margin-left: 0;
+                                        right: -53px;
+                                        top: -30px;
+                                        height: 758px;
+                                    }
+                                    .pageContent {
+                                        .contentYour,.contentYour_1,.contentYour_2 {
+                                            img {
+                                                width: 15%;
+                                            }
+                                            p {
+                                                margin: 15% 0 0 0;
+                                            }
+                                        }
+                                        .contentSend {
+                                            .sendText {
+                                                width: 89%;
+                                            }
+                                            img {
+                                                width: 25%;
+                                                max-width: 35px;
+                                            }
+                                        }
+                                    }
+                                }                  
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include respond(small) {
+    //767px------576px;
+    .chatroom-main {
+        .mainSection {
+            width: 167px;
+            margin-top: 52px;
+            padding-left: 25px;
+        }
+        .mainBook {
+            margin-left: -167px;
+            .bookDashed {
+                padding: 15px 20px;
+                .dashPage1,.dashPage2,.dashPage3,.dashPage4 {
+                    padding-right: 0;
+                    border-right: none;
+                    margin-bottom: -5px;
+                    .dashPage5 {
+                        width: 100%;
+                        padding-right: 50px;
+                        padding-bottom: 15%;
+                        margin-bottom: -5px;
+                        overflow: hidden;
+
+                        .pageImg {
+                            position: absolute;
+                            margin-left: 0;
+                            right: -50px;
+                            top: -30px;
+                        }
+                        .pageContent {
+                            .contentYour,.contentYour_1,.contentYour_2 {
+                                margin-bottom: 15px;
+                                img {
+                                    width: 15%;
+                                    min-width: 55px;
+                                }
+                                p {
+                                    margin: 18% 0 0 0;
+                                }
+                            }
+                            .contentSend {
+                                width: 80%;
+                                height: 50px;
+                                right: 15%;
+                                bottom: 10px;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
 }
 
-@include respond(small) {
-//575px------376px;
-}
 
 @include respond(note) {
-//575px------376px;
+    //575px------376px;
+    .chatroom-main {
+        .mainSection {
+            border: 1px solid red;
+            width: auto;
+
+            .sectionOver {
+                border:1px solid lightskyblue;
+
+                .sectionMark1 {
+                    background-color: $main-red;
+                }
+
+                .sectionMark1,.sectionMark2,.sectionMark3,.sectionMark4,.sectionMark5,.sectionMark6,.sectionMark7,.sectionMark8,.sectionMark9 {
+                    width: 117px;
+                    height: 117px;
+                    padding: 12px;
+                    margin-top: 0;
+                    display: inline-block;
+
+                    img {
+                        width: 60px;
+                        border-radius: 50px;
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+        .mainBook {
+            margin-left: 0px;
+            padding: 10px;
+
+            .bookDashed {
+                padding: 15px 15px;
+
+                .dashPage1 {
+                    padding: 0;
+                    border-right: none;
+                    border-left: none;
+                    margin-bottom: -5px;
+
+                    .dashPage2 {
+                        padding: 0;
+                        border-right: none;
+                        border-left: none;
+                        margin-bottom: -5px;
+
+                        .dashPage3 {
+                            padding: 0;
+                            border-right: none;
+                            border-left: none;
+                            margin-bottom: -5px;
+
+                            .dashPage4 {
+                                padding: 0;
+                                border-right: none;
+                                border-left: none;
+                                margin-bottom: -5px;
+
+                                .dashPage5 {
+                                    width: 100%;
+                                    padding-right: 50px;
+                                    padding-bottom: 15%;
+                                    margin-bottom: -5px;
+                                    overflow: hidden;
+
+                                    .pageImg {
+                                        position: absolute;
+                                        margin-left: 0;
+                                        right: -50px;
+                                        top: -30px;
+                                    }
+
+                                    .pageContent {
+                                        .contentYour {
+                                            margin-bottom: 15px;
+                                            margin-left: 0px;
+                                            img {
+                                                width: 15%;
+                                                min-width: 55px;
+                                            }
+                                            p {
+                                                margin: 18% 0 0 0;
+                                                max-width: 180px;
+                                            }
+
+                                        }
+                                        .contentYour_1 {
+                                            margin-bottom: 15px;
+                                            margin-left: 0px;
+                                            img {
+                                                width: 15%;
+                                                min-width: 55px;
+                                            }
+                                            p {
+                                                margin: 18% 0 0 0;
+                                                max-width: 180px;
+                                            }
+                                            
+                                        }
+                                        .contentYour_2 {
+                                            margin-bottom: 15px;
+                                            margin-left: 0px;
+                                            img {
+                                                width: 15%;
+                                                min-width: 55px;
+                                            }
+                                            p {
+                                                margin: 18% 0 0 0;
+                                                max-width: 180px;
+                                            }
+                                            
+                                        }
+
+                                        .contentMe {
+                                            p {
+                                                width: 100%;
+                                                max-width: 180px;
+                                            }
+                                        }
+                                    }
+
+                                    .contentSend {
+                                        width: 80%;
+                                        height: 50px;
+                                        right: 15%;
+                                        bottom: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }  
 }
 
 @include respond(iphone) {
-//375px;
+
+    //375px;
+    .chatroom-main .mainBook .bookDashed {
+        padding: 15px 20px;
+        // border: 1px solid lightslategrey;
+    }
+
+    .chatroom-main .mainSection {
+        width: 167px;
+        margin-top: 52px;
+        padding-left: 25px;
+        // border: 1px solid lightslategrey;
+    }
+
+    .chatroom-main .mainBook {
+        margin-left: -167px;
+    }
+
+    .chatroom-main .mainBook .bookDashed .dashPage1 {
+        // border:1px solid lightcoral;
+        padding-right: 0;
+        border-right: none;
+        margin-bottom: -5px;
+
+        .dashPage2 {
+            padding-right: 0;
+            border-right: none;
+            margin-bottom: -5px;
+
+
+            .dashPage3 {
+                padding-right: 0;
+                border-right: none;
+                margin-bottom: -5px;
+    
+
+                .dashPage4 {
+                    padding-right: 0;
+                    border-right: none;
+                    margin-bottom: -5px;
+        
+
+                    .dashPage5 {
+            
+                        padding-bottom: 15%;
+                        overflow: hidden;
+                        margin-bottom: -5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageImg {
+        position: absolute;
+        margin-left: 0;
+        right: -50px;
+        top: -30px;
+        // border: 1px solid lightpink;
+    }
+
+    .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .contentSend {
+        width: 80%;
+        height: 50px;
+        right: 15%;
+        bottom: 10px;
+    }
+
+    .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .contentSend img {
+        width: 25%;
+        max-width: 35px;
+        // border: 1px solid dimgray;
+    }
+
+    .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour img, .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_1 img, .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_2 img {
+        width: 15%;
+    }
+
+    .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 {
+        padding-right: 50px;
+        width: 100%;
+    }
+
+    .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour img, .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_1 img, .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_2 img {
+        width: 15%;
+        min-width: 55px;
+    }
+
+    .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour, .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_1, .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_2 {
+        margin-bottom: 15px;
+    }
+
+    .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour p, .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_1 p, .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_2 p {
+        margin: 18% 0 0 0;
+        max-width: 100px;
+        background-color: firebrick;
+    }
+
+    .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentMe p {
+        width: 100%;
+        max-width: 100px;
+
+    }
 }
