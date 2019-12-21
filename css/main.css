@@ -1778,6 +1778,7 @@ table {
 
 @-webkit-keyframes topani {
   0% {
+<<<<<<< HEAD
     stroke-width: 182px;
   }
   8% {
@@ -1827,11 +1828,57 @@ table {
   }
   99% {
     stroke-width: 70px;
+=======
+    stroke-width: 126px;
+  }
+  10% {
+    stroke-width: 123px;
+  }
+  19% {
+    stroke-width: 73px;
+  }
+  21% {
+    stroke-width: 177px;
+  }
+  28% {
+    stroke-width: 32px;
+  }
+  39% {
+    stroke-width: 64px;
+  }
+  47% {
+    stroke-width: 135px;
+  }
+  50% {
+    stroke-width: 11px;
+  }
+  57% {
+    stroke-width: 27px;
+  }
+  63% {
+    stroke-width: 141px;
+  }
+  74% {
+    stroke-width: 191px;
+  }
+  78% {
+    stroke-width: 51px;
+  }
+  84% {
+    stroke-width: 37px;
+  }
+  96% {
+    stroke-width: 10px;
+  }
+  98% {
+    stroke-width: 97px;
+>>>>>>> dev
   }
 }
 
 @keyframes topani {
   0% {
+<<<<<<< HEAD
     stroke-width: 182px;
   }
   8% {
@@ -1881,10 +1928,56 @@ table {
   }
   99% {
     stroke-width: 70px;
+=======
+    stroke-width: 126px;
+  }
+  10% {
+    stroke-width: 123px;
+  }
+  19% {
+    stroke-width: 73px;
+  }
+  21% {
+    stroke-width: 177px;
+  }
+  28% {
+    stroke-width: 32px;
+  }
+  39% {
+    stroke-width: 64px;
+  }
+  47% {
+    stroke-width: 135px;
+  }
+  50% {
+    stroke-width: 11px;
+  }
+  57% {
+    stroke-width: 27px;
+  }
+  63% {
+    stroke-width: 141px;
+  }
+  74% {
+    stroke-width: 191px;
+  }
+  78% {
+    stroke-width: 51px;
+  }
+  84% {
+    stroke-width: 37px;
+  }
+  96% {
+    stroke-width: 10px;
+  }
+  98% {
+    stroke-width: 97px;
+>>>>>>> dev
   }
 }
 
 @-webkit-keyframes botani {
+<<<<<<< HEAD
   2% {
     stroke-width: 142px;
   }
@@ -1935,10 +2028,57 @@ table {
   }
   101% {
     stroke-width: 18px;
+=======
+  6% {
+    stroke-width: 110px;
+  }
+  12% {
+    stroke-width: 97px;
+  }
+  14% {
+    stroke-width: 21px;
+  }
+  22% {
+    stroke-width: 136px;
+  }
+  34% {
+    stroke-width: 94px;
+  }
+  35% {
+    stroke-width: 35px;
+  }
+  45% {
+    stroke-width: 132px;
+  }
+  53% {
+    stroke-width: 55px;
+  }
+  58% {
+    stroke-width: 155px;
+  }
+  69% {
+    stroke-width: 171px;
+  }
+  76% {
+    stroke-width: 24px;
+  }
+  79% {
+    stroke-width: 46px;
+  }
+  87% {
+    stroke-width: 6px;
+  }
+  92% {
+    stroke-width: 174px;
+  }
+  103% {
+    stroke-width: 100px;
+>>>>>>> dev
   }
 }
 
 @keyframes botani {
+<<<<<<< HEAD
   2% {
     stroke-width: 142px;
   }
@@ -1989,6 +2129,52 @@ table {
   }
   101% {
     stroke-width: 18px;
+=======
+  6% {
+    stroke-width: 110px;
+  }
+  12% {
+    stroke-width: 97px;
+  }
+  14% {
+    stroke-width: 21px;
+  }
+  22% {
+    stroke-width: 136px;
+  }
+  34% {
+    stroke-width: 94px;
+  }
+  35% {
+    stroke-width: 35px;
+  }
+  45% {
+    stroke-width: 132px;
+  }
+  53% {
+    stroke-width: 55px;
+  }
+  58% {
+    stroke-width: 155px;
+  }
+  69% {
+    stroke-width: 171px;
+  }
+  76% {
+    stroke-width: 24px;
+  }
+  79% {
+    stroke-width: 46px;
+  }
+  87% {
+    stroke-width: 6px;
+  }
+  92% {
+    stroke-width: 174px;
+  }
+  103% {
+    stroke-width: 100px;
+>>>>>>> dev
   }
 }
 
@@ -13694,6 +13880,7 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #fff;
   position: relative;
   z-index: 31;
+<<<<<<< HEAD
 }
 
 .shop-body .shop-main #section2 .customizeArea .controlTool .controlBox2 .controlBox2_button {
@@ -13703,6 +13890,17 @@ a.text-dark:hover, a.text-dark:focus {
   left: 62%;
 }
 
+=======
+}
+
+.shop-body .shop-main #section2 .customizeArea .controlTool .controlBox2 .controlBox2_button {
+  position: absolute;
+  width: 100%;
+  top: -115%;
+  left: 62%;
+}
+
+>>>>>>> dev
 .shop-body .shop-main #section2 .customizeArea .controlTool .controlBox2 .controlBox2_button .controlBtn2 {
   position: absolute;
   outline: none;
@@ -13937,6 +14135,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .shop-body .shop-main #section3 .owl-carousel .owl-nav .owl-prev span {
+<<<<<<< HEAD
   font-size: 0;
 }
 
@@ -13952,6 +14151,23 @@ a.text-dark:hover, a.text-dark:focus {
   font-size: 0;
 }
 
+=======
+  font-size: 0;
+}
+
+.shop-body .shop-main #section3 .owl-carousel .owl-nav .owl-next {
+  background-image: url("/img/product/decorate/arrow_next-04.svg");
+  width: 20%;
+  padding-top: 100%;
+  background-repeat: no-repeat;
+  z-index: 100;
+}
+
+.shop-body .shop-main #section3 .owl-carousel .owl-nav .owl-next span {
+  font-size: 0;
+}
+
+>>>>>>> dev
 .shop-body .shop-main #section3 .owl-carousel .owl-dots .owl-dot span {
   display: none;
 }
