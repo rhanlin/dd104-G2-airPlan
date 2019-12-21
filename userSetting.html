@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,37 +9,54 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>userSetting</title>
 </head>
+
 <body class="userSetting_body">
     <header></header>
     @@include("./html/nav.html")
     @@include("./html/header.html")
     <main class="userSetting_main">
         <div class="userSetting_floor">
-            <section class="userSetting_mem"><!--airPlan會員資訊-->
-                <div class="memKanban" id="memKanban"><!--會員資訊頁籤-->
-                    <div class="memData" @click="content='memData'"><h1>會員資料</h1></div>
-                    <div class="airCoin" @click="content='airCoin'"><h1>打賞紀錄</h1></div>
-                    <div class="memcolor" @click="content='memcolor'"><h1>外觀設定</h1></div>
-                    <keep-alive><!--資料保留標籤-->
+            <section class="userSetting_mem">
+                <!--airPlan會員資訊-->
+                <div class="memKanban" id="memKanban">
+                    <!--會員資訊頁籤-->
+                    <div class="memData" @click="content='memData'">
+                        <h1>會員資料</h1>
+                    </div>
+                    <div class="airCoin" @click="content='airCoin'">
+                        <h1>打賞紀錄</h1>
+                    </div>
+                    <div class="memcolor" @click="content='memcolor'">
+                        <h1>外觀設定</h1>
+                    </div>
+                    <keep-alive>
+                        <!--資料保留標籤-->
                         <component :is="content"></component>
                     </keep-alive>
                 </div>
-                <img class="userSetting_robotB1" src="" alt="userSetting_robotB1">
-                <img class="userSetting_conveyorB1" src="" alt="userSetting_conveyorB1">
+                <img class="robotB1" src="img/userSetting/robotB1.svg" alt="robotB1">
+                <img class="robotB1_2" src="img/userSetting/robotB1_2.svg" alt="robotB1_2">
             </section>
-            <div class="userSetting_space_B1">123</div>
-            <section class="userSetting_sys"><!--airPlan系統資訊-->
-                <div class="sysKanban" id="sysKanban"><!--系統資訊頁籤-->
-                    <div class="manu"  @click="content='manu'"><h1>操作說明</h1></div>
-                    <div class="ver" @click="content='ver'"><h1>版本資訊</h1></div>
+            <div class="userSetting_space_B1"></div>
+            <section class="userSetting_sys">
+                <!--airPlan系統資訊-->
+                <div class="sysKanban" id="sysKanban">
+                    <!--系統資訊頁籤-->
+                    <div class="manu" @click="content='manu'">
+                        <h1>操作說明</h1>
+                    </div>
+                    <div class="ver" @click="content='ver'">
+                        <h1>版本資訊</h1>
+                    </div>
                     <keep-alive>
                         <component :is="content"></component>
                     </keep-alive>
                 </div>
-                <img src="" alt="userSetting_robotB2">
+                <img class="robotB2" src="img/userSetting/robotB2.svg" alt="robotB2">
             </section>
             <div class="userSetting_space_B2"></div>
-            <section class="userSetting_adm"><!--airPlan開發者資訊-->
+            <section class="userSetting_adm">
+                <!--airPlan開發者資訊-->
                 <div class="userSetting_Spencer">
                     <h1>宗翰</h1>
                 </div>
@@ -57,15 +75,15 @@
                 <div class="userSetting_Mike">
                     <h1>峻瑜</h1>
                 </div>
-                <img src="" alt="userSetting_conveyorB3">
+                <img class="robotB3" src="img/userSetting/robotB3.svg" alt="robotB3">
                 <img src="" alt="userSetting_light">
             </section>
         </div>
     </main>
     @@include("./html/footer.html")
     <script>
-        Vue.component('memData',{
-            template:`
+        Vue.component('memData', {
+            template: `
                 <div class="userSetting_memData">
                     <table class="userSetting_memDataTable">
                         <tr>
@@ -96,8 +114,8 @@
                 </div>
             `,
         });
-        Vue.component('airCoin',{
-            template:`
+        Vue.component('airCoin', {
+            template: `
                 <div class="userSetting_airCoin">
                     <table class="userSetting_airCoinTable">
                         <tr>
@@ -139,8 +157,8 @@
                 </div>
             `,
         });
-        Vue.component('memcolor',{
-            template:`
+        Vue.component('memcolor', {
+            template: `
                 <div class="userSetting_memcolor">
                     <div class="memcolorBlack">
                         <h1>黑色</h1>
@@ -152,16 +170,16 @@
                     </div>
                 </div>
             `,
-        }); 
-            new Vue({
+        });
+        new Vue({
             el: '#memKanban',
-            data:{
-                content:'memData',
+            data: {
+                content: 'memData',
             },
         });
-    
-        Vue.component('manu',{
-            template:`
+
+        Vue.component('manu', {
+            template: `
                 <div class="userSetting_manu">
                     <div class="userSetting_userSetting">
                         <h1>會員</h1>
@@ -187,17 +205,18 @@
                 </div>
              `,
         });
-        Vue.component('ver',{
-            template:`
+        Vue.component('ver', {
+            template: `
                 <h1 class="userSetting_ver">版本 : 1.0.0</h1>
              `,
         });
-    new Vue({
+        new Vue({
             el: '#sysKanban',
-            data:{
-                content:'manu',
+            data: {
+                content: 'manu',
             }
         });
     </script>
 </body>
+
 </html>
