@@ -85,6 +85,9 @@
     <div id="outshadow"></div>
     <div id="medal">
       <div class="cross"></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
     <div id="pile">
       <div class="pilePaper"><span>xxxxxxxx xxxxxxx xxxxxx</span>
@@ -270,12 +273,18 @@
     });
 
     $('.itemCard').click(function () {
-      $('#outshadow').css('opacity', '0.8');
+      $('#outshadow').css('opacity', '0.7');
       $('#outshadow').css('visibility', 'visible');
       $('#outshadow').css('zIndex', '20');
-      $('#medal').css('opacity', '1');
-      $('#medal').css('visibility', 'visible');
+      $('#medal').css('display', 'block');
       $('#medal').css('zIndex', '21');
+      e ? e.stopPropagation() : event.cancelBubble = true;
+    })
+
+    $('.cross').click(function () {
+      $('#outshadow').css('visibility', 'hidden');
+      $('#outshadow').css('zIndex', '-1');
+      $('#medal').css('display', 'none');
       e ? e.stopPropagation() : event.cancelBubble = true;
     })
   </script>
