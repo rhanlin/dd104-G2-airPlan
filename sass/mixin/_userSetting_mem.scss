@@ -1,0 +1,32 @@
+@mixin userSetting_mem {
+    width: 50%;
+    min-width: 550px;
+    max-width: 770px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,10%);
+    @include border;
+}
+
+@mixin userSetting_space {
+    width: 22%;
+    height: 80px;
+    background: radial-gradient(rgb(100, 60, 91) 30%, rgb(248, 230, 228) 20%);
+    background-size: 10px 10px;
+    position: absolute;
+    bottom: -80px;
+}
+
+@mixin userSetting_title{
+    padding: 10px;
+    width: 450px;
+    height: 100px;
+    background-color: $main-white;
+    font-size: 4rem;
+    letter-spacing: 1.25rem;
+    position: absolute;
+    top: -5%;
+    z-index: 6;
+    @include border;
+}
