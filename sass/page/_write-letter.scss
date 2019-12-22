@@ -1,61 +1,494 @@
-
 .wrletter-body {
     background: radial-gradient(#000000 10%, #fff 20%);
     background-size: 8px 8px;
-    height: 200vw;
-    main{
-        margin-top: 25vw;
+    height: auto;
 
-        .select-category{
-            height: 28vw;
+    main {
+        margin-top: 10vw;
 
-            .num-one{
-                width: 60%;
-                height: 30%;
-                margin: 0 auto;
-                border: 1px solid orange;
-                background-image: url('../../img/share/number-one.svg');
-                background-repeat: no-repeat;
-                background-position: left;
-                background-size: 18vw;
-                margin-top: 5%;
-                h2{
-                    font-size: 4vw;
-                    letter-spacing: 1vw;
-                    text-align: right;
+        .writ-step-1 {
+            display: flex;
+            height: auto;
+
+            .select-category {
+                height: 35vw;
+
+                .blue-tape {
+                    width: 12vw;
+                    position: absolute;
+                    top: -4%;
+                    left: 12%;
+                }
+
+                .num-one {
+                    width: 60%;
+                    height: 30%;
+                    margin: 0 auto;
+                    border: 1px solid orange;
+                    background-image: url('../../img/share/number-one.svg');
+                    background-repeat: no-repeat;
+                    background-position: left;
+                    background-size: 18vw;
+                    margin-top: 3.5%;
+
+                    h2 {
+                        font-size: 4vw;
+                        letter-spacing: 1vw;
+                        text-align: right;
+                        font-weight: normal;
+                    }
+                }
+
+                .tv-category {
+                    width: 60%;
+                    height: 60%;
+                    margin: 0 auto;
+                    border: 1px solid orange;
+                    position: relative;
+
+                    .tv-machine {
+                        width: 100%;
+                        height: 100%;
+                        background-image: url(../../img/share/TV.svg);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                        z-index: 9;
+                        position: absolute;
+                    }
+
+                    .tv-show {
+                        width: 40%;
+                        height: 50%;
+                        position: absolute;
+                        top: 67%;
+                        left: 42%;
+                        transform: translate(-50%, -50%);
+                        z-index: 1;
+                        background: black;
+                        margin: 0;
+                        font-family: "微軟正黑體";
+                        color: white;
+                        @include glitch-text();
+                    }
                 }
             }
-            .tv-category{
-                width: 60%;
-                height: 60%;
-                margin: 0 auto;
-                border: 1px solid orange;
+
+            .category-note {
+                height: 28vw;
+                border: 1px solid green;
+                width: 50%;
                 position: relative;
-                .tv-machine{
-                    width: 100%;
-                    height:  100%;
-                    background-image: url(../../img/share/TV.svg);
+                @include paper_cloud();
+
+                .paper-cloud {
+                    top: -7.5vw;
+                    left: 13.8vw;
+                }
+
+                .note-pad {
+                    background-image: url(../../img/share/yellow-note.svg);
+                    width: 24vw;
+                    height: 24vw;
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: contain;
-                    z-index: 9;
-                    position: absolute;
-                }
-                .tv-show{
-                    width: 30%;
-                    height: 48%;
-                    position: absolute;
-                    top: 67%;
-                    left: 42%;
-                    transform: translate(-50%,-50%);
                     z-index: 1;
-                    background: black;
-                    margin: 0;
-                    font-family: "微軟正黑體";
-                    color: white;
-                    @include glitch-text();
+                    position: absolute;
+                    top: 5%;
+                    left: 15%;
+
+                    .note-text {
+                        border: 1px solid;
+                        padding: 2vw 3.5vw;
+                        width: 100%;
+                        height: 80%;
+                        text-align: justify;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-55%);
+                        overflow: auto;
+
+                        h3 {
+                            font-size: 2vw;
+                        }
+
+                        p {
+                            font-size: 1.5vw;
+                            @include share_extMark($main-red);
+                        }
+                    }
+
                 }
             }
+        }
+
+        .writ-step-2 {
+            font-size: 0;
+            margin-top: 7vw;
+            // border: 1px solid red;
+            display: flex;
+
+            .write-content {
+                width: 71.25vw;
+                height: 41.5vw;
+                margin: 0 auto;
+                background-image: url(../../img/share/postCard.svg);
+                background-position: center;
+                background-size: cover;
+                display: flex;
+                position: relative;
+
+                .upload-img {
+                    border: 1px solid orange;
+                    height: 100%;
+                    width: 25%;
+                    position: relative;
+                    left: 6%;
+                    @include paper_cloud();
+
+                    .paper-cloud {
+                        top: -23.6%;
+                        left: -42%;
+                        transform: scaleX(-1);
+                        z-index: 99;
+                    }
+
+                    .hookimg {
+                        border: 1px solid green;
+                        height: 80%;
+                        width: 100%;
+                        background-image: url(../../img/share/hook-and-imgfile.svg);
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        position: absolute;
+                        top: -5%;
+                        left: 3%;
+                        z-index: 9;
+                    }
+
+                    .printer {
+                        border: 1px solid blue;
+                        height: 35%;
+                        width: 100%;
+                        background-image: url(../../img/share/printer.svg);
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        position: absolute;
+                        bottom: 0;
+
+                        h3 {
+                            position: absolute;
+                            z-index: 99;
+                            background-color: #fff;
+                            top: 55%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            padding: 2%;
+                            border: .2vw solid $main-black;
+                            border-radius: $main-borderRadius;
+                        }
+                    }
+                }
+
+                .input-contant {
+                    border: 1px solid blueviolet;
+                    height: 100%;
+                    width: 69%;
+                    position: relative;
+                    left: 6%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    font-size: 1rem;
+
+                    .num-two {
+                        width: 65%;
+                        height: 25.4%;
+                        margin: 0 auto;
+                        border: 1px solid orange;
+                        background-image: url('../../img/share/number-two.svg');
+                        background-repeat: no-repeat;
+                        background-position: left;
+                        background-size: 18vw;
+                        margin-top: 3.5%;
+
+                        h2 {
+                            font-size: 4vw;
+                            letter-spacing: 1vw;
+                            text-align: right;
+                            font-weight: normal;
+                        }
+                    }
+
+                    .input-contant-box {
+                        width: 80%;
+                        height: 60.45%;
+                        margin: 0 auto;
+                        padding: 2% 0;
+                        border-radius: 20px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .letter-title {
+                            position: relative;
+                            width: 80%;
+                            height: 15%;
+
+                            input[type="text"] {
+                                display: inline-block;
+                                width: 100%;
+                                height: 100%;
+                                box-sizing: border-box;
+                                outline: none;
+                                border: .2vw solid $main-black;
+                                border-radius: $main-borderRadius;
+                                padding: 2% 2% 2% 27%;
+                                transition: all 0.1s ease-out;
+                            }
+
+                            input[type="text"]+label {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                bottom: 0;
+                                height: 100%;
+                                width: 25%;
+                                line-height: 100%;
+                                color: white;
+                                border-radius: $main-borderRadius 0 0 $main-borderRadius;
+                                padding: .7vw 0;
+                                background: $main-dark-red;
+                                transform: translateZ(0) translateX(0);
+                                margin: 0;
+                                text-align: center;
+                                font-size: 1.5vw;
+                                transition: all 0.3s ease-in;
+                                transition-delay: 0.2s;
+                                border: .2vw solid $main-black;
+                            }
+
+                            input[type="text"]:focus+label {
+                                transform: translateY(-120%) translateX(0%);
+                                height: 50%;
+                                padding: .2vw 0;
+                                font-size: 1vw;
+                                border-radius: $main-borderRadius;
+                                transition: all 0.1s ease-out;
+                            }
+
+                            input[type="text"]:focus {
+                                padding: 2%;
+                                transition: all 0.3s ease-out;
+                                transition-delay: 0.2s;
+                            }
+                        }
+
+                        .letterContant {
+                            border: .2vw solid $main-black;
+                            background: $main-green;
+                            color: white;
+                            padding: 2%;
+                            width: 80%;
+                            height: 80%;
+
+                            border-radius: $main-borderRadius;
+                            // @include share_extMark();
+                        }
+                    }
+                }
+
+                .blue-tape-rough {
+                    width: 7vw;
+                    position: absolute;
+                    bottom: -5%;
+                    left: -3%;
+                }
+            }
+        }
+
+        .writ-step-3 {
+            font-size: 0;
+            margin-top: 7vw;
+            display: flex;
+            flex-direction: column;
+
+            .top-paintes-part {
+                border: 1px solid red;
+                height: 30vw;
+                width: 100%;
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+
+                .goto-shop-btn {
+                    border: 1px solid blue;
+                    height: 50%;
+                    width: 20%;
+                }
+
+                .painting-plan {
+                    height: 100%;
+                    width: 50%;
+                    margin: 0 10vw 0 0;
+                    position: relative;
+
+                    .num-three {
+                        width: 65%;
+                        height: 35.3%;
+                        margin: 0 auto;
+                        border: 1px solid orange;
+                        background-image: url('../../img/share/number-three.svg');
+                        background-repeat: no-repeat;
+                        background-position: left;
+                        background-size: 18vw;
+                        margin-top: 3.5%;
+
+                        h2 {
+                            font-size: 4vw;
+                            letter-spacing: 1vw;
+                            text-align: right;
+                            font-weight: normal;
+                        }
+                    }
+
+                    .pipe {
+                        width: 30%;
+                        position: absolute;
+                        bottom: -15%;
+                        left: -22%;
+                    }
+
+                    .water-drop {
+                        width: 20%;
+                        position: absolute;
+                        bottom: 11%;
+                        left: 9%;
+                    }
+
+                    .preview-plan {
+                        width: 70%;
+                        height: 60%;
+                        margin: 0 0 0 30%;
+                        border: 1px solid orange;
+                        background-image: url('../../img/share/imgIcon.svg');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                    }
+
+                    .blue-tape-rough-bl {
+                        width: 7vw;
+                        position: absolute;
+                        bottom: -6%;
+                        left: -5%;
+                    }
+
+                    .blue-tape-rough-br {
+                        width: 7vw;
+                        position: absolute;
+                        bottom: -6%;
+                        right: -5%;
+                        transform: scaleX(-1);
+                    }
+
+                    .blue-tape-rough-tl {
+                        width: 7vw;
+                        position: absolute;
+                        top: -6%;
+                        left: -5%;
+                        transform: scaleX(-1);
+                    }
+
+                    .blue-tape-rough-tr {
+                        width: 7vw;
+                        position: absolute;
+                        top: -6%;
+                        right: -5%;
+                    }
+                }
+            }
+
+            .select-paintes {
+                border: 1px solid blue;
+                height: 12vw;
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin-top: 2vw;
+
+                .arrow-white {
+                    display: inline-block;
+                    width: 10vw;
+                    height: 6vw;
+                    background-image: url('../../img/share/arrow-white.svg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    cursor: pointer;
+                }
+
+                .reverse {
+                    transform: scaleX(-1);
+                }
+
+                .painte-type {
+                    width: 60%;
+                    height: 100%;
+                    border: 1px solid red;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .type {
+                        width: 30%;
+                        height: 100%;
+                        border: 1px solid green;
+                    }
+                }
+            }
+        }
+
+        .writ-step-4 {
+            font-size: 0;
+            margin-top: 7vw;
+            border: 1px solid blue;
+            display: flex;
+            align-items: center;
+
+            .bottom-bg {
+                width: 71.25vw;
+                height: 38vw;
+                margin: 0 auto;
+
+                // animation: shad-anim 10s linear infinite;
+                .clip-left {
+                    top: -53%;
+                    left: 6%;
+                }
+
+                .top-right-bg {
+                    width: 71.25vw;
+                    height: 38vw;
+                    position: relative;
+                    top: 10px;
+                    right: -15px;
+                }
+
+                .top-right {
+                    height: 41.5vw;
+                }
+            }
+
+            ;
+        }
+        .test-area{
+            height: 10vw;
+            width: 100%;
         }
     }
 }

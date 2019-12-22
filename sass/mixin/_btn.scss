@@ -47,6 +47,7 @@
             cursor: pointer;
             color: white;
             // border: 1px solid black;
+            text-decoration: none !important;
             z-index: 1;
             &:before {
                 content: '';
@@ -116,6 +117,7 @@
 //      </div>
 //author: Rhan0
  @mixin btn_big_module(){
+     //CSS Variables
     .btn-big-test {
         --color: #f3de6b;
         --color-dark: #e7cc56;

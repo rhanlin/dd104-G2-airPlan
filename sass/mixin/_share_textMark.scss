@@ -1,0 +1,23 @@
+/*
+ *  裝飾用 文字畫螢光筆效果
+ */
+//使用說明："@include share_extMark("COLOR");"
+//author: Rhan0
+@mixin share_extMark($color:$main-yellow) {
+  line-height: 1.5;
+  display: inline;
+  background-image: linear-gradient(transparent 50%,
+      ($color+#111) 50%,
+      $color 85%,
+      transparent 85%,
+      transparent 100%);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  animation: animatedBackground 2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5s forwards;
+}
+
+@keyframes animatedBackground {
+  to {
+    background-size: 100% 100%;
+  }
+}
