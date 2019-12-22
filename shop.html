@@ -45,13 +45,26 @@
 
       <div class="col-12 col-sm-12  col-md-12 col-lg-12 itemCardBox ">
         <div class="itemCardAside">
-          <h2>商品項目</h2>
-          <h3>信紙</h3>
-          <h3>DIY工具</h3>
-          <h3>郵戳</h3>
-          <h3>圖案</h3>
-          <h3>費用</h3>
-
+          <div class="itemCardAsideBox">
+            <div class="itemCardAsideh3">
+              <h3>商品項目</h3>
+            </div>
+            <div class="itemCardAsideh4">
+              <h4>信紙</h4>
+            </div>
+            <div class="itemCardAsideh4">
+              <h4>DIY工具</h4>
+            </div>
+            <div class="itemCardAsideh4">
+              <h4>郵戳</h4>
+            </div>
+            <div class="itemCardAsideh4">
+              <h4>圖案</h4>
+            </div>
+            <div class="itemCardAsideh4">
+              <h4>費用</h4>
+            </div>
+          </div>
         </div>
         <div class=" itemCardContainer">
           <img src="/img/product/decorate/line_top.png" alt="" class="line_top">
@@ -73,21 +86,57 @@
           </div>
         </div>
         <div class="filter_forSamll">
-          <h2>商品項目</h2>
-          <h3>信紙</h3>
-          <h3>DIY工具</h3>
-          <h3>郵戳</h3>
-          <h3>圖案</h3>
-          <h3>費用</h3>
+          <div class="filter_forSamllBox">
+            <div class="filter_forSamllh3">
+              <h3>商品項目</h3>
+            </div>
+            <div class="filter_forSamllh4">
+              <h4>信紙</h4>
+            </div>
+            <div class="filter_forSamllh4">
+              <h4>DIY工具</h4>
+            </div>
+            <div class="filter_forSamllh4">
+              <h4>郵戳</h4>
+            </div>
+            <div class="filter_forSamllh4">
+              <h4>圖案</h4>
+            </div>
+            <div class="filter_forSamllh4">
+              <h4>費用</h4>
+            </div>
+          </div>
         </div>
       </div>
     </section>
     <div id="outshadow"></div>
     <div id="medal">
       <div class="cross"></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div id="textBox">
+        <div class="textBox">
+          <h1>商品名稱:飛往巴黎</h1>
+        </div>
+        <div class="textBox">
+          <h3>跟著紙飛機一起來場浪漫的旅行吧</h3>
+        </div>
+        <div class="textBox">
+          <h3>信件被撈機率加乘 : 2%</h3>
+          <h3>商品價格 : 50air幣</h3>
+        </div>
+      </div>
+      <div class="product_display">
+        <div class="model_material"><img src="/img/product/decorate/model_material.png" alt=""></div>
+        <div class="model_arrow"><img src="/img/product/decorate/model_arrow-04.svg" alt=""></div>
+        <div class="model_product"><img src="/img/product/decorate/model_product_1.png" alt=""></div>
+      </div>
+      <div class="orderBtnBoxGroup">
+        <div class="orderBtnBox">
+          <div class="orderBtn">
+            <div class="orderText">購買</div>
+            <span></span>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="pile">
       <div class="pilePaper"><span>xxxxxxxx xxxxxxx xxxxxx</span>
@@ -163,7 +212,67 @@
             </div>
           </div>
           <div class="controlBoxBottom">
-            <div>
+            <div class="brushType">
+              <label class="brushlabel">
+                <h5>畫筆種類</h5>
+              </label>
+              <div class="box">
+                <select id="brushSelect">
+                  <option value="Pencil">Pencil</option>
+                  <option value="Circle">Circle</option>
+                  <option value="Spray">Spray</option>
+                  <option value="Square">Square</option>
+                </select>
+              </div>
+            </div>
+            <div class="lineWidth">
+              <label class="lineWidthlabel">
+                <h5> 畫筆大小</h5>
+              </label>
+              <input type="range" min="0" max="150" class="lineWidthInput" value="1">
+              <span class="lineWidthValue">1</span>
+            </div>
+            <div class="lineColor">
+              <label class="lineColorlabel">
+                <h5> 選擇顏色</h5>
+              </label>
+              <input type="color" min="0" max="150" id="lineColorInput">
+            </div>
+            <div class="shadowColor">
+              <label class="shadowColorlabel">
+                <h5> 陰影顏色</h5>
+              </label>
+              <input type="color" min="0" max="150" id="shadowColorInput">
+            </div>
+            <div class="shadowBlur">
+              <label class="shadowBlurlabel">
+                <h5> 陰影模糊</h5>
+              </label>
+              <input type="range" min="0" max="30" id="shadowBlurInput" value="1">
+              <span class="shadowBlurValue">1</span>
+            </div>
+            <div class="shadowOffsetX">
+              <label class="shadowOffsetXlabel">
+                <h5> 陰影X軸 偏移</h5>
+              </label>
+              <input type="range" min="0" max="50" id="shadowOffsetXInput" value="1">
+              <span id="shadowOffsetXValue">1</span>
+            </div>
+            <div class="shadowOffsetY">
+              <label class="shadowOffsetYlabel">
+                <h5> 陰影Y軸 偏移</h5>
+              </label>
+              <input type="range" min="0" max="50" id="shadowOffsetYInput" value="1">
+              <span id="shadowOffsetYValue">1</span>
+            </div>
+          </div>
+        </div>
+        <div class="controlBoxRight">
+          <div class="brushType">
+            <label class="brushlabel">
+              <h5>畫筆種類</h5>
+            </label>
+            <div class="box">
               <select id="brushSelect">
                 <option value="Pencil">Pencil</option>
                 <option value="Circle">Circle</option>
@@ -171,51 +280,89 @@
                 <option value="Square">Square</option>
               </select>
             </div>
-            <div>
-              <label>畫筆大小</label>
-              <input type="range" min="0" max="150" class="lineWidthInput" value="1">
-              <span class="lineWidthValue">1</span>
-            </div>
-            <div>
-              <label>選擇顏色</label>
-              <input type="color" min="0" max="150" id="lineColorInput">
-            </div>
-            <div>
-              <label>陰影顏色</label>
-              <input type="color" min="0" max="150" id="shadowColorInput">
-            </div>
-            <div>
-              <label>陰影模糊</label>
-              <input type="range" min="0" max="30" id="shadowBlurInput" value="1">
-              <span class="shadowBlurValue">1</span>
-            </div>
-            <div>
-              <label>陰影X軸 偏移</label>
-              <input type="range" min="0" max="50" id="shadowOffsetXInput" value="1">
-              <span id="shadowOffsetXValue">1</span>
-            </div>
-            <div>
-              <label>陰影Y軸 偏移</label>
-              <input type="range" min="0" max="50" id="shadowOffsetYInput" value="1">
-              <span id="shadowOffsetYValue">1</span>
-            </div>
+          </div>
+          <div class="lineWidth">
+            <label class="lineWidthlabel">
+              <h5> 畫筆大小</h5>
+            </label>
+            <input type="range" min="0" max="150" class="lineWidthInput" value="1">
+            <span class="lineWidthValue">1</span>
+          </div>
+          <div class="lineColor">
+            <label class="lineColorlabel">
+              <h5> 選擇顏色</h5>
+            </label>
+            <input type="color" min="0" max="150" id="lineColorInput">
+          </div>
+          <div class="shadowColor">
+            <label class="shadowColorlabel">
+              <h5> 陰影顏色</h5>
+            </label>
+            <input type="color" min="0" max="150" id="shadowColorInput">
+          </div>
+          <div class="shadowBlur">
+            <label class="shadowBlurlabel">
+              <h5> 陰影模糊</h5>
+            </label>
+            <input type="range" min="0" max="30" id="shadowBlurInput" value="1">
+            <span class="shadowBlurValue">1</span>
+          </div>
+          <div class="shadowOffsetX">
+            <label class="shadowOffsetXlabel">
+              <h5> 陰影X軸 偏移</h5>
+            </label>
+            <input type="range" min="0" max="50" id="shadowOffsetXInput" value="1">
+            <span id="shadowOffsetXValue">1</span>
+          </div>
+          <div class="shadowOffsetY">
+            <label class="shadowOffsetYlabel">
+              <h5> 陰影Y軸 偏移</h5>
+            </label>
+            <input type="range" min="0" max="50" id="shadowOffsetYInput" value="1">
+            <span id="shadowOffsetYValue">1</span>
           </div>
         </div>
-        <div class="controlBoxRight">
+      </div>
 
-
-        </div>
-        <div class="drawingBoardBox">
-          <canvas id="canvas" class="drawingBoard" width="800px" height="500px">
+      </div>
+      <div class="drawingBoardBox">
+        <div id="canvasBox">
+          <canvas id="canvas">
             <div class="drawingPanel" id="drawingOptionArea"></div>
-            <!-- <img src="/img/product/decorate/planeBoard-05.svg" alt="" class="planeBoard" > -->
-          </canvas>
-          <div id="btns" class="btns">
-            <div id="switchBtnBox">
-              <div class="switchBtn">切換郵戳畫板</div>
+        </div> <!-- <img src="/img/product/decorate/planeBoard-05.svg" alt="" class="planeBoard" > -->
+        </canvas>
+        <div id="btns" class="btns">
+          <div class="orderBtnBoxGroup">
+            <div class="orderBtnBox">
+
+              <div class="orderBtn">
+                <div class="orderBtnBottom"></div>
+                <div class="orderText">切換郵戳畫板</div>
+              </div>
+            </div>
+          </div>
+          <div id="emptyBtn">
+            <div class="switchBtnBox">
+              <div class="switchBtn">empty</div>
+            </div>
+            <div class="switchBtnBox">
+              <div class="switchBtn">empty</div>
+            </div>
+            <div class="switchBtnBox">
+              <div class="switchBtn">empty</div>
+            </div>
+            <div class="switchBtnBox">
+              <div class="switchBtn">empty</div>
+            </div>
+            <div class="switchBtnBox">
+              <div class="switchBtn">empty</div>
+            </div>
+            <div class="switchBtnBox">
+              <div class="switchBtn">empty</div>
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
     <section id="section3">
@@ -262,8 +409,11 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
   <script src="../../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.0.1/fabric.js"></script>
+  <script src="./js/fastclick.js"></script>
+  <script src="./js/jquery.nice-select.min.js"></script>
   <script src="/js/shop_carousel.js"></script>
   <script src="/js/shop_draw.js"></script>
+
   <script>
     $('.switchBtn').mousedown(function () {
       $(this).addClass('clicked');
@@ -272,21 +422,34 @@
       $(this).removeClass('clicked');
     });
 
+    $('.orderBtn').mousedown(function () {
+      $(this).addClass('clicked');
+    });
+    $('.orderBtn').mouseup(function () {
+      $(this).removeClass('clicked');
+    });
+
     $('.itemCard').click(function () {
       $('#outshadow').css('opacity', '0.7');
       $('#outshadow').css('visibility', 'visible');
-      $('#outshadow').css('zIndex', '20');
+      $('#outshadow').css('zIndex', '99');
       $('#medal').css('display', 'block');
-      $('#medal').css('zIndex', '21');
+      $('#medal').css('zIndex', '100');
       e ? e.stopPropagation() : event.cancelBubble = true;
     })
 
     $('.cross').click(function () {
       $('#outshadow').css('visibility', 'hidden');
-      $('#outshadow').css('zIndex', '-1');
+      $('#outshadow').css('zIndex', '-99');
       $('#medal').css('display', 'none');
       e ? e.stopPropagation() : event.cancelBubble = true;
     })
+  </script>
+  <script>
+    $(document).ready(function () {
+      $('select:not(.ignore)').niceSelect();
+      FastClick.attach(document.body);
+    });
   </script>
 </body>
 
