@@ -1487,75 +1487,51 @@ table {
             animation: botani 3.5s linear reverse infinite; }
 
 @keyframes topani {
-  2% {
-    stroke-width: 57px; }
-  11% {
-    stroke-width: 173px; }
+  7% {
+    stroke-width: 197px; }
   12% {
-    stroke-width: 114px; }
+    stroke-width: 193px; }
   21% {
-    stroke-width: 80px; }
+    stroke-width: 38px; }
   28% {
-    stroke-width: 54px; }
-  31% {
-    stroke-width: 63px; }
-  37% {
-    stroke-width: 79px; }
-  47% {
-    stroke-width: 51px; }
-  48% {
+    stroke-width: 78px; }
+  43% {
+    stroke-width: 113px; }
+  45% {
+    stroke-width: 159px; }
+  59% {
     stroke-width: 167px; }
-  56% {
-    stroke-width: 34px; }
-  61% {
-    stroke-width: 88px; }
-  68% {
-    stroke-width: 68px; }
-  76% {
-    stroke-width: 171px; }
+  66% {
+    stroke-width: 6px; }
   80% {
-    stroke-width: 89px; }
-  89% {
-    stroke-width: 107px; }
-  92% {
-    stroke-width: 174px; }
-  101% {
-    stroke-width: 39px; } }
+    stroke-width: 12px; }
+  81% {
+    stroke-width: 199px; }
+  98% {
+    stroke-width: 153px; } }
 
 @keyframes botani {
-  2% {
-    stroke-width: 190px; }
+  7% {
+    stroke-width: 134px; }
   11% {
-    stroke-width: 52px; }
-  15% {
-    stroke-width: 159px; }
+    stroke-width: 66px; }
   20% {
-    stroke-width: 17px; }
-  25% {
-    stroke-width: 43px; }
-  32% {
-    stroke-width: 104px; }
-  38% {
-    stroke-width: 165px; }
+    stroke-width: 200px; }
+  30% {
+    stroke-width: 119px; }
+  44% {
+    stroke-width: 119px; }
   46% {
-    stroke-width: 27px; }
-  51% {
-    stroke-width: 25px; }
-  56% {
-    stroke-width: 198px; }
-  63% {
-    stroke-width: 3px; }
-  68% {
-    stroke-width: 61px; }
-  74% {
     stroke-width: 8px; }
-  79% {
-    stroke-width: 34px; }
-  86% {
-    stroke-width: 40px; }
-  92% {
-    stroke-width: 128px; }
-  99% {
+  62% {
+    stroke-width: 89px; }
+  64% {
+    stroke-width: 123px; }
+  76% {
+    stroke-width: 180px; }
+  88% {
+    stroke-width: 189px; }
+  93% {
     stroke-width: 122px; } }
 
 /*!
