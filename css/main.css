@@ -1610,88 +1610,56 @@ table {
             animation: botani 3.5s linear reverse infinite; }
 
 @keyframes topani {
-  1% {
-    stroke-width: 30px; }
+  5% {
+    stroke-width: 13px; }
   8% {
-    stroke-width: 8px; }
-  10% {
-    stroke-width: 179px; }
-  17% {
-    stroke-width: 97px; }
-  21% {
-    stroke-width: 107px; }
-  28% {
     stroke-width: 130px; }
-  32% {
-    stroke-width: 170px; }
-  39% {
-    stroke-width: 33px; }
-  44% {
-    stroke-width: 120px; }
-  45% {
-    stroke-width: 20px; }
-  50% {
-    stroke-width: 129px; }
-  58% {
-    stroke-width: 175px; }
-  63% {
+  21% {
+    stroke-width: 30px; }
+  28% {
+    stroke-width: 81px; }
+  38% {
+    stroke-width: 117px; }
+  41% {
+    stroke-width: 169px; }
+  48% {
     stroke-width: 100px; }
-  67% {
-    stroke-width: 44px; }
-  70% {
+  58% {
+    stroke-width: 125px; }
+  65% {
+    stroke-width: 9px; }
+  76% {
     stroke-width: 122px; }
-  75% {
-    stroke-width: 85px; }
-  81% {
-    stroke-width: 88px; }
-  85% {
-    stroke-width: 14px; }
-  90% {
-    stroke-width: 190px; }
-  96% {
-    stroke-width: 88px; } }
+  82% {
+    stroke-width: 194px; }
+  94% {
+    stroke-width: 170px; } }
 
 @keyframes botani {
-  0% {
-    stroke-width: 164px; }
-  6% {
-    stroke-width: 12px; }
-  11% {
-    stroke-width: 2px; }
-  16% {
-    stroke-width: 83px; }
-  24% {
-    stroke-width: 26px; }
-  29% {
-    stroke-width: 45px; }
+  7% {
+    stroke-width: 57px; }
+  12% {
+    stroke-width: 154px; }
+  20% {
+    stroke-width: 172px; }
   30% {
-    stroke-width: 99px; }
-  37% {
-    stroke-width: 92px; }
-  41% {
-    stroke-width: 145px; }
-  46% {
-    stroke-width: 165px; }
+    stroke-width: 80px; }
+  34% {
+    stroke-width: 98px; }
+  40% {
+    stroke-width: 69px; }
   53% {
-    stroke-width: 171px; }
+    stroke-width: 72px; }
   58% {
-    stroke-width: 17px; }
-  64% {
-    stroke-width: 104px; }
-  65% {
-    stroke-width: 26px; }
-  71% {
-    stroke-width: 186px; }
-  78% {
-    stroke-width: 93px; }
-  82% {
-    stroke-width: 81px; }
-  86% {
-    stroke-width: 185px; }
-  92% {
-    stroke-width: 51px; }
-  95% {
-    stroke-width: 109px; } }
+    stroke-width: 126px; }
+  66% {
+    stroke-width: 138px; }
+  76% {
+    stroke-width: 63px; }
+  83% {
+    stroke-width: 77px; }
+  90% {
+    stroke-width: 199px; } }
 
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
