@@ -1,25 +1,22 @@
 header{
     // width: 100vw;
-    height: 14vw;
+    height: auto;
     font-size: 0;
-    #myClouds{
-        width: 100vw;
-    };
+    
     .white-space-bg{
-        // width: 100vw;
-        height: 300px;
+        height: 20vw;
         background: linear-gradient(180deg, rgba(255, 255, 255, 1)60%, rgba(235, 255, 255, 0)100%);
         position: relative;
         z-index: 99;
         .head-box{
-            width: 60vw;
+            width: 70vw;
             height: auto;
             margin: 0 auto;
             border: 1px solid red;
             text-align: center;
             
             .bottom-bg{
-                width: auto;
+                width: 80%;
                 height: 20vw;
                 // animation: shad-anim 10s linear infinite;
                 .clip-left{

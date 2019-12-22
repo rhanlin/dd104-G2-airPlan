@@ -1,0 +1,20 @@
+/*
+ *  紙片雲
+ */
+//使用說明：直接在Sass檔案中 @include paper_cloud("寬度大小")
+//        並且在html的標籤class名稱 "paper-cloud"
+//備註：   需要調整其他屬性請新增class名稱，並在自己的.sass檔案中複寫掉
+//        不要改掉這支mixin
+//author: Rhan0
+@mixin paper_cloud($width:30vw) {
+  .paper-cloud {
+    width: $width;
+    background-image: url(../../img/share/paper-cloud.png);
+    height: 18vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: 9;
+    position: absolute;
+  }
+}
