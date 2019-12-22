@@ -1,6 +1,10 @@
 //=================素材點按進畫板==============================
 
 let canvas = new fabric.Canvas('canvas'); //創建fabric環境
+canvas.setHeight(500);
+// canvas.setWidth(1900);
+
+
 drawingOptionArea = document.getElementById('drawingOptionArea');
 
 $('.figure').click(function () {
@@ -166,3 +170,49 @@ $("#brushSelect").change(function () {
 
   canvas.freeDrawingBrush.setShadow(myShadow)
 })
+
+
+
+
+
+// =======START RESPONSIVE CANVAS=======================
+// canvas.on('after:render', function () {
+//   this.calcOffset();
+//   console.log(this.calcOffset()); //每次渲染後抓到canvas的寬
+// });
+widthscrencan = (window.innerWidth > 0) ? window.innerWidth : screen.width; // capture width screen onload
+canvasScale = 1; //global 1倍大  
+
+var ocw = canvas.width;
+console.log('ocw: ', ocw);
+var canvasBox = document.getElementById('canvasBox');
+canvasBox.width = ocw;
+console.log('canvasBox.width: ', canvasBox.width);
+
+
+window.addEventListener('resize', resizeCanvas, false);
+
+function resizeCanvas() {
+  if (window.innerWidth < 576) {
+    canvasBox.width = (window.innerWidth * .75) + (window.innerWidth / 15)
+  } else if (window.innerWidth < 768) {
+    canvasBox.width = (window.innerWidth * .75) + (window.innerWidth / 10);
+  } else if (window.innerWidth < 992) {
+    canvasBox.width = (window.innerWidth * .75) + (window.innerWidth / 10);
+  } else if (window.innerWidth < 1200) {
+    canvasBox.width = (window.innerWidth * .57) + (window.innerWidth / 10);
+  } else if (window.innerWidth < 1500) {
+    canvasBox.width = (window.innerWidth * .5) + (window.innerWidth /10);
+  } else if (window.innerWidth < 1700) {
+    canvasBox.width = 900 + (window.innerWidth / 70);
+
+  } else {
+    canvasBox.width = 900 + (window.innerWidth / 90)
+
+  }
+  canvas.setWidth(canvasBox.width)
+
+  console.log('window.innerWidth: ', window.innerWidth);
+  canvas.renderAll();
+}
+resizeCanvas();

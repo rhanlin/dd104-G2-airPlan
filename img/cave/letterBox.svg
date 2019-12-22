@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+	 viewBox="0 0 1632.3 1088.2" style="enable-background:new 0 0 1632.3 1088.2;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#406A8F;stroke:#212121;stroke-width:8.3455;stroke-miterlimit:10;}
 	.st1{fill:#8AB8B8;stroke:#212121;stroke-width:8.3455;stroke-miterlimit:10;}
-	.st2{fill:#37504D;stroke:#212121;stroke-width:8.3455;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#212121;stroke-width:8.3455;stroke-miterlimit:10;}
 </style>
 <g>
-	<rect x="131.3" y="0.1" class="st0" width="1624" height="1079.9"/>
-	<rect x="184.7" y="53.5" class="st1" width="1517.8" height="971.4"/>
-	<line class="st2" x1="1702.5" y1="53.5" x2="1755.3" y2="0.1"/>
-	<line class="st2" x1="1702.5" y1="1025" x2="1755.3" y2="1080"/>
-	<line class="st2" x1="184.7" y1="53.5" x2="131.3" y2="0.1"/>
-	<line class="st2" x1="184.7" y1="1025" x2="131.3" y2="1080"/>
+	<rect x="4.2" y="4.2" class="st0" width="1624" height="1079.9"/>
+	<rect x="57.6" y="57.6" class="st1" width="1517.8" height="971.4"/>
+	<line class="st2" x1="1575.4" y1="57.6" x2="1628.2" y2="4.2"/>
+	<line class="st2" x1="1575.4" y1="1029.1" x2="1628.2" y2="1084.1"/>
+	<line class="st2" x1="57.6" y1="57.6" x2="4.2" y2="4.2"/>
+	<line class="st2" x1="57.6" y1="1029.1" x2="4.2" y2="1084.1"/>
 </g>
 </svg>
