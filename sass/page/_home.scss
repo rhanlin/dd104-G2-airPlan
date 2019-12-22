@@ -47,12 +47,13 @@
         }
 
         .mountain_box {
+            width: 100%;
+            height: 1800px;
+            background-image: url(../../img/home/write/mountain.png);
+            background-repeat: no-repeat;
+            background-size: cover;
             position: relative;
-
-            .mountain {
-                width: 100%;
-                margin-top: 170px;
-            }
+            margin-top: 170px;
 
             .floatPaper1 {
                 width: 22%;
@@ -83,7 +84,7 @@
             background-image: url(../../img/home/write/desk.png);
             background-repeat: no-repeat;
             // background-size: 100%;
-            margin-top: -10vw;
+            margin-top: -190px;
             padding-top: 180px;
             display: flex;
 
@@ -198,7 +199,7 @@
             background-image: url(../../img/home/write/desk.png);
             background-repeat: no-repeat;
             // background-size: cover;
-            background-position: bottom;
+            // background-position: bottosm;
             position: relative;
             // display: flex;
 
@@ -271,15 +272,15 @@
     .home_catch {
         width: 100%;
         // height: 900px;
-        background: -webkit-linear-gradient(45deg, rgb(128, 169, 208) 45%, rgb(80, 136, 190) 45%, rgb(80, 136, 190) 55%, rgb(128, 169, 208) 55%);
-        background: linear-gradient(45deg, rgb(128, 169, 208) 45%, rgb(80, 136, 190) 45%, rgb(80, 136, 190) 55%, rgb(128, 169, 208) 55%);
+        background: -webkit-linear-gradient(45deg, rgb(247, 239, 197) 45%, rgb(235, 215, 109) 45%, rgb(235, 215, 109) 55%, rgb(247, 239, 197) 55%);
+        background: linear-gradient(45deg, rgb(247, 239, 197) 45%, rgb(235, 215, 109) 45%, rgb(235, 215, 109) 55%, rgb(247, 239, 197) 55%);
         background-size: 20px 20px;
-        -webkit-animation: bscale 40s infinite linear;
-        animation: bscale 40s infinite linear;
+        -webkit-animation: bscale2 40s infinite linear;
+        animation: bscale2 40s infinite linear;
         overflow: hidden;
         position: relative;
 
-        @-webkit-keyframes bscale {
+        @-webkit-keyframes bscale2 {
             0% {
                 background-position: 0px 0px;
             }
@@ -289,7 +290,7 @@
             }
         }
 
-        @keyframes bscale {
+        @keyframes bscale2 {
             0% {
                 background-position: 0px 0px;
             }
@@ -315,7 +316,8 @@
             background-image: url(../../img/home/catch/grassMid.svg);
             background-repeat: no-repeat;
             background-size: cover;
-            margin-top: -750px;;
+            margin-top: -750px;
+            ;
         }
 
         .grassFront {
@@ -326,6 +328,231 @@
             background-repeat: no-repeat;
             background-size: cover;
             margin-top: -650px;
+            position: relative;
+
+            .catch_main {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                animation: shake 2s infinite linear;
+            }
+
+            @keyframes shake {
+                0% {
+                    transform: translate(-50%, -50%) rotate(0);
+                }
+
+                25% {
+                    transform: translate(-50%, -50%) rotate(10deg);
+                }
+
+                50% {
+                    transform: translate(-50%, -50%) rotate(0);
+                }
+
+                75% {
+                    transform: translate(-50%, -50%) rotate(-10deg);
+                }
+
+                100% {
+                    transform: translate(-50%, -50%) rotate(0);
+                }
+            }
+
+            .catch_LT {
+                width: 17%;
+                position: absolute;
+                top: 10%;
+                left: 5%;
+                animation: shake2 4s infinite linear;
+            }
+
+            @keyframes shake2 {
+                0% {
+                    transform: rotate(0);
+                }
+
+                25% {
+                    transform: rotate(-10deg);
+                }
+
+                50% {
+                    transform: rotate(0);
+                }
+
+                75% {
+                    transform: rotate(10deg);
+                }
+
+                100% {
+                    transform: rotate(0);
+                }
+            }
+
+            .catch_LB {
+                width: 12%;
+                position: absolute;
+                bottom: 20%;
+                left: 15%;
+                animation: shake3 3s infinite linear;
+            }
+
+            @keyframes shake3 {
+                0% {
+                    transform: rotate(0);
+                }
+
+                25% {
+                    transform: rotate(5deg);
+                }
+
+                50% {
+                    transform: rotate(0);
+                }
+
+                75% {
+                    transform: rotate(-5deg);
+                }
+
+                100% {
+                    transform: rotate(0);
+                }
+            }
+
+            .catch_RT {
+                width: 15%;
+                position: absolute;
+                top: 23%;
+                right: 5%;
+                animation: shake2 5s infinite linear;
+            }
+
+            .catch_RB {
+                width: 20%;
+                position: absolute;
+                bottom: 3%;
+                right: 16%;
+                animation: shake3 5s infinite linear;
+            }
         }
+
+        .net {
+            width: 38%;
+            position: absolute;
+            top: 20%;
+            left: -28%;
+        }
+    }
+
+    .home_catch {
+        .grassFront {
+            .catch_letter {
+                border: 5px solid $main-black;
+                width: 25%;
+                height: 34.9vw;
+                background-image: url(../../img/home/write/letter.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: absolute;
+                left: 50%;
+                bottom: 3%;
+                transform: translate(-50%, 0);
+            }
+        }
+
+        .cap {
+            opacity: 50%;
+            transform: rotate(90deg);
+            top: 0%;
+            left: 17%;
+        }
+
+        .catchTitle {
+            width: 35%;
+            height: 47vw;
+            border: 1px solid blue;
+            background-image: url(../../img/home/catch/stick.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 55%;
+            position: absolute;
+            right: 3%;
+            bottom: 1%;
+
+            .boardTop {
+                width: 100%;
+                height: 16.7vw;
+                border: 1px solid palevioletred;
+                background-image: url(../../img/home/catch/boardTop.svg);
+                background-repeat: no-repeat;
+                margin-top: 10%;
+
+                h1 {
+                    margin: 12% 0 0 10%;
+                }
+            }
+
+            .boardBot {
+                width: 72%;
+                height: 17.3vw;
+                border: 1px solid slateblue;
+                background-image: url(../../img/home/catch/boardBot.svg);
+                background-repeat: no-repeat;
+                margin: 5% auto 0 18%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h1 {
+                    font-family: $font;
+                    font-size: 3vw;
+                }
+            }
+        }
+    }
+
+    .home_custom {
+        width: 100%;
+        // (1)淺灰色
+        // background: -webkit-linear-gradient(0deg, rgb(229, 229, 229) 0%, rgb(245, 245, 245) 100%);
+        // background: linear-gradient(90deg, rgb(229, 229, 229) 0%, rgb(245, 245, 245) 100%);
+
+        // (2)綠鐵皮色
+        background: -webkit-linear-gradient(0deg, rgb(157, 191, 158) 0%, rgb(114, 148, 113) 100%);
+        background: linear-gradient(90deg, rgb(157, 191, 158) 0%, rgb(114, 148, 113) 100%);
+        background-size: 30px 30px;
+
+        .tube {
+            width: 100%;
+            height: 1571px;
+            background-image: url(../../img/home/catch/tube.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-top: 10%;
+            position: relative;
+
+            .machineBox {
+                width: 48%;
+                height: 35%;
+                border: 1px solid red;
+                position: absolute;
+                top: 0;
+
+                .machine_base {
+                    width: 20%;
+                    position: absolute;
+                    bottom: 0;
+                }
+
+                .machine_hand {
+                    width: 90%;
+                    position: absolute;
+                    bottom: 15%;
+                    left: 5%;
+                }
+            }
+        }
+
     }
 }
