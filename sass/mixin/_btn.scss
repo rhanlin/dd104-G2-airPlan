@@ -240,74 +240,153 @@
 
 //author: Rhan0
 @mixin btn_3d_module() {
-    $background: #f8f8f8;
-    $borderAndText: #262626;
-    $buttonSides: #dfe4ea;
-    $tilt: -45deg;
-    $tilt15: 15deg;
+    $color__black: #231F20;
+    $color__blue--light: #00D3D6;
+    $color__blue--normal: #00BDBF;
+    $color__blue--darkish: #009193;
+    $color__blue--dark: #002A32;
 
-    .btnWrapper {
-        // width: auto;
-        // height: auto;
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
-        // background-color: $background;
-    }
+    //-----------------------
+    $btn-front-colour: $color__blue--light;
+    $btn-side-colour: $color__blue--normal;
+    $btn-side-colour-pressed: $color__blue--darkish;
 
-    .btnWrapper a {
-        display: block;
-        width: 100%;
-        height: 50%;
-        color: #262626;
-        font-size: 20px;
-        background: #fff;
-        text-align: center;
+    $btn-padding: 1vw;
+    $btn-depth: 20px;
+    $btn-press-depth: 10px;
+
+    $btn-animation-duration: 0.175s;
+
+    $btn-text-colour: $color__black;
+
+    $border-color: $color__black;
+    $border-weight: 2px;
+    // $border-weight-double: $border-weight * 2;
+    // $border-weight-half: $border-weight / 2;
+
+
+    .btn{
+        /*
+        button,
+        input[type="submit"] 
+        */
+    
+        transition:
+            transform $btn-animation-duration,
+            background-color $btn-animation-duration;
+
+
+        transform-origin: top left;
+
+
+        display: inline-block;
+
+        background-color: $btn-front-colour;
+        border: 3px solid $border-color;
+        padding: $btn-padding;
+        position: relative;
+        margin-right: calc(#{$btn-depth * .3});
+
+
+
         text-decoration: none;
-        text-transform: uppercase;
-        line-height: 50px;
-        border: 2px solid #262626;
-        border-bottom: none;
-        border-left: none;
-        transform: skew(15deg);
-        transition: all 4s;
-    }
+        font-size: 22px;
+        font-family: monospace;
+        font-weight: bold;
+        color: $btn-text-colour;
 
-    .btnWrapper a:before {
-        content: '';
-        position: absolute;
-        width: 102%;
-        height: 40%;
-        border: .15vw solid #262626;
-        border-left: none;
-        background: #dfe4ea;
-        bottom: -40%;
-        right: 5%;
-        z-index: -1;
-        transform: skewX(-45deg);
-        box-shadow: 0 40px 25px rgba(0, 0, 0, .2);
-        transition: all .4s;
-    }
+        &:before,
+        &:after {
+            content: "";
+            display: inline-block;
+            width: $btn-depth;
+            height: $btn-depth;
+            background-color: $btn-side-colour;
 
-    .btnWrapper a:after {
-        content: '';
-        position: absolute;
-        width: 13%;
-        height: 107%;
-        border: 2px solid #262626;
-        border-bottom-left-radius: 2px;
-        background: #dfe4ea;
-        top: 15%;
-        left: -13%;
-        transform: skewY(-45deg);
-    }
+            position: absolute;
+            bottom: calc(100% + #{$border-weight});
+            left: calc(0px - #{$border-weight});
 
-    .btnWrapper a:active {
-        transform: translateY(6px) skew($tilt15);
+            border: 3px solid $border-color;
+            border-bottom: 0;
+
+            transition:
+                width $btn-animation-duration,
+                background-color $btn-animation-duration,
+                height $btn-animation-duration;
+        }
 
         &:before {
+            //top of button
 
-            box-shadow: 0px 32px 20px rgba(0, 0, 0, 0.4)
+            width: calc(100% + 4px);
+            transform-origin: bottom left;
+            transform: skewX(-45deg);
+
+            border-right-width: 1.5px;
+
+
+
+        }
+
+        &:after {
+            //side of button
+
+            content: "";
+            height: calc(100% + 5px);
+            top: unset;
+            left: unset;
+
+            left: calc(100% + #{$border-weight});
+            bottom: calc(0px - #{$border-weight});
+
+            border: 3px solid $border-color;
+            border-top-width: 3px;
+            border-left: 0;
+
+            transform-origin: bottom left;
+            transform: skewY(-45deg);
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+            transform: translate($btn-press-depth, -$btn-press-depth);
+            background: $btn-side-colour;
+            outline: none;
+            &:before,
+            &:after {
+                background: $btn-side-colour-pressed;
+            }
+
+            &:before {
+                height: $btn-press-depth;
+            }
+
+            &:after {
+                width: $btn-press-depth;
+            }
+
+        }
+
+        &:focus {
+            outline: none;
+            transform: translate($btn-press-depth, -$btn-press-depth);
+            background: $main-dark-red;
+            color: #fff;
+            &:before,
+            &:after {
+                background: $main-dark-red;
+            }
+
+            &:before {
+                height: $btn-press-depth;
+            }
+
+            &:after {
+                width: $btn-press-depth;
+            }
+
         }
     }
 }
