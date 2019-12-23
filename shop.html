@@ -168,7 +168,7 @@
           </div>
           <div id="clear" class="controlBox2">
             <div class="controlBox2_button">
-              <div class="controlBtn2 "><img src="/img/product/tool/control_combine-01.svg" alt=""></div>
+              <div class="controlBtn2 "><img src="/img/product/tool/control_eraser.svg" alt=""></div>
             </div>
           </div>
           <div class="controlBox3">
@@ -217,7 +217,7 @@
                 <h5>畫筆種類</h5>
               </label>
               <div class="box">
-                <select id="brushSelect">
+                <select class="brushSelect">
                   <option value="Pencil">Pencil</option>
                   <option value="Circle">Circle</option>
                   <option value="Spray">Spray</option>
@@ -236,34 +236,34 @@
               <label class="lineColorlabel">
                 <h5> 選擇顏色</h5>
               </label>
-              <input type="color" min="0" max="150" id="lineColorInput">
+              <input type="color" min="0" max="150" class="lineColorInput">
             </div>
             <div class="shadowColor">
               <label class="shadowColorlabel">
                 <h5> 陰影顏色</h5>
               </label>
-              <input type="color" min="0" max="150" id="shadowColorInput">
+              <input type="color" min="0" max="150" class="shadowColorInput">
             </div>
             <div class="shadowBlur">
               <label class="shadowBlurlabel">
                 <h5> 陰影模糊</h5>
               </label>
-              <input type="range" min="0" max="30" id="shadowBlurInput" value="1">
+              <input type="range" min="0" max="30" class="shadowBlurInput" value="1">
               <span class="shadowBlurValue">1</span>
             </div>
             <div class="shadowOffsetX">
               <label class="shadowOffsetXlabel">
                 <h5> 陰影X軸 偏移</h5>
               </label>
-              <input type="range" min="0" max="50" id="shadowOffsetXInput" value="1">
-              <span id="shadowOffsetXValue">1</span>
+              <input type="range" min="0" max="50" class="shadowOffsetXInput" value="1">
+              <span class="shadowOffsetXValue">1</span>
             </div>
             <div class="shadowOffsetY">
               <label class="shadowOffsetYlabel">
                 <h5> 陰影Y軸 偏移</h5>
               </label>
-              <input type="range" min="0" max="50" id="shadowOffsetYInput" value="1">
-              <span id="shadowOffsetYValue">1</span>
+              <input type="range" min="0" max="50" class="shadowOffsetYInput" value="1">
+              <span class="shadowOffsetYValue">1</span>
             </div>
           </div>
         </div>
@@ -273,7 +273,7 @@
               <h5>畫筆種類</h5>
             </label>
             <div class="box">
-              <select id="brushSelect">
+              <select class="brushSelect">
                 <option value="Pencil">Pencil</option>
                 <option value="Circle">Circle</option>
                 <option value="Spray">Spray</option>
@@ -292,77 +292,74 @@
             <label class="lineColorlabel">
               <h5> 選擇顏色</h5>
             </label>
-            <input type="color" min="0" max="150" id="lineColorInput">
+            <input type="color" min="0" max="150" class="lineColorInput">
           </div>
           <div class="shadowColor">
             <label class="shadowColorlabel">
               <h5> 陰影顏色</h5>
             </label>
-            <input type="color" min="0" max="150" id="shadowColorInput">
+            <input type="color" min="0" max="150" class="shadowColorInput">
           </div>
           <div class="shadowBlur">
             <label class="shadowBlurlabel">
               <h5> 陰影模糊</h5>
             </label>
-            <input type="range" min="0" max="30" id="shadowBlurInput" value="1">
+            <input type="range" min="0" max="30" class="shadowBlurInput" value="1">
             <span class="shadowBlurValue">1</span>
           </div>
           <div class="shadowOffsetX">
             <label class="shadowOffsetXlabel">
               <h5> 陰影X軸 偏移</h5>
             </label>
-            <input type="range" min="0" max="50" id="shadowOffsetXInput" value="1">
-            <span id="shadowOffsetXValue">1</span>
+            <input type="range" min="0" max="50" class="shadowOffsetXInput" value="1">
+            <span class="shadowOffsetXValue">1</span>
           </div>
           <div class="shadowOffsetY">
             <label class="shadowOffsetYlabel">
               <h5> 陰影Y軸 偏移</h5>
             </label>
-            <input type="range" min="0" max="50" id="shadowOffsetYInput" value="1">
-            <span id="shadowOffsetYValue">1</span>
+            <input type="range" min="0" max="50" class="shadowOffsetYInput" value="1">
+            <span class="shadowOffsetYValue">1</span>
           </div>
         </div>
-      </div>
+        <div class="drawingBoardBox">
+          <div id="canvasBox">
+            <canvas id="canvas">
+              <div class="drawingPanel" id="drawingOptionArea"></div>
+          </div> <!-- <img src="/img/product/decorate/planeBoard-05.svg" alt="" class="planeBoard" > -->
+          </canvas>
+          <div id="btns" class="btns">
+            <div class="orderBtnBoxGroup">
+              <div class="orderBtnBox">
 
-      </div>
-      <div class="drawingBoardBox">
-        <div id="canvasBox">
-          <canvas id="canvas">
-            <div class="drawingPanel" id="drawingOptionArea"></div>
-        </div> <!-- <img src="/img/product/decorate/planeBoard-05.svg" alt="" class="planeBoard" > -->
-        </canvas>
-        <div id="btns" class="btns">
-          <div class="orderBtnBoxGroup">
-            <div class="orderBtnBox">
-
-              <div class="orderBtn">
-                <div class="orderBtnBottom"></div>
-                <div class="orderText">切換郵戳畫板</div>
+                <div class="orderBtn">
+                  <div class="orderBtnBottom"></div>
+                  <div class="orderText">切換郵戳畫板</div>
+                </div>
+              </div>
+            </div>
+            <div id="emptyBtn">
+              <div class="switchBtnBox">
+                <div class="switchBtn">empty</div>
+              </div>
+              <div class="switchBtnBox">
+                <div class="switchBtn">empty</div>
+              </div>
+              <div class="switchBtnBox">
+                <div class="switchBtn">empty</div>
+              </div>
+              <div class="switchBtnBox">
+                <div class="switchBtn">empty</div>
+              </div>
+              <div class="switchBtnBox">
+                <div class="switchBtn">empty</div>
+              </div>
+              <div class="switchBtnBox">
+                <div class="switchBtn">empty</div>
               </div>
             </div>
           </div>
-          <div id="emptyBtn">
-            <div class="switchBtnBox">
-              <div class="switchBtn">empty</div>
-            </div>
-            <div class="switchBtnBox">
-              <div class="switchBtn">empty</div>
-            </div>
-            <div class="switchBtnBox">
-              <div class="switchBtn">empty</div>
-            </div>
-            <div class="switchBtnBox">
-              <div class="switchBtn">empty</div>
-            </div>
-            <div class="switchBtnBox">
-              <div class="switchBtn">empty</div>
-            </div>
-            <div class="switchBtnBox">
-              <div class="switchBtn">empty</div>
-            </div>
-          </div>
         </div>
-      </div>
       </div>
     </section>
     <section id="section3">
