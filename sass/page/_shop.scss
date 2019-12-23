@@ -1,9 +1,7 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../../node_modules/owl.carousel/src/scss/owl.carousel.scss";
 @import "../../node_modules/owl.carousel/src/scss/owl.theme.default.scss";
-// Default variables
-// $font_size: 14px !default;
-// $font_size_small: 12px !default;
+
 
 $input_border_radius: 5px !default;
 $input_height: 42px !default;
@@ -23,13 +21,7 @@ $arrow_color: $gray !default;
   background-color: #eeddd6;
   width: 100%;
 
-  .shop-header {
-    width: 100%;
-    height: 100vh;
-    background-image: url('/image/point.jpg');
-    opacity: 0.05;
-
-  }
+  .shop-header {}
 
   .shop-main {
     overflow: hidden;
@@ -153,7 +145,6 @@ $arrow_color: $gray !default;
         .itemCardAside {
           width: 20%;
           height: 900px;
-          border: 2px solid red;
 
           .itemCardAsideBox {
             width: 65%;
@@ -177,7 +168,6 @@ $arrow_color: $gray !default;
           width: 80%;
           padding-top: 150px;
           padding-left: 20px;
-          border: 2px solid rgb(1, 172, 58);
 
           @include itemCardRow1(5);
           @include itemCardRow2(3);
@@ -567,7 +557,7 @@ $arrow_color: $gray !default;
         transform: skew(20deg) translateY(10%) rotate(15deg);
         background-color: #fff;
         text-align: center;
-        z-index: -99;
+        z-index: -100;
 
         span {
           font-size: 20px;
@@ -595,7 +585,7 @@ $arrow_color: $gray !default;
         background-image: url("/img/product/decorate/pile.png");
         background-repeat: no-repeat;
         position: relative;
-        z-index: -10;
+        // z-index: -5;
 
         .clock {
           width: 18%;
@@ -1902,9 +1892,11 @@ $arrow_color: $gray !default;
                       display: block;
                     }
                   }
+
                 }
               }
             }
+
 
             .lineWidth {
               margin-top: 40%;
@@ -1959,7 +1951,6 @@ $arrow_color: $gray !default;
           }
         }
 
-
         .controlBoxRight {
           display: none;
         }
@@ -1978,11 +1969,7 @@ $arrow_color: $gray !default;
               width: 100%;
               background: #e5e5e5;
 
-
-
-              .drawingPanel {
-                border: 3px solid red;
-              }
+              .drawingPanel {}
             }
 
             // .planeBoard {
@@ -1993,7 +1980,6 @@ $arrow_color: $gray !default;
           #btns {
             width: 100%;
             height: 200px;
-            border: 2px solid purple;
             display: flex;
 
             .orderBtnBoxGroup {
@@ -2001,7 +1987,6 @@ $arrow_color: $gray !default;
               width: 20%;
               height: 100%;
               margin: 2% 10%;
-              border: 2px solid purple;
 
 
               .orderBtnBox {
@@ -2233,14 +2218,13 @@ $arrow_color: $gray !default;
 
         .item {
           width: 100%;
-          height: 250px;
+          // height:200px;
           border: 2.5px solid black;
           transform: skew(350deg);
           background-color: #fff;
 
           .owl_img {
-            padding-top: 25%;
-            margin: 0 auto;
+            margin: 25% auto;
             width: 70%;
 
             img {
@@ -2274,6 +2258,20 @@ $arrow_color: $gray !default;
             span {
               font-size: 0;
             }
+          }
+
+          &:before {
+            font-weight: 900;
+            content: "切換素材";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: $font;
+            font-size: 26px;
+            letter-spacing: 0.2em;
+            color: #fff;
+            text-shadow: 2px 2px 1px #000, -2px -2px 1px #000, 2px -2px 1px #000, -2px 2px 1px #000;
           }
 
           .owl-next {
@@ -2403,6 +2401,31 @@ $arrow_color: $gray !default;
         }
       }
 
+      .container {
+
+        .customize {
+
+          .customizeTitleText {
+
+            font-size: 120px;
+
+            &::before {
+              font-size: 120px;
+            }
+          }
+
+          // .customizeTitle {
+          //   z-index: 15;
+          //   width: 80%;
+          //   height: 250px;
+          //   border: 5px solid black;
+          //   background: #fff;
+          //   margin-bottom: 3%;
+
+          // }
+        }
+      }
+
 
       #section2 {
         .customizeArea {
@@ -2413,22 +2436,15 @@ $arrow_color: $gray !default;
         }
       }
 
-      #section3 {
-        // .matbase {
-        //   width: 100%;
-        //   @include matbaseBox(12);
-        // }
-
-      }
-
+      #section3 {}
     }
   }
 
 }
 
-@include respond(mediumSize) {
+@include respond(mediumSize_max) {
+  //991px以下
 
-  //768px------991px;
   .shop-body {
     .shop-main {
       #section1 {
@@ -2582,6 +2598,22 @@ $arrow_color: $gray !default;
         }
       }
 
+      .container {
+
+        .customize {
+
+          .customizeTitleText {
+
+            font-size: 90px;
+
+            &::before {
+              font-size: 90px;
+            }
+          }
+
+        }
+      }
+
       #section2 {
         .customizeArea {
           margin: 0 auto;
@@ -2592,92 +2624,90 @@ $arrow_color: $gray !default;
           .controlTool {
             display: flex;
             flex-wrap: wrap;
-            width: 60%;
+            width: 100%;
             margin-right: 0;
             border: 2.5px solid black;
             background: #fff;
 
             .controlBox1 {
               text-align: center;
-              width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
-              z-index: 32;
-            }
-
-            .controlBox2 {
-              text-align: center;
-              width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
-              z-index: 31;
-            }
-
-            .controlBox3 {
-              text-align: center;
-              width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
-              z-index: 30;
-            }
-
-            .controlBox4 {
-              text-align: center;
-              width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
-              z-index: 29;
-            }
-
-            .controlBox5 {
-              text-align: center;
-              width: 20%;
+              width: 10%;
               border: 2.5px solid black;
               background-color: #fff;
               z-index: 28;
             }
 
-            .controlBox6 {
+            .controlBox2 {
               text-align: center;
-              width: 20%;
+              width: 10%;
               border: 2.5px solid black;
               background-color: #fff;
-              z-index: 33;
+              z-index: 27;
+            }
+
+            .controlBox3 {
+              text-align: center;
+              width: 10%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 26;
+            }
+
+            .controlBox4 {
+              text-align: center;
+              width: 10%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 25;
+            }
+
+            .controlBox5 {
+              text-align: center;
+              width: 10%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 24;
+            }
+
+            .controlBox6 {
+              text-align: center;
+              width: 10%;
+              border: 2.5px solid black;
+              background-color: #fff;
+              z-index: 23;
             }
 
             .controlBox7 {
               text-align: center;
-              width: 20%;
+              width: 10%;
               border: 2.5px solid black;
               background-color: #fff;
-              z-index: 32;
+              z-index: 22;
             }
 
             .controlBox8 {
               text-align: center;
-              width: 20%;
+              width: 10%;
               border: 2.5px solid black;
               background-color: #fff;
-              z-index: 31;
+              z-index: 21;
             }
 
             .controlBox9 {
               text-align: center;
-              width: 20%;
+              width: 10%;
               border: 2.5px solid black;
               background-color: #fff;
-              z-index: 30;
+              z-index: 20;
             }
 
             .controlBox10 {
               text-align: center;
-              width: 20%;
+              width: 10%;
               border: 2.5px solid black;
               background-color: #fff;
-              z-index: 29;
+              z-index: 19;
             }
-
-
 
             .controlBoxBottom {
               display: none;
@@ -2686,17 +2716,250 @@ $arrow_color: $gray !default;
 
           .controlBoxRight {
 
-            display: block;
-            width: 40%;
+            display: flex;
+            width: 100%;
             border: 5px solid black;
             background: #fff;
 
-            p {
-              width: 60%;
-              margin: 0 auto;
-              font-family: $font;
+            .brushType {
+              margin-top: 2%;
 
+              .brushlabel {
+                font-family: $font;
+              }
+
+              .box {
+
+                // Style the dropdown
+                .nice-select {
+                  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                  background-color: #fff;
+                  border-radius: $input_border_radius;
+                  border: solid 1px $gray_light;
+                  box-sizing: border-box;
+                  clear: both;
+                  cursor: pointer;
+                  display: block;
+                  float: left;
+                  font-family: inherit;
+                  font-weight: normal;
+                  height: $input_height;
+                  line-height: $input_height - 2;
+                  outline: none;
+                  padding-left: $dropdown_padding;
+                  padding-right: $dropdown_padding + 12;
+                  position: relative;
+                  text-align: left !important;
+                  transition: all 0.2s ease-in-out;
+                  user-select: none;
+                  white-space: nowrap;
+                  width: auto;
+
+                  &:hover {
+                    border-color: darken($gray_light, 5%);
+                  }
+
+                  &:active,
+                  &:focus {
+                    border-color: $primary_light;
+                  }
+
+                  // Arrow
+                  &:after {
+                    border-bottom: 2px solid $arrow_color;
+                    border-right: 2px solid $arrow_color;
+                    content: '';
+                    display: block;
+                    height: 5px;
+                    margin-top: -4px;
+                    pointer-events: none;
+                    position: absolute;
+                    right: 12px;
+                    top: 50%;
+                    transform-origin: 66% 66%;
+                    transform: rotate(45deg);
+                    transition: all 0.15s ease-in-out;
+                    width: 5px;
+                  }
+
+                  &.open {
+                    // @extend :active;
+
+                    &:after {
+                      transform: rotate(-135deg);
+                    }
+
+                    .list {
+                      opacity: 1;
+                      pointer-events: auto;
+                      transform: scale(1) translateY(0);
+                    }
+                  }
+
+                  &.disabled {
+                    border-color: lighten($gray_light, 2%);
+                    color: $gray;
+                    pointer-events: none;
+
+                    &:after {
+                      border-color: lighten($arrow_color, 20%);
+                    }
+                  }
+
+                  // Modifiers
+                  &.wide {
+                    width: 100%;
+
+                    .list {
+                      left: 0 !important;
+                      right: 0 !important;
+                    }
+                  }
+
+                  &.right {
+                    float: right;
+
+                    .list {
+                      left: auto;
+                      right: 0;
+                    }
+                  }
+
+                  &.small {
+                    height: $input_height_small;
+                    line-height: $input_height_small - 2;
+
+                    &:after {
+                      height: 4px;
+                      width: 4px;
+                    }
+
+                    .option {
+                      line-height: $input_height_small - 2;
+                      min-height: $input_height_small - 2;
+                    }
+                  }
+
+                  // List and options
+                  .list {
+                    background-color: #fff;
+                    border-radius: $input_border_radius;
+                    box-shadow: 0 0 0 1px rgba($gray_dark, .11);
+                    box-sizing: border-box;
+                    margin-top: 4px;
+                    opacity: 0;
+                    overflow: hidden;
+                    padding: 0;
+                    pointer-events: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    transform-origin: 50% 0;
+                    transform: scale(.75) translateY(- $input_height / 2);
+                    transition: all .2s cubic-bezier(0.5, 0, 0, 1.25), opacity .15s ease-out;
+                    z-index: 9;
+
+                    &:hover .option:not(:hover) {
+                      background-color: transparent !important;
+                    }
+                  }
+
+                  .option {
+                    cursor: pointer;
+                    font-weight: 400;
+                    line-height: $input_height - 2;
+                    list-style: none;
+                    min-height: $input_height - 2;
+                    outline: none;
+                    padding-left: $dropdown_padding;
+                    padding-right: $dropdown_padding + 11;
+                    text-align: left;
+                    transition: all 0.2s;
+
+                    &:hover,
+                    &.focus,
+                    &.selected.focus {
+                      background-color: $gray_lighter;
+                    }
+
+                    &.selected {
+                      font-weight: bold;
+                    }
+
+                    &.disabled {
+                      background-color: transparent;
+                      color: $gray;
+                      cursor: default;
+                    }
+                  }
+                }
+
+                // Use display instead of opacity for IE <= 10
+                .no-csspointerevents .nice-select {
+                  .list {
+                    display: none;
+                  }
+
+                  &.open {
+                    .list {
+                      display: block;
+                    }
+                  }
+
+                }
+              }
             }
+
+
+            .lineWidth {
+              margin-top: 2%;
+
+              .lineWidthlabel {
+                font-family: $font;
+              }
+            }
+
+            .lineColor {
+              margin-top: 2%;
+
+              .lineColorlabel {
+                font-family: $font;
+              }
+            }
+
+            .shadowColor {
+              margin-top: 2%;
+
+              .shadowColorlabel {
+                font-family: $font;
+              }
+            }
+
+            .shadowBlur {
+              margin-top: 2%;
+
+              .shadowBlurlabel {
+                font-family: $font;
+              }
+            }
+
+
+            .shadowOffsetX {
+              margin-top: 2%;
+
+              .shadowOffsetXlabel {
+                font-family: $font;
+              }
+            }
+
+            .shadowOffsetY {
+              margin-top: 2%;
+
+              .shadowOffsetYlabel {
+                font-family: $font;
+              }
+            }
+
           }
 
           .drawingBoardBox {
@@ -2716,13 +2979,7 @@ $arrow_color: $gray !default;
       }
 
 
-      #section3 {
-        // .matbase {
-        //   width: 100%;
-        //   @include matbaseBox_md(12);
-        // }
-
-      }
+      #section3 {}
 
 
     }
@@ -2880,153 +3137,143 @@ $arrow_color: $gray !default;
             }
           }
 
-          .filter_forSamll {
-            margin: 5% auto;
-            width: 90%;
-            border: 5px solid black;
-            background-color: rgb(255, 252, 250);
-            display: block;
-            z-index: 1;
+        }
+      }
 
-            .filter_forSamllBox {
+      .container {
 
-              width: 100%;
-              margin: 5%;
+        .customize {
 
-              .filter_forSamllh3 {
-                font-weight: 900;
-                font-family: $font;
+          .customizeTitleText {
 
-              }
+            font-size: 70px;
 
-              .filter_forSamllh4 {
-                letter-spacing: 0.2rem;
-                font-weight: 900;
-                font-family: $font;
-                margin: 20px 0;
-              }
+            &::before {
+              font-size: 70px;
             }
           }
+
         }
       }
 
       #section2 {
         .customizeArea {
-          margin: 0 auto;
-          display: flex;
-          width: 95%;
-          flex-wrap: wrap;
+
 
           .controlTool {
-            display: flex;
-            flex-wrap: wrap;
-            width: 60%;
-            margin-right: 0;
-            border: 2.5px solid black;
-            background: #fff;
+
+            width: 70%;
+            margin: 0 auto;
+
 
             .controlBox1 {
-              text-align: center;
-              width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
+
               z-index: 32;
             }
 
             .controlBox2 {
-              text-align: center;
+
               width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
+
               z-index: 31;
             }
 
             .controlBox3 {
-              text-align: center;
+
               width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
+
               z-index: 30;
             }
 
             .controlBox4 {
-              text-align: center;
+
               width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
+
               z-index: 29;
             }
 
             .controlBox5 {
-              text-align: center;
+
               width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
+
               z-index: 28;
             }
 
             .controlBox6 {
-              text-align: center;
+
               width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
+
               z-index: 33;
             }
 
             .controlBox7 {
-              text-align: center;
+
               width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
+
               z-index: 32;
             }
 
             .controlBox8 {
-              text-align: center;
+
               width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
+
               z-index: 31;
             }
 
             .controlBox9 {
-              text-align: center;
+
               width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
+
               z-index: 30;
             }
 
             .controlBox10 {
-              text-align: center;
+
               width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
+
               z-index: 29;
             }
 
-
-
-            .controlBoxBottom {
-              display: none;
-            }
           }
 
           .controlBoxRight {
-            display: block;
-            width: 40%;
-            border: 5px solid black;
-            background: #fff;
+            display: flex;
+            flex-wrap: wrap;
+
+            .brushType {
+              width: 20%;
+            }
+
+            .lineWidth {
+              width: 25%;
+            }
+
+            .lineColor {
+              width: 25%;
+            }
+
+            .shadowColor {
+              width: 25%;
+            }
+
+            .shadowBlur {
+              width: 30%;
+            }
+
+
+            .shadowOffsetX {
+              width: 30%;
+            }
+
+            .shadowOffsetY {
+              width: 30%;
+            }
           }
 
 
           .drawingBoardBox {
-            width: 100%;
-
             #canvasBox {
               #canvas {
-
-
                 .drawingPanel {}
               }
 
@@ -3038,15 +3285,12 @@ $arrow_color: $gray !default;
         }
       }
 
-
       #section3 {
         // .matbase {
         //   width: 100%;
         //   @include matbaseBox_md(12);
         // }
-
       }
-
     }
   }
 }
@@ -3068,7 +3312,6 @@ $arrow_color: $gray !default;
                 font-size: 45px;
               }
             }
-
 
             .shopTitle {
               height: 0px;
@@ -3118,8 +3361,6 @@ $arrow_color: $gray !default;
           }
         }
 
-
-
         .shopItemContainer {
           width: 95%;
 
@@ -3129,9 +3370,6 @@ $arrow_color: $gray !default;
             top: 100px;
           }
         }
-
-
-
 
         .itemCardBox {
           margin-top: 0px;
@@ -3239,175 +3477,119 @@ $arrow_color: $gray !default;
               .itemCard2_3 {
                 display: none;
               }
-
-            }
-          }
-
-          .filter_forSamll {
-            margin: 5% auto;
-            width: 90%;
-            border: 5px solid black;
-            background-color: rgb(255, 252, 250);
-            display: block;
-            z-index: 1;
-
-            .filter_forSamllBox {
-
-              width: 100%;
-              margin: 5%;
-
-              .filter_forSamllh3 {
-                font-weight: 900;
-                font-family: $font;
-
-              }
-
-              .filter_forSamllh4 {
-                letter-spacing: 0.2rem;
-                font-weight: 900;
-                font-family: $font;
-                margin: 20px 0;
-              }
             }
           }
         }
 
+        .container {
+          .customize {
+            .customizeTitleText {
+              font-size: 45px;
+
+              &::before {
+                font-size: 45px;
+              }
+            }
+
+          }
+        }
       }
 
       #section2 {
         .customizeArea {
-          margin: 0 auto;
-          display: flex;
-          width: 95%;
-          flex-wrap: wrap;
 
           .controlTool {
-            display: flex;
-            flex-wrap: wrap;
-            width: 60%;
-            margin-right: 0;
-            border: 2.5px solid black;
-            background: #fff;
+            width: 97%;
+            margin: 0;
 
             .controlBox1 {
-              text-align: center;
               width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
               z-index: 32;
             }
 
             .controlBox2 {
-              text-align: center;
               width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
               z-index: 31;
             }
 
             .controlBox3 {
-              text-align: center;
               width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
               z-index: 30;
             }
 
             .controlBox4 {
-              text-align: center;
               width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
               z-index: 29;
             }
 
             .controlBox5 {
-              text-align: center;
               width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
               z-index: 28;
             }
 
             .controlBox6 {
-              text-align: center;
               width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
               z-index: 33;
             }
 
             .controlBox7 {
-              text-align: center;
               width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
               z-index: 32;
             }
 
             .controlBox8 {
-              text-align: center;
               width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
               z-index: 31;
             }
 
             .controlBox9 {
-              text-align: center;
               width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
               z-index: 30;
             }
 
             .controlBox10 {
-              text-align: center;
               width: 20%;
-              border: 2.5px solid black;
-              background-color: #fff;
               z-index: 29;
             }
 
-
-
-            .controlBoxBottom {
-              display: none;
-            }
+            .controlBoxBottom {}
           }
 
           .controlBoxRight {
-            display: block;
-            width: 40%;
-            border: 5px solid black;
-            background: #fff;
-          }
+            display: flex;
+            flex-wrap: wrap;
+
+            .brushType {
+              width: 20%;
+
+            }
+
+            .lineWidth {
+              width: 25%;
+            }
+
+            .lineColor {
+              width: 25%;
+            }
+
+            .shadowColor {
+              width: 25%;
+            }
+
+            .shadowBlur {
+              width: 30%;
+            }
 
 
-          .drawingBoardBox {
-            width: 100%;
+            .shadowOffsetX {
+              width: 30%;
+            }
 
-            #canvasBox {
-              #canvas {
-
-
-                .drawingPanel {}
-              }
-
-              // .planeBoard {
-              //   width: 90%;
-              // }
+            .shadowOffsetY {
+              width: 30%
             }
           }
         }
-      }
-
-
-      #section3 {
-        // .matbase {
-        //   width: 100%;
-        //   @include matbaseBox_md(12);
-        // }
       }
     }
   }
@@ -3416,369 +3598,4 @@ $arrow_color: $gray !default;
 @include respond(iphone) {
 
   //375px;
-  .shop-body {
-    .shop-main {
-      #section1 {
-
-
-        .container {
-          .row {
-            .shopTitleText {
-              transform: translate(0, 120%);
-              width: 80%;
-              font-size: 45px;
-
-              &::before {
-                font-size: 45px;
-              }
-            }
-
-            .shopTitle {
-              height: 0px;
-
-              .shopTitleContainer {
-                .titlePage1 {
-                  width: 100%;
-                  height: 200px;
-                }
-
-                .titlePage2 {
-                  width: 100%;
-                  height: 200px;
-                }
-
-                .titlePage3 {
-                  display: none;
-                }
-
-                .titlePage4 {
-                  display: none;
-                }
-
-                .titlePagePic {
-                  width: 95%;
-                  // transform: translate(-10%, 0);
-                  position: absolute;
-                  top: 110px;
-                  left: 10%;
-                }
-              }
-            }
-          }
-
-          .row {
-            #conectionLine {
-
-              .iron_clip1 {
-                display: none;
-              }
-
-              .iron_clip2 {
-                display: none;
-              }
-            }
-          }
-        }
-
-
-        .shopItemContainer {
-          width: 95%;
-
-          .itemPage0 {
-            width: 100%;
-            left: 0%;
-            top: 100px;
-          }
-        }
-
-
-
-
-        .itemCardBox {
-          margin-top: 0px;
-
-          .itemCardAside {
-            display: none;
-          }
-
-          .itemCardContainer {
-            width: 95%;
-
-            padding-left: 0;
-            @include itemCardRow1_lg(4);
-            @include itemCardRow2_lg(2);
-
-            .line_top {
-              display: none;
-            }
-
-            .line_bottom {
-              display: none;
-            }
-
-            .itemCardTopRow {
-              display: flex;
-              flex-wrap: wrap;
-              ;
-
-              .itemCard1 {
-                margin: 40px 3%;
-                transform: translate(0, 0%) rotate(10deg);
-
-                img {
-                  display: none;
-                }
-              }
-
-              ;
-
-              .itemCard2 {
-                margin: 40px 3%;
-                transform: translate(0, 0%) rotate(355deg);
-
-                img {
-                  display: none;
-                }
-              }
-
-              ;
-
-              .itemCard3 {
-                margin: 40px 3%;
-                transform: translate(0, 0%) rotate(10deg);
-
-                img {
-                  display: none;
-                }
-              }
-
-              .itemCard4 {
-                margin: 40px 3%;
-                transform: translate(0, 0%) rotate(355deg);
-
-                img {
-                  display: none;
-                }
-              }
-
-              ;
-
-              .itemCard5 {
-                display: none;
-              }
-            }
-
-            .itemCardBottomRow {
-              display: flex;
-
-              .itemCard2_1 {
-                margin: 40px 3%;
-                transform: translate(0%, 0%) rotate(350deg);
-
-                img {
-                  display: none;
-                }
-              }
-
-              ;
-
-              .itemCard2_2 {
-                transform: translate(0%, 0%) rotate(15deg);
-                margin: 40px 3%;
-
-                img {
-                  display: none;
-                }
-              }
-
-              ;
-
-              .itemCard2_3 {
-                display: none;
-              }
-
-            }
-          }
-
-
-          .filter_forSamll {
-            margin-top: 5%;
-            width: 100%;
-            border: 5px solid black;
-            height: 200px;
-            background-color: rgb(255, 252, 250);
-            display: block;
-            z-index: 15;
-
-            .filter_forSamll {
-              margin: 5% auto;
-              width: 90%;
-              border: 5px solid black;
-              background-color: rgb(255, 252, 250);
-              display: block;
-              z-index: 1;
-
-              .filter_forSamllBox {
-
-                width: 100%;
-                margin: 5%;
-
-                .filter_forSamllh3 {
-                  font-weight: 900;
-                  font-family: $font;
-
-                }
-
-                .filter_forSamllh4 {
-                  letter-spacing: 0.2rem;
-                  font-weight: 900;
-                  font-family: $font;
-                  margin: 20px 0;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    #section2 {
-
-
-      .customizeArea {
-        margin: 0 auto;
-        display: flex;
-        width: 95%;
-        flex-wrap: wrap;
-
-        .controlTool {
-          display: flex;
-          flex-wrap: wrap;
-          width: 60%;
-          margin-right: 0;
-          border: 2.5px solid black;
-          background: #fff;
-
-          .controlBox1 {
-            text-align: center;
-            width: 20%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 32;
-          }
-
-          .controlBox2 {
-            text-align: center;
-            width: 20%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 31;
-          }
-
-          .controlBox3 {
-            text-align: center;
-            width: 20%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 30;
-          }
-
-          .controlBox4 {
-            text-align: center;
-            width: 20%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 29;
-          }
-
-          .controlBox5 {
-            text-align: center;
-            width: 20%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 28;
-          }
-
-          .controlBox6 {
-            text-align: center;
-            width: 20%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 33;
-          }
-
-          .controlBox7 {
-            text-align: center;
-            width: 20%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 32;
-          }
-
-          .controlBox8 {
-            text-align: center;
-            width: 20%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 31;
-          }
-
-          .controlBox9 {
-            text-align: center;
-            width: 20%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 30;
-          }
-
-          .controlBox10 {
-            text-align: center;
-            width: 20%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 29;
-          }
-
-
-
-          .controlBoxBottom {
-            display: none;
-          }
-        }
-
-        .controlBoxRight {
-          display: block;
-          width: 40%;
-          border: 5px solid black;
-          background: #fff;
-        }
-
-
-        .drawingBoardBox {
-          width: 100%;
-
-          #canvasBox {
-            #canvas {
-              .drawingPanel {}
-            }
-
-            // .planeBoard {
-            //   width: 90%;
-            // }
-          }
-        }
-
-
-      }
-
-
-      #section3 {
-        // .matbase {
-        //   width: 100%;
-        //   @include matbaseBox_md(12);
-        // }
-
-      }
-    }
-  }
 }

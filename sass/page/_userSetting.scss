@@ -3,7 +3,15 @@
     font-size: 0;
     background: radial-gradient($main-blue 30%, rgb(255, 255, 255) 20%);
     background-size: 20px 20px;
-    animation: dev 140s infinite linear;
+    animation: sky 140s infinite linear;
+    @keyframes sky {
+        0% {
+            background-position: 0 0;
+        }
+        100% {                        
+            background-position: 100% -100%;
+        }
+    }
     .userSetting_main{
         width: 100%;
         max-width: 1920px;
@@ -37,9 +45,11 @@
                         .memData{
                             margin:  10% 0 10px ;
                             width: 25%;
-                            border: 1px solid rgb(255, 0, 0);
                             text-align: center;
                             display: inline-block;
+                            background-image: url(../../img/share/yellow-paint-line.svg);
+                            // opacity: 0.8;
+                            // background-repeat: no-repeat;
                         }
                         .airCoin{
                             @extend.memData;
@@ -53,6 +63,7 @@
                             width: 100%;
                             height: 410px;
                             text-align: left;
+                            overflow: auto;
                             @include marginAuto;
                         }
                         .userSetting_memDataTable{
@@ -61,11 +72,15 @@
                         }
                         .userSetting_memData td{
                             width: 50%;
-                            // border: 1px solid black;
+                            border: 3px solid $main-green;
+                        }
+                        .mempic{
+                            width: 200px;
+                            display: block;
+                            @include marginAuto;
                         }
                         .userSetting_airCoin{
                             text-align: center;
-                            overflow: auto;
                             @extend.userSetting_memData;
                         }
                         .userSetting_airCoinTable{
@@ -73,20 +88,35 @@
                         }
                         .userSetting_airCoin table td{
                             width: 33.33%;
-                            border-bottom: 2px dashed $main-green;
+                            border: none;
+                            border-bottom: 3px dashed $main-green;
                             text-align: center;
                         }
                         .userSetting_memcolor{
                             text-align: center;
                             @extend.userSetting_memData;
+                            .memcolorBig{
+                                width: 75%;
+                                border: 3px dashed $main-green;
+                                border-bottom:none;
+                                @include marginAuto;
+                            }
+                            .memcolorSmall{
+                                border:none;
+                                @extend .memcolorBig;
+                                .memcolorBlack{
+                                    width: 50%;
+                                    display: inline-block;
+                                    border: 3px dashed $main-green;
+                                    
+                                }
+                                .memcolorWhite{
+                                    @extend.memcolorBlack;
+                                }
+                            }
                         }
-                        .memcolorBlack{
-                            width: 50%;
-                            display: inline-block;
-                        }
-                        .memcolorWhite{
-                            @extend.memcolorBlack;
-                        }
+                        
+                        
                     }
                 }
                 .robotB1{
@@ -163,7 +193,8 @@
                         margin:  5% 0 5% ;
                         width: 45%;
                         display: inline-block;
-                        border: 1px solid rgb(7, 110, 46);
+                        background-image: url(../../img/share/yellow-note.svg);
+                        background-repeat: no-repeat;
                     }
                     .ver{
                         @extend.manu;
@@ -207,13 +238,9 @@
                     animation: paper 7s ease-in-out infinite;
                     @keyframes paper {
                         0% {
-                            bottom: 21%;
-                            right: 26%;
-                            transform: rotate(0deg);
-                        }
-                        10% {
                             bottom: 19%;
-                            right: 26%;
+                            right: 22%;
+                            transform: rotate(0deg);
                         }
                         60%{
                             bottom: 19%;
@@ -231,7 +258,7 @@
                             transform: rotate(-90deg);
                         }
                         100% {                        
-                            bottom: -97%;
+                            bottom: -93%;
                             right: 83%;
                             transform: rotate(-90deg);
                         }
@@ -323,7 +350,7 @@
                         @include userSetting_adm;
                         .userSetting_wrap{
                             @include userSetting_wrap;
-                            background-image: url("../../img/userDeveloper/mike.png");
+                            background-image: url("../../img/userDeveloper/howard.png");
                         }
                     }
                     .userSetting_spencer{
@@ -341,7 +368,7 @@
                         @include userSetting_adm;
                         .userSetting_wrap{
                             @include userSetting_wrap;
-                            background-image: url("../../img/userDeveloper/allen.png");
+                            background-image: url("../../img/userDeveloper/allen.svg");
                         }
                     }
                     .userSetting_grace{
@@ -387,6 +414,11 @@
                     animation: paperPlane 5s ease-in-out infinite;
                 }
             }
+            
+            .btn{
+                background:$main-blue;
+                color: $main-yellow;
+            }
         }
     }
 }
@@ -404,4 +436,8 @@
 .userSetting_body li, .userSetting_body span, .userSetting_body td, .userSetting_body p{
     font-size: 20px;
     margin: 0;
+    font-family: $font;
+}
+.userSetting_body h3{
+    font-family: $font;
 }
