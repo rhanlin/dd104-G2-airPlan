@@ -11,13 +11,14 @@
     <title>caveP2</title>
 </head>
 
-<body>
-    <header></header>
+<body class="cav-body">
+    @@include("./html/nav.html")
+    @@include("./html/header.html")
 
     <main class="cav-main">
         <!-- 瀏覽信件 -->
-        <div>
-            <h1>瀏覽信件</h1>
+        <div class="cav-titleBlock">
+            <h1 class="threed-text-yellow-endWhite">瀏覽信件</h1>
         </div>
         <section class="cav-readLetterWrap">
             <div class="cav-boxImg">
@@ -164,12 +165,12 @@
         </section>
 
         <!-- 我的物品 -->
-        <div>
-            <h1>我的物品</h1>
+        <div class="cav-titleBlock">
+            <h1 class="threed-text-yellow-endWhite">我的物品</h1>
         </div>
         <section class="cav-myItem">
             <div class="cav-leftWrap">
-                <div class="cav-topBlock"><img src="https://via.placeholder.com/476x250"></div>
+                <div class="cav-topBlock"><img src="./img/share/paper-plane.png"></div>
                 <div class="cav-leftBMWrap">
                     <ul class="cav-leftBlockBM">
                         <li><a data-target="cav-leftBlock-1" class="tab1 -on">圖案</a></li>
@@ -219,6 +220,7 @@
                     <li><a data-target="cav-rightBlock-1" class="tab2 -on">素材</a></li>
                     <li><a data-target="cav-rightBlock-2" class="tab2">DIY</a></li>
                 </ul>
+                <img src="./img/cave/bookshelf.svg" alt="">
                 <div class="cav-tabWrap">
                     <div class="tab2 cav-rightBlock-1 -on">
                         <div class="cav-prodWrap">
@@ -239,7 +241,6 @@
                             <div class="cav-prod"><img src="./img/product/decorate/clip-04.svg"></div>
                             <div class="cav-prod"><img src="./img/product/decorate/clip-04.svg"></div>
                             <div class="cav-addProd"><a href="#"><img src="./img/cave/add.svg"></a></div>
-
                         </div>
                     </div>
                     <div class="tab2 cav-rightBlock-2">
@@ -259,10 +260,8 @@
 
 
 
-
-
     </main>
-    <footer></footer>
+    @@include("./html/footer.html")
     <script src="./js/bookMarkL.js"></script>
     <script src="./js/bookMarkR.js"></script>
     <script src="./js/btn.js"></script>
