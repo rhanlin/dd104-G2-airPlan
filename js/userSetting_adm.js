@@ -3,12 +3,7 @@ Vue.component('memData', {
         <div class="userSetting_memData">
             <table class="userSetting_memDataTable">
                 <tr>
-                    <td><img src="" alt="mempic"></td>
-                    <td>Air幣 : 50</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>信紙 : 5</td>
+                    <td colspan="2"><img class="mempic" src="../img/chatroom/mark_1.png" alt="mempic"></td>
                 </tr>
                 <tr>
                     <td>會員帳號 :</td>
@@ -19,12 +14,12 @@ Vue.component('memData', {
                     <td>aaa@gmail.com</td>
                 </tr>
                 <tr>
-                    <td>會員密碼 :</td>
-                    <td>aaa666</td>
+                    <td>Air幣 :</td>
+                    <td>50</td>
                 </tr>
                 <tr>
-                    <td>登出</td>
-                    <td></td>
+                    <td>信紙</td>
+                    <td>5</td>
                 </tr>
             </table>
         </div>
@@ -76,13 +71,20 @@ Vue.component('airCoin', {
 Vue.component('memcolor', {
     template: `
         <div class="userSetting_memcolor">
-            <div class="memcolorBlack">
-                <h3>黑色</h3>
-                <img src="" alt="black">
+            <div class="memcolorBig">
+                <img src="../img/share/blue-paint-bigline.svg" alt="blackB">
             </div>
-            <div class="memcolorWhite">
-                <h3>白色</h3>
-                <img src="" alt="white">
+            <div class="memcolorSmall">
+                <div class="memcolorBlack">
+                    <img src="../img/share/blue-paint-bigline.svg" alt="black">
+                    <h3>黑色</h3>
+                    
+                </div>
+                <div class="memcolorWhite">
+                    <img src="../img/share/yellow-paint-bigline.svg" alt="white">
+                    <h3>白色</h3>
+                    
+                </div>
             </div>
         </div>
     `,
