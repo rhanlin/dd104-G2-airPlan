@@ -14,19 +14,91 @@
     @@include("./html/nav.html")
     @@include("./html/header.html")
     <main>
-        <div class="box-white select-category">
-            <div class="num-one">
-                <h2 class="threed-text-black-endWhite">選擇分類</h2>
-                <a href="" class="btn-big-red"></a>
-            </div>
-            <div class="tv-category">
-                <div class="tv-machine"></div>
-                <div class="tv-show">
-                    @@include("./html/tv-category.html")
+        <section class="writ-step-1">
+            
+            <div class="box-white select-category">
+                <img src="./img/share/blue-tape.svg" class="blue-tape">
+                <div class="num-one">
+                    <h2 class="threed-text-black-endWhite">選擇分類</h2>
+                </div>
+                <div class="tv-category">
+                    <div class="tv-machine"></div>
+                    <div class="tv-show">
+                        @@include("./html/tv-category.html")
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="btn-big-test" id="bigBtn">
+            <div class="category-note">
+                <div class="paper-cloud"></div>
+                <div class="note-pad">
+                    <div class="note-text">
+                        <h3>爆料版說明:</h3>
+                        <p>獨樂樂不如眾樂樂，有什麼大家必須知道的事情，最勁爆的踢爆、直擊與新聞，在此盡覽無遺。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="writ-step-2">
+            <div class="box-white write-content">
+                <div class="upload-img">
+                    <div class="paper-cloud"></div>
+                    <div class="hookimg"></div>
+                    <div class="printer"><h3>上傳圖片</h3></div>
+                </div>
+                <div class="input-contant">
+                    <div class="num-two">
+                        <h2 class="threed-text-black-endWhite">寫下內容</h2>
+                    </div>
+                    <form action="#" class="box-white input-contant-box">
+                        <div class="letter-title">
+                            <input type="text" name="letterTitle" id="input1" placeholder="請輸入信件標題"> 
+                            <label>信件標題</label>
+                        </div>
+                        <textarea name="letterContant" cols="30" rows="10" class="letterContant"></textarea>
+                    </form>
+                </div>
+                <img src="./img/share/blue-tape-rough.svg" class="blue-tape-rough">
+            </div>
+        </section>
+        <section class="writ-step-3" id="writStep3">
+            <div class="top-paintes-part">
+                <div class="goto-shop-btn"></div>
+                <div class="box-white painting-plan">
+                    <div class="num-three">
+                        <h2 class="threed-text-black-endWhite">漆上彩繪</h2>
+                    </div>
+                    <img src="./img/share/pipe.png" class="pipe">
+                    <img src="./img/share/water-drop.png" class="water-drop">
+                    <div class="preview-plan"></div>
+                    <img src="./img/share/blue-tape-rough.svg" class="blue-tape-rough-tl">
+                    <img src="./img/share/blue-tape-rough.svg" class="blue-tape-rough-tr">
+                    <img src="./img/share/blue-tape-rough.svg" class="blue-tape-rough-bl">
+                    <img src="./img/share/blue-tape-rough.svg" class="blue-tape-rough-br">
+                </div>
+            </div>
+            <div class="select-paintes">
+                <span class="arrow-white"></span>
+                <div class="painte-type">
+                    <template v-for="item in 3">
+                        <div class="type"></div>
+                    </template>
+                </div>
+                <span class="arrow-white reverse"></span>
+            </div>
+        </section>
+        <section class="writ-step-4">
+                <div class="box-white bottom-bg">
+                    <span class="share-clip clip-left"></span>
+                    <div class="dot-box-yellow top-right top-right-bg">
+                        <div class="box-white top-right-bg">
+                            <div class="box-white top-right-bg "></div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <div class="test-area"></div>
+        <!-- <div class="btn-big-test" id="bigBtn">
             <div class="back side-way"></div>
             <div class="left side-way"></div>
             <div class="right side-way"></div>
@@ -35,28 +107,28 @@
                 <div class='side-way__text'> 購買 </div>
             </div>
             <div class="front side-way"></div>
-        </div>
+        </div> -->
+        <!-- <div style="position: relative;">
+            <div class="btn-wrapper-center">
+                <a href="#" class="btn3d btn-basic-yellow">Click</a>
+            </div>
+        </div> -->
 
 
-
-        <div class="btn-wrapper-center">
-            <a href="./chatroom.html" class="btn3d btn-basic-yellow">Click</a>
-        </div>
+        
     </main>
     @@include("./html/footer.html")
 
-
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
     <script>
-        let bigBtn = document.getElementById('bigBtn');
-        // console.log(btn[0]);
-        bigBtn.addEventListener('mouseup',bigBtnFn);
-        function bigBtnFn(){
-            bigBtn.classList.add('bigBtnActive');
-            setTimeout(()=>{
-                bigBtn.classList.remove("bigBtnActive");
-            },300)
-            
-        }
+        new Vue({
+            el:'#writStep3',
+            data:{
+                // painteType:[
+                //     1,2,3,4
+                // ],
+            },
+        });
     </script>
 </body>
 </html>

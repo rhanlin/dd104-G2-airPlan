@@ -2,6 +2,8 @@
 @import "box"; //每一個框的產生器
 @import "cloud";//浮動的雲
 @import "share_pattern"; //各種裝飾畫面
+@import "share_paper_cloud"; //紙雲
+@import "share_textMark"; //文字螢光筆效果
 
 @import "3dtext"; //3D文字
 @import "respond"; //響應式尺寸判斷式
@@ -15,5 +17,9 @@
 @import "chatroom_marginAuto";//聊天室..
 @import "chatroom_border";//聊天室...
 
+@import "userSetting_adm";//用戶設定_開發者資訊
+@import "userSetting_mem";//用戶設定_會員資訊
 
 @import "_writerLetter_glitchText" //寫信電視裡的文字
+
+

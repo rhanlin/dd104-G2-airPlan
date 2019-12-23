@@ -4,9 +4,5 @@ node_modules/
 js/clouds.js
 js/main.js
 dist/
-<<<<<<< HEAD
-css/
-=======
 css/main.css.map
-
->>>>>>> dev
+css/main.css

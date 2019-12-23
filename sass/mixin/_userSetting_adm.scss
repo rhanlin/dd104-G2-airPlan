@@ -1,0 +1,72 @@
+@mixin userSetting_adm{
+    max-width: 600px;
+    background-size: 10px 20px;
+    @include marginAuto;
+    @include border;
+}
+
+@mixin userSetting_wrap {
+    padding-top: 30px;
+    height: 400px;
+    opacity: .8;
+    .userSetting_Name{
+        margin: 0 10%;
+        padding: 10px;
+    }
+    .userSetting_work{
+        @extend.userSetting_Name;
+    }
+    .userSetting_portfolio{
+        @extend.userSetting_Name;
+    }
+}
+
+@mixin userSetting_admTag {
+    margin:  0 1.5% 5% ;
+    width: 120px;
+    height: 215px;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+@mixin userSetting_admTagName{
+    margin-top: 130px;
+    text-align: center;
+}
+
+@keyframes leftLight {
+    0% {
+        background-position: 0 0;
+    }
+    100% {                        
+        background-position: 100% 100%;
+    }
+}
+@keyframes downLight {
+    0% {
+        background-position: 0 0;
+    }
+    100% {                        
+        background-position: 0 100%;
+    }
+}
+@keyframes rightLight {
+    0% {
+        background-position: 0 0;
+    }
+    100% {                        
+        background-position: -100% 100%;
+    }
+}
+@keyframes paperPlane {
+    0% {
+        bottom: 10%;
+        left: 15%;
+    }
+    50%{
+        bottom: 30%;
+    }
+    100% {                        
+        bottom: 10%;
+        left: 110%;
+    }
+}
