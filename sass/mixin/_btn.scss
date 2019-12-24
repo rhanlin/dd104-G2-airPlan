@@ -368,7 +368,7 @@
             }
 
         }
-
+        &:active,
         &:focus {
             outline: none;
             transform: translate($btn-press-depth, -$btn-press-depth);
@@ -387,6 +387,24 @@
                 width: $btn-press-depth;
             }
 
+        }
+        &.click{
+            outline: none;
+            transform: translate($btn-press-depth, -$btn-press-depth);
+            background: $main-dark-red;
+            color: #fff;
+            &:before,
+            &:after {
+                background: $main-dark-red;
+            }
+
+            &:before {
+                height: $btn-press-depth;
+            }
+
+            &:after {
+                width: $btn-press-depth;
+            }
         }
     }
 }
