@@ -19,7 +19,7 @@
       position: relative;
       text{
         position: absolute;
-        transform: translate(0%, 10%);
+        transform: translate(0%, 15%);
       }
     }
   }
@@ -35,8 +35,8 @@
   .glitch-filter-text {
     filter: url(#filter);
     fill: white;
-    font-family: "微軟正黑體";
-    font-size: 2.5vw;
+    // font-family: "微軟正黑體";
+    font-size: 5vw;
     text-align: center;
     margin: 0;
     padding: 0;

@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
     <meta charset="UTF-8">
     <title>write-letter</title>
     <link href="./css/main.css" rel="stylesheet" type="text/css">
     <style>
-        *{
+        * {
             box-sizing: border-box;
         }
     </style>
 </head>
+
 <body class="wrletter-body">
     @@include("./html/nav.html")
     @@include("./html/header.html")
     <main>
         <section class="writ-step-1">
-            
+
             <div class="box-white select-category">
                 <img src="./img/share/blue-tape.svg" class="blue-tape">
                 <div class="num-one">
-                    <h2 class="threed-text-black-endWhite">選擇分類</h2>
+                    <h2>選擇分類</h2>
                 </div>
                 <div class="tv-category">
+                    <div class="change-category-btn">
+                        <!-- @@include("./html/big3D-btn.html") -->
+                        <div class="btnWrapper">
+                            <a href="#">
+                                Click Here
+                            </a>
+                        </div>
+                    </div>
                     <div class="tv-machine"></div>
                     <div class="tv-show">
                         @@include("./html/tv-category.html")
@@ -29,8 +39,8 @@
                 </div>
             </div>
             <div class="category-note">
-                <div class="paper-cloud"></div>
                 <div class="note-pad">
+                    <div class="paper-cloud"></div>
                     <div class="note-text">
                         <h3>爆料版說明:</h3>
                         <p>獨樂樂不如眾樂樂，有什麼大家必須知道的事情，最勁爆的踢爆、直擊與新聞，在此盡覽無遺。</p>
@@ -43,15 +53,17 @@
                 <div class="upload-img">
                     <div class="paper-cloud"></div>
                     <div class="hookimg"></div>
-                    <div class="printer"><h3>上傳圖片</h3></div>
+                    <div class="printer">
+                        <h3>上傳圖片</h3>
+                    </div>
                 </div>
                 <div class="input-contant">
                     <div class="num-two">
-                        <h2 class="threed-text-black-endWhite">寫下內容</h2>
+                        <h2>寫下內容</h2>
                     </div>
                     <form action="#" class="box-white input-contant-box">
                         <div class="letter-title">
-                            <input type="text" name="letterTitle" id="input1" placeholder="請輸入信件標題"> 
+                            <input type="text" name="letterTitle" id="input1" placeholder="請輸入信件標題">
                             <label>信件標題</label>
                         </div>
                         <textarea name="letterContant" cols="30" rows="10" class="letterContant"></textarea>
@@ -62,10 +74,19 @@
         </section>
         <section class="writ-step-3" id="writStep3">
             <div class="top-paintes-part">
-                <div class="goto-shop-btn"></div>
+                <div class="goto-shop-btn">
+                    <img src="./img/write-letter/goto-shop-btn.svg">
+                    <div class="dot-box-blue shop-signboard">
+                        <div class="box-white shop-title">
+                            <h3 class="threed-text-red shop-text">
+                                前往<br>商城
+                            </h3>
+                        </div>
+                    </div>
+                </div>
                 <div class="box-white painting-plan">
                     <div class="num-three">
-                        <h2 class="threed-text-black-endWhite">漆上彩繪</h2>
+                        <h2>漆上彩繪</h2>
                     </div>
                     <img src="./img/share/pipe.png" class="pipe">
                     <img src="./img/share/water-drop.png" class="water-drop">
@@ -79,25 +100,46 @@
             <div class="select-paintes">
                 <span class="arrow-white"></span>
                 <div class="painte-type">
-                    <template v-for="item in 3">
-                        <div class="type"></div>
+                    <template v-for="(item, index) in 3">
+                        <div class="type" :class="{active: index === openIndex}" @click="openIndex = index">
+                            <span class="box-white preview-paper" :class="{active: index === openIndex}"></span>
+                            <span class="print-type-pattern">
+                                <span class="printScraper" :class="{active: index === openIndex}"></span>
+                            </span>
+
+                        </div>
                     </template>
                 </div>
                 <span class="arrow-white reverse"></span>
             </div>
         </section>
-        <section class="writ-step-4">
-                <div class="box-white bottom-bg">
-                    <span class="share-clip clip-left"></span>
-                    <div class="dot-box-yellow top-right top-right-bg">
+        <section class="writ-step-4" id="writStep4">
+            <div class="box-white bottom-bg">
+                <span class="share-clip clip-left">
+                </span>
+                <div class="dot-box-yellow top-right top-right-bg">
+                    <div class="box-white top-right-bg">
                         <div class="box-white top-right-bg">
-                            <div class="box-white top-right-bg "></div>
+                            <div class="num-four">
+                                <h2>選擇郵戳，進行下一步!</h2>
+                            </div>
+                            <div class="select-stamp">
+                                <span class="arrow-white"></span>
+                                <div class="stamp-type">
+                                    <template v-for="item in 3">
+                                        <div class="type"></div>
+                                    </template>
+                                </div>
+                                <span class="arrow-white reverse"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
 
         <div class="test-area"></div>
+
         <!-- <div class="btn-big-test" id="bigBtn">
             <div class="back side-way"></div>
             <div class="left side-way"></div>
@@ -108,27 +150,37 @@
             </div>
             <div class="front side-way"></div>
         </div> -->
-        <!-- <div style="position: relative;">
-            <div class="btn-wrapper-center">
-                <a href="#" class="btn3d btn-basic-yellow">Click</a>
-            </div>
+        <!-- <div class="btn-wrapper-center">
+            <a href="#" class="btn3d btn-basic-yellow">Click</a>
         </div> -->
 
 
-        
+
     </main>
     @@include("./html/footer.html")
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
     <script>
-        new Vue({
-            el:'#writStep3',
-            data:{
+        let vm3 = new Vue({
+            el: '#writStep3',
+            data: {
                 // painteType:[
                 //     1,2,3,4
                 // ],
+                openIndex: null
             },
+            methods: {},
+            computed: {
+
+            },
+        });
+
+        let vm4 = new Vue({
+            el: '#writStep4',
+            data: {},
+
         });
     </script>
 </body>
+
 </html>
