@@ -679,15 +679,26 @@
 
     .home_store {
         width: 100%;
-        height: 900px;
+        height: 1000px;
+        background-image: url(../../img/home/store/storeBg.png);
+        position: relative;
+
+        .shed {
+            width: 100%;
+            height: 200px;
+            background-image: url(../../img/home/store/shed.svg);
+            filter: drop-shadow(0px 14px 12px rgba(70, 70, 70, 0.7));
+        }
 
         .cuboid {
             width: 300px;
             height: 500px;
-            margin: 50px 30px;
+            margin: 0 0 0 30px;
             background-color: $main-blue;
-            position: relative;
+            position: absolute;
+            top: 14%;
             display: inline-block;
+            filter: drop-shadow(3px 8px 8px rgba(70, 70, 70, 0.5));
 
             .storeTitle {
                 width: 80%;
@@ -720,7 +731,7 @@
             }
 
             .bulb_L1 {
-                background-color: $main-red;
+                background-color: grey;
                 position: absolute;
                 top: 0.5%;
                 left: 2%;
@@ -833,21 +844,22 @@
 
             @keyframes lightRedYel {
                 0% {
-                    background-color: $main-red;
+                    background-color: $main-yellow;
+
                 }
 
                 50% {
-                    background-color: $main-yellow;
+                    background-color: $main-white;
                 }
 
                 100% {
-                    background-color: $main-red;
+                    background-color: $main-yellow;
                 }
             }
 
             @keyframes lightYelRed {
                 0% {
-                    background-color: $main-yellow;
+                    background-color: $main-white;
                 }
 
                 50% {
@@ -855,31 +867,196 @@
                 }
 
                 100% {
-                    background-color: $main-yellow;
+                    background-color: $main-white;
+                }
+            }
+        }
+
+        .cuboid-lb:before {
+            content: "";
+            height: 100%;
+            width: 30px;
+            background-color: rgb(64, 106, 144);
+            position: absolute;
+            left: -30px;
+            top: 15px;
+            transform: skew(0, -45deg);
+        }
+
+        .cuboid-lb:after {
+            content: "";
+            width: 100%;
+            height: 30px;
+            background-color: rgb(64, 106, 144);
+            position: absolute;
+            top: 100%;
+            left: -15px;
+            transform: skew(-45deg);
+        }
+
+        .shopWindow {
+            width: 37%;
+            height: 35vw;
+            // border: 1px solid green;
+            margin: 60px auto 0 auto;
+            background-color: rgb(113, 149, 184);
+
+            .windowBg {
+                width: 100%;
+                height: 100%;
+                background-image: url(../../img/home/store/window.svg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                filter: drop-shadow(0px 12px 8px rgba(70, 70, 70, 0.5));
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: space-around;
+
+                .paintPlan {
+                    width: 70%;
+                    height: 40%;
+                    // border: 1px solid yellow;
+                    margin-top: 5%;
+                }
+
+                .price {
+                    width: 40%;
+                    height: 180px;
+                    margin-bottom: 10%;
+                    background-color: rgb(240, 224, 197);
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    h1 {
+                        font-family: $font;
+                        font-size: 54px;
+                    }
+                }
+
+                .price::before {
+                    content: "";
+                    width: 0px;
+                    height: 0px;
+                    border-left: 20px solid transparent;
+                    border-right: 20px solid transparent;
+                    border-bottom: 20px solid rgb(240, 224, 197);
+                    position: absolute;
+                    top: -20px;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                }
+            }
+        }
+
+        .board {
+            width: 400px;
+            height: 300px;
+            border: 5px solid $main-black;
+            border-radius: 4%;
+            background-image: url(../../img/home/store/boardWood.png);
+            position: absolute;
+            right: 5%;
+            bottom: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 8px 8px 0px rgba(70, 70, 70, .5);
+
+            .board_text {
+                width: 90%;
+                height: 90%;
+                // border: 5px solid $main-black;
+                background-image: url(../../img/home/store/boardBg.png);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h1 {
+                    font-family: $font;
+                    color: $main-white;
                 }
             }
         }
     }
 
-    .cuboid-lb:before {
-        content: "";
-        height: 100%;
-        width: 30px;
-        background-color: rgb(64, 106, 144);
-        position: absolute;
-        left: -30px;
-        top: 15px;
-        transform: skew(0, -45deg);
-    }
-
-    .cuboid-lb:after {
-        content: "";
+    .home_chat {
         width: 100%;
-        height: 30px;
-        background-color: rgb(64, 106, 144);
-        position: absolute;
-        top: 100%;
-        left: -15px;
-        transform: skew(-45deg);
+        height: 930px;
+        background-image: url(../../img/home/chat/chatBg.png);
+        position: relative;
+
+        .chatBox {
+            width: 100%;
+            height: 100%;
+            display: flex;
+
+            .chat_R {
+                width: 50%;
+                height: 100%;
+            }
+
+            .chat_L {
+                width: 50%;
+                height: 100%;
+                border: 1px solid palegreen;
+                // position: relative;
+
+                .titleBox1 {
+                    width: 36%;
+                    height: 18.5vw;
+                    border: 1px solid aqua;
+                    position: relative;
+                    top: 8%;
+                    left: 15%;
+
+                    .chat_title1 {
+                        border: 1px solid green;
+                        width: 100%;
+                        height: 100%;
+                        background-image: url(../../img/home/chat/noteWhite.svg);
+                        background-repeat: no-repeat;
+                        animation: wave 2s linear infinite;
+
+                        h1 {
+                            font-family: $font;
+                            position: absolute;
+                            top: 25%;
+                            left: 50%;
+                            transform: translate(-50%, 0);
+                        }
+                    }
+
+                    img {
+                        width: 70%;
+                        position: absolute;
+                        top: -50%;
+                        left: -24%;
+                        transform: translate(0, 50%);
+                    }
+
+                    @keyframes wave {
+                        0% {
+                            transform-origin: left top;
+                            transform: rotate(0);
+                        }
+
+                        50% {
+                            transform-origin: left top;
+                            transform: rotate(5deg);
+                        }
+
+                        100% {
+                            transform-origin: left top;
+                            transform: rotate(0);
+                        }
+                    }
+                }
+            }
+        }
+
+
     }
 }
