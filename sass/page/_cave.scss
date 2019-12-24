@@ -31,22 +31,13 @@
   margin-bottom: 150px;
 
   .cav-boxImg {
-    // background-image: url(../../img/cave/letterBox.svg);
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // background-position: -97px 0;
     width: 100%;
-    // height: 800px;
-    // height: 30vw;
-    // min-height: 800px;
     position: relative;
-    // border: 1px solid palevioletred;
     > img {
       border: 1px solid firebrick;
       width: 100%;
       height: 800px;
       object-fit: cover;
-      // padding-left: 10px;
     }
 
     .cav-boxFront {
@@ -294,6 +285,7 @@
       // border-bottom: 5px solid $main-black;
       display: inline-block;
       width: 100%;
+      height: 30%;
       overflow: hidden;
 
       > img {
@@ -301,27 +293,31 @@
         height: 100%;
       }
     }
-    .cav-leftBlockBM {
-      // border: 1px solid rebeccapurple;
-      list-style: none;
-      margin: 0;
-      display: flex;
-      justify-content: space-between;
-      > li {
-        border: 5px solid black;
-        width: 50%;
-        text-align: center;
-        background-color: rgb(68, 83, 148);
-        color: #fff;
-        font-weight: 700;
-        overflow: hidden;
-        > a {
-          cursor: pointer;
-          display: block;
-          padding: 0.8em;
-        }
-        > a.-on {
-          background-color: $main-blue;
+    .cav-leftBMWrap {
+      height: 70%;
+      width: 100%;
+      .cav-leftBlockBM {
+        // border: 1px solid rebeccapurple;
+        list-style: none;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        > li {
+          border: 5px solid black;
+          width: 50%;
+          text-align: center;
+          background-color: rgb(68, 83, 148);
+          color: #fff;
+          font-weight: 700;
+          overflow: hidden;
+          > a {
+            cursor: pointer;
+            display: block;
+            padding: 0.8em;
+          }
+          > a.-on {
+            background-color: $main-blue;
+          }
         }
       }
     }
@@ -335,7 +331,9 @@
       justify-content: flex-start;
       // overflow: scroll;
       width: 100%;
-      max-height: 450px;
+      min-height: 465px;
+      max-height: 465px;
+      // height: 44vw;
       padding: 10px;
       overflow-y: scroll;
       &::-webkit-scrollbar {
@@ -372,9 +370,11 @@
 
     .cav-botBlock {
       // border: 5px solid fuchsia;
+      // border: 5px solid $main-black;
       background-color: #ddd;
       width: 100%;
-      height: 10%;
+      // height: 10%;
+      height: 60px;
       position: relative;
       /* 按鈕 */
       .btn-wrapper-center {
@@ -475,6 +475,8 @@
     }
     > img {
       width: 100%;
+      object-fit: cover;
+      margin-top: -1%;
     }
     .cav-tabWrap {
       border: 5px solid $main-black;
@@ -577,18 +579,37 @@
       height: 14vw;
       margin: 2.1%;
     }
+    .cav-addProd {
+      width: 14vw;
+      height: 14vw;
+      margin: 2.1%;
+    }
   }
 }
 @include respond(mediumSize) {
   .cav-main {
     width: 100%;
 
+    .cav-leftWrap {
+      .cav-tabWrap {
+        min-height: 400px;
+        max-height: 80%;
+        // height: 44vw;
+        padding: 10px;
+        overflow-y: scroll;
+      }
+    }
     .cav-boxImg {
       > img {
         height: 100%;
       }
     }
     .cav-prod {
+      width: 14vw;
+      height: 14vw;
+      margin: 2.5%;
+    }
+    .cav-addProd {
       width: 14vw;
       height: 14vw;
       margin: 2.5%;
@@ -600,14 +621,229 @@
     width: 100%;
 
     .cav-boxImg {
+      width: 100%;
+      position: relative;
+      margin: 150px auto 0;
+      > img {
+        // border: 1px solid firebrick;
+        // width: 100%;
+        // height: 800px;
+        transform: rotate(90deg);
+      }
+
+      .cav-boxFront {
+        width: 60%;
+        height: 93vw;
+        // display: flex;
+        // justify-content: space-between;
+        // padding: 1%;
+        // position: absolute;
+        top:-20%;
+        left: 20%;
+
+        .cav-boxFrontLeft {
+          border: 1px solid green;
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          padding: 10px;
+
+          .cav-whoLetter {
+            border: 1px solid fuchsia;
+            display: flex;
+            justify-content: space-around;
+            }
+          .cav-histLetter1 {
+            border: 5px solid $main-black;
+            background-color: #ddd;
+            padding: 5px;
+            height: 97.7%;
+
+            .cav-histLetter2 {
+              border: 5px solid $main-black;
+              background-color: rgb(74, 117, 112);
+              padding: 10px;
+              height: 100%;
+              overflow-y: scroll;
+              &::-webkit-scrollbar {
+                width: 0;
+                background-color: #ccc;
+                border-radius: 2px;
+              }
+
+              &::-webkit-scrollbar-thumb {
+                width: 5px;
+                background-color: slategrey;
+                border-radius: 10px;
+              }
+              > .cav-letters {
+                border: 5px solid $main-black;
+                height: 100px;
+                margin: 0 auto 10px;
+                padding: 3%;
+                border-radius: 20px;
+                background-color: $main-yellow;
+                overflow: hidden;
+                display: flex;
+                cursor: pointer;
+                &.cav-looking {
+                  background-color: $main-red;
+                }
+
+                .cav-letWord {
+                  border: 1px solid blue;
+                  width: 80%;
+
+                  .cav-letTitle {
+                    margin: 0;
+                  }
+                  .cav-letTime {
+                    margin: 0;
+                  }
+                }
+                .cav-letSetting {
+                  border: 1px solid blueviolet;
+                  width: 20%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+
+                  > div {
+                    margin: 0 auto;
+                    height: 50%;
+
+                    i {
+                      font-size: 30px;
+
+                      &:hover {
+                        color: $main-dark-red;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .cav-boxFrontRight {
+          // border: 5px solid $main-black;
+          display: none;
+          // width: 57%;
+          // background-color: #ddd;
+          // padding: 5px;
+
+          .cav-showLetterBack {
+            border: 5px solid $main-black;
+            height: 100%;
+            background-color: rgb(74, 117, 112);
+
+            .cav-showLetter {
+              border: 1px solid red;
+              width: 100%;
+              height: 100%;
+              overflow-y: scroll;
+              &::-webkit-scrollbar {
+                width: 0;
+                background-color: #ccc;
+                border-radius: 2px;
+              }
+
+              &::-webkit-scrollbar-thumb {
+                width: 5px;
+                background-color: slategrey;
+                border-radius: 10px;
+              }
+              .cav-letterBg {
+                border: 50px solid transparent;
+                border-image: url("../../img/cave/cav-postCard_b.svg") 50 50 round;
+                background-color: #fff;
+                width: 82.5%;
+                margin: 20px auto;
+                .cav-letImg {
+                
+                  width: 100%;
+                  overflow: hidden;
+
+                  img {
+                    width: 100%;
+                  }
+                }
+                hr {
+                  border: 1px solid #ccc;
+                  margin: 15px auto;
+                }
+                .cav-letNavbar {
+                  display: flex;
+                  justify-content: flex-end;
+                  // border: 1px solid #ccc;
+
+                  .cav-letNavOption {
+                    // border: 1px solid tomato;
+                    width: 35px;
+                    height: 35px;
+                    margin-left: 5px;
+                    vertical-align: middle;
+                    img {
+                      width: 100%;
+                      cursor: pointer;
+                    }
+                  }
+                  // .btn-big-test {
+                  //   @include btn_big_module();
+                  // }
+                }
+
+                .cav-h3 {
+                  margin: 15px 0;
+                  padding-bottom: 5px;
+                  border-bottom: 1px solid #ccc;
+                }
+                .cav-letComment {
+                  // border: 1px solid rosybrown;
+                  border-bottom: 1px solid #ccc;
+                  display: flex;
+                  .cav-commMain {
+                    // border-bottom: 1px solid #ccc;
+                    width: 80%;
+                    .cav-commHead {
+                      // display: flex;
+                      margin-bottom: 5px;
+                      .cav-commId {
+                        font-weight: bold;
+                        font-size: 14px;
+                        margin-right: 5px;
+                      }
+                      .cav-commTime {
+                        color: #777;
+                        font-size: 10px;
+                        text-align: initial;
+                      }
+                    }
+                  }
+                  .cav-commOption {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    margin: 0 auto;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .cav-boxImg {
       > img {
         height: 100%;
+        margin-top: auto;
       }
     }
     .cav-prod {
-      width: 14vw;
-      height: 14vw;
-      margin: 2.1%;
+      width: 18vw;
+      height: 18vw;
+      margin: 1.3%;
     }
     .cav-myItem {
       display: inline-block;
@@ -625,9 +861,14 @@
       margin-left: 15%;
 
       .cav-tabWrap {
-        top: 7%;
+        top: 55px;
 
         .cav-prod {
+          width: 18vw;
+          height: 18vw;
+          margin: 2%;
+        }
+        .cav-addProd {
           width: 18vw;
           height: 18vw;
           margin: 2%;
@@ -645,8 +886,44 @@
         height: 100%;
       }
     }
+    .cav-prod {
+      width: 30vw;
+      height: 30vw;
+      margin: 1%;
+    }
+    .cav-myItem {
+      display: inline-block;
+      height: auto;
+
+      .cav-leftWrap {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+    .cav-rightWrap {
+      display: inline-block;
+      width: 80%;
+      margin-top: 100px;
+      margin-left: 10%;
+
+      .cav-tabWrap {
+        top: 55px;
+
+        .cav-prod {
+          width: 20vw;
+          height: 20vw;
+          margin: 2%;
+        }
+        .cav-addProd {
+          width: 20vw;
+          height: 20vw;
+          margin: 2%;
+        }
+      }
+    }
   }
 }
+
 @include respond(iphone) {
   .cav-main {
     width: 100%;
@@ -654,6 +931,42 @@
     .cav-boxImg {
       > img {
         height: 100%;
+      }
+    }
+
+    .cav-prod {
+      width: 30vw;
+      height: 30vw;
+      margin: 1%;
+    }
+    .cav-myItem {
+      display: inline-block;
+      height: auto;
+
+      .cav-leftWrap {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+    .cav-rightWrap {
+      display: inline-block;
+      width: 80%;
+      margin-top: 100px;
+      margin-left: 10%;
+
+      .cav-tabWrap {
+        top: 55px;
+
+        .cav-prod {
+          width: 20vw;
+          height: 20vw;
+          margin: 2%;
+        }
+        .cav-addProd {
+          width: 20vw;
+          height: 20vw;
+          margin: 2%;
+        }
       }
     }
   }
