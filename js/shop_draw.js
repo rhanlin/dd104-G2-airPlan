@@ -1,7 +1,7 @@
 //=================素材點按進畫板==============================
 
 let canvas = new fabric.Canvas('canvas'); //創建fabric環境
-canvas.setHeight(500);
+canvas.setHeight(400);
 // canvas.setWidth(1900);
 
 
@@ -34,6 +34,26 @@ $('.figure').click(function () {
   })
 });
 
+$('#group').click(function () {
+  canvas.getActiveObject().toGroup()
+})
+$('#ungroup').click(function () {
+  canvas.getActiveObject().toActiveSelection();
+})
+
+
+//===========title==========================
+
+$('#group').attr('title', '合併群組')
+$('#ungroup').attr('title', '解散群組')
+$('#clear').attr('title', '全部清除')
+$('#outputPngBtn').attr('title', '儲存圖檔')
+$('#text').attr('title', '建立文字')
+$('#frame_design').attr('title', '設計控制框')
+$('#copy').attr('title', '複製圖形')
+$('#filter').attr('title', '復古濾鏡')
+$('.controlBox9').attr('title', '載入圖檔')
+
 
 //=======================畫筆區===============
 //切換
@@ -43,10 +63,13 @@ $('#mode').click(function () {
   canvas.isDrawingMode = !canvas.isDrawingMode;
   if (!canvas.isDrawingMode) {
     drawingOptionArea.style.display = "none";
-    $('#modeImg').attr('src', '/img/product/tool/control_bar-01.svg')
+    $('#modeImg').attr('src', '/img/product/tool/banWrite.png')
+    $('#modeImg').attr('title', '物件選取狀態')
+
   } else {
     drawingOptionArea.style.display = "";
-    $('#modeImg').attr('src', '/img/product/tool/control_write-01.svg')
+    $('#modeImg').attr('src', '/img/product/tool/control_write.svg')
+    $('#modeImg').attr('title', '繪畫板狀態')
   }
 })
 
@@ -64,7 +87,7 @@ $(".lineWidthInput").change(function () {
 })
 
 
-$("#lineColorInput").change(function () {
+$(".lineColorInput").change(function () {
   canvas.freeDrawingBrush.color = this.value
 })
 
@@ -80,14 +103,14 @@ myShadow = new fabric.Shadow({
 // canvas.freeDrawingBrush.setShadow('10px 10px black');
 
 //畫筆顏色
-$("#shadowColorInput").change(function () {
+$(".shadowColorInput").change(function () {
   myShadow.color = this.value
   canvas.freeDrawingBrush.setShadow(myShadow)
   canvas.freeDrawingBrush.shadow.color = this.value
 })
 
 //陰影顏色
-$("#shadowBlurInput").change(function () {
+$(".shadowBlurInput").change(function () {
 
   myShadow.blur = this.value
   console.log(this.value);
@@ -96,18 +119,18 @@ $("#shadowBlurInput").change(function () {
 })
 
 //陰影X位移
-$("#shadowOffsetXInput").change(function () {
+$(".shadowOffsetXInput").change(function () {
   myShadow.offsetX = this.value
   canvas.freeDrawingBrush.setShadow(myShadow)
-  $("#shadowOffsetXValue").html(this.value);
+  $(".shadowOffsetXValue").html(this.value);
 })
 
 
 //陰影Y位移
-$("#shadowOffsetYInput").change(function () {
+$(".shadowOffsetYInput").change(function () {
   myShadow.offsetY = this.value
   canvas.freeDrawingBrush.setShadow(myShadow)
-  $("#shadowOffsetYValue").html(this.value);
+  $(".shadowOffsetYValue").html(this.value);
 })
 
 //轉存成PNG
@@ -137,7 +160,7 @@ function output(formatType) {
 //筆刷樣式下拉式選擇
 // canvas.freeDrawingBrush.color = "rgba(0,0,0,0)";
 // canvas.freeDrawingBrush.width = 10;
-$("#brushSelect").change(function () {
+$(".brushSelect").change(function () {
   console.log(this.value);
   if (this.value === "Square") {
     // canvas.freeDrawingBrush = new fabric.CircleBrush(canvas) 圓形畫筆
@@ -162,16 +185,101 @@ $("#brushSelect").change(function () {
   } else {
     canvas.freeDrawingBrush = new fabric[`${this.value}Brush`](canvas)
   }
-  const lineColorInput = document.getElementById("lineColorInput")
+  const lineColorInput = querySelectorAll(".lineColorInput")
   canvas.freeDrawingBrush.color = lineColorInput.value
 
-  const lineWidthInput = document.getElementById("lineWidthInput");
+  const lineWidthInput = querySelectorAll(".lineWidthInput");
   canvas.freeDrawingBrush.width = parseInt(lineWidthInput.value, 10) || 1
 
   canvas.freeDrawingBrush.setShadow(myShadow)
 })
 
 
+
+//===========上傳圖檔========================
+
+
+
+
+const imageUploader = document.getElementById("imageUploader");
+const file = document.getElementById("file");
+const imgset = document.getElementsByClassName("drawingPanel")[0];
+
+$('.figure').mousedown(function (e) {
+  console.log(e);
+  if (e.target.tagName.toLowerCase() === 'img') {
+    imgDragOffset.offsetX = e.clientX - e.target.offsetLeft
+    imgDragOffset.offsetY = e.clientY - e.target.offsetTop
+    movingImage = e.target
+    console.log(imgDragOffset)
+    console.log(canvas)
+    console.log(movingImage)
+  }
+
+})
+
+
+
+function uploadFile(e) {
+  file.click()
+}
+
+function handleFile() {
+  const fileReader = new FileReader();
+  fileReader.readAsDataURL(this.files[0]);
+  fileReader.onload = e => {
+    // 圖片 base64
+    const dataURL = e.target.result;
+    const divImage2 = document.createElement('div'); //創造div元素
+    const updateimg = document.createElement('img');
+    updateimg.draggable = true;
+    updateimg.src = dataURL;
+    divImage2.appendChild(updateimg); //img插入div
+    imgset.appendChild(divImage2)
+    // console.log(imgset)
+
+    fabric.Image.fromURL(dataURL, function (img) { //使用fabric.Image方法
+      img.scaleToHeight(100); //指定img寬
+      img.scaleToWidth(100); //指定img高
+      img.center();
+      img.setCoords();
+      canvas.renderAll(); //選染畫布
+      canvas.add(img); //畫布加入新的圖片
+    })
+  };
+}
+
+let imgDragOffset = {
+  offsetX: 0,
+  offsetY: 0
+}
+
+function dropImg(e) {
+  e.preventDefault();
+  console.log(123);
+  const {
+    offsetX,
+    offsetY
+  } = e.e
+  const image = new fabric.Image(movingImage, {
+    width: movingImage.naturalWidth,
+    height: movingImage.naturalHeight,
+    scaleX: 100 / movingImage.naturalWidth,
+    scaleY: 100 / movingImage.naturalHeight,
+    top: offsetY - imgDragOffset.offsetY,
+    left: offsetX - imgDragOffset.offsetX
+    
+  })
+  canvas.renderAll();
+  canvas.add(image)
+}
+
+
+imageUploader.addEventListener('click', uploadFile, true)
+file.addEventListener('change', handleFile)
+
+
+canvas.on('drop', dropImg)
 
 
 
@@ -194,20 +302,20 @@ window.addEventListener('resize', resizeCanvas, false);
 
 function resizeCanvas() {
   if (window.innerWidth < 576) {
-    canvasBox.width = (window.innerWidth * .75) + (window.innerWidth / 15)
+    canvasBox.width = (window.innerWidth * .75) + (window.innerWidth / 13)
   } else if (window.innerWidth < 768) {
-    canvasBox.width = (window.innerWidth * .75) + (window.innerWidth / 10);
+    canvasBox.width = (window.innerWidth * .75) + (window.innerWidth / 11);
   } else if (window.innerWidth < 992) {
     canvasBox.width = (window.innerWidth * .75) + (window.innerWidth / 10);
   } else if (window.innerWidth < 1200) {
-    canvasBox.width = (window.innerWidth * .57) + (window.innerWidth / 10);
+    canvasBox.width = (window.innerWidth * .56) + (window.innerWidth / 10);
   } else if (window.innerWidth < 1500) {
-    canvasBox.width = (window.innerWidth * .5) + (window.innerWidth /10);
+    canvasBox.width = 650 + (window.innerWidth / 65);
   } else if (window.innerWidth < 1700) {
-    canvasBox.width = 900 + (window.innerWidth / 70);
+    canvasBox.width = 690 + (window.innerWidth / 80);
 
   } else {
-    canvasBox.width = 900 + (window.innerWidth / 90)
+    canvasBox.width = 700 + (window.innerWidth / 90)
 
   }
   canvas.setWidth(canvasBox.width)

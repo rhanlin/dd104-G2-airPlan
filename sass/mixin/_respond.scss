@@ -36,9 +36,10 @@
       @content;
     }
   }
+ 
 
   @else if $breakpoint=="desktopXl" {
-    @media all and (max-width:$desktopXl-max)and(min-width:$desktopXl-min) {
+    @media all and (max-width:$desktopXl-max) {
       @content;
     }
   }
