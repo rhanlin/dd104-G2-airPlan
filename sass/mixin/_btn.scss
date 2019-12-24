@@ -319,7 +319,7 @@
         &:before {
             //top of button
 
-            width: calc(100% + 4px);
+            width: calc(100% + 6px);
             transform-origin: bottom left;
             transform: skewX(-45deg);
 
@@ -333,7 +333,7 @@
             //side of button
 
             content: "";
-            height: calc(100% + 5px);
+            height: calc(100% + 4px);
             top: unset;
             left: unset;
 

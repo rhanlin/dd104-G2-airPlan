@@ -1,0 +1,33 @@
+.catchletter-body {
+  background: radial-gradient(#000000 10%, #fff 20%);
+  background-size: 8px 8px;
+  height: auto;
+
+  main {
+    margin-top: 10vw;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+
+  .catch-step-1 {
+    font-size: 0;
+    border: 1px solid red;
+
+    .catch-letter {
+      // width: 71.25vw;
+      // max-width: 1272px;
+      // height: 41.5vw;
+      // max-height: 740px;
+
+      width: 38vw;
+      max-width: 545px;
+      height: 55vw;
+      max-height: 788px;
+      margin: 0 auto;
+      background-image: url(../../img/share/postCard-vertical.svg);
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      position: relative;
+    }
+  }
+}

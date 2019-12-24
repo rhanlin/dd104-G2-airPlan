@@ -90,7 +90,7 @@ gulp.task('default', function () {
         server: {
             //根目錄
             baseDir: "./dist",
-            index: "write-letter.html"
+            index: "catch-letter.html"
         }
     });
 

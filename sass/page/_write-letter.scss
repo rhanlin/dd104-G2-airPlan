@@ -74,21 +74,22 @@
                     }
 
                     .tv-show {
-                        width: 25%;
+                        width: 23%;
                         height: 50%;
                         position: absolute;
                         top: 67%;
-                        left: 26.5%;
+                        left: 26%;
                         transform: translate(-50%, -50%);
                         z-index: 1;
-                        background: url(../../img/share/rainbow-bg.jpg);
-                        background-position: 10% 0%;
-                        background-size: 200%;
-                        animation: rainbowMove 5s steps(12) infinite;
+                        background: radial-gradient(#9c9cff, #004);
+                        // background-position: 10% 0%;
+                        // background-size: 200%;
+                        // animation: rainbowMove 5s infinite;
                         // animation-iteration-count: infinite alternate;
                         // animation-fill-mode: forwards;
                         margin: 0;
                         color: #fff;
+                        @include tv-noise();
                         @include glitch-text();
                         @keyframes rainbowMove{
                             from{
@@ -101,7 +102,10 @@
                         }
                     }
                     .active{
-                        background: black;
+                        background: #000000;
+                    }
+                    .active .tv{
+                        display: none;
                     }
                 }
             }
@@ -158,7 +162,7 @@
         .writ-step-2 {
             font-size: 0;
             margin-top: 7vw;
-            border: 1px solid red;
+            // border: 1px solid red;
             display: flex;
 
             .write-content {
