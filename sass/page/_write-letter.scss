@@ -5,6 +5,7 @@
 
     main {
         margin-top: 10vw;
+        font-family: 'Noto Sans TC', sans-serif;
 
         .writ-step-1 {
             display: flex;
@@ -21,70 +22,100 @@
                 }
 
                 .num-one {
-                    width: 60%;
-                    height: 30%;
-                    margin: 0 auto;
-                    border: 1px solid orange;
+                    width: 20vw;
+                    height: 5vw;
+                    margin: 0 30% 0 25%;
+                    // border: 1px solid orange;
                     background-image: url('../../img/share/number-one.svg');
                     background-repeat: no-repeat;
                     background-position: left;
-                    background-size: 18vw;
-                    margin-top: 3.5%;
+                    background-size: contain;
+                    margin-top: 6%;
 
                     h2 {
-                        font-size: 4vw;
-                        letter-spacing: 1vw;
+                        font-size: 3vw;
+                        letter-spacing: 0.5vw;
                         text-align: right;
-                        font-weight: normal;
+                        font-weight: 600;
                     }
                 }
 
                 .tv-category {
-                    width: 60%;
-                    height: 60%;
-                    margin: 0 auto;
-                    border: 1px solid orange;
+                    width: 100%;
+                    height: 65%;
+                    margin: 2vw auto;
+                    // border: 1px solid orange;
                     position: relative;
+
+                    .change-category-btn {
+                        position: absolute;
+                        right: 13%;
+                        bottom: 1.5%;
+                        z-index: 99;
+                        @include btn_3d_module();
+                    }
+
+                    & input {
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        appearance: none;
+                    }
 
                     .tv-machine {
                         width: 100%;
                         height: 100%;
                         background-image: url(../../img/share/TV.svg);
                         background-repeat: no-repeat;
-                        background-position: center;
+                        background-position: 20% 0;
                         background-size: contain;
                         z-index: 9;
                         position: absolute;
+                        // transform: scaleX(-1);
                     }
 
                     .tv-show {
-                        width: 40%;
+                        width: 23%;
                         height: 50%;
                         position: absolute;
                         top: 67%;
-                        left: 42%;
+                        left: 26%;
                         transform: translate(-50%, -50%);
                         z-index: 1;
-                        background: black;
+                        background: radial-gradient(#9c9cff, #004);
+                        // background-position: 10% 0%;
+                        // background-size: 200%;
+                        // animation: rainbowMove 5s infinite;
+                        // animation-iteration-count: infinite alternate;
+                        // animation-fill-mode: forwards;
                         margin: 0;
-                        font-family: "微軟正黑體";
-                        color: white;
+                        color: #fff;
+                        @include tv-noise();
                         @include glitch-text();
+                        @keyframes rainbowMove{
+                            from{
+                                background-position: 0% 0%;
+                            }
+                            
+                            to{
+                                background-position: 100% 0%;
+                            }
+                        }
+                    }
+                    .active{
+                        background: #000000;
+                    }
+                    .active .tv{
+                        display: none;
                     }
                 }
             }
 
             .category-note {
                 height: 28vw;
-                border: 1px solid green;
+                // border: 1px solid green;
                 width: 50%;
                 position: relative;
                 @include paper_cloud();
-
-                .paper-cloud {
-                    top: -7.5vw;
-                    left: 13.8vw;
-                }
 
                 .note-pad {
                     background-image: url(../../img/share/yellow-note.svg);
@@ -98,8 +129,13 @@
                     top: 5%;
                     left: 15%;
 
+                    .paper-cloud {
+                        top: -8.8vw;
+                        right: -13vw;
+                    }
+
                     .note-text {
-                        border: 1px solid;
+                        // border: 1px solid;
                         padding: 2vw 3.5vw;
                         width: 100%;
                         height: 80%;
@@ -131,7 +167,9 @@
 
             .write-content {
                 width: 71.25vw;
+                max-width: 1272px;
                 height: 41.5vw;
+                max-height: 740px;
                 margin: 0 auto;
                 background-image: url(../../img/share/postCard.svg);
                 background-position: center;
@@ -140,7 +178,7 @@
                 position: relative;
 
                 .upload-img {
-                    border: 1px solid orange;
+                    // border: 1px solid orange;
                     height: 100%;
                     width: 25%;
                     position: relative;
@@ -148,14 +186,14 @@
                     @include paper_cloud();
 
                     .paper-cloud {
-                        top: -23.6%;
-                        left: -42%;
-                        transform: scaleX(-1);
+                        top: -23.5%;
+                        left: 50%;
+                        transform: scaleX(-1) translateX(50%);
                         z-index: 99;
                     }
 
                     .hookimg {
-                        border: 1px solid green;
+                        // border: 1px solid green;
                         height: 80%;
                         width: 100%;
                         background-image: url(../../img/share/hook-and-imgfile.svg);
@@ -169,7 +207,7 @@
                     }
 
                     .printer {
-                        border: 1px solid blue;
+                        // border: 1px solid blue;
                         height: 35%;
                         width: 100%;
                         background-image: url(../../img/share/printer.svg);
@@ -189,12 +227,13 @@
                             padding: 2%;
                             border: .2vw solid $main-black;
                             border-radius: $main-borderRadius;
+                            font-size: 1.5vw;
                         }
                     }
                 }
 
                 .input-contant {
-                    border: 1px solid blueviolet;
+                    // border: 1px solid blueviolet;
                     height: 100%;
                     width: 69%;
                     position: relative;
@@ -205,28 +244,28 @@
                     font-size: 1rem;
 
                     .num-two {
-                        width: 65%;
-                        height: 25.4%;
-                        margin: 0 auto;
-                        border: 1px solid orange;
+                        width: 20vw;
+                        height: 5vw;
+                        margin: 0 35% 0 0%;
+                        // border: 1px solid orange;
                         background-image: url('../../img/share/number-two.svg');
                         background-repeat: no-repeat;
                         background-position: left;
-                        background-size: 18vw;
-                        margin-top: 3.5%;
+                        background-size: contain;
+                        margin-top: 8%;
 
                         h2 {
-                            font-size: 4vw;
-                            letter-spacing: 1vw;
+                            font-size: 3vw;
+                            letter-spacing: 0.5vw;
                             text-align: right;
-                            font-weight: normal;
+                            font-weight: 600;
                         }
                     }
 
                     .input-contant-box {
                         width: 80%;
                         height: 60.45%;
-                        margin: 0 auto;
+                        margin: 2vw auto;
                         padding: 2% 0;
                         border-radius: 20px;
                         display: flex;
@@ -318,8 +357,9 @@
             flex-direction: column;
 
             .top-paintes-part {
-                border: 1px solid red;
+                // border: 1px solid red;
                 height: 30vw;
+                max-height: 420px;
                 width: 100%;
                 display: flex;
                 align-items: flex-end;
@@ -327,55 +367,94 @@
 
                 .goto-shop-btn {
                     border: 1px solid blue;
-                    height: 50%;
-                    width: 20%;
+                    height: 65%;
+                    width: 14.7vw;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        width: 17%;
+                    }
+
+                    .shop-signboard {
+                        width: 86%;
+                        height: 100%;
+                        border-radius: $main-borderRadius;
+                        position: absolute;
+                        top: 50%;
+                        left: 58.4%;
+                        transform: translate(-50%, -50%);
+                        z-index: 99;
+
+                        .shop-title {
+                            width: 80%;
+                            height: 80%;
+                            border-radius: $main-borderRadius;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+
+                            .shop-text {
+                                font-size: 4vw;
+                                -webkit-writing-mode: vertical-lr;
+                                writing-mode: vertical-lr;
+                                letter-spacing: 1.2vw;
+                                line-height: 1.1;
+                                height: 110%;
+                                width: 100%;
+                                color: $main-dark-red;
+                            }
+                        }
+                    }
                 }
 
                 .painting-plan {
                     height: 100%;
                     width: 50%;
+                    max-width: 800px;
                     margin: 0 10vw 0 0;
                     position: relative;
 
                     .num-three {
-                        width: 65%;
-                        height: 35.3%;
-                        margin: 0 auto;
-                        border: 1px solid orange;
+                        width: 20vw;
+                        height: 5vw;
+                        margin: 0 0% 0 10%;
+                        // border: 1px solid orange;
                         background-image: url('../../img/share/number-three.svg');
                         background-repeat: no-repeat;
                         background-position: left;
-                        background-size: 18vw;
-                        margin-top: 3.5%;
+                        background-size: contain;
+                        margin-top: 6%;
 
                         h2 {
-                            font-size: 4vw;
-                            letter-spacing: 1vw;
+                            font-size: 3vw;
+                            letter-spacing: 0.5vw;
                             text-align: right;
-                            font-weight: normal;
+                            font-weight: 600;
                         }
                     }
 
                     .pipe {
-                        width: 30%;
+                        width: 24%;
                         position: absolute;
-                        bottom: -15%;
-                        left: -22%;
+                        bottom: -14%;
+                        left: -16%;
                     }
 
                     .water-drop {
                         width: 20%;
                         position: absolute;
-                        bottom: 11%;
+                        bottom: 4%;
                         left: 9%;
                     }
 
                     .preview-plan {
                         width: 70%;
-                        height: 60%;
+                        height: 68%;
                         margin: 0 0 0 30%;
-                        border: 1px solid orange;
-                        background-image: url('../../img/share/imgIcon.svg');
+                        background-image: url(../../img/write-letter/print-paperPlane.png);
                         background-repeat: no-repeat;
                         background-position: center;
                         background-size: contain;
@@ -414,13 +493,15 @@
             }
 
             .select-paintes {
-                border: 1px solid blue;
+                // border: 1px solid blue;
                 height: 12vw;
                 width: 100%;
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
-                margin-top: 2vw;
+                margin-top: 4%;
+                padding: 0 5%;
+                z-index: 99;
 
                 .arrow-white {
                     display: inline-block;
@@ -440,14 +521,135 @@
                 .painte-type {
                     width: 60%;
                     height: 100%;
-                    border: 1px solid red;
+                    // border: 1px solid red;
                     display: flex;
                     justify-content: space-between;
+                    align-items: center;
 
                     .type {
                         width: 30%;
                         height: 100%;
-                        border: 1px solid green;
+                        // border: 1px solid green;
+                        background-image: url(../../img/write-letter/print-type-box-blue.svg);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        position: relative;
+                        cursor: pointer;
+                        // transform: rotate3d(.1, 0, 0, 30deg);
+
+                        &.active {
+                            pointer-events: none;
+                            background-image: url(../../img/write-letter/print-type-box-red.svg);
+                            // animation: typeBoxActive 1s ease;
+                            // animation-iteration-count: 1;
+                            // animation-fill-mode: forwards;
+
+                            @keyframes typeBoxActive {
+                                0% {
+                                    transform: rotate3d(.1, 0, 0, 30deg);
+                                }
+
+                                100% {
+                                    background-image: url(../../img/write-letter/print-type-box-red.svg);
+                                }
+                            }
+                        }
+
+                        .print-type-pattern {
+                            display: inline-block;
+                            width: 50%;
+                            height: 50%;
+                            background-image: url(../../img/pattern/print-type-pattern-1.svg);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            position: absolute;
+                            top: 43%;
+                            left: 53%;
+                            transform: translate(-50%, -50%);
+                        }
+
+                        .printScraper {
+                            display: inline-block;
+                            width: 100%;
+                            height: 100%;
+                            background-image: url(../../img/write-letter/print-scraper-blue.svg);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            position: absolute;
+                            top: 15%;
+                            left: 72%;
+                            transform: translate(-50%, -50%);
+
+
+                            &.active {
+                                animation: active 1.5s ease;
+                                animation-iteration-count: 3;
+                                animation-fill-mode: forwards;
+
+                                @keyframes active {
+                                    0% {
+                                        top: 15%;
+                                        left: 72%;
+                                    }
+
+                                    100% {
+                                        top: 50%;
+                                        left: 33%;
+                                    }
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            // height: 110%;
+                            transform: rotate3d(.11, 0.1, 0.1, -30deg);
+                            background-image: url(../../img/write-letter/print-type-box-red.svg);
+                        }
+
+                        &:hover .printScraper {
+                            top: -50%;
+                            left: 105%;
+                            background-image: url(../../img/write-letter/print-scraper-yellow.svg);
+                        }
+
+                        .preview-paper {
+                            display: inline-block;
+                            height: 126%;
+                            width: 74%;
+                            transform: rotateX(-51deg) rotateY(0deg) rotateZ(44deg);
+                            z-index: -1;
+                            position: absolute;
+                            border: .15vw solid #212121;
+                            display: none;
+
+                            &.active {
+                                display: block;
+                                animation: paperActive 1s ease;
+                                animation-iteration-count: 1;
+                                animation-fill-mode: forwards;
+
+                                @keyframes paperActive {
+                                    0% {
+                                        top: -20%;
+                                        left: -5%;
+                                        opacity: 0;
+                                    }
+
+                                    50% {
+                                        top: 0%;
+                                        left: 13%;
+                                    }
+
+                                    100% {
+                                        top: 15%;
+                                        left: 13%;
+                                        opacity: 1;
+                                        background-image: url(../../img/pattern/plan-pattern-1.svg);
+                                        background-size: cover;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -456,37 +658,120 @@
         .writ-step-4 {
             font-size: 0;
             margin-top: 7vw;
-            border: 1px solid blue;
+            // border: 1px solid blue;
             display: flex;
             align-items: center;
 
             .bottom-bg {
                 width: 71.25vw;
-                height: 38vw;
+                height: 35vw;
                 margin: 0 auto;
 
                 // animation: shad-anim 10s linear infinite;
                 .clip-left {
-                    top: -53%;
+                    top: -7%;
                     left: 6%;
+                    height: auto;
+                    background-image: url(../../img/share/clip.svg);
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        width: 2.5%;
+                        height: 56.6vw;
+                        background-color: #212121;
+                        top: -27.5vw;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
                 }
 
                 .top-right-bg {
                     width: 71.25vw;
-                    height: 38vw;
+                    height: 35vw;
                     position: relative;
                     top: 10px;
                     right: -15px;
                 }
 
                 .top-right {
-                    height: 41.5vw;
+                    height: 115%;
+                }
+
+                .num-four {
+                    width: 43.5vw;
+                    height: 5vw;
+                    margin: 0 auto;
+                    // border: 1px solid orange;
+                    background-image: url('../../img/share/number-four.svg');
+                    background-repeat: no-repeat;
+                    background-position: left;
+                    background-size: contain;
+                    margin-top: 6%;
+
+                    h2 {
+                        font-size: 3vw;
+                        letter-spacing: 0.5vw;
+                        text-align: right;
+                        font-weight: 600;
+                    }
+
+                }
+
+                .select-stamp {
+                    // border: 1px solid #00f;
+                    height: 15vw;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    margin-top: 6.5%;
+
+                    .arrow-white {
+                        display: inline-block;
+                        width: 10vw;
+                        height: 6vw;
+                        background-image: url('../../img/share/arrow-white.svg');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                        cursor: pointer;
+                    }
+
+                    .reverse {
+                        transform: scaleX(-1);
+                    }
+
+                    .stamp-type {
+                        width: 60%;
+                        height: 100%;
+                        // border: 1px solid red;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .type {
+                            width: 30%;
+                            height: 100%;
+                            // border: 1px solid green;
+                            background-image: url(../../img/write-letter/stamp-btn-blue.svg);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            cursor: pointer;
+
+                            &:hover {
+                                height: 150%;
+                                background-image: url(../../img/write-letter/stamp-btn-red.svg);
+                            }
+                        }
+                    }
                 }
             }
 
             ;
         }
-        .test-area{
+
+        .test-area {
             height: 10vw;
             width: 100%;
         }

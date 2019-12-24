@@ -10,9 +10,15 @@
 </head>
 
 <body class="userSetting_body">
-    <header></header>
     @@include("./html/nav.html")
     @@include("./html/header.html")
+    <div class="userSettingBanner">
+        <img class="picGrass" src="../img/userSetting/grass.png" alt="grass">
+        <img class="picTree" src="../img/userSetting/tree.svg" alt="tree">
+        <img class="picTree2" src="../img/userSetting/tree.svg" alt="tree2">
+        <img class="picTree3" src="../img/userSetting/tree_2.svg" alt="tree3">
+        <img class="picFactory" src="../img/userSetting/factory.svg" alt="factory">
+    </div>
     <main class="userSetting_main">
         <div class="floor">
             <section class="userSetting_mem">
@@ -32,7 +38,6 @@
                             <h3>外觀設定</h3>
                         </div>
                         <keep-alive>
-                            <!--資料保留標籤-->
                             <component :is="content"></component>
                         </keep-alive>
                     </div>
@@ -63,28 +68,30 @@
                 <img class="paper" src="img/userSetting/paper.svg" alt="">
                 <div class="space_B2"></div>
             </section>
-
+            
             <section class="userSetting_adm">
                 <!--airPlan開發者資訊-->
-                <h2 class="threed-text-red-endWhite">開發者資訊</h2>
+                <h2 class="threed-text-red-endWhite">開發人員</h2>
                 <div class="admKanban" id="admKanban">
-                    <div class="mike" @click="content='mike'">
-                        <h3>峻瑜</h3>
-                    </div>
-                    <div class="spencer" @click="content='spencer'">
-                        <h3>宗翰</h3>
-                    </div>
-                    <div class="allen" @click="content='allen'">
-                        <h3>耀輝</h3>
-                    </div>
-                    <div class="grace" @click="content='grace'">
-                        <h3>雅珺</h3>
-                    </div>
-                    <div class="sharon" @click="content='sharon'">
-                        <h3>湘文</h3>
-                    </div>
-                    <div class="howard" @click="content='howard'">
-                        <h3>恒祥</h3>
+                    <div class="admKanbanOverFlow">
+                        <div class="mike" @click="content='mike'">
+                            <h3>峻瑜</h3>
+                        </div>
+                        <div class="spencer" @click="content='spencer'">
+                            <h3>宗翰</h3>
+                        </div>
+                        <div class="allen" @click="content='allen'">
+                            <h3>耀輝</h3>
+                        </div>
+                        <div class="grace" @click="content='grace'">
+                            <h3>雅珺</h3>
+                        </div>
+                        <div class="sharon" @click="content='sharon'">
+                            <h3>湘文</h3>
+                        </div>
+                        <div class="howard" @click="content='howard'">
+                            <h3>恒祥</h3>
+                        </div>
                     </div>
                     <keep-alive>
                         <component :is="content"></component>
@@ -93,11 +100,15 @@
                 <img class="robotB3" src="img/userSetting/robotB3.svg" alt="robotB3">
                 <img class="paperPlane" src="img/share/paper-plane.png" alt="paperPlane">
             </section>
+            
         </div>
     </main>
-    @@include("./html/footer.html")
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div class="userSetting_memcolor" id="userSetting_memcolor2"></div>
+    @@include("./html/footer.html");
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
     <script src="js/userSetting_adm.js"></script>
 </body>
 
 </html>
+
+

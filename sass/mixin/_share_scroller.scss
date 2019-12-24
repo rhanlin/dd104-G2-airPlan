@@ -1,0 +1,54 @@
+/*
+ *  垂直捲軸
+ */
+//使用說明：在標籤中加入 class="scroll-container"
+//author: Rhan0
+
+// Colors
+$scrollbar-background: $main-blue !default;
+$scrollbar-background-transparency: 0.20 !default;
+$scrollbar-shadow: $main-yellow !default;
+
+// Sizes
+$scrollbar-width: 1vw !default;
+$scrollbar-border-radius: 0 !default;
+
+// Settings
+$scrollbar-animation-timing: 300ms !default;
+$scrollbar-animation-transition: ease-in-out !default;
+$scrollbar-vertical: true !default;
+$scrollbar-horizontal: false !default;
+$scrollbar-ie-fallback: false !default;
+
+
+@mixin scroller() {
+  .scroll-container {
+    overflow-y: auto;
+  }
+
+  ::-webkit-scrollbar {
+    width: $scrollbar-width;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba($scrollbar-background, 1);
+
+    &:window-inactive {
+      background-color: rgba($scrollbar-background, .8);
+    }
+
+    &:hover {
+      background-color: rgba($scrollbar-background, 1);
+    }
+  }
+
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: $scrollbar-shadow;
+    -webkit-transition: all #{$scrollbar-animation-timing} #{$scrollbar-animation-transition};
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: $scrollbar-shadow;
+  }
+}

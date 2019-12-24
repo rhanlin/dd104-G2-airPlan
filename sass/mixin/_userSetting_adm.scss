@@ -1,25 +1,62 @@
 @mixin userSetting_adm{
     max-width: 600px;
     background-size: 10px 20px;
+    z-index: 10;
+    position: relative;
     @include marginAuto;
-    @include border;
+    // @include border;
+    .userSetting_wrap {
+        padding-top: 10px;
+        // width: 300px;
+        width: 50%;
+        height: 400px;
+        opacity: .8;
+        .userSetting_Name{
+            margin: 0 10%;
+            padding: 10px;
+        }
+        .userSetting_work{
+            @extend.userSetting_Name;
+        }
+        .userSetting_portfolio{
+            @extend.userSetting_Name;
+        }
+    }
+    
+    .userSetting_picture{
+        width: 50%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        opacity: .8;
+    }
 }
 
-@mixin userSetting_wrap {
-    padding-top: 30px;
-    height: 400px;
-    opacity: .8;
-    .userSetting_Name{
-        margin: 0 10%;
-        padding: 10px;
-    }
-    .userSetting_work{
-        @extend.userSetting_Name;
-    }
-    .userSetting_portfolio{
-        @extend.userSetting_Name;
-    }
-}
+// @mixin userSetting_wrap {
+//     padding-top: 10px;
+//     // width: 300px;
+//     width: 50%;
+//     height: 400px;
+//     opacity: .8;
+//     .userSetting_Name{
+//         margin: 0 10%;
+//         padding: 10px;
+//     }
+//     .userSetting_work{
+//         @extend.userSetting_Name;
+//     }
+//     .userSetting_portfolio{
+//         @extend.userSetting_Name;
+//     }
+// }
+
+// @mixin userSetting_picture{
+//     width: 50%;
+//     position: absolute;
+//     bottom: 0;
+//     right: 0;
+//     opacity: .8;
+// }
 
 @mixin userSetting_admTag {
     margin:  0 1.5% 5% ;
@@ -31,6 +68,15 @@
 @mixin userSetting_admTagName{
     margin-top: 130px;
     text-align: center;
+}
+
+@mixin lighting{
+    width: 100px;
+    height: 300px;
+    display: block;
+    position: absolute;
+    background-size: 10px 20px;
+    z-index: -1;
 }
 
 @keyframes leftLight {

@@ -1,4 +1,3 @@
-
 /* 
  *  3D按鈕: 基本款
  */
@@ -15,6 +14,7 @@
     left: 50%;
     transform: translate(-50%);
 }
+
 .btn-wrapper-right {
     position: absolute;
     width: 120px;
@@ -23,6 +23,7 @@
     left: 20%;
     transform: translate(-50%);
 }
+
 .btn-wrapper-left {
     position: absolute;
     width: 120px;
@@ -31,10 +32,13 @@
     left: 80%;
     transform: translate(-50%);
 }
+
 @mixin btn_basic_module($btn-module) {
-    @each $title,$color in $btn-module{ 
+
+    @each $title,
+    $color in $btn-module {
         .btn-basic-#{$title} {
-            font-family: '微軟正黑體',Roboto Mono;
+            font-family: '微軟正黑體', Roboto Mono;
             letter-spacing: 0.4em;
             position: absolute;
             border: none;
@@ -49,6 +53,7 @@
             // border: 1px solid black;
             text-decoration: none !important;
             z-index: 1;
+
             &:before {
                 content: '';
                 position: absolute;
@@ -56,16 +61,17 @@
                 height: 10px;
                 left: -25px;
                 bottom: 10px;
-                background-color: $color + #111 ;
+                background-color: $color + #111;
                 transform: rotate(90deg) skew(45deg);
 
-                background:  linear-gradient(45deg,$color + #111 45%,black 45%,black 55%,$color + #111 10%);
+                background: linear-gradient(45deg, $color + #111 45%, black 45%, black 55%, $color + #111 10%);
                 background-size: 7px 7px;
                 // border: 1px solid black;
                 // border: 1px solid black;
                 // animation: shad-anim 5s linear infinite;
                 z-index: -1;
             }
+
             &:after {
                 content: '';
                 position: absolute;
@@ -76,21 +82,24 @@
                 background-color: $color - #111;
                 transform: skew(-45deg) rotate(0deg);
                 // border: 1px solid black;
-                background:  linear-gradient(80deg,$color - #111 40%,black 40%,black 55%,$color - #111 20%);
+                background: linear-gradient(80deg, $color - #111 40%, black 40%, black 55%, $color - #111 20%);
                 background-size: 7px 7px;
                 // animation: shad-anim 10s linear infinite;
                 // border: 1px solid black;
 
                 z-index: -1;
             }
+
             &.clicked {
                 left: -5px;
                 bottom: -5px;
+
                 &:before {
                     height: 5px;
                     left: -22px;
                     bottom: 15px;
                 }
+
                 &:after {
                     height: 5px;
                     bottom: -5px;
@@ -99,8 +108,9 @@
             }
         }
     }
-   
+
 }
+
 /* 
  *  3D按鈕: 重要按鈕(打賞、留言、購買)
  */
@@ -116,90 +126,98 @@
 //          <div class="front side-way"></div>
 //      </div>
 //author: Rhan0
- @mixin btn_big_module(){
-     //CSS Variables
+@mixin btn_big_module() {
+
+    //CSS Variables
     .btn-big-test {
         --color: #f3de6b;
         --color-dark: #e7cc56;
         --color-dark-side-way: #e7cc56;
-        --box-height: 5rem;
-        --box-width: 10rem;
-        --box-deep: 3rem;
+        --box-height: 200%;
+        --box-width: 452%;
+        --box-deep: 3vw;
         --light: #212121;
         --light-2: #f08b8c;
-        }
-        
-        .side-way,
-        .btn-big-test {
-        width: 10em;
-        height: 5em;
+    }
+
+    .side-way,
+    .btn-big-test {
+        width: 100%;
+        height: 100%;
         border: .2vw solid $main-black;
-        }
-        
-        
-        .side-way {
+    }
+
+
+    .side-way {
         position: absolute;
         opacity: 1;
         display: flex;
         justify-content: center;
         align-items: center;
-        }
+    }
 
-        .btn-big-test {
+    .btn-big-test {
         perspective: 1000px;
         transition: transform .5s linear;
         transform-style: preserve-3d;
         transform: rotateX(30deg) rotateZ(-180deg) rotateY(180deg);
         perspective-origin: 50% 0rem;
-      // animation: rotate 10s ease-out infinite;
+
+        // animation: rotate 10s ease-out infinite;
         .back {
-            transform: translateY(calc(var(--box-height) - (var(--box-deep) * (0.5)))) translateZ(calc(var(--box-deep) * (-0.5)))  rotateX(90deg);
+            transform: translateY(calc(var(--box-height) - (var(--box-deep) * (0.5)))) translateZ(calc(var(--box-deep) * (-0.5))) rotateX(90deg);
             background: var(--color-dark);
             height: var(--box-deep);
-            }
+        }
+
         .left {
             transform: translateX(calc(var(--box-deep) * (-0.5))) translateZ(calc(var(--box-deep) * (-0.5))) rotateY(90deg);
             background: var(--color-dark-side-way);
             width: var(--box-deep);
-            }
+        }
+
         .right {
-          transform: translateX(calc(var(--box-width) - var(--box-deep) * (0.5))) translateZ(calc(var(--box-deep) * (-0.5))) rotateY(90deg);
+            transform: translateX(calc(var(--box-width) - var(--box-deep) * (0.5))) translateZ(calc(var(--box-deep) * (-0.5))) rotateY(90deg);
             background: var(--color-dark-side-way);
             width: var(--box-deep);
-            }
+        }
+
         .top {
             background: var(color-dark);
-            width: 10em;
-            height: 5em;
+            width: 100%;
+            height: 100%;
             box-shadow: 0 -3px 5px 0 black;
-            }
+        }
+
         .bottom {
             transform: translateZ(calc(var(--box-deep) * (-1)));
             background: var(--color);
-            width: 10em;
-            height: 5em;
+            width: 100%;
+            height: 100%;
             border-radius: 2px;
             box-sizing: comtainer;
 
             .side-way__text {
-                transform: rotateX(30deg)   rotateZ(-180deg) rotateY(180deg);
+                transform: rotateX(30deg) rotateZ(-180deg) rotateY(180deg);
                 font: bold 4vw "微軟正黑體";
                 color: white;
-                }
-            }
-        .front {
-            transform: translateY(calc(var(--box-deep) * (-0.5))) translateZ(calc(var(--box-deep) * (-0.5)))  rotateX(90deg);
-            background: var(--color-dark);
-            height: var(--box-deep);
             }
         }
 
-        // .btn-big-active{
-        //     --box-deep: 1rem !important;
-        // }
-        .bigBtnActive{
-            --box-deep: 1rem !important;
+        .front {
+            transform: translateY(calc(var(--box-deep) * (-0.5))) translateZ(calc(var(--box-deep) * (-0.5))) rotateX(90deg);
+            background: var(--color-dark);
+            height: var(--box-deep);
         }
+    }
+
+    // .btn-big-active{
+    //     --box-deep: 1rem !important;
+    // }
+    .bigBtnActive {
+        --box-deep: 1rem !important;
+    }
+
     //   .btn-big-test:hover {
     //     --box-deep: 1rem !important;
     //    }
@@ -208,9 +226,185 @@
     //        box-shadow: 0 -3px 5px 0 var(--light), 0 -5px 10px 0 var(--light-2);
     //    }
 
-        @keyframes rotate {
+    @keyframes rotate {
         100% {
             transform: rotateX(360deg) rotateY(360deg);
         }
+    }
+}
+
+/* 
+ *  3D按鈕: 重要按鈕(打賞、留言、購買)
+ */
+//  說明:
+
+//author: Rhan0
+@mixin btn_3d_module() {
+    $color__black: #231F20;
+    $color__blue--light: #00D3D6;
+    $color__blue--normal: #00BDBF;
+    $color__blue--darkish: #009193;
+    $color__blue--dark: #002A32;
+
+    //-----------------------
+    $btn-front-colour: $color__blue--light;
+    $btn-side-colour: $color__blue--normal;
+    $btn-side-colour-pressed: $color__blue--darkish;
+
+    $btn-padding: 1vw;
+    $btn-depth: 20px;
+    $btn-press-depth: 10px;
+
+    $btn-animation-duration: 0.175s;
+
+    $btn-text-colour: $color__black;
+
+    $border-color: $color__black;
+    $border-weight: 2px;
+    // $border-weight-double: $border-weight * 2;
+    // $border-weight-half: $border-weight / 2;
+
+
+    .btn{
+        /*
+        button,
+        input[type="submit"] 
+        */
+    
+        transition:
+            transform $btn-animation-duration,
+            background-color $btn-animation-duration;
+
+
+        transform-origin: top left;
+
+
+        display: inline-block;
+
+        background-color: $btn-front-colour;
+        border: 3px solid $border-color;
+        padding: $btn-padding;
+        position: relative;
+        margin-right: calc(#{$btn-depth * .3});
+
+
+
+        text-decoration: none;
+        font-size: 22px;
+        font-family: monospace;
+        font-weight: bold;
+        color: $btn-text-colour;
+
+        &:before,
+        &:after {
+            content: "";
+            display: inline-block;
+            width: $btn-depth;
+            height: $btn-depth;
+            background-color: $btn-side-colour;
+
+            position: absolute;
+            bottom: calc(100% + #{$border-weight});
+            left: calc(0px - #{$border-weight});
+
+            border: 3px solid $border-color;
+            border-bottom: 0;
+
+            transition:
+                width $btn-animation-duration,
+                background-color $btn-animation-duration,
+                height $btn-animation-duration;
         }
- }
+
+        &:before {
+            //top of button
+
+            width: calc(100% + 6px);
+            transform-origin: bottom left;
+            transform: skewX(-45deg);
+
+            border-right-width: 1.5px;
+
+
+
+        }
+
+        &:after {
+            //side of button
+
+            content: "";
+            height: calc(100% + 4px);
+            top: unset;
+            left: unset;
+
+            left: calc(100% + #{$border-weight});
+            bottom: calc(0px - #{$border-weight});
+
+            border: 3px solid $border-color;
+            border-top-width: 3px;
+            border-left: 0;
+
+            transform-origin: bottom left;
+            transform: skewY(-45deg);
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+            transform: translate($btn-press-depth, -$btn-press-depth);
+            background: $btn-side-colour;
+            outline: none;
+            &:before,
+            &:after {
+                background: $btn-side-colour-pressed;
+            }
+
+            &:before {
+                height: $btn-press-depth;
+            }
+
+            &:after {
+                width: $btn-press-depth;
+            }
+
+        }
+        &:active,
+        &:focus {
+            outline: none;
+            transform: translate($btn-press-depth, -$btn-press-depth);
+            background: $main-dark-red;
+            color: #fff;
+            &:before,
+            &:after {
+                background: $main-dark-red;
+            }
+
+            &:before {
+                height: $btn-press-depth;
+            }
+
+            &:after {
+                width: $btn-press-depth;
+            }
+
+        }
+        &.click{
+            outline: none;
+            transform: translate($btn-press-depth, -$btn-press-depth);
+            background: $main-dark-red;
+            color: #fff;
+            &:before,
+            &:after {
+                background: $main-dark-red;
+            }
+
+            &:before {
+                height: $btn-press-depth;
+            }
+
+            &:after {
+                width: $btn-press-depth;
+            }
+        }
+    }
+}

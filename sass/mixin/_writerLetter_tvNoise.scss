@@ -1,0 +1,212 @@
+@font-face {
+  font-family: "C64 User Mono";
+  src: url(../../font/C64_User_Mono_v1.0-STYLE.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin tv-noise() {
+
+  .tv {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background: radial-gradient(#9c9cff, #004);
+    font-family: "C64 User Mono";
+
+
+    .mask {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url(../../img/write-letter/screen1.png);
+      /* url('https://image.ibb.co/iMHMNv/tv.png'), */
+      background-size: cover;
+      background-position: center;
+
+    }
+
+    .frame {
+      display: block;
+      // position: absolute;
+      // top: 50%;
+      // left: 50%;
+      // margin-top: -122px;
+      // margin-left: -197px;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif');
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: 1;
+      animation: frames 15s steps(1, end) infinite;
+
+      .area {
+        display: block;
+        width: 78%;
+        height: 78%;
+        border-radius: $main-borderRadius;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #007;
+        color: #9c9cff;
+        opacity: 1;
+        overflow: hidden;
+        z-index: 8;
+      }
+
+      .title {
+        font-size: .15vw;
+        position: relative;
+        top: 0%;
+        line-height: 1rem;
+        font-family: "C64 User Mono";
+        padding: 0 .3vw;
+      }
+
+      .cursor {
+        font-size: .8rem;
+        color: #9c9cff;
+        position: absolute;
+        top: 56%;
+        left: 1%;
+        z-index: 9;
+        -webkit-animation: blink 1s steps(1, end) infinite;
+        -moz-animation: blink 1s steps(1, end) infinite;
+        animation: blink 1s steps(1, end) infinite;
+      }
+    }
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes blink {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-moz-keyframes blink {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes frames {
+    0% {
+      background-image: url('https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif');
+    }
+
+    60% {
+      background-image: none;
+    }
+
+
+    96% {
+      background-image: url('https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif');
+    }
+
+    96.2% {
+      background-image: none;
+    }
+
+    98% {
+      background-image: url('https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif');
+    }
+
+    98.6% {
+      background-image: none;
+    }
+  }
+
+  @keyframes frames {
+    0% {
+      background-image: url('https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif');
+    }
+
+    50% {
+      background-image: url('https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif');
+    }
+
+    60% {
+      background-image: none;
+    }
+
+
+    96% {
+      background-image: url('https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif');
+    }
+
+    96.2% {
+      background-image: none;
+    }
+
+    98% {
+      background-image: url('https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif');
+    }
+
+    98.6% {
+      background-image: none;
+    }
+  }
+
+  @-moz-keyframes frames {
+    0% {
+      background-image: url('https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif');
+      background-size: cover;
+    }
+
+    60% {
+      background-size: 0;
+    }
+
+
+    96% {
+      background-image: url('https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif');
+      background-size: cover;
+    }
+
+    96.2% {
+      background-size: 0;
+    }
+
+    98% {
+      background-image: url('https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif');
+      background-size: cover;
+    }
+
+    98.6% {
+      background-size: 0;
+    }
+  }
+
+
+
+
+
+}

@@ -515,12 +515,13 @@
     .home_custom {
         width: 100%;
         // (1)淺灰色
-        // background: -webkit-linear-gradient(0deg, rgb(229, 229, 229) 0%, rgb(245, 245, 245) 100%);
-        // background: linear-gradient(90deg, rgb(229, 229, 229) 0%, rgb(245, 245, 245) 100%);
+        background: -webkit-linear-gradient(0deg, rgb(229, 229, 229) 0%, rgb(245, 245, 245) 100%);
+        background: linear-gradient(90deg, rgb(229, 229, 229) 0%, rgb(245, 245, 245) 100%);
 
         // (2)綠鐵皮色
-        background: -webkit-linear-gradient(0deg, rgb(157, 191, 158) 0%, rgb(114, 148, 113) 100%);
-        background: linear-gradient(90deg, rgb(157, 191, 158) 0%, rgb(114, 148, 113) 100%);
+        // background: -webkit-linear-gradient(0deg, rgb(157, 191, 158) 0%, rgb(114, 148, 113) 100%);
+        // background: linear-gradient(90deg, rgb(157, 191, 158) 0%, rgb(114, 148, 113) 100%);
+
         background-size: 30px 30px;
 
         .tube {
@@ -553,6 +554,509 @@
                 }
             }
         }
+
+        .print {
+            width: 100%;
+            height: 1090px;
+            border: 1px solid blue;
+            background-image: url(../../img/home/catch/print.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-top: -270px;
+            position: relative;
+
+            h1 {
+                font-family: $font;
+                font-size: 54px;
+                position: absolute;
+                top: 45%;
+                left: 43%;
+            }
+        }
+    }
+
+    .home_belt {
+        width: 100%;
+        height: 940px;
+        background-image: url(../../img/home/store/customBg.png);
+        position: relative;
+
+        .paintBox {
+            width: 25%;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(0, -50%);
+        }
+
+        .belt {
+            width: 60%;
+            height: 100%;
+            background-image: url(../../img/home/store/belt.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom;
+            margin: 0 auto;
+        }
+
+        .foldStamp {
+            width: 20%;
+            position: absolute;
+            top: 50%;
+            left: 51%;
+            transform: translate(-50%, -50%);
+        }
+
+        .lightBox {
+            width: 25%;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(0, -50%);
+        }
+
+        .lightBox::before {
+            content: "";
+            width: 210%;
+            height: 210%;
+            // border: 1px solid red;
+            background-image: url(../../img/home/store/spotlight.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            top: 47%;
+            left: -172%;
+            transform: translate(0, -50%);
+            filter: drop-shadow(0px 0px 10px rgba(209, 209, 209, 0.2)) contrast(200%);
+            animation: twinkle 4s ease-in-out infinite;
+            -webkit-animation: twinkle 4s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0% {
+                opacity: 1;
+            }
+
+            25% {
+                opacity: 0.4;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+
+            75% {
+                opacity: 0.4;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @-webkit-keyframes twinkle {
+            0% {
+                opacity: 1;
+            }
+
+            25% {
+                opacity: 0.4;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+
+            75% {
+                opacity: 0.4;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+    }
+
+    .home_store {
+        width: 100%;
+        height: 1000px;
+        background-image: url(../../img/home/store/storeBg.png);
+        position: relative;
+
+        .shed {
+            width: 100%;
+            height: 200px;
+            background-image: url(../../img/home/store/shed.svg);
+            filter: drop-shadow(0px 14px 12px rgba(70, 70, 70, 0.7));
+        }
+
+        .cuboid {
+            width: 300px;
+            height: 500px;
+            margin: 0 0 0 30px;
+            background-color: $main-blue;
+            position: absolute;
+            top: 14%;
+            display: inline-block;
+            filter: drop-shadow(3px 8px 8px rgba(70, 70, 70, 0.5));
+
+            .storeTitle {
+                width: 80%;
+                height: 90%;
+                // border: 1px solid red;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: -webkit-radial-gradient(rgb(215, 175, 4) 30%, rgb(255, 255, 217) 20%);
+                background: radial-gradient(rgb(215, 175, 4) 30%, rgb(255, 255, 217) 20%);
+                background-size: 10px 10px;
+                box-shadow: -7px 7px 15px 5px rgba(0, 0, 0, .5) inset;
+
+                h1 {
+                    line-height: 120%;
+                    position: absolute;
+                    top: 50%;
+                    left: 56%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .smLight {
+                width: 20px;
+                height: 20px;
+                border-radius: 100%;
+                // border: 2px solid rgb(70, 67, 66);
+                filter: drop-shadow(0px 0px 5px rgba(209, 209, 209, .8)) contrast(200%);
+            }
+
+            .bulb_L1 {
+                background-color: grey;
+                position: absolute;
+                top: 0.5%;
+                left: 2%;
+                animation: lightRedYel 2s ease-in infinite;
+            }
+
+            .bulb_L2 {
+                background-color: $main-yellow;
+                position: absolute;
+                top: 25%;
+                left: 2%;
+                animation: lightYelRed 2s ease-in infinite;
+            }
+
+            .bulb_L3 {
+                background-color: $main-red;
+                position: absolute;
+                top: 50%;
+                left: 2%;
+                animation: lightRedYel 2s ease-in infinite;
+            }
+
+            .bulb_L4 {
+                background-color: $main-yellow;
+                position: absolute;
+                top: 75%;
+                left: 2%;
+                animation: lightYelRed 2s ease-in infinite;
+            }
+
+            .bulb_L5 {
+                background-color: $main-red;
+                position: absolute;
+                bottom: 0.5%;
+                left: 2%;
+                animation: lightRedYel 2s ease-in infinite;
+            }
+
+            .bulb_R1 {
+                background-color: $main-yellow;
+                position: absolute;
+                top: 0.5%;
+                right: 2%;
+                animation: lightYelRed 2s ease-in infinite;
+            }
+
+            .bulb_R2 {
+                background-color: $main-red;
+                position: absolute;
+                top: 25%;
+                right: 2%;
+                animation: lightRedYel 2s ease-in infinite;
+            }
+
+            .bulb_R3 {
+                background-color: $main-yellow;
+                position: absolute;
+                top: 50%;
+                right: 2%;
+                animation: lightYelRed 2s ease-in infinite;
+            }
+
+            .bulb_R4 {
+                background-color: $main-red;
+                position: absolute;
+                top: 75%;
+                right: 2%;
+                animation: lightRedYel 2s ease-in infinite;
+            }
+
+            .bulb_R5 {
+                background-color: $main-yellow;
+                position: absolute;
+                bottom: 0.5%;
+                right: 2%;
+                animation: lightYelRed 2s ease-in infinite;
+            }
+
+            .bulb_T1 {
+                background-color: $main-yellow;
+                position: absolute;
+                top: 0.5%;
+                left: 31%;
+                animation: lightYelRed 2s ease-in infinite;
+            }
+
+            .bulb_T2 {
+                background-color: $main-red;
+                position: absolute;
+                top: 0.5%;
+                right: 31%;
+                animation: lightRedYel 2s ease-in infinite;
+            }
+
+            .bulb_B1 {
+                background-color: $main-yellow;
+                position: absolute;
+                bottom: 0.5%;
+                left: 31%;
+                animation: lightYelRed 2s ease-in infinite;
+            }
+
+            .bulb_B2 {
+                background-color: $main-red;
+                position: absolute;
+                bottom: 0.5%;
+                right: 31%;
+                animation: lightRedYel 2s ease-in infinite;
+            }
+
+            @keyframes lightRedYel {
+                0% {
+                    background-color: $main-yellow;
+
+                }
+
+                50% {
+                    background-color: $main-white;
+                }
+
+                100% {
+                    background-color: $main-yellow;
+                }
+            }
+
+            @keyframes lightYelRed {
+                0% {
+                    background-color: $main-white;
+                }
+
+                50% {
+                    background-color: $main-red;
+                }
+
+                100% {
+                    background-color: $main-white;
+                }
+            }
+        }
+
+        .cuboid-lb:before {
+            content: "";
+            height: 100%;
+            width: 30px;
+            background-color: rgb(64, 106, 144);
+            position: absolute;
+            left: -30px;
+            top: 15px;
+            transform: skew(0, -45deg);
+        }
+
+        .cuboid-lb:after {
+            content: "";
+            width: 100%;
+            height: 30px;
+            background-color: rgb(64, 106, 144);
+            position: absolute;
+            top: 100%;
+            left: -15px;
+            transform: skew(-45deg);
+        }
+
+        .shopWindow {
+            width: 37%;
+            height: 35vw;
+            // border: 1px solid green;
+            margin: 60px auto 0 auto;
+            background-color: rgb(113, 149, 184);
+
+            .windowBg {
+                width: 100%;
+                height: 100%;
+                background-image: url(../../img/home/store/window.svg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                filter: drop-shadow(0px 12px 8px rgba(70, 70, 70, 0.5));
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: space-around;
+
+                .paintPlan {
+                    width: 70%;
+                    height: 40%;
+                    // border: 1px solid yellow;
+                    margin-top: 5%;
+                }
+
+                .price {
+                    width: 40%;
+                    height: 180px;
+                    margin-bottom: 10%;
+                    background-color: rgb(240, 224, 197);
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    h1 {
+                        font-family: $font;
+                        font-size: 54px;
+                    }
+                }
+
+                .price::before {
+                    content: "";
+                    width: 0px;
+                    height: 0px;
+                    border-left: 20px solid transparent;
+                    border-right: 20px solid transparent;
+                    border-bottom: 20px solid rgb(240, 224, 197);
+                    position: absolute;
+                    top: -20px;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                }
+            }
+        }
+
+        .board {
+            width: 400px;
+            height: 300px;
+            border: 5px solid $main-black;
+            border-radius: 4%;
+            background-image: url(../../img/home/store/boardWood.png);
+            position: absolute;
+            right: 5%;
+            bottom: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 8px 8px 0px rgba(70, 70, 70, .5);
+
+            .board_text {
+                width: 90%;
+                height: 90%;
+                // border: 5px solid $main-black;
+                background-image: url(../../img/home/store/boardBg.png);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h1 {
+                    font-family: $font;
+                    color: $main-white;
+                }
+            }
+        }
+    }
+
+    .home_chat {
+        width: 100%;
+        height: 930px;
+        background-image: url(../../img/home/chat/chatBg.png);
+        position: relative;
+
+        .chatBox {
+            width: 100%;
+            height: 100%;
+            display: flex;
+
+            .chat_R {
+                width: 50%;
+                height: 100%;
+            }
+
+            .chat_L {
+                width: 50%;
+                height: 100%;
+                border: 1px solid palegreen;
+                // position: relative;
+
+                .titleBox1 {
+                    width: 36%;
+                    height: 18.5vw;
+                    border: 1px solid aqua;
+                    position: relative;
+                    top: 8%;
+                    left: 15%;
+
+                    .chat_title1 {
+                        border: 1px solid green;
+                        width: 100%;
+                        height: 100%;
+                        background-image: url(../../img/home/chat/noteWhite.svg);
+                        background-repeat: no-repeat;
+                        animation: wave 2s linear infinite;
+
+                        h1 {
+                            font-family: $font;
+                            position: absolute;
+                            top: 25%;
+                            left: 50%;
+                            transform: translate(-50%, 0);
+                        }
+                    }
+
+                    img {
+                        width: 70%;
+                        position: absolute;
+                        top: -50%;
+                        left: -24%;
+                        transform: translate(0, 50%);
+                    }
+
+                    @keyframes wave {
+                        0% {
+                            transform-origin: left top;
+                            transform: rotate(0);
+                        }
+
+                        50% {
+                            transform-origin: left top;
+                            transform: rotate(5deg);
+                        }
+
+                        100% {
+                            transform-origin: left top;
+                            transform: rotate(0);
+                        }
+                    }
+                }
+            }
+        }
+
 
     }
 }

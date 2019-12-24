@@ -1,6 +1,6 @@
 @mixin userSetting_mem {
     width: 50%;
-    min-width: 550px;
+    min-width: 530px;
     max-width: 770px;
     text-align: center;
     position: absolute;
@@ -29,4 +29,25 @@
     top: -5%;
     z-index: 6;
     @include border;
+}
+
+@mixin userSetting_title_note{
+    width: 100%;
+    height: 100px;
+    left: 50%;
+    transform: translate(-50%,10%);
+    font-size: 3.75rem;
+}
+
+@mixin userSetting_title_iphone{
+    width: 100%;
+    height: 85px;
+    left: 50%;
+    transform: translate(-50%,10%);
+    font-size: 3rem;
+}
+
+@mixin kanbanSize{
+    width: 100%;
+    min-width: 350px;
 }

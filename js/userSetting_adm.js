@@ -1,30 +1,34 @@
+function showLarge(e) {
+    let memsmall = e.target;
+    document.getElementById("memcolorBigLarge").src = memsmall.src;
+    };
+    let picture_small = document.querySelectorAll(".memcolorSmall img");
+    for (let i = 0; i < picture_small.length; i++) {
+        picture_small[i].onclick = showLarge;
+    };
+
 Vue.component('memData', {
     template: `
         <div class="userSetting_memData">
             <table class="userSetting_memDataTable">
                 <tr>
-                    <td><img src="" alt="mempic"></td>
-                    <td>Air幣 : 50</td>
+                    <td colspan="6"><img class="mempic" src="../img/chatroom/mark_1.png" alt="mempic"></td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td>信紙 : 5</td>
+                    <td>會員帳號:</td>
+                    <td colspan="5">波音777-1</td>
                 </tr>
                 <tr>
-                    <td>會員帳號 :</td>
-                    <td>波音777-1</td>
+                    <td>Email:</td>
+                    <td colspan="5">aaa@gmail.com</td>
                 </tr>
                 <tr>
-                    <td>Email :</td>
-                    <td>aaa@gmail.com</td>
+                    <td>Air幣:</td>
+                    <td colspan="5">50</td>
                 </tr>
                 <tr>
-                    <td>會員密碼 :</td>
-                    <td>aaa666</td>
-                </tr>
-                <tr>
-                    <td>登出</td>
-                    <td></td>
+                    <td>信紙:</td>
+                    <td colspan="5">5</td>
                 </tr>
             </table>
         </div>
@@ -76,13 +80,12 @@ Vue.component('airCoin', {
 Vue.component('memcolor', {
     template: `
         <div class="userSetting_memcolor">
-            <div class="memcolorBlack">
-                <h3>黑色</h3>
-                <img src="" alt="black">
+            <div class="memcolorBig">
+                <img id="memcolorBigLarge" src="img/share/blue-paint-bigline.svg" alt="blackB">
             </div>
-            <div class="memcolorWhite">
-                <h3>白色</h3>
-                <img src="" alt="white">
+            <div class="memcolorSmall">
+                <img src="img/share/blue-paint-bigline.svg" alt="blackB">
+                <img src="img/share/yellow-paint-bigline.svg" alt="white">
             </div>
         </div>
     `,
@@ -93,7 +96,6 @@ new Vue({
         content: 'memData',
     },
 });
-
 Vue.component('manu', {
     template: `
         <div class="userSetting_manu">
@@ -145,6 +147,7 @@ new Vue({
 Vue.component('mike', {
     template: `
         <div class="userSetting_mike">
+            <div class="lighting"></div>
             <div class="userSetting_wrap">
                 <div class="userSetting_Name">
                     <h3>開發者</h3>
@@ -165,14 +168,15 @@ Vue.component('mike', {
                         <span>Air Plan</span>
                     </a>
                 </div>
-                <img src="" alt="">
             </div>
+            <img class="userSetting_picture" src="img/userDeveloper/howard.png">
         </div>
      `,
 });
 Vue.component('spencer', {
     template: `
         <div class="userSetting_spencer">
+            <div class="lighting"></div>
             <div class="userSetting_wrap">
                 <div class="userSetting_Name">
                     <h3>開發者</h3>
@@ -194,12 +198,14 @@ Vue.component('spencer', {
                     </a>
                 </div>
             </div>
+            <img class="userSetting_picture" src="img/userDeveloper/howard.png">
         </div>
      `,
 });
 Vue.component('allen', {
     template: `
         <div class="userSetting_allen">
+            <div class="lighting"></div>
             <div class="userSetting_wrap">
                 <div class="userSetting_Name">
                     <h3>開發者</h3>
@@ -221,12 +227,14 @@ Vue.component('allen', {
                     </a>
                 </div>
             </div>
+            <img class="userSetting_picture" src="img/userDeveloper/howard.png">
         </div>
      `,
 });
 Vue.component('grace', {
     template: `
         <div class="userSetting_grace">
+            <div class="lighting"></div>
             <div class="userSetting_wrap">
                 <div class="userSetting_Name">
                     <h3>開發者</h3>
@@ -248,12 +256,14 @@ Vue.component('grace', {
                     </a>
                 </div>
             </div>
+            <img class="userSetting_picture" src="img/userDeveloper/howard.png">
         </div>
      `,
 });
 Vue.component('sharon', {
     template: `
         <div class="userSetting_sharon">
+            <div class="lighting"></div>
             <div class="userSetting_wrap">
                 <div class="userSetting_Name">
                     <h3>開發者</h3>
@@ -275,12 +285,14 @@ Vue.component('sharon', {
                     </a>
                 </div>
             </div>
+            <img class="userSetting_picture" src="img/userDeveloper/howard.png">
         </div>
      `,
 });
 Vue.component('howard', {
     template: `
         <div class="userSetting_howard">
+            <div class="lighting"></div>
             <div class="userSetting_wrap">
                 <div class="userSetting_Name">
                     <h3>開發者</h3>
@@ -302,6 +314,7 @@ Vue.component('howard', {
                     </a>
                 </div>
             </div>
+            <img class="userSetting_picture" src="img/userDeveloper/howard.png">
         </div>
      `,
 });
@@ -311,3 +324,6 @@ new Vue({
         content: 'mike',
     }
 });
+
+
+                
