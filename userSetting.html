@@ -10,9 +10,9 @@
 </head>
 
 <body class="userSetting_body">
+    @@include("./html/nav.html");
+    @@include("./html/header.html");
     <header></header>
-    @@include("./html/nav.html")
-    @@include("./html/header.html")
     <main class="userSetting_main">
         <div class="floor">
             <section class="userSetting_mem">
@@ -31,6 +31,7 @@
                         <div class="memcolor" @click="content='memcolor'">
                             <h3>外觀設定</h3>
                         </div>
+
                         <keep-alive>
                             <!--資料保留標籤-->
                             <component :is="content"></component>
@@ -63,7 +64,7 @@
                 <img class="paper" src="img/userSetting/paper.svg" alt="">
                 <div class="space_B2"></div>
             </section>
-
+            
             <section class="userSetting_adm">
                 <!--airPlan開發者資訊-->
                 <h2 class="threed-text-red-endWhite">開發者資訊</h2>
@@ -95,9 +96,12 @@
             </section>
         </div>
     </main>
-    @@include("./html/footer.html")
+    @@include("./html/footer.html");
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/userSetting_adm.js"></script>
 </body>
 
 </html>
+<!-- <div class="btn-wrapper">
+    <div class="btn btn-basic-red">登出</div>
+</div> -->
