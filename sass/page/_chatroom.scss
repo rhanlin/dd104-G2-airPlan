@@ -63,7 +63,6 @@
 //     }
 
 //     .title4 h1 {
-//         font-family: "微軟正黑體";
 //         font-size: 48px;
 //         text-align: center;
 //         line-height: 125px;
@@ -79,6 +78,7 @@
     padding: 0;
     box-sizing: border-box;
     font-size: 0px;
+    font-family: $font;
 
     .mainSection {
         // border:1px solid forestgreen;
@@ -96,13 +96,14 @@
         &::-webkit-scrollbar {
             // border:1px solid firebrick;
             width: 10px;
-            background-color: #fff;
             border-radius: 2px;
+            background: lightgray;
         }
 
         &::-webkit-scrollbar-thumb {
             width: 5px;
-            background-color: slategrey;
+            background-color: #fff;
+            border: 1px solid $main-black;
             border-radius: 10px;
         }
 
@@ -153,7 +154,6 @@
         .sectionMark8 p,
         .sectionMark9 p {
             font-size: 18px;
-            font-family: Arial, Helvetica, sans-serif;
         }
 
 
@@ -183,7 +183,6 @@
             .dashPage1 {
                 width: 100%;
                 max-width: 1100px;
-                height: 650px;
                 @include border();
                 background-color: $main-yellow;
                 background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -194,10 +193,10 @@
                 .dashPage2 {
                     width: 100%;
                     max-width: 1050px;
-                    height: 650px;
                     @include border();
                     background-color: $main-yellow;
-                    margin-top: -5px;
+                    border-bottom: none;
+                    margin-top: -.3vw;
                     padding: 0 20px;
                     background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
                     background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -206,10 +205,10 @@
                     .dashPage3 {
                         width: 100%;
                         max-width: 1000px;
-                        height: 650px;
                         @include border();
                         background-color: $main-yellow;
-                        margin-top: -5px;
+                        border-bottom: none;
+                        margin-top: -.3vw;
                         padding: 0 20px;
                         background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
                         background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -218,10 +217,10 @@
                         .dashPage4 {
                             width: 100%;
                             max-width: 950px;
-                            height: 650px;
                             @include border();
                             background-color: $main-yellow;
-                            margin-top: -5px;
+                            border-bottom: none;
+                            margin-top: -.3vw;
                             padding: 0 20px;
                             background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
                             background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -232,8 +231,8 @@
                                 max-width: 900px;
                                 height: 650px;
                                 @include border();
+                                margin-top: -.3vw;
                                 background-color: #fff;
-                                margin: -5px auto 0;
                                 padding: 0 20px;
                                 padding: 20px;
                                 // border: 1px solid lightseagreen;
@@ -265,7 +264,6 @@
                                             border: 2px solid #353535;
                                             background-color: rgb(215, 230, 245);
                                             font-size: 16px;
-                                            font-family: "微軟正黑體";
                                             padding: 10px;
                                             border-radius: 0px 20px 20px 20px;
                                             display: inline-block;
@@ -285,7 +283,6 @@
                                             border: 2px solid #353535;
                                             background-color: rgb(252, 241, 173);
                                             font-size: 16px;
-                                            font-family: "微軟正黑體";
                                             padding: 10px;
                                             border-radius: 20px 0 20px 20px;
                                             display: inline-block;
@@ -314,7 +311,7 @@
                                 }
 
                                 .sendText {
-                                    width: 88%;
+                                    width: 87%;
                                     height: 46px;
                                     border: none;
                                     border-radius: 30px;
@@ -322,13 +319,18 @@
                                     outline: none;
                                     font-size: 18px;
                                     padding: 5px 10px;
-                                    font-family: 'Trebuchet MS', Arial, "微軟正黑體";
                                     // border:1px solid lightpink;
+                                }
+
+                                button {
+                                    width: 10%;
+                                    background-color: transparent;
+                                    border: none;
                                 }
 
                                 .contentSend img {
                                     width: 10%;
-                                    max-width: 40px;
+                                    min-width: 35px;
                                     // border: 1px solid dimgray;
                                     margin-top: 5px;
                                     float: left;
@@ -355,38 +357,51 @@
     .chatroom-main {
         .mainBook {
             .bookDashed {
-                .dashPage1,.dashPage2,.dashPage3,.dashPage4 {
-                    .dashPage5 {
-                        .pageContent {
-                            .contentYour,.contentYour_1,.contentYour_2 {
-                                p {
-                                    max-width: 150px;
+                .dashPage1 {
+                    .dashPage2 {
+                        .dashPage3 {
+                            .dashPage4 {
+                                .dashPage5 {
+                                    .pageContent {
+                                        .contentYour,
+                                        .contentYour_1,
+                                        .contentYour_2 {
+                                            p {
+                                                max-width: 150px;
+                                            }
+                                        }
+
+                                        .contentMe {
+                                            p {
+                                                max-width: 150px;
+                                            }
+                                        }
+
+                                    }
+
+                                    .contentSend {
+                                        .sendText {
+                                            width: calc(100% - 50px);
+                                        }
+
+                                        img {
+                                            width: 10%;
+                                        }
+                                    }
                                 }
-                            }
-                            .contentMe {
-                                p {
-                                    max-width: 150px;
-                                }
-                            }
-                            .contentSend {
-                                .sendText {
-                                    width: 85%;
-                                }
-                                img {
-                                    width: 25%;
-                                    max-width: 35px;
-                                }
+
                             }
                         }
                     }
-
                 }
+
             }
         }
     }
 }
 
 @include respond(mediumSize) {
+
     //991px------768px;
     .chatroom-main {
         .mainSection {
@@ -395,11 +410,107 @@
             padding-left: 25px;
             max-height: 691px;
         }
+
         .mainBook {
             margin-left: -167px;
+
             .bookDashed {
                 padding: 15px 20px;
-                .dashPage1{
+
+                .dashPage1 {
+                    padding-right: 0;
+                    border-right: none;
+                    margin-bottom: -5px;
+
+                    .dashPage2 {
+                        padding-right: 0;
+                        border-right: none;
+                        margin-bottom: -5px;
+
+                        .dashPage3 {
+                            padding-right: 0;
+                            border-right: none;
+                            margin-bottom: -5px;
+
+                            .dashPage4 {
+                                padding-right: 0;
+                                border-right: none;
+                                margin-bottom: -5px;
+
+                                .dashPage5 {
+                                    padding-right: 50px;
+                                    width: 100%;
+                                    overflow: hidden;
+
+                                    .pageImg {
+                                        position: absolute;
+                                        margin-left: 0;
+                                        right: -53px;
+                                        top: -30px;
+                                        height: 758px;
+                                    }
+
+                                    .pageContent {
+
+                                        .contentYour,
+                                        .contentYour_1,
+                                        .contentYour_2 {
+                                            img {
+                                                width: 12%;
+                                                min-width: 70px;
+                                            }
+
+                                            p {
+                                                margin: 13% 0 0 0;
+                                            }
+                                        }
+
+                                    }
+
+                                    .contentSend {
+                                        width: 83%;
+                                        right: 9%;
+                                        
+                                        .sendText {
+                                            width: calc(100% - 55px);
+                                        }
+
+                                        button {
+                                            width: 5%;
+                                        }
+
+                                        img {
+                                            width: 25%;
+                                            max-width: 35px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include respond(small) {
+
+    //767px------576px;
+    .chatroom-main {
+        .mainSection {
+            width: 167px;
+            margin-top: 52px;
+            padding-left: 25px;
+        }
+
+        .mainBook {
+            margin-left: -167px;
+
+            .bookDashed {
+                padding: 15px 20px;
+
+                .dashPage1 {
                     padding-right: 0;
                     border-right: none;
                     margin-bottom: -5px;
@@ -416,93 +527,54 @@
                                 border-right: none;
                                 margin-bottom: -5px;
                                 .dashPage5 {
-                                    padding-right: 50px;
                                     width: 100%;
+                                    padding-right: 50px;
+                                    padding-bottom: 15%;
+                                    margin-bottom: -5px;
                                     overflow: hidden;
                                     .pageImg {
                                         position: absolute;
                                         margin-left: 0;
-                                        right: -53px;
+                                        right: -50px;
                                         top: -30px;
-                                        height: 758px;
                                     }
                                     .pageContent {
-                                        .contentYour,.contentYour_1,.contentYour_2 {
+                                        .contentYour,
+                                        .contentYour_1,
+                                        .contentYour_2 {
+                                            margin-bottom: 15px;
+
                                             img {
                                                 width: 15%;
+                                                min-width: 55px;
                                             }
+
                                             p {
-                                                margin: 15% 0 0 0;
+                                                margin: 18% 0 0 0;
                                             }
                                         }
-                                        .contentSend {
-                                            .sendText {
-                                                width: 89%;
-                                            }
-                                            img {
-                                                width: 25%;
-                                                max-width: 35px;
-                                            }
+
+                                    
+                                    }
+                                    .contentSend {
+                                        width: 75%;
+                                        height: 50px;
+                                        right: 15%;
+                                        bottom: 10px;
+                                        .sendText {
+                                            width: calc(100% - 55px);
+                                        }
+
+                                        img {
+                                            width: 9%;
+                                            min-width: 35px;
                                         }
                                     }
-                                }                  
+                                }
+                
                             }
                         }
                     }
-                }
-            }
-        }
-    }
-}
-@include respond(small) {
-    //767px------576px;
-    .chatroom-main {
-        .mainSection {
-            width: 167px;
-            margin-top: 52px;
-            padding-left: 25px;
-        }
-        .mainBook {
-            margin-left: -167px;
-            .bookDashed {
-                padding: 15px 20px;
-                .dashPage1,.dashPage2,.dashPage3,.dashPage4 {
-                    padding-right: 0;
-                    border-right: none;
-                    margin-bottom: -5px;
-                    .dashPage5 {
-                        width: 100%;
-                        padding-right: 50px;
-                        padding-bottom: 15%;
-                        margin-bottom: -5px;
-                        overflow: hidden;
-
-                        .pageImg {
-                            position: absolute;
-                            margin-left: 0;
-                            right: -50px;
-                            top: -30px;
-                        }
-                        .pageContent {
-                            .contentYour,.contentYour_1,.contentYour_2 {
-                                margin-bottom: 15px;
-                                img {
-                                    width: 15%;
-                                    min-width: 55px;
-                                }
-                                p {
-                                    margin: 18% 0 0 0;
-                                }
-                            }
-                            .contentSend {
-                                width: 80%;
-                                height: 50px;
-                                right: 15%;
-                                bottom: 10px;
-                            }
-                        }
-                    }
-
                 }
             }
         }
@@ -511,26 +583,54 @@
 
 
 @include respond(note) {
+
     //575px------376px;
     .chatroom-main {
+        overflow: hidden;
         .mainSection {
-            border: 1px solid red;
-            width: auto;
+            width: calc(100% - 30px - 20px - 10px);
+            height: 100%;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            padding: 0;
+            position: relative;
+            top: 180px;
+            left: 50%;
+            transform: translateX(-50%);
 
+            &::-webkit-scrollbar {
+                height: 10px;
+            }
+    
+            &::-webkit-scrollbar-thumb {
+                height: 10px;
+                border-radius: 5px;
+            }
+            
             .sectionOver {
-                border:1px solid lightskyblue;
-
+                white-space: nowrap;
+                border: .5vw solid $main-black;
                 .sectionMark1 {
                     background-color: $main-red;
-                }
-
-                .sectionMark1,.sectionMark2,.sectionMark3,.sectionMark4,.sectionMark5,.sectionMark6,.sectionMark7,.sectionMark8,.sectionMark9 {
                     width: 117px;
                     height: 117px;
                     padding: 12px;
                     margin-top: 0;
                     display: inline-block;
-
+                    vertical-align: top;
+                    img {
+                        width: 60px;
+                        border-radius: 50px;
+                        background-color: #fff;
+                    }
+                }
+                .sectionMark2,.sectionMark3,.sectionMark4,.sectionMark5,.sectionMark6,.sectionMark7,.sectionMark8,.sectionMark9{
+                    width: 117px;
+                    height: 117px;
+                    padding: 12px;
+                    margin-top: 0;
+                    display: inline-block;
+                    vertical-align: top;
                     img {
                         width: 60px;
                         border-radius: 50px;
@@ -542,15 +642,14 @@
         .mainBook {
             margin-left: 0px;
             padding: 10px;
-
             .bookDashed {
                 padding: 15px 15px;
-
                 .dashPage1 {
                     padding: 0;
                     border-right: none;
                     border-left: none;
                     margin-bottom: -5px;
+                    margin-top: 150px;
 
                     .dashPage2 {
                         padding: 0;
@@ -571,10 +670,10 @@
                                 margin-bottom: -5px;
 
                                 .dashPage5 {
-                                    width: 100%;
-                                    padding-right: 50px;
-                                    padding-bottom: 15%;
-                                    margin-bottom: -5px;
+                                    width: 100%;                                  width: 100%;
+                                    height: 500px;
+                                    padding: 2% 0 0 2%;
+                                    margin-bottom: 0px;
                                     overflow: hidden;
 
                                     .pageImg {
@@ -585,44 +684,56 @@
                                     }
 
                                     .pageContent {
+                                        height: 87%;
+                                        overflow-y: scroll;
+                                        padding: 0;
+                                        padding-right: 10%;
                                         .contentYour {
                                             margin-bottom: 15px;
                                             margin-left: 0px;
+
                                             img {
                                                 width: 15%;
                                                 min-width: 55px;
                                             }
+
                                             p {
                                                 margin: 18% 0 0 0;
                                                 max-width: 180px;
                                             }
 
                                         }
+
                                         .contentYour_1 {
                                             margin-bottom: 15px;
                                             margin-left: 0px;
+
                                             img {
                                                 width: 15%;
                                                 min-width: 55px;
                                             }
+
                                             p {
                                                 margin: 18% 0 0 0;
                                                 max-width: 180px;
                                             }
-                                            
+
                                         }
+
                                         .contentYour_2 {
                                             margin-bottom: 15px;
                                             margin-left: 0px;
+
                                             img {
                                                 width: 15%;
                                                 min-width: 55px;
                                             }
+
                                             p {
                                                 margin: 18% 0 0 0;
                                                 max-width: 180px;
                                             }
-                                            
+
                                         }
 
                                         .contentMe {
@@ -634,10 +745,25 @@
                                     }
 
                                     .contentSend {
-                                        width: 80%;
+                                        width: 78%;
                                         height: 50px;
-                                        right: 15%;
+                                        right: 17%;
                                         bottom: 10px;
+                                        .sendText {
+                                            width: calc(100% - 45px);
+                                        }
+
+                                        button {
+                                            button {
+                                                width: 5%;
+                                            }
+                                        }
+
+                                        img {
+                                            width: 9%;
+                                            min-width: 30px;
+                                            margin-top: 9px;
+                                        }
                                     }
                                 }
                             }
@@ -646,111 +772,188 @@
                 }
             }
         }
-    }  
+    }
 }
-
 @include respond(iphone) {
 
     //375px;
-    .chatroom-main .mainBook .bookDashed {
-        padding: 15px 20px;
-        // border: 1px solid lightslategrey;
-    }
+    .chatroom-main {
+        overflow: hidden;
+        .mainSection {
+            width: calc(100% - 27px);
+            height: 100%;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            padding: 0;
+            position: relative;
+            top: 178px;
+            left: 50%;
+            transform: translateX(-50%);
 
-    .chatroom-main .mainSection {
-        width: 167px;
-        margin-top: 52px;
-        padding-left: 25px;
-        // border: 1px solid lightslategrey;
-    }
-
-    .chatroom-main .mainBook {
-        margin-left: -167px;
-    }
-
-    .chatroom-main .mainBook .bookDashed .dashPage1 {
-        // border:1px solid lightcoral;
-        padding-right: 0;
-        border-right: none;
-        margin-bottom: -5px;
-
-        .dashPage2 {
-            padding-right: 0;
-            border-right: none;
-            margin-bottom: -5px;
-
-
-            .dashPage3 {
-                padding-right: 0;
-                border-right: none;
-                margin-bottom: -5px;
+            &::-webkit-scrollbar {
+                height: 10px;
+            }
     
-
-                .dashPage4 {
-                    padding-right: 0;
-                    border-right: none;
-                    margin-bottom: -5px;
-        
-
-                    .dashPage5 {
-            
-                        padding-bottom: 15%;
-                        overflow: hidden;
-                        margin-bottom: -5px;
+            &::-webkit-scrollbar-thumb {
+                height: 10px;
+                border-radius: 5px;
+            }
+            .sectionOver {
+                white-space: nowrap;
+                border: 2px solid $main-black;
+                .sectionMark1 {
+                    background-color: $main-red;
+                    width: 100px;
+                    height: 100px;
+                    padding: 5px;
+                    margin-top: 0;
+                    display: inline-block;
+                    vertical-align: top;
+                    img {
+                        width: 60px;
+                        border-radius: 50px;
+                        background-color: #fff;
+                    }
+                }
+                .sectionMark2,.sectionMark3,.sectionMark4,.sectionMark5,.sectionMark6,.sectionMark7,.sectionMark8,.sectionMark9{
+                    width: 100px;
+                    height: 100px;
+                    padding: 5px;
+                    margin-top: 0;
+                    display: inline-block;
+                    vertical-align: top;
+                    img {
+                        width: 60px;
+                        border-radius: 50px;
+                        background-color: #fff;
                     }
                 }
             }
         }
-    }
+        .mainBook {
+            width: 110%;
+            margin-left: -5%;
+            padding: 10px;
+            .bookDashed {
+                padding: 15px 15px;
+                .dashPage1 {
+                    height: 100%;
+                    padding: 0;
+                    border: none;
+                    margin-top: 150px;
 
-    .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageImg {
-        position: absolute;
-        margin-left: 0;
-        right: -50px;
-        top: -30px;
-        // border: 1px solid lightpink;
-    }
+                    .dashPage2 {
+                        height: 100%;
+                        padding: 0;
+                        border: none;
 
-    .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .contentSend {
-        width: 80%;
-        height: 50px;
-        right: 15%;
-        bottom: 10px;
-    }
+                        .dashPage3 {
+                            height: 100%;
+                            padding: 0;
+                            border: none;
 
-    .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .contentSend img {
-        width: 25%;
-        max-width: 35px;
-        // border: 1px solid dimgray;
-    }
+                            .dashPage4 {
+                                height: 100%;
+                                padding: 0;
+                                border: none;
 
-    .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour img, .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_1 img, .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_2 img {
-        width: 15%;
-    }
+                                .dashPage5 {
+                                    width: 100%;
+                                    height: 500px;
+                                    padding: 2% 0 0 2%;
+                                    margin-bottom: 0px;
+                                    overflow: hidden;
 
-    .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 {
-        padding-right: 50px;
-        width: 100%;
-    }
+                                    .pageImg {
+                                        height: 110%;
+                                        position: absolute;
+                                        margin-left: 0;
+                                        right: -10%;
+                                        top: -5%;
+                                    }
 
-    .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour img, .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_1 img, .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_2 img {
-        width: 15%;
-        min-width: 55px;
-    }
+                                    .pageContent {
+                                        height: 87%;
+                                        overflow-y: scroll;
+                                        padding: 0;
+                                        padding-right: 15%;
+                                        .contentYour {
+                                            margin-bottom: 15px;
+                                            margin-left: 0px;
 
-    .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour, .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_1, .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_2 {
-        margin-bottom: 15px;
-    }
+                                            img {
+                                                width: 15%;
+                                                min-width: 55px;
+                                            }
 
-    .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour p, .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_1 p, .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_2 p {
-        margin: 18% 0 0 0;
-        max-width: 100px;
-        background-color: firebrick;
-    }
+                                            p {
+                                                margin: 18% 0 0 0;
+                                                max-width: 180px;
+                                            }
 
-    .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentMe p {
-        width: 100%;
-        max-width: 100px;
+                                        }
 
+                                        .contentYour_1 {
+                                            margin-bottom: 15px;
+                                            margin-left: 0px;
+
+                                            img {
+                                                width: 15%;
+                                                min-width: 55px;
+                                            }
+
+                                            p {
+                                                margin: 18% 0 0 0;
+                                                max-width: 180px;
+                                            }
+
+                                        }
+
+                                        .contentYour_2 {
+                                            margin-bottom: 15px;
+                                            margin-left: 0px;
+
+                                            img {
+                                                width: 15%;
+                                                min-width: 55px;
+                                            }
+
+                                            p {
+                                                margin: 18% 0 0 0;
+                                                max-width: 70%;
+                                            }
+
+                                        }
+
+                                        .contentMe {
+                                            p {
+                                                width: 100%;
+                                                max-width: 150px;
+                                            }
+                                        }
+                                    }
+
+                                    .contentSend {
+                                        width: 80%;
+                                        height: 50px;
+                                        right: 15%;
+                                        bottom: 2%;
+                                        .sendText {
+                                            width: calc(100% - 45px);
+                                        }
+
+                                        img {
+                                            width: 9%;
+                                            min-width: 30px;
+                                            margin-top: 7px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
