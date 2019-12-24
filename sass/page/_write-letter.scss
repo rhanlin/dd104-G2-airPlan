@@ -49,11 +49,16 @@
 
                     .change-category-btn {
                         position: absolute;
-                        right: 16px;
-                        bottom: 0;
-                        width: 10vw;
-                        height: 10vw;
+                        right: 13%;
+                        bottom: 1.5%;
+                        z-index: 99;
                         @include btn_3d_module();
+                    }
+
+                    & input {
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        appearance: none;
                     }
 
                     .tv-machine {
@@ -61,25 +66,46 @@
                         height: 100%;
                         background-image: url(../../img/share/TV.svg);
                         background-repeat: no-repeat;
-                        background-position: center;
+                        background-position: 20% 0;
                         background-size: contain;
                         z-index: 9;
                         position: absolute;
-                        transform: scaleX(-1);
+                        // transform: scaleX(-1);
                     }
 
                     .tv-show {
-                        width: 25%;
+                        width: 23%;
                         height: 50%;
                         position: absolute;
                         top: 67%;
-                        left: 56%;
+                        left: 26%;
                         transform: translate(-50%, -50%);
                         z-index: 1;
-                        background: $main-black;
+                        background: radial-gradient(#9c9cff, #004);
+                        // background-position: 10% 0%;
+                        // background-size: 200%;
+                        // animation: rainbowMove 5s infinite;
+                        // animation-iteration-count: infinite alternate;
+                        // animation-fill-mode: forwards;
                         margin: 0;
                         color: #fff;
+                        @include tv-noise();
                         @include glitch-text();
+                        @keyframes rainbowMove{
+                            from{
+                                background-position: 0% 0%;
+                            }
+                            
+                            to{
+                                background-position: 100% 0%;
+                            }
+                        }
+                    }
+                    .active{
+                        background: #000000;
+                    }
+                    .active .tv{
+                        display: none;
                     }
                 }
             }
@@ -136,7 +162,7 @@
         .writ-step-2 {
             font-size: 0;
             margin-top: 7vw;
-            border: 1px solid red;
+            // border: 1px solid red;
             display: flex;
 
             .write-content {
@@ -333,7 +359,7 @@
             .top-paintes-part {
                 // border: 1px solid red;
                 height: 30vw;
-                max-height: 480px;
+                max-height: 420px;
                 width: 100%;
                 display: flex;
                 align-items: flex-end;
@@ -387,7 +413,7 @@
                 .painting-plan {
                     height: 100%;
                     width: 50%;
-                    max-width: 875px;
+                    max-width: 800px;
                     margin: 0 10vw 0 0;
                     position: relative;
 
@@ -411,25 +437,24 @@
                     }
 
                     .pipe {
-                        width: 30%;
+                        width: 24%;
                         position: absolute;
-                        bottom: -15%;
-                        left: -22%;
+                        bottom: -14%;
+                        left: -16%;
                     }
 
                     .water-drop {
                         width: 20%;
                         position: absolute;
-                        bottom: 11%;
+                        bottom: 4%;
                         left: 9%;
                     }
 
                     .preview-plan {
                         width: 70%;
-                        height: 60%;
-                        margin: 1.5vw 0 0 30%;
-                        // border: 1px solid orange;
-                        background-image: url('../../img/write-letter/print-paperPlane.png');
+                        height: 68%;
+                        margin: 0 0 0 30%;
+                        background-image: url(../../img/write-letter/print-paperPlane.png);
                         background-repeat: no-repeat;
                         background-position: center;
                         background-size: contain;
@@ -474,7 +499,7 @@
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
-                margin-top: 6.5vw;
+                margin-top: 4%;
                 padding: 0 5%;
                 z-index: 99;
 

@@ -51,13 +51,16 @@ gulp.task('sass', () => {
  *  JS檢查->壓縮合併->存到dist/js
  */
 gulp.task('dist:js', () => {
-    gulp.src('./dist/js/*.js').pipe(clean());
-    return gulp.src('./js/*.js')
-        // .pipe(jshint())
-        // .pipe(jshint.reporter('default'))
-        .pipe(uglify())
-        .pipe(concat('public.js'))
-        .pipe(gulp.dest('./dist/js/'))
+    // gulp.src('./dist/js/*.js').pipe(clean());
+    // return gulp.src('./js/*.js')
+    //     // .pipe(jshint())
+    //     // .pipe(jshint.reporter('default'))
+    //     // .pipe(uglify())
+    //     .pipe(concat('public.js'))
+    //     .pipe(gulp.dest('./dist/js/'))
+
+    return gulp.src(['./js/*'])
+    .pipe(gulp.dest('./dist/js/'))
 });
 /*
  *  watch 監看 
@@ -90,7 +93,7 @@ gulp.task('default', function () {
         server: {
             //根目錄
             baseDir: "./dist",
-            index: "write-letter.html"
+            index: "home.html"
         }
     });
 

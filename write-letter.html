@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>write-letter</title>
     <link href="./css/main.css" rel="stylesheet" type="text/css">
     <style>
@@ -16,27 +18,60 @@
     @@include("./html/nav.html")
     @@include("./html/header.html")
     <main>
-        <section class="writ-step-1">
+        <section class="writ-step-1" id="writStep1">
 
             <div class="box-white select-category">
                 <img src="./img/share/blue-tape.svg" class="blue-tape">
                 <div class="num-one">
                     <h2>選擇分類</h2>
                 </div>
-                <div class="tv-category">
+                <form class="tv-category">
                     <div class="change-category-btn">
-                        <!-- @@include("./html/big3D-btn.html") -->
-                        <div class="btnWrapper">
-                            <a href="#">
-                                Click Here
-                            </a>
-                        </div>
+                        <label 
+                            class="btn" 
+                            @click="setCategoryName" 
+                            for="爆料"
+                        >
+                            <input 
+                                type="radio" 
+                                name="爆料" 
+                                v-model="letterCategory" 
+                                value="爆料" 
+                                
+                            >爆料
+                        </label>
+                        <label 
+                            class="btn" 
+                            @click="setCategoryName" 
+                            for="心情"
+                        >
+                            <input 
+                                type="radio"
+                                name="心情"
+                                v-model="letterCategory"
+                                value="心情"
+                                
+                            >心情
+                        </label>
+                        <label 
+                            class="btn" 
+                            @click="setCategoryName"
+                            for="娛樂"
+                        >
+                            <input
+                                type="radio"
+                                name="娛樂"
+                                v-model="letterCategory"
+                                value="娛樂"
+                                
+                            >娛樂
+                        </label>
                     </div>
                     <div class="tv-machine"></div>
-                    <div class="tv-show">
+                    <div class="tv-show" :class="{active: tvStart === true}">
                         @@include("./html/tv-category.html")
                     </div>
-                </div>
+                </form>
             </div>
             <div class="category-note">
                 <div class="note-pad">
@@ -161,13 +196,31 @@
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
     <script>
+        let nm1 = new Vue({
+            el:"#writStep1",
+            data:{
+                tvStart: false,
+                letterCategory:'',
+            },
+            methods:{
+                setCategoryName(e){
+                    // console.log(e.target.parentNode.childNodes);
+                    this.tvStart = true;
+                    let catLabel = e.target.parentNode.childNodes;
+                    for(let i = 0 ; i < catLabel.length ; i++){
+                        catLabel[i].classList = "btn";
+                    }
+                    e.target.parentNode.childNodes
+                    e.target.classList.add("click");
+                    this.letterCategory = e.target.firstChild.value;
+                },
+            },
+        });
+
         let vm3 = new Vue({
             el: '#writStep3',
             data: {
-                // painteType:[
-                //     1,2,3,4
-                // ],
-                openIndex: null
+                openIndex: null,
             },
             methods: {},
             computed: {
