@@ -1,0 +1,76 @@
+<div id="threeWorld" style="position: relative; overflow: hidden;">
+  <span id="mouseNet"><img src="../img/catch-letter/net.png"></span>
+  <div id="planeContainer"></div>
+  <span id="statsBox"></span>
+  <div id="planeLetter">
+    <div id="openMotion" class="open-motion"></div>
+    <div id="catchLetterShow" class="catch-letter" style="display: none;">
+      <div class="letter-wrap">
+        <div class="letter-head">
+          <div class="stamp-box"></div>
+          <div class="letter-tittle">
+            <h3>舍，甲說，這是多麼傷心的事啊！</h3>
+          </div>
+        </div>
+        <div class="letter-contant scroll-container">
+          <div class="text">
+            <p>籠罩著街上的煙，日頭是自東徂西，凶惡的他們忍相虐待，那時代，日月不相望的什麼新曆法，什麼是麵皮？在新月微光下的街市，看見鮮紅的血，但是他倆竟會自己走到橋上，就再開始。此刻，新年的一日，那時代，我去拿一面鑼來。在這黑暗之中，阻斷爭論，剛纔經市長一說，只有前進，在做頭老的，他不和人家分擔，不知流失多少人類所託命的田
+            </p> 
+            <div class="letter-upload-img"></div>
+            <p>
+              礙步的石頭，互相提攜，和狺狺的狗吠，又產生有可供消費的勢力，農民播種犁田，現在不是糴不到半斗米？
+            </p> 
+          </div>
+        </div>
+        
+    </div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/butterflyRock.js"></script>
+<script>
+  let threeWorld = document.getElementById('threeWorld');
+  let planeLetter = document.getElementById('planeLetter');
+  let openMotion = document.getElementById('openMotion');
+  let catchLetterShow = document.getElementById('catchLetterShow');
+  let net = document.getElementById('mouseNet');
+  planeLetter.style = "";
+  threeWorld.addEventListener('mouseup', openLetter);
+  threeWorld.addEventListener('mousedown', mouseDownFn);
+  threeWorld.addEventListener('mousemove', function(e){
+    net.style.left = e.pageX + 'px'
+    net.style.top = e.pageY + 'px'
+  })
+//mousedown
+function mouseDownFn(){
+  net.style.transform = 'rotate(-45deg)';
+}
+function openLetter(){
+  
+    net.style.transform = 'rotate(45deg)';
+    planeLetter.classList.add('active');
+    letterFlim();
+    threeWorld.style.cursor = 'auto';
+  }
+  let time = 5
+  function letterFlim(){
+    setTimeout(()=>{
+      time--;
+      if(time < 0 ){
+        setTimeout(()=>{
+          openMotion.style.display = "none";
+          net.style.display = "none";
+          catchLetterShow.style.display = "block";
+          console.log(catchLetterShow);
+          
+        },400)
+      }else{
+        openMotion.style.backgroundImage = `url(../img/catch-letter/letter-fold-${time+1}.png)`
+        letterFlim()
+      }
+      console.log(time)
+    },400)
+  }
+  
+</script>
