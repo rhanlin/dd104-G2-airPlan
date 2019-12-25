@@ -5,12 +5,12 @@
   box-sizing: border-box;
 }
 .cav-body {
-  background: radial-gradient(rgb(109, 160, 85) 30%, rgb(187, 171, 83) 20%);
-  background-size: 30px 30px;
+  background: radial-gradient(rgb(90, 155, 90) 30%, rgb(70, 131, 80) 20%);
+  background-size: 10px 10px;
 }
 
 .cav-main {
-  border: 1px solid royalblue;
+  // border: 1px solid royalblue;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -34,7 +34,7 @@
     width: 100%;
     position: relative;
     > img {
-      border: 1px solid firebrick;
+      // border: 1px solid firebrick;
       width: 100%;
       height: 800px;
       object-fit: cover;
@@ -55,14 +55,14 @@
       left: 3%;
 
       .cav-boxFrontLeft {
-        border: 1px solid green;
+        // border: 1px solid green;
         display: inline-block;
         width: 40%;
         height: 100%;
         padding: 10px;
 
         .cav-whoLetter {
-          border: 1px solid fuchsia;
+          // border: 1px solid fuchsia;
           display: flex;
           justify-content: space-around;
           // .cav-myLetter {
@@ -111,7 +111,7 @@
               }
 
               .cav-letWord {
-                border: 1px solid blue;
+                // border: 1px solid blue;
                 width: 80%;
 
                 .cav-letTitle {
@@ -122,7 +122,7 @@
                 }
               }
               .cav-letSetting {
-                border: 1px solid blueviolet;
+                // border: 1px solid blueviolet;
                 width: 20%;
                 display: flex;
                 justify-content: center;
@@ -158,7 +158,7 @@
           background-color: rgb(74, 117, 112);
 
           .cav-showLetter {
-            border: 1px solid red;
+            // border: 1px solid red;
             width: 100%;
             height: 100%;
             overflow-y: scroll;
@@ -182,11 +182,11 @@
               width: 82.5%;
               // height: 45vw;
               margin: 20px auto;
-              &_content {
-                // width: 100%;
-                // height: 100%;
-                // overflow: auto;
-              }
+              // &_content {
+              //    width: 100%;
+              //    height: 100%;
+              //    overflow: auto;
+              // }
               .cav-letImg {
                 // border: 5px solid $main-black;
                 // width: 90%;
@@ -267,7 +267,7 @@
 
 //我的物品
 .cav-myItem {
-  border: 2px dashed greenyellow;
+  // border: 2px dashed greenyellow;
   display: flex;
   max-height: 850px;
   height: 100vw;
@@ -303,7 +303,7 @@
         display: flex;
         justify-content: space-between;
         > li {
-          border: 5px solid black;
+          border: 5px solid $main-black;
           width: 50%;
           text-align: center;
           background-color: rgb(68, 83, 148);
@@ -402,7 +402,7 @@
     cursor: pointer;
 
     &:hover {
-      border: 5px solid rgb(235, 38, 38);
+      border: 5px solid $main-dark-red;
     }
     > img {
       width: 100%;
@@ -447,13 +447,13 @@
     position: relative;
 
     > .cav-rightBlockBM {
-      border: 1px solid black;
+      // border: 1px solid black;
       list-style: none;
       margin: 0;
       display: flex;
       justify-content: space-between;
       > li {
-        border: 5px solid black;
+        border: 5px solid $main-black;
         // border-radius: 1em 1em 0 0;
         width: 50%;
         text-align: center;
@@ -502,7 +502,7 @@
       }
 
       .cav-prodWrap {
-        border: 1px solid red;
+        // border: 1px solid red;
         width: 100%;
         height: 100%;
         display: flex;
@@ -516,7 +516,7 @@
           object-fit: cover;
         }
         > .cav-products {
-          border: 1px solid blue;
+          // border: 1px solid blue;
           position: absolute;
           top: 1%;
           left: 3.3%;
@@ -537,7 +537,7 @@
       }
     }
     .cav-pc {
-      border: 5px solid black;
+      border: 5px solid $main-black;
       border-top: none;
       width: 100%;
       height: 9%;
@@ -738,7 +738,7 @@
             background-color: rgb(74, 117, 112);
 
             .cav-showLetter {
-              border: 1px solid red;
+              // border: 1px solid red;
               width: 100%;
               height: 100%;
               overflow-y: scroll;
@@ -885,6 +885,7 @@
       > img {
         height: 100%;
       }
+      
     }
     .cav-prod {
       width: 30vw;
