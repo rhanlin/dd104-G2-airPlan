@@ -3291,182 +3291,254 @@ table {
 }
 
 @-webkit-keyframes topani {
-  1% {
-    stroke-width: 144px;
+  3% {
+    stroke-width: 186px;
   }
-  13% {
-    stroke-width: 168px;
+  6% {
+    stroke-width: 146px;
   }
-  16% {
-    stroke-width: 192px;
+  12% {
+    stroke-width: 22px;
+  }
+  17% {
+    stroke-width: 108px;
   }
   24% {
-    stroke-width: 181px;
+    stroke-width: 99px;
   }
-  32% {
-    stroke-width: 109px;
+  27% {
+    stroke-width: 73px;
   }
-  37% {
-    stroke-width: 23px;
+  30% {
+    stroke-width: 97px;
+  }
+  38% {
+    stroke-width: 82px;
   }
   44% {
-    stroke-width: 111px;
+    stroke-width: 186px;
   }
-  50% {
-    stroke-width: 136px;
+  49% {
+    stroke-width: 190px;
   }
-  59% {
-    stroke-width: 69px;
+  54% {
+    stroke-width: 131px;
   }
-  67% {
-    stroke-width: 46px;
+  57% {
+    stroke-width: 100px;
   }
-  74% {
-    stroke-width: 39px;
+  62% {
+    stroke-width: 108px;
   }
-  80% {
-    stroke-width: 135px;
+  66% {
+    stroke-width: 86px;
   }
-  86% {
-    stroke-width: 26px;
+  70% {
+    stroke-width: 21px;
+  }
+  76% {
+    stroke-width: 106px;
+  }
+  84% {
+    stroke-width: 161px;
+  }
+  89% {
+    stroke-width: 171px;
+  }
+  93% {
+    stroke-width: 199px;
   }
   95% {
-    stroke-width: 46px;
+    stroke-width: 167px;
   }
 }
 
 @keyframes topani {
-  1% {
-    stroke-width: 144px;
+  3% {
+    stroke-width: 186px;
   }
-  13% {
-    stroke-width: 168px;
+  6% {
+    stroke-width: 146px;
   }
-  16% {
-    stroke-width: 192px;
+  12% {
+    stroke-width: 22px;
+  }
+  17% {
+    stroke-width: 108px;
   }
   24% {
-    stroke-width: 181px;
+    stroke-width: 99px;
   }
-  32% {
-    stroke-width: 109px;
+  27% {
+    stroke-width: 73px;
   }
-  37% {
-    stroke-width: 23px;
+  30% {
+    stroke-width: 97px;
+  }
+  38% {
+    stroke-width: 82px;
   }
   44% {
-    stroke-width: 111px;
+    stroke-width: 186px;
   }
-  50% {
-    stroke-width: 136px;
+  49% {
+    stroke-width: 190px;
   }
-  59% {
-    stroke-width: 69px;
+  54% {
+    stroke-width: 131px;
   }
-  67% {
-    stroke-width: 46px;
+  57% {
+    stroke-width: 100px;
   }
-  74% {
-    stroke-width: 39px;
+  62% {
+    stroke-width: 108px;
   }
-  80% {
-    stroke-width: 135px;
+  66% {
+    stroke-width: 86px;
   }
-  86% {
-    stroke-width: 26px;
+  70% {
+    stroke-width: 21px;
+  }
+  76% {
+    stroke-width: 106px;
+  }
+  84% {
+    stroke-width: 161px;
+  }
+  89% {
+    stroke-width: 171px;
+  }
+  93% {
+    stroke-width: 199px;
   }
   95% {
-    stroke-width: 46px;
+    stroke-width: 167px;
   }
 }
 
 @-webkit-keyframes botani {
+  3% {
+    stroke-width: 81px;
+  }
   5% {
-    stroke-width: 153px;
+    stroke-width: 99px;
   }
   12% {
-    stroke-width: 43px;
+    stroke-width: 113px;
   }
-  16% {
-    stroke-width: 179px;
+  19% {
+    stroke-width: 57px;
   }
-  24% {
-    stroke-width: 121px;
+  23% {
+    stroke-width: 14px;
   }
-  31% {
-    stroke-width: 102px;
+  29% {
+    stroke-width: 70px;
   }
-  40% {
-    stroke-width: 30px;
+  33% {
+    stroke-width: 124px;
   }
-  47% {
-    stroke-width: 160px;
+  35% {
+    stroke-width: 22px;
   }
-  51% {
-    stroke-width: 172px;
+  43% {
+    stroke-width: 164px;
+  }
+  49% {
+    stroke-width: 112px;
+  }
+  53% {
+    stroke-width: 80px;
+  }
+  58% {
+    stroke-width: 116px;
   }
   62% {
-    stroke-width: 130px;
-  }
-  65% {
-    stroke-width: 72px;
-  }
-  76% {
     stroke-width: 64px;
   }
-  79% {
-    stroke-width: 94px;
+  68% {
+    stroke-width: 113px;
   }
-  85% {
-    stroke-width: 100px;
+  72% {
+    stroke-width: 172px;
+  }
+  76% {
+    stroke-width: 103px;
+  }
+  81% {
+    stroke-width: 106px;
+  }
+  87% {
+    stroke-width: 52px;
   }
   93% {
-    stroke-width: 103px;
+    stroke-width: 139px;
+  }
+  98% {
+    stroke-width: 18px;
   }
 }
 
 @keyframes botani {
+  3% {
+    stroke-width: 81px;
+  }
   5% {
-    stroke-width: 153px;
+    stroke-width: 99px;
   }
   12% {
-    stroke-width: 43px;
+    stroke-width: 113px;
   }
-  16% {
-    stroke-width: 179px;
+  19% {
+    stroke-width: 57px;
   }
-  24% {
-    stroke-width: 121px;
+  23% {
+    stroke-width: 14px;
   }
-  31% {
-    stroke-width: 102px;
+  29% {
+    stroke-width: 70px;
   }
-  40% {
-    stroke-width: 30px;
+  33% {
+    stroke-width: 124px;
   }
-  47% {
-    stroke-width: 160px;
+  35% {
+    stroke-width: 22px;
   }
-  51% {
-    stroke-width: 172px;
+  43% {
+    stroke-width: 164px;
+  }
+  49% {
+    stroke-width: 112px;
+  }
+  53% {
+    stroke-width: 80px;
+  }
+  58% {
+    stroke-width: 116px;
   }
   62% {
-    stroke-width: 130px;
-  }
-  65% {
-    stroke-width: 72px;
-  }
-  76% {
     stroke-width: 64px;
   }
-  79% {
-    stroke-width: 94px;
+  68% {
+    stroke-width: 113px;
   }
-  85% {
-    stroke-width: 100px;
+  72% {
+    stroke-width: 172px;
+  }
+  76% {
+    stroke-width: 103px;
+  }
+  81% {
+    stroke-width: 106px;
+  }
+  87% {
+    stroke-width: 52px;
   }
   93% {
-    stroke-width: 103px;
+    stroke-width: 139px;
+  }
+  98% {
+    stroke-width: 18px;
   }
 }
 
@@ -21944,6 +22016,256 @@ h6 {
     min-width: 30px;
     margin-top: 7px;
   }
+}
+
+.classic-body {
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.classic-body .classicmain {
+  margin-top: 10%;
+}
+
+.classic-body .classicmain .classicSec {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.classic-body .classicmain .classicSec .classicOver {
+  text-align: center;
+}
+
+.classic-body .classicmain .classicSec .classicOver .classicImg {
+  width: 90%;
+}
+
+.classic-body .classicmain .classicSec .moodStyle {
+  padding: 0 1.2%;
+  border-radius: 45% 45% 0 0;
+  float: left;
+  color: #212121;
+  position: absolute;
+  left: 40.5%;
+  top: 78%;
+}
+
+.classic-body .classicmain .classicSec .moodStyle p {
+  margin-top: 75%;
+  font-size: 24px;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+}
+
+.classic-body .classicmain .classicSec .moodStyle:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.classic-body .classicmain .classicSec .brokeStyle {
+  padding: 0 1.2%;
+  border-radius: 45% 45% 0 0;
+  float: left;
+  color: #212121;
+  position: absolute;
+  left: 48%;
+  top: 78%;
+}
+
+.classic-body .classicmain .classicSec .brokeStyle p {
+  margin-top: 75%;
+  font-size: 24px;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+}
+
+.classic-body .classicmain .classicSec .brokeStyle:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.classic-body .classicmain .classicSec .happyStyle {
+  padding: 0 1.2%;
+  border-radius: 45% 45% 0 0;
+  float: left;
+  color: #212121;
+  position: absolute;
+  left: 55.2%;
+  top: 78%;
+}
+
+.classic-body .classicmain .classicSec .happyStyle p {
+  margin-top: 75%;
+  font-size: 24px;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+}
+
+.classic-body .classicmain .classicSec .happyStyle:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.classic-body .classicmain .classicSec .styleClear {
+  clear: both;
+}
+
+.classic-body .classicmain .classicArt {
+  margin-top: 10%;
+}
+
+.classic-body .classicmain .classicArt .classicDay {
+  padding-top: 10%;
+  background-color: #f08b8c;
+}
+
+.classic-body .classicmain .classicArt .classicDay .day p {
+  margin: 0;
+  color: #fff;
+}
+
+.classic-body .classicmain .classicArt .classicWeek {
+  padding-top: 10%;
+  background-color: #82afd9;
+}
+
+.classic-body .classicmain .classicArt .classicWeek .week p {
+  margin: 0;
+  color: #fff;
+}
+
+.classic-body .classicmain .classicArt .classicWeek .week img {
+  width: 10%;
+  margin-left: 20%;
+}
+
+.classic-body .classicmain .classicArt .classicMon {
+  padding-top: 10%;
+  background-color: #39ac72;
+}
+
+.classic-body .classicmain .classicArt .classicMon .mon p {
+  margin: 0;
+  color: #fff;
+}
+
+.classic-body .classicmain .classicArt .classicYer {
+  padding-top: 10%;
+  background-color: #f3de6b;
+}
+
+.classic-body .classicmain .classicArt .classicYer .year p {
+  margin: 0;
+  color: #fff;
+}
+
+.classic-body .classicLetter {
+  width: 30%;
+  border: 1px solid #212121;
+  position: absolute;
+  top: 140%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+.classic-body .classicLetter .letterOver {
+  height: 700px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.classic-body .classicLetter .letterOver .cav-letterBg {
+  border: 50px solid transparent;
+  -o-border-image: url("../../img/cave/cav-postCard_b.svg") 50 50 round;
+     border-image: url("../../img/cave/cav-postCard_b.svg") 50 50 round;
+  background-color: #fff;
+  width: 100%;
+  margin: 0px;
+}
+
+.classic-body .classicLetter .letterOver .cav-letterBg .cav-letImg {
+  width: 100%;
+  overflow: hidden;
+}
+
+.classic-body .classicLetter .letterOver .cav-letterBg .cav-letImg img {
+  width: 100%;
+}
+
+.classic-body .classicLetter .letterOver .cav-letterBg hr {
+  border: 1px solid #ccc;
+  margin: 15px auto;
+}
+
+.classic-body .classicLetter .letterOver .cav-letterBg .cav-letNavbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.classic-body .classicLetter .letterOver .cav-letterBg .cav-letNavbar .cav-letNavOption {
+  width: 35px;
+  height: 35px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.classic-body .classicLetter .letterOver .cav-letterBg .cav-letNavbar .cav-letNavOption img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.classic-body .classicLetter .letterOver .cav-letterBg .cav-h3 {
+  margin: 15px 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+.classic-body .classicLetter .letterOver .cav-letterBg .cav-letComment {
+  border-bottom: 1px solid #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.classic-body .classicLetter .letterOver .cav-letterBg .cav-letComment .cav-commMain {
+  width: 80%;
+}
+
+.classic-body .classicLetter .letterOver .cav-letterBg .cav-letComment .cav-commMain .cav-commHead {
+  margin-bottom: 5px;
+}
+
+.classic-body .classicLetter .letterOver .cav-letterBg .cav-letComment .cav-commMain .cav-commHead .cav-commId {
+  font-weight: bold;
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.classic-body .classicLetter .letterOver .cav-letterBg .cav-letComment .cav-commMain .cav-commHead .cav-commTime {
+  color: #777;
+  font-size: 10px;
+  text-align: initial;
+}
+
+.classic-body .classicLetter .letterOver .cav-letterBg .cav-letComment .cav-commOption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 0 auto;
 }
 
 /*
