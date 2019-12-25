@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/main.css">
-    <title>userSetting</title>
+    <title>user-setting</title>
 </head>
 
 <body class="userSetting_body">
     @@include("./html/nav.html")
     @@include("./html/header.html")
     <div class="userSettingBanner">
-        <img class="picGrass" src="../img/userSetting/grass.png" alt="grass">
-        <img class="picTree" src="../img/userSetting/tree.svg" alt="tree">
-        <img class="picTree2" src="../img/userSetting/tree.svg" alt="tree2">
-        <img class="picTree3" src="../img/userSetting/tree_2.svg" alt="tree3">
-        <img class="picFactory" src="../img/userSetting/factory.svg" alt="factory">
+        <img class="picGrass" src="../img/user-setting/grass.png" alt="grass">
+        <img class="picTree" src="../img/user-setting/tree.svg" alt="tree">
+        <img class="picTree2" src="../img/user-setting/tree.svg" alt="tree2">
+        <img class="picTree3" src="../img/user-setting/tree_2.svg" alt="tree3">
+        <img class="picFactory" src="../img/user-setting/factory.svg" alt="factory">
     </div>
     <main class="userSetting_main">
         <div class="floor">
@@ -42,9 +42,9 @@
                         </keep-alive>
                     </div>
                 </div>
-                <img class="robotB1" src="img/userSetting/robotB1.svg" alt="robotB1">
-                <img class="robotB1_2" src="img/userSetting/robotB1_2.svg" alt="robotB1_2">
-                <img class="box" src="img/userSetting/box.svg" alt="box">
+                <img class="robotB1" src="img/user-setting/robotB1.svg" alt="robotB1">
+                <img class="robotB1_2" src="img/user-setting/robotB1_2.svg" alt="robotB1_2">
+                <img class="box" src="img/user-setting/box.svg" alt="box">
                 <div class="space_B1"></div>
             </section>
 
@@ -63,9 +63,9 @@
                         <component :is="content"></component>
                     </keep-alive>
                 </div>
-                <img class="robotB2" src="img/userSetting/robotB2.svg" alt="robotB2">
-                <img class="robotB2_2" src="img/userSetting/robotB2_2.svg" alt="robotB2_2">
-                <img class="paper" src="img/userSetting/paper.svg" alt="">
+                <img class="robotB2" src="img/user-setting/robotB2.svg" alt="robotB2">
+                <img class="robotB2_2" src="img/user-setting/robotB2_2.svg" alt="robotB2_2">
+                <img class="paper" src="img/user-setting/paper.svg" alt="">
                 <div class="space_B2"></div>
             </section>
             
@@ -73,31 +73,33 @@
                 <!--airPlan開發者資訊-->
                 <h2 class="threed-text-red-endWhite">開發人員</h2>
                 <div class="admKanban" id="admKanban">
-                    <div class="admKanbanOverFlow">
-                        <div class="mike" @click="content='mike'">
-                            <h3>峻瑜</h3>
-                        </div>
-                        <div class="spencer" @click="content='spencer'">
-                            <h3>宗翰</h3>
-                        </div>
-                        <div class="allen" @click="content='allen'">
-                            <h3>耀輝</h3>
-                        </div>
-                        <div class="grace" @click="content='grace'">
-                            <h3>雅珺</h3>
-                        </div>
-                        <div class="sharon" @click="content='sharon'">
-                            <h3>湘文</h3>
-                        </div>
-                        <div class="howard" @click="content='howard'">
-                            <h3>恒祥</h3>
+                    <div class="admKanbanOverFlowOut">
+                        <div class="admKanbanOverFlowIn">
+                            <div class="mike" @click="content='mike'">
+                                <h3>峻瑜</h3>
+                            </div>
+                            <div class="spencer" @click="content='spencer'">
+                                <h3>宗翰</h3>
+                            </div>
+                            <div class="allen" @click="content='allen'">
+                                <h3>耀輝</h3>
+                            </div>
+                            <div class="grace" @click="content='grace'">
+                                <h3>雅珺</h3>
+                            </div>
+                            <div class="sharon" @click="content='sharon'">
+                                <h3>湘文</h3>
+                            </div>
+                            <div class="howard" @click="content='howard'">
+                                <h3>恒祥</h3>
+                            </div>
                         </div>
                     </div>
                     <keep-alive>
                         <component :is="content"></component>
                     </keep-alive>
                 </div>
-                <img class="robotB3" src="img/userSetting/robotB3.svg" alt="robotB3">
+                <img class="robotB3" src="img/user-setting/robotB3.svg" alt="robotB3">
                 <img class="paperPlane" src="img/share/paper-plane.png" alt="paperPlane">
             </section>
             
@@ -106,7 +108,7 @@
     <div class="userSetting_memcolor" id="userSetting_memcolor2"></div>
     @@include("./html/footer.html");
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
-    <script src="js/userSetting_adm.js"></script>
+    <script src="js/user-setting_adm.js"></script>
 </body>
 
 </html>

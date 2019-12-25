@@ -1,0 +1,242 @@
+.classic-body {
+    margin: 0;
+    font-family: $font;
+    .classicmain {
+        margin-top: 10%;
+        .classicSec {
+            width: 90%;
+            margin: 0 auto;
+            .classicOver {
+                text-align: center;
+                // border: 1px solid lightgreen;
+                .classicImg {
+                    width: 90%;
+                    // border: 1px solid lightcoral;
+                }
+            }
+
+            .moodStyle {
+                // @include border();
+                padding: 0 1.2%;
+                border-radius: 45% 45% 0 0;
+                float: left;
+                // background-color: #D5A18E;
+                color: $main_black;
+                // text-shadow: $main_black 0 2px 2px;
+                position: absolute;
+                left: 40.5%;
+                top: 78%;
+                p {
+                    margin-top: 75%;
+                    font-size: 24px;
+                    writing-mode: vertical-lr;
+                }
+
+                
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+            .brokeStyle {
+                // @include border();
+                padding: 0 1.2%;
+                border-radius: 45% 45% 0 0;
+                float: left;
+                // background-color: #D5A18E;
+                color: $main_black;
+                // text-shadow: $main_black 0 2px 2px;
+                position: absolute;
+                left: 48%;
+                top: 78%;
+                p {
+                    margin-top: 75%;
+                    font-size: 24px;
+                    writing-mode: vertical-lr;
+                }
+
+                
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+            .happyStyle {
+                // @include border();
+                padding: 0 1.2%;
+                border-radius: 45% 45% 0 0;
+                float: left;
+                // background-color: #D5A18E;
+                color: $main_black;
+                // text-shadow: $main_black 0 2px 2px;
+                position: absolute;
+                left: 55.2%;
+                top: 78%;
+                p {
+                    margin-top: 75%;
+                    font-size: 24px;
+                    writing-mode: vertical-lr;
+                }
+
+                
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+            .styleClear {
+                clear: both;
+            }
+        }
+        .classicArt {
+            margin-top: 10%;
+            .classicDay {
+                // border: 1px solid lightseagreen;
+                padding-top: 10%;
+                background-color: $main_red;
+                .dashed {
+                    // border:3px dashed $main_black;
+                }
+                .day {
+                    // background-color: #fff;
+                    p {
+                        margin: 0;
+                        color: #fff;
+                    }
+                }
+            }
+            .classicWeek {
+                padding-top: 10%;
+                background-color: $main_blue;
+                .week {
+                    // background-color: #fff;
+                    p {
+                        margin: 0;
+                        color: #fff;
+                    }
+                    img {
+                        width: 10%;
+                        // border: 1px solid lightseagreen;
+                        margin-left: 20%;
+                    }
+                }
+            }
+            .classicMon {
+                padding-top: 10%;
+                background-color: $main_green;
+                .mon {
+                    // background-color: #fff;
+                    p {
+                        margin: 0;
+                        color: #fff;
+                    }
+                }
+            }
+            .classicYer {
+                padding-top: 10%;
+                background-color: $main_yellow;
+                .year {
+                    // background-color: #fff;
+                    p {
+                        margin: 0;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    .classicLetter {
+        width: 30%;
+        border:1px solid $main_black;
+        position: absolute;
+        top:140%;
+        left: 50%;
+        transform: translate(-50%);
+        .letterOver {
+            height: 700px;
+            overflow: hidden;
+            overflow-y: scroll;
+            .cav-letterBg {
+                border: 50px solid transparent;
+                border-image: url("../../img/cave/cav-postCard_b.svg") 50 50 round;
+                background-color: #fff;
+                width: 100%;
+                // height: 45vw;
+                margin: 0px;
+                &_content {
+                // width: 100%;
+                // height: 100%;
+                // overflow: auto;
+                }
+                .cav-letImg {
+                // border: 5px solid $main-black;
+                // width: 90%;
+                // margin: 0 auto;
+                width: 100%;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                }
+                }
+                hr {
+                border: 1px solid #ccc;
+                margin: 15px auto;
+                }
+                .cav-letNavbar {
+                display: flex;
+                justify-content: flex-end;
+                // border: 1px solid #ccc;
+
+                .cav-letNavOption {
+                    // border: 1px solid tomato;
+                    width: 35px;
+                    height: 35px;
+                    margin-left: 5px;
+                    vertical-align: middle;
+                    img {
+                    width: 100%;
+                    cursor: pointer;
+                    }
+                }
+                // .btn-big-test {
+                //   @include btn_big_module();
+                // }
+                }
+
+                .cav-h3 {
+                margin: 15px 0;
+                padding-bottom: 5px;
+                border-bottom: 1px solid #ccc;
+                }
+                .cav-letComment {
+                // border: 1px solid rosybrown;
+                border-bottom: 1px solid #ccc;
+                display: flex;
+                .cav-commMain {
+                    // border-bottom: 1px solid #ccc;
+                    width: 80%;
+                    .cav-commHead {
+                    // display: flex;
+                    margin-bottom: 5px;
+                    .cav-commId {
+                        font-weight: bold;
+                        font-size: 14px;
+                        margin-right: 5px;
+                    }
+                    .cav-commTime {
+                        color: #777;
+                        font-size: 10px;
+                        text-align: initial;
+                    }
+                    }
+                }
+                .cav-commOption {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    margin: 0 auto;
+                }
+                }
+            }
+        }
+    }
+
+}
