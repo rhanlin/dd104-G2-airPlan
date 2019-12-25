@@ -11,7 +11,7 @@ $(document).ready(function () {
         nav: true
       },
       575: {
-        items: 4,
+        items: 6,
         nav: true,
       },
       767: {
@@ -23,7 +23,7 @@ $(document).ready(function () {
         nav: true,
       },
       1199: {
-        items: 8,
+        items: 11,
         nav: true,
       }
     }
