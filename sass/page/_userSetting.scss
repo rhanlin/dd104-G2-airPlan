@@ -12,6 +12,48 @@
             background-position: 100% -100%;
         }
     }
+    .userSettingBanner{
+        height: 880px; 
+        position: relative;
+        overflow: hidden;
+        font-size: 0;
+        .picGrass{
+            width: 1920px;
+            position: absolute; 
+            bottom: 0; 
+            left: 50%; 
+            transform: translateX(-50%);
+        }
+        .picTree{
+            width: 8%; 
+            min-width: 70px;
+            position: absolute; 
+            bottom: 45%; 
+            left: 20%;
+        }
+        .picTree2{
+            width: 10%; 
+            min-width: 80px;
+            position: absolute; 
+            bottom: 35%; 
+            left: 5%;
+        }
+        .picTree3{
+            width: 6%; 
+            min-width: 50px; 
+            position: absolute; 
+            bottom: 55%; 
+            right: 5%;
+        }
+        .picFactory{
+            width:50%;
+            min-width: 370px;  
+            position: absolute; 
+            bottom: 20%; 
+            left: 50%; 
+            transform: translateX(-50%);
+        }
+    }
     .userSetting_main{
         width: 100%;
         max-width: 1920px;
@@ -19,7 +61,7 @@
         border-bottom: 80px solid $main-blue;
         @include marginAuto;
         .floor{
-            width: 95%;
+            width: 100%;
             background: radial-gradient(rgb(139, 98, 130) 30%, rgb(248, 230, 228) 20%);
             background-size: 10px 10px;
             overflow: hidden;
@@ -35,7 +77,7 @@
                     @include userSetting_title;
                 }
                 .memKanban{
-                    padding: 30px;
+                    padding: 20px;
                     background-color: $main-green;
                     border-radius: 15px;
                     @include userSetting_mem;
@@ -44,12 +86,11 @@
                         @include border;
                         .memData{
                             margin:  10% 0 10px ;
-                            width: 25%;
+                            width: 30%;
                             text-align: center;
                             display: inline-block;
-                            background-image: url(../../img/share/yellow-paint-line.svg);
-                            // opacity: 0.8;
-                            // background-repeat: no-repeat;
+                            background-image: url(../../img/share/yellow-note.svg);
+                            background-repeat: no-repeat;;
                         }
                         .airCoin{
                             @extend.memData;
@@ -67,11 +108,13 @@
                             @include marginAuto;
                         }
                         .userSetting_memDataTable{
-                            width: 75%;
+                            width: 90%;
                             @include marginAuto;
                         }
+                        .userSetting_memData tr{
+                            height: 40px;
+                        }
                         .userSetting_memData td{
-                            width: 50%;
                             border: 3px solid $main-green;
                         }
                         .mempic{
@@ -103,20 +146,14 @@
                             }
                             .memcolorSmall{
                                 border:none;
+                                display: flex;
                                 @extend .memcolorBig;
-                                .memcolorBlack{
+                                .memcolorSmall img{
                                     width: 50%;
-                                    display: inline-block;
                                     border: 3px dashed $main-green;
-                                    
-                                }
-                                .memcolorWhite{
-                                    @extend.memcolorBlack;
                                 }
                             }
                         }
-                        
-                        
                     }
                 }
                 .robotB1{
@@ -285,118 +322,154 @@
                     min-width: 900px;
                     height: 100%;
                     border-top: 10px solid $main-black;
-                    transform: translate(-45%,0%);
-                    overflow: hidden;
+                    transform: translate(-50%,0%);
+                    overflow: auto;
                     position: absolute;
                     left: 50%;
                     z-index: 5;
-                    .mike{
-                        background-image: url("../../img/userSetting/light_mike.svg");
-                        @include userSetting_admTag;
-                        h3{
-                            padding-right: 25px;
-                            transform: rotate(-25deg);
-                            @include userSetting_admTagName;
+                    .admKanbanOverFlow{
+                        width: 1000px;
+                        height: 250px;
+                        overflow: auto;
+                        border: 1px solid blue;
+                        // display: flex;
+                        .mike{
+                            background-image: url("../../img/userSetting/light_mike.svg");
+                            @include userSetting_admTag;
+                            h3{
+                                padding-right: 25px;
+                                transform: rotate(-25deg);
+                                @include userSetting_admTagName;
+                            }
+                        }
+                        .spencer{
+                            background-image: url("../../img/userSetting/light_spencer.svg");
+                            @include userSetting_admTag;
+                            h3{
+                                padding-right: 25px;
+                                transform: rotate(-25deg);
+                                @include userSetting_admTagName;
+                            }
+                        }
+                        .allen{
+                            background-image: url("../../img/userSetting/light_allen.svg");
+                            @include userSetting_admTag;
+                            h3{
+                                padding-right: 25px;
+                                color: $main-white;
+                                @include userSetting_admTagName;
+                            }
+                        }
+                        .grace{
+                            background-image: url("../../img/userSetting/light_grace.svg");
+                            @include userSetting_admTag;
+                            h3{
+                                padding-right: 25px;
+                                @include userSetting_admTagName;
+                            }
+                        }
+                        .sharon{
+                            background-image: url("../../img/userSetting/light_sharon.svg");
+                            @include userSetting_admTag;
+                            h3{
+                                padding-left: 10px;
+                                transform: rotate(25deg);
+                                @include userSetting_admTagName;
+                            }
+                        }
+                        .howard{
+                            background-image: url("../../img/userSetting/light_howard.svg");
+                            @include userSetting_admTag;
+                            h3{
+                                padding-left: 10px;
+                                transform: rotate(25deg);
+                                @include userSetting_admTagName;
+                            }
                         }
                     }
-                    .spencer{
-                        background-image: url("../../img/userSetting/light_spencer.svg");
-                        @include userSetting_admTag;
-                        h3{
-                            padding-right: 25px;
-                            transform: rotate(-25deg);
-                            @include userSetting_admTagName;
-                        }
-                    }
-                    .allen{
-                        background-image: url("../../img/userSetting/light_allen.svg");
-                        @include userSetting_admTag;
-                        h3{
-                            padding-right: 25px;
-                            color: $main-white;
-                            @include userSetting_admTagName;
-                        }
-                    }
-                    .grace{
-                        background-image: url("../../img/userSetting/light_grace.svg");
-                        @include userSetting_admTag;
-                        h3{
-                            padding-right: 25px;
-                            @include userSetting_admTagName;
-                        }
-                    }
-                    .sharon{
-                        background-image: url("../../img/userSetting/light_sharon.svg");
-                        @include userSetting_admTag;
-                        h3{
-                            padding-left: 10px;
-                            transform: rotate(25deg);
-                            @include userSetting_admTagName;
-                        }
-                    }
-                    .howard{
-                        background-image: url("../../img/userSetting/light_howard.svg");
-                        @include userSetting_admTag;
-                        h3{
-                            padding-left: 10px;
-                            transform: rotate(25deg);
-                            @include userSetting_admTagName;
-                        }
-                    }
+                    
                     //userSetting_adm vue
                     .userSetting_mike{
                         background: radial-gradient(rgba(84, 179, 103, 0.5) 30%, rgb(255, 255, 255) 20%);
                         animation: leftLight 80s infinite linear;
+                        display: flex;
                         @include userSetting_adm;
-                        .userSetting_wrap{
-                            @include userSetting_wrap;
-                            background-image: url("../../img/userDeveloper/howard.png");
-                        }
+                        // .lighting{
+                        //     bottom: 45%;
+                        //     left: -9%;
+                        //     transform: rotate(-24deg);
+                        //     background: radial-gradient(rgba(84, 179, 103, 0.5) 30%, rgba(255, 255, 255, .6) 20%);
+                        //     animation: leftLight 80s infinite linear;
+                        //     @include lighting;
+                        // }
                     }
                     .userSetting_spencer{
                         background: radial-gradient(rgba(148, 203, 255, 0.5) 30%, rgb(255, 255, 255) 20%);
                         animation: leftLight 80s infinite linear;
+                        display: flex;
                         @include userSetting_adm;
-                        .userSetting_wrap{
-                            @include userSetting_wrap;
-                            background-image: url("../../img/userDeveloper/spencer.png");
-                        }
+                        // .lighting{
+                        //     bottom: 45%;
+                        //     left: 15%;
+                        //     transform: rotate(-24deg);
+                        //     background: radial-gradient(rgba(148, 203, 255, 0.5) 30%, rgba(255, 255, 255, .6) 20%);
+                        //     animation: leftLight 80s infinite linear;
+                        //     @include lighting;
+                        // }
                     }
                     .userSetting_allen{
                         background: radial-gradient(rgba(170, 170, 170, 0.5) 30%, rgb(255, 255, 255) 20%);
                         animation: downLight 80s infinite linear;
+                        display: flex;
                         @include userSetting_adm;
-                        .userSetting_wrap{
-                            @include userSetting_wrap;
-                            background-image: url("../../img/userDeveloper/allen.svg");
-                        }
+                        // .lighting{
+                        //     bottom: 39%;
+                        //     left: 25.5%;
+                        //     background: radial-gradient(rgba(170, 170, 170, 0.5) 30%, rgba(255, 255, 255, .6) 20%);
+                        //     animation: downLight 80s infinite linear;
+                        //     @include lighting;
+                        // }
                     }
                     .userSetting_grace{
                         background: radial-gradient(rgba(255, 224, 124, 0.5) 30%, rgb(255, 255, 255) 20%);
                         animation: downLight 80s infinite linear;
+                        display: flex;
                         @include userSetting_adm;
-                        .userSetting_wrap{
-                            @include userSetting_wrap;
-                            background-image: url("../../img/userDeveloper/grace.png");
-                        }
+                        // .lighting{
+                        //     bottom: 39%;
+                        //     left: 50.5%;
+                        //     background: radial-gradient(rgba(255, 224, 124, 0.5) 30%, rgba(255, 255, 255, .6) 20%);
+                        //     animation: downLight 80s infinite linear;
+                        //     @include lighting;
+                        // }
                     }
                     .userSetting_sharon{
                         background: radial-gradient(rgba(255, 180, 199, 0.5) 30%, rgb(255, 255, 255) 20%);
                         animation: rightLight 80s infinite linear;
+                        display: flex;
                         @include userSetting_adm;
-                        .userSetting_wrap{
-                            @include userSetting_wrap;
-                            background-image: url("../../img/userDeveloper/sharon.png");
-                        }
+                        // .lighting{
+                        //     bottom: 45%;
+                        //     left: 64%;
+                        //     transform: rotate(24deg);
+                        //     background: radial-gradient(rgba(255, 180, 199, 0.5) 30%, rgba(255, 255, 255, .6) 20%);
+                        //     animation: rightLight 80s infinite linear;
+                        //     @include lighting;
+                        // }
                     }
                     .userSetting_howard{
                         background: radial-gradient(rgba(255, 255, 255, 0.5) 30%, rgb(255, 255, 255) 20%);
                         animation: rightLight 80s infinite linear;
+                        display: flex;
                         @include userSetting_adm;
-                        .userSetting_wrap{
-                            @include userSetting_wrap;
-                            background-image: url("../../img/userDeveloper/howard.png");
-                        }
+                        // .lighting{
+                        //     bottom: 45%;
+                        //     left: 88.5%;
+                        //     transform: rotate(24deg);
+                        //     background: radial-gradient(rgba(255, 255, 255, 0.5) 30%, rgba(255, 255, 255, .6) 20%);
+                        //     animation: rightLight 80s infinite linear;
+                        //     @include lighting;
+                        // }
                     }
                 }
                 .robotB3{
@@ -414,24 +487,95 @@
                     animation: paperPlane 5s ease-in-out infinite;
                 }
             }
-            
-            .btn{
-                background:$main-blue;
-                color: $main-yellow;
+        }
+    }
+}
+
+@include respond(note) {
+    .userSetting_body {
+        .userSetting_main {
+            .floor {
+                .userSetting_mem{
+                    h2{
+                        @include userSetting_title_note;
+                    }
+                    .memKanban{
+                        @include kanbanSize;
+                        .memKanbanIn{
+                            .memData{
+                                width: 75px;
+                            }
+                        }
+                    }
+                }
+                .userSetting_sys{
+                    h2{
+                        @include userSetting_title_note;
+                    }
+                    .sysKanban{
+                        @include kanbanSize;
+                        .manu{
+                            width: 75px;
+                        }
+                    }
+                }
+                .userSetting_adm{
+                    h2{
+                        @include userSetting_title_note;
+                    }
+                    .admKanban{
+                        .userSetting_mike, .userSetting_spencer, .userSetting_allen, .userSetting_grace, .userSetting_sharon, .userSetting_howard{
+                            max-width: 420px;
+                        }
+                    }
+                }
             }
         }
     }
 }
 
-
-
-
-
-
-
-
-
-
+@include respond(iphone) {
+    .userSetting_body {
+        .userSetting_main {
+            .floor {
+                .userSetting_mem{
+                    h2{
+                        @include userSetting_title_iphone;
+                    }
+                    .memKanban{
+                        @include kanbanSize;
+                        .memKanbanIn{
+                            .memData{
+                                width: 75px;
+                            }
+                        }
+                    }
+                }
+                .userSetting_sys{
+                    h2{
+                        @include userSetting_title_iphone;
+                    }
+                    .sysKanban{
+                        @include kanbanSize;
+                        .manu{
+                            width: 75px;
+                        }
+                    }
+                }
+                .userSetting_adm{
+                    h2{
+                        @include userSetting_title_iphone;
+                    }
+                    .admKanban{
+                        .userSetting_mike, .userSetting_spencer, .userSetting_allen, .userSetting_grace, .userSetting_sharon, .userSetting_howard{
+                            max-width: 350px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 .userSetting_body li, .userSetting_body span, .userSetting_body td, .userSetting_body p{
     font-size: 20px;

@@ -2,6 +2,29 @@
 @import "../../node_modules/owl.carousel/src/scss/owl.carousel.scss";
 @import "../../node_modules/owl.carousel/src/scss/owl.theme.default.scss";
 
+h1 {
+  font-size:40px ;
+}
+
+h2 {
+  font-size:30px ;
+}
+
+h3 {
+  font-size:26px ;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size:16px ;
+}
+
+h6 {
+  font-size:14px ;
+}
 
 $input_border_radius: 5px !default;
 $input_height: 42px !default;
@@ -18,10 +41,13 @@ $arrow_color: $gray !default;
 
 .shop-body {
   box-sizing: border-box;
-  background-color: #eeddd6;
   width: 100%;
+  background-color: #fff8f5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23424242' fill-opacity='0.16'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 
-  .shop-header {}
+  .shop-header {
+    // @include cloud();
+  }
 
   .shop-main {
     overflow: hidden;
@@ -29,84 +55,81 @@ $arrow_color: $gray !default;
 
     #section1 {
       margin: 0 auto;
-      width: 100%;
-      max-width: 1500px;
+      width: 90%;
 
       .container {
-        .row {
-          .shopTitleText {
-            transform: translate(0, 80%);
-            width: 75%;
-            margin: 0 auto;
-            position: relative;
-            font-weight: 900;
-            font-size: 140px;
-            color: #dbcd00;
-            @include stroke(2, #0f0f0f);
-            z-index: 25;
-            font-family: $font;
-            font-weight: 500;
+        // .row {
+        //   .shopTitleText {
+        //     transform: translate(0, 80%);
+        //     width: 75%;
+        //     margin: 0 auto;
+        //     position: relative;
+        //     font-weight: 900;
+        //     font-size: 140px;
+        //     color: #dbcd00;
+        //     @include stroke(2, #0f0f0f);
+        //     z-index: 25;
+        //     font-family: $font;
+        //     font-weight: 500;
 
-            &::before {
-              content: '客製化商城';
-              position: absolute;
-              left: -1.25%;
-              top: 0%;
-              font-weight: 900;
-              font-size: 140px;
-              color: #83afd9;
-              @include stroke(2, #0f0f0f);
-              font-family: $font;
-              font-weight: 500;
-            }
-          }
+        //     &::before {
+        //       content: '客製化商城';
+        //       position: absolute;
+        //       left: -1.25%;
+        //       top: 0%;
+        //       font-weight: 900;
+        //       font-size: 140px;
+        //       color: #83afd9;
+        //       @include stroke(2, #0f0f0f);
+        //       font-family: $font;
+        //       font-weight: 500;
+        //     }
+        //   }
 
-          .shopTitle {
-            width: 100%;
-            height: 340px;
+        //   .shopTitle {
+        //     width: 100%;
+        //     height: 340px;
 
-            .shopTitleContainer {
-              margin: 0 auto;
-              width: 100%;
-              position: relative;
-              @include titlePage(4);
-              z-index: 20;
+        //     .shopTitleContainer {
+        //       margin: 0 auto;
+        //       width: 100%;
+        //       position: relative;
+        //       @include titlePage(4);
+        //       z-index: 20;
 
-              .titlePagePic {
-                width: 90%;
-                position: absolute;
-                top: 85px;
-                left: 6%;
+        //       .titlePagePic {
+        //         width: 90%;
+        //         position: absolute;
+        //         top: 85px;
+        //         left: 6%;
 
-                img {
-                  width: 100%;
-                }
-              }
-            }
-          }
-        }
+        //         img {
+        //           width: 100%;
+        //         }
+        //       }
+        //     }
+        //   }
+        // }
 
         .row {
           #conectionLine {
-            margin: 0 auto;
-            position: relative;
-            height: 200px;
-            margin: 0 auto;
 
+            position: relative;
+            height: 10vw;
 
             .iron_clip1 {
-              width: 15%;
+              width: 7vw;
               position: absolute;
-              left: 20%;
-              top: -50%;
+              left: 25%;
+              top: -20%;
               z-index: 10;
             }
 
             .iron_clip2 {
-              width: 15%;
+              width: 7vw;
               position: absolute;
-              right: 5%;
-              top: -50%;
+              right: 25%;
+              top: -20%;
               z-index: 10;
             }
 
@@ -114,181 +137,179 @@ $arrow_color: $gray !default;
         }
       }
 
-      .shopItemContainer {
-        margin: 0 auto;
-        width: 85%;
+      #shopOutsideBox {
         position: relative;
-        @include itemPage(2);
 
+        .shopItemContainer {
+          margin-left: 0.5vw;
+          width: 65vw;
+          height: 50vw;
 
-        .itemPage0 {
+          .itemPage1 {
+            width: 90%;
+            height: 100%;
+            background-color: #ffffff;
+            border: $border;
+
+            .itemPage2 {
+              margin-top: 3%;
+              margin-left: 3%;
+              width: 100%;
+              background-color: #ffffff;
+              border: $border;
+              height: 100%;
+
+              .itemPage0 {
+                margin-top: 12%;
+                margin-left: 25%;
+                width: 100%;
+                background-color: #82afd9;
+                border: $border;
+                height: 80%;
+
+              }
+            }
+          }
+        }
+
+        .itemCardBox {
+          top: 0;
           position: absolute;
-          width: 90%;
-          height: 750px;
-          background-color: #82afd9;
-          top: 170px;
-          left: 15%;
-          border: 5px solid black;
+          margin-top: 4%;
+          width: 80vw;
+          display: flex;
+          flex-wrap: wrap;
 
-        }
-      }
+          .itemCardAside {
+            width: 20%;
+            height: 900px;
 
+            .itemCardAsideBox {
+              width: 65%;
+              margin: 30% 10% 0 30%;
 
+              .itemCardAsideh3 {
+                font-weight: 900;
+                font-family: $font;
+              }
 
-
-      .itemCardBox {
-        margin-top: 100px;
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-
-        .itemCardAside {
-          width: 20%;
-          height: 900px;
-
-          .itemCardAsideBox {
-            width: 65%;
-            margin: 25% 10% 0 30%;
-
-            .itemCardAsideh3 {
-              font-weight: 900;
-              font-family: $font;
-            }
-
-            .itemCardAsideh4 {
-              letter-spacing: 0.3rem;
-              font-weight: 900;
-              font-family: $font;
-              margin: 40px 0;
+              .itemCardAsideh4 {
+                letter-spacing: 0.3rem;
+                font-weight: 900;
+                font-family: $font;
+                margin: 40px 0;
+              }
             }
           }
-        }
 
-        .itemCardContainer {
-          width: 80%;
-          padding-top: 150px;
-          padding-left: 20px;
+          .itemCardContainer {
+            width: 80%;
+            padding-top: 150px;
+            padding-left: 20px;
 
-          @include itemCardRow1(5);
-          @include itemCardRow2(3);
+            @include itemCardRow1(5);
+            @include itemCardRow2(3);
 
-          .line_top {
-            width: 820px;
-            transform: translate(5%, -10%);
-          }
+            .line_top {
+              width: 80%;
+              transform: translate(5%, -10%);
+            }
+
+            .itemCardTopRow {
+              display: flex;
+
+              .itemCard1 {
+                transform: translate(0, -50%) rotate(15deg);
+
+                img {
+                  width: 2.5vw;
+                  transform: translate(0%, -70%) rotate(330deg);
+                }
+              }
+
+              .itemCard2 {
+                transform: translate(0, -30%) rotate(355deg);
+
+                img {
+                  width: 2.5vw;
+                  transform: translate(70%, -70%) rotate(360deg);
+                }
+              }
+
+              .itemCard3 {
+                font-size: 0;
+                transform: translate(0, -10%) rotate(360deg);
+
+                .itemCard3Img_1 {
+                  display: inline-block;
+                  width: 2.5vw;
+                  transform: translate(2%, -70%) rotate(350deg);
+                }
+
+                .itemCard3Img_2 {
+                  display: inline-block;
+                  width: 2.5vw;
+                  transform: translate(15%, -70%) rotate(350deg);
+                }
+              }
+
+              .itemCard4 {
+                transform: translate(0, 0%) rotate(350deg);
+
+                img {
+                  width: 2.5vw;
+                  transform: translate(90%, -70%) rotate(0deg);
+                }
+              }
 
 
+              .itemCard5 {
+                transform: translate(0, -10%) rotate(360deg);
 
-          .itemCardTopRow {
-            display: flex;
-
-            .itemCard1 {
-              transform: translate(0, -50%) rotate(15deg);
-
-              img {
-                width: 40%;
-                transform: translate(0%, -70%) rotate(330deg);
+                img {
+                  width: 2.5vw;
+                  transform: translate(0%, -80%) rotate(350deg);
+                }
               }
             }
 
-            ;
-
-            .itemCard2 {
-              transform: translate(0, -30%) rotate(355deg);
-
-              img {
-                width: 40%;
-                transform: translate(70%, -70%) rotate(360deg);
-              }
+            .line_bottom {
+              width: 50%;
+              transform: translate(10%, 30%);
             }
 
-            ;
+            .itemCardBottomRow {
+              display: flex;
 
-            .itemCard3 {
-              font-size: 0;
-              transform: translate(0, -10%) rotate(360deg);
+              .itemCard2_1 {
+                transform: translate(30%, 0%) rotate(350deg);
+                margin-top: 50px;
 
-              .itemCard3Img_1 {
-                display: inline-block;
-                width: 40%;
-                transform: translate(2%, -70%) rotate(350deg);
+                img {
+                  width: 2.5vw;
+                  transform: translate(100%, -80%) rotate(360deg);
+                }
               }
 
-              .itemCard3Img_2 {
-                display: inline-block;
-                width: 40%;
-                transform: translate(15%, -70%) rotate(350deg);
+              .itemCard2_2 {
+                transform: translate(0%, 0%) rotate(15deg);
+                margin-top: 30px;
+
+                img {
+                  width: 2.5vw;
+                  transform: translate(0%, -70%) rotate(340deg);
+                }
               }
 
-            }
+              .itemCard2_3 {
+                transform: translate(-40%, -10%) rotate(0deg);
 
-            ;
-
-            .itemCard4 {
-              transform: translate(0, 0%) rotate(350deg);
-
-              img {
-                width: 40%;
-                transform: translate(90%, -70%) rotate(0deg);
-              }
-            }
-
-            ;
-
-            .itemCard5 {
-              transform: translate(0, -10%) rotate(360deg);
-
-              img {
-                width: 40%;
-                transform: translate(0%, -80%) rotate(350deg);
+                img {
+                  width: 2.5vw;
+                  transform: translate(15%, -70%) rotate(330deg);
+                }
               }
             }
-
-            ;
-          }
-
-          .line_bottom {
-            width: 600px;
-            transform: translate(10%, 30%);
-          }
-
-          .itemCardBottomRow {
-            display: flex;
-
-            .itemCard2_1 {
-              transform: translate(30%, 0%) rotate(350deg);
-              margin-top: 50px;
-
-              img {
-                width: 40%;
-                transform: translate(100%, -80%) rotate(360deg);
-              }
-            }
-
-            ;
-
-            .itemCard2_2 {
-              transform: translate(40%, 0%) rotate(15deg);
-              margin-top: 30px;
-
-              img {
-                width: 40%;
-                transform: translate(0%, -70%) rotate(340deg);
-              }
-            }
-
-            ;
-
-            .itemCard2_3 {
-              transform: translate(30%, 0%) rotate(0deg);
-
-              img {
-                width: 40%;
-                transform: translate(15%, -70%) rotate(330deg);
-              }
-            }
-
-            ;
           }
         }
 
@@ -299,6 +320,7 @@ $arrow_color: $gray !default;
       }
 
     }
+
 
     #outshadow {
       position: fixed;
@@ -314,7 +336,7 @@ $arrow_color: $gray !default;
 
     #medal {
       width: 450px;
-      height: 700px;
+      height: 650px;
       background-image: url('/img/product/decorate/model.jpg');
       background-size: contain;
       background-repeat: no-repeat;
@@ -329,7 +351,7 @@ $arrow_color: $gray !default;
       .cross {
         position: absolute;
         right: 0;
-        width: 5%;
+        width: 7%;
         height: 10%;
 
         &:hover {
@@ -361,7 +383,7 @@ $arrow_color: $gray !default;
 
       #textBox {
         width: 75%;
-        margin: 17% auto 5%;
+        margin: 12% auto 5%;
 
         .textBox h1 {
           font-weight: 700;
@@ -403,7 +425,7 @@ $arrow_color: $gray !default;
           width: 40%;
 
           img {
-            width: 100%;
+            width: 95%;
           }
         }
       }
@@ -425,7 +447,7 @@ $arrow_color: $gray !default;
             width: 100%;
             height: 50px;
             background-color: #FFD139;
-            border: 3px solid black;
+            border: $border;
             text-align: center;
             line-height: 40px;
             border-radius: 0.3em;
@@ -462,7 +484,7 @@ $arrow_color: $gray !default;
               left: -22%;
               bottom: -5%;
               border-radius: 0.3em;
-              border: 4px solid black;
+              border: $border;
               // background-color: #FFD139;
               // background-image: url("/img/product/decorate/materail-04.svg");
               // background-size: cover;
@@ -481,7 +503,7 @@ $arrow_color: $gray !default;
               left: 92%;
               bottom: -5%;
               border-radius: 0.3em;
-              border: 4px solid black;
+              border: $border;
               // background-color: #FFD139;
               // background-image: url("/img/product/decorate/materail-04.svg");
               // background-size: cover;
@@ -497,7 +519,7 @@ $arrow_color: $gray !default;
               height: 45px;
               left: -13%;
               top: 65%;
-              border: 3px solid black;
+              border: $border;
               background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
               background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
               background-size: 7px 7px;
@@ -545,15 +567,15 @@ $arrow_color: $gray !default;
     }
 
     #pile {
-      max-width: 100%;
-      height: 600px;
+      max-width: 80%;
+      height: 30vw;
       margin: 0 auto;
 
       .pilePaper {
-        margin-left: 20%;
-        width: 150px;
-        height: 150px;
-        border: 5px solid black;
+        margin-left: 7vw;
+        width: 9vw;
+        height: 9vw;
+        border: $border;
         transform: skew(20deg) translateY(10%) rotate(15deg);
         background-color: #fff;
         text-align: center;
@@ -570,7 +592,7 @@ $arrow_color: $gray !default;
           margin-top: 10%;
           width: 60%;
           height: 30%;
-          border: 2px dotted black;
+          border: $border;
 
         }
       }
@@ -579,13 +601,14 @@ $arrow_color: $gray !default;
 
 
       .pile {
-        margin-left: 15%;
-        width: 1700px;
-        height: 2000px;
+        margin-left: 5%;
+        width: 85vw;
+        height: 150vw;
         background-image: url("/img/product/decorate/pile.png");
         background-repeat: no-repeat;
         position: relative;
-        // z-index: -5;
+        background-size: contain;
+        z-index: 0;
 
         .clock {
           width: 18%;
@@ -593,8 +616,9 @@ $arrow_color: $gray !default;
           background-image: url("../../img/product/decorate/clock-04.svg");
           background-repeat: no-repeat;
           position: absolute;
+          background-size: contain;
           left: -2%;
-          top: 20%;
+          top: 15%;
         }
 
         .redWheel {
@@ -603,19 +627,21 @@ $arrow_color: $gray !default;
           background-image: url("../../img/product/decorate/redWheel-04.svg");
           background-repeat: no-repeat;
           position: absolute;
-          left: 48%;
-          top: 5%;
+          background-size: contain;
+          left: 50.5%;
+          top: 3.5%;
 
         }
 
         .perpul {
-          width: 20%;
+          width: 18%;
           padding-top: 100%;
           background-image: url("../../img/product/decorate/perpul.png");
           background-repeat: no-repeat;
           position: absolute;
-          left: 73%;
-          top: 29%;
+          background-size: contain;
+          left: 75%;
+          top: 20%;
         }
       }
     }
@@ -628,11 +654,12 @@ $arrow_color: $gray !default;
 
           padding-top: 5%;
           transform: translate(0, 80%);
-          width: 90%;
-          margin: 0 auto;
+          width: 40vw;
+          margin-left: 10%;
           position: relative;
           font-weight: 900;
-          font-size: 140px;
+          letter-spacing: 1rem;
+          font-size: 10vw;
           color: #dbcd00;
           @include stroke(2, #0f0f0f);
           z-index: 20;
@@ -642,1074 +669,1122 @@ $arrow_color: $gray !default;
             text-align: center;
             position: absolute;
             left: -1%;
+            letter-spacing: 1rem;
             font-weight: 900;
-            font-size: 140px;
+            font-size: 10vw;
             color: #83afd9;
             @include stroke(2, #0f0f0f);
           }
         }
 
         .customizeTitle {
-          z-index: 15;
-          width: 80%;
-          height: 250px;
-          border: 5px solid black;
+          margin-left: 5%;
+          width: 44vw;
+          height: 17vw;
+          border: $border;
           background: #fff;
-          margin-bottom: 3%;
-
+          margin-bottom: 5%;
         }
       }
     }
 
     #section2 {
-      max-width: 1500px;
+      max-width: 1300px;
       margin: 0 auto;
 
       .customizeArea {
         margin: 0 auto;
         display: flex;
-        width: 85%;
+        width: 80%;
         flex-wrap: wrap;
 
+
         .controlTool {
-
-          display: flex;
-          flex-wrap: wrap;
-          width: 17%;
+          width: 20%;
           margin-right: 3%;
-          border: 5px solid black;
+          border: $border;
           background: #fff;
+          z-index: 100;
 
+          .controlToolTopFlex {
+            display: flex;
 
-          .controlBox1 {
-            text-align: center;
-            width: 50%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 32;
+            .controlToolTop {
+              width: 70%;
+              display: flex;
+              flex-wrap: wrap;
 
-            .controlBox1_button {
-              position: relative;
-              width: 100%;
-              top: -35%;
-              left: 30%;
-
-              &.clicked {
-                width: 100%;
-                top: -15%;
-                left: 15%;
-              }
-
-              .controlBtn1 {
-                outline: none;
-                width: 100%;
-                background-color: #FFD139;
-                border: 3px solid black;
+              .controlBox1 {
                 text-align: center;
-                cursor: pointer;
+                width: 50%;
+                border: $border;
+                background-color: #fff;
+                z-index: 32;
 
-                img {
+                .controlBox1_button {
+                  position: relative;
                   width: 100%;
-                }
+                  top: -35%;
+                  left: 30%;
 
-                &:before {
-                  content: '';
-                  position: absolute;
-                  width: 97%;
-                  height: 35%;
-                  left: -65%;
-                  bottom: 14%;
-                  border: 5px solid black;
-                  background-color: #FFD139;
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                  transform: rotate(90deg) skew(45deg);
-                }
-
-                &:after {
-                  content: '';
-                  position: absolute;
-                  width: 100%;
-                  height: 35%;
-                  bottom: -35%;
-                  left: -17%;
-                  background-color: #FFD139;
-                  border: 5px solid black;
-                  transform: skew(-45deg) rotate(0deg);
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                }
-
-                &.clicked {
-                  background-color: rgb(0, 225, 255);
-
-
-
-
-                  &:before {
+                  &.clicked {
                     width: 100%;
-                    height: 17%;
-                    left: -57%;
-                    bottom: 31%;
-                    border: 5px solid black;
-                    background-color: rgb(0, 225, 255);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                    transform: rotate(90deg) skew(45deg);
+                    top: -15%;
+                    left: 15%;
                   }
 
-                  &:after {
+                  .controlBtn1 {
+                    outline: none;
                     width: 100%;
-                    height: 20%;
-                    bottom: -18%;
-                    left: -9%;
-                    background-color: rgb(0, 225, 255);
-                    border: 5px solid black;
-                    transform: skew(-45deg) rotate(0deg);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
+                    background-color: #FFD139;
+                    border: $border;
+                    text-align: center;
+                    cursor: pointer;
+
+                    img {
+                      padding: 20%;
+                      width: 100%;
+                    }
+
+                    &:before {
+                      content: '';
+                      position: absolute;
+                      width: 97%;
+                      height: 35%;
+                      left: -65%;
+                      bottom: 14%;
+                      border: $border;
+                      background-color: #FFD139;
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                      transform: rotate(90deg) skew(45deg);
+                    }
+
+                    &:after {
+                      content: '';
+                      position: absolute;
+                      width: 100%;
+                      height: 35%;
+                      bottom: -35%;
+                      left: -17%;
+                      background-color: #FFD139;
+                      border: $border;
+                      transform: skew(-45deg) rotate(0deg);
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                    }
+
+                    &.clicked {
+                      background-color: rgb(0, 225, 255);
+
+
+
+
+                      &:before {
+                        width: 100%;
+                        height: 17%;
+                        left: -57%;
+                        bottom: 31%;
+                        border: $border;
+                        background-color: rgb(0, 225, 255);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                        transform: rotate(90deg) skew(45deg);
+                      }
+
+                      &:after {
+                        width: 100%;
+                        height: 20%;
+                        bottom: -18%;
+                        left: -9%;
+                        background-color: rgb(0, 225, 255);
+                        border: $border;
+                        transform: skew(-45deg) rotate(0deg);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .controlBox2 {
+                text-align: center;
+                width: 50%;
+                border: $border;
+                background-color: #fff;
+                z-index: 31;
+
+                .controlBox2_button {
+                  position: relative;
+                  width: 100%;
+                  top: -35%;
+                  left: 30%;
+
+                  &.clicked {
+                    width: 100%;
+                    top: -15%;
+                    left: 15%;
+                  }
+
+                  .controlBtn2 {
+                    outline: none;
+                    width: 100%;
+                    background-color: #FFD139;
+                    border: $border;
+                    text-align: center;
+                    cursor: pointer;
+
+                    img {
+                      padding: 20%;
+                      width: 100%;
+                    }
+
+                    &:before {
+                      content: '';
+                      position: absolute;
+                      width: 97%;
+                      height: 35%;
+                      left: -65%;
+                      bottom: 14%;
+                      border: $border;
+                      background-color: #FFD139;
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                      transform: rotate(90deg) skew(45deg);
+                    }
+
+                    &:after {
+                      content: '';
+                      position: absolute;
+                      width: 100%;
+                      height: 35%;
+                      bottom: -35%;
+                      left: -17%;
+                      background-color: #FFD139;
+                      border: $border;
+                      transform: skew(-45deg) rotate(0deg);
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                    }
+
+                    &.clicked {
+                      background-color: rgb(0, 225, 255);
+
+
+
+
+                      &:before {
+                        width: 100%;
+                        height: 17%;
+                        left: -57%;
+                        bottom: 31%;
+                        border: $border;
+                        background-color: rgb(0, 225, 255);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                        transform: rotate(90deg) skew(45deg);
+                      }
+
+                      &:after {
+                        width: 100%;
+                        height: 20%;
+                        bottom: -18%;
+                        left: -9%;
+                        background-color: rgb(0, 225, 255);
+                        border: $border;
+                        transform: skew(-45deg) rotate(0deg);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .controlBox3 {
+                text-align: center;
+                width: 50%;
+                border: $border;
+                background-color: #fff;
+                z-index: 34;
+
+                .controlBox3_button {
+                  position: relative;
+                  width: 100%;
+                  top: -35%;
+                  left: 30%;
+
+                  &.clicked {
+                    width: 100%;
+                    top: -15%;
+                    left: 15%;
+                  }
+
+                  .controlBtn3 {
+                    outline: none;
+                    width: 100%;
+                    background-color: #FFD139;
+                    border: $border;
+                    text-align: center;
+                    cursor: pointer;
+
+                    img {
+                      padding: 20%;
+                      width: 100%;
+                    }
+
+                    &:before {
+                      content: '';
+                      position: absolute;
+                      width: 97%;
+                      height: 35%;
+                      left: -65%;
+                      bottom: 14%;
+                      border: $border;
+                      background-color: #FFD139;
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                      transform: rotate(90deg) skew(45deg);
+                    }
+
+                    &:after {
+                      content: '';
+                      position: absolute;
+                      width: 100%;
+                      height: 35%;
+                      bottom: -35%;
+                      left: -17%;
+                      background-color: #FFD139;
+                      border: $border;
+                      transform: skew(-45deg) rotate(0deg);
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                    }
+
+                    &.clicked {
+                      background-color: rgb(0, 225, 255);
+
+
+
+
+                      &:before {
+                        width: 100%;
+                        height: 17%;
+                        left: -57%;
+                        bottom: 31%;
+                        border: $border;
+                        background-color: rgb(0, 225, 255);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                        transform: rotate(90deg) skew(45deg);
+                      }
+
+                      &:after {
+                        width: 100%;
+                        height: 20%;
+                        bottom: -18%;
+                        left: -9%;
+                        background-color: rgb(0, 225, 255);
+                        border: $border;
+                        transform: skew(-45deg) rotate(0deg);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .controlBox3 {
+                text-align: center;
+                width: 50%;
+                border: $border;
+                background-color: #fff;
+                z-index: 35;
+
+                .controlBox3_button {
+                  position: relative;
+                  width: 100%;
+                  top: -35%;
+                  left: 30%;
+
+                  &.clicked {
+                    width: 100%;
+                    top: -15%;
+                    left: 15%;
+                  }
+
+                  .controlBtn3 {
+                    outline: none;
+                    width: 100%;
+                    background-color: #FFD139;
+                    border: $border;
+                    text-align: center;
+                    cursor: pointer;
+
+                    img {
+                      padding: 20%;
+                      width: 100%;
+                    }
+
+                    &:before {
+                      content: '';
+                      position: absolute;
+                      width: 97%;
+                      height: 35%;
+                      left: -65%;
+                      bottom: 14%;
+                      border: $border;
+                      background-color: #FFD139;
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                      transform: rotate(90deg) skew(45deg);
+                    }
+
+                    &:after {
+                      content: '';
+                      position: absolute;
+                      width: 100%;
+                      height: 35%;
+                      bottom: -35%;
+                      left: -17%;
+                      background-color: #FFD139;
+                      border: $border;
+                      transform: skew(-45deg) rotate(0deg);
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                    }
+
+                    &.clicked {
+                      background-color: rgb(0, 225, 255);
+
+
+
+
+                      &:before {
+                        width: 100%;
+                        height: 17%;
+                        left: -57%;
+                        bottom: 31%;
+                        border: $border;
+                        background-color: rgb(0, 225, 255);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                        transform: rotate(90deg) skew(45deg);
+                      }
+
+                      &:after {
+                        width: 100%;
+                        height: 20%;
+                        bottom: -18%;
+                        left: -9%;
+                        background-color: rgb(0, 225, 255);
+                        border: $border;
+                        transform: skew(-45deg) rotate(0deg);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .controlBox4 {
+                text-align: center;
+                width: 50%;
+                border: $border;
+                background-color: #fff;
+                z-index: 34;
+
+                .controlBox4_button {
+                  position: relative;
+                  width: 100%;
+                  top: -35%;
+                  left: 30%;
+
+                  &.clicked {
+                    width: 100%;
+                    top: -15%;
+                    left: 15%;
+                  }
+
+                  .controlBtn4 {
+                    outline: none;
+                    width: 100%;
+                    background-color: #FFD139;
+                    border: $border;
+                    text-align: center;
+                    cursor: pointer;
+
+                    img {
+                      padding: 20%;
+                      width: 100%;
+                    }
+
+                    &:before {
+                      content: '';
+                      position: absolute;
+                      width: 97%;
+                      height: 35%;
+                      left: -65%;
+                      bottom: 14%;
+                      border: $border;
+                      background-color: #FFD139;
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                      transform: rotate(90deg) skew(45deg);
+                    }
+
+                    &:after {
+                      content: '';
+                      position: absolute;
+                      width: 100%;
+                      height: 35%;
+                      bottom: -35%;
+                      left: -17%;
+                      background-color: #FFD139;
+                      border: $border;
+                      transform: skew(-45deg) rotate(0deg);
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                    }
+
+                    &.clicked {
+                      background-color: rgb(0, 225, 255);
+
+
+
+
+                      &:before {
+                        width: 100%;
+                        height: 17%;
+                        left: -57%;
+                        bottom: 31%;
+                        border: $border;
+                        background-color: rgb(0, 225, 255);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                        transform: rotate(90deg) skew(45deg);
+                      }
+
+                      &:after {
+                        width: 100%;
+                        height: 20%;
+                        bottom: -18%;
+                        left: -9%;
+                        background-color: rgb(0, 225, 255);
+                        border: $border;
+                        transform: skew(-45deg) rotate(0deg);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .controlBox5 {
+                text-align: center;
+                width: 50%;
+                border: $border;
+                background-color: #fff;
+                z-index: 36;
+
+                .controlBox5_button {
+                  position: relative;
+                  width: 100%;
+                  top: -35%;
+                  left: 30%;
+
+                  &.clicked {
+                    width: 100%;
+                    top: -15%;
+                    left: 15%;
+                  }
+
+                  .controlBtn5 {
+                    outline: none;
+                    width: 100%;
+                    background-color: #FFD139;
+                    border: $border;
+                    text-align: center;
+                    cursor: pointer;
+
+                    img {
+                      padding: 20%;
+                      width: 100%;
+                    }
+
+                    &:before {
+                      content: '';
+                      position: absolute;
+                      width: 97%;
+                      height: 35%;
+                      left: -65%;
+                      bottom: 14%;
+                      border: $border;
+                      background-color: #FFD139;
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                      transform: rotate(90deg) skew(45deg);
+                    }
+
+                    &:after {
+                      content: '';
+                      position: absolute;
+                      width: 100%;
+                      height: 35%;
+                      bottom: -35%;
+                      left: -17%;
+                      background-color: #FFD139;
+                      border: $border;
+                      transform: skew(-45deg) rotate(0deg);
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                    }
+
+                    &.clicked {
+                      background-color: rgb(0, 225, 255);
+
+
+
+
+                      &:before {
+                        width: 100%;
+                        height: 17%;
+                        left: -57%;
+                        bottom: 31%;
+                        border: $border;
+                        background-color: rgb(0, 225, 255);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                        transform: rotate(90deg) skew(45deg);
+                      }
+
+                      &:after {
+                        width: 100%;
+                        height: 20%;
+                        bottom: -18%;
+                        left: -9%;
+                        background-color: rgb(0, 225, 255);
+                        border: $border;
+                        transform: skew(-45deg) rotate(0deg);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .controlBox6 {
+                text-align: center;
+                width: 50%;
+                border: $border;
+                background-color: #fff;
+                z-index: 35;
+
+                .controlBox6_button {
+                  position: relative;
+                  width: 100%;
+                  top: -35%;
+                  left: 30%;
+
+                  &.clicked {
+                    width: 100%;
+                    top: -15%;
+                    left: 15%;
+                  }
+
+                  .controlBtn6 {
+                    outline: none;
+                    width: 100%;
+                    background-color: #FFD139;
+                    border: $border;
+                    text-align: center;
+                    cursor: pointer;
+
+                    img {
+                      padding: 20%;
+                      width: 100%;
+                    }
+
+                    &:before {
+                      content: '';
+                      position: absolute;
+                      width: 97%;
+                      height: 35%;
+                      left: -65%;
+                      bottom: 14%;
+                      border: $border;
+                      background-color: #FFD139;
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                      transform: rotate(90deg) skew(45deg);
+                    }
+
+                    &:after {
+                      content: '';
+                      position: absolute;
+                      width: 100%;
+                      height: 35%;
+                      bottom: -35%;
+                      left: -17%;
+                      background-color: #FFD139;
+                      border: $border;
+                      transform: skew(-45deg) rotate(0deg);
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                    }
+
+                    &.clicked {
+                      background-color: rgb(0, 225, 255);
+
+
+
+
+                      &:before {
+                        width: 100%;
+                        height: 17%;
+                        left: -57%;
+                        bottom: 31%;
+                        border: $border;
+                        background-color: rgb(0, 225, 255);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                        transform: rotate(90deg) skew(45deg);
+                      }
+
+                      &:after {
+                        width: 100%;
+                        height: 20%;
+                        bottom: -18%;
+                        left: -9%;
+                        background-color: rgb(0, 225, 255);
+                        border: $border;
+                        transform: skew(-45deg) rotate(0deg);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .controlBox7 {
+                text-align: center;
+                width: 50%;
+                border: $border;
+                background-color: #fff;
+                z-index: 37;
+
+                .controlBox7_button {
+                  position: relative;
+                  width: 100%;
+                  top: -35%;
+                  left: 30%;
+
+                  &.clicked {
+                    width: 100%;
+                    top: -15%;
+                    left: 15%;
+                  }
+
+                  .controlBtn7 {
+                    outline: none;
+                    width: 100%;
+                    background-color: #FFD139;
+                    border: $border;
+                    text-align: center;
+                    cursor: pointer;
+
+                    img {
+                      padding: 20%;
+                      width: 100%;
+                    }
+
+                    &:before {
+                      content: '';
+                      position: absolute;
+                      width: 97%;
+                      height: 35%;
+                      left: -65%;
+                      bottom: 14%;
+                      border: $border;
+                      background-color: #FFD139;
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                      transform: rotate(90deg) skew(45deg);
+                    }
+
+                    &:after {
+                      content: '';
+                      position: absolute;
+                      width: 100%;
+                      height: 35%;
+                      bottom: -35%;
+                      left: -17%;
+                      background-color: #FFD139;
+                      border: $border;
+                      transform: skew(-45deg) rotate(0deg);
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                    }
+
+                    &.clicked {
+                      background-color: rgb(0, 225, 255);
+
+
+
+
+                      &:before {
+                        width: 100%;
+                        height: 17%;
+                        left: -57%;
+                        bottom: 31%;
+                        border: $border;
+                        background-color: rgb(0, 225, 255);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                        transform: rotate(90deg) skew(45deg);
+                      }
+
+                      &:after {
+                        width: 100%;
+                        height: 20%;
+                        bottom: -18%;
+                        left: -9%;
+                        background-color: rgb(0, 225, 255);
+                        border: $border;
+                        transform: skew(-45deg) rotate(0deg);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .controlBox8 {
+                text-align: center;
+                width: 50%;
+                border: $border;
+                background-color: #fff;
+                z-index: 36;
+
+                .controlBox8_button {
+                  position: relative;
+                  width: 100%;
+                  top: -35%;
+                  left: 30%;
+
+                  &.clicked {
+                    width: 100%;
+                    top: -15%;
+                    left: 15%;
+                  }
+
+                  .controlBtn8 {
+                    outline: none;
+                    width: 100%;
+                    background-color: #FFD139;
+                    border: $border;
+                    text-align: center;
+                    cursor: pointer;
+
+                    img {
+                      padding: 20%;
+                      width: 100%;
+                    }
+
+                    &:before {
+                      content: '';
+                      position: absolute;
+                      width: 97%;
+                      height: 35%;
+                      left: -65%;
+                      bottom: 14%;
+                      border: $border;
+                      background-color: #FFD139;
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                      transform: rotate(90deg) skew(45deg);
+                    }
+
+                    &:after {
+                      content: '';
+                      position: absolute;
+                      width: 100%;
+                      height: 35%;
+                      bottom: -35%;
+                      left: -17%;
+                      background-color: #FFD139;
+                      border: $border;
+                      transform: skew(-45deg) rotate(0deg);
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                    }
+
+                    &.clicked {
+                      background-color: rgb(0, 225, 255);
+
+
+
+
+                      &:before {
+                        width: 100%;
+                        height: 17%;
+                        left: -57%;
+                        bottom: 31%;
+                        border: $border;
+                        background-color: rgb(0, 225, 255);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                        transform: rotate(90deg) skew(45deg);
+                      }
+
+                      &:after {
+                        width: 100%;
+                        height: 20%;
+                        bottom: -18%;
+                        left: -9%;
+                        background-color: rgb(0, 225, 255);
+                        border: $border;
+                        transform: skew(-45deg) rotate(0deg);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .controlBox9 {
+                text-align: center;
+                width: 50%;
+                border: $border;
+                background-color: #fff;
+                z-index: 38;
+
+
+                .controlBox9_button {
+                  position: relative;
+                  width: 100%;
+                  top: -35%;
+                  left: 30%;
+
+
+
+                  &.clicked {
+                    width: 100%;
+                    top: -15%;
+                    left: 15%;
+                  }
+
+                  input[type="file"] {
+                    display: none;
+                  }
+
+                  .controlBtn9 {
+                    outline: none;
+                    width: 100%;
+                    background-color: #FFD139;
+                    border: $border;
+                    text-align: center;
+                    cursor: pointer;
+
+                    img {
+                      padding: 20%;
+                      width: 100%;
+                    }
+
+                    &:before {
+                      content: '';
+                      position: absolute;
+                      width: 97%;
+                      height: 35%;
+                      left: -65%;
+                      bottom: 14%;
+                      border: $border;
+                      background-color: #FFD139;
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                      transform: rotate(90deg) skew(45deg);
+                    }
+
+                    &:after {
+                      content: '';
+                      position: absolute;
+                      width: 100%;
+                      height: 35%;
+                      bottom: -35%;
+                      left: -17%;
+                      background-color: #FFD139;
+                      border: $border;
+                      transform: skew(-45deg) rotate(0deg);
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                    }
+
+                    &.clicked {
+                      background-color: rgb(0, 225, 255);
+
+
+
+
+                      &:before {
+                        width: 100%;
+                        height: 17%;
+                        left: -57%;
+                        bottom: 31%;
+                        border: $border;
+                        background-color: rgb(0, 225, 255);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                        transform: rotate(90deg) skew(45deg);
+                      }
+
+                      &:after {
+                        width: 100%;
+                        height: 20%;
+                        bottom: -18%;
+                        left: -9%;
+                        background-color: rgb(124, 124, 124);
+                        border: $border;
+                        transform: skew(-45deg) rotate(0deg);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                      }
+                    }
+                  }
+                }
+              }
+
+
+              .controlBox10 {
+                text-align: center;
+                width: 50%;
+                border: $border;
+                background-color: #fff;
+                z-index: 37;
+
+                .controlBox10_button {
+                  position: relative;
+                  width: 100%;
+                  top: -35%;
+                  left: 30%;
+
+                  &.clicked {
+                    width: 100%;
+                    top: -15%;
+                    left: 15%;
+                  }
+
+                  .controlBtn10 {
+                    outline: none;
+                    width: 100%;
+                    background-color: #FFD139;
+                    border: $border;
+                    text-align: center;
+                    cursor: pointer;
+
+                    img {
+                      padding: 20%;
+                      width: 100%;
+                    }
+
+                    &:before {
+                      content: '';
+                      position: absolute;
+                      width: 97%;
+                      height: 35%;
+                      left: -65%;
+                      bottom: 14%;
+                      border: $border;
+                      background-color: #FFD139;
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                      transform: rotate(90deg) skew(45deg);
+                    }
+
+                    &:after {
+                      content: '';
+                      position: absolute;
+                      width: 100%;
+                      height: 35%;
+                      bottom: -35%;
+                      left: -17%;
+                      background-color: #FFD139;
+                      border: $border;
+                      transform: skew(-45deg) rotate(0deg);
+                      background-image: url("/img/product/decorate/materail-04.svg");
+                      background-size: cover;
+                    }
+
+                    &.clicked {
+                      background-color: rgb(0, 225, 255);
+
+
+
+
+                      &:before {
+                        width: 100%;
+                        height: 17%;
+                        left: -57%;
+                        bottom: 31%;
+                        border: 5px $border;
+                        background-color: rgb(0, 225, 255);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                        transform: rotate(90deg) skew(45deg);
+                      }
+
+                      &:after {
+                        width: 100%;
+                        height: 20%;
+                        bottom: -18%;
+                        left: -9%;
+                        background-color: rgb(0, 225, 255);
+                        border: $border;
+                        transform: skew(-45deg) rotate(0deg);
+                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-size: cover;
+                      }
+                    }
                   }
                 }
               }
             }
-          }
 
-          .controlBox2 {
-            text-align: center;
-            width: 50%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 31;
+            .colorTool {
+              margin-left: 8%;
+              width: 20%;
 
-            .controlBox2_button {
-              position: relative;
-              width: 100%;
-              top: -35%;
-              left: 30%;
+              .lineColor {
+                margin-top: 15%;
 
-              &.clicked {
-                width: 100%;
-                top: -15%;
-                left: 15%;
-              }
-
-              .controlBtn2 {
-                outline: none;
-                width: 100%;
-                background-color: #FFD139;
-                border: 3px solid black;
-                text-align: center;
-                cursor: pointer;
-
-                img {
-                  width: 100%;
-                }
-
-                &:before {
-                  content: '';
-                  position: absolute;
-                  width: 97%;
-                  height: 35%;
-                  left: -65%;
-                  bottom: 14%;
-                  border: 5px solid black;
-                  background-color: #FFD139;
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                  transform: rotate(90deg) skew(45deg);
-                }
-
-                &:after {
-                  content: '';
-                  position: absolute;
-                  width: 100%;
-                  height: 35%;
-                  bottom: -35%;
-                  left: -17%;
-                  background-color: #FFD139;
-                  border: 5px solid black;
-                  transform: skew(-45deg) rotate(0deg);
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                }
-
-                &.clicked {
-                  background-color: rgb(0, 225, 255);
-
-
-
-
-                  &:before {
-                    width: 100%;
-                    height: 17%;
-                    left: -57%;
-                    bottom: 31%;
-                    border: 5px solid black;
-                    background-color: rgb(0, 225, 255);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                    transform: rotate(90deg) skew(45deg);
-                  }
-
-                  &:after {
-                    width: 100%;
-                    height: 20%;
-                    bottom: -18%;
-                    left: -9%;
-                    background-color: rgb(0, 225, 255);
-                    border: 5px solid black;
-                    transform: skew(-45deg) rotate(0deg);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                  }
+                .lineColorlabel {
+                  font-family: $font;
                 }
               }
-            }
-          }
 
-          .controlBox3 {
-            text-align: center;
-            width: 50%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 34;
+              .shadowColor {
+                margin-top: 15%;
 
-            .controlBox3_button {
-              position: relative;
-              width: 100%;
-              top: -35%;
-              left: 30%;
-
-              &.clicked {
-                width: 100%;
-                top: -15%;
-                left: 15%;
-              }
-
-              .controlBtn3 {
-                outline: none;
-                width: 100%;
-                background-color: #FFD139;
-                border: 3px solid black;
-                text-align: center;
-                cursor: pointer;
-
-                img {
-                  width: 100%;
-                }
-
-                &:before {
-                  content: '';
-                  position: absolute;
-                  width: 97%;
-                  height: 35%;
-                  left: -65%;
-                  bottom: 14%;
-                  border: 5px solid black;
-                  background-color: #FFD139;
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                  transform: rotate(90deg) skew(45deg);
-                }
-
-                &:after {
-                  content: '';
-                  position: absolute;
-                  width: 100%;
-                  height: 35%;
-                  bottom: -35%;
-                  left: -17%;
-                  background-color: #FFD139;
-                  border: 5px solid black;
-                  transform: skew(-45deg) rotate(0deg);
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                }
-
-                &.clicked {
-                  background-color: rgb(0, 225, 255);
-
-
-
-
-                  &:before {
-                    width: 100%;
-                    height: 17%;
-                    left: -57%;
-                    bottom: 31%;
-                    border: 5px solid black;
-                    background-color: rgb(0, 225, 255);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                    transform: rotate(90deg) skew(45deg);
-                  }
-
-                  &:after {
-                    width: 100%;
-                    height: 20%;
-                    bottom: -18%;
-                    left: -9%;
-                    background-color: rgb(0, 225, 255);
-                    border: 5px solid black;
-                    transform: skew(-45deg) rotate(0deg);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                  }
-                }
-              }
-            }
-          }
-
-          .controlBox3 {
-            text-align: center;
-            width: 50%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 35;
-
-            .controlBox3_button {
-              position: relative;
-              width: 100%;
-              top: -35%;
-              left: 30%;
-
-              &.clicked {
-                width: 100%;
-                top: -15%;
-                left: 15%;
-              }
-
-              .controlBtn3 {
-                outline: none;
-                width: 100%;
-                background-color: #FFD139;
-                border: 3px solid black;
-                text-align: center;
-                cursor: pointer;
-
-                img {
-                  width: 100%;
-                }
-
-                &:before {
-                  content: '';
-                  position: absolute;
-                  width: 97%;
-                  height: 35%;
-                  left: -65%;
-                  bottom: 14%;
-                  border: 5px solid black;
-                  background-color: #FFD139;
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                  transform: rotate(90deg) skew(45deg);
-                }
-
-                &:after {
-                  content: '';
-                  position: absolute;
-                  width: 100%;
-                  height: 35%;
-                  bottom: -35%;
-                  left: -17%;
-                  background-color: #FFD139;
-                  border: 5px solid black;
-                  transform: skew(-45deg) rotate(0deg);
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                }
-
-                &.clicked {
-                  background-color: rgb(0, 225, 255);
-
-
-
-
-                  &:before {
-                    width: 100%;
-                    height: 17%;
-                    left: -57%;
-                    bottom: 31%;
-                    border: 5px solid black;
-                    background-color: rgb(0, 225, 255);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                    transform: rotate(90deg) skew(45deg);
-                  }
-
-                  &:after {
-                    width: 100%;
-                    height: 20%;
-                    bottom: -18%;
-                    left: -9%;
-                    background-color: rgb(0, 225, 255);
-                    border: 5px solid black;
-                    transform: skew(-45deg) rotate(0deg);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                  }
-                }
-              }
-            }
-          }
-
-          .controlBox4 {
-            text-align: center;
-            width: 50%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 34;
-
-            .controlBox4_button {
-              position: relative;
-              width: 100%;
-              top: -35%;
-              left: 30%;
-
-              &.clicked {
-                width: 100%;
-                top: -15%;
-                left: 15%;
-              }
-
-              .controlBtn4 {
-                outline: none;
-                width: 100%;
-                background-color: #FFD139;
-                border: 3px solid black;
-                text-align: center;
-                cursor: pointer;
-
-                img {
-                  width: 100%;
-                }
-
-                &:before {
-                  content: '';
-                  position: absolute;
-                  width: 97%;
-                  height: 35%;
-                  left: -65%;
-                  bottom: 14%;
-                  border: 5px solid black;
-                  background-color: #FFD139;
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                  transform: rotate(90deg) skew(45deg);
-                }
-
-                &:after {
-                  content: '';
-                  position: absolute;
-                  width: 100%;
-                  height: 35%;
-                  bottom: -35%;
-                  left: -17%;
-                  background-color: #FFD139;
-                  border: 5px solid black;
-                  transform: skew(-45deg) rotate(0deg);
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                }
-
-                &.clicked {
-                  background-color: rgb(0, 225, 255);
-
-
-
-
-                  &:before {
-                    width: 100%;
-                    height: 17%;
-                    left: -57%;
-                    bottom: 31%;
-                    border: 5px solid black;
-                    background-color: rgb(0, 225, 255);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                    transform: rotate(90deg) skew(45deg);
-                  }
-
-                  &:after {
-                    width: 100%;
-                    height: 20%;
-                    bottom: -18%;
-                    left: -9%;
-                    background-color: rgb(0, 225, 255);
-                    border: 5px solid black;
-                    transform: skew(-45deg) rotate(0deg);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                  }
-                }
-              }
-            }
-          }
-
-          .controlBox5 {
-            text-align: center;
-            width: 50%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 36;
-
-            .controlBox5_button {
-              position: relative;
-              width: 100%;
-              top: -35%;
-              left: 30%;
-
-              &.clicked {
-                width: 100%;
-                top: -15%;
-                left: 15%;
-              }
-
-              .controlBtn5 {
-                outline: none;
-                width: 100%;
-                background-color: #FFD139;
-                border: 3px solid black;
-                text-align: center;
-                cursor: pointer;
-
-                img {
-                  width: 100%;
-                }
-
-                &:before {
-                  content: '';
-                  position: absolute;
-                  width: 97%;
-                  height: 35%;
-                  left: -65%;
-                  bottom: 14%;
-                  border: 5px solid black;
-                  background-color: #FFD139;
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                  transform: rotate(90deg) skew(45deg);
-                }
-
-                &:after {
-                  content: '';
-                  position: absolute;
-                  width: 100%;
-                  height: 35%;
-                  bottom: -35%;
-                  left: -17%;
-                  background-color: #FFD139;
-                  border: 5px solid black;
-                  transform: skew(-45deg) rotate(0deg);
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                }
-
-                &.clicked {
-                  background-color: rgb(0, 225, 255);
-
-
-
-
-                  &:before {
-                    width: 100%;
-                    height: 17%;
-                    left: -57%;
-                    bottom: 31%;
-                    border: 5px solid black;
-                    background-color: rgb(0, 225, 255);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                    transform: rotate(90deg) skew(45deg);
-                  }
-
-                  &:after {
-                    width: 100%;
-                    height: 20%;
-                    bottom: -18%;
-                    left: -9%;
-                    background-color: rgb(0, 225, 255);
-                    border: 5px solid black;
-                    transform: skew(-45deg) rotate(0deg);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                  }
-                }
-              }
-            }
-          }
-
-          .controlBox6 {
-            text-align: center;
-            width: 50%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 35;
-
-            .controlBox6_button {
-              position: relative;
-              width: 100%;
-              top: -35%;
-              left: 30%;
-
-              &.clicked {
-                width: 100%;
-                top: -15%;
-                left: 15%;
-              }
-
-              .controlBtn6 {
-                outline: none;
-                width: 100%;
-                background-color: #FFD139;
-                border: 3px solid black;
-                text-align: center;
-                cursor: pointer;
-
-                img {
-                  width: 100%;
-                }
-
-                &:before {
-                  content: '';
-                  position: absolute;
-                  width: 97%;
-                  height: 35%;
-                  left: -65%;
-                  bottom: 14%;
-                  border: 5px solid black;
-                  background-color: #FFD139;
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                  transform: rotate(90deg) skew(45deg);
-                }
-
-                &:after {
-                  content: '';
-                  position: absolute;
-                  width: 100%;
-                  height: 35%;
-                  bottom: -35%;
-                  left: -17%;
-                  background-color: #FFD139;
-                  border: 5px solid black;
-                  transform: skew(-45deg) rotate(0deg);
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                }
-
-                &.clicked {
-                  background-color: rgb(0, 225, 255);
-
-
-
-
-                  &:before {
-                    width: 100%;
-                    height: 17%;
-                    left: -57%;
-                    bottom: 31%;
-                    border: 5px solid black;
-                    background-color: rgb(0, 225, 255);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                    transform: rotate(90deg) skew(45deg);
-                  }
-
-                  &:after {
-                    width: 100%;
-                    height: 20%;
-                    bottom: -18%;
-                    left: -9%;
-                    background-color: rgb(0, 225, 255);
-                    border: 5px solid black;
-                    transform: skew(-45deg) rotate(0deg);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                  }
-                }
-              }
-            }
-          }
-
-          .controlBox7 {
-            text-align: center;
-            width: 50%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 37;
-
-            .controlBox7_button {
-              position: relative;
-              width: 100%;
-              top: -35%;
-              left: 30%;
-
-              &.clicked {
-                width: 100%;
-                top: -15%;
-                left: 15%;
-              }
-
-              .controlBtn7 {
-                outline: none;
-                width: 100%;
-                background-color: #FFD139;
-                border: 3px solid black;
-                text-align: center;
-                cursor: pointer;
-
-                img {
-                  width: 100%;
-                }
-
-                &:before {
-                  content: '';
-                  position: absolute;
-                  width: 97%;
-                  height: 35%;
-                  left: -65%;
-                  bottom: 14%;
-                  border: 5px solid black;
-                  background-color: #FFD139;
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                  transform: rotate(90deg) skew(45deg);
-                }
-
-                &:after {
-                  content: '';
-                  position: absolute;
-                  width: 100%;
-                  height: 35%;
-                  bottom: -35%;
-                  left: -17%;
-                  background-color: #FFD139;
-                  border: 5px solid black;
-                  transform: skew(-45deg) rotate(0deg);
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                }
-
-                &.clicked {
-                  background-color: rgb(0, 225, 255);
-
-
-
-
-                  &:before {
-                    width: 100%;
-                    height: 17%;
-                    left: -57%;
-                    bottom: 31%;
-                    border: 5px solid black;
-                    background-color: rgb(0, 225, 255);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                    transform: rotate(90deg) skew(45deg);
-                  }
-
-                  &:after {
-                    width: 100%;
-                    height: 20%;
-                    bottom: -18%;
-                    left: -9%;
-                    background-color: rgb(0, 225, 255);
-                    border: 5px solid black;
-                    transform: skew(-45deg) rotate(0deg);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                  }
-                }
-              }
-            }
-          }
-
-          .controlBox8 {
-            text-align: center;
-            width: 50%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 36;
-
-            .controlBox8_button {
-              position: relative;
-              width: 100%;
-              top: -35%;
-              left: 30%;
-
-              &.clicked {
-                width: 100%;
-                top: -15%;
-                left: 15%;
-              }
-
-              .controlBtn8 {
-                outline: none;
-                width: 100%;
-                background-color: #FFD139;
-                border: 3px solid black;
-                text-align: center;
-                cursor: pointer;
-
-                img {
-                  width: 100%;
-                }
-
-                &:before {
-                  content: '';
-                  position: absolute;
-                  width: 97%;
-                  height: 35%;
-                  left: -65%;
-                  bottom: 14%;
-                  border: 5px solid black;
-                  background-color: #FFD139;
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                  transform: rotate(90deg) skew(45deg);
-                }
-
-                &:after {
-                  content: '';
-                  position: absolute;
-                  width: 100%;
-                  height: 35%;
-                  bottom: -35%;
-                  left: -17%;
-                  background-color: #FFD139;
-                  border: 5px solid black;
-                  transform: skew(-45deg) rotate(0deg);
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                }
-
-                &.clicked {
-                  background-color: rgb(0, 225, 255);
-
-
-
-
-                  &:before {
-                    width: 100%;
-                    height: 17%;
-                    left: -57%;
-                    bottom: 31%;
-                    border: 5px solid black;
-                    background-color: rgb(0, 225, 255);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                    transform: rotate(90deg) skew(45deg);
-                  }
-
-                  &:after {
-                    width: 100%;
-                    height: 20%;
-                    bottom: -18%;
-                    left: -9%;
-                    background-color: rgb(0, 225, 255);
-                    border: 5px solid black;
-                    transform: skew(-45deg) rotate(0deg);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                  }
-                }
-              }
-            }
-          }
-
-          .controlBox9 {
-            text-align: center;
-            width: 50%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 38;
-
-            .controlBox9_button {
-              position: relative;
-              width: 100%;
-              top: -35%;
-              left: 30%;
-
-              &.clicked {
-                width: 100%;
-                top: -15%;
-                left: 15%;
-              }
-
-              .controlBtn9 {
-                outline: none;
-                width: 100%;
-                background-color: #FFD139;
-                border: 3px solid black;
-                text-align: center;
-                cursor: pointer;
-
-                img {
-                  width: 100%;
-                }
-
-                &:before {
-                  content: '';
-                  position: absolute;
-                  width: 97%;
-                  height: 35%;
-                  left: -65%;
-                  bottom: 14%;
-                  border: 5px solid black;
-                  background-color: #FFD139;
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                  transform: rotate(90deg) skew(45deg);
-                }
-
-                &:after {
-                  content: '';
-                  position: absolute;
-                  width: 100%;
-                  height: 35%;
-                  bottom: -35%;
-                  left: -17%;
-                  background-color: #FFD139;
-                  border: 5px solid black;
-                  transform: skew(-45deg) rotate(0deg);
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                }
-
-                &.clicked {
-                  background-color: rgb(0, 225, 255);
-
-
-
-
-                  &:before {
-                    width: 100%;
-                    height: 17%;
-                    left: -57%;
-                    bottom: 31%;
-                    border: 5px solid black;
-                    background-color: rgb(0, 225, 255);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                    transform: rotate(90deg) skew(45deg);
-                  }
-
-                  &:after {
-                    width: 100%;
-                    height: 20%;
-                    bottom: -18%;
-                    left: -9%;
-                    background-color: rgb(0, 225, 255);
-                    border: 5px solid black;
-                    transform: skew(-45deg) rotate(0deg);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                  }
-                }
-              }
-            }
-          }
-
-          .controlBox10 {
-            text-align: center;
-            width: 50%;
-            border: 2.5px solid black;
-            background-color: #fff;
-            z-index: 37;
-
-            .controlBox10_button {
-              position: relative;
-              width: 100%;
-              top: -35%;
-              left: 30%;
-
-              &.clicked {
-                width: 100%;
-                top: -15%;
-                left: 15%;
-              }
-
-              .controlBtn10 {
-                outline: none;
-                width: 100%;
-                background-color: #FFD139;
-                border: 3px solid black;
-                text-align: center;
-                cursor: pointer;
-
-                img {
-                  width: 100%;
-                }
-
-                &:before {
-                  content: '';
-                  position: absolute;
-                  width: 97%;
-                  height: 35%;
-                  left: -65%;
-                  bottom: 14%;
-                  border: 5px solid black;
-                  background-color: #FFD139;
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                  transform: rotate(90deg) skew(45deg);
-                }
-
-                &:after {
-                  content: '';
-                  position: absolute;
-                  width: 100%;
-                  height: 35%;
-                  bottom: -35%;
-                  left: -17%;
-                  background-color: #FFD139;
-                  border: 5px solid black;
-                  transform: skew(-45deg) rotate(0deg);
-                  background-image: url("/img/product/decorate/materail-04.svg");
-                  background-size: cover;
-                }
-
-                &.clicked {
-                  background-color: rgb(0, 225, 255);
-
-
-
-
-                  &:before {
-                    width: 100%;
-                    height: 17%;
-                    left: -57%;
-                    bottom: 31%;
-                    border: 5px solid black;
-                    background-color: rgb(0, 225, 255);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                    transform: rotate(90deg) skew(45deg);
-                  }
-
-                  &:after {
-                    width: 100%;
-                    height: 20%;
-                    bottom: -18%;
-                    left: -9%;
-                    background-color: rgb(0, 225, 255);
-                    border: 5px solid black;
-                    transform: skew(-45deg) rotate(0deg);
-                    background-image: url("/img/product/decorate/materail-04.svg");
-                    background-size: cover;
-                  }
+                .shadowColorlabel {
+                  font-family: $font;
                 }
               }
             }
           }
 
           .controlBoxBottom {
-            padding: 25% 10%;
+            padding: 5% 10%;
             width: 100%;
-            border: 5px solid black;
+            border: $border;
             background: #fff;
-
+            
             .brushType {
               .brushlabel {
                 font-family: $font;
@@ -1899,31 +1974,17 @@ $arrow_color: $gray !default;
 
 
             .lineWidth {
-              margin-top: 40%;
+              margin-top: 10%;
 
               .lineWidthlabel {
                 font-family: $font;
               }
             }
 
-            .lineColor {
-              margin-top: 15%;
 
-              .lineColorlabel {
-                font-family: $font;
-              }
-            }
-
-            .shadowColor {
-              margin-top: 15%;
-
-              .shadowColorlabel {
-                font-family: $font;
-              }
-            }
 
             .shadowBlur {
-              margin-top: 15%;
+              margin-top: 5%;
 
               .shadowBlurlabel {
                 font-family: $font;
@@ -1932,7 +1993,7 @@ $arrow_color: $gray !default;
 
 
             .shadowOffsetX {
-              margin-top: 15%;
+              margin-top: 5%;
 
               .shadowOffsetXlabel {
                 font-family: $font;
@@ -1940,14 +2001,12 @@ $arrow_color: $gray !default;
             }
 
             .shadowOffsetY {
-              margin-top: 15%;
+              margin-top: 5%;
 
               .shadowOffsetYlabel {
                 font-family: $font;
               }
             }
-
-
           }
         }
 
@@ -1957,9 +2016,10 @@ $arrow_color: $gray !default;
 
 
         .drawingBoardBox {
-          width: 80%;
-          border: 5px solid black;
+          width: 77%;
+          border: $border;
           background: #8ebfbf;
+          z-index: 20;
 
           #canvasBox {
             margin: 4.5%;
@@ -1972,36 +2032,28 @@ $arrow_color: $gray !default;
               .drawingPanel {}
             }
 
-            // .planeBoard {
-            //   width: 90%;
-            // }
           }
 
           #btns {
-            width: 100%;
-            height: 200px;
+            width: 85%;
             display: flex;
+            margin: 0 auto;
 
             .orderBtnBoxGroup {
-
               width: 20%;
-              height: 100%;
-              margin: 2% 10%;
-
+              margin: 2% 2% 2% 0;
 
               .orderBtnBox {
                 position: relative;
-                width: 100%;
-
 
                 .orderBtn {
                   font-size: 20px;
                   letter-spacing: 0.2em;
-                  position: absolute;
+                  position: relative;
                   width: 100%;
                   height: 50px;
                   background-color: #FFD139;
-                  border: 3px solid black;
+                  border: $border;
                   text-align: center;
                   line-height: 40px;
                   border-radius: 0.3em;
@@ -2010,37 +2062,15 @@ $arrow_color: $gray !default;
                   text-shadow: 1px 1px 1px black;
 
 
-                  .orderText {
-                    font-weight: 900;
-                    font-size: 35px;
-                    color: #06a4ff;
-                    @include stroke(2, #0f0f0f);
-                    font-family: $font;
-                    font-weight: 500;
-
-
-                    &::before {
-                      content: '切換郵戳畫板';
-                      position: absolute;
-                      left: 10%;
-                      font-weight: 900;
-                      font-size: 35px;
-                      color: #fff;
-                      @include stroke(2, #0f0f0f);
-                      font-family: $font;
-                      font-weight: 500;
-                    }
-                  }
-
                   &:before {
                     content: '';
                     position: absolute;
-                    width: 30%;
-                    height: 50%;
-                    left: -22%;
+                    width: 50%;
+                    height: 40%;
+                    left: -32%;
                     bottom: -5%;
                     border-radius: 0.3em;
-                    border: 4px solid black;
+                    border: $border;
                     // background-color: #FFD139;
                     // background-image: url("/img/product/decorate/materail-04.svg");
                     // background-size: cover;
@@ -2049,18 +2079,19 @@ $arrow_color: $gray !default;
                     background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
                     background-size: 7px 7px;
 
+
                   }
 
                   &:after {
                     content: '';
                     position: absolute;
                     position: absolute;
-                    width: 30%;
-                    height: 50%;
-                    left: 92%;
+                    width: 50%;
+                    height: 40%;
+                    left: 82%;
                     bottom: -5%;
                     border-radius: 0.3em;
-                    border: 4px solid black;
+                    border: $border;
                     // background-color: #FFD139;
                     // background-image: url("/img/product/decorate/materail-04.svg");
                     // background-size: cover;
@@ -2069,76 +2100,91 @@ $arrow_color: $gray !default;
                     background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
                     background-size: 7px 7px;
 
-                  }
 
-                  .orderBtnBottom {
-                    position: absolute;
-                    width: 126%;
-                    height: 45px;
-                    left: -13%;
-                    top: 65%;
-                    border: 3px solid black;
-                    background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background-size: 7px 7px;
-                    border-radius: 0.1em;
                   }
-
 
                   &.clicked {
-                    top: 20px;
+                    top: 15px;
+
 
                     &:before {
-                      width: 28%;
+                      width: 45%;
                       height: 35%;
-                      left: -20%;
-                      bottom: 20%;
-                      border-radius: 0.1em;
+                      left: -30%;
+                      bottom: 13%;
                       transform: rotate(90deg) skew(45deg);
-                      background-size: 6px 6px;
                     }
 
                     &:after {
-                      width: 28%;
+                      width: 45%;
                       height: 35%;
-                      left: 91%;
-                      bottom: 20%;
-                      border-radius: 0.1em;
+                      left: 85%;
+                      bottom: 13%;
                       transform: rotate(90deg) skew(310deg);
-                      background-size: 5px 5px;
-                    }
-
-                    span {
-                      top: 45%;
-                      height: 35px;
-                      left: -10%;
-                      width: 120%;
                     }
                   }
+                }
+
+                .orderBtnBottom {
+                  position: absolute;
+                  width: 124%;
+                  height: 45px;
+                  left: -12%;
+                  top: 70%;
+                  border: $border;
+                  background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background-size: 7px 7px;
+                  border-radius: 0.1em;
+                  z-index: -1;
+
+                }
+
+                .orderText {
+
+                  &::before {
+                    content: '切換郵戳畫板';
+                    position: absolute;
+                    width: 100%;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-40%, -25%);
+                    font-weight: 900;
+                    font-size: 20;
+                    color: #fff;
+                    @include stroke(2, #0f0f0f);
+                    font-family: $font;
+                    font-weight: 500;
+                    z-index: 3;
+                  }
+                }
+
+                &.clicked {
+                  top: 25%;
                 }
               }
             }
 
             #emptyBtn {
-              margin-top: 1%;
               display: flex;
-              width: 60%;
+              width: 80%;
+              margin-left: 10%;
               flex-wrap: wrap;
+              justify-content: space-between;
 
               .switchBtnBox {
-                width: 25%;
-                height: 50%;
-                margin: 2% 2% 2% 2%;
+                width: 20%;
+                margin: 0 5% 10% 5%;
 
                 .switchBtn {
                   font-family: $font;
-                  font-size: 26px;
+                  font-size: 1vw;
                   letter-spacing: 0.2em;
                   position: relative;
-                  width: 120px;
-                  height: 40px;
+                  width: 6vw;
+                  height: 2vw;
                   background-color: #FFD139;
-                  border: 4px solid black;
+                  border: $border;
                   text-align: center;
                   line-height: 30px;
                   cursor: pointer;
@@ -2148,14 +2194,11 @@ $arrow_color: $gray !default;
                   &:before {
                     content: '';
                     position: absolute;
-                    width: 40px;
-                    height: 20px;
-                    left: -32.5px;
-                    bottom: -3.5px;
-                    border: 3px solid black;
-                    // background-color: #FFD139;
-                    // background-image: url("/img/product/decorate/materail-04.svg");
-                    // background-size: cover;
+                    width: 2vw;
+                    height: 1vw;
+                    left: -1.6vw;
+                    bottom: -0.2vw;
+                    border: $border;
                     transform: rotate(90deg) skew(45deg);
                     background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
                     background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -2165,16 +2208,12 @@ $arrow_color: $gray !default;
                   &:after {
                     content: '';
                     position: absolute;
-                    width: 120px;
-                    height: 20px;
-                    bottom: -23px;
-                    left: -13px;
-                    // background-color: #FFD139;
-                    border: 3px solid black;
+                    width: 6vw;
+                    height: 1vw;
+                    bottom: -1.1vw;
+                    left: -0.7vw;
+                    border: $border;
                     transform: skew(-45deg) rotate(0deg);
-                    // background-image: url("/img/product/decorate/materail-04.svg");
-                    // background-size: cover;
-                    // transform: rotate(90deg) skew(45deg);
                     background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
                     background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
                     background-size: 7px 7px;
@@ -2182,19 +2221,19 @@ $arrow_color: $gray !default;
 
 
                   &.clicked {
-                    left: -11px;
-                    bottom: -5px;
+                    left: -0.6vw;
+                    bottom: -0.25vw;
 
                     &:before {
-                      height: 14px;
-                      left: -30px;
-                      bottom: 2.5px;
+                      height: 0.7vw;
+                      left: -1.5vw;
+                      bottom: 0.1vw;
                     }
 
                     &:after {
-                      height: 13px;
-                      bottom: -17px;
-                      left: -10px;
+                      height: 0.6vw;
+                      bottom: -0.8vw;
+                      left: -0.5vw;
                     }
                   }
                 }
@@ -2214,12 +2253,14 @@ $arrow_color: $gray !default;
       }
 
       .owl-carousel {
+        position: relative;
         width: 100%;
+        z-index: 99;
 
         .item {
           width: 100%;
           // height:200px;
-          border: 2.5px solid black;
+          border: $border;
           transform: skew(350deg);
           background-color: #fff;
 
@@ -2238,21 +2279,21 @@ $arrow_color: $gray !default;
         }
 
         .owl-nav {
+          top: -70%;
+          left: 50%;
+          transform: translate(-90%, 25%);
+          position: absolute;
           display: flex;
           justify-content: space-around;
-          width: 30%;
-          height: 100px;
-          position: relative;
-          transform: translate(180%, -430%);
-          right: 0;
-          z-index: 100;
+          width: 19vw;
+          height: 4vw;
+          z-index: 99;
 
           .owl-prev {
             background-image: url('/img/product/decorate/arrow_pre-04.svg');
-            width: 20%;
-            padding-top: 100%;
+            width: 15%;
+            background-size: contain;
             background-repeat: no-repeat;
-            display: block;
             z-index: 100;
 
             span {
@@ -2265,10 +2306,11 @@ $arrow_color: $gray !default;
             content: "切換素材";
             position: absolute;
             top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            left: 25%;
+            margin: 0 2%;
+            transform: translate(25%, -50%);
             font-family: $font;
-            font-size: 26px;
+            font-size: 1.3vw;
             letter-spacing: 0.2em;
             color: #fff;
             text-shadow: 2px 2px 1px #000, -2px -2px 1px #000, 2px -2px 1px #000, -2px 2px 1px #000;
@@ -2277,8 +2319,8 @@ $arrow_color: $gray !default;
           .owl-next {
 
             background-image: url('/img/product/decorate/arrow_next-04.svg');
-            width: 20%;
-            padding-top: 100%;
+            width: 15%;
+            background-size: contain;
             background-repeat: no-repeat;
             z-index: 100;
 
@@ -2302,97 +2344,234 @@ $arrow_color: $gray !default;
   }
 }
 
+@include respond(desktopXl) {
+  .shop-body {
+    .shop-main {
+      #section2 {
+        .customizeArea {
+          .drawingBoardBox {
+            #btns {
+              width: 90%;
+
+              .orderBtnBoxGroup {}
+
+              #emptyBtn {
+                display: flex;
+                width: 80%;
+                flex-wrap: wrap;
+
+
+                .switchBtnBox {
+                  width: 33%;
+                  margin: 3% 0;
+
+                  .switchBtn {
+                    font-size: 1vw;
+                    width: 9vw;
+                    height: 3vw;
+
+                    &:before {
+                      width: 3vw;
+                      height: 1.5vw;
+                      left: -2.4vw;
+                      bottom: -0.3vw;
+                    }
+
+                    &:after {
+                      width: 9vw;
+                      height: 1.5vw;
+                      bottom: -1.65vw;
+                      left: -1.05vw;
+                    }
+
+                    &.clicked {
+                      left: -0.9vw;
+                      bottom: -0.375vw;
+
+                      &:before {
+                        height: 1.05vw;
+                        left: -2.25vw;
+                        bottom: 0.15vw;
+                      }
+
+                      &:after {
+                        height: 1vw;
+                        bottom: -1.2vw;
+                        left: -0.75vw;
+                      }
+                    }
+                  }
+
+                }
+              }
+            }
+          }
+        }
+      }
+
+      #section3 {
+
+        .owl-carousel {
+          position: relative;
+          width: 100%;
+          z-index: 99;
+
+          .owl-nav {
+            top: -70%;
+            left: 50%;
+            transform: translate(-110%, 25%);
+            width: 19vw;
+            height: 4vw;
+
+
+            .owl-prev {
+              width: 15%;
+
+            }
+
+            &:before {
+              top: 50%;
+              left: 25%;
+              margin: 0 2%;
+              transform: translate(25%, -50%);
+
+              font-size: 1.3vw;
+              letter-spacing: 0.2em;
+
+            }
+
+            .owl-next {
+              width: 15%;
+            }
+          }
+
+
+
+        }
+      }
+    }
+  }
+}
+
 @include respond(desktop) {
   //992px------1199px;
 
   .shop-body {
     .shop-main {
       #section1 {
-
-
         .container {
-          .row {
+          // .row {
 
-            .shopTitleText {
-              width: 75%;
-              font-size: 120px;
+          // //   .shopTitleText {
+          // //     width: 75%;
+          // //     font-size: 120px;
 
-              &::before {
-                font-size: 120px;
-              }
-            }
+          // //     &::before {
+          // //       font-size: 120px;
+          // //     }
+          // //   }
 
-            .shopTitle {
-              height: 290px;
+          // //   .shopTitle {
+          // //     height: 290px;
 
-              .shopTitleContainer {
+          // //     .shopTitleContainer {
 
-                .titlePagePic {
-                  width: 90%;
-                  position: absolute;
-                  top: 125px;
-                  left: 5%;
-                }
-              }
-            }
-          }
+          // //       .titlePagePic {
+          // //         width: 90%;
+          // //         position: absolute;
+          // //         top: 125px;
+          // //         left: 5%;
+          // //       }
+          // //     }
+          // //   }
+          // // }
 
           .row {
             #conectionLine {
-              margin: 0 auto;
-              position: relative;
-              height: 200px;
-              margin: 0 auto;
 
               .iron_clip1 {
-                top: -15%;
+                left: 40%;
+                top: 0%;
               }
 
               .iron_clip2 {
-                top: -15%;
+                top: 0%;
                 right: 10%;
               }
-
             }
           }
-
-
         }
 
-        .itemCardBox {
+        #shopOutsideBox {
+          .shopItemContainer {
+            width: 80vw;
+            height: 50vw;
+          }
 
+          .itemCardBox {
+            width: 90vw;
 
-          .itemCardContainer {
-            width: 80%;
-            padding-top: 180px;
-            @include itemCardRow1_lg(4);
-            @include itemCardRow2_lg(3);
+            .itemCardAside {
+              width: 30%;
 
-            .line_top {
-              width: 720px;
-              transform: translate(0, -15%);
+              .itemCardAsideBox {
+                margin: 20% 10% 0 10%;
+              }
             }
 
-            .line_bottom {
-              width: 500px;
-              transform: translate(10%, 30%);
-            }
+            .itemCardContainer {
+              width: 70%;
+              @include itemCardRow1_lg(4);
+              @include itemCardRow2_lg(3);
 
-            .itemCardTopRow {
-              .itemCard3 {
-                transform: translate(0, -10%) rotate(360deg);
-
-
+              .line_top {
+                width: 90%;
+                transform: translate(0, -30%);
               }
 
-              ;
+              .itemCardTopRow {
+                .itemCard1 {
+                  transform: translate(0, -100%) rotate(15deg);
+                }
 
+                .itemCard2 {
+                  transform: translate(0, -50%) rotate(355deg);
+                }
+
+                .itemCard3 {
+                  transform: translate(0, -30%) rotate(360deg);
+                }
+
+                .itemCard4 {
+                  transform: translate(0, -50%) rotate(355deg);
+                }
+
+                .itemCard5 {
+                  display: none;
+                }
+              }
+
+              .line_bottom {
+                width: 70%;
+                transform: translate(0%, -10%);
+              }
+
+              .itemCardBottomRow {
+                .itemCard2_1 {
+                  transform: translate(0%, 0%) rotate(350deg);
+                  margin-top: 0px;
+                }
+
+                .itemCard2_2 {
+                  transform: translate(-30%, 0%) rotate(15deg);
+                  margin-top: 0px;
+                }
+
+                .itemCard2_3 {
+                  transform: translate(-70%, -40%) rotate(0deg);
+                }
+              }
             }
-
-            .itemCard5 {
-              display: none;
-            }
-
           }
 
           .filter_forSamll {
@@ -2401,28 +2580,57 @@ $arrow_color: $gray !default;
         }
       }
 
-      .container {
+      #pile {
+        max-width: 90%;
+        height: 40vw;
 
-        .customize {
+        .pilePaper {
 
-          .customizeTitleText {
+          width: 9vw;
+          height: 11vw;
 
-            font-size: 120px;
+          span {
+            font-size: 0.1vh;
+            font-family: $font;
 
-            &::before {
-              font-size: 120px;
-            }
           }
 
-          // .customizeTitle {
-          //   z-index: 15;
-          //   width: 80%;
-          //   height: 250px;
-          //   border: 5px solid black;
-          //   background: #fff;
-          //   margin-bottom: 3%;
+          .innerBox {
+            margin-top: 3%;
+            width: 60%;
+            height: 30%;
+            border: $border;
 
-          // }
+          }
+        }
+
+
+
+
+        .pile {
+          margin-left: 0%;
+          width: 100vw;
+          height: 130vw;
+          background-image: url("/img/product/decorate/pile.png");
+          background-repeat: no-repeat;
+          position: relative;
+
+          .clock {
+            left: -2%;
+            top: 19.8%;
+          }
+
+          .redWheel {
+            left: 50.5%;
+            top: 5%;
+          }
+
+          .perpul {
+            width: 18%;
+            padding-top: 100%;
+            left: 75%;
+            top: 25%;
+          }
         }
       }
 
@@ -2436,10 +2644,46 @@ $arrow_color: $gray !default;
         }
       }
 
-      #section3 {}
+      #section3 {
+
+        .owl-carousel {
+          position: relative;
+          width: 100%;
+          z-index: 99;
+
+          .owl-nav {
+            top: -70%;
+            left: 50%;
+            transform: translate(-100%, 50%);
+            width: 25vw;
+            height: 4vw;
+
+
+            .owl-prev {
+              width: 30%;
+
+            }
+
+            &:before {
+              top: 50%;
+              left: 25%;
+              margin: 0 2%;
+              transform: translate(0%, -50%);
+              font-size: 1.5vw;
+              letter-spacing: 0.2em;
+            }
+
+            .owl-next {
+              width: 30%;
+            }
+          }
+
+
+
+        }
+      }
     }
   }
-
 }
 
 @include respond(mediumSize_max) {
@@ -2449,129 +2693,134 @@ $arrow_color: $gray !default;
     .shop-main {
       #section1 {
         .container {
-          .row {
-            .shopTitleText {
-              width: 75%;
-              font-size: 90px;
+          // .row {
+          //   .shopTitleText {
+          //     width: 75%;
+          //     font-size: 90px;
 
-              &::before {
-                font-size: 90px;
+          //     &::before {
+          //       font-size: 90px;
+          //     }
+          //   }
+
+          //   .shopTitle {
+          //     height: 197px;
+
+          //     .shopTitleContainer {
+          //       @include itemCardRow1_md(3);
+          //       @include itemCardRow2_md(3);
+
+          //       .titlePagePic {
+          //         width: 90%;
+          //         // transform: translate(-10%, 0);
+          //         position: absolute;
+          //         top: 175px;
+          //         left: 3%;
+          //       }
+          //     }
+          //   }
+          // }
+
+          .row {
+            #conectionLine {
+              height: 30vw;
+
+              .iron_clip1 {
+                left: 20%;
+                top: 40%;
+              }
+
+              .iron_clip2 {
+                top: 40%;
+                right: 20%;
               }
             }
+          }
+        }
 
-            .shopTitle {
-              height: 197px;
+        #shopOutsideBox {
+          .shopItemContainer {
+            width: 85vw;
+            height: 55vw;
 
-              .shopTitleContainer {
-                @include itemCardRow1_md(3);
-                @include itemCardRow2_md(3);
-
-                .titlePagePic {
-                  width: 90%;
-                  // transform: translate(-10%, 0);
-                  position: absolute;
-                  top: 175px;
-                  left: 3%;
+            .itemPage1 {
+              .itemPage2 {
+                .itemPage0 {
+                  margin-top: 6%;
+                  margin-left: 6%;
                 }
               }
             }
           }
 
-          .row {
-            #conectionLine {
-              .iron_clip1 {
-                top: 30%;
-              }
-
-              .iron_clip2 {
-                top: 30%;
-                right: 10%;
-              }
-
-            }
-          }
-        }
-
-
-
-        .shopItemContainer {
-
-
-          .itemPage0 {
-            width: 100%;
-            left: 5%;
-          }
-        }
-
-
-        .itemCardBox {
-
-          .itemCardAside {
-            display: none;
-
-          }
-
-          .itemCardContainer {
-            width: 100%;
-            padding-left: 80px;
-            @include itemCardRow1_md(4);
-            @include itemCardRow2_md(3);
-
-            .line_top {
-              width: 600px;
-              transform: translate(5%, -25%);
+          .itemCardBox {
+            .itemCardAside {
+              display: none;
             }
 
-            .line_bottom {
-              width: 500px;
-              transform: translate(10%, 80%);
-            }
+            .itemCardContainer {
+              width: 100%;
+              padding-top: 70px;
+              padding-left: 70px;
+              @include itemCardRow1_md(4);
+              @include itemCardRow2_md(3);
 
-            .itemCardTopRow {
-              .itemCard3 {
-                transform: translate(0, -10%) rotate(360deg);
+              .line_top {
+                width: 90%;
+                transform: translate(5%, -10%);
+              }
 
+
+
+              .itemCardTopRow {
+                .itemCard1 {
+                  transform: translate(0, -50%) rotate(15deg);
+                }
+
+                .itemCard3 {
+                  transform: translate(0, -10%) rotate(360deg);
+                }
+
+                .itemCard4 {
+                  transform: translate(0, -20%) rotate(360deg);
+                }
+
+                .itemCard5 {
+                  display: none;
+                }
 
               }
 
-              ;
-
-              .itemCard5 {
-                display: none;
+              .line_bottom {
+                width: 70%;
+                transform: translate(10%, 10%);
               }
 
-            }
+              .itemCardBottomRow {
 
-            .itemCardBottomRow {
+                .itemCard2_1 {
+                  margin-top: 0px;
+                  transform: translate(30%, 0%) rotate(350deg);
+                }
 
-              .itemCard2_1 {
-                margin-top: 100px;
+                .itemCard2_2 {
 
+                  margin-top: 0px;
+                }
+
+                .itemCard2_3 {
+                  transform: translate(-10%, -40%) rotate(350deg);
+                  margin-top: 0px;
+
+                }
               }
-
-              ;
-
-              .itemCard2_2 {
-
-                margin-top: 80px;
-              }
-
-              ;
-
-              .itemCard2_3 {
-
-                margin-top: 50px;
-
-              }
-
-              ;
             }
           }
 
           .filter_forSamll {
             margin: 5% auto;
             width: 90%;
-            border: 5px solid black;
+            border: $border;
             background-color: rgb(255, 252, 250);
             display: block;
             z-index: 1;
@@ -2598,115 +2847,153 @@ $arrow_color: $gray !default;
         }
       }
 
-      .container {
+      #pile {
+        max-width: 90%;
+        height: 40vw;
 
-        .customize {
+        .pilePaper {
 
-          .customizeTitleText {
+          width: 9vw;
+          height: 9vw;
 
-            font-size: 90px;
+          span {
+            display: none;
 
-            &::before {
-              font-size: 90px;
-            }
           }
 
+          .innerBox {
+            display: none;
+
+          }
+        }
+
+        .pile {
+          margin-left: 0%;
+          width: 100vw;
+          height: 130vw;
+          background-image: url("/img/product/decorate/pile.png");
+          background-repeat: no-repeat;
+          position: relative;
+
+          .clock {
+            left: -2%;
+            top: 19.8%;
+          }
+
+          .redWheel {
+            left: 50.5%;
+            top: 5%;
+          }
+
+          .perpul {
+            left: 75%;
+            top: 27%;
+          }
         }
       }
 
       #section2 {
         .customizeArea {
-          margin: 0 auto;
           display: flex;
           width: 95%;
-          flex-wrap: wrap;
 
           .controlTool {
-            display: flex;
-            flex-wrap: wrap;
+            display: block;
             width: 100%;
-            margin-right: 0;
-            border: 2.5px solid black;
-            background: #fff;
+            background-color: transparent;
+            border: 0;
 
-            .controlBox1 {
-              text-align: center;
-              width: 10%;
-              border: 2.5px solid black;
-              background-color: #fff;
-              z-index: 28;
-            }
+            .controlToolTopFlex {
+              display: flex;
+              width: 100%;
 
-            .controlBox2 {
-              text-align: center;
-              width: 10%;
-              border: 2.5px solid black;
-              background-color: #fff;
-              z-index: 27;
-            }
+              .controlToolTop {
+                width: 100%;
 
-            .controlBox3 {
-              text-align: center;
-              width: 10%;
-              border: 2.5px solid black;
-              background-color: #fff;
-              z-index: 26;
-            }
+                .controlBox1 {
+                  text-align: center;
+                  width: 10%;
+                  border: $border;
+                  background-color: #fff;
+                  z-index: 28;
+                }
 
-            .controlBox4 {
-              text-align: center;
-              width: 10%;
-              border: 2.5px solid black;
-              background-color: #fff;
-              z-index: 25;
-            }
+                .controlBox2 {
+                  text-align: center;
+                  width: 10%;
+                  border: $border;
+                  background-color: #fff;
+                  z-index: 27;
+                }
 
-            .controlBox5 {
-              text-align: center;
-              width: 10%;
-              border: 2.5px solid black;
-              background-color: #fff;
-              z-index: 24;
-            }
+                .controlBox3 {
+                  text-align: center;
+                  width: 10%;
+                  border: $border;
+                  background-color: #fff;
+                  z-index: 26;
+                }
 
-            .controlBox6 {
-              text-align: center;
-              width: 10%;
-              border: 2.5px solid black;
-              background-color: #fff;
-              z-index: 23;
-            }
+                .controlBox4 {
+                  text-align: center;
+                  width: 10%;
+                  border: $border;
+                  background-color: #fff;
+                  z-index: 25;
+                }
 
-            .controlBox7 {
-              text-align: center;
-              width: 10%;
-              border: 2.5px solid black;
-              background-color: #fff;
-              z-index: 22;
-            }
+                .controlBox5 {
+                  text-align: center;
+                  width: 10%;
+                  border: $border;
+                  background-color: #fff;
+                  z-index: 24;
+                }
 
-            .controlBox8 {
-              text-align: center;
-              width: 10%;
-              border: 2.5px solid black;
-              background-color: #fff;
-              z-index: 21;
-            }
+                .controlBox6 {
+                  text-align: center;
+                  width: 10%;
+                  border: $border;
+                  background-color: #fff;
+                  z-index: 23;
+                }
 
-            .controlBox9 {
-              text-align: center;
-              width: 10%;
-              border: 2.5px solid black;
-              background-color: #fff;
-              z-index: 20;
-            }
+                .controlBox7 {
+                  text-align: center;
+                  width: 10%;
+                  border: $border;
+                  background-color: #fff;
+                  z-index: 22;
+                }
 
-            .controlBox10 {
-              text-align: center;
-              width: 10%;
-              border: 2.5px solid black;
-              background-color: #fff;
-              z-index: 19;
+                .controlBox8 {
+                  text-align: center;
+                  width: 10%;
+                  border: $border;
+                  background-color: #fff;
+                  z-index: 21;
+                }
+
+                .controlBox9 {
+                  text-align: center;
+                  width: 10%;
+                  border: $border;
+                  background-color: #fff;
+                  z-index: 20;
+                }
+
+                .controlBox10 {
+                  text-align: center;
+                  width: 10%;
+                  border: $border;
+                  background-color: #fff;
+                  z-index: 19;
+                }
+              }
+
+              .colorTool {
+                display: none;
+              }
             }
 
             .controlBoxBottom {
@@ -2715,10 +3002,10 @@ $arrow_color: $gray !default;
           }
 
           .controlBoxRight {
-
+            z-index: 100;
             display: flex;
             width: 100%;
-            border: 5px solid black;
+            border: $border;
             background: #fff;
 
             .brushType {
@@ -2910,7 +3197,6 @@ $arrow_color: $gray !default;
               }
             }
 
-
             .lineWidth {
               margin-top: 2%;
 
@@ -2943,7 +3229,6 @@ $arrow_color: $gray !default;
               }
             }
 
-
             .shadowOffsetX {
               margin-top: 2%;
 
@@ -2959,28 +3244,59 @@ $arrow_color: $gray !default;
                 font-family: $font;
               }
             }
-
           }
 
           .drawingBoardBox {
             width: 100%;
 
-            #canvasBox {
-              #canvas {
-                .drawingPanel {}
-              }
+            #btns {
+              width: 85%;
+              padding-bottom: 10%;
 
-              // .planeBoard {
-              //   width: 90%;
-              // }
+
             }
           }
         }
       }
 
+      #section3 {
 
-      #section3 {}
+        .owl-carousel {
+          position: relative;
+          width: 100%;
+          z-index: 99;
 
+          .owl-nav {
+            top: -40%;
+            left: 25%;
+            transform: translate(-80%, 0);
+            width: 24vw;
+            height: 4vw;
+
+
+            .owl-prev {
+              width: 50%;
+
+            }
+
+            &:before {
+              top: 50%;
+              left: 25%;
+              margin: 0 2%;
+              transform: translate(0%, -50%);
+              font-size: 2vw;
+              letter-spacing: 0.2em;
+            }
+
+            .owl-next {
+              width: 50;
+            }
+          }
+
+
+
+        }
+      }
 
     }
   }
@@ -2995,161 +3311,351 @@ $arrow_color: $gray !default;
 
 
         .container {
-          .row {
-            .shopTitleText {
-              z-index: 16;
-              transform: translate(0, 140%);
-              width: 85%;
-              font-size: 70px;
+          // .row {
+          //   .shopTitleText {
+          //     z-index: 16;
+          //     transform: translate(0, 140%);
+          //     width: 85%;
+          //     font-size: 70px;
 
-              &::before {
-                font-size: 70px;
-              }
-            }
+          //     &::before {
+          //       font-size: 70px;
+          //     }
+          //   }
 
-            .shopTitle {
-              height: 140px;
+          //   .shopTitle {
+          //     height: 140px;
 
-              .shopTitleContainer {
+          //     .shopTitleContainer {
 
-                .titlePage1 {
-                  z-index: 15;
-                  width: 100%;
-                }
+          //       .titlePage1 {
+          //         z-index: 15;
+          //         width: 100%;
+          //       }
 
-                .titlePage2 {
-                  z-index: 15;
-                  width: 100%;
-                }
+          //       .titlePage2 {
+          //         z-index: 15;
+          //         width: 100%;
+          //       }
 
-                .titlePage3 {
-                  display: none;
-                }
+          //       .titlePage3 {
+          //         display: none;
+          //       }
 
-                .titlePage4 {
-                  display: none;
-                }
+          //       .titlePage4 {
+          //         display: none;
+          //       }
 
-                .titlePagePic {
-                  width: 90%;
-                  // transform: translate(-10%, 0);
-                  position: absolute;
-                  top: 210px;
-                  left: 10%;
-                }
-              }
-            }
-          }
+          //       .titlePagePic {
+          //         width: 90%;
+          //         // transform: translate(-10%, 0);
+          //         position: absolute;
+          //         top: 210px;
+          //         left: 10%;
+          //       }
+          //     }
+          //   }
+          // }
 
           .row {
             #conectionLine {
-              width: 40%;
+              height: 40vw;
 
               .iron_clip1 {
-                width: 20%;
-                top: 10%;
+                width: 10vw;
+                top: 30%;
               }
 
               .iron_clip2 {
-                width: 20%;
-                right: 2%;
-                top: 10%;
+                width: 10vw;
+                right: 20%;
+                top: 30%;
               }
-
             }
           }
         }
 
+        #shopOutsideBox {
+          .shopItemContainer {
+            width: 90vw;
+            height: 80vw;
+          }
 
-        .shopItemContainer {
+          .itemCardBox {
 
-          width: 95%;
+            .itemCardAside {
+              display: none;
+            }
 
-          .itemPage0 {
-            top: 130px;
-            width: 95%;
-            left: 5%;
+            .itemCardContainer {
+              width: 100%;
+              padding-left: 0px;
+              padding-top: 100px;
+              @include itemCardRow1_sm(2);
+              @include itemCardRow2_sm(2);
+
+              .line_top {
+                width: 70%;
+                transform: translate(25%, -80%);
+              }
+
+              .line_bottom {
+                transform: translate(25%, -10%);
+              }
+
+              .itemCardTopRow {
+                .itemCard1 {
+                  transform: translate(50%, -50%) rotate(15deg);
+
+                  img {
+                    width: 5vw;
+                  }
+                }
+
+                .itemCard2 {
+                  img {
+                    width: 5vw;
+                  }
+                }
+
+                .itemCard3 {
+                  display: none;
+                }
+
+                .itemCard4 {
+                  display: none;
+                }
+
+                .itemCard5 {
+                  display: none;
+                }
+              }
+
+              .itemCardBottomRow {
+
+                .itemCard2_1 {
+                  margin-top: 0px;
+
+                  img {
+                    width: 5vw;
+                  }
+
+                }
+
+                .itemCard2_2 {
+                  margin-top: 0px;
+
+                  img {
+                    width: 5vw;
+                  }
+                }
+
+                .itemCard2_3 {
+                  display: none;
+
+                }
+              }
+            }
+
           }
         }
 
+        #medal {
+          height: 600px;
+          left: 50%;
 
-
-
-
-        .itemCardBox {
-
-          .itemCardAside {
-            display: none;
-          }
-
-          .itemCardContainer {
-            width: 95%;
-
-            padding-left: 50px;
-            @include itemCardRow1_md(3);
-            @include itemCardRow2_md(3);
-
-            .line_top {
-              width: 450px;
-              transform: translate(5%, -50%);
+          .cross {
+            &:before {
+              left: -100%;
             }
 
-            .line_bottom {
-              width: 450px;
-              transform: translate(5%, 100%);
-            }
-
-            .itemCardTopRow {
-              .itemCard4 {
-                display: none;
-              }
-
-              ;
-
-              .itemCard5 {
-                display: none;
-              }
-            }
-
-            .itemCardBottomRow {
-
-              .itemCard2_1 {
-                margin-top: 100px;
-
-              }
-
-              ;
-
-              .itemCard2_2 {
-
-                margin-top: 80px;
-              }
-
-              ;
-
-              .itemCard2_3 {
-
-                margin-top: 50px;
-
-              }
-
-              ;
+            &:after {
+              left: -100%;
             }
           }
 
-        }
-      }
+          #textBox {
+            width: 70%;
+            margin: 7% auto 3%;
 
-      .container {
+            .textBox h1 {
+              font-size: 30px;
+              font-weight: 700;
+              font-family: $font;
+              line-height: 60px;
+            }
 
-        .customize {
+            .textBox h3 {
+              font-size: 20px;
+              letter-spacing: 0.2rem;
+              font-family: $font;
+              line-height: 3rem;
+            }
+          }
 
-          .customizeTitleText {
+          .product_display {
+            margin: 0 auto;
+            width: 85%;
+            display: flex;
+            align-items: center;
 
-            font-size: 70px;
+            .model_material {
+              width: 40%;
 
-            &::before {
-              font-size: 70px;
+              img {
+                width: 100%;
+              }
+            }
+
+            .model_arrow {
+              width: 20%;
+
+              img {
+                width: 70%;
+              }
+            }
+
+            .model_product {
+
+              width: 40%;
+
+              img {
+                width: 95%;
+              }
+            }
+          }
+
+          .orderBtnBoxGroup {
+            position: relative;
+            width: 35%;
+            margin: 5% auto;
+
+            .orderBtnBox {
+              position: absolute;
+              width: 100%;
+
+              .orderBtn {
+
+                font-size: 20px;
+                letter-spacing: 0.2em;
+                position: absolute;
+                width: 100%;
+                height: 50px;
+                background-color: #FFD139;
+                border: $border;
+                text-align: center;
+                line-height: 40px;
+                border-radius: 0.3em;
+                cursor: pointer;
+                color: white;
+                text-shadow: 1px 1px 1px black;
+
+                .orderText {
+                  font-weight: 900;
+                  font-size: 40px;
+                  color: #06a4ff;
+                  @include stroke(2, #0f0f0f);
+                  font-family: $font;
+                  font-weight: 500;
+
+                  &::before {
+                    content: '購買';
+                    position: absolute;
+                    left: 17%;
+                    font-weight: 900;
+                    font-size: 40px;
+                    color: #fff;
+                    @include stroke(2, #0f0f0f);
+                    font-family: $font;
+                    font-weight: 500;
+                  }
+                }
+
+                &:before {
+                  content: '';
+                  position: absolute;
+                  width: 30%;
+                  height: 50%;
+                  left: -22%;
+                  bottom: -5%;
+                  border-radius: 0.3em;
+                  border: $border;
+                  // background-color: #FFD139;
+                  // background-image: url("/img/product/decorate/materail-04.svg");
+                  // background-size: cover;
+                  transform: rotate(90deg) skew(60deg);
+                  background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background-size: 7px 7px;
+                }
+
+                &:after {
+                  content: '';
+                  position: absolute;
+                  position: absolute;
+                  width: 30%;
+                  height: 50%;
+                  left: 92%;
+                  bottom: -5%;
+                  border-radius: 0.3em;
+                  border: $border;
+                  // background-color: #FFD139;
+                  // background-image: url("/img/product/decorate/materail-04.svg");
+                  // background-size: cover;
+                  transform: rotate(90deg) skew(300deg);
+                  background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background-size: 7px 7px;
+                }
+
+                span {
+                  position: absolute;
+                  width: 126%;
+                  height: 45px;
+                  left: -13%;
+                  top: 65%;
+                  border: 3px solid black;
+                  background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background-size: 7px 7px;
+                  border-radius: 0.1em;
+                  z-index: -1;
+
+                }
+
+
+                &.clicked {
+                  top: 20px;
+
+
+                  &:before {
+                    width: 28%;
+                    height: 35%;
+                    left: -20%;
+                    bottom: 20%;
+                    border-radius: 0.1em;
+                    transform: rotate(90deg) skew(45deg);
+                    background-size: 6px 6px;
+                  }
+
+                  &:after {
+                    width: 28%;
+                    height: 35%;
+                    left: 91%;
+                    bottom: 20%;
+                    border-radius: 0.1em;
+                    transform: rotate(90deg) skew(310deg);
+                    background-size: 5px 5px;
+                  }
+
+                  span {
+                    top: 45%;
+                    height: 35px;
+                    left: -10%;
+                    width: 120%;
+                  }
+                }
+              }
             }
           }
 
@@ -3158,82 +3664,16 @@ $arrow_color: $gray !default;
 
       #section2 {
         .customizeArea {
-
+          width: 95%;
 
           .controlTool {
 
-            width: 70%;
-            margin: 0 auto;
+            .controlToolTopFlex {
+              .controlToolTop {
+                width: 100%;
 
-
-            .controlBox1 {
-
-              z-index: 32;
+              }
             }
-
-            .controlBox2 {
-
-              width: 20%;
-
-              z-index: 31;
-            }
-
-            .controlBox3 {
-
-              width: 20%;
-
-              z-index: 30;
-            }
-
-            .controlBox4 {
-
-              width: 20%;
-
-              z-index: 29;
-            }
-
-            .controlBox5 {
-
-              width: 20%;
-
-              z-index: 28;
-            }
-
-            .controlBox6 {
-
-              width: 20%;
-
-              z-index: 33;
-            }
-
-            .controlBox7 {
-
-              width: 20%;
-
-              z-index: 32;
-            }
-
-            .controlBox8 {
-
-              width: 20%;
-
-              z-index: 31;
-            }
-
-            .controlBox9 {
-
-              width: 20%;
-
-              z-index: 30;
-            }
-
-            .controlBox10 {
-
-              width: 20%;
-
-              z-index: 29;
-            }
-
           }
 
           .controlBoxRight {
@@ -3270,27 +3710,97 @@ $arrow_color: $gray !default;
             }
           }
 
-
           .drawingBoardBox {
-            #canvasBox {
-              #canvas {
-                .drawingPanel {}
+            #btns {
+              width: 100%;
+
+              .orderBtnBoxGroup {
+                width: 20%;
+                margin-left: 5%;
               }
 
-              // .planeBoard {
-              //   width: 90%;
-              // }
+              #emptyBtn {
+                margin-bottom: 10%;
+
+                .switchBtnBox {
+
+
+                  .switchBtn {
+                    font-size: 1vw;
+                    width: 13.5vw;
+                    height: 4.5vw;
+
+                    &:before {
+                      width: 4.5vw;
+                      height: 2.5vw;
+                      left: -3.6vw;
+                      bottom: -0.45vw;
+                    }
+
+                    &:after {
+                      width: 13.5vw;
+                      height: 2.5vw;
+                      bottom: -2.475vw;
+                      left: -1.575vw;
+                    }
+
+                    &.clicked {
+                      left: -1.5vw;
+                      bottom: -0.5625vw;
+
+                      &:before {
+                        height: 2.1vw;
+                        left: -3.375vw;
+                        bottom: 0.225vw;
+                      }
+
+                      &:after {
+                        height: 2vw;
+                        bottom: -1.8vw;
+                        left: -1.125vw;
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
       }
 
       #section3 {
-        // .matbase {
-        //   width: 100%;
-        //   @include matbaseBox_md(12);
-        // }
+
+        .owl-carousel {
+
+          .owl-nav {
+            top: -50%;
+            left: 25%;
+            transform: translate(0%, 0);
+            width: 90vw;
+            height: 10vw;
+
+
+            .owl-prev {
+              width: 100%;
+
+            }
+
+            &:before {
+              top: 50%;
+              left: 30%;
+              margin: 0;
+              transform: translate(-50%, -50%);
+              font-size: 2.5vw;
+              letter-spacing: 1em;
+            }
+
+            .owl-next {
+              width: 100%;
+            }
+          }
+        }
       }
+
     }
   }
 }
@@ -3302,50 +3812,50 @@ $arrow_color: $gray !default;
     .shop-main {
       #section1 {
         .container {
-          .row {
-            .shopTitleText {
-              transform: translate(0, 120%);
-              width: 85%;
-              font-size: 45px;
+          // .row {
+          //   .shopTitleText {
+          //     transform: translate(0, 120%);
+          //     width: 85%;
+          //     font-size: 45px;
 
-              &::before {
-                font-size: 45px;
-              }
-            }
+          //     &::before {
+          //       font-size: 45px;
+          //     }
+          //   }
 
-            .shopTitle {
-              height: 0px;
+          //   .shopTitle {
+          //     height: 0px;
 
-              .shopTitleContainer {
-                .titlePage1 {
-                  width: 95%;
-                  height: 200px;
-                  margin: 0 auto;
-                }
+          //     .shopTitleContainer {
+          //       .titlePage1 {
+          //         width: 95%;
+          //         height: 200px;
+          //         margin: 0 auto;
+          //       }
 
-                .titlePage2 {
-                  width: 95%;
-                  height: 200px;
-                  margin: 0 auto;
-                }
+          //       .titlePage2 {
+          //         width: 95%;
+          //         height: 200px;
+          //         margin: 0 auto;
+          //       }
 
-                .titlePage3 {
-                  display: none;
-                }
+          //       .titlePage3 {
+          //         display: none;
+          //       }
 
-                .titlePage4 {
-                  display: none;
-                }
+          //       .titlePage4 {
+          //         display: none;
+          //       }
 
-                .titlePagePic {
-                  width: 90%;
-                  position: absolute;
-                  top: 110px;
-                  left: 10%;
-                }
-              }
-            }
-          }
+          //       .titlePagePic {
+          //         width: 90%;
+          //         position: absolute;
+          //         top: 110px;
+          //         left: 10%;
+          //       }
+          //     }
+          //   }
+          // }
 
           .row {
             #conectionLine {
@@ -3361,133 +3871,86 @@ $arrow_color: $gray !default;
           }
         }
 
-        .shopItemContainer {
-          width: 95%;
 
-          .itemPage0 {
-            width: 100%;
-            left: 0%;
-            top: 100px;
-          }
-        }
-
-        .itemCardBox {
-          margin-top: 0px;
-
-          .itemCardAside {
-            display: none;
+        #shopOutsideBox {
+          .shopItemContainer {
+            width: 95vw;
+            height: 90vw;
           }
 
-          .itemCardContainer {
-            width: 100%;
+          .itemCardBox {
 
-            padding-left: 0;
-            @include itemCardRow1_lg(4);
-            @include itemCardRow2_lg(2);
-
-            .line_top {
+            .itemCardAside {
               display: none;
             }
 
-            .line_bottom {
-              display: none;
-            }
+            .itemCardContainer {
+              width: 100%;
+              padding-left: 0px;
+              padding-top: 100px;
+              @include itemCardRow1_sm(2);
+              @include itemCardRow2_sm(2);
 
-            .itemCardTopRow {
-              display: flex;
-              flex-wrap: wrap;
-              ;
+              .line_top {
+                width: 70%;
+                transform: translate(25%, -80%);
+              }
 
-              .itemCard1 {
-                margin: 40px 5%;
-                transform: translate(0, 0%) rotate(10deg);
+              .line_bottom {
+                transform: translate(25%, -10%);
+              }
 
-                img {
+              .itemCardTopRow {
+                .itemCard1 {
+                  transform: translate(50%, -50%) rotate(15deg);
+
+                  img {
+                    width: 5vw;
+                  }
+                }
+
+                .itemCard2 {
+                  img {
+                    width: 5vw;
+                  }
+                }
+
+                .itemCard3 {
+                  display: none;
+                }
+
+                .itemCard4 {
+                  display: none;
+                }
+
+                .itemCard5 {
                   display: none;
                 }
               }
 
-              ;
+              .itemCardBottomRow {
 
-              .itemCard2 {
-                margin: 40px 5%;
-                transform: translate(0, 0%) rotate(355deg);
+                .itemCard2_1 {
+                  margin-top: 0px;
 
-                img {
-                  display: none;
-                }
-              }
+                  img {
+                    width: 5vw;
+                  }
 
-              ;
-
-              .itemCard3 {
-                margin: 40px 5%;
-                transform: translate(0, 0%) rotate(10deg);
-
-                .itemCard3Img_1 {
-                  display: none;
                 }
 
-                .itemCard3Img_2 {
-                  display: none;
+                .itemCard2_2 {
+                  margin-top: 0px;
+
+                  img {
+                    width: 5vw;
+                  }
                 }
-              }
 
-              .itemCard4 {
-                margin: 40px 5%;
-                transform: translate(0, 0%) rotate(355deg);
-
-                img {
+                .itemCard2_3 {
                   display: none;
+
                 }
-              }
-
-              ;
-
-              .itemCard5 {
-                display: none;
-              }
-            }
-
-            .itemCardBottomRow {
-              display: flex;
-
-              .itemCard2_1 {
-                margin: 40px 5%;
-                transform: translate(0%, 0%) rotate(350deg);
-
-                img {
-                  display: none;
-                }
-              }
-
-              ;
-
-              .itemCard2_2 {
-                transform: translate(0%, 0%) rotate(15deg);
-                margin: 40px 5%;
-
-                img {
-                  display: none;
-                }
-              }
-
-              ;
-
-              .itemCard2_3 {
-                display: none;
-              }
-            }
-          }
-        }
-
-        .container {
-          .customize {
-            .customizeTitleText {
-              font-size: 45px;
-
-              &::before {
-                font-size: 45px;
               }
             }
 
@@ -3499,60 +3962,69 @@ $arrow_color: $gray !default;
         .customizeArea {
 
           .controlTool {
-            width: 97%;
+            width: 90%;
             margin: 0;
 
-            .controlBox1 {
-              width: 20%;
-              z-index: 32;
-            }
+            .controlToolTopFlex {
+              width: 100%;
 
-            .controlBox2 {
-              width: 20%;
-              z-index: 31;
-            }
+              .controlToolTop {
+                width: 70%;
+                margin-left: 30%;
+                ;
 
-            .controlBox3 {
-              width: 20%;
-              z-index: 30;
-            }
+                .controlBox1 {
 
-            .controlBox4 {
-              width: 20%;
-              z-index: 29;
-            }
+                  width: 20%;
+                  z-index: 32;
+                }
 
-            .controlBox5 {
-              width: 20%;
-              z-index: 28;
-            }
+                .controlBox2 {
+                  width: 20%;
+                  z-index: 31;
+                }
 
-            .controlBox6 {
-              width: 20%;
-              z-index: 33;
-            }
+                .controlBox3 {
+                  width: 20%;
+                  z-index: 30;
+                }
 
-            .controlBox7 {
-              width: 20%;
-              z-index: 32;
-            }
+                .controlBox4 {
+                  width: 20%;
+                  z-index: 29;
+                }
 
-            .controlBox8 {
-              width: 20%;
-              z-index: 31;
-            }
+                .controlBox5 {
+                  width: 20%;
+                  z-index: 28;
+                }
 
-            .controlBox9 {
-              width: 20%;
-              z-index: 30;
-            }
+                .controlBox6 {
+                  width: 20%;
+                  z-index: 33;
+                }
 
-            .controlBox10 {
-              width: 20%;
-              z-index: 29;
-            }
+                .controlBox7 {
+                  width: 20%;
+                  z-index: 32;
+                }
 
-            .controlBoxBottom {}
+                .controlBox8 {
+                  width: 20%;
+                  z-index: 31;
+                }
+
+                .controlBox9 {
+                  width: 20%;
+                  z-index: 30;
+                }
+
+                .controlBox10 {
+                  width: 20%;
+                  z-index: 29;
+                }
+              }
+            }
           }
 
           .controlBoxRight {
@@ -3587,6 +4059,52 @@ $arrow_color: $gray !default;
 
             .shadowOffsetY {
               width: 30%
+            }
+          }
+
+          .drawingBoardBox {
+            #btns {
+              .orderBtnBoxGroup {
+                width: 25%;
+                margin: 0% 0% 0% 0%;
+              }
+
+              #emptyBtn {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
+      #section3 {
+
+        .owl-carousel {
+
+          .owl-nav {
+            top: -70%;
+            left: 40%;
+            transform: translate(0%, 0%);
+            width: 80vw;
+            height: 15vw;
+
+
+            .owl-prev {
+              width: 100%;
+
+            }
+
+            &:before {
+              top: 50%;
+              left: 30%;
+              margin: 0;
+              transform: translate(-40%, -50%);
+              font-size: 4vw;
+              letter-spacing: 1em;
+            }
+
+            .owl-next {
+              width: 100%;
             }
           }
         }
