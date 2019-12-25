@@ -4,7 +4,7 @@
     z-index: 10;
     position: relative;
     @include marginAuto;
-    // @include border;
+    @include border;
     .userSetting_wrap {
         padding-top: 10px;
         // width: 300px;
