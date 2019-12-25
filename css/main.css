@@ -727,6 +727,13 @@ table {
   font-style: normal;
 }
 
+@font-face {
+  font-family: "C64 User Mono";
+  src: url(../../font/C64_User_Mono_v1.0-STYLE.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*
  *  module
  */
@@ -1177,6 +1184,36 @@ table {
  */
 .home_body {
   margin: 0 auto;
+<<<<<<< HEAD
+  overflow-x: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 0;
+}
+
+.home_body .home_first {
+  width: 100%;
+  height: 800px;
+}
+
+.home_body .home_first .p-canvas-webgl {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.home_body .home_skyPoint {
+  width: 100%;
+  background: radial-gradient(#3e7db8 30%, #c3d7e9 20%);
+  background-size: 10px 10px;
+  -webkit-animation: bscale 100s infinite linear;
+  animation: bscale 100s infinite linear;
+  overflow: hidden;
+  position: relative;
+}
+=======
   box-sizing: border-box;
   font-size: 0; }
   .home_body .home_skyPoint {
@@ -1188,6 +1225,7 @@ table {
     animation: bscale 100s infinite linear;
     overflow: hidden;
     position: relative; }
+>>>>>>> origin/dev
 
 @-webkit-keyframes bscale {
   0% {
@@ -1387,11 +1425,27 @@ table {
     overflow: hidden;
     position: relative; }
 
+<<<<<<< HEAD
+.home_body .home_skyPoint .home_space {
+  width: 100%;
+  height: 100px;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, rgba(195, 215, 233, 0)), to(transparent)) center center/100% 100%, #eeeeee;
+  background: linear-gradient(0deg, rgba(195, 215, 233, 0) 30%, transparent 100%) center center/100% 100%, #eeeeee;
+  position: relative;
+}
+
+.home_body .home_skyPoint .hang2 {
+  position: absolute;
+  top: 20px;
+  z-index: 5;
+}
+=======
 @-webkit-keyframes bscale2 {
   0% {
     background-position: 0px 0px; }
   100% {
     background-position: 100% 100%; } }
+>>>>>>> origin/dev
 
 @keyframes bscale2 {
   0% {
@@ -1429,7 +1483,329 @@ table {
         transform: translate(-50%, -50%);
         animation: shake 2s infinite linear; }
 
+<<<<<<< HEAD
+.home_body .home_skyPoint .mountain_box {
+  width: 100%;
+  height: 1800px;
+  background-image: url(../../img/home/write/mountain.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-top: 100px;
+}
+
+.home_body .home_skyPoint .mountain_box .floatPaper1 {
+  width: 22%;
+  position: absolute;
+  top: 37%;
+  left: 10%;
+}
+
+.home_body .home_skyPoint .mountain_box .floatPaper2 {
+  width: 22%;
+  position: absolute;
+  top: 58%;
+  right: 15%;
+}
+
+.home_body .home_skyPoint .mountain_box .floatPaper3 {
+  width: 15%;
+  position: absolute;
+  bottom: 5%;
+  left: 17%;
+}
+
+.home_body .home_skyPoint .write {
+  width: 100%;
+  height: 1044px;
+  background-image: url(../../img/home/write/desk.png);
+  background-repeat: no-repeat;
+  margin-top: -190px;
+  padding-top: 180px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home_body .home_skyPoint .write .write_L {
+  width: 47%;
+  margin-top: -1vw;
+}
+
+.home_body .home_skyPoint .write .write_L .writeTitle {
+  width: 30vw;
+  height: 17.5vw;
+  position: relative;
+  margin-left: 20%;
+}
+
+.home_body .home_skyPoint .write .write_L .writeTitle .writeTitleBg1,
+.home_body .home_skyPoint .write .write_L .writeTitle .writeTitleBg2 {
+  width: 95%;
+  height: 90%;
+  border: 6px solid #212121;
+  background-color: white;
+}
+
+.home_body .home_skyPoint .write .write_L .writeTitle .writeTitleBg2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home_body .home_skyPoint .write .write_L .black_box {
+  width: 42vw;
+  margin-left: 7%;
+  margin-top: -2.75vw;
+}
+
+.home_body .home_skyPoint .write .write_L .black_box .bottle {
+  width: 17%;
+  -webkit-transform: rotate(125deg);
+          transform: rotate(125deg);
+}
+
+.home_body .home_skyPoint .write .write_L .black_box .blackWater {
+  width: 90%;
+  height: 27vw;
+  background-image: url(../../img/home/write/black-water.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -17.5%;
+  margin-left: 8%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home_body .home_skyPoint .write .write_L .black_box .blackWater h1 {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 3vw;
+  color: white;
+}
+
+.home_body .home_skyPoint .write .write_R {
+  width: 53%;
+  margin-top: -1vw;
+}
+
+.home_body .home_skyPoint .write .write_R .write_Rbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home_body .home_skyPoint .write .write_R .write_Rbox .write_many {
+  margin-left: 10%;
+  width: 68%;
+  height: 44vw;
+  background-image: url(../../img/home/write/writePaper.svg);
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home_body .home_skyPoint .write .write_R .write_Rbox .write_many .write_paper {
+  border: 5px solid #212121;
+  width: 77%;
+  height: 88%;
+  background-image: url(../../img/home/write/letter.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home_body .home_skyPoint .write .write_R .write_Rbox img {
+  width: 32%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-left: -15%;
+}
+
+.home_body .home_skyPoint .fold1,
+.home_body .home_skyPoint .fold2,
+.home_body .home_skyPoint .shoot {
+  width: 100%;
+  height: 935px;
+  background-image: url(../../img/home/write/desk.png);
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.home_body .home_skyPoint .fold1 .foldPaper1,
+.home_body .home_skyPoint .fold2 .foldPaper1,
+.home_body .home_skyPoint .shoot .foldPaper1 {
+  width: 27.5vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.home_body .home_skyPoint .fold1 .left_hand1,
+.home_body .home_skyPoint .fold2 .left_hand1,
+.home_body .home_skyPoint .shoot .left_hand1 {
+  width: 60%;
+  position: absolute;
+  left: -15%;
+  top: 73%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.home_body .home_skyPoint .fold1 .right_hand1,
+.home_body .home_skyPoint .fold2 .right_hand1,
+.home_body .home_skyPoint .shoot .right_hand1 {
+  width: 60%;
+  position: absolute;
+  right: -15%;
+  top: 73%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.home_body .home_skyPoint .fold1 .foldPaper2,
+.home_body .home_skyPoint .fold2 .foldPaper2,
+.home_body .home_skyPoint .shoot .foldPaper2 {
+  width: 27.5vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.home_body .home_skyPoint .fold1 .left_hand2,
+.home_body .home_skyPoint .fold2 .left_hand2,
+.home_body .home_skyPoint .shoot .left_hand2 {
+  width: 60%;
+  position: absolute;
+  left: -15%;
+  bottom: -50%;
+}
+
+.home_body .home_skyPoint .fold1 .right_hand2,
+.home_body .home_skyPoint .fold2 .right_hand2,
+.home_body .home_skyPoint .shoot .right_hand2 {
+  width: 60%;
+  position: absolute;
+  right: -15%;
+  bottom: -50%;
+}
+
+.home_body .home_skyPoint .fold1 .shootHand,
+.home_body .home_skyPoint .fold2 .shootHand,
+.home_body .home_skyPoint .shoot .shootHand {
+  width: 72.5%;
+  position: absolute;
+  left: -29%;
+  bottom: 28%;
+}
+
+.home_body .home_skyPoint .fold1 .foldPaper3,
+.home_body .home_skyPoint .fold2 .foldPaper3,
+.home_body .home_skyPoint .shoot .foldPaper3 {
+  width: 40vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.home_body .home_catch {
+  width: 100%;
+  background: linear-gradient(45deg, #f7efc5 45%, #ebd76d 45%, #ebd76d 55%, #f7efc5 55%);
+  background-size: 20px 20px;
+  -webkit-animation: bscale2 40s infinite linear;
+  animation: bscale2 40s infinite linear;
+  overflow: hidden;
+  position: relative;
+}
+
+@-webkit-keyframes bscale2 {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes bscale2 {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.home_body .home_catch .grassBack {
+  width: 100%;
+  height: 800px;
+  background-image: url(../../img/home/catch/grassBack.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 60px;
+}
+
+.home_body .home_catch .grassMid {
+  width: 100%;
+  height: 800px;
+  background-image: url(../../img/home/catch/grassMid.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -750px;
+}
+
+.home_body .home_catch .grassFront {
+  width: 100%;
+  height: 860px;
+  background-image: url(../../img/home/catch/grassFront.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -650px;
+  position: relative;
+}
+
+.home_body .home_catch .grassFront .catch_main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: shake 2s infinite linear;
+          animation: shake 2s infinite linear;
+}
+
+@-webkit-keyframes shake {
+=======
 @keyframes shake {
+>>>>>>> origin/dev
   0% {
     transform: translate(-50%, -50%) rotate(0); }
   25% {
@@ -2156,6 +2532,49 @@ table {
   50% {
     opacity: 1; } }
 
+<<<<<<< HEAD
+.home_body .home_catch .catchTitle {
+  width: 35%;
+  height: 47vw;
+  background-image: url(../../img/home/catch/stick.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 55%;
+  position: absolute;
+  right: 3%;
+  bottom: 1%;
+}
+
+.home_body .home_catch .catchTitle .boardTop {
+  width: 100%;
+  height: 16.7vw;
+  background-image: url(../../img/home/catch/boardTop.svg);
+  background-repeat: no-repeat;
+  margin-top: 10%;
+  position: relative;
+}
+
+.home_body .home_catch .catchTitle .boardTop h1 {
+  position: absolute;
+  top: 25%;
+  left: 30%;
+}
+
+.home_body .home_catch .catchTitle .boardBot {
+  width: 72%;
+  height: 17.3vw;
+  background-image: url(../../img/home/catch/boardBot.svg);
+  background-repeat: no-repeat;
+  margin: 5% auto 0 18%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+=======
 @-webkit-keyframes frames {
   0% {
     background-image: url("https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif"); }
@@ -2454,6 +2873,7 @@ table {
           left: 6%;
           display: flex;
           flex-direction: column;
+>>>>>>> origin/dev
           align-items: center;
           font-size: 1rem; }
           .wrletter-body main .writ-step-2 .write-content .input-contant .num-two {
@@ -2978,6 +3398,14 @@ table {
     .catchletter-body .catch-step-1 ::-webkit-scrollbar-track {
       background-color: #f3de6b; }
 
+<<<<<<< HEAD
+.home_body .home_custom .tube .machineBox {
+  width: 48%;
+  height: 35%;
+  position: absolute;
+  top: 0;
+}
+=======
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -3013,6 +3441,7 @@ table {
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+>>>>>>> origin/dev
 
 *,
 *::before,
@@ -3025,8 +3454,20 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
+<<<<<<< HEAD
+.home_body .home_custom .print {
+  width: 100%;
+  height: 1090px;
+  background-image: url(../../img/home/catch/print.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: -270px;
+  position: relative;
+}
+=======
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; }
+>>>>>>> origin/dev
 
 body {
   margin: 0;
@@ -3377,6 +3818,786 @@ button,
   width: 100%;
   height: 100%;
   position: absolute;
+<<<<<<< HEAD
+  top: -20px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.home_body .home_store .board {
+  width: 400px;
+  height: 300px;
+  border: 5px solid #212121;
+  border-radius: 4%;
+  background-image: url(../../img/home/store/boardWood.png);
+  position: absolute;
+  right: 5%;
+  bottom: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0px 8px 8px 0px rgba(70, 70, 70, 0.5);
+          box-shadow: 0px 8px 8px 0px rgba(70, 70, 70, 0.5);
+}
+
+.home_body .home_store .board .board_text {
+  width: 90%;
+  height: 90%;
+  background-image: url(../../img/home/store/boardBg.png);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home_body .home_store .board .board_text h1 {
+  font-family: "Noto Sans TC", sans-serif;
+  color: #ffffff;
+}
+
+.home_body .home_chat {
+  width: 100%;
+  height: 930px;
+  background-image: url(../../img/home/chat/chatBg.png);
+  position: relative;
+}
+
+.home_body .home_chat .chatBox {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home_body .home_chat .chatBox .chat_L {
+  width: 45%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover {
+  width: 97%;
+  height: 90%;
+  background: radial-gradient(#212121 20%, #82afd9 20%);
+  background-size: 12px 12px;
+  border-radius: 0 7% 7% 0;
+  border: 5px solid #212121;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line {
+  width: 95%;
+  height: 90%;
+  border-radius: 0 7% 7% 0;
+  border: 5px dashed brown;
+  border-left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper {
+  width: 93%;
+  height: 95%;
+  border: 5px solid #212121;
+  border-left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper .chatWhite {
+  width: 85%;
+  height: 100%;
+  background-color: #ffffff;
+  border: 5px solid #212121;
+  border-right: 0px;
+  border-left: 0px;
+  position: relative;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper .chatWhite .ring {
+  height: 110%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper .chatWhite .chatroom {
+  width: 82%;
+  height: 100%;
+  float: right;
+  display: block;
+  position: relative;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper .chatWhite .chatroom .chatMix1 {
+  width: 100%;
+  height: 10%;
+  margin: 20% 0 12% 0;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper .chatWhite .chatroom .chatMix1 .chatFrame1 {
+  width: 30%;
+  height: 100%;
+  border: 5px solid #212121;
+  background-color: #f3de6b;
+  border-radius: 30px 0 30px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  float: right;
+  margin-right: 3%;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper .chatWhite .chatroom .chatMix1 .chatFrame1 p {
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 2rem;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper .chatWhite .chatroom .chatMix2 {
+  width: 100%;
+  height: 15%;
+  display: block;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper .chatWhite .chatroom .chatMix2 img {
+  height: 100%;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper .chatWhite .chatroom .chatMix3 {
+  width: 100%;
+  height: 10%;
+  margin-top: -3%;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper .chatWhite .chatroom .chatMix3 .chatFrame2 {
+  width: 60%;
+  height: 100%;
+  border: 5px solid #212121;
+  background-color: #82afd9;
+  border-radius: 0px 30px 30px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 21%;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper .chatWhite .chatroom .chatMix3 .chatFrame2 p {
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 2rem;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper .chatWhite .chatroom .chatMix4 {
+  width: 100%;
+  height: 10%;
+  display: block;
+  margin: 12% 0 0 0;
+}
+
+<<<<<<< HEAD
+@-webkit-keyframes topani {
+<<<<<<< HEAD
+  3% {
+    stroke-width: 40px;
+  }
+  13% {
+    stroke-width: 76px;
+  }
+  14% {
+    stroke-width: 26px;
+  }
+  22% {
+    stroke-width: 161px;
+  }
+  33% {
+    stroke-width: 149px;
+  }
+  39% {
+    stroke-width: 3px;
+  }
+  46% {
+    stroke-width: 14px;
+=======
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper .chatWhite .chatroom .chatMix4 .chatFrame3 {
+  width: 55%;
+  height: 100%;
+  border: 5px solid #212121;
+  background-color: #f3de6b;
+  border-radius: 30px 0 30px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  float: right;
+  margin-right: 3%;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper .chatWhite .chatroom .chatMix4 .chatFrame3 p {
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 2rem;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper .chatWhite .chatroom .chatMix5 {
+  width: 100%;
+  height: 10%;
+  display: block;
+  position: absolute;
+  bottom: 5%;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper .chatWhite .chatroom .chatMix5 .send {
+  width: 95%;
+  height: 100%;
+  border: 5px solid #212121;
+  border-radius: 30px 30px 30px 30px;
+  float: right;
+  margin-right: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper .chatWhite .chatroom .chatMix5 .send img {
+  height: 90%;
+  float: right;
+  margin-right: 2%;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper .chatYellow {
+  width: 15%;
+  height: 100%;
+  border: 5px solid #212121;
+  background: linear-gradient(-40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+  background-size: 9px 12px;
+  border-left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home_body .home_chat .chatBox .chat_L .blueCover .line .chatPaper .chatYellow .yelPage {
+  width: 25%;
+  height: 100%;
+  border-left: 5px solid #212121;
+}
+
+.home_body .home_chat .chatBox .chat_R {
+  width: 55%;
+  height: 100%;
+  border: 1px solid palegreen;
+  position: relative;
+}
+
+.home_body .home_chat .chatBox .chat_R .titleBox1 {
+  width: 30%;
+  height: 17vw;
+  position: absolute;
+  top: 8%;
+  left: 8%;
+  z-index: 20;
+}
+
+.home_body .home_chat .chatBox .chat_R .titleBox1 .chat_title1 {
+=======
+  top: 0;
+  left: 0;
+  background-image: url(../../img/write-letter/screen1.png);
+  /* url('https://image.ibb.co/iMHMNv/tv.png'), */
+  background-size: cover;
+  background-position: center;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .tv-show .tv .frame {
+  display: block;
+>>>>>>> origin/dev
+  width: 100%;
+  height: 100%;
+  background-image: url("https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+  -webkit-animation: frames 15s steps(1, end) infinite;
+          animation: frames 15s steps(1, end) infinite;
+}
+
+<<<<<<< HEAD
+.home_body .home_chat .chatBox .chat_R .titleBox1 .chat_title1 h1 {
+  font-family: "Noto Sans TC", sans-serif;
+=======
+.wrletter-body main .writ-step-1 .select-category .tv-category .tv-show .tv .frame .area {
+  display: block;
+  width: 78%;
+  height: 78%;
+  border-radius: 10px;
+>>>>>>> origin/dev
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #007;
+  color: #9c9cff;
+  opacity: 1;
+  overflow: hidden;
+  z-index: 8;
+}
+
+<<<<<<< HEAD
+.home_body .home_chat .chatBox .chat_R .titleBox1 img {
+  width: 65%;
+  position: absolute;
+  top: -17%;
+  left: -23%;
+=======
+.wrletter-body main .writ-step-1 .select-category .tv-category .tv-show .tv .frame .title {
+  font-size: .15vw;
+  position: relative;
+  top: 0%;
+  line-height: 1rem;
+  font-family: "C64 User Mono";
+  padding: 0 .3vw;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .tv-show .tv .frame .cursor {
+  font-size: .8rem;
+  color: #9c9cff;
+  position: absolute;
+  top: 56%;
+  left: 1%;
+  z-index: 9;
+  -webkit-animation: blink 1s steps(1, end) infinite;
+  animation: blink 1s steps(1, end) infinite;
+>>>>>>> origin/dev
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+>>>>>>> home_chunyu
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+<<<<<<< HEAD
+  98% {
+    stroke-width: 193px;
+=======
+=======
+}
+
+>>>>>>> home_chunyu
+<<<<<<< HEAD
+.home_body .home_chat .chatBox .chat_R .chat_title2 {
+  width: 30%;
+  height: 17vw;
+  background-image: url(../../img/home/chat/noteWhite.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 26%;
+  left: 34%;
+}
+
+.home_body .home_chat .chatBox .chat_R .chat_title2 h1 {
+  font-family: "Noto Sans TC", sans-serif;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.home_body .home_chat .chatBox .chat_R .titleBox2 {
+  width: 30%;
+  height: 17vw;
+  position: absolute;
+  top: 53%;
+  left: 18%;
+}
+
+.home_body .home_chat .chatBox .chat_R .titleBox2 .chat_title3 {
+  width: 100%;
+  height: 100%;
+  background-image: url(../../img/home/chat/noteWhite.svg);
+  background-repeat: no-repeat;
+}
+
+.home_body .home_chat .chatBox .chat_R .titleBox2 .chat_title3 h1 {
+  font-family: "Noto Sans TC", sans-serif;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.home_body .home_chat .chatBox .chat_R .titleBox2 .chat_title3 img {
+  width: 65%;
+  position: absolute;
+  bottom: -11%;
+  left: -20%;
+}
+
+.home_body .home_chat .chatBox .chat_R .noteYellow {
+  width: 33%;
+  height: 17.5vw;
+  background-image: url(../../img/home/chat/noteYellow.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 3%;
+  bottom: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.home_body .home_chat .chatBox .chat_R .noteYellow h1 {
+  font-family: "Noto Sans TC", sans-serif;
+  margin-top: 10%;
+}
+
+.wrletter-body {
+  background: radial-gradient(#000000 10%, #fff 20%);
+  background-size: 8px 8px;
+  height: auto;
+}
+
+.wrletter-body main {
+  margin-top: 10vw;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.wrletter-body main .writ-step-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+}
+
+.wrletter-body main .writ-step-1 .select-category {
+  height: 35vw;
+}
+
+.wrletter-body main .writ-step-1 .select-category .blue-tape {
+  width: 12vw;
+  position: absolute;
+  top: -4%;
+  left: 12%;
+}
+
+.wrletter-body main .writ-step-1 .select-category .num-one {
+  width: 20vw;
+  height: 5vw;
+  margin: 0 30% 0 25%;
+  background-image: url("../../img/share/number-one.svg");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+  margin-top: 6%;
+}
+
+.wrletter-body main .writ-step-1 .select-category .num-one h2 {
+  font-size: 3vw;
+  letter-spacing: 0.5vw;
+  text-align: right;
+  font-weight: 600;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category {
+  width: 100%;
+  height: 65%;
+  margin: 2vw auto;
+  position: relative;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn {
+  position: absolute;
+  right: 13%;
+  bottom: 1.5%;
+  z-index: 99;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn {
+  /*
+        button,
+        input[type="submit"] 
+        */
+  -webkit-transition: background-color 0.175s, -webkit-transform 0.175s;
+  transition: background-color 0.175s, -webkit-transform 0.175s;
+  transition: transform 0.175s, background-color 0.175s;
+  transition: transform 0.175s, background-color 0.175s, -webkit-transform 0.175s;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  display: inline-block;
+  background-color: #00D3D6;
+  border: 3px solid #231F20;
+  padding: 1vw;
+  position: relative;
+  margin-right: calc(6px);
+  text-decoration: none;
+  font-size: 22px;
+  font-family: monospace;
+  font-weight: bold;
+  color: #231F20;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:before, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #00BDBF;
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: calc(0px - 2px);
+  border: 3px solid #231F20;
+  border-bottom: 0;
+  -webkit-transition: width 0.175s, background-color 0.175s, height 0.175s;
+  transition: width 0.175s, background-color 0.175s, height 0.175s;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:before {
+  width: calc(100% + 6px);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transform: skewX(-45deg);
+          transform: skewX(-45deg);
+  border-right-width: 1.5px;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:after {
+  content: "";
+  height: calc(100% + 4px);
+  top: unset;
+  left: unset;
+  left: calc(100% + 2px);
+  bottom: calc(0px - 2px);
+  border: 3px solid #231F20;
+  border-top-width: 3px;
+  border-left: 0;
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transform: skewY(-45deg);
+          transform: skewY(-45deg);
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:hover, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:active, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn.nice-select.open, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:focus {
+  -webkit-transform: translate(10px, -10px);
+          transform: translate(10px, -10px);
+  background: #00BDBF;
+  outline: none;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:hover:before, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:hover:after, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:active:before, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn.nice-select.open:before, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:active:after, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn.nice-select.open:after, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:focus:before, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:focus:after {
+  background: #009193;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:hover:before, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:active:before, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn.nice-select.open:before, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:focus:before {
+  height: 10px;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:hover:after, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:active:after, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn.nice-select.open:after, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:focus:after {
+  width: 10px;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:active, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn.nice-select.open, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:focus {
+  outline: none;
+  -webkit-transform: translate(10px, -10px);
+          transform: translate(10px, -10px);
+  background: #DC5453;
+  color: #fff;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:active:before, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn.nice-select.open:before, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:active:after, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn.nice-select.open:after, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:focus:before, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:focus:after {
+  background: #DC5453;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:active:before, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn.nice-select.open:before, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:focus:before {
+  height: 10px;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:active:after, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn.nice-select.open:after, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn:focus:after {
+  width: 10px;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn.click {
+  outline: none;
+  -webkit-transform: translate(10px, -10px);
+          transform: translate(10px, -10px);
+  background: #DC5453;
+  color: #fff;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn.click:before, .wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn.click:after {
+  background: #DC5453;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn.click:before {
+  height: 10px;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .change-category-btn .btn.click:after {
+  width: 10px;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .tv-machine {
+  width: 100%;
+  height: 100%;
+  background-image: url(../../img/share/TV.svg);
+  background-repeat: no-repeat;
+  background-position: 20% 0;
+  background-size: contain;
+  z-index: 9;
+  position: absolute;
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .tv-show {
+  width: 23%;
+  height: 50%;
+  position: absolute;
+  top: 67%;
+  left: 26%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1;
+  background: radial-gradient(#9c9cff, #004);
+  margin: 0;
+  color: #fff;
+=======
+@-webkit-keyframes frames {
+  0% {
+    background-image: url("https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif");
+  }
+  60% {
+    background-image: none;
+  }
+  96% {
+    background-image: url("https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif");
+  }
+  96.2% {
+    background-image: none;
+  }
+  98% {
+    background-image: url("https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif");
+  }
+  98.6% {
+    background-image: none;
+  }
+}
+
+@keyframes frames {
+  0% {
+    background-image: url("https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif");
+  }
+  50% {
+    background-image: url("https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif");
+  }
+  60% {
+    background-image: none;
+  }
+  96% {
+    background-image: url("https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif");
+  }
+  96.2% {
+    background-image: none;
+  }
+  98% {
+    background-image: url("https://25.media.tumblr.com/23a26d7c4c6cb14296faecab3d97027d/tumblr_mw7cd52wMJ1rq3qu8o1_500.gif");
+  }
+  98.6% {
+    background-image: none;
+  }
+>>>>>>> origin/dev
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .tv-show .tv {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
+  background: radial-gradient(#9c9cff, #004);
+  font-family: "C64 User Mono";
+}
+
+.wrletter-body main .writ-step-1 .select-category .tv-category .tv-show .tv .mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
   top: 0;
   left: 0;
   background-image: url(../../img/write-letter/screen1.png);
@@ -3584,49 +4805,52 @@ input[type="month"] {
 @-webkit-keyframes topani {
 <<<<<<< HEAD
   3% {
-    stroke-width: 40px;
+    stroke-width: 64px;
   }
-  13% {
-    stroke-width: 76px;
+  6% {
+    stroke-width: 8px;
   }
   14% {
-    stroke-width: 26px;
+    stroke-width: 146px;
   }
   22% {
-    stroke-width: 161px;
+    stroke-width: 151px;
   }
-  33% {
-    stroke-width: 149px;
+  26% {
+    stroke-width: 91px;
   }
-  39% {
-    stroke-width: 3px;
+  32% {
+    stroke-width: 76px;
   }
-  46% {
-    stroke-width: 14px;
+  40% {
+    stroke-width: 80px;
   }
-  50% {
-    stroke-width: 38px;
+  44% {
+    stroke-width: 119px;
+  }
+  49% {
+    stroke-width: 101px;
+  }
+  54% {
+    stroke-width: 167px;
   }
   62% {
-    stroke-width: 109px;
+    stroke-width: 1px;
   }
-  63% {
-    stroke-width: 51px;
-  }
-  71% {
-    stroke-width: 175px;
+  66% {
+    stroke-width: 168px;
   }
   77% {
-    stroke-width: 81px;
+    stroke-width: 170px;
   }
-  86% {
-    stroke-width: 67px;
+  83% {
+    stroke-width: 130px;
   }
-  97% {
-    stroke-width: 108px;
+  87% {
+    stroke-width: 147px;
   }
-  98% {
-    stroke-width: 193px;
+  95% {
+    stroke-width: 144px;
 =======
 <<<<<<< HEAD
   2% {
@@ -3737,56 +4961,68 @@ input[type="month"] {
     stroke-width: 167px;
 >>>>>>> 5f9b3073c2c2d04746aa4f85c80690fa3f57cd02
 >>>>>>> dev
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   }
 }
 
 @keyframes topani {
 <<<<<<< HEAD
   3% {
-    stroke-width: 40px;
+    stroke-width: 64px;
   }
-  13% {
-    stroke-width: 76px;
+  6% {
+    stroke-width: 8px;
   }
   14% {
-    stroke-width: 26px;
+    stroke-width: 146px;
   }
   22% {
-    stroke-width: 161px;
+    stroke-width: 151px;
   }
-  33% {
-    stroke-width: 149px;
+  26% {
+    stroke-width: 91px;
   }
-  39% {
-    stroke-width: 3px;
+  32% {
+    stroke-width: 76px;
   }
-  46% {
-    stroke-width: 14px;
+  40% {
+    stroke-width: 80px;
   }
-  50% {
-    stroke-width: 38px;
+  44% {
+    stroke-width: 119px;
+  }
+  49% {
+    stroke-width: 101px;
+  }
+  54% {
+    stroke-width: 167px;
   }
   62% {
-    stroke-width: 109px;
+    stroke-width: 1px;
   }
-  63% {
-    stroke-width: 51px;
-  }
-  71% {
-    stroke-width: 175px;
+  66% {
+    stroke-width: 168px;
   }
   77% {
-    stroke-width: 81px;
+    stroke-width: 170px;
   }
-  86% {
-    stroke-width: 67px;
+  83% {
+    stroke-width: 130px;
   }
-  97% {
-    stroke-width: 108px;
+  87% {
+    stroke-width: 147px;
   }
+<<<<<<< HEAD
   98% {
     stroke-width: 193px;
+=======
+  95% {
+    stroke-width: 144px;
+>>>>>>> home_chunyu
 =======
 <<<<<<< HEAD
   2% {
@@ -3897,56 +5133,73 @@ input[type="month"] {
     stroke-width: 167px;
 >>>>>>> 5f9b3073c2c2d04746aa4f85c80690fa3f57cd02
 >>>>>>> dev
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   }
 }
 
 @-webkit-keyframes botani {
 <<<<<<< HEAD
+<<<<<<< HEAD
   2% {
     stroke-width: 106px;
+=======
+  4% {
+    stroke-width: 25px;
+>>>>>>> home_chunyu
   }
-  7% {
-    stroke-width: 82px;
+  9% {
+    stroke-width: 198px;
   }
-  14% {
-    stroke-width: 49px;
+  13% {
+    stroke-width: 95px;
   }
-  24% {
-    stroke-width: 192px;
+  18% {
+    stroke-width: 191px;
   }
-  32% {
-    stroke-width: 179px;
-  }
-  39% {
-    stroke-width: 71px;
-  }
-  47% {
-    stroke-width: 28px;
-  }
-  51% {
-    stroke-width: 1px;
-  }
-  60% {
-    stroke-width: 96px;
-  }
-  69% {
-    stroke-width: 63px;
-  }
-  71% {
-    stroke-width: 8px;
-  }
-  79% {
+  27% {
     stroke-width: 180px;
   }
+  31% {
+    stroke-width: 41px;
+  }
+  40% {
+    stroke-width: 124px;
+  }
+  46% {
+    stroke-width: 62px;
+  }
+  49% {
+    stroke-width: 89px;
+  }
+  54% {
+    stroke-width: 40px;
+  }
+  64% {
+    stroke-width: 158px;
+  }
+  66% {
+    stroke-width: 91px;
+  }
+  77% {
+    stroke-width: 197px;
+  }
+  80% {
+    stroke-width: 95px;
+  }
   85% {
-    stroke-width: 149px;
+    stroke-width: 53px;
   }
-  97% {
-    stroke-width: 132px;
-  }
+<<<<<<< HEAD
   100% {
     stroke-width: 78px;
+=======
+  93% {
+    stroke-width: 138px;
+>>>>>>> home_chunyu
 =======
 <<<<<<< HEAD
   6% {
@@ -4058,56 +5311,89 @@ input[type="month"] {
   98% {
     stroke-width: 18px;
 >>>>>>> dev
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   }
 }
 
 @keyframes botani {
 <<<<<<< HEAD
+<<<<<<< HEAD
   2% {
     stroke-width: 106px;
+=======
+  4% {
+    stroke-width: 25px;
+>>>>>>> home_chunyu
   }
-  7% {
-    stroke-width: 82px;
+  9% {
+    stroke-width: 198px;
   }
-  14% {
-    stroke-width: 49px;
+  13% {
+    stroke-width: 95px;
   }
-  24% {
-    stroke-width: 192px;
+  18% {
+    stroke-width: 191px;
   }
-  32% {
-    stroke-width: 179px;
-  }
-  39% {
-    stroke-width: 71px;
-  }
-  47% {
-    stroke-width: 28px;
-  }
-  51% {
-    stroke-width: 1px;
-  }
-  60% {
-    stroke-width: 96px;
-  }
-  69% {
-    stroke-width: 63px;
-  }
-  71% {
-    stroke-width: 8px;
-  }
-  79% {
+  27% {
     stroke-width: 180px;
   }
+  31% {
+    stroke-width: 41px;
+  }
+  40% {
+    stroke-width: 124px;
+  }
+  46% {
+    stroke-width: 62px;
+  }
+  49% {
+    stroke-width: 89px;
+  }
+  54% {
+    stroke-width: 40px;
+  }
+  64% {
+    stroke-width: 158px;
+  }
+  66% {
+    stroke-width: 91px;
+  }
+  77% {
+    stroke-width: 197px;
+  }
+  80% {
+    stroke-width: 95px;
+  }
   85% {
-    stroke-width: 149px;
+    stroke-width: 53px;
   }
-  97% {
-    stroke-width: 132px;
+  93% {
+    stroke-width: 138px;
   }
+<<<<<<< HEAD
   100% {
     stroke-width: 78px;
+=======
+}
+
+@-webkit-keyframes rainbowMove {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 100% 0%;
+  }
+}
+
+@keyframes rainbowMove {
+  from {
+    background-position: 0% 0%;
+  }
+>>>>>>> home_chunyu
 =======
 <<<<<<< HEAD
   6% {
@@ -4248,9 +5534,13 @@ input[type="month"] {
   from {
     background-position: 0% 0%;
   }
+>>>>>>> origin/dev
   to {
     background-position: 100% 0%;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> home_chunyu
   }
 }
 
@@ -4262,6 +5552,8 @@ input[type="month"] {
   display: none;
 }
 
+<<<<<<< HEAD
+=======
 .wrletter-body main .writ-step-1 .select-category .tv-category .active {
   background: #000000;
 }
@@ -4270,6 +5562,7 @@ input[type="month"] {
   display: none;
 }
 
+>>>>>>> origin/dev
 .wrletter-body main .writ-step-1 .category-note {
   height: 28vw;
   width: 50%;
@@ -4719,6 +6012,216 @@ pre {
   flex: 0 0 66.66667%;
   max-width: 66.66667%; }
 =======
+.catchletter-body {
+  background: radial-gradient(#000000 10%, #fff 20%);
+  background-size: 8px 8px;
+  height: auto;
+}
+
+.catchletter-body main {
+  margin-top: 10vw;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.catchletter-body .catch-step-1 {
+  font-size: 0;
+  border: 1px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: relative;
+}
+
+.catchletter-body .catch-step-1 .catch-letter {
+  width: 38vw;
+  max-width: 545px;
+  height: 55vw;
+  max-height: 788px;
+  margin: 0 40% 0 0;
+  background-image: url(../../img/share/postCard-vertical.svg);
+  background-position: center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  font-size: 1.5vw;
+}
+
+.catchletter-body .catch-step-1 .catch-letter .paper-cloud {
+  width: 30vw;
+  background-image: url(../../img/share/paper-cloud.png);
+  height: 18vw;
+  max-width: 440px;
+  max-height: 325px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 9;
+  position: absolute;
+}
+
+.catchletter-body .catch-step-1 .catch-letter .paper-cloud {
+  height: 15vw;
+  top: -8.1vw;
+  left: -36%;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.catchletter-body .catch-step-1 .catch-letter .letter-wrap {
+  height: 100%;
+  width: 100%;
+  padding: 3%;
+}
+
+.catchletter-body .catch-step-1 .catch-letter .letter-wrap .letter-head {
+  border: 1px solid green;
+  height: 30%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.catchletter-body .catch-step-1 .catch-letter .letter-wrap .stamp-box {
+  height: 100%;
+  width: 60%;
+  border: 1px solid red;
+  background-image: url(../../img/catch-letter/post-mark-test.png);
+  background-size: 85%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.catchletter-body .catch-step-1 .catch-letter .letter-wrap .letter-tittle {
+  height: 100%;
+  width: 40%;
+  border: 1px solid blue;
+  padding: 2.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.catchletter-body .catch-step-1 .catch-letter .letter-wrap .letter-tittle h3 {
+  font-size: 1.8vw;
+  text-align-last: left;
+}
+
+.catchletter-body .catch-step-1 .catch-letter .letter-wrap .letter-contant {
+  height: 70%;
+  width: 100%;
+  border: 1px solid pink;
+  padding: 2.5%;
+  overflow-y: auto;
+}
+
+.catchletter-body .catch-step-1 .catch-letter .letter-wrap .letter-contant .text {
+  font-size: 1.5vw;
+  line-height: 2.5vw;
+}
+
+.catchletter-body .catch-step-1 .catch-letter .letter-wrap .letter-contant .letter-upload-img {
+  margin: 0 1rem;
+  float: right;
+  width: 16vw;
+  height: 12vw;
+  background-image: url(../../img/catch-letter/tenor.gif);
+  background-size: 180%;
+  background-position: 40% 50%;
+  background-repeat: no-repeat;
+}
+
+.catchletter-body .catch-step-1 .comment-wrap {
+  margin: 0;
+  height: 30vw;
+  width: 40vw;
+  max-height: 788px;
+  position: absolute;
+  top: 6vw;
+  right: 3vw;
+}
+
+.catchletter-body .catch-step-1 .comment-wrap .clip-left {
+  top: -62%;
+  left: 18%;
+}
+
+.catchletter-body .catch-step-1 .comment-wrap .clip-right {
+  top: -65%;
+  right: 18%;
+}
+
+.catchletter-body .catch-step-1 .comment-wrap .top-left-bg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 10px;
+  left: -15px;
+}
+
+.catchletter-body .catch-step-1 .comment-wrap .top-left-bg .headpg-name {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  padding: 0 2vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.catchletter-body .catch-step-1 .comment-wrap .comment-outbox {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.catchletter-body .catch-step-1 .scroll-container {
+  overflow-y: auto;
+}
+
+.catchletter-body .catch-step-1 ::-webkit-scrollbar {
+  width: 1vw;
+}
+
+.catchletter-body .catch-step-1 ::-webkit-scrollbar-thumb {
+  background-color: #82afd9;
+}
+
+.catchletter-body .catch-step-1 ::-webkit-scrollbar-thumb:window-inactive {
+  background-color: rgba(130, 175, 217, 0.8);
+}
+
+.catchletter-body .catch-step-1 ::-webkit-scrollbar-thumb:hover {
+  background-color: #82afd9;
+}
+
+.catchletter-body .catch-step-1 ::-webkit-scrollbar-track,
+.catchletter-body .catch-step-1 ::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: #f3de6b;
+  -webkit-transition: all 300ms ease-in-out;
+}
+
+.catchletter-body .catch-step-1 ::-webkit-scrollbar-track {
+  background-color: #f3de6b;
+}
+
 .catchletter-body {
   background: radial-gradient(#000000 10%, #fff 20%);
   background-size: 8px 8px;
@@ -16063,6 +17566,7 @@ h6 {
   right: 25%;
   top: -20%;
   z-index: 10;
+<<<<<<< HEAD
 }
 
 .shop-body .shop-main #section1 #shopOutsideBox {
@@ -16100,6 +17604,45 @@ h6 {
   height: 80%;
 }
 
+=======
+}
+
+.shop-body .shop-main #section1 #shopOutsideBox {
+  position: relative;
+}
+
+.shop-body .shop-main #section1 #shopOutsideBox .shopItemContainer {
+  margin-left: 0.5vw;
+  width: 65vw;
+  height: 50vw;
+}
+
+.shop-body .shop-main #section1 #shopOutsideBox .shopItemContainer .itemPage1 {
+  width: 90%;
+  height: 100%;
+  background-color: #ffffff;
+  border: 0.2vw solid black;
+}
+
+.shop-body .shop-main #section1 #shopOutsideBox .shopItemContainer .itemPage1 .itemPage2 {
+  margin-top: 3%;
+  margin-left: 3%;
+  width: 100%;
+  background-color: #ffffff;
+  border: 0.2vw solid black;
+  height: 100%;
+}
+
+.shop-body .shop-main #section1 #shopOutsideBox .shopItemContainer .itemPage1 .itemPage2 .itemPage0 {
+  margin-top: 12%;
+  margin-left: 25%;
+  width: 100%;
+  background-color: #82afd9;
+  border: 0.2vw solid black;
+  height: 80%;
+}
+
+>>>>>>> origin/dev
 .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox {
   top: 0;
   position: absolute;
@@ -20331,16 +21874,26 @@ h6 {
   background-size: 10px 10px;
 }
 
+<<<<<<< HEAD
+.shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .lineWidth {
+  margin-top: 10%;
+=======
 .cav-main {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+>>>>>>> origin/dev
 }
 >>>>>>> dev
 
 .font-weight-bold {
   font-weight: 700 !important; }
 
+<<<<<<< HEAD
+.shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .shadowBlur {
+  margin-top: 5%;
+}
+=======
 .font-weight-bolder {
   font-weight: bolder !important; }
 
@@ -20364,11 +21917,16 @@ h6 {
 
 a.text-primary:hover, a.text-primary:focus {
   color: #0056b3 !important; }
+>>>>>>> origin/dev
 
 <<<<<<< HEAD
 .text-secondary {
   color: #6c757d !important; }
 
+<<<<<<< HEAD
+.shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .shadowOffsetX {
+  margin-top: 5%;
+=======
 a.text-secondary:hover, a.text-secondary:focus {
   color: #494f54 !important; }
 =======
@@ -20377,6 +21935,7 @@ a.text-secondary:hover, a.text-secondary:focus {
   width: 40%;
   height: 100%;
   padding: 10px;
+>>>>>>> origin/dev
 }
 
 .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter {
@@ -20388,8 +21947,14 @@ a.text-secondary:hover, a.text-secondary:focus {
 }
 >>>>>>> dev
 
+<<<<<<< HEAD
+.shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .shadowOffsetY {
+  margin-top: 5%;
+}
+=======
 .text-success {
   color: #28a745 !important; }
+>>>>>>> origin/dev
 
 a.text-success:hover, a.text-success:focus {
   color: #19692c !important; }
@@ -20398,11 +21963,19 @@ a.text-success:hover, a.text-success:focus {
   color: #17a2b8 !important; }
 
 <<<<<<< HEAD
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox {
+  width: 77%;
+  border: 0.2vw solid black;
+  background: #8ebfbf;
+  z-index: 20;
+=======
+<<<<<<< HEAD
 a.text-info:hover, a.text-info:focus {
   color: #0f6674 !important; }
 =======
 .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letWord {
   width: 80%;
+>>>>>>> origin/dev
 }
 >>>>>>> dev
 
@@ -20412,6 +21985,14 @@ a.text-info:hover, a.text-info:focus {
 a.text-warning:hover, a.text-warning:focus {
   color: #ba8b00 !important; }
 
+<<<<<<< HEAD
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns {
+  width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+=======
 <<<<<<< HEAD
 .text-danger {
   color: #dc3545 !important; }
@@ -20427,9 +22008,50 @@ a.text-warning:hover, a.text-warning:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+>>>>>>> origin/dev
 }
 >>>>>>> dev
 
+<<<<<<< HEAD
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns .orderBtnBoxGroup {
+  width: 20%;
+  margin: 2% 2% 2% 0;
+}
+
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns .orderBtnBoxGroup .orderBtnBox {
+  position: relative;
+}
+
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns .orderBtnBoxGroup .orderBtnBox .orderBtn {
+  font-size: 20px;
+  letter-spacing: 0.2em;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background-color: #FFD139;
+  border: 0.2vw solid black;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 0.3em;
+  cursor: pointer;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns .orderBtnBoxGroup .orderBtnBox .orderBtn:before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 40%;
+  left: -32%;
+  bottom: -5%;
+  border-radius: 0.3em;
+  border: 0.2vw solid black;
+  -webkit-transform: rotate(90deg) skew(60deg);
+          transform: rotate(90deg) skew(60deg);
+  background: linear-gradient(40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+  background-size: 7px 7px;
+=======
 a.text-danger:hover, a.text-danger:focus {
   color: #a71d2a !important; }
 
@@ -20474,9 +22096,95 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #fff;
   width: 82.5%;
   margin: 20px auto;
+>>>>>>> origin/dev
 }
 >>>>>>> dev
 
+<<<<<<< HEAD
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns .orderBtnBoxGroup .orderBtnBox .orderBtn:after {
+  content: '';
+  position: absolute;
+  position: absolute;
+  width: 50%;
+  height: 40%;
+  left: 82%;
+  bottom: -5%;
+  border-radius: 0.3em;
+  border: 0.2vw solid black;
+  -webkit-transform: rotate(90deg) skew(300deg);
+          transform: rotate(90deg) skew(300deg);
+  background: linear-gradient(40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+  background-size: 7px 7px;
+}
+
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked {
+  top: 15px;
+}
+
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked:before {
+  width: 45%;
+  height: 35%;
+  left: -30%;
+  bottom: 13%;
+  -webkit-transform: rotate(90deg) skew(45deg);
+          transform: rotate(90deg) skew(45deg);
+}
+
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked:after {
+  width: 45%;
+  height: 35%;
+  left: 85%;
+  bottom: 13%;
+  -webkit-transform: rotate(90deg) skew(310deg);
+          transform: rotate(90deg) skew(310deg);
+}
+
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns .orderBtnBoxGroup .orderBtnBox .orderBtnBottom {
+  position: absolute;
+  width: 124%;
+  height: 45px;
+  left: -12%;
+  top: 70%;
+  border: 0.2vw solid black;
+  background: linear-gradient(40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+  background-size: 7px 7px;
+  border-radius: 0.1em;
+  z-index: -1;
+}
+
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns .orderBtnBoxGroup .orderBtnBox .orderText::before {
+  content: '切換郵戳畫板';
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-40%, -25%);
+          transform: translate(-40%, -25%);
+  font-weight: 900;
+  font-size: 20;
+  color: #fff;
+  text-shadow: -2px -2px 0 #0f0f0f, -2px -1px 0 #0f0f0f, -2px 0px 0 #0f0f0f, -2px 1px 0 #0f0f0f, -2px 2px 0 #0f0f0f, -1px -2px 0 #0f0f0f, -1px -1px 0 #0f0f0f, -1px 0px 0 #0f0f0f, -1px 1px 0 #0f0f0f, -1px 2px 0 #0f0f0f, 0px -2px 0 #0f0f0f, 0px -1px 0 #0f0f0f, 0px 0px 0 #0f0f0f, 0px 1px 0 #0f0f0f, 0px 2px 0 #0f0f0f, 1px -2px 0 #0f0f0f, 1px -1px 0 #0f0f0f, 1px 0px 0 #0f0f0f, 1px 1px 0 #0f0f0f, 1px 2px 0 #0f0f0f, 2px -2px 0 #0f0f0f, 2px -1px 0 #0f0f0f, 2px 0px 0 #0f0f0f, 2px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 500;
+  z-index: 3;
+}
+
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns .orderBtnBoxGroup .orderBtnBox.clicked {
+  top: 25%;
+}
+
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  margin-left: 10%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+=======
 .text-muted {
   color: #6c757d !important; }
 
@@ -20517,9 +22225,31 @@ a.text-dark:hover, a.text-dark:focus {
   max-height: 850px;
   height: 100vw;
   margin-bottom: 150px;
+>>>>>>> origin/dev
 }
 >>>>>>> dev
 
+<<<<<<< HEAD
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox {
+  width: 20%;
+  margin: 0 5% 10% 5%;
+}
+
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox .switchBtn {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1vw;
+  letter-spacing: 0.2em;
+  position: relative;
+  width: 6vw;
+  height: 2vw;
+  background-color: #FFD139;
+  border: 0.2vw solid black;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+=======
 @media print {
   *,
   *::before,
@@ -20670,9 +22400,55 @@ a.text-dark:hover, a.text-dark:focus {
 =======
   height: 30%;
   overflow: hidden;
+>>>>>>> origin/dev
 }
 >>>>>>> dev
 
+<<<<<<< HEAD
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox .switchBtn:before {
+  content: '';
+  position: absolute;
+  width: 2vw;
+  height: 1vw;
+  left: -1.6vw;
+  bottom: -0.2vw;
+  border: 0.2vw solid black;
+  -webkit-transform: rotate(90deg) skew(45deg);
+          transform: rotate(90deg) skew(45deg);
+  background: linear-gradient(40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+  background-size: 7px 7px;
+}
+
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox .switchBtn:after {
+  content: '';
+  position: absolute;
+  width: 6vw;
+  height: 1vw;
+  bottom: -1.1vw;
+  left: -0.7vw;
+  border: 0.2vw solid black;
+  -webkit-transform: skew(-45deg) rotate(0deg);
+          transform: skew(-45deg) rotate(0deg);
+  background: linear-gradient(-40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+  background-size: 7px 7px;
+}
+
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox .switchBtn.clicked {
+  left: -0.6vw;
+  bottom: -0.25vw;
+}
+
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox .switchBtn.clicked:before {
+  height: 0.7vw;
+  left: -1.5vw;
+  bottom: 0.1vw;
+}
+
+.shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox .switchBtn.clicked:after {
+  height: 0.6vw;
+  bottom: -0.8vw;
+  left: -0.5vw;
+=======
 /* No Js */
 .no-js .owl-carousel {
   display: block; }
@@ -20714,6 +22490,7 @@ a.text-dark:hover, a.text-dark:focus {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+>>>>>>> origin/dev
 }
 
 .cav-myItem .cav-leftWrap .cav-leftBMWrap .cav-leftBlockBM > li {
@@ -20732,8 +22509,15 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 0.8em;
 }
 
+<<<<<<< HEAD
+.shop-body .shop-main #section3 .owl-carousel {
+  position: relative;
+  width: 100%;
+  z-index: 99;
+=======
 .cav-myItem .cav-leftWrap .cav-leftBMWrap .cav-leftBlockBM > li > a.-on {
   background-color: #82afd9;
+>>>>>>> origin/dev
 }
 
 .cav-myItem .cav-leftWrap .cav-tabWrap {
@@ -20748,10 +22532,17 @@ a.text-dark:hover, a.text-dark:focus {
       -ms-flex-pack: start;
           justify-content: flex-start;
   width: 100%;
+<<<<<<< HEAD
+  border: 0.2vw solid black;
+  -webkit-transform: skew(350deg);
+          transform: skew(350deg);
+  background-color: #fff;
+=======
   min-height: 465px;
   max-height: 465px;
   padding: 10px;
   overflow-y: scroll;
+>>>>>>> origin/dev
 }
 
 .cav-myItem .cav-leftWrap .cav-tabWrap::-webkit-scrollbar {
@@ -20769,6 +22560,24 @@ a.text-dark:hover, a.text-dark:focus {
 .cav-myItem .cav-leftWrap .cav-tabWrap .cav-prodWrap {
   border: 5px solid #212121;
   width: 100%;
+<<<<<<< HEAD
+}
+
+.shop-body .shop-main #section3 .owl-carousel .owl-nav {
+  top: -70%;
+  left: 50%;
+  -webkit-transform: translate(-90%, 25%);
+          transform: translate(-90%, 25%);
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 19vw;
+  height: 4vw;
+  z-index: 99;
+=======
   padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20779,14 +22588,25 @@ a.text-dark:hover, a.text-dark:focus {
       -ms-flex-pack: start;
           justify-content: flex-start;
   background-color: #777;
+>>>>>>> origin/dev
 }
 >>>>>>> dev
 
+<<<<<<< HEAD
+.shop-body .shop-main #section3 .owl-carousel .owl-nav .owl-prev {
+  background-image: url("/img/product/decorate/arrow_pre-04.svg");
+  width: 15%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 100;
+}
+=======
 /*
  * 	Owl Carousel - Auto Height Plugin
  */
 .owl-height {
   transition: height 500ms ease-in-out; }
+>>>>>>> origin/dev
 
 /*
  * 	Owl Carousel - Lazy Load Plugin
@@ -20821,6 +22641,26 @@ a.text-dark:hover, a.text-dark:focus {
 
 .owl-carousel .owl-video-play-icon {
   position: absolute;
+<<<<<<< HEAD
+  top: 50%;
+  left: 25%;
+  margin: 0 2%;
+  -webkit-transform: translate(25%, -50%);
+          transform: translate(25%, -50%);
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.3vw;
+  letter-spacing: 0.2em;
+  color: #fff;
+  text-shadow: 2px 2px 1px #000, -2px -2px 1px #000, 2px -2px 1px #000, -2px 2px 1px #000;
+}
+
+.shop-body .shop-main #section3 .owl-carousel .owl-nav .owl-next {
+  background-image: url("/img/product/decorate/arrow_next-04.svg");
+  width: 15%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 100;
+=======
   height: 80px;
   width: 80px;
   left: 50%;
@@ -20838,6 +22678,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .cav-myItem .cav-prod:hover {
   border: 5px solid #DC5453;
+>>>>>>> origin/dev
 }
 >>>>>>> dev
 
@@ -20848,6 +22689,394 @@ a.text-dark:hover, a.text-dark:focus {
 .owl-carousel .owl-video-playing .owl-video-play-icon {
   display: none; }
 
+<<<<<<< HEAD
+@media all and (max-width: 1500px) {
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns {
+    width: 90%;
+  }
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 80%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox {
+    width: 33%;
+    margin: 3% 0;
+  }
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox .switchBtn {
+    font-size: 1vw;
+    width: 9vw;
+    height: 3vw;
+  }
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox .switchBtn:before {
+    width: 3vw;
+    height: 1.5vw;
+    left: -2.4vw;
+    bottom: -0.3vw;
+  }
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox .switchBtn:after {
+    width: 9vw;
+    height: 1.5vw;
+    bottom: -1.65vw;
+    left: -1.05vw;
+  }
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox .switchBtn.clicked {
+    left: -0.9vw;
+    bottom: -0.375vw;
+  }
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox .switchBtn.clicked:before {
+    height: 1.05vw;
+    left: -2.25vw;
+    bottom: 0.15vw;
+  }
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox .switchBtn.clicked:after {
+    height: 1vw;
+    bottom: -1.2vw;
+    left: -0.75vw;
+  }
+  .shop-body .shop-main #section3 .owl-carousel {
+    position: relative;
+    width: 100%;
+    z-index: 99;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav {
+    top: -70%;
+    left: 50%;
+    -webkit-transform: translate(-110%, 25%);
+            transform: translate(-110%, 25%);
+    width: 19vw;
+    height: 4vw;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav .owl-prev {
+    width: 15%;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav:before {
+    top: 50%;
+    left: 25%;
+    margin: 0 2%;
+    -webkit-transform: translate(25%, -50%);
+            transform: translate(25%, -50%);
+    font-size: 1.3vw;
+    letter-spacing: 0.2em;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav .owl-next {
+    width: 15%;
+  }
+}
+
+@media all and (max-width: 1199px) and (min-width: 992px) {
+  .shop-body .shop-main #section1 .container .row #conectionLine .iron_clip1 {
+    left: 40%;
+    top: 0%;
+  }
+  .shop-body .shop-main #section1 .container .row #conectionLine .iron_clip2 {
+    top: 0%;
+    right: 10%;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .shopItemContainer {
+    width: 80vw;
+    height: 50vw;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox {
+    width: 90vw;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardAside {
+    width: 30%;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardAside .itemCardAsideBox {
+    margin: 20% 10% 0 10%;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer {
+    width: 70%;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard1 {
+    width: 12vw;
+    height: 8vw;
+    margin: 0 3%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard2 {
+    width: 12vw;
+    height: 8vw;
+    margin: 0 3%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard3 {
+    width: 12vw;
+    height: 8vw;
+    margin: 0 3%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard4 {
+    width: 12vw;
+    height: 8vw;
+    margin: 0 3%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard2_1 {
+    width: 12vw;
+    height: 8vw;
+    margin: 0 5%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard2_2 {
+    width: 12vw;
+    height: 8vw;
+    margin: 0 5%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard2_3 {
+    width: 12vw;
+    height: 8vw;
+    margin: 0 5%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .line_top {
+    width: 90%;
+    -webkit-transform: translate(0, -30%);
+            transform: translate(0, -30%);
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard1 {
+    -webkit-transform: translate(0, -100%) rotate(15deg);
+            transform: translate(0, -100%) rotate(15deg);
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard2 {
+    -webkit-transform: translate(0, -50%) rotate(355deg);
+            transform: translate(0, -50%) rotate(355deg);
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 {
+    -webkit-transform: translate(0, -30%) rotate(360deg);
+            transform: translate(0, -30%) rotate(360deg);
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard4 {
+    -webkit-transform: translate(0, -50%) rotate(355deg);
+            transform: translate(0, -50%) rotate(355deg);
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard5 {
+    display: none;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .line_bottom {
+    width: 70%;
+    -webkit-transform: translate(0%, -10%);
+            transform: translate(0%, -10%);
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_1 {
+    -webkit-transform: translate(0%, 0%) rotate(350deg);
+            transform: translate(0%, 0%) rotate(350deg);
+    margin-top: 0px;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_2 {
+    -webkit-transform: translate(-30%, 0%) rotate(15deg);
+            transform: translate(-30%, 0%) rotate(15deg);
+    margin-top: 0px;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_3 {
+    -webkit-transform: translate(-70%, -40%) rotate(0deg);
+            transform: translate(-70%, -40%) rotate(0deg);
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .filter_forSamll {
+    display: none;
+  }
+  .shop-body .shop-main #pile {
+    max-width: 90%;
+    height: 40vw;
+  }
+  .shop-body .shop-main #pile .pilePaper {
+    width: 9vw;
+    height: 11vw;
+  }
+  .shop-body .shop-main #pile .pilePaper span {
+    font-size: 0.1vh;
+    font-family: "Noto Sans TC", sans-serif;
+  }
+  .shop-body .shop-main #pile .pilePaper .innerBox {
+    margin-top: 3%;
+    width: 60%;
+    height: 30%;
+    border: 0.2vw solid black;
+  }
+  .shop-body .shop-main #pile .pile {
+    margin-left: 0%;
+    width: 100vw;
+    height: 130vw;
+    background-image: url("/img/product/decorate/pile.png");
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .shop-body .shop-main #pile .pile .clock {
+    left: -2%;
+    top: 19.8%;
+  }
+  .shop-body .shop-main #pile .pile .redWheel {
+    left: 50.5%;
+    top: 5%;
+  }
+  .shop-body .shop-main #pile .pile .perpul {
+    width: 18%;
+    padding-top: 100%;
+    left: 75%;
+    top: 25%;
+  }
+  .shop-body .shop-main #section2 .customizeArea {
+    margin: 0 auto;
+    width: 95%;
+  }
+  .shop-body .shop-main #section3 .owl-carousel {
+    position: relative;
+    width: 100%;
+    z-index: 99;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav {
+    top: -70%;
+    left: 50%;
+    -webkit-transform: translate(-100%, 50%);
+            transform: translate(-100%, 50%);
+    width: 25vw;
+    height: 4vw;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav .owl-prev {
+    width: 30%;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav:before {
+    top: 50%;
+    left: 25%;
+    margin: 0 2%;
+    -webkit-transform: translate(0%, -50%);
+            transform: translate(0%, -50%);
+    font-size: 1.5vw;
+    letter-spacing: 0.2em;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav .owl-next {
+    width: 30%;
+  }
+}
+
+@media all and (max-width: 991px) {
+  .shop-body .shop-main #section1 .container .row #conectionLine {
+    height: 30vw;
+  }
+  .shop-body .shop-main #section1 .container .row #conectionLine .iron_clip1 {
+    left: 20%;
+    top: 40%;
+  }
+  .shop-body .shop-main #section1 .container .row #conectionLine .iron_clip2 {
+    top: 40%;
+    right: 20%;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .shopItemContainer {
+    width: 85vw;
+    height: 55vw;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .shopItemContainer .itemPage1 .itemPage2 .itemPage0 {
+    margin-top: 6%;
+    margin-left: 6%;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardAside {
+    display: none;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer {
+    width: 100%;
+    padding-top: 70px;
+    padding-left: 70px;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard1 {
+    width: 14vw;
+    height: 10vw;
+    margin: 0 3%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard2 {
+    width: 14vw;
+    height: 10vw;
+    margin: 0 3%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard3 {
+    width: 14vw;
+    height: 10vw;
+    margin: 0 3%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard4 {
+    width: 14vw;
+    height: 10vw;
+    margin: 0 3%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard2_1 {
+    width: 14vw;
+    height: 10vw;
+    margin: 0 7%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard2_2 {
+    width: 14vw;
+    height: 10vw;
+    margin: 0 7%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard2_3 {
+    width: 14vw;
+    height: 10vw;
+    margin: 0 7%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .line_top {
+    width: 90%;
+    -webkit-transform: translate(5%, -10%);
+            transform: translate(5%, -10%);
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard1 {
+    -webkit-transform: translate(0, -50%) rotate(15deg);
+            transform: translate(0, -50%) rotate(15deg);
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 {
+    -webkit-transform: translate(0, -10%) rotate(360deg);
+            transform: translate(0, -10%) rotate(360deg);
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard4 {
+    -webkit-transform: translate(0, -20%) rotate(360deg);
+            transform: translate(0, -20%) rotate(360deg);
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard5 {
+    display: none;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .line_bottom {
+    width: 70%;
+    -webkit-transform: translate(10%, 10%);
+            transform: translate(10%, 10%);
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_1 {
+    margin-top: 0px;
+    -webkit-transform: translate(30%, 0%) rotate(350deg);
+            transform: translate(30%, 0%) rotate(350deg);
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_2 {
+    margin-top: 0px;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_3 {
+    -webkit-transform: translate(-10%, -40%) rotate(350deg);
+            transform: translate(-10%, -40%) rotate(350deg);
+    margin-top: 0px;
+  }
+=======
 .owl-carousel .owl-video-tn {
   opacity: 0;
   height: 100%;
@@ -22868,12 +25097,166 @@ h6 {
     .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_3 {
       transform: translate(-10%, -40%) rotate(350deg);
       margin-top: 0px; }
+>>>>>>> origin/dev
   .shop-body .shop-main #section1 #shopOutsideBox .filter_forSamll {
     margin: 5% auto;
     width: 90%;
     border: 0.2vw solid black;
     background-color: #fffcfa;
     display: block;
+<<<<<<< HEAD
+    z-index: 1;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .filter_forSamll .filter_forSamllBox {
+    width: 100%;
+    margin: 5%;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .filter_forSamll .filter_forSamllBox .filter_forSamllh3 {
+    font-weight: 900;
+    font-family: "Noto Sans TC", sans-serif;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .filter_forSamll .filter_forSamllBox .filter_forSamllh4 {
+    letter-spacing: 0.2rem;
+    font-weight: 900;
+    font-family: "Noto Sans TC", sans-serif;
+    margin: 20px 0;
+  }
+  .shop-body .shop-main #pile {
+    max-width: 90%;
+    height: 40vw;
+  }
+  .shop-body .shop-main #pile .pilePaper {
+    width: 9vw;
+    height: 9vw;
+  }
+  .shop-body .shop-main #pile .pilePaper span {
+    display: none;
+  }
+  .shop-body .shop-main #pile .pilePaper .innerBox {
+    display: none;
+  }
+  .shop-body .shop-main #pile .pile {
+    margin-left: 0%;
+    width: 100vw;
+    height: 130vw;
+    background-image: url("/img/product/decorate/pile.png");
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .shop-body .shop-main #pile .pile .clock {
+    left: -2%;
+    top: 19.8%;
+  }
+  .shop-body .shop-main #pile .pile .redWheel {
+    left: 50.5%;
+    top: 5%;
+  }
+  .shop-body .shop-main #pile .pile .perpul {
+    left: 75%;
+    top: 27%;
+  }
+  .shop-body .shop-main #section2 .customizeArea {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 95%;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop {
+    width: 100%;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox1 {
+    text-align: center;
+    width: 10%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+    z-index: 28;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox2 {
+    text-align: center;
+    width: 10%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+    z-index: 27;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox3 {
+    text-align: center;
+    width: 10%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+    z-index: 26;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox4 {
+    text-align: center;
+    width: 10%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+    z-index: 25;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox5 {
+    text-align: center;
+    width: 10%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+    z-index: 24;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox6 {
+    text-align: center;
+    width: 10%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+    z-index: 23;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox7 {
+    text-align: center;
+    width: 10%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+    z-index: 22;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox8 {
+    text-align: center;
+    width: 10%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+    z-index: 21;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox9 {
+    text-align: center;
+    width: 10%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+    z-index: 20;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox10 {
+    text-align: center;
+    width: 10%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+    z-index: 19;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .colorTool {
+    display: none;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom {
+    display: none;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlBoxRight {
+    z-index: 100;
+    display: -webkit-box;
+    display: -ms-flexbox;
+=======
     z-index: 1; }
     .shop-body .shop-main #section1 #shopOutsideBox .filter_forSamll .filter_forSamllBox {
       width: 100%;
@@ -23548,6 +25931,7 @@ h6 {
           width: 20%;
           z-index: 29; }
   .shop-body .shop-main #section2 .customizeArea .controlBoxRight {
+>>>>>>> origin/dev
     display: flex;
     flex-wrap: wrap; }
     .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType {
@@ -23675,6 +26059,116 @@ h6 {
   margin-bottom: 150px; }
   .cav-readLetterWrap .cav-boxImg {
     width: 100%;
+<<<<<<< HEAD
+    border: 0.2vw solid black;
+    background: #fff;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType {
+    margin-top: 2%;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType .brushlabel {
+    font-family: "Noto Sans TC", sans-serif;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType .box .nice-select {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background-color: #fff;
+    border-radius: 0.25rem;
+    border: solid 1px #e8e8e8;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    clear: both;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-family: inherit;
+    font-weight: normal;
+    height: calc(1.5em + 0.75rem + 2px);
+    line-height: calc(1.5em + 0.75rem + 2px)-2;
+    outline: none;
+    padding-left: 18px;
+    padding-right: 30px;
+    position: relative;
+    text-align: left !important;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    white-space: nowrap;
+    width: auto;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType .box .nice-select:hover {
+    border-color: #dbdbdb;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType .box .nice-select:active, .shop-body .shop-main #section2 .customizeArea .controlBoxRight .controlTool .controlBoxBottom .brushType .box .nice-select.open, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .controlBoxRight .brushType .box .nice-select.open, .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType .box .nice-select:focus {
+    border-color: #999;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType .box .nice-select:after {
+    border-bottom: 2px solid #999;
+    border-right: 2px solid #999;
+    content: '';
+    display: block;
+    height: 5px;
+    margin-top: -4px;
+    pointer-events: none;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    -webkit-transform-origin: 66% 66%;
+            transform-origin: 66% 66%;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+    width: 5px;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType .box .nice-select.open:after {
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType .box .nice-select.open .list {
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType .box .nice-select.disabled {
+    border-color: #ededed;
+    color: #999;
+    pointer-events: none;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType .box .nice-select.disabled:after {
+    border-color: #cccccc;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType .box .nice-select.wide {
+    width: 100%;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType .box .nice-select.wide .list {
+    left: 0 !important;
+    right: 0 !important;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType .box .nice-select.right {
+    float: right;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType .box .nice-select.right .list {
+    left: auto;
+    right: 0;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType .box .nice-select.small {
+    height: 36px;
+    line-height: 34px;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType .box .nice-select.small:after {
+    height: 4px;
+    width: 4px;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType .box .nice-select.small .option {
+    line-height: 34px;
+    min-height: 34px;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlBoxRight .brushType .box .nice-select .list {
+=======
     position: relative; }
     .cav-readLetterWrap .cav-boxImg > img {
       border: 1px solid firebrick;
@@ -23917,6 +26411,7 @@ h6 {
     display: inline-block;
     width: 170px;
     height: 170px;
+>>>>>>> origin/dev
     background-color: #fff;
     overflow: hidden;
     cursor: pointer; }
@@ -24981,6 +27476,93 @@ h6 {
     height: 14vw;
     margin: 2.5%;
   }
+<<<<<<< HEAD
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns {
+    width: 85%;
+    padding-bottom: 10%;
+  }
+  .shop-body .shop-main #section3 .owl-carousel {
+    position: relative;
+    width: 100%;
+    z-index: 99;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav {
+    top: -40%;
+    left: 25%;
+    -webkit-transform: translate(-80%, 0);
+            transform: translate(-80%, 0);
+    width: 24vw;
+    height: 4vw;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav .owl-prev {
+    width: 50%;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav:before {
+    top: 50%;
+    left: 25%;
+    margin: 0 2%;
+    -webkit-transform: translate(0%, -50%);
+            transform: translate(0%, -50%);
+    font-size: 2vw;
+    letter-spacing: 0.2em;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav .owl-next {
+    width: 50;
+  }
+}
+
+@media all and (max-width: 767px) and (min-width: 576px) {
+  .shop-body .shop-main #section1 .container .row #conectionLine {
+    height: 40vw;
+  }
+  .shop-body .shop-main #section1 .container .row #conectionLine .iron_clip1 {
+    width: 10vw;
+    top: 30%;
+  }
+  .shop-body .shop-main #section1 .container .row #conectionLine .iron_clip2 {
+    width: 10vw;
+    right: 20%;
+    top: 30%;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .shopItemContainer {
+    width: 90vw;
+    height: 80vw;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardAside {
+    display: none;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer {
+    width: 100%;
+    padding-left: 0px;
+    padding-top: 100px;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard1 {
+    width: 26vw;
+    height: 14vw;
+    margin: 0 10%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard2 {
+    width: 26vw;
+    height: 14vw;
+    margin: 0 10%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard2_1 {
+    width: 26vw;
+    height: 14vw;
+    margin: 0 10%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard2_2 {
+    width: 26vw;
+    height: 14vw;
+    margin: 0 10%;
+    border: 0.2vw solid black;
+=======
 }
 
 @media all and (max-width: 767px) and (min-width: 576px) {
@@ -25117,10 +27699,67 @@ h6 {
     border: 50px solid transparent;
     -o-border-image: url("../../img/cave/cav-postCard_b.svg") 50 50 round;
        border-image: url("../../img/cave/cav-postCard_b.svg") 50 50 round;
+>>>>>>> origin/dev
     background-color: #fff;
     width: 82.5%;
     margin: 20px auto;
   }
+<<<<<<< HEAD
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .line_top {
+    width: 70%;
+    -webkit-transform: translate(25%, -80%);
+            transform: translate(25%, -80%);
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .line_bottom {
+    -webkit-transform: translate(25%, -10%);
+            transform: translate(25%, -10%);
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard1 {
+    -webkit-transform: translate(50%, -50%) rotate(15deg);
+            transform: translate(50%, -50%) rotate(15deg);
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard1 img {
+    width: 5vw;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard2 img {
+    width: 5vw;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 {
+    display: none;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard4 {
+    display: none;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard5 {
+    display: none;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_1 {
+    margin-top: 0px;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_1 img {
+    width: 5vw;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_2 {
+    margin-top: 0px;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_2 img {
+    width: 5vw;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_3 {
+    display: none;
+  }
+  .shop-body .shop-main #section1 #medal {
+    height: 600px;
+    left: 50%;
+  }
+  .shop-body .shop-main #section1 #medal .cross:before {
+    left: -100%;
+  }
+  .shop-body .shop-main #section1 #medal .cross:after {
+    left: -100%;
+  }
+  .shop-body .shop-main #section1 #medal #textBox {
+=======
   .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letImg {
     width: 100%;
     overflow: hidden;
@@ -25203,9 +27842,170 @@ h6 {
     height: auto;
   }
   .cav-main .cav-myItem .cav-leftWrap {
+>>>>>>> origin/dev
     width: 70%;
-    margin: 0 auto;
+    margin: 7% auto 3%;
   }
+  .shop-body .shop-main #section1 #medal #textBox .textBox h1 {
+    font-size: 30px;
+    font-weight: 700;
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: 60px;
+  }
+  .shop-body .shop-main #section1 #medal #textBox .textBox h3 {
+    font-size: 20px;
+    letter-spacing: 0.2rem;
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: 3rem;
+  }
+  .shop-body .shop-main #section1 #medal .product_display {
+    margin: 0 auto;
+    width: 85%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+<<<<<<< HEAD
+  .shop-body .shop-main #section1 #medal .product_display .model_material {
+    width: 40%;
+  }
+  .shop-body .shop-main #section1 #medal .product_display .model_material img {
+    width: 100%;
+  }
+  .shop-body .shop-main #section1 #medal .product_display .model_arrow {
+    width: 20%;
+  }
+  .shop-body .shop-main #section1 #medal .product_display .model_arrow img {
+    width: 70%;
+  }
+  .shop-body .shop-main #section1 #medal .product_display .model_product {
+    width: 40%;
+  }
+  .shop-body .shop-main #section1 #medal .product_display .model_product img {
+    width: 95%;
+  }
+  .shop-body .shop-main #section1 #medal .orderBtnBoxGroup {
+    position: relative;
+    width: 35%;
+    margin: 5% auto;
+  }
+  .shop-body .shop-main #section1 #medal .orderBtnBoxGroup .orderBtnBox {
+    position: absolute;
+    width: 100%;
+  }
+  .shop-body .shop-main #section1 #medal .orderBtnBoxGroup .orderBtnBox .orderBtn {
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: #FFD139;
+    border: 0.2vw solid black;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 0.3em;
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
+  .shop-body .shop-main #section1 #medal .orderBtnBoxGroup .orderBtnBox .orderBtn .orderText {
+    font-weight: 900;
+    font-size: 40px;
+    color: #06a4ff;
+    text-shadow: -2px -2px 0 #0f0f0f, -2px -1px 0 #0f0f0f, -2px 0px 0 #0f0f0f, -2px 1px 0 #0f0f0f, -2px 2px 0 #0f0f0f, -1px -2px 0 #0f0f0f, -1px -1px 0 #0f0f0f, -1px 0px 0 #0f0f0f, -1px 1px 0 #0f0f0f, -1px 2px 0 #0f0f0f, 0px -2px 0 #0f0f0f, 0px -1px 0 #0f0f0f, 0px 0px 0 #0f0f0f, 0px 1px 0 #0f0f0f, 0px 2px 0 #0f0f0f, 1px -2px 0 #0f0f0f, 1px -1px 0 #0f0f0f, 1px 0px 0 #0f0f0f, 1px 1px 0 #0f0f0f, 1px 2px 0 #0f0f0f, 2px -2px 0 #0f0f0f, 2px -1px 0 #0f0f0f, 2px 0px 0 #0f0f0f, 2px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 500;
+  }
+  .shop-body .shop-main #section1 #medal .orderBtnBoxGroup .orderBtnBox .orderBtn .orderText::before {
+    content: '購買';
+    position: absolute;
+    left: 17%;
+    font-weight: 900;
+    font-size: 40px;
+    color: #fff;
+    text-shadow: -2px -2px 0 #0f0f0f, -2px -1px 0 #0f0f0f, -2px 0px 0 #0f0f0f, -2px 1px 0 #0f0f0f, -2px 2px 0 #0f0f0f, -1px -2px 0 #0f0f0f, -1px -1px 0 #0f0f0f, -1px 0px 0 #0f0f0f, -1px 1px 0 #0f0f0f, -1px 2px 0 #0f0f0f, 0px -2px 0 #0f0f0f, 0px -1px 0 #0f0f0f, 0px 0px 0 #0f0f0f, 0px 1px 0 #0f0f0f, 0px 2px 0 #0f0f0f, 1px -2px 0 #0f0f0f, 1px -1px 0 #0f0f0f, 1px 0px 0 #0f0f0f, 1px 1px 0 #0f0f0f, 1px 2px 0 #0f0f0f, 2px -2px 0 #0f0f0f, 2px -1px 0 #0f0f0f, 2px 0px 0 #0f0f0f, 2px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 500;
+  }
+  .shop-body .shop-main #section1 #medal .orderBtnBoxGroup .orderBtnBox .orderBtn:before {
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 50%;
+    left: -22%;
+    bottom: -5%;
+    border-radius: 0.3em;
+    border: 0.2vw solid black;
+    -webkit-transform: rotate(90deg) skew(60deg);
+            transform: rotate(90deg) skew(60deg);
+    background: linear-gradient(40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+    background-size: 7px 7px;
+  }
+  .shop-body .shop-main #section1 #medal .orderBtnBoxGroup .orderBtnBox .orderBtn:after {
+    content: '';
+    position: absolute;
+    position: absolute;
+    width: 30%;
+    height: 50%;
+    left: 92%;
+    bottom: -5%;
+    border-radius: 0.3em;
+    border: 0.2vw solid black;
+    -webkit-transform: rotate(90deg) skew(300deg);
+            transform: rotate(90deg) skew(300deg);
+    background: linear-gradient(40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+    background-size: 7px 7px;
+  }
+  .shop-body .shop-main #section1 #medal .orderBtnBoxGroup .orderBtnBox .orderBtn span {
+    position: absolute;
+    width: 126%;
+    height: 45px;
+    left: -13%;
+    top: 65%;
+    border: 3px solid black;
+    background: linear-gradient(40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+    background-size: 7px 7px;
+    border-radius: 0.1em;
+    z-index: -1;
+  }
+  .shop-body .shop-main #section1 #medal .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked {
+    top: 20px;
+  }
+  .shop-body .shop-main #section1 #medal .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked:before {
+    width: 28%;
+    height: 35%;
+    left: -20%;
+    bottom: 20%;
+    border-radius: 0.1em;
+    -webkit-transform: rotate(90deg) skew(45deg);
+            transform: rotate(90deg) skew(45deg);
+    background-size: 6px 6px;
+  }
+  .shop-body .shop-main #section1 #medal .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked:after {
+    width: 28%;
+    height: 35%;
+    left: 91%;
+    bottom: 20%;
+    border-radius: 0.1em;
+    -webkit-transform: rotate(90deg) skew(310deg);
+            transform: rotate(90deg) skew(310deg);
+    background-size: 5px 5px;
+  }
+  .shop-body .shop-main #section1 #medal .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked span {
+    top: 45%;
+    height: 35px;
+    left: -10%;
+    width: 120%;
+  }
+  .shop-body .shop-main #section2 .customizeArea {
+    width: 95%;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop {
+    width: 100%;
+=======
   .cav-main .cav-rightWrap {
     display: inline-block;
     width: 70%;
@@ -25252,6 +28052,7 @@ h6 {
     width: 80%;
     margin-top: 100px;
     margin-left: 10%;
+>>>>>>> origin/dev
   }
   .cav-main .cav-rightWrap .cav-tabWrap {
     top: 55px;
@@ -25316,6 +28117,77 @@ h6 {
     background-color: #ccc;
     border-radius: 2px;
   }
+<<<<<<< HEAD
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns {
+    width: 100%;
+  }
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns .orderBtnBoxGroup {
+    width: 20%;
+    margin-left: 5%;
+  }
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn {
+    margin-bottom: 10%;
+  }
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox .switchBtn {
+    font-size: 1vw;
+    width: 13.5vw;
+    height: 4.5vw;
+  }
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox .switchBtn:before {
+    width: 4.5vw;
+    height: 2.5vw;
+    left: -3.6vw;
+    bottom: -0.45vw;
+  }
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox .switchBtn:after {
+    width: 13.5vw;
+    height: 2.5vw;
+    bottom: -2.475vw;
+    left: -1.575vw;
+  }
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox .switchBtn.clicked {
+    left: -1.5vw;
+    bottom: -0.5625vw;
+  }
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox .switchBtn.clicked:before {
+    height: 2.1vw;
+    left: -3.375vw;
+    bottom: 0.225vw;
+  }
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn .switchBtnBox .switchBtn.clicked:after {
+    height: 2vw;
+    bottom: -1.8vw;
+    left: -1.125vw;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav {
+    top: -50%;
+    left: 25%;
+    -webkit-transform: translate(0%, 0);
+            transform: translate(0%, 0);
+    width: 90vw;
+    height: 10vw;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav .owl-prev {
+    width: 100%;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav:before {
+    top: 50%;
+    left: 30%;
+    margin: 0;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-size: 2.5vw;
+    letter-spacing: 1em;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav .owl-next {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 575px) and (min-width: 376px) {
+  .shop-body .shop-main #section1 .container .row #conectionLine .iron_clip1 {
+    display: none;
+=======
   .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter::-webkit-scrollbar-thumb {
     width: 5px;
     background-color: slategrey;
@@ -25368,10 +28240,146 @@ h6 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+>>>>>>> origin/dev
   }
   .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commMain {
     width: 80%;
   }
+<<<<<<< HEAD
+  .shop-body .shop-main #section1 #shopOutsideBox .shopItemContainer {
+    width: 95vw;
+    height: 90vw;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardAside {
+    display: none;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer {
+    width: 100%;
+    padding-left: 0px;
+    padding-top: 100px;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard1 {
+    width: 26vw;
+    height: 14vw;
+    margin: 0 10%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard2 {
+    width: 26vw;
+    height: 14vw;
+    margin: 0 10%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard2_1 {
+    width: 26vw;
+    height: 14vw;
+    margin: 0 10%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCard2_2 {
+    width: 26vw;
+    height: 14vw;
+    margin: 0 10%;
+    border: 0.2vw solid black;
+    background-color: #fff;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .line_top {
+    width: 70%;
+    -webkit-transform: translate(25%, -80%);
+            transform: translate(25%, -80%);
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .line_bottom {
+    -webkit-transform: translate(25%, -10%);
+            transform: translate(25%, -10%);
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard1 {
+    -webkit-transform: translate(50%, -50%) rotate(15deg);
+            transform: translate(50%, -50%) rotate(15deg);
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard1 img {
+    width: 5vw;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard2 img {
+    width: 5vw;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard3 {
+    display: none;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard4 {
+    display: none;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardTopRow .itemCard5 {
+    display: none;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_1 {
+    margin-top: 0px;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_1 img {
+    width: 5vw;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_2 {
+    margin-top: 0px;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_2 img {
+    width: 5vw;
+  }
+  .shop-body .shop-main #section1 #shopOutsideBox .itemCardBox .itemCardContainer .itemCardBottomRow .itemCard2_3 {
+    display: none;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool {
+    width: 90%;
+    margin: 0;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex {
+    width: 100%;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop {
+    width: 70%;
+    margin-left: 30%;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox1 {
+    width: 20%;
+    z-index: 32;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox2 {
+    width: 20%;
+    z-index: 31;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox3 {
+    width: 20%;
+    z-index: 30;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox4 {
+    width: 20%;
+    z-index: 29;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox5 {
+    width: 20%;
+    z-index: 28;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox6 {
+    width: 20%;
+    z-index: 33;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox7 {
+    width: 20%;
+    z-index: 32;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox8 {
+    width: 20%;
+    z-index: 31;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox9 {
+    width: 20%;
+    z-index: 30;
+  }
+  .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox10 {
+    width: 20%;
+    z-index: 29;
+=======
   .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commMain .cav-commHead {
     margin-bottom: 5px;
   }
@@ -25801,6 +28809,7 @@ h6 {
     left: 86%;
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
+>>>>>>> origin/dev
   }
   78% {
     bottom: -30%;
@@ -25850,6 +28859,36 @@ h6 {
     left: 86%;
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
+  }
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns .orderBtnBoxGroup {
+    width: 25%;
+    margin: 0% 0% 0% 0%;
+  }
+  .shop-body .shop-main #section2 .customizeArea .drawingBoardBox #btns #emptyBtn {
+    display: none;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav {
+    top: -70%;
+    left: 40%;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    width: 80vw;
+    height: 15vw;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav .owl-prev {
+    width: 100%;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav:before {
+    top: 50%;
+    left: 30%;
+    margin: 0;
+    -webkit-transform: translate(-40%, -50%);
+            transform: translate(-40%, -50%);
+    font-size: 4vw;
+    letter-spacing: 1em;
+  }
+  .shop-body .shop-main #section3 .owl-carousel .owl-nav .owl-next {
+    width: 100%;
   }
 }
 
@@ -26326,7 +29365,11 @@ h6 {
   width: 50%;
   height: 400px;
   opacity: .8;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
 }
 
 .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon .userSetting_wrap .userSetting_Name, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon .userSetting_wrap .userSetting_work, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon .userSetting_wrap .userSetting_portfolio {
@@ -26356,7 +29399,11 @@ h6 {
   background: radial-gradient(rgba(255, 255, 255, 0.5) 30%, white 20%);
   -webkit-animation: rightLight 80s infinite linear;
           animation: rightLight 80s infinite linear;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26373,7 +29420,11 @@ h6 {
 =======
 .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard .userSetting_wrap {
   padding-top: 10px;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   width: 50%;
   height: 400px;
   opacity: .8;
@@ -26427,7 +29478,11 @@ h6 {
   left: 0px;
   bottom: 0;
   z-index: 8;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
 }
 
 .userSetting_body .userSetting_main .floor .userSetting_adm .paperPlane {
@@ -26563,7 +29618,11 @@ h6 {
   height: 640px;
   margin-top: 68px;
   padding-left: 40px;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   position: relative;
   overflow: hidden;
   margin-bottom: -5px;
@@ -26714,7 +29773,11 @@ h6 {
   padding: 0 20px;
   padding: 20px;
   position: relative;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
 }
 
 .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageImg {
@@ -26892,7 +29955,11 @@ h6 {
     right: -53px;
     top: -30px;
     height: 758px;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   }
   .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour img,
   .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_1 img,
@@ -27190,6 +30257,137 @@ h6 {
     width: 18vw;
     height: 18vw;
     margin: 1.3%;
+  }
+  .cav-main .cav-myItem {
+    display: inline-block;
+    height: auto;
+  }
+  .cav-main .cav-myItem .cav-leftWrap {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .cav-main .cav-rightWrap {
+    display: inline-block;
+    width: 70%;
+    margin-top: 100px;
+    margin-left: 15%;
+  }
+  .cav-main .cav-rightWrap .cav-tabWrap {
+    top: 55px;
+  }
+  .cav-main .cav-rightWrap .cav-tabWrap .cav-prod {
+    width: 18vw;
+    height: 18vw;
+    margin: 2%;
+  }
+  .cav-main .cav-rightWrap .cav-tabWrap .cav-addProd {
+    width: 18vw;
+    height: 18vw;
+    margin: 2%;
+  }
+}
+
+@media all and (max-width: 575px) and (min-width: 376px) {
+  .cav-main {
+    width: 100%;
+  }
+  .cav-main .cav-boxImg > img {
+    height: 100%;
+  }
+  .cav-main .cav-prod {
+    width: 30vw;
+    height: 30vw;
+    margin: 1%;
+  }
+  .cav-main .cav-myItem {
+    display: inline-block;
+    height: auto;
+  }
+  .cav-main .cav-myItem .cav-leftWrap {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .cav-main .cav-rightWrap {
+    display: inline-block;
+    width: 80%;
+    margin-top: 100px;
+    margin-left: 10%;
+  }
+  .cav-main .cav-rightWrap .cav-tabWrap {
+    top: 55px;
+  }
+  .cav-main .cav-rightWrap .cav-tabWrap .cav-prod {
+    width: 20vw;
+    height: 20vw;
+    margin: 2%;
+  }
+  .cav-main .cav-rightWrap .cav-tabWrap .cav-addProd {
+    width: 20vw;
+    height: 20vw;
+    margin: 2%;
+  }
+}
+
+@media all and (max-width: 375px) {
+  .cav-main {
+    width: 100%;
+  }
+  .cav-main .cav-boxImg > img {
+    height: 100%;
+  }
+  .cav-main .cav-prod {
+    width: 30vw;
+    height: 30vw;
+    margin: 1%;
+  }
+  .cav-main .cav-myItem {
+    display: inline-block;
+    height: auto;
+  }
+  .cav-main .cav-myItem .cav-leftWrap {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .cav-main .cav-rightWrap {
+    display: inline-block;
+    width: 80%;
+    margin-top: 100px;
+    margin-left: 10%;
+  }
+  .cav-main .cav-rightWrap .cav-tabWrap {
+    top: 55px;
+  }
+  .cav-main .cav-rightWrap .cav-tabWrap .cav-prod {
+    width: 20vw;
+    height: 20vw;
+    margin: 2%;
+  }
+  .cav-main .cav-rightWrap .cav-tabWrap .cav-addProd {
+    width: 20vw;
+    height: 20vw;
+    margin: 2%;
+  }
+<<<<<<< HEAD
+  .cav-main .cav-prod {
+    width: 18vw;
+    height: 18vw;
+    margin: 1.3%;
+=======
+}
+
+.userSetting_body {
+  width: 100%;
+  font-size: 0;
+  background: radial-gradient(#82afd9 30%, white 20%);
+  background-size: 20px 20px;
+  -webkit-animation: sky 140s infinite linear;
+          animation: sky 140s infinite linear;
+}
+
+@-webkit-keyframes sky {
+  0% {
+    background-position: 0 0;
+>>>>>>> home_chunyu
 =======
   .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageImg {
     position: absolute;
@@ -27268,7 +30466,10 @@ h6 {
     width: 60px;
     border-radius: 50px;
     background-color: #fff;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> home_chunyu
   }
   .chatroom-main .mainSection .sectionOver .sectionMark2, .chatroom-main .mainSection .sectionOver .sectionMark3, .chatroom-main .mainSection .sectionOver .sectionMark4, .chatroom-main .mainSection .sectionOver .sectionMark5, .chatroom-main .mainSection .sectionOver .sectionMark6, .chatroom-main .mainSection .sectionOver .sectionMark7, .chatroom-main .mainSection .sectionOver .sectionMark8, .chatroom-main .mainSection .sectionOver .sectionMark9 {
     width: 117px;
@@ -27288,12 +30489,17 @@ h6 {
     padding: 10px;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   .cav-main .cav-rightWrap .cav-tabWrap {
     top: 55px;
 =======
   .chatroom-main .mainBook .bookDashed {
     padding: 15px 15px;
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+  .chatroom-main .mainBook .bookDashed {
+    padding: 15px 15px;
+>>>>>>> home_chunyu
   }
   .chatroom-main .mainBook .bookDashed .dashPage1 {
     padding: 0;
@@ -27302,6 +30508,7 @@ h6 {
     margin-bottom: -5px;
     margin-top: 150px;
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
   .cav-main .cav-rightWrap .cav-tabWrap .cav-addProd {
     width: 18vw;
@@ -27314,12 +30521,17 @@ h6 {
   .cav-main {
     width: 100%;
 =======
+=======
+>>>>>>> home_chunyu
   .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 {
     padding: 0;
     border-right: none;
     border-left: none;
     margin-bottom: -5px;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> home_chunyu
   }
   .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 {
     padding: 0;
@@ -27327,6 +30539,7 @@ h6 {
     border-left: none;
     margin-bottom: -5px;
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
   .cav-main .cav-prod {
     width: 30vw;
@@ -27365,6 +30578,8 @@ h6 {
 @media all and (max-width: 375px) {
   .cav-main {
 =======
+=======
+>>>>>>> home_chunyu
   .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 {
     padding: 0;
     border-right: none;
@@ -27372,7 +30587,10 @@ h6 {
     margin-bottom: -5px;
   }
   .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 {
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> home_chunyu
     width: 100%;
     width: 100%;
     height: 500px;
@@ -27386,6 +30604,7 @@ h6 {
     right: -50px;
     top: -30px;
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
   .cav-main .cav-prod {
     width: 30vw;
@@ -27434,12 +30653,18 @@ h6 {
   0% {
     background-position: 0 0;
 =======
+=======
+>>>>>>> home_chunyu
   .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent {
     height: 87%;
     overflow-y: scroll;
     padding: 0;
     padding-right: 10%;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   }
   .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour {
     margin-bottom: 15px;
@@ -27454,6 +30679,59 @@ h6 {
     max-width: 180px;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+}
+
+.userSetting_body .userSettingBanner {
+  height: 880px;
+  position: relative;
+  overflow: hidden;
+  font-size: 0;
+}
+
+.userSetting_body .userSettingBanner .picGrass {
+  width: 1920px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.userSetting_body .userSettingBanner .picTree {
+  width: 8%;
+  min-width: 70px;
+  position: absolute;
+  bottom: 45%;
+  left: 20%;
+}
+
+.userSetting_body .userSettingBanner .picTree2 {
+  width: 10%;
+  min-width: 80px;
+  position: absolute;
+  bottom: 35%;
+  left: 5%;
+}
+
+.userSetting_body .userSettingBanner .picTree3 {
+  width: 6%;
+  min-width: 50px;
+  position: absolute;
+  bottom: 55%;
+  right: 5%;
+}
+
+.userSetting_body .userSettingBanner .picFactory {
+  width: 50%;
+  min-width: 370px;
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+>>>>>>> home_chunyu
 }
 
 .userSetting_body .userSetting_main {
@@ -27465,7 +30743,7 @@ h6 {
 }
 
 .userSetting_body .userSetting_main .floor {
-  width: 95%;
+  width: 100%;
   background: radial-gradient(#8b6282 30%, #f8e6e4 20%);
   background-size: 10px 10px;
   overflow: hidden;
@@ -27495,11 +30773,11 @@ h6 {
 }
 
 .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban {
-  padding: 30px;
+  padding: 20px;
   background-color: #39ac72;
   border-radius: 15px;
   width: 50%;
-  min-width: 550px;
+  min-width: 530px;
   max-width: 770px;
   text-align: center;
   position: absolute;
@@ -27516,10 +30794,11 @@ h6 {
 
 .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memData, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .airCoin, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memcolor {
   margin: 10% 0 10px;
-  width: 25%;
+  width: 30%;
   text-align: center;
   display: inline-block;
-  background-image: url(../../img/share/yellow-paint-line.svg);
+  background-image: url(../../img/share/yellow-note.svg);
+  background-repeat: no-repeat;
 }
 
 .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .userSetting_memData, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .userSetting_airCoin, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .userSetting_memcolor {
@@ -27532,12 +30811,15 @@ h6 {
 }
 
 .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .userSetting_memDataTable, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .userSetting_airCoinTable {
-  width: 75%;
+  width: 90%;
   margin: 0 auto;
 }
 
+.userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .userSetting_memData tr, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .userSetting_airCoin tr, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .userSetting_memcolor tr {
+  height: 40px;
+}
+
 .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .userSetting_memData td, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .userSetting_airCoin td, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .userSetting_memcolor td {
-  width: 50%;
   border: 3px solid #39ac72;
 }
 
@@ -27571,11 +30853,13 @@ h6 {
 
 .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .userSetting_memcolor .memcolorSmall {
   border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .userSetting_memcolor .memcolorSmall .memcolorBlack, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .userSetting_memcolor .memcolorSmall .memcolorWhite {
+.userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .userSetting_memcolor .memcolorSmall .memcolorSmall img {
   width: 50%;
-  display: inline-block;
   border: 3px dashed #39ac72;
 }
 
@@ -27617,7 +30901,11 @@ h6 {
   .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_1 img {
     width: 15%;
     min-width: 55px;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   }
   .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_1 p {
     margin: 18% 0 0 0;
@@ -27733,7 +31021,7 @@ h6 {
   background: radial-gradient(rgba(238, 216, 233, 0.9) 30%, white 20%);
   background-size: 1px 40px;
   width: 50%;
-  min-width: 550px;
+  min-width: 530px;
   max-width: 770px;
   text-align: center;
   position: absolute;
@@ -27892,7 +31180,11 @@ h6 {
   .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_2 {
     margin-bottom: 15px;
     margin-left: 0px;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   }
   .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .pageContent .contentYour_2 img {
     width: 15%;
@@ -27973,15 +31265,22 @@ h6 {
   min-width: 900px;
   height: 100%;
   border-top: 10px solid #212121;
-  -webkit-transform: translate(-45%, 0%);
-          transform: translate(-45%, 0%);
-  overflow: hidden;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  overflow: auto;
   position: absolute;
   left: 50%;
   z-index: 5;
 }
 
-.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .mike {
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlow {
+  width: 1000px;
+  height: 250px;
+  overflow: auto;
+  border: 1px solid blue;
+}
+
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlow .mike {
   background-image: url("../../img/userSetting/light_mike.svg");
   margin: 0 1.5% 5%;
   width: 120px;
@@ -27990,7 +31289,7 @@ h6 {
   background-repeat: no-repeat;
 }
 
-.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .mike h3 {
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlow .mike h3 {
   padding-right: 25px;
   -webkit-transform: rotate(-25deg);
           transform: rotate(-25deg);
@@ -27998,7 +31297,7 @@ h6 {
   text-align: center;
 }
 
-.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .spencer {
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlow .spencer {
   background-image: url("../../img/userSetting/light_spencer.svg");
   margin: 0 1.5% 5%;
   width: 120px;
@@ -28007,7 +31306,7 @@ h6 {
   background-repeat: no-repeat;
 }
 
-.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .spencer h3 {
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlow .spencer h3 {
   padding-right: 25px;
   -webkit-transform: rotate(-25deg);
           transform: rotate(-25deg);
@@ -28015,7 +31314,7 @@ h6 {
   text-align: center;
 }
 
-.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .allen {
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlow .allen {
   background-image: url("../../img/userSetting/light_allen.svg");
   margin: 0 1.5% 5%;
   width: 120px;
@@ -28024,14 +31323,14 @@ h6 {
   background-repeat: no-repeat;
 }
 
-.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .allen h3 {
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlow .allen h3 {
   padding-right: 25px;
   color: #ffffff;
   margin-top: 130px;
   text-align: center;
 }
 
-.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .grace {
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlow .grace {
   background-image: url("../../img/userSetting/light_grace.svg");
   margin: 0 1.5% 5%;
   width: 120px;
@@ -28040,13 +31339,13 @@ h6 {
   background-repeat: no-repeat;
 }
 
-.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .grace h3 {
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlow .grace h3 {
   padding-right: 25px;
   margin-top: 130px;
   text-align: center;
 }
 
-.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .sharon {
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlow .sharon {
   background-image: url("../../img/userSetting/light_sharon.svg");
   margin: 0 1.5% 5%;
   width: 120px;
@@ -28055,7 +31354,7 @@ h6 {
   background-repeat: no-repeat;
 }
 
-.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .sharon h3 {
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlow .sharon h3 {
   padding-left: 10px;
   -webkit-transform: rotate(25deg);
           transform: rotate(25deg);
@@ -28063,7 +31362,7 @@ h6 {
   text-align: center;
 }
 
-.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .howard {
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlow .howard {
   background-image: url("../../img/userSetting/light_howard.svg");
   margin: 0 1.5% 5%;
   width: 120px;
@@ -28072,7 +31371,7 @@ h6 {
   background-repeat: no-repeat;
 }
 
-.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .howard h3 {
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlow .howard h3 {
   padding-left: 10px;
   -webkit-transform: rotate(25deg);
           transform: rotate(25deg);
@@ -28084,41 +31383,86 @@ h6 {
   background: radial-gradient(rgba(84, 179, 103, 0.5) 30%, white 20%);
   -webkit-animation: leftLight 80s infinite linear;
           animation: leftLight 80s infinite linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   max-width: 600px;
   background-size: 10px 20px;
+  z-index: 10;
+  position: relative;
   margin: 0 auto;
-  border: .3vw solid #353535;
 }
 
 .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike .userSetting_wrap {
-  padding-top: 30px;
+  padding-top: 10px;
+  width: 50%;
   height: 400px;
   opacity: .8;
+<<<<<<< HEAD
   background-image: url("../../img/userDeveloper/howard.png");
+=======
+>>>>>>> home_chunyu
 =======
 <<<<<<< HEAD
 =======
 .classic-body {
   margin: 0;
   font-family: "Noto Sans TC", sans-serif;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
 }
 
 .classic-body .classicmain {
   margin-top: 10%;
 }
 
+<<<<<<< HEAD
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike .userSetting_picture {
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: .8;
+}
+
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer {
+  background: radial-gradient(rgba(148, 203, 255, 0.5) 30%, white 20%);
+  -webkit-animation: leftLight 80s infinite linear;
+          animation: leftLight 80s infinite linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 600px;
+  background-size: 10px 20px;
+  z-index: 10;
+  position: relative;
+  margin: 0 auto;
+}
+
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer .userSetting_wrap {
+  padding-top: 10px;
+  width: 50%;
+  height: 400px;
+  opacity: .8;
+=======
 .classic-body .classicmain .classicSec {
   width: 90%;
   margin: 0 auto;
 <<<<<<< HEAD
+<<<<<<< HEAD
   border: .3vw solid #353535;
 =======
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> home_chunyu
 }
 
 .classic-body .classicmain .classicSec .classicOver {
   text-align: center;
+>>>>>>> origin/dev
 }
 
 .classic-body .classicmain .classicSec .classicOver .classicImg {
@@ -28126,14 +31470,40 @@ h6 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer .userSetting_picture {
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: .8;
+}
+
+>>>>>>> home_chunyu
 .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen {
   background: radial-gradient(rgba(170, 170, 170, 0.5) 30%, white 20%);
   -webkit-animation: downLight 80s infinite linear;
           animation: downLight 80s infinite linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   max-width: 600px;
   background-size: 10px 20px;
+  z-index: 10;
+  position: relative;
   margin: 0 auto;
+<<<<<<< HEAD
   border: .3vw solid #353535;
+=======
+}
+
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen .userSetting_wrap {
+  padding-top: 10px;
+  width: 50%;
+  height: 400px;
+  opacity: .8;
+>>>>>>> home_chunyu
 =======
 .classic-body .classicmain .classicSec .moodStyle {
   padding: 0 1.2%;
@@ -28143,7 +31513,10 @@ h6 {
   position: absolute;
   left: 40.5%;
   top: 78%;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> home_chunyu
 }
 
 .classic-body .classicmain .classicSec .moodStyle p {
@@ -28152,6 +31525,7 @@ h6 {
   -webkit-writing-mode: vertical-lr;
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;
+>>>>>>> origin/dev
 }
 
 .classic-body .classicmain .classicSec .moodStyle:hover {
@@ -28160,14 +31534,40 @@ h6 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen .userSetting_picture {
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: .8;
+}
+
+>>>>>>> home_chunyu
 .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace {
   background: radial-gradient(rgba(255, 224, 124, 0.5) 30%, white 20%);
   -webkit-animation: downLight 80s infinite linear;
           animation: downLight 80s infinite linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   max-width: 600px;
   background-size: 10px 20px;
+  z-index: 10;
+  position: relative;
   margin: 0 auto;
+<<<<<<< HEAD
   border: .3vw solid #353535;
+=======
+}
+
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace .userSetting_wrap {
+  padding-top: 10px;
+  width: 50%;
+  height: 400px;
+  opacity: .8;
+>>>>>>> home_chunyu
 =======
 .classic-body .classicmain .classicSec .brokeStyle {
   padding: 0 1.2%;
@@ -28177,7 +31577,10 @@ h6 {
   position: absolute;
   left: 48%;
   top: 78%;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> home_chunyu
 }
 
 .classic-body .classicmain .classicSec .brokeStyle p {
@@ -28186,6 +31589,7 @@ h6 {
   -webkit-writing-mode: vertical-lr;
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;
+>>>>>>> origin/dev
 }
 
 .classic-body .classicmain .classicSec .brokeStyle:hover {
@@ -28194,14 +31598,40 @@ h6 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace .userSetting_picture {
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: .8;
+}
+
+>>>>>>> home_chunyu
 .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon {
   background: radial-gradient(rgba(255, 180, 199, 0.5) 30%, white 20%);
   -webkit-animation: rightLight 80s infinite linear;
           animation: rightLight 80s infinite linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   max-width: 600px;
   background-size: 10px 20px;
+  z-index: 10;
+  position: relative;
   margin: 0 auto;
+<<<<<<< HEAD
   border: .3vw solid #353535;
+=======
+}
+
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon .userSetting_wrap {
+  padding-top: 10px;
+  width: 50%;
+  height: 400px;
+  opacity: .8;
+>>>>>>> home_chunyu
 =======
 .classic-body .classicmain .classicSec .happyStyle {
   padding: 0 1.2%;
@@ -28211,7 +31641,10 @@ h6 {
   position: absolute;
   left: 55.2%;
   top: 78%;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> home_chunyu
 }
 
 .classic-body .classicmain .classicSec .happyStyle p {
@@ -28220,6 +31653,7 @@ h6 {
   -webkit-writing-mode: vertical-lr;
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;
+>>>>>>> origin/dev
 }
 
 .classic-body .classicmain .classicSec .happyStyle:hover {
@@ -28228,22 +31662,52 @@ h6 {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon .userSetting_picture {
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: .8;
+}
+
+>>>>>>> home_chunyu
 .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard {
   background: radial-gradient(rgba(255, 255, 255, 0.5) 30%, white 20%);
   -webkit-animation: rightLight 80s infinite linear;
           animation: rightLight 80s infinite linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   max-width: 600px;
   background-size: 10px 20px;
+  z-index: 10;
+  position: relative;
   margin: 0 auto;
+<<<<<<< HEAD
   border: .3vw solid #353535;
 =======
 .classic-body .classicmain .classicSec .styleClear {
   clear: both;
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+}
+
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard .userSetting_wrap {
+  padding-top: 10px;
+  width: 50%;
+  height: 400px;
+  opacity: .8;
+=======
+.classic-body .classicmain .classicSec .styleClear {
+  clear: both;
+>>>>>>> home_chunyu
 }
 
 .classic-body .classicmain .classicArt {
   margin-top: 10%;
+>>>>>>> origin/dev
 }
 
 .classic-body .classicmain .classicArt .classicDay {
@@ -28251,9 +31715,27 @@ h6 {
   background-color: #f08b8c;
 }
 
+<<<<<<< HEAD
+.userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard .userSetting_picture {
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: .8;
+}
+
+.userSetting_body .userSetting_main .floor .userSetting_adm .robotB3 {
+  width: 30%;
+  max-height: 600px;
+  position: absolute;
+  left: 0px;
+  bottom: 0;
+  z-index: 8;
+=======
 .classic-body .classicmain .classicArt .classicDay .day p {
   margin: 0;
   color: #fff;
+>>>>>>> origin/dev
 }
 
 .classic-body .classicmain .classicArt .classicWeek {
@@ -28261,9 +31743,98 @@ h6 {
   background-color: #82afd9;
 }
 
+<<<<<<< HEAD
+@media all and (max-width: 575px) and (min-width: 376px) {
+  .userSetting_body .userSetting_main .floor .userSetting_mem h2 {
+    width: 100%;
+    height: 100px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 10%);
+            transform: translate(-50%, 10%);
+    font-size: 3.75rem;
+  }
+  .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban {
+    width: 100%;
+    min-width: 350px;
+  }
+  .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memData, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .airCoin, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memcolor {
+    width: 75px;
+  }
+  .userSetting_body .userSetting_main .floor .userSetting_sys h2 {
+    width: 100%;
+    height: 100px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 10%);
+            transform: translate(-50%, 10%);
+    font-size: 3.75rem;
+  }
+  .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban {
+    width: 100%;
+    min-width: 350px;
+  }
+  .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .manu, .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .ver {
+    width: 75px;
+  }
+  .userSetting_body .userSetting_main .floor .userSetting_adm h2 {
+    width: 100%;
+    height: 100px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 10%);
+            transform: translate(-50%, 10%);
+    font-size: 3.75rem;
+  }
+  .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard {
+    max-width: 420px;
+  }
+}
+
+@media all and (max-width: 375px) {
+  .userSetting_body .userSetting_main .floor .userSetting_mem h2 {
+    width: 100%;
+    height: 85px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 10%);
+            transform: translate(-50%, 10%);
+    font-size: 3rem;
+  }
+  .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban {
+    width: 100%;
+    min-width: 350px;
+  }
+  .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memData, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .airCoin, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memcolor {
+    width: 75px;
+  }
+  .userSetting_body .userSetting_main .floor .userSetting_sys h2 {
+    width: 100%;
+    height: 85px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 10%);
+            transform: translate(-50%, 10%);
+    font-size: 3rem;
+  }
+  .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban {
+    width: 100%;
+    min-width: 350px;
+  }
+  .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .manu, .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .ver {
+    width: 75px;
+  }
+  .userSetting_body .userSetting_main .floor .userSetting_adm h2 {
+    width: 100%;
+    height: 85px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 10%);
+            transform: translate(-50%, 10%);
+    font-size: 3rem;
+  }
+  .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard {
+    max-width: 350px;
+  }
+=======
 .classic-body .classicmain .classicArt .classicWeek .week p {
   margin: 0;
   color: #fff;
+>>>>>>> origin/dev
 }
 
 .classic-body .classicmain .classicArt .classicWeek .week img {
@@ -29071,7 +32642,11 @@ header {
       content: ""; }
 =======
   color: #fff;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
 }
 
 .classic-body .classicmain .classicArt .classicYer {
@@ -29147,7 +32722,11 @@ header {
 
 .classic-body .classicLetter .letterOver .cav-letterBg .cav-letImg img {
   width: 100%;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
 }
 
 .classic-body .classicLetter .letterOver .cav-letterBg hr {
@@ -29189,7 +32768,11 @@ header {
 }
 
 .classic-body .classicLetter .letterOver .cav-letterBg .cav-letNavbar .cav-letNavOption img {
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   width: 100%;
   cursor: pointer;
 }
@@ -29296,7 +32879,11 @@ header {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin: 0 auto;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
 }
 
 >>>>>>> 5f9b3073c2c2d04746aa4f85c80690fa3f57cd02
@@ -29339,7 +32926,11 @@ header .white-space-bg .head-box {
 header .white-space-bg .head-box .bottom-bg {
   width: 80%;
   height: 20vw;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
 }
 
 header .white-space-bg .head-box .bottom-bg .clip-left {
@@ -29367,7 +32958,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg {
   top: 10px;
   left: -15px;
   height: 15vw;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
 }
 
 header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
@@ -29444,7 +33039,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
           justify-content: flex-end;
   position: fixed;
   margin: 0 auto;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
 }
 
 .nav-body .nav-hamPosition .nav-hamburgerWrap {
@@ -29796,7 +33395,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
   0% {
     -webkit-transform: translateY(0) rotate(0);
             transform: translateY(0) rotate(0);
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   }
   50% {
     -webkit-transform: translateY(15px) rotate(0);
@@ -29842,7 +33445,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
   100% {
     -webkit-transform: translateY(-15px) rotate(135deg);
             transform: translateY(-15px) rotate(135deg);
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   }
   .chatroom-main .mainBook .bookDashed .dashPage1 .dashPage2 .dashPage3 .dashPage4 .dashPage5 .contentSend .sendText {
     width: calc(100% - 45px);
@@ -30087,7 +33694,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
   100% {
     -webkit-transform: translateY(0) rotate(0);
             transform: translateY(0) rotate(0);
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   }
 }
 
@@ -30285,7 +33896,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -30303,7 +33918,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
 =======
 .nav-navBg .nav-navWrap .nav-navPageWrap ul li a {
 >>>>>>> 5f9b3073c2c2d04746aa4f85c80690fa3f57cd02
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   color: #333;
   text-decoration: none;
   font-size: 24px;
@@ -30332,7 +33951,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
 .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list li a > p:hover + .nav-circle-5,
 .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list li a > p:hover + .nav-circle-6 {
 =======
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
 .nav-navBg .nav-navWrap .nav-navPageWrap ul li a > p {
   white-space: nowrap;
 }
@@ -30350,7 +33973,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
 <<<<<<< HEAD
 =======
 >>>>>>> 5f9b3073c2c2d04746aa4f85c80690fa3f57cd02
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   background-color: #f3de6b;
   background-image: url(../../img/share/nav-paper-plane.png);
   background-position: center;
@@ -30368,7 +33995,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
 .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list li a .nav-circle-5,
 .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list li a .nav-circle-6 {
 =======
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
 .nav-navBg .nav-navWrap .nav-navPageWrap ul li a .nav-circle-1,
 .nav-navBg .nav-navWrap .nav-navPageWrap ul li a .nav-circle-2,
 .nav-navBg .nav-navWrap .nav-navPageWrap ul li a .nav-circle-3,
@@ -30378,7 +34009,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
 <<<<<<< HEAD
 =======
 >>>>>>> 5f9b3073c2c2d04746aa4f85c80690fa3f57cd02
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   border: 2px solid #212121;
   display: inline-block;
   height: 60px;
@@ -30399,7 +34034,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
 .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list li a .nav-circle-5:hover,
 .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list li a .nav-circle-6:hover {
 =======
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
 .nav-navBg .nav-navWrap .nav-navPageWrap ul li a .nav-circle-1:hover,
 .nav-navBg .nav-navWrap .nav-navPageWrap ul li a .nav-circle-2:hover,
 .nav-navBg .nav-navWrap .nav-navPageWrap ul li a .nav-circle-3:hover,
@@ -30409,7 +34048,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
 <<<<<<< HEAD
 =======
 >>>>>>> 5f9b3073c2c2d04746aa4f85c80690fa3f57cd02
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   background-color: #f3de6b;
   background-image: url(../../img/share/nav-paper-plane.png);
   background-position: center;
@@ -30422,7 +34065,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
 <<<<<<< HEAD
 .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list li a .nav-now {
 =======
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
 .nav-navBg .nav-navWrap .nav-navPageWrap ul li a .nav-circle-1:hover + p,
 .nav-navBg .nav-navWrap .nav-navPageWrap ul li a .nav-circle-2:hover + p,
 .nav-navBg .nav-navWrap .nav-navPageWrap ul li a .nav-circle-3:hover + p,
@@ -30436,7 +34083,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
 <<<<<<< HEAD
 =======
 >>>>>>> 5f9b3073c2c2d04746aa4f85c80690fa3f57cd02
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   background-color: #f3de6b;
   background-image: url(../../img/share/nav-paper-plane.png);
   background-position: center;
@@ -30486,7 +34137,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
 =======
 .nav-navBg .nav-navWrap .nav-navPageWrap .nav-road {
 >>>>>>> 5f9b3073c2c2d04746aa4f85c80690fa3f57cd02
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   width: 70%;
   height: 25px;
   z-index: 95;
@@ -30504,7 +34159,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
 =======
 .nav-navBg .nav-navWrap .nav-navPageWrap .nav-road > div {
 >>>>>>> 5f9b3073c2c2d04746aa4f85c80690fa3f57cd02
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   border: 6px dashed #426e96;
   width: 100%;
   background-color: #f3de6b;
@@ -30523,7 +34182,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
 =======
 .nav-navBg .nav-navWrap .nav-navPageWrap .nav-road > div .nav-circle:hover {
 >>>>>>> 5f9b3073c2c2d04746aa4f85c80690fa3f57cd02
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   background-color: yellow;
   background-image: url(../../img/share/nav-paper-plane.png);
   background-position: center;
@@ -30549,7 +34212,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
 
 .nav-navBgWrap .nav-navBg .nav-littleNav > a > i {
 =======
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
 .nav-navBg .nav-littleNav {
   position: absolute;
   top: 36%;
@@ -30561,7 +34228,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
 <<<<<<< HEAD
 =======
 >>>>>>> 5f9b3073c2c2d04746aa4f85c80690fa3f57cd02
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
   font-size: 24px;
   color: #aaa;
   cursor: pointer;
@@ -30660,7 +34331,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
     display: none;
   }
 =======
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
 .nav-navBg .nav-littleNav > a > i:hover {
   color: #DC5453;
 }
@@ -30674,7 +34349,11 @@ header .white-space-bg .head-box .bottom-bg .top-left-bg .headpg-name {
 <<<<<<< HEAD
 =======
 >>>>>>> 5f9b3073c2c2d04746aa4f85c80690fa3f57cd02
+<<<<<<< HEAD
 >>>>>>> b79b941e29f4239dfaf5129d2e94eb1b066e93c8
+=======
+>>>>>>> origin/dev
+>>>>>>> home_chunyu
 }
 >>>>>>> dev
 
