@@ -1620,7 +1620,6 @@ table {
  */
 .home_body {
   margin: 0 auto;
-  overflow-x: hidden;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 0;
@@ -1629,14 +1628,7 @@ table {
 .home_body .home_first {
   width: 100%;
   height: 800px;
-}
-
-.home_body .home_first .p-canvas-webgl {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  overflow: hidden;
 }
 
 .home_body .home_skyPoint {
@@ -1668,6 +1660,7 @@ table {
 }
 
 .home_body .home_skyPoint .home_space {
+  opacity: 0.9;
   width: 100%;
   height: 100px;
   background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, rgba(195, 215, 233, 0)), to(transparent)) center center/100% 100%, #eeeeee;
@@ -3024,7 +3017,6 @@ table {
 .home_body .home_chat .chatBox .chat_R {
   width: 55%;
   height: 100%;
-  border: 1px solid palegreen;
   position: relative;
 }
 
@@ -3603,451 +3595,229 @@ table {
 
 @-webkit-keyframes topani {
   1% {
-<<<<<<< HEAD
-    stroke-width: 98px;
+    stroke-width: 29px;
   }
   9% {
-    stroke-width: 26px;
+    stroke-width: 163px;
   }
-  14% {
-    stroke-width: 198px;
-  }
-  16% {
-    stroke-width: 155px;
+  15% {
+    stroke-width: 73px;
   }
   23% {
-    stroke-width: 193px;
+    stroke-width: 15px;
   }
   28% {
-    stroke-width: 149px;
+    stroke-width: 193px;
   }
-  34% {
-    stroke-width: 178px;
+  31% {
+    stroke-width: 176px;
   }
-  36% {
+  38% {
     stroke-width: 64px;
   }
-  44% {
-    stroke-width: 129px;
-  }
-  46% {
-    stroke-width: 130px;
+  47% {
+    stroke-width: 121px;
   }
   53% {
-    stroke-width: 34px;
-  }
-  55% {
-    stroke-width: 187px;
-  }
-  60% {
-    stroke-width: 135px;
-  }
-  66% {
-    stroke-width: 143px;
-  }
-  71% {
-    stroke-width: 65px;
-  }
-  76% {
-    stroke-width: 173px;
-  }
-  81% {
-    stroke-width: 82px;
-  }
-  87% {
-    stroke-width: 35px;
-  }
-  90% {
-    stroke-width: 69px;
-  }
-  97% {
-    stroke-width: 23px;
-=======
-    stroke-width: 188px;
-  }
-  6% {
-    stroke-width: 44px;
-  }
-  17% {
-    stroke-width: 42px;
-  }
-  19% {
-    stroke-width: 27px;
-  }
-  24% {
-    stroke-width: 129px;
-  }
-  33% {
-    stroke-width: 96px;
-  }
-  39% {
-    stroke-width: 95px;
-  }
-  45% {
-    stroke-width: 6px;
-  }
-  48% {
-    stroke-width: 187px;
+    stroke-width: 149px;
   }
   57% {
-    stroke-width: 5px;
+    stroke-width: 34px;
   }
   62% {
-    stroke-width: 140px;
+    stroke-width: 62px;
   }
   68% {
-    stroke-width: 151px;
+    stroke-width: 31px;
   }
-  75% {
-    stroke-width: 35px;
+  76% {
+    stroke-width: 181px;
   }
   83% {
-    stroke-width: 99px;
+    stroke-width: 120px;
   }
-  86% {
-    stroke-width: 155px;
+  84% {
+    stroke-width: 63px;
   }
-  94% {
-    stroke-width: 148px;
->>>>>>> dev
+  95% {
+    stroke-width: 62px;
+  }
+  100% {
+    stroke-width: 33px;
+  }
+  103% {
+    stroke-width: 89px;
   }
 }
 
 @keyframes topani {
   1% {
-<<<<<<< HEAD
-    stroke-width: 98px;
+    stroke-width: 29px;
   }
   9% {
-    stroke-width: 26px;
+    stroke-width: 163px;
   }
-  14% {
-    stroke-width: 198px;
-  }
-  16% {
-    stroke-width: 155px;
+  15% {
+    stroke-width: 73px;
   }
   23% {
-    stroke-width: 193px;
+    stroke-width: 15px;
   }
   28% {
-    stroke-width: 149px;
+    stroke-width: 193px;
   }
-  34% {
-    stroke-width: 178px;
+  31% {
+    stroke-width: 176px;
   }
-  36% {
+  38% {
     stroke-width: 64px;
   }
-  44% {
-    stroke-width: 129px;
-  }
-  46% {
-    stroke-width: 130px;
+  47% {
+    stroke-width: 121px;
   }
   53% {
-    stroke-width: 34px;
-  }
-  55% {
-    stroke-width: 187px;
-  }
-  60% {
-    stroke-width: 135px;
-  }
-  66% {
-    stroke-width: 143px;
-  }
-  71% {
-    stroke-width: 65px;
-  }
-  76% {
-    stroke-width: 173px;
-  }
-  81% {
-    stroke-width: 82px;
-  }
-  87% {
-    stroke-width: 35px;
-  }
-  90% {
-    stroke-width: 69px;
-  }
-  97% {
-    stroke-width: 23px;
-=======
-    stroke-width: 188px;
-  }
-  6% {
-    stroke-width: 44px;
-  }
-  17% {
-    stroke-width: 42px;
-  }
-  19% {
-    stroke-width: 27px;
-  }
-  24% {
-    stroke-width: 129px;
-  }
-  33% {
-    stroke-width: 96px;
-  }
-  39% {
-    stroke-width: 95px;
-  }
-  45% {
-    stroke-width: 6px;
-  }
-  48% {
-    stroke-width: 187px;
+    stroke-width: 149px;
   }
   57% {
-    stroke-width: 5px;
+    stroke-width: 34px;
   }
   62% {
-    stroke-width: 140px;
+    stroke-width: 62px;
   }
   68% {
-    stroke-width: 151px;
+    stroke-width: 31px;
   }
-  75% {
-    stroke-width: 35px;
+  76% {
+    stroke-width: 181px;
   }
   83% {
-    stroke-width: 99px;
+    stroke-width: 120px;
   }
-  86% {
-    stroke-width: 155px;
+  84% {
+    stroke-width: 63px;
   }
-  94% {
-    stroke-width: 148px;
->>>>>>> dev
+  95% {
+    stroke-width: 62px;
+  }
+  100% {
+    stroke-width: 33px;
+  }
+  103% {
+    stroke-width: 89px;
   }
 }
 
 @-webkit-keyframes botani {
-<<<<<<< HEAD
-  2% {
-    stroke-width: 190px;
-  }
-  9% {
-    stroke-width: 48px;
-  }
-  10% {
+  4% {
     stroke-width: 9px;
   }
-  15% {
-    stroke-width: 31px;
-  }
-  22% {
-    stroke-width: 46px;
-  }
-  28% {
-    stroke-width: 78px;
-  }
-  31% {
-    stroke-width: 133px;
-  }
-  36% {
-    stroke-width: 181px;
-  }
-  44% {
-    stroke-width: 145px;
-  }
-  47% {
-    stroke-width: 136px;
-  }
-  53% {
-    stroke-width: 125px;
-  }
-  57% {
-    stroke-width: 153px;
-  }
-  63% {
-    stroke-width: 80px;
-  }
-  67% {
-    stroke-width: 58px;
-  }
-  73% {
-    stroke-width: 39px;
-  }
-  75% {
-    stroke-width: 177px;
-  }
-  81% {
-    stroke-width: 62px;
-  }
-  86% {
-    stroke-width: 8px;
-  }
-  90% {
-    stroke-width: 105px;
-  }
-  96% {
-    stroke-width: 85px;
-=======
-  1% {
-    stroke-width: 168px;
-  }
-  6% {
-    stroke-width: 35px;
+  8% {
+    stroke-width: 24px;
   }
   12% {
-    stroke-width: 81px;
+    stroke-width: 198px;
   }
-  19% {
-    stroke-width: 99px;
+  18% {
+    stroke-width: 197px;
   }
-  26% {
-    stroke-width: 22px;
+  24% {
+    stroke-width: 36px;
   }
   33% {
-    stroke-width: 181px;
+    stroke-width: 182px;
   }
-  41% {
-    stroke-width: 185px;
+  38% {
+    stroke-width: 39px;
   }
-  44% {
-    stroke-width: 171px;
+  45% {
+    stroke-width: 20px;
   }
-  53% {
-    stroke-width: 146px;
+  52% {
+    stroke-width: 119px;
   }
   56% {
-    stroke-width: 194px;
+    stroke-width: 184px;
   }
   60% {
-    stroke-width: 162px;
+    stroke-width: 177px;
   }
-  71% {
-    stroke-width: 57px;
+  67% {
+    stroke-width: 72px;
   }
   76% {
-    stroke-width: 199px;
+    stroke-width: 124px;
   }
-  79% {
-    stroke-width: 166px;
+  81% {
+    stroke-width: 157px;
   }
   88% {
-    stroke-width: 80px;
+    stroke-width: 132px;
   }
-  92% {
-    stroke-width: 163px;
->>>>>>> dev
+  95% {
+    stroke-width: 91px;
+  }
+  101% {
+    stroke-width: 45px;
+  }
+  105% {
+    stroke-width: 98px;
   }
 }
 
 @keyframes botani {
-<<<<<<< HEAD
-  2% {
-    stroke-width: 190px;
-  }
-  9% {
-    stroke-width: 48px;
-  }
-  10% {
+  4% {
     stroke-width: 9px;
   }
-  15% {
-    stroke-width: 31px;
-  }
-  22% {
-    stroke-width: 46px;
-  }
-  28% {
-    stroke-width: 78px;
-  }
-  31% {
-    stroke-width: 133px;
-  }
-  36% {
-    stroke-width: 181px;
-  }
-  44% {
-    stroke-width: 145px;
-  }
-  47% {
-    stroke-width: 136px;
-  }
-  53% {
-    stroke-width: 125px;
-  }
-  57% {
-    stroke-width: 153px;
-  }
-  63% {
-    stroke-width: 80px;
-  }
-  67% {
-    stroke-width: 58px;
-  }
-  73% {
-    stroke-width: 39px;
-  }
-  75% {
-    stroke-width: 177px;
-  }
-  81% {
-    stroke-width: 62px;
-  }
-  86% {
-    stroke-width: 8px;
-  }
-  90% {
-    stroke-width: 105px;
-  }
-  96% {
-    stroke-width: 85px;
-=======
-  1% {
-    stroke-width: 168px;
-  }
-  6% {
-    stroke-width: 35px;
+  8% {
+    stroke-width: 24px;
   }
   12% {
-    stroke-width: 81px;
+    stroke-width: 198px;
   }
-  19% {
-    stroke-width: 99px;
+  18% {
+    stroke-width: 197px;
   }
-  26% {
-    stroke-width: 22px;
+  24% {
+    stroke-width: 36px;
   }
   33% {
-    stroke-width: 181px;
+    stroke-width: 182px;
   }
-  41% {
-    stroke-width: 185px;
+  38% {
+    stroke-width: 39px;
   }
-  44% {
-    stroke-width: 171px;
+  45% {
+    stroke-width: 20px;
   }
-  53% {
-    stroke-width: 146px;
+  52% {
+    stroke-width: 119px;
   }
   56% {
-    stroke-width: 194px;
+    stroke-width: 184px;
   }
   60% {
-    stroke-width: 162px;
+    stroke-width: 177px;
   }
-  71% {
-    stroke-width: 57px;
+  67% {
+    stroke-width: 72px;
   }
   76% {
-    stroke-width: 199px;
+    stroke-width: 124px;
   }
-  79% {
-    stroke-width: 166px;
+  81% {
+    stroke-width: 157px;
   }
   88% {
-    stroke-width: 80px;
+    stroke-width: 132px;
   }
-  92% {
-    stroke-width: 163px;
->>>>>>> dev
+  95% {
+    stroke-width: 91px;
+  }
+  101% {
+    stroke-width: 45px;
+  }
+  105% {
+    stroke-width: 98px;
   }
 }
 
@@ -4887,8 +4657,24 @@ table {
   cursor: none;
 }
 
+.catchletter-body #threeWorld .missMsg {
+  display: inline-block;
+  width: 5vw;
+  height: 3vw;
+  position: absolute;
+  top: -25%;
+  left: 35%;
+  color: #fff;
+}
+
 .catchletter-body #threeWorld #mouseNet {
   position: absolute;
+  outline: none;
+  -webkit-user-select: none;
+  /* for Chrome */
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
 }
 
 .catchletter-body #threeWorld .active {
@@ -19800,10 +19586,7 @@ h6 {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-<<<<<<< HEAD
   font-family: "Noto Sans TC", sans-serif;
-=======
->>>>>>> dev
 }
 
 .cav-body {
@@ -19818,7 +19601,7 @@ h6 {
 }
 
 .cav-titleBlock {
-  border: 5px solid #212121;
+  border: 0.2vw solid black;
   background-color: #fff;
   width: 45%;
   padding: 2%;
@@ -19847,7 +19630,7 @@ h6 {
 }
 
 .cav-readLetterWrap .cav-boxImg .cav-boxFront {
-  border: 5px solid #212121;
+  border: 0.2vw solid black;
   width: 93.5%;
   height: 90%;
   display: -webkit-box;
@@ -19875,279 +19658,242 @@ h6 {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-<<<<<<< HEAD
-  margin: 3% 0 1% 0;
+  margin: 2% 0 1% 0;
+  max-height: 60%;
 }
 
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn {
-  /*
-        button,
-        input[type="submit"] 
-        */
-  -webkit-transition: background-color 0.175s, -webkit-transform 0.175s;
-  transition: background-color 0.175s, -webkit-transform 0.175s;
-  transition: transform 0.175s, background-color 0.175s;
-  transition: transform 0.175s, background-color 0.175s, -webkit-transform 0.175s;
-  -webkit-transform-origin: top left;
-          transform-origin: top left;
-  display: inline-block;
-  background-color: #00D3D6;
-  border: 3px solid #231F20;
-  padding: 1vw;
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter {
+  border: 1px solid sandybrown;
   position: relative;
-  margin-right: calc(6px);
-  text-decoration: none;
-  font-size: 22px;
-  font-family: monospace;
-  font-weight: bold;
-  color: #231F20;
+  width: 50%;
 }
 
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:after {
-  content: "";
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-color: #00BDBF;
-  position: absolute;
-  bottom: calc(100% + 2px);
-  left: calc(0px - 2px);
-  border: 3px solid #231F20;
-  border-bottom: 0;
-  -webkit-transition: width 0.175s, background-color 0.175s, height 0.175s;
-  transition: width 0.175s, background-color 0.175s, height 0.175s;
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup {
+  width: 88%;
+  margin: -10% 0% 20% 15%;
 }
 
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:before {
-  width: calc(100% + 6px);
-  -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
-  -webkit-transform: skewX(-45deg);
-          transform: skewX(-45deg);
-  border-right-width: 1.5px;
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:after {
-  content: "";
-  height: calc(100% + 4px);
-  top: unset;
-  left: unset;
-  left: calc(100% + 2px);
-  bottom: calc(0px - 2px);
-  border: 3px solid #231F20;
-  border-top-width: 3px;
-  border-left: 0;
-  -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
-  -webkit-transform: skewY(-45deg);
-          transform: skewY(-45deg);
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:hover, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus {
-  -webkit-transform: translate(10px, -10px);
-          transform: translate(10px, -10px);
-  background: #00BDBF;
-  outline: none;
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:hover:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:hover:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus:after {
-  background: #009193;
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:hover:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus:before {
-  height: 10px;
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:hover:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus:after {
-  width: 10px;
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus {
-  outline: none;
-  -webkit-transform: translate(10px, -10px);
-          transform: translate(10px, -10px);
-  background: #DC5453;
-  color: #fff;
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus:after {
-  background: #DC5453;
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus:before {
-  height: 10px;
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus:after {
-  width: 10px;
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.click {
-  outline: none;
-  -webkit-transform: translate(10px, -10px);
-          transform: translate(10px, -10px);
-  background: #DC5453;
-  color: #fff;
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.click:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.click:after {
-  background: #DC5453;
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.click:before {
-  height: 10px;
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.click:after {
-  width: 10px;
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn {
-  height: 50px;
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn {
-  /*
-        button,
-        input[type="submit"] 
-        */
-  -webkit-transition: background-color 0.175s, -webkit-transform 0.175s;
-  transition: background-color 0.175s, -webkit-transform 0.175s;
-  transition: transform 0.175s, background-color 0.175s;
-  transition: transform 0.175s, background-color 0.175s, -webkit-transform 0.175s;
-  -webkit-transform-origin: top left;
-          transform-origin: top left;
-  display: inline-block;
-  background-color: #00D3D6;
-  border: 3px solid #231F20;
-  padding: 1vw;
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox {
   position: relative;
-  margin-right: calc(6px);
-  text-decoration: none;
-  font-size: 22px;
-  font-family: monospace;
-  font-weight: bold;
-  color: #231F20;
 }
 
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:after {
-  content: "";
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-color: #00BDBF;
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn {
+  font-size: 20px;
+  letter-spacing: 0.2em;
+  position: relative;
+  width: 80%;
+  height: 45px;
+  background-color: #ffd139;
+  border: 0.2vw solid black;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 0.3em;
+  cursor: pointer;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  z-index: 1;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn .orderText {
   position: absolute;
-  bottom: calc(100% + 2px);
-  left: calc(0px - 2px);
-  border: 3px solid #231F20;
-  border-bottom: 0;
-  -webkit-transition: width 0.175s, background-color 0.175s, height 0.175s;
-  transition: width 0.175s, background-color 0.175s, height 0.175s;
+  width: 100%;
+  top: 35%;
+  left: 49%;
+  -webkit-transform: translate(-47.5%, -25%);
+          transform: translate(-47.5%, -25%);
+  font-weight: 900;
+  color: #fff;
+  text-shadow: -2px -2px 0 #0f0f0f, -2px -1px 0 #0f0f0f, -2px 0px 0 #0f0f0f, -2px 1px 0 #0f0f0f, -2px 2px 0 #0f0f0f, -1px -2px 0 #0f0f0f, -1px -1px 0 #0f0f0f, -1px 0px 0 #0f0f0f, -1px 1px 0 #0f0f0f, -1px 2px 0 #0f0f0f, 0px -2px 0 #0f0f0f, 0px -1px 0 #0f0f0f, 0px 0px 0 #0f0f0f, 0px 1px 0 #0f0f0f, 0px 2px 0 #0f0f0f, 1px -2px 0 #0f0f0f, 1px -1px 0 #0f0f0f, 1px 0px 0 #0f0f0f, 1px 1px 0 #0f0f0f, 1px 2px 0 #0f0f0f, 2px -2px 0 #0f0f0f, 2px -1px 0 #0f0f0f, 2px 0px 0 #0f0f0f, 2px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  z-index: 3;
 }
 
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:before {
-  width: calc(100% + 6px);
-  -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
-  -webkit-transform: skewX(-45deg);
-          transform: skewX(-45deg);
-  border-right-width: 1.5px;
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:after {
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn:before {
   content: "";
-  height: calc(100% + 4px);
-  top: unset;
-  left: unset;
-  left: calc(100% + 2px);
-  bottom: calc(0px - 2px);
-  border: 3px solid #231F20;
-  border-top-width: 3px;
-  border-left: 0;
-  -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
-  -webkit-transform: skewY(-45deg);
-          transform: skewY(-45deg);
+  position: absolute;
+  width: 40%;
+  height: 45%;
+  left: -26%;
+  bottom: -20%;
+  border-radius: 0.3em;
+  border: 0.2vw solid black;
+  -webkit-transform: rotate(90deg) skew(60deg);
+          transform: rotate(90deg) skew(60deg);
+  background: linear-gradient(40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+  background-size: 7px 7px;
 }
 
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:hover, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus {
-  -webkit-transform: translate(10px, -10px);
-          transform: translate(10px, -10px);
-  background: #00BDBF;
-  outline: none;
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn:after {
+  content: "";
+  position: absolute;
+  position: absolute;
+  width: 40%;
+  height: 45%;
+  left: 85%;
+  bottom: -20%;
+  border-radius: 0.3em;
+  border: 0.2vw solid black;
+  -webkit-transform: rotate(90deg) skew(300deg);
+          transform: rotate(90deg) skew(300deg);
+  background: linear-gradient(40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+  background-size: 7px 7px;
 }
 
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:hover:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:hover:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus:after {
-  background: #009193;
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked {
+  top: 15px;
 }
 
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:hover:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus:before {
-  height: 10px;
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked:before {
+  width: 38%;
+  height: 40%;
+  left: -26%;
+  bottom: 0%;
+  -webkit-transform: rotate(90deg) skew(50deg);
+          transform: rotate(90deg) skew(50deg);
 }
 
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:hover:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus:after {
-  width: 10px;
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked:after {
+  width: 39%;
+  height: 40%;
+  left: 85%;
+  bottom: 0%;
+  -webkit-transform: rotate(90deg) skew(310deg);
+          transform: rotate(90deg) skew(310deg);
 }
 
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus {
-  outline: none;
-  -webkit-transform: translate(10px, -10px);
-          transform: translate(10px, -10px);
-  background: #DC5453;
-  color: #fff;
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtnBottom {
+  position: absolute;
+  width: 95%;
+  height: 40px;
+  left: -8%;
+  top: 90%;
+  border: 0.2vw solid black;
+  background: linear-gradient(-70deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+  background-size: 7px 7px;
+  border-radius: 0.1em;
 }
 
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus:after {
-  background: #DC5453;
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter {
+  border: 1px solid sandybrown;
+  width: 50%;
 }
 
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus:before {
-  height: 10px;
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup {
+  width: 88%;
+  margin: -10% 0% 20% 15%;
 }
 
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus:after {
-  width: 10px;
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox {
+  position: relative;
 }
 
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.click {
-  outline: none;
-  -webkit-transform: translate(10px, -10px);
-          transform: translate(10px, -10px);
-  background: #DC5453;
-  color: #fff;
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.click:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.click:after {
-  background: #DC5453;
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.click:before {
-  height: 10px;
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.click:after {
-  width: 10px;
-}
-
-.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn {
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn {
+  font-size: 20px;
+  letter-spacing: 0.2em;
+  position: relative;
+  width: 80%;
   height: 50px;
-=======
->>>>>>> dev
+  background-color: #ffd139;
+  border: 0.2vw solid black;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 0.3em;
+  cursor: pointer;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  z-index: 1;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn .orderText {
+  position: absolute;
+  width: 100%;
+  top: 35%;
+  left: 49%;
+  -webkit-transform: translate(-47.5%, -25%);
+          transform: translate(-47.5%, -25%);
+  font-weight: 900;
+  color: #fff;
+  text-shadow: -2px -2px 0 #0f0f0f, -2px -1px 0 #0f0f0f, -2px 0px 0 #0f0f0f, -2px 1px 0 #0f0f0f, -2px 2px 0 #0f0f0f, -1px -2px 0 #0f0f0f, -1px -1px 0 #0f0f0f, -1px 0px 0 #0f0f0f, -1px 1px 0 #0f0f0f, -1px 2px 0 #0f0f0f, 0px -2px 0 #0f0f0f, 0px -1px 0 #0f0f0f, 0px 0px 0 #0f0f0f, 0px 1px 0 #0f0f0f, 0px 2px 0 #0f0f0f, 1px -2px 0 #0f0f0f, 1px -1px 0 #0f0f0f, 1px 0px 0 #0f0f0f, 1px 1px 0 #0f0f0f, 1px 2px 0 #0f0f0f, 2px -2px 0 #0f0f0f, 2px -1px 0 #0f0f0f, 2px 0px 0 #0f0f0f, 2px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  z-index: 3;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn:before {
+  content: "";
+  position: absolute;
+  width: 38%;
+  height: 40%;
+  left: -25%;
+  bottom: -25%;
+  border-radius: 0.3em;
+  border: 0.2vw solid black;
+  -webkit-transform: rotate(90deg) skew(60deg);
+          transform: rotate(90deg) skew(60deg);
+  background: linear-gradient(40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+  background-size: 7px 7px;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn:after {
+  content: "";
+  position: absolute;
+  position: absolute;
+  width: 38%;
+  height: 40%;
+  left: 87%;
+  bottom: -5%;
+  border-radius: 0.3em;
+  border: 0.2vw solid black;
+  -webkit-transform: rotate(90deg) skew(300deg);
+          transform: rotate(90deg) skew(300deg);
+  background: linear-gradient(40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+  background-size: 7px 7px;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked {
+  top: 15px;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked:before {
+  width: 38%;
+  height: 40%;
+  left: -25%;
+  bottom: -25%;
+  -webkit-transform: rotate(90deg) skew(50deg);
+          transform: rotate(90deg) skew(50deg);
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked:after {
+  width: 39%;
+  height: 40%;
+  left: 87%;
+  bottom: 3%;
+  -webkit-transform: rotate(90deg) skew(310deg);
+          transform: rotate(90deg) skew(310deg);
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtnBottom {
+  position: absolute;
+  width: 95%;
+  height: 40px;
+  left: -8%;
+  top: 85%;
+  border: 0.2vw solid black;
+  background: linear-gradient(-70deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+  background-size: 7px 7px;
+  border-radius: 0.1em;
 }
 
 .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 {
-  border: 5px solid #212121;
+  border: 0.2vw solid black;
   background-color: #ddd;
   padding: 5px;
-<<<<<<< HEAD
-  height: 91.7%;
-=======
-  height: 97.7%;
->>>>>>> dev
+  height: 87.5%;
 }
 
 .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 {
-  border: 5px solid #212121;
+  border: 0.2vw solid black;
   background-color: #4a7570;
   padding: 10px;
   height: 100%;
@@ -20167,7 +19913,7 @@ h6 {
 }
 
 .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters {
-  border: 5px solid #212121;
+  border: 0.2vw solid black;
   height: 100px;
   margin: 0 auto 10px;
   padding: 3%;
@@ -20223,7 +19969,7 @@ h6 {
 }
 
 .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight {
-  border: 5px solid #212121;
+  border: 0.2vw solid black;
   display: inline-block;
   width: 57%;
   background-color: #ddd;
@@ -20231,7 +19977,7 @@ h6 {
 }
 
 .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack {
-  border: 5px solid #212121;
+  border: 0.2vw solid black;
   height: 100%;
   background-color: #4a7570;
 }
@@ -20354,7 +20100,7 @@ h6 {
 }
 
 .cav-myItem .cav-leftWrap {
-  border: 5px solid #212121;
+  border: 0.2vw solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20395,7 +20141,7 @@ h6 {
 }
 
 .cav-myItem .cav-leftWrap .cav-leftBMWrap .cav-leftBlockBM > li {
-  border: 5px solid #212121;
+  border: 0.2vw solid black;
   width: 50%;
   text-align: center;
   background-color: #445394;
@@ -20445,7 +20191,7 @@ h6 {
 }
 
 .cav-myItem .cav-leftWrap .cav-tabWrap .cav-prodWrap {
-  border: 5px solid #212121;
+  border: 0.2vw solid black;
   width: 100%;
   padding: 10px;
   display: -webkit-box;
@@ -20476,20 +20222,136 @@ h6 {
   /* 按鈕 */
 }
 
-<<<<<<< HEAD
-=======
-.cav-myItem .cav-leftWrap .cav-botBlock .btn-wrapper-center {
-  position: absolute;
-  width: 58px;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+.cav-myItem .cav-leftWrap .cav-botBlock .btn {
+  /*
+        button,
+        input[type="submit"] 
+        */
+  -webkit-transition: background-color 0.175s, -webkit-transform 0.175s;
+  transition: background-color 0.175s, -webkit-transform 0.175s;
+  transition: transform 0.175s, background-color 0.175s;
+  transition: transform 0.175s, background-color 0.175s, -webkit-transform 0.175s;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  display: inline-block;
+  background-color: #00D3D6;
+  border: 3px solid #231F20;
+  padding: 1vw;
+  position: relative;
+  margin-right: calc(6px);
+  text-decoration: none;
+  font-size: 22px;
+  font-family: monospace;
+  font-weight: bold;
+  color: #231F20;
 }
 
->>>>>>> dev
+.cav-myItem .cav-leftWrap .cav-botBlock .btn:before, .cav-myItem .cav-leftWrap .cav-botBlock .btn:after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #00BDBF;
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: calc(0px - 2px);
+  border: 3px solid #231F20;
+  border-bottom: 0;
+  -webkit-transition: width 0.175s, background-color 0.175s, height 0.175s;
+  transition: width 0.175s, background-color 0.175s, height 0.175s;
+}
+
+.cav-myItem .cav-leftWrap .cav-botBlock .btn:before {
+  width: calc(100% + 6px);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transform: skewX(-45deg);
+          transform: skewX(-45deg);
+  border-right-width: 1.5px;
+}
+
+.cav-myItem .cav-leftWrap .cav-botBlock .btn:after {
+  content: "";
+  height: calc(100% + 4px);
+  top: unset;
+  left: unset;
+  left: calc(100% + 2px);
+  bottom: calc(0px - 2px);
+  border: 3px solid #231F20;
+  border-top-width: 3px;
+  border-left: 0;
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transform: skewY(-45deg);
+          transform: skewY(-45deg);
+}
+
+.cav-myItem .cav-leftWrap .cav-botBlock .btn:hover, .cav-myItem .cav-leftWrap .cav-botBlock .btn:active, .cav-myItem .cav-leftWrap .cav-botBlock .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-myItem .cav-leftWrap .cav-botBlock .btn.nice-select.open, .cav-myItem .cav-leftWrap .cav-botBlock .btn:focus {
+  -webkit-transform: translate(10px, -10px);
+          transform: translate(10px, -10px);
+  background: #00BDBF;
+  outline: none;
+}
+
+.cav-myItem .cav-leftWrap .cav-botBlock .btn:hover:before, .cav-myItem .cav-leftWrap .cav-botBlock .btn:hover:after, .cav-myItem .cav-leftWrap .cav-botBlock .btn:active:before, .cav-myItem .cav-leftWrap .cav-botBlock .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-myItem .cav-leftWrap .cav-botBlock .btn.nice-select.open:before, .cav-myItem .cav-leftWrap .cav-botBlock .btn:active:after, .cav-myItem .cav-leftWrap .cav-botBlock .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-myItem .cav-leftWrap .cav-botBlock .btn.nice-select.open:after, .cav-myItem .cav-leftWrap .cav-botBlock .btn:focus:before, .cav-myItem .cav-leftWrap .cav-botBlock .btn:focus:after {
+  background: #009193;
+}
+
+.cav-myItem .cav-leftWrap .cav-botBlock .btn:hover:before, .cav-myItem .cav-leftWrap .cav-botBlock .btn:active:before, .cav-myItem .cav-leftWrap .cav-botBlock .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-myItem .cav-leftWrap .cav-botBlock .btn.nice-select.open:before, .cav-myItem .cav-leftWrap .cav-botBlock .btn:focus:before {
+  height: 10px;
+}
+
+.cav-myItem .cav-leftWrap .cav-botBlock .btn:hover:after, .cav-myItem .cav-leftWrap .cav-botBlock .btn:active:after, .cav-myItem .cav-leftWrap .cav-botBlock .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-myItem .cav-leftWrap .cav-botBlock .btn.nice-select.open:after, .cav-myItem .cav-leftWrap .cav-botBlock .btn:focus:after {
+  width: 10px;
+}
+
+.cav-myItem .cav-leftWrap .cav-botBlock .btn:active, .cav-myItem .cav-leftWrap .cav-botBlock .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-myItem .cav-leftWrap .cav-botBlock .btn.nice-select.open, .cav-myItem .cav-leftWrap .cav-botBlock .btn:focus {
+  outline: none;
+  -webkit-transform: translate(10px, -10px);
+          transform: translate(10px, -10px);
+  background: #DC5453;
+  color: #fff;
+}
+
+.cav-myItem .cav-leftWrap .cav-botBlock .btn:active:before, .cav-myItem .cav-leftWrap .cav-botBlock .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-myItem .cav-leftWrap .cav-botBlock .btn.nice-select.open:before, .cav-myItem .cav-leftWrap .cav-botBlock .btn:active:after, .cav-myItem .cav-leftWrap .cav-botBlock .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-myItem .cav-leftWrap .cav-botBlock .btn.nice-select.open:after, .cav-myItem .cav-leftWrap .cav-botBlock .btn:focus:before, .cav-myItem .cav-leftWrap .cav-botBlock .btn:focus:after {
+  background: #DC5453;
+}
+
+.cav-myItem .cav-leftWrap .cav-botBlock .btn:active:before, .cav-myItem .cav-leftWrap .cav-botBlock .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-myItem .cav-leftWrap .cav-botBlock .btn.nice-select.open:before, .cav-myItem .cav-leftWrap .cav-botBlock .btn:focus:before {
+  height: 10px;
+}
+
+.cav-myItem .cav-leftWrap .cav-botBlock .btn:active:after, .cav-myItem .cav-leftWrap .cav-botBlock .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-myItem .cav-leftWrap .cav-botBlock .btn.nice-select.open:after, .cav-myItem .cav-leftWrap .cav-botBlock .btn:focus:after {
+  width: 10px;
+}
+
+.cav-myItem .cav-leftWrap .cav-botBlock .btn.click {
+  outline: none;
+  -webkit-transform: translate(10px, -10px);
+          transform: translate(10px, -10px);
+  background: #DC5453;
+  color: #fff;
+}
+
+.cav-myItem .cav-leftWrap .cav-botBlock .btn.click:before, .cav-myItem .cav-leftWrap .cav-botBlock .btn.click:after {
+  background: #DC5453;
+}
+
+.cav-myItem .cav-leftWrap .cav-botBlock .btn.click:before {
+  height: 10px;
+}
+
+.cav-myItem .cav-leftWrap .cav-botBlock .btn.click:after {
+  width: 10px;
+}
+
+.cav-myItem .cav-leftWrap .cav-botBlock .btn {
+  margin: 0 auto;
+  height: 50px;
+}
+
 .cav-myItem .cav-prod {
-  border: 5px solid #212121;
+  border: 0.2vw solid black;
   margin: 14px;
   display: inline-block;
   width: 170px;
@@ -20500,7 +20362,7 @@ h6 {
 }
 
 .cav-myItem .cav-prod:hover {
-  border: 5px solid #DC5453;
+  border: 0.2vw solid #DC5453;
 }
 
 .cav-myItem .cav-prod > img {
@@ -20509,7 +20371,7 @@ h6 {
 }
 
 .cav-myItem .cav-addProd {
-  border: 5px solid #212121;
+  border: 0.2vw solid black;
   margin: 2.9%;
   display: inline-block;
   width: 170px;
@@ -20557,7 +20419,7 @@ h6 {
 }
 
 .cav-myItem .cav-rightWrap > .cav-rightBlockBM > li {
-  border: 5px solid #212121;
+  border: 0.2vw solid black;
   width: 50%;
   text-align: center;
   background-color: #2b8156;
@@ -20584,7 +20446,7 @@ h6 {
 }
 
 .cav-myItem .cav-rightWrap .cav-tabWrap {
-  border: 5px solid #212121;
+  border: 0.2vw solid black;
   height: 85%;
   width: 100%;
   position: absolute;
@@ -20642,7 +20504,7 @@ h6 {
 }
 
 .cav-myItem .cav-rightWrap .cav-pc {
-  border: 5px solid #212121;
+  border: 0.2vw solid black;
   border-top: none;
   width: 100%;
   height: 9%;
@@ -20715,24 +20577,235 @@ h6 {
     height: 14vw;
     margin: 2.5%;
   }
+  .cav-whoLetter .cav-myLetter {
+    border: 1px solid sandybrown;
+    position: relative;
+    width: 50%;
+  }
+  .cav-whoLetter .cav-myLetter .orderBtnBoxGroup {
+    width: 100%;
+    margin: 0% 2% 30% 11%;
+  }
+  .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox {
+    position: relative;
+    width: 90%;
+  }
+  .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn {
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    position: relative;
+    width: 88%;
+    height: 50px;
+    background-color: #ffd139;
+    border: 0.2vw solid black;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 0.3em;
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    z-index: 1;
+  }
+  .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn .orderText {
+    position: absolute;
+    width: 100%;
+    top: 35%;
+    left: 49%;
+    -webkit-transform: translate(-47.5%, -25%);
+            transform: translate(-47.5%, -25%);
+    font-weight: 900;
+    color: #fff;
+    text-shadow: -2px -2px 0 #0f0f0f, -2px -1px 0 #0f0f0f, -2px 0px 0 #0f0f0f, -2px 1px 0 #0f0f0f, -2px 2px 0 #0f0f0f, -1px -2px 0 #0f0f0f, -1px -1px 0 #0f0f0f, -1px 0px 0 #0f0f0f, -1px 1px 0 #0f0f0f, -1px 2px 0 #0f0f0f, 0px -2px 0 #0f0f0f, 0px -1px 0 #0f0f0f, 0px 0px 0 #0f0f0f, 0px 1px 0 #0f0f0f, 0px 2px 0 #0f0f0f, 1px -2px 0 #0f0f0f, 1px -1px 0 #0f0f0f, 1px 0px 0 #0f0f0f, 1px 1px 0 #0f0f0f, 1px 2px 0 #0f0f0f, 2px -2px 0 #0f0f0f, 2px -1px 0 #0f0f0f, 2px 0px 0 #0f0f0f, 2px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400;
+    z-index: 3;
+  }
+  .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn:before {
+    content: "";
+    position: absolute;
+    width: 94%;
+    height: 45%;
+    left: -45%;
+    bottom: 3%;
+    border-radius: 0.3em;
+    border: 0.2vw solid black;
+    -webkit-transform: rotate(90deg) skew(60deg);
+            transform: rotate(90deg) skew(60deg);
+    background: linear-gradient(40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+    background-size: 7px 7px;
+  }
+  .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn:after {
+    content: "";
+    position: absolute;
+    position: absolute;
+    width: 38%;
+    height: 40%;
+    left: 87%;
+    bottom: -5%;
+    border-radius: 0.3em;
+    border: 0.2vw solid black;
+    -webkit-transform: rotate(90deg) skew(300deg);
+            transform: rotate(90deg) skew(300deg);
+    background: linear-gradient(40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+    background-size: 7px 7px;
+  }
+  .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked {
+    top: 16px;
+  }
+  .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked:before {
+    width: 38%;
+    height: 40%;
+    left: -26%;
+    bottom: 3%;
+    -webkit-transform: rotate(90deg) skew(50deg);
+            transform: rotate(90deg) skew(50deg);
+  }
+  .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked:after {
+    width: 39%;
+    height: 40%;
+    left: 87%;
+    bottom: 3%;
+    -webkit-transform: rotate(90deg) skew(310deg);
+            transform: rotate(90deg) skew(310deg);
+  }
+  .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtnBottom {
+    position: absolute;
+    width: 107%;
+    height: 45px;
+    left: -8%;
+    top: 85%;
+    border: 0.2vw solid black;
+    background: linear-gradient(-70deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+    background-size: 7px 7px;
+    border-radius: 0.1em;
+  }
+  .cav-whoLetter .cav-otherLetter {
+    border: 1px solid sandybrown;
+    width: 50%;
+  }
+  .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup {
+    width: 90%;
+    margin: -20% 0% 20% 10%;
+  }
+  .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox {
+    position: relative;
+  }
+  .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn {
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    position: relative;
+    width: 80%;
+    height: 50px;
+    background-color: #ffd139;
+    border: 0.2vw solid black;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 0.3em;
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    z-index: 1;
+  }
+  .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn .orderText {
+    position: absolute;
+    width: 100%;
+    top: 35%;
+    left: 59%;
+    -webkit-transform: translate(-47.5%, -25%);
+            transform: translate(-47.5%, -25%);
+    font-weight: 900;
+    color: #fff;
+    text-shadow: -2px -2px 0 #0f0f0f, -2px -1px 0 #0f0f0f, -2px 0px 0 #0f0f0f, -2px 1px 0 #0f0f0f, -2px 2px 0 #0f0f0f, -1px -2px 0 #0f0f0f, -1px -1px 0 #0f0f0f, -1px 0px 0 #0f0f0f, -1px 1px 0 #0f0f0f, -1px 2px 0 #0f0f0f, 0px -2px 0 #0f0f0f, 0px -1px 0 #0f0f0f, 0px 0px 0 #0f0f0f, 0px 1px 0 #0f0f0f, 0px 2px 0 #0f0f0f, 1px -2px 0 #0f0f0f, 1px -1px 0 #0f0f0f, 1px 0px 0 #0f0f0f, 1px 1px 0 #0f0f0f, 1px 2px 0 #0f0f0f, 2px -2px 0 #0f0f0f, 2px -1px 0 #0f0f0f, 2px 0px 0 #0f0f0f, 2px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400;
+    z-index: 3;
+  }
+  .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn:before {
+    content: "";
+    position: absolute;
+    width: 55%;
+    height: 45%;
+    left: -39%;
+    bottom: 3%;
+    border-radius: 0.3em;
+    border: 0.2vw solid black;
+    -webkit-transform: rotate(90deg) skew(60deg);
+            transform: rotate(90deg) skew(60deg);
+    background: linear-gradient(40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+    background-size: 7px 7px;
+  }
+  .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn:after {
+    content: "";
+    position: absolute;
+    position: absolute;
+    width: 38%;
+    height: 40%;
+    left: 87%;
+    bottom: -5%;
+    border-radius: 0.3em;
+    border: 0.2vw solid black;
+    -webkit-transform: rotate(90deg) skew(300deg);
+            transform: rotate(90deg) skew(300deg);
+    background: linear-gradient(40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+    background-size: 7px 7px;
+  }
+  .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked {
+    top: 16px;
+  }
+  .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked:before {
+    width: 38%;
+    height: 40%;
+    left: -26%;
+    bottom: 3%;
+    -webkit-transform: rotate(90deg) skew(50deg);
+            transform: rotate(90deg) skew(50deg);
+  }
+  .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked:after {
+    width: 39%;
+    height: 40%;
+    left: 87%;
+    bottom: 3%;
+    -webkit-transform: rotate(90deg) skew(310deg);
+            transform: rotate(90deg) skew(310deg);
+  }
+  .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtnBottom {
+    position: absolute;
+    width: 95%;
+    height: 45px;
+    left: -8%;
+    top: 85%;
+    border: 0.2vw solid black;
+    background: linear-gradient(-70deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+    background-size: 7px 7px;
+    border-radius: 0.1em;
+  }
 }
 
 @media all and (max-width: 767px) and (min-width: 576px) {
   .cav-main {
     width: 100%;
   }
+  .cav-main .cav-leftWrap .cav-tabWrap {
+    min-height: 400px;
+    max-height: 80%;
+    padding: 10px;
+    overflow-y: scroll;
+  }
   .cav-main .cav-boxImg {
     width: 100%;
     position: relative;
     margin: 150px auto 0;
+    min-width: 650px;
   }
   .cav-main .cav-boxImg > img {
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
+    height: 100%;
   }
   .cav-main .cav-boxImg .cav-boxFront {
     width: 60%;
     height: 93vw;
+    min-height: 610px;
     top: -20%;
     left: 20%;
   }
@@ -20752,13 +20825,13 @@ h6 {
         justify-content: space-around;
   }
   .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 {
-    border: 5px solid #212121;
+    border: 0.2vw solid black;
     background-color: #ddd;
     padding: 5px;
-    height: 97.7%;
+    height: 90.7%;
   }
   .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 {
-    border: 5px solid #212121;
+    border: 0.2vw solid black;
     background-color: #4a7570;
     padding: 10px;
     height: 100%;
@@ -20775,7 +20848,7 @@ h6 {
     border-radius: 10px;
   }
   .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters {
-    border: 5px solid #212121;
+    border: 0.2vw solid black;
     height: 100px;
     margin: 0 auto 10px;
     padding: 3%;
@@ -20827,7 +20900,7 @@ h6 {
     display: none;
   }
   .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack {
-    border: 5px solid #212121;
+    border: 0.2vw solid black;
     height: 100%;
     background-color: #4a7570;
   }
@@ -20922,10 +20995,6 @@ h6 {
         justify-content: space-around;
     margin: 0 auto;
   }
-  .cav-main .cav-boxImg > img {
-    height: 100%;
-    margin-top: auto;
-  }
   .cav-main .cav-prod {
     width: 18vw;
     height: 18vw;
@@ -20964,8 +21033,215 @@ h6 {
   .cav-main {
     width: 100%;
   }
+  .cav-main .cav-leftWrap .cav-tabWrap {
+    min-height: 400px;
+    max-height: 80%;
+    padding: 10px;
+    overflow-y: scroll;
+  }
+  .cav-main .cav-boxImg {
+    width: 100%;
+    min-width: 650px;
+    position: relative;
+    margin: 150px auto 0;
+  }
   .cav-main .cav-boxImg > img {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
     height: 100%;
+  }
+  .cav-main .cav-boxImg .cav-boxFront {
+    width: 60%;
+    height: 93vw;
+    min-height: 610px;
+    top: -20%;
+    left: 20%;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft {
+    border: 1px solid green;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter {
+    border: 1px solid fuchsia;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 {
+    border: 0.2vw solid black;
+    background-color: #ddd;
+    padding: 5px;
+    height: 90.7%;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 {
+    border: 0.2vw solid black;
+    background-color: #4a7570;
+    padding: 10px;
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2::-webkit-scrollbar {
+    width: 0;
+    background-color: #ccc;
+    border-radius: 2px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: slategrey;
+    border-radius: 10px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters {
+    border: 0.2vw solid black;
+    height: 100px;
+    margin: 0 auto 10px;
+    padding: 3%;
+    border-radius: 20px;
+    background-color: #f3de6b;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    cursor: pointer;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters.cav-looking {
+    background-color: #f08b8c;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letWord {
+    border: 1px solid blue;
+    width: 80%;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letWord .cav-letTitle {
+    margin: 0;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letWord .cav-letTime {
+    margin: 0;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letSetting {
+    border: 1px solid blueviolet;
+    width: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letSetting > div {
+    margin: 0 auto;
+    height: 50%;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letSetting > div i {
+    font-size: 30px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letSetting > div i:hover {
+    color: #DC5453;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight {
+    display: none;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack {
+    border: 0.2vw solid black;
+    height: 100%;
+    background-color: #4a7570;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter::-webkit-scrollbar {
+    width: 0;
+    background-color: #ccc;
+    border-radius: 2px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: slategrey;
+    border-radius: 10px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg {
+    border: 50px solid transparent;
+    -o-border-image: url("../../img/cave/cav-postCard_b.svg") 50 50 round;
+       border-image: url("../../img/cave/cav-postCard_b.svg") 50 50 round;
+    background-color: #fff;
+    width: 82.5%;
+    margin: 20px auto;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letImg {
+    width: 100%;
+    overflow: hidden;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letImg img {
+    width: 100%;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg hr {
+    border: 1px solid #ccc;
+    margin: 15px auto;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letNavbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letNavbar .cav-letNavOption {
+    width: 35px;
+    height: 35px;
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letNavbar .cav-letNavOption img {
+    width: 100%;
+    cursor: pointer;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-h3 {
+    margin: 15px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment {
+    border-bottom: 1px solid #ccc;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commMain {
+    width: 80%;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commMain .cav-commHead {
+    margin-bottom: 5px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commMain .cav-commHead .cav-commId {
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 5px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commMain .cav-commHead .cav-commTime {
+    color: #777;
+    font-size: 10px;
+    text-align: initial;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commOption {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin: 0 auto;
   }
   .cav-main .cav-prod {
     width: 30vw;
@@ -21005,8 +21281,408 @@ h6 {
   .cav-main {
     width: 100%;
   }
+  .cav-main .cav-boxImg {
+    min-width: 650px;
+  }
   .cav-main .cav-boxImg > img {
     height: 100%;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  .cav-main .cav-boxImg .cav-boxFront {
+    width: 60%;
+    height: 93vw;
+    min-height: 610px;
+    top: -20%;
+    left: 20%;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft {
+    border: 1px solid green;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter {
+    border: 1px solid fuchsia;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter {
+    border: 1px solid sandybrown;
+    position: relative;
+    width: 50%;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup {
+    width: 95%;
+    margin: -20% 0% 20% 10%;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox {
+    position: relative;
+    width: 90%;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn {
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    position: relative;
+    width: 88%;
+    height: 50px;
+    background-color: #ffd139;
+    border: 0.2vw solid black;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 0.3em;
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    z-index: 1;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn .orderText {
+    position: absolute;
+    width: 100%;
+    top: 35%;
+    left: 49%;
+    -webkit-transform: translate(-47.5%, -25%);
+            transform: translate(-47.5%, -25%);
+    font-weight: 900;
+    color: #fff;
+    text-shadow: -2px -2px 0 #0f0f0f, -2px -1px 0 #0f0f0f, -2px 0px 0 #0f0f0f, -2px 1px 0 #0f0f0f, -2px 2px 0 #0f0f0f, -1px -2px 0 #0f0f0f, -1px -1px 0 #0f0f0f, -1px 0px 0 #0f0f0f, -1px 1px 0 #0f0f0f, -1px 2px 0 #0f0f0f, 0px -2px 0 #0f0f0f, 0px -1px 0 #0f0f0f, 0px 0px 0 #0f0f0f, 0px 1px 0 #0f0f0f, 0px 2px 0 #0f0f0f, 1px -2px 0 #0f0f0f, 1px -1px 0 #0f0f0f, 1px 0px 0 #0f0f0f, 1px 1px 0 #0f0f0f, 1px 2px 0 #0f0f0f, 2px -2px 0 #0f0f0f, 2px -1px 0 #0f0f0f, 2px 0px 0 #0f0f0f, 2px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400;
+    z-index: 3;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn:before {
+    content: "";
+    position: absolute;
+    width: 38%;
+    height: 40%;
+    left: -35%;
+    bottom: -5%;
+    border-radius: 0.3em;
+    border: 0.2vw solid black;
+    -webkit-transform: rotate(90deg) skew(60deg);
+            transform: rotate(90deg) skew(60deg);
+    background: linear-gradient(40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+    background-size: 7px 7px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn:after {
+    content: "";
+    position: absolute;
+    position: absolute;
+    width: 38%;
+    height: 40%;
+    left: 87%;
+    bottom: -5%;
+    border-radius: 0.3em;
+    border: 0.2vw solid black;
+    -webkit-transform: rotate(90deg) skew(300deg);
+            transform: rotate(90deg) skew(300deg);
+    background: linear-gradient(40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+    background-size: 7px 7px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked {
+    top: 16px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked:before {
+    width: 38%;
+    height: 40%;
+    left: -26%;
+    bottom: 3%;
+    -webkit-transform: rotate(90deg) skew(50deg);
+            transform: rotate(90deg) skew(50deg);
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked:after {
+    width: 39%;
+    height: 40%;
+    left: 87%;
+    bottom: 3%;
+    -webkit-transform: rotate(90deg) skew(310deg);
+            transform: rotate(90deg) skew(310deg);
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .orderBtnBoxGroup .orderBtnBox .orderBtnBottom {
+    position: absolute;
+    width: 107%;
+    height: 45px;
+    left: -8%;
+    top: 85%;
+    border: 0.2vw solid black;
+    background: linear-gradient(-70deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+    background-size: 7px 7px;
+    border-radius: 0.1em;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter {
+    border: 1px solid sandybrown;
+    width: 50%;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup {
+    width: 95%;
+    margin: -20% 0% 20% 10%;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox {
+    position: relative;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn {
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    position: relative;
+    width: 80%;
+    height: 45px;
+    background-color: #ffd139;
+    border: 0.2vw solid black;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 0.3em;
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    z-index: 1;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn .orderText {
+    position: absolute;
+    width: 100%;
+    top: 35%;
+    left: 49%;
+    -webkit-transform: translate(-47.5%, -25%);
+            transform: translate(-47.5%, -25%);
+    font-weight: 900;
+    color: #fff;
+    text-shadow: -2px -2px 0 #0f0f0f, -2px -1px 0 #0f0f0f, -2px 0px 0 #0f0f0f, -2px 1px 0 #0f0f0f, -2px 2px 0 #0f0f0f, -1px -2px 0 #0f0f0f, -1px -1px 0 #0f0f0f, -1px 0px 0 #0f0f0f, -1px 1px 0 #0f0f0f, -1px 2px 0 #0f0f0f, 0px -2px 0 #0f0f0f, 0px -1px 0 #0f0f0f, 0px 0px 0 #0f0f0f, 0px 1px 0 #0f0f0f, 0px 2px 0 #0f0f0f, 1px -2px 0 #0f0f0f, 1px -1px 0 #0f0f0f, 1px 0px 0 #0f0f0f, 1px 1px 0 #0f0f0f, 1px 2px 0 #0f0f0f, 2px -2px 0 #0f0f0f, 2px -1px 0 #0f0f0f, 2px 0px 0 #0f0f0f, 2px 1px 0 #0f0f0f, 2px 2px 0 #0f0f0f;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400;
+    z-index: 3;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn:before {
+    content: "";
+    position: absolute;
+    width: 38%;
+    height: 40%;
+    left: -35%;
+    bottom: -5%;
+    border-radius: 0.3em;
+    border: 0.2vw solid black;
+    -webkit-transform: rotate(90deg) skew(60deg);
+            transform: rotate(90deg) skew(60deg);
+    background: linear-gradient(40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+    background-size: 7px 7px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn:after {
+    content: "";
+    position: absolute;
+    position: absolute;
+    width: 38%;
+    height: 40%;
+    left: 87%;
+    bottom: -5%;
+    border-radius: 0.3em;
+    border: 0.2vw solid black;
+    -webkit-transform: rotate(90deg) skew(300deg);
+            transform: rotate(90deg) skew(300deg);
+    background: linear-gradient(40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+    background-size: 7px 7px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked {
+    top: 16px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked:before {
+    width: 38%;
+    height: 40%;
+    left: -26%;
+    bottom: 3%;
+    -webkit-transform: rotate(90deg) skew(50deg);
+            transform: rotate(90deg) skew(50deg);
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtn.clicked:after {
+    width: 39%;
+    height: 40%;
+    left: 87%;
+    bottom: 3%;
+    -webkit-transform: rotate(90deg) skew(310deg);
+            transform: rotate(90deg) skew(310deg);
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .orderBtnBoxGroup .orderBtnBox .orderBtnBottom {
+    position: absolute;
+    width: 95%;
+    height: 45px;
+    left: -8%;
+    top: 85%;
+    border: 0.2vw solid black;
+    background: linear-gradient(-70deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
+    background-size: 7px 7px;
+    border-radius: 0.1em;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 {
+    border: 0.2vw solid black;
+    background-color: #ddd;
+    padding: 5px;
+    height: 90.7%;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 {
+    border: 0.2vw solid black;
+    background-color: #4a7570;
+    padding: 10px;
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2::-webkit-scrollbar {
+    width: 0;
+    background-color: #ccc;
+    border-radius: 2px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: slategrey;
+    border-radius: 10px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters {
+    border: 0.2vw solid black;
+    height: 100px;
+    margin: 0 auto 10px;
+    padding: 3%;
+    border-radius: 20px;
+    background-color: #f3de6b;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    cursor: pointer;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters.cav-looking {
+    background-color: #f08b8c;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letWord {
+    border: 1px solid blue;
+    width: 80%;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letWord .cav-letTitle {
+    margin: 0;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letWord .cav-letTime {
+    margin: 0;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letSetting {
+    border: 1px solid blueviolet;
+    width: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letSetting > div {
+    margin: 0 auto;
+    height: 50%;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letSetting > div i {
+    font-size: 30px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letSetting > div i:hover {
+    color: #DC5453;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight {
+    display: none;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack {
+    border: 0.2vw solid black;
+    height: 100%;
+    background-color: #4a7570;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter::-webkit-scrollbar {
+    width: 0;
+    background-color: #ccc;
+    border-radius: 2px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: slategrey;
+    border-radius: 10px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg {
+    border: 50px solid transparent;
+    -o-border-image: url("../../img/cave/cav-postCard_b.svg") 50 50 round;
+       border-image: url("../../img/cave/cav-postCard_b.svg") 50 50 round;
+    background-color: #fff;
+    width: 82.5%;
+    margin: 20px auto;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letImg {
+    width: 100%;
+    overflow: hidden;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letImg img {
+    width: 100%;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg hr {
+    border: 1px solid #ccc;
+    margin: 15px auto;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letNavbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letNavbar .cav-letNavOption {
+    width: 35px;
+    height: 35px;
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letNavbar .cav-letNavOption img {
+    width: 100%;
+    cursor: pointer;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-h3 {
+    margin: 15px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment {
+    border-bottom: 1px solid #ccc;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commMain {
+    width: 80%;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commMain .cav-commHead {
+    margin-bottom: 5px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commMain .cav-commHead .cav-commId {
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 5px;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commMain .cav-commHead .cav-commTime {
+    color: #777;
+    font-size: 10px;
+    text-align: initial;
+  }
+  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commOption {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin: 0 auto;
   }
   .cav-main .cav-prod {
     width: 30vw;
@@ -22804,11 +23480,7 @@ h6 {
   color: #212121;
   position: absolute;
   left: 40.5%;
-<<<<<<< HEAD
-  top: 78%;
-=======
   top: 75%;
->>>>>>> dev
 }
 
 .classic-body .classicmain .classicSec .moodStyle p {
@@ -22831,11 +23503,7 @@ h6 {
   color: #212121;
   position: absolute;
   left: 48%;
-<<<<<<< HEAD
-  top: 78%;
-=======
   top: 75%;
->>>>>>> dev
 }
 
 .classic-body .classicmain .classicSec .brokeStyle p {
@@ -22858,11 +23526,7 @@ h6 {
   color: #212121;
   position: absolute;
   left: 55.2%;
-<<<<<<< HEAD
-  top: 78%;
-=======
   top: 75%;
->>>>>>> dev
 }
 
 .classic-body .classicmain .classicSec .happyStyle p {
