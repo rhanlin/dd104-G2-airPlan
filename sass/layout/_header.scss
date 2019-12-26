@@ -17,7 +17,7 @@ header{
             
             .bottom-bg{
                 width: 80%;
-                height: 20vw;
+                height: 15vw;
                 // animation: shad-anim 10s linear infinite;
                 .clip-left{
                     top: -65%;
@@ -39,6 +39,7 @@ header{
                         padding: 0 2vw;
                         display: flex;
                         justify-content: space-between;
+                        font-size: 5vw;
                         // flex-wrap: wrap;
                     };
                 };
