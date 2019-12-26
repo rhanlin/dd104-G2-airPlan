@@ -3603,6 +3603,66 @@ table {
 
 @-webkit-keyframes topani {
   1% {
+<<<<<<< HEAD
+    stroke-width: 98px;
+  }
+  9% {
+    stroke-width: 26px;
+  }
+  14% {
+    stroke-width: 198px;
+  }
+  16% {
+    stroke-width: 155px;
+  }
+  23% {
+    stroke-width: 193px;
+  }
+  28% {
+    stroke-width: 149px;
+  }
+  34% {
+    stroke-width: 178px;
+  }
+  36% {
+    stroke-width: 64px;
+  }
+  44% {
+    stroke-width: 129px;
+  }
+  46% {
+    stroke-width: 130px;
+  }
+  53% {
+    stroke-width: 34px;
+  }
+  55% {
+    stroke-width: 187px;
+  }
+  60% {
+    stroke-width: 135px;
+  }
+  66% {
+    stroke-width: 143px;
+  }
+  71% {
+    stroke-width: 65px;
+  }
+  76% {
+    stroke-width: 173px;
+  }
+  81% {
+    stroke-width: 82px;
+  }
+  87% {
+    stroke-width: 35px;
+  }
+  90% {
+    stroke-width: 69px;
+  }
+  97% {
+    stroke-width: 23px;
+=======
     stroke-width: 188px;
   }
   6% {
@@ -3649,11 +3709,72 @@ table {
   }
   94% {
     stroke-width: 148px;
+>>>>>>> dev
   }
 }
 
 @keyframes topani {
   1% {
+<<<<<<< HEAD
+    stroke-width: 98px;
+  }
+  9% {
+    stroke-width: 26px;
+  }
+  14% {
+    stroke-width: 198px;
+  }
+  16% {
+    stroke-width: 155px;
+  }
+  23% {
+    stroke-width: 193px;
+  }
+  28% {
+    stroke-width: 149px;
+  }
+  34% {
+    stroke-width: 178px;
+  }
+  36% {
+    stroke-width: 64px;
+  }
+  44% {
+    stroke-width: 129px;
+  }
+  46% {
+    stroke-width: 130px;
+  }
+  53% {
+    stroke-width: 34px;
+  }
+  55% {
+    stroke-width: 187px;
+  }
+  60% {
+    stroke-width: 135px;
+  }
+  66% {
+    stroke-width: 143px;
+  }
+  71% {
+    stroke-width: 65px;
+  }
+  76% {
+    stroke-width: 173px;
+  }
+  81% {
+    stroke-width: 82px;
+  }
+  87% {
+    stroke-width: 35px;
+  }
+  90% {
+    stroke-width: 69px;
+  }
+  97% {
+    stroke-width: 23px;
+=======
     stroke-width: 188px;
   }
   6% {
@@ -3700,10 +3821,72 @@ table {
   }
   94% {
     stroke-width: 148px;
+>>>>>>> dev
   }
 }
 
 @-webkit-keyframes botani {
+<<<<<<< HEAD
+  2% {
+    stroke-width: 190px;
+  }
+  9% {
+    stroke-width: 48px;
+  }
+  10% {
+    stroke-width: 9px;
+  }
+  15% {
+    stroke-width: 31px;
+  }
+  22% {
+    stroke-width: 46px;
+  }
+  28% {
+    stroke-width: 78px;
+  }
+  31% {
+    stroke-width: 133px;
+  }
+  36% {
+    stroke-width: 181px;
+  }
+  44% {
+    stroke-width: 145px;
+  }
+  47% {
+    stroke-width: 136px;
+  }
+  53% {
+    stroke-width: 125px;
+  }
+  57% {
+    stroke-width: 153px;
+  }
+  63% {
+    stroke-width: 80px;
+  }
+  67% {
+    stroke-width: 58px;
+  }
+  73% {
+    stroke-width: 39px;
+  }
+  75% {
+    stroke-width: 177px;
+  }
+  81% {
+    stroke-width: 62px;
+  }
+  86% {
+    stroke-width: 8px;
+  }
+  90% {
+    stroke-width: 105px;
+  }
+  96% {
+    stroke-width: 85px;
+=======
   1% {
     stroke-width: 168px;
   }
@@ -3751,10 +3934,72 @@ table {
   }
   92% {
     stroke-width: 163px;
+>>>>>>> dev
   }
 }
 
 @keyframes botani {
+<<<<<<< HEAD
+  2% {
+    stroke-width: 190px;
+  }
+  9% {
+    stroke-width: 48px;
+  }
+  10% {
+    stroke-width: 9px;
+  }
+  15% {
+    stroke-width: 31px;
+  }
+  22% {
+    stroke-width: 46px;
+  }
+  28% {
+    stroke-width: 78px;
+  }
+  31% {
+    stroke-width: 133px;
+  }
+  36% {
+    stroke-width: 181px;
+  }
+  44% {
+    stroke-width: 145px;
+  }
+  47% {
+    stroke-width: 136px;
+  }
+  53% {
+    stroke-width: 125px;
+  }
+  57% {
+    stroke-width: 153px;
+  }
+  63% {
+    stroke-width: 80px;
+  }
+  67% {
+    stroke-width: 58px;
+  }
+  73% {
+    stroke-width: 39px;
+  }
+  75% {
+    stroke-width: 177px;
+  }
+  81% {
+    stroke-width: 62px;
+  }
+  86% {
+    stroke-width: 8px;
+  }
+  90% {
+    stroke-width: 105px;
+  }
+  96% {
+    stroke-width: 85px;
+=======
   1% {
     stroke-width: 168px;
   }
@@ -3802,6 +4047,7 @@ table {
   }
   92% {
     stroke-width: 163px;
+>>>>>>> dev
   }
 }
 
@@ -19554,6 +19800,10 @@ h6 {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+<<<<<<< HEAD
+  font-family: "Noto Sans TC", sans-serif;
+=======
+>>>>>>> dev
 }
 
 .cav-body {
@@ -19625,13 +19875,275 @@ h6 {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+<<<<<<< HEAD
+  margin: 3% 0 1% 0;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn {
+  /*
+        button,
+        input[type="submit"] 
+        */
+  -webkit-transition: background-color 0.175s, -webkit-transform 0.175s;
+  transition: background-color 0.175s, -webkit-transform 0.175s;
+  transition: transform 0.175s, background-color 0.175s;
+  transition: transform 0.175s, background-color 0.175s, -webkit-transform 0.175s;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  display: inline-block;
+  background-color: #00D3D6;
+  border: 3px solid #231F20;
+  padding: 1vw;
+  position: relative;
+  margin-right: calc(6px);
+  text-decoration: none;
+  font-size: 22px;
+  font-family: monospace;
+  font-weight: bold;
+  color: #231F20;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #00BDBF;
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: calc(0px - 2px);
+  border: 3px solid #231F20;
+  border-bottom: 0;
+  -webkit-transition: width 0.175s, background-color 0.175s, height 0.175s;
+  transition: width 0.175s, background-color 0.175s, height 0.175s;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:before {
+  width: calc(100% + 6px);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transform: skewX(-45deg);
+          transform: skewX(-45deg);
+  border-right-width: 1.5px;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:after {
+  content: "";
+  height: calc(100% + 4px);
+  top: unset;
+  left: unset;
+  left: calc(100% + 2px);
+  bottom: calc(0px - 2px);
+  border: 3px solid #231F20;
+  border-top-width: 3px;
+  border-left: 0;
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transform: skewY(-45deg);
+          transform: skewY(-45deg);
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:hover, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus {
+  -webkit-transform: translate(10px, -10px);
+          transform: translate(10px, -10px);
+  background: #00BDBF;
+  outline: none;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:hover:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:hover:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus:after {
+  background: #009193;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:hover:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus:before {
+  height: 10px;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:hover:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus:after {
+  width: 10px;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus {
+  outline: none;
+  -webkit-transform: translate(10px, -10px);
+          transform: translate(10px, -10px);
+  background: #DC5453;
+  color: #fff;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus:after {
+  background: #DC5453;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus:before {
+  height: 10px;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:active:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.nice-select.open:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn:focus:after {
+  width: 10px;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.click {
+  outline: none;
+  -webkit-transform: translate(10px, -10px);
+          transform: translate(10px, -10px);
+  background: #DC5453;
+  color: #fff;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.click:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.click:after {
+  background: #DC5453;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.click:before {
+  height: 10px;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn.click:after {
+  width: 10px;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-myLetter .btn {
+  height: 50px;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn {
+  /*
+        button,
+        input[type="submit"] 
+        */
+  -webkit-transition: background-color 0.175s, -webkit-transform 0.175s;
+  transition: background-color 0.175s, -webkit-transform 0.175s;
+  transition: transform 0.175s, background-color 0.175s;
+  transition: transform 0.175s, background-color 0.175s, -webkit-transform 0.175s;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  display: inline-block;
+  background-color: #00D3D6;
+  border: 3px solid #231F20;
+  padding: 1vw;
+  position: relative;
+  margin-right: calc(6px);
+  text-decoration: none;
+  font-size: 22px;
+  font-family: monospace;
+  font-weight: bold;
+  color: #231F20;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #00BDBF;
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: calc(0px - 2px);
+  border: 3px solid #231F20;
+  border-bottom: 0;
+  -webkit-transition: width 0.175s, background-color 0.175s, height 0.175s;
+  transition: width 0.175s, background-color 0.175s, height 0.175s;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:before {
+  width: calc(100% + 6px);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transform: skewX(-45deg);
+          transform: skewX(-45deg);
+  border-right-width: 1.5px;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:after {
+  content: "";
+  height: calc(100% + 4px);
+  top: unset;
+  left: unset;
+  left: calc(100% + 2px);
+  bottom: calc(0px - 2px);
+  border: 3px solid #231F20;
+  border-top-width: 3px;
+  border-left: 0;
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transform: skewY(-45deg);
+          transform: skewY(-45deg);
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:hover, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus {
+  -webkit-transform: translate(10px, -10px);
+          transform: translate(10px, -10px);
+  background: #00BDBF;
+  outline: none;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:hover:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:hover:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus:after {
+  background: #009193;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:hover:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus:before {
+  height: 10px;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:hover:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus:after {
+  width: 10px;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus {
+  outline: none;
+  -webkit-transform: translate(10px, -10px);
+          transform: translate(10px, -10px);
+  background: #DC5453;
+  color: #fff;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus:after {
+  background: #DC5453;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:before, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus:before {
+  height: 10px;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:active:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .btn.nice-select.open:after, .shop-body .shop-main #section2 .customizeArea .controlTool .controlBoxBottom .brushType .box .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.nice-select.open:after, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn:focus:after {
+  width: 10px;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.click {
+  outline: none;
+  -webkit-transform: translate(10px, -10px);
+          transform: translate(10px, -10px);
+  background: #DC5453;
+  color: #fff;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.click:before, .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.click:after {
+  background: #DC5453;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.click:before {
+  height: 10px;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn.click:after {
+  width: 10px;
+}
+
+.cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter .cav-otherLetter .btn {
+  height: 50px;
+=======
+>>>>>>> dev
 }
 
 .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 {
   border: 5px solid #212121;
   background-color: #ddd;
   padding: 5px;
+<<<<<<< HEAD
+  height: 91.7%;
+=======
   height: 97.7%;
+>>>>>>> dev
 }
 
 .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 {
@@ -19964,6 +20476,8 @@ h6 {
   /* 按鈕 */
 }
 
+<<<<<<< HEAD
+=======
 .cav-myItem .cav-leftWrap .cav-botBlock .btn-wrapper-center {
   position: absolute;
   width: 58px;
@@ -19973,6 +20487,7 @@ h6 {
           transform: translate(-50%, -50%);
 }
 
+>>>>>>> dev
 .cav-myItem .cav-prod {
   border: 5px solid #212121;
   margin: 14px;
@@ -22289,7 +22804,11 @@ h6 {
   color: #212121;
   position: absolute;
   left: 40.5%;
+<<<<<<< HEAD
+  top: 78%;
+=======
   top: 75%;
+>>>>>>> dev
 }
 
 .classic-body .classicmain .classicSec .moodStyle p {
@@ -22312,7 +22831,11 @@ h6 {
   color: #212121;
   position: absolute;
   left: 48%;
+<<<<<<< HEAD
+  top: 78%;
+=======
   top: 75%;
+>>>>>>> dev
 }
 
 .classic-body .classicmain .classicSec .brokeStyle p {
@@ -22335,7 +22858,11 @@ h6 {
   color: #212121;
   position: absolute;
   left: 55.2%;
+<<<<<<< HEAD
+  top: 78%;
+=======
   top: 75%;
+>>>>>>> dev
 }
 
 .classic-body .classicmain .classicSec .happyStyle p {
