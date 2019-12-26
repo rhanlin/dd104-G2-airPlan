@@ -82,14 +82,7 @@
             template: `
             <h1 class="headpg-name threed-text-blue">
                 <div style="border: 1px solid red;">
-                寫2
-                </div>
-                <br>
-                <div style="display:flex;flex-direction:column;justify-content:center;border: 1px solid red;">
-                    <img src="../img/share/line-paperPlane.svg" style="width:30%;">
-                    <span>
-                    一封信2
-                    </span>
+                聊天室
                 </div>
             </h1>
             `
@@ -97,23 +90,14 @@
         const cave = {
             template: `
             <h1 class="headpg-name threed-text-blue">
-                <div style="display:flex;flex-direction:column;justify-content:center;">
-                    耀輝
-                <img src="../img/userSetting/wrench.svg" style="width:8%; transform: rotate(110deg); position:absolute; left: 10%; top: -25%;">
-                </div>
-                <br>
-                <img src="../img/userSetting/gear.svg" alt="gear" style="width: 18%; text-align: center;">
-                <div style="display:flex;flex-direction:column;justify-content:center;">
-                    <img src="../img/userSetting/hammer.svg" style="width: 10%; transform: rotate(-45deg); position:absolute; right: 1%; top: 0;">
-                    設定
-                </div>
-                </h1>
+                我的倉庫
+            </h1>
             `
         }
         const shop = {
             template: `
             <h1 class="headpg-name threed-text-blue">
-                我是小鴨
+                客製化商城
             </h1>
             `
         }
@@ -133,7 +117,13 @@
                 </h1>
             `
         }
-        
+        const classic = {
+            template: `
+            <h1 class="headpg-name threed-text-blue">
+                精華區
+            </h1>
+            `
+        }
         new Vue({
             el: '#headerVue',
             template: `
@@ -148,6 +138,7 @@
                 cave,
                 shop,
                 userSetting,
+                classic,
             },
             data: {
                 pageTitle: null
