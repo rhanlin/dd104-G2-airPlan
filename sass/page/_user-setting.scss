@@ -609,6 +609,9 @@
                             }
                         }
                     }
+                    .box{
+                        display: none;
+                    }
                 }
                 .userSetting_sys{
                     h2{
@@ -619,6 +622,9 @@
                         .manu{
                             width: 75px;
                         }
+                    }
+                    .paper{
+                        display: none;
                     }
                 }
                 .userSetting_adm{
