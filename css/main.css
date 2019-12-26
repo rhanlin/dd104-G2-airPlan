@@ -3603,181 +3603,205 @@ table {
 
 @-webkit-keyframes topani {
   1% {
-    stroke-width: 55px;
+    stroke-width: 188px;
   }
-  13% {
-    stroke-width: 15px;
+  6% {
+    stroke-width: 44px;
   }
-  14% {
-    stroke-width: 49px;
+  17% {
+    stroke-width: 42px;
   }
-  21% {
-    stroke-width: 32px;
+  19% {
+    stroke-width: 27px;
   }
-  34% {
-    stroke-width: 1px;
+  24% {
+    stroke-width: 129px;
   }
-  37% {
-    stroke-width: 87px;
+  33% {
+    stroke-width: 96px;
   }
-  43% {
-    stroke-width: 183px;
+  39% {
+    stroke-width: 95px;
   }
-  49% {
-    stroke-width: 162px;
+  45% {
+    stroke-width: 6px;
+  }
+  48% {
+    stroke-width: 187px;
   }
   57% {
-    stroke-width: 183px;
+    stroke-width: 5px;
   }
-  63% {
-    stroke-width: 176px;
+  62% {
+    stroke-width: 140px;
   }
-  73% {
-    stroke-width: 16px;
+  68% {
+    stroke-width: 151px;
   }
-  78% {
-    stroke-width: 4px;
+  75% {
+    stroke-width: 35px;
   }
-  85% {
-    stroke-width: 33px;
+  83% {
+    stroke-width: 99px;
   }
-  92% {
-    stroke-width: 32px;
+  86% {
+    stroke-width: 155px;
+  }
+  94% {
+    stroke-width: 148px;
   }
 }
 
 @keyframes topani {
   1% {
-    stroke-width: 55px;
+    stroke-width: 188px;
   }
-  13% {
-    stroke-width: 15px;
+  6% {
+    stroke-width: 44px;
   }
-  14% {
-    stroke-width: 49px;
+  17% {
+    stroke-width: 42px;
   }
-  21% {
-    stroke-width: 32px;
+  19% {
+    stroke-width: 27px;
   }
-  34% {
-    stroke-width: 1px;
+  24% {
+    stroke-width: 129px;
   }
-  37% {
-    stroke-width: 87px;
+  33% {
+    stroke-width: 96px;
   }
-  43% {
-    stroke-width: 183px;
+  39% {
+    stroke-width: 95px;
   }
-  49% {
-    stroke-width: 162px;
+  45% {
+    stroke-width: 6px;
+  }
+  48% {
+    stroke-width: 187px;
   }
   57% {
-    stroke-width: 183px;
+    stroke-width: 5px;
   }
-  63% {
-    stroke-width: 176px;
+  62% {
+    stroke-width: 140px;
   }
-  73% {
-    stroke-width: 16px;
+  68% {
+    stroke-width: 151px;
   }
-  78% {
-    stroke-width: 4px;
+  75% {
+    stroke-width: 35px;
   }
-  85% {
-    stroke-width: 33px;
+  83% {
+    stroke-width: 99px;
   }
-  92% {
-    stroke-width: 32px;
+  86% {
+    stroke-width: 155px;
+  }
+  94% {
+    stroke-width: 148px;
   }
 }
 
 @-webkit-keyframes botani {
-  6% {
-    stroke-width: 14px;
-  }
-  8% {
-    stroke-width: 136px;
-  }
-  18% {
-    stroke-width: 37px;
-  }
-  22% {
-    stroke-width: 158px;
-  }
-  34% {
+  1% {
     stroke-width: 168px;
   }
+  6% {
+    stroke-width: 35px;
+  }
+  12% {
+    stroke-width: 81px;
+  }
+  19% {
+    stroke-width: 99px;
+  }
+  26% {
+    stroke-width: 22px;
+  }
+  33% {
+    stroke-width: 181px;
+  }
   41% {
-    stroke-width: 187px;
+    stroke-width: 185px;
   }
-  47% {
-    stroke-width: 23px;
+  44% {
+    stroke-width: 171px;
   }
-  55% {
-    stroke-width: 159px;
+  53% {
+    stroke-width: 146px;
+  }
+  56% {
+    stroke-width: 194px;
   }
   60% {
-    stroke-width: 112px;
+    stroke-width: 162px;
   }
-  65% {
-    stroke-width: 126px;
+  71% {
+    stroke-width: 57px;
   }
-  74% {
-    stroke-width: 37px;
+  76% {
+    stroke-width: 199px;
   }
   79% {
-    stroke-width: 192px;
+    stroke-width: 166px;
   }
-  86% {
-    stroke-width: 109px;
+  88% {
+    stroke-width: 80px;
   }
-  97% {
-    stroke-width: 107px;
+  92% {
+    stroke-width: 163px;
   }
 }
 
 @keyframes botani {
-  6% {
-    stroke-width: 14px;
-  }
-  8% {
-    stroke-width: 136px;
-  }
-  18% {
-    stroke-width: 37px;
-  }
-  22% {
-    stroke-width: 158px;
-  }
-  34% {
+  1% {
     stroke-width: 168px;
   }
+  6% {
+    stroke-width: 35px;
+  }
+  12% {
+    stroke-width: 81px;
+  }
+  19% {
+    stroke-width: 99px;
+  }
+  26% {
+    stroke-width: 22px;
+  }
+  33% {
+    stroke-width: 181px;
+  }
   41% {
-    stroke-width: 187px;
+    stroke-width: 185px;
   }
-  47% {
-    stroke-width: 23px;
+  44% {
+    stroke-width: 171px;
   }
-  55% {
-    stroke-width: 159px;
+  53% {
+    stroke-width: 146px;
+  }
+  56% {
+    stroke-width: 194px;
   }
   60% {
-    stroke-width: 112px;
+    stroke-width: 162px;
   }
-  65% {
-    stroke-width: 126px;
+  71% {
+    stroke-width: 57px;
   }
-  74% {
-    stroke-width: 37px;
+  76% {
+    stroke-width: 199px;
   }
   79% {
-    stroke-width: 192px;
+    stroke-width: 166px;
   }
-  86% {
-    stroke-width: 109px;
+  88% {
+    stroke-width: 80px;
   }
-  97% {
-    stroke-width: 107px;
+  92% {
+    stroke-width: 163px;
   }
 }
 
@@ -22265,7 +22289,7 @@ h6 {
   color: #212121;
   position: absolute;
   left: 40.5%;
-  top: 78%;
+  top: 75%;
 }
 
 .classic-body .classicmain .classicSec .moodStyle p {
@@ -22288,7 +22312,7 @@ h6 {
   color: #212121;
   position: absolute;
   left: 48%;
-  top: 78%;
+  top: 75%;
 }
 
 .classic-body .classicmain .classicSec .brokeStyle p {
@@ -22311,7 +22335,7 @@ h6 {
   color: #212121;
   position: absolute;
   left: 55.2%;
-  top: 78%;
+  top: 75%;
 }
 
 .classic-body .classicmain .classicSec .happyStyle p {
