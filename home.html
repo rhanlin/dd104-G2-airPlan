@@ -6,16 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Air-Plan | 首頁</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body class="home_body">
     @@include("./html/nav.html")
-    @@include("./html/header.html")
-    <header></header>
-    <nav></nav>
+
+    <section class="home_first" id="cloud">
+        <canvas class="p-canvas-webgl" id="canvas-webgl"></canvas>
+    </section>
 
     <section class="home_skyPoint">
+        <div class="home_space"></div>
         <img class="hang3" src="./img/home/write/hang3Paper.svg" alt="">
         <img class="hang2" src="./img/home/write/hang2Paper.svg" alt="">
         <div class="mountain_box">
@@ -149,21 +153,73 @@
     </section>
     <section class="home_chat">
         <div class="chatBox">
-            <div class="chat_R"></div>
             <div class="chat_L">
+                <div class="blueCover">
+                    <div class="line">
+                        <div class="chatPaper">
+                            <div class="chatWhite">
+                                <img class="ring" src="./img/chatroom/book.png" alt="">
+                                <div class="chatroom">
+                                    <div class="chatMix1">
+                                        <div class="chatFrame1">
+                                            <p>Hello!</p>
+                                        </div>
+                                    </div>
+                                    <div class="chatMix2">
+                                        <img src="./img/chatroom/mark.png" alt="">
+                                    </div>
+                                    <div class="chatMix3">
+                                        <div class="chatFrame2">
+                                            <p>好想去博物館哦~</p>
+                                        </div>
+                                    </div>
+                                    <div class="chatMix4">
+                                        <div class="chatFrame3">
+                                            <p>我們一起去吧!</p>
+                                        </div>
+                                    </div>
+                                    <div class="chatMix5">
+                                        <div class="send">
+                                            <img src="./img/chatroom/send.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chatYellow">
+                                <div class="yelPage"></div>
+                                <div class="yelPage"></div>
+                                <div class="yelPage"></div>
+                                <div class="yelPage"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="chat_R">
                 <div class="titleBox1">
                     <div class="chat_title1">
                         <h1 class="threed-text-blue">聊</h1>
                     </div>
                     <img src="./img/home/chat/tapeBlue.svg" alt="">
                 </div>
-                <div class="chat_title2"></div>
-                <div class="chat_title3"></div>
+                <div class="chat_title2">
+                    <h1 class="threed-text-blue">天</h1>
+                </div>
+                <div class="titleBox2">
+                    <div class="chat_title3">
+                        <h1 class="threed-text-blue">室</h1>
+                        <img src="./img/home/chat/tapeYellow.svg" alt="">
+                    </div>
+                </div>
+                <div class="noteYellow">
+                    <h1>匿名世界讓您<br>永遠不孤單，<br>每天都有好友<br>陪你聊天！</h1>
+                </div>
             </div>
         </div>
-
-
     </section>
+    <script src="./js/cloud.js"></script>
 </body>
 
 </html>

@@ -2,129 +2,164 @@
   background: radial-gradient(#000000 10%, #fff 20%);
   background-size: 8px 8px;
   height: auto;
+  font-family: 'Noto Sans TC', sans-serif;
+
+  // 撈信階段
+  #threeWorld {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(-45deg, #85CAE0, #9EA5E2, #B0D8FC, #C7B2E7);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    // cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.png"), auto;
+    // cursor: url("../../img/catch-letter/net.png"), auto;
+    cursor: none;
+    #planeLetter{
+      cursor: pointer;
+    }
+    // cursor: url("http://140.115.236.71/demo-personal/DD104/web/T1901175/img/net.png"),auto;
+    #missMsg {
+      display: inline-block;
+      width: 5vw;
+      height: 3vw;
+      position: absolute;
+      // background-color: red;
+      top: -25%;
+      left: 35%;
+      color: #fff;
+    }
+
+    .fadeAway {
+      animation: missMsg 3s ease;
+
+      @keyframes missMsg {
+        from {
+          top: -25%;
+          opacity: 1;
+        }
+
+        to {
+          top: -40%;
+          opacity: 0;
+        }
+      }
+    }
+
+
+    #mouseNet {
+      position: absolute;
+      outline: none;
+      -webkit-user-select: none;
+      /* for Chrome */
+      user-select: none;
+    }
+
+    .active {
+      position: absolute;
+      top: 53%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+    }
+
+    .open-motion {
+      width: 20vw;
+      max-width: 495px;
+      height: 25vw;
+      max-height: 716px;
+      margin: 0 40% 0 0;
+      // background-color: #fff;
+      // background-image: url(../../img/catch-letter/letter-fold-1.png);
+      background-position: 0% 0%;
+      background-size: cover;
+      position: relative;
+
+      //   animation-name: flimPaper;
+      // animation-duration: 1.3s;
+      // animation-timing-function: steps(8);
+      // animation-iteration-count: infinite;
+    }
+
+    // @keyframes flimPaper {
+    //   from {
+    //     background-position: 0% 0%;
+    //   }
+
+    //   to {
+    //     background-position: 0% 100%;
+    //   }
+
+    // }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  }
 
   main {
     margin-top: 10vw;
-    font-family: 'Noto Sans TC', sans-serif;
+  }
+
+  h3 {
+    text-align-last: left;
+  }
+
+  #planeContainer {
+    width: 100%;
+    height: 100vh;
+
   }
 
   .catch-step-1 {
     font-size: 0;
-    border: 1px solid red;
+    // border: 1px solid red;
     display: flex;
     justify-content: space-around;
     position: relative;
-    .catch-letter {
-      width: 38vw;
-      max-width: 545px;
-      height: 55vw;
-      max-height: 788px;
-      margin: 0 40% 0 0;
-      background-image: url(../../img/share/postCard-vertical.svg);
-      background-position: center;
-      background-size: cover;
-      display: flex;
-      position: relative;
-      font-size: 1.5vw;
-      @include paper_cloud();
-
-      .paper-cloud {
-        height: 15vw;
-        top: -8.1vw;
-        left: -36%;
-        transform: scaleX(-1);
-      }
-
-      .letter-wrap {
-        height: 100%;
-        width: 100%;
-        // background-color: pink;
-        padding: 3%;
-
-        // display: flex;
-        .letter-head {
-          border: 1px solid green;
-          height: 30%;
-          width: 100%;
-          display: flex;
-        }
-
-        .stamp-box {
-          height: 100%;
-          width: 60%;
-          border: 1px solid red;
-          background-image: url(../../img/catch-letter/post-mark-test.png);
-          background-size: 85%;
-          background-position: center;
-          background-repeat: no-repeat;
-        }
-
-        .letter-tittle {
-          height: 100%;
-          width: 40%;
-          border: 1px solid blue;
-          padding: 2.5%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          h3 {
-            font-size: 1.8vw;
-            text-align-last: left;
-          }
-        }
-
-        .letter-contant {
-          height: 70%;
-          width: 100%;
-          border: 1px solid pink;
-          padding: 2.5%;
-          overflow-y: auto;
-          
-          // display: flex;
-          // justify-content: center;
-          // align-items: center;
-          .text {
-            font-size: 1.5vw;
-            line-height: 2.5vw;
-          }
-
-          .letter-upload-img {
-            margin: 0 1rem;
-            float: right;
-            width: 16vw;
-            height: 12vw;
-            // border: 1px solid slateblue;
-            background-image: url(../../img/catch-letter/tenor.gif);
-            background-size: 180%;
-            background-position: 40% 50%;
-            background-repeat: no-repeat;
-          }
-        }
-        
-      }
-
-    }
 
     .comment-wrap {
       margin: 0;
-      // background: palevioletred;
-      height: 30vw;
-      width: 40vw;
-      // max-width: 545px;
+      height: 28vw;
+      width: 35vw;
       max-height: 788px;
       position: absolute;
       top: 6vw;
-      right: 3vw;
+      right: 7vw;
+
       .clip-left {
-        top: -62%;
-        left: 18%;
+        top: -17%;
+        right: 18%;
+        height: auto;
+        background-image: url(../../img/share/clip.svg);
+
+        &::before {
+          content: '';
+          display: block;
+          width: .15vw;
+          height: 25vw;
+          background: linear-gradient(#e5e5e500 20%, $main-black 60%, $main-black);
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -112%);
+          z-index: -9;
+        }
       }
 
-      .clip-right {
-        top: -65%;
-        right: 18%;
-      }
+      // .clip-right {
+      //   top: -65%;
+      //   right: 18%;
+      // }
 
       .top-left-bg {
         width: 100%;
@@ -145,15 +180,239 @@
 
         ;
       }
-      .comment-outbox{
-        width: 80%; 
-        height: 80%;
+
+      .comment-outbox {
+        width: 90%;
+        height: 90%;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        border-radius: $main-borderRadius;
+        transform: translate(-50%, -50%);
+        padding: 1vw;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+      }
+
+      .comment {
+        width: 90%;
+        height: auto;
+        border-radius: $main-borderRadius;
+        padding: 1.5vw;
+        margin: 1vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.5vw;
+
+        .comment-contant {
+          width: 100%;
+          height: 90%;
+        }
+
+        .user-name {
+          margin: 0;
+          width: 100%;
+          margin-bottom: .5vw;
+        }
+
+        .user-text {
+          width: 100%;
+          margin: 0;
+          font-size: 1.15vw;
+          // padding: 0 0 0 1vw;
+        }
+
+        .comment-btn {
+          width: 100%;
+          height: 5vw;
+          position: relative;
+        }
+
+        #threed {
+          background: $main-black;
+          width: 3vw;
+          height: 3vw;
+          position: absolute;
+          margin: 0 auto;
+          display: block;
+          right: 0;
+          bottom: 0;
+
+          // transform: translateY(-50%);
+          // box-shadow: 15px 15px 50px 5px #5f5f5f;
+          .button {
+            background: #f00000;
+            width: 80%;
+            height: 80%;
+            position: absolute;
+            top: -7%;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 .5vw 0 0 #8C0606;
+            border: none;
+            transition: all .2s ease;
+            outline: none;
+          }
+
+          .button:active {
+            box-shadow: 0 1px 1px 1px #8C0606;
+            top: 10%;
+            outline: none;
+          }
+        }
+
+        .circle {
+          border-radius: 50%;
+        }
       }
     }
-    @include scroller();
   }
+
+  .catch-letter {
+    width: 55.6vw;
+    max-width: 495px;
+    height: 80vw;
+    max-height: 716px;
+    margin: 0 40% 0 0;
+    background-color: #fff;
+    background-image: url(../../img/share/postCard-vertical.svg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    position: relative;
+    // font-size: 1.5vw;
+    // display: none;
+    @include paper_cloud();
+
+
+    .letter-wrap {
+      height: 100%;
+      width: 100%;
+      // background-color: pink;
+      padding: 4.5%;
+      position: relative;
+
+      .paper-cloud {
+        height: 13vw;
+        top: 0%;
+        left: 0%;
+        transform: translate(-45%, -54%) scaleX(-1);
+      }
+
+      // display: flex;
+      .letter-head {
+        // border: 1px solid green;
+        height: 26%;
+        width: 100%;
+        display: flex;
+      }
+
+      .stamp-box {
+        height: 100%;
+        width: 60%;
+        // border: 1px solid red;
+        background-image: url(../../img/catch-letter/post-mark-test.png);
+        background-size: 95%;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .letter-tittle {
+        height: 100%;
+        width: 40%;
+        // border: 1px solid blue;
+        padding: 2.5% 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+      }
+
+      .letter-contant {
+        height: 70%;
+        width: 100%;
+        // border: 1px solid pink;
+        padding: 3.5%;
+        overflow-y: auto;
+
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        .text {
+          color: rgba($main-black, .8);
+        }
+
+        .letter-upload-img {
+          margin: 0 1rem;
+          float: right;
+          width: 50%;
+          height: 9.5vw;
+          // border: 1px solid slateblue;
+          background-image: url(../../img/catch-letter/tenor.gif);
+          background-size: 180%;
+          background-position: 40% 50%;
+          background-repeat: no-repeat;
+        }
+
+        #stampshot {
+          //蓋障範圍預設
+          display: none;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          overflow: hidden;
+          // border: 1px solid green;
+          
+          #stampEffect {
+            height: 20%;
+            width:  35%;
+            border-radius: 5px;
+            position: absolute;
+            // background-color: #ef8080;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation-name: pulse;
+            animation-delay: 1s;
+            animation-duration: 0.5s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+
+            @keyframes pulse {
+              0% {
+                opacity: 0;
+              }
+
+              10% {
+                opacity: .50;
+                transform-origin: 50% 50%;
+                transform: rotate(-2deg) scale(5);
+                // transform: scale(5);
+                transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+              }
+
+              100% {
+                opacity: 1;
+                transform: rotate(-15deg) scale(1);
+                // transform: scale(1);
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+
+  .catch-step-2 {
+    height: 100vw;
+  }
+
+  @include scroller();
 }

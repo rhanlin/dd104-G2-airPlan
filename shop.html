@@ -17,18 +17,6 @@
   <main class="shop-main">
     <section id="section1">
       <div class="container">
-        <!-- <div class="row">
-          <div class="shopTitleText">客製化商城</div>
-          <div class="shopTitle">
-            <div class="col-12  shopTitleContainer">
-              <div class="titlePagePic"><img src="/img/product/decorate/bg.svg" alt=""></div>
-              <div class="titlePage1"></div>
-              <div class="titlePage2"></div>
-              <div class="titlePage3"></div>
-              <div class="titlePage4"></div>
-            </div>
-          </div>
-        </div> -->
         <div class="row">
           <div id="conectionLine" class="col-12">
             <img src="/img/product/decorate/pinkclip.svg" alt="" class="iron_clip1">
@@ -82,9 +70,9 @@
             </div>
             <img src="/img/product/decorate/line_bottom.png" alt="" class="line_bottom">
             <div class="itemCardBottomRow">
-              <div class="itemCard itemCard2_1"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
-              <div class="itemCard itemCard2_2"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
-              <div class="itemCard itemCard2_3"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
+              <div class="itemCard itemCard6"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
+              <div class="itemCard itemCard7"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
+              <div class="itemCard itemCard8"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
             </div>
           </div>
         </div>
@@ -94,19 +82,19 @@
               <h3>商品項目</h3>
             </div>
             <div class="filter_forSamllh4">
-              <h4>信紙</h4>
+              <h5>信紙</h5>
             </div>
             <div class="filter_forSamllh4">
-              <h4>DIY工具</h4>
+              <h5>DIY工具</h5>
             </div>
             <div class="filter_forSamllh4">
-              <h4>郵戳</h4>
+              <h5>郵戳</h5>
             </div>
             <div class="filter_forSamllh4">
-              <h4>圖案</h4>
+              <h5>圖案</h5>
             </div>
             <div class="filter_forSamllh4">
-              <h4>費用</h4>
+              <h5>費用</h5>
             </div>
           </div>
         </div>
@@ -197,11 +185,11 @@
                   <div class="controlBtn6 clicked"><img src="./img/product/tool/frame.svg" alt=""></div>
                 </div>
               </div>
-              <div id="copy" class="controlBox7">
+              <!-- <div id="copy" class="controlBox7">
                 <div class="controlBox7_button clicked">
                   <div class="controlBtn7 clicked"><img src="/img/product/tool/archives.svg" alt=""></div>
                 </div>
-              </div>
+              </div> -->
               <div id="filter" class="controlBox8">
                 <div class="controlBox8_button">
                   <div class="controlBtn8"><img src="/img/product/tool/change.svg" alt=""></div>
@@ -219,20 +207,6 @@
                 </div>
               </div>
             </div>
-            <div class="colorTool">
-              <div class="lineColor">
-                <label class="lineColorlabel">
-                  <h5> 畫筆顏色</h5>
-                </label>
-                <input type="color" min="0" max="150" id="lineColorInput">
-              </div>
-              <div class="shadowColor">
-                <label class="shadowColorlabel">
-                  <h5> 陰影顏色</h5>
-                </label>
-                <input type="color" min="0" max="150" id="shadowColorInput">
-              </div>
-            </div>
           </div>
           <div class="controlBoxBottom">
             <div class="brushType">
@@ -248,6 +222,18 @@
                 </select>
               </div>
             </div>
+            <div class="lineColor">
+              <label class="lineColorlabel">
+                <h5> 畫筆顏色</h5>
+              </label>
+              <input type="color" min="0" max="150" class="lineColorInput">
+            </div>
+            <div class="shadowColor">
+              <label class="shadowColorlabel">
+                <h5> 陰影顏色</h5>
+              </label>
+              <input type="color" min="0" max="150" class="shadowColorInput">
+            </div>
             <div class="lineWidth">
               <label class="lineWidthlabel">
                 <h5> 畫筆大小</h5>
@@ -255,7 +241,6 @@
               <input type="range" min="0" max="150" class="lineWidthInput" value="1">
               <span class="lineWidthValue">1</span>
             </div>
-
             <div class="shadowBlur">
               <label class="shadowBlurlabel">
                 <h5> 陰影模糊</h5>
@@ -265,14 +250,14 @@
             </div>
             <div class="shadowOffsetX">
               <label class="shadowOffsetXlabel">
-                <h5> 陰影X軸 偏移</h5>
+                <h5> 陰影X軸</h5>
               </label>
               <input type="range" min="0" max="50" class="shadowOffsetXInput" value="1">
               <span class="shadowOffsetXValue">1</span>
             </div>
             <div class="shadowOffsetY">
               <label class="shadowOffsetYlabel">
-                <h5> 陰影Y軸 偏移</h5>
+                <h5> 陰影Y軸</h5>
               </label>
               <input type="range" min="0" max="50" class="shadowOffsetYInput" value="1">
               <span class="shadowOffsetYValue">1</span>
@@ -293,13 +278,6 @@
               </select>
             </div>
           </div>
-          <div class="lineWidth">
-            <label class="lineWidthlabel">
-              <h5> 畫筆大小</h5>
-            </label>
-            <input type="range" min="0" max="150" class="lineWidthInput" value="1">
-            <span class="lineWidthValue">1</span>
-          </div>
           <div class="lineColor">
             <label class="lineColorlabel">
               <h5> 畫筆顏色</h5>
@@ -312,6 +290,13 @@
             </label>
             <input type="color" min="0" max="150" class="shadowColorInput">
           </div>
+          <div class="lineWidth">
+            <label class="lineWidthlabel">
+              <h5> 畫筆大小</h5>
+            </label>
+            <input type="range" min="0" max="150" class="lineWidthInput" value="1">
+            <span class="lineWidthValue">1</span>
+          </div>
           <div class="shadowBlur">
             <label class="shadowBlurlabel">
               <h5> 陰影模糊</h5>
@@ -321,14 +306,14 @@
           </div>
           <div class="shadowOffsetX">
             <label class="shadowOffsetXlabel">
-              <h5> 陰影X軸 偏移</h5>
+              <h5> 陰影X軸</h5>
             </label>
             <input type="range" min="0" max="50" class="shadowOffsetXInput" value="1">
             <span class="shadowOffsetXValue">1</span>
           </div>
           <div class="shadowOffsetY">
             <label class="shadowOffsetYlabel">
-              <h5> 陰影Y軸 偏移</h5>
+              <h5> 陰影Y軸</h5>
             </label>
             <input type="range" min="0" max="50" class="shadowOffsetYInput" value="1">
             <span class="shadowOffsetYValue">1</span>
@@ -343,16 +328,23 @@
           <div id="btns" class="btns">
             <div class="orderBtnBoxGroup ">
               <div class="orderBtnBox ">
-                <div class="orderBtn "></div>
+                <div class="orderBtn clicked">
+                  <div class="orderText">
+                    <h6>切換郵戳畫板</h6>
+                  </div>
+                </div>
                 <div class="orderBtnBottom"></div>
-                <div class="orderText"></div>
+
               </div>
             </div>
             <div id="emptyBtn">
-              <div class="switchBtnBox ">
-                <div class="switchBtn clicked">empty</div>
+              <div class="switchBtnBox clicked">
+                <div class="switchBtn">empty</div>
               </div>
               <div class="switchBtnBox">
+                <div class="switchBtn">empty</div>
+              </div>
+              <!-- <div class="switchBtnBox">
                 <div class="switchBtn">empty</div>
               </div>
               <div class="switchBtnBox">
@@ -363,10 +355,7 @@
               </div>
               <div class="switchBtnBox">
                 <div class="switchBtn">empty</div>
-              </div>
-              <div class="switchBtnBox">
-                <div class="switchBtn">empty</div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -374,9 +363,6 @@
     </section>
     <section id="section3">
       <div class="owl-carousel owl-theme">
-        <div class="item">
-          <div class="owl_img"><img src="/img/product/postmark/postmark_3-04.svg" alt="" class="figure"></div>
-        </div>
         <div class="item">
           <div class="owl_img"><img src="/img/product/postmark/postmark_1.png" alt="" class="figure"></div>
         </div>
@@ -387,25 +373,28 @@
           <div class="owl_img"><img src="/img/product/postmark/postmark_3.png" alt="" class="figure"></div>
         </div>
         <div class="item">
+          <div class="owl_img"><img src="/img/product/postmark/postmark_4.png" alt="" class="figure"></div>
+        </div>
+        <div class="item">
           <div class="owl_img"><img src="/img/product/postmark/postmark_5.png" alt="" class="figure"></div>
+        </div>
+        <div class="item">
+          <div class="owl_img"><img src="/img/product/postmark/postmark_6.png" alt="" class="figure"></div>
         </div>
         <div class="item">
           <div class="owl_img"><img src="/img/product/figure/figure_1.png" alt="" class="figure"></div>
         </div>
         <div class="item">
-          <div class="owl_img"><img src="/img/product/postmark/postmark_4.png" alt="" class="figure"></div>
+          <div class="owl_img"><img src="/img/product/postmark/postmark_7.png" alt="" class="figure"></div>
+        </div>
+        <div class="item">
+          <div class="owl_img"><img src="/img/product/postmark/postmark_8.png" alt="" class="figure"></div>
         </div>
         <div class="item">
           <div class="owl_img"><img src="/img/product/postmark/postmark_1.png" alt="" class="figure"></div>
         </div>
         <div class="item">
-          <div class="owl_img"><img src="/img/product/postmark/postmark_2-2.png" alt="" class="figure"></div>
-        </div>
-        <div class="item">
-          <div class="owl_img"><img src="/img/product/postmark/postmark_3.png" alt="" class="figure"></div>
-        </div>
-        <div class="item">
-          <div class="owl_img"><img src="/img/product/postmark/postmark_5.png" alt="" class="figure"></div>
+          <div class="owl_img"><img src="/img/product/postmark/postmark_2.png" alt="" class="figure"></div>
         </div>
         <div class="item">
           <div class="owl_img"><img src="/img/product/figure/figure_1.png" alt="" class="figure"></div>
@@ -414,7 +403,7 @@
     </section>
   </main>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
-  <script src="../../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.0.1/fabric.js"></script>
   <script src="./js/fastclick.js"></script>
   <script src="./js/jquery.nice-select.min.js"></script>
@@ -435,15 +424,6 @@
     $('.orderBtn').mouseup(function () {
       $(this).removeClass('clicked');
     });
-    // $('.orderText').mouseup(function () {
-    //   $(this).addClass('clicked');
-    // });
-    // $('.orderText').mouseup(function () {
-    //   $(this).mousedown('clicked');
-    // });
-
-
-
 
 
 

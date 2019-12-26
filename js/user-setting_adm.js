@@ -169,7 +169,7 @@ Vue.component('mike', {
                     </a>
                 </div>
             </div>
-            <img class="userSetting_picture" src="img/userDeveloper/howard.png">
+            <img class="userSetting_picture" src="img/user-developer/mike.png">
         </div>
      `,
 });
@@ -198,7 +198,7 @@ Vue.component('spencer', {
                     </a>
                 </div>
             </div>
-            <img class="userSetting_picture" src="img/userDeveloper/howard.png">
+            <img class="userSetting_picture" src="img/user-developer/spencer.png">
         </div>
      `,
 });
@@ -227,7 +227,7 @@ Vue.component('allen', {
                     </a>
                 </div>
             </div>
-            <img class="userSetting_picture" src="img/userDeveloper/howard.png">
+            <img class="userSetting_picture" src="img/user-developer/allen.png">
         </div>
      `,
 });
@@ -256,7 +256,7 @@ Vue.component('grace', {
                     </a>
                 </div>
             </div>
-            <img class="userSetting_picture" src="img/userDeveloper/howard.png">
+            <img class="userSetting_picture" src="img/user-developer/grace.png">
         </div>
      `,
 });
@@ -285,7 +285,7 @@ Vue.component('sharon', {
                     </a>
                 </div>
             </div>
-            <img class="userSetting_picture" src="img/userDeveloper/howard.png">
+            <img class="userSetting_picture" src="img/user-developer/sharon.png">
         </div>
      `,
 });
@@ -314,7 +314,7 @@ Vue.component('howard', {
                     </a>
                 </div>
             </div>
-            <img class="userSetting_picture" src="img/userDeveloper/howard.png">
+            <img class="userSetting_picture" src="img/user-developer/howard.png">
         </div>
      `,
 });
