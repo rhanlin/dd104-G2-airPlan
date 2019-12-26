@@ -8,14 +8,17 @@
   #threeWorld {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(-45deg, $main-yellow, $main-red, $main-blue, $main-green);
+    background: linear-gradient(-45deg, #85CAE0, #9EA5E2, #B0D8FC, #C7B2E7);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     // cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.png"), auto;
     // cursor: url("../../img/catch-letter/net.png"), auto;
     cursor: none;
+    #planeLetter{
+      cursor: pointer;
+    }
     // cursor: url("http://140.115.236.71/demo-personal/DD104/web/T1901175/img/net.png"),auto;
-    .missMsg{
+    #missMsg {
       display: inline-block;
       width: 5vw;
       height: 3vw;
@@ -25,20 +28,41 @@
       left: 35%;
       color: #fff;
     }
+
+    .fadeAway {
+      animation: missMsg 3s ease;
+
+      @keyframes missMsg {
+        from {
+          top: -25%;
+          opacity: 1;
+        }
+
+        to {
+          top: -40%;
+          opacity: 0;
+        }
+      }
+    }
+
+
     #mouseNet {
       position: absolute;
       outline: none;
-      -webkit-user-select: none;   /* for Chrome */
+      -webkit-user-select: none;
+      /* for Chrome */
       user-select: none;
     }
+
     .active {
       position: absolute;
       top: 53%;
       left: 50%;
       transform: translate(-50%, -50%);
+
     }
 
-    .open-motion{
+    .open-motion {
       width: 20vw;
       max-width: 495px;
       height: 25vw;
@@ -50,16 +74,17 @@
       background-size: cover;
       position: relative;
 
-    //   animation-name: flimPaper;
-    // animation-duration: 1.3s;
-    // animation-timing-function: steps(8);
-    // animation-iteration-count: infinite;
+      //   animation-name: flimPaper;
+      // animation-duration: 1.3s;
+      // animation-timing-function: steps(8);
+      // animation-iteration-count: infinite;
     }
+
     // @keyframes flimPaper {
     //   from {
     //     background-position: 0% 0%;
     //   }
-      
+
     //   to {
     //     background-position: 0% 100%;
     //   }
@@ -86,13 +111,13 @@
   }
 
   h3 {
-    font-size: 1.4vw;
     text-align-last: left;
   }
 
   #planeContainer {
     width: 100%;
     height: 100vh;
+
   }
 
   .catch-step-1 {
@@ -246,9 +271,9 @@
   }
 
   .catch-letter {
-    width: 27.8vw;
+    width: 55.6vw;
     max-width: 495px;
-    height: 40vw;
+    height: 80vw;
     max-height: 716px;
     margin: 0 40% 0 0;
     background-color: #fff;
@@ -317,8 +342,6 @@
         // justify-content: center;
         // align-items: center;
         .text {
-          font-size: 1.15vw;
-          line-height: 1.8vw;
           color: rgba($main-black, .8);
         }
 
@@ -332,6 +355,54 @@
           background-size: 180%;
           background-position: 40% 50%;
           background-repeat: no-repeat;
+        }
+
+        #stampshot {
+          //蓋障範圍預設
+          display: none;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          overflow: hidden;
+          // border: 1px solid green;
+          
+          #stampEffect {
+            height: 20%;
+            width:  35%;
+            border-radius: 5px;
+            position: absolute;
+            // background-color: #ef8080;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation-name: pulse;
+            animation-delay: 1s;
+            animation-duration: 0.5s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+
+            @keyframes pulse {
+              0% {
+                opacity: 0;
+              }
+
+              10% {
+                opacity: .50;
+                transform-origin: 50% 50%;
+                transform: rotate(-2deg) scale(5);
+                // transform: scale(5);
+                transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+              }
+
+              100% {
+                opacity: 1;
+                transform: rotate(-15deg) scale(1);
+                // transform: scale(1);
+              }
+            }
+          }
         }
       }
 
