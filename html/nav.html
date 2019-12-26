@@ -1,100 +1,116 @@
-
+<<<<<<< HEAD
+<div id="navHead" class="nav-navBgWrap">
+    <div class="nav-navBg">
+        <img src="../img/share/nav_lightBox.svg" alt="">
+        <nav class="nav-navWrap">
+            <!-- <div class="nav-topBlock">
+=======
+    <div class="nav-body">
     <div id="navHead" class="nav-navBgWrap">
         <div class="nav-navBg">
             <img src="../img/share/nav_lightBox.svg" alt="">
             <nav class="nav-navWrap">
                 <!-- <div class="nav-topBlock">
+>>>>>>> dev
                 登入和設定 
             </div> -->
-                <div class="nav-logoWrap">
-                    <a href="../home.html"><img src="../img/share/LOGO.png"></a>
-                </div>
-                <div class="nav-navPageWrap">
-                    <ul class="nav-list" id="list">
-                        <li><a href="../write-letter.html">
-                                <p class="nav-pageName">寫信</p> <span class="nav-circle-1 nav-now"></span>
-                            </a> </li>
-                        <li><a href="../catch-letter.html">
-                                <p class="nav-pageName">撈信</p> <span class="nav-circle-2"></span>
-                            </a> </li>
-                        <li><a href="../shop.html">
-                                <p class="nav-pageName">商城</p> <span class="nav-circle-3"></span>
-                            </a> </li>
-                        <li><a href="../cave.html">
-                                <p class="nav-pageName">我的倉庫</p> <span class="nav-circle-4"></span>
-                            </a> </li>
-                        <li><a href="../chatroom.html">
-                                <p class="nav-pageName">聊天室</p> <span class="nav-circle-5"></span>
-                            </a> </li>
-                        <li><a href="../classic.html">
-                                <p class="nav-pageName">精華區</p> <span class="nav-circle-6"></span>
-                            </a> </li>
-                    </ul>
-                    <div class="nav-road">
-                        <div></div>
-                    </div>
-                </div>
-            </nav>
-            <div class="nav-littleNav">
-                <a href="#"><i class="fas fa-user-circle"></i></a>
-                <a href="../user-setting.html"><i class="fas fa-cog"></i></a>
+            <div class="nav-logoWrap">
+                <a href="../home.html"><img src="../img/share/LOGO.png"></a>
             </div>
-            <div class="nav-pc">
-                <div class="cav-paper">信紙:999</div>
-                <div class="cav-coin">Air幣:777</div>
+            <div class="nav-navPageWrap">
+                <ul class="nav-list" id="list">
+                    <li><a href="../write-letter.html">
+                            <p class="nav-pageName">寫信</p> <span class="nav-circle-1 nav-now"></span>
+                        </a> </li>
+                    <li><a href="../catch-letter.html">
+                            <p class="nav-pageName">撈信</p> <span class="nav-circle-2"></span>
+                        </a> </li>
+                    <li><a href="../shop.html">
+                            <p class="nav-pageName">商城</p> <span class="nav-circle-3"></span>
+                        </a> </li>
+                    <li><a href="../cave.html">
+                            <p class="nav-pageName">我的倉庫</p> <span class="nav-circle-4"></span>
+                        </a> </li>
+                    <li><a href="../chatroom.html">
+                            <p class="nav-pageName">聊天室</p> <span class="nav-circle-5"></span>
+                        </a> </li>
+                    <li><a href="../classic.html">
+                            <p class="nav-pageName">精華區</p> <span class="nav-circle-6"></span>
+                        </a> </li>
+                </ul>
+                <div class="nav-road">
+                    <div></div>
+                </div>
             </div>
+        </nav>
+        <div class="nav-littleNav">
+            <a href="#"><i class="fas fa-user-circle"></i></a>
+            <a href="../user-setting.html"><i class="fas fa-cog"></i></a>
+        </div>
+        <div class="nav-pc">
+            <div class="cav-paper">信紙:999</div>
+            <div class="cav-coin">Air幣:777</div>
         </div>
     </div>
+</div>
 
-    <div class="nav-hamPosition">
-        <div class="nav-hamburgerWrap">
-            <div class="hambuger" id="hamburger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
+<div class="nav-hamPosition">
+    <div class="nav-hamburgerWrap">
+        <div class="hambuger" id="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
     </div>
+</div>
+<<<<<<< HEAD
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    var navBar_active = function () {
+        var scroll_top = $(window).scrollTop();
+=======
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         var navBar_active = function () {
             var scroll_top = $(window).scrollTop();
+>>>>>>> dev
 
-            $("posision").html(scroll_top);
+        $("posision").html(scroll_top);
 
-            if (scroll_top >= 560) {
-                $("div.nav-navBgWrap").addClass("-on");
-            } else {
-                $("div.nav-navBgWrap").removeClass("-on");
-            }
-        };
+        if (scroll_top >= 560) {
+            $("div.nav-navBgWrap").addClass("-on");
+        } else {
+            $("div.nav-navBgWrap").removeClass("-on");
+        }
+    };
 
-        $(function () {
-            $(window).scroll(function () {
-                navBar_active();
-            });
-
+    $(function () {
+        $(window).scroll(function () {
+            navBar_active();
         });
-    </script>
-    <script>
-        const hambuger = document.querySelector('.hambuger');
 
-            hambuger.addEventListener('click', () => {
-            hambuger.classList.toggle('change');
-        })
-    </script>
-    <script>
-        $(function () {
-            // hamburger icon 的切換
-            $("div.hamburger").on("click", function () {
-                $(this).toggleClass("is-active");
-            });
+    });
+</script>
+<script>
+    const hambuger = document.querySelector('.hambuger');
 
+    hambuger.addEventListener('click', () => {
+        hambuger.classList.toggle('change');
+    })
+</script>
+<script>
+    $(function () {
+        // hamburger icon 的切換
+        $("div.hamburger").on("click", function () {
+            $(this).toggleClass("is-active");
         });
-        let hamburger = document.getElementById('hamburger');
-        let list = document.getElementById('list');
-        hamburger.addEventListener('click', function () {
-            list.classList.toggle('open');
-        })
-    </script>
+
+    });
+    let hamburger = document.getElementById('hamburger');
+    let list = document.getElementById('list');
+    hamburger.addEventListener('click', function () {
+        list.classList.toggle('open');
+    })
+</script>

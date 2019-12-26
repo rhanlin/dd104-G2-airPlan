@@ -2,29 +2,6 @@
 @import "../../node_modules/owl.carousel/src/scss/owl.carousel.scss";
 @import "../../node_modules/owl.carousel/src/scss/owl.theme.default.scss";
 
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 30px;
-}
-
-h3 {
-  font-size: 26px;
-}
-
-h4 {
-  font-size: 24px;
-}
-
-h5 {
-  font-size: 16px;
-}
-
-h6 {
-  font-size: 10px;
-}
 
 $input_border_radius: 5px !default;
 $input_height: 42px !default;
@@ -137,7 +114,6 @@ $arrow_color: $gray !default;
 
           .itemCardAside {
             width: 20%;
-            height: 900px;
 
             .itemCardAsideBox {
               width: 65%;
@@ -154,25 +130,79 @@ $arrow_color: $gray !default;
                 font-family: $font;
                 margin: 40px 0;
               }
+
+              .accordion {
+                .card {
+                  border: 0;
+
+                  .card-header {
+                    padding: 0;
+                    border-bottom: 0;
+                    margin-bottom: 0;
+
+                    .mb-0 {
+                      .btn-link {
+                        color: #333;
+                        font-weight: 0;
+                        padding: 0;
+
+                        &:focus {
+                          text-decoration: none;
+                        }
+
+                        &:hover {
+                          text-decoration: none;
+                        }
+                      }
+                    }
+                  }
+
+                  .collapse {
+                    padding: 0;
+
+                    .card-body {
+                      // padding: 0;
+
+                      h5{
+                        // margin:20px;
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
 
           .itemCardContainer {
+
             width: 80%;
-            padding-top: 150px;
-            padding-left: 20px;
+            padding-top: 15%;
+            padding-left: 5%;
 
-            .line_top {
-              width: 80%;
-              transform: translate(5%, -10%);
-            }
 
-            .itemCardTopRow {
+            .cardFilter {
+              width: 100%;
+              height: 500px;
               display: flex;
-              @include itemCardRow1(5);
+              flex-wrap: wrap;
 
-              .itemCard1 {
-                transform: translate(0, -50%) rotate(15deg);
+              @include itemCardRow1(15);
+
+              .line_top {
+                position: relative;
+                width: 70%;
+                transform: translate(5%, -10%);
+              }
+
+              .line_bottom {
+                position: relative;
+                width: 70%;
+                transform: translate(10%, 30%);
+              }
+
+              #itemCard1,
+              #itemCard9 {
+                transform: translate(0, -0%) rotate(15deg);
 
                 img {
                   width: 2.5vw;
@@ -180,7 +210,8 @@ $arrow_color: $gray !default;
                 }
               }
 
-              .itemCard2 {
+              #itemCard2,
+              #itemCard10 {
                 transform: translate(0, -30%) rotate(355deg);
 
                 img {
@@ -189,24 +220,20 @@ $arrow_color: $gray !default;
                 }
               }
 
-              .itemCard3 {
+              #itemCard3,
+              #itemCard11 {
                 font-size: 0;
                 transform: translate(0, -10%) rotate(360deg);
 
-                .itemCard3Img_1 {
-                  display: inline-block;
+                img {
                   width: 2.5vw;
-                  transform: translate(2%, -70%) rotate(350deg);
+                  transform: translate(70%, -70%) rotate(360deg);
                 }
 
-                .itemCard3Img_2 {
-                  display: inline-block;
-                  width: 2.5vw;
-                  transform: translate(15%, -70%) rotate(350deg);
-                }
               }
 
-              .itemCard4 {
+              #itemCard4,
+              #itemCard12 {
                 transform: translate(0, 0%) rotate(350deg);
 
                 img {
@@ -216,7 +243,8 @@ $arrow_color: $gray !default;
               }
 
 
-              .itemCard5 {
+              #itemCard5,
+              #itemCard13 {
                 transform: translate(0, -10%) rotate(360deg);
 
                 img {
@@ -224,20 +252,13 @@ $arrow_color: $gray !default;
                   transform: translate(0%, -80%) rotate(350deg);
                 }
               }
-            }
 
-            .line_bottom {
-              width: 50%;
-              transform: translate(10%, 30%);
-            }
 
-            .itemCardBottomRow {
-              @include itemCardRow2(8);
-              display: flex;
 
-              .itemCard6 {
-                transform: translate(30%, 0%) rotate(350deg);
-                margin-top: 50px;
+              #itemCard6,
+              #itemCard14 {
+                transform: translate(0%, 0%) rotate(350deg);
+
 
                 img {
                   width: 2.5vw;
@@ -245,9 +266,10 @@ $arrow_color: $gray !default;
                 }
               }
 
-              .itemCard7 {
+              #itemCard7,
+              #itemCard15 {
                 transform: translate(0%, 0%) rotate(15deg);
-                margin-top: 30px;
+
 
                 img {
                   width: 2.5vw;
@@ -255,8 +277,8 @@ $arrow_color: $gray !default;
                 }
               }
 
-              .itemCard8 {
-                transform: translate(-40%, -10%) rotate(0deg);
+              #itemCard8 {
+                transform: translate(-0%, -0%) rotate(0deg);
 
                 img {
                   width: 2.5vw;
@@ -264,8 +286,86 @@ $arrow_color: $gray !default;
                 }
               }
             }
+
+
+            #emptyBtn {
+              margin: 0 auto;
+              width: 60%;
+              display: flex;
+
+              .switchBtnBox {
+                width: 33.3%;
+
+                .switchBtn {
+                  // margin-top: 30%;
+                  font-family: $font;
+                  font-size: 1vw;
+                  letter-spacing: 0.2em;
+                  position: relative;
+                  width: 6vw;
+                  height: 2vw;
+                  background-color: #FFD139;
+                  border: 0.15vw solid black;
+                  text-align: center;
+                  line-height: 30px;
+                  cursor: pointer;
+                  color: white;
+                  text-shadow: 2px 2px 1px #000, -2px -2px 1px #000, 2px -2px 1px #000, -2px 2px 1px #000;
+
+                  &:before {
+                    content: '';
+                    position: absolute;
+                    width: 2vw;
+                    height: 1vw;
+                    left: -1.6vw;
+                    bottom: -0.2vw;
+                    border: 0.15vw solid black;
+                    transform: rotate(90deg) skew(45deg);
+                    background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                    background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                    background-size: 7px 7px;
+                  }
+
+                  &:after {
+                    content: '';
+                    position: absolute;
+                    width: 5.9vw;
+                    height: 1.1vw;
+                    bottom: -1.2vw;
+                    left: -0.6vw;
+                    border: 0.15vw solid black;
+                    transform: skew(-45deg) rotate(0deg);
+                    background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                    background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                    background-size: 7px 7px;
+                  }
+
+
+                  &.clicked {
+                    border: 0.15vw solid black;
+                    left: -0.8vw;
+                    bottom: -0.4vw;
+
+                    &:before {
+                      border: 0.15vw solid black;
+                      height: 0.7vw;
+                      left: -1.5vw;
+                      bottom: 0.1vw;
+                    }
+
+                    &:after {
+                      border: 0.15vw solid black;
+                      height: 0.7vw;
+                      bottom: -0.8vw;
+                      left: -0.5vw;
+                    }
+                  }
+                }
+              }
+            }
           }
         }
+
 
         .filter_forSamll {
           display: none;
@@ -2023,81 +2123,6 @@ $arrow_color: $gray !default;
                 }
               }
             }
-
-            #emptyBtn {
-              width: 20%;
-
-              .switchBtnBox {
-                width: 100%;
-                margin: 10% 10% 10% 40%;
-
-                .switchBtn {
-                  // margin-top: 30%;
-                  font-family: $font;
-                  font-size: 1vw;
-                  letter-spacing: 0.2em;
-                  position: relative;
-                  width: 6vw;
-                  height: 2vw;
-                  background-color: #FFD139;
-                  border: 0.15vw solid black;
-                  text-align: center;
-                  line-height: 30px;
-                  cursor: pointer;
-                  color: white;
-                  text-shadow: 2px 2px 1px #000, -2px -2px 1px #000, 2px -2px 1px #000, -2px 2px 1px #000;
-
-                  &:before {
-                    content: '';
-                    position: absolute;
-                    width: 2vw;
-                    height: 1vw;
-                    left: -1.6vw;
-                    bottom: -0.2vw;
-                    border: 0.15vw solid black;
-                    transform: rotate(90deg) skew(45deg);
-                    background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background-size: 7px 7px;
-                  }
-
-                  &:after {
-                    content: '';
-                    position: absolute;
-                    width: 5.9vw;
-                    height: 1.1vw;
-                    bottom: -1.2vw;
-                    left: -0.6vw;
-                    border: 0.15vw solid black;
-                    transform: skew(-45deg) rotate(0deg);
-                    background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background-size: 7px 7px;
-                  }
-
-
-                  &.clicked {
-                    border: 0.15vw solid black;
-                    left: -0.8vw;
-                    bottom: -0.4vw;
-
-                    &:before {
-                      border: 0.15vw solid black;
-                      height: 0.7vw;
-                      left: -1.5vw;
-                      bottom: 0.1vw;
-                    }
-
-                    &:after {
-                      border: 0.15vw solid black;
-                      height: 0.7vw;
-                      bottom: -0.8vw;
-                      left: -0.5vw;
-                    }
-                  }
-                }
-              }
-            }
           }
         }
       }
@@ -2215,51 +2240,6 @@ $arrow_color: $gray !default;
           .drawingBoardBox {
             #btns {
               width: 90%;
-
-              .orderBtnBoxGroup {}
-
-              #emptyBtn {
-
-                .switchBtnBox {
-                  .switchBtn {
-                    font-size: 1vw;
-                    width: 9vw;
-                    height: 3vw;
-
-                    &:before {
-                      width: 3vw;
-                      height: 1.5vw;
-                      left: -2.4vw;
-                      bottom: -0.3vw;
-                    }
-
-                    &:after {
-                      width: 9vw;
-                      height: 1.5vw;
-                      bottom: -1.65vw;
-                      left: -1.05vw;
-                    }
-
-                    &.clicked {
-                      left: -0.9vw;
-                      bottom: -0.375vw;
-
-                      &:before {
-                        height: 1.05vw;
-                        left: -2.25vw;
-                        bottom: 0.15vw;
-                      }
-
-                      &:after {
-                        height: 1vw;
-                        bottom: -1.2vw;
-                        left: -0.75vw;
-                      }
-                    }
-                  }
-
-                }
-              }
             }
           }
         }
@@ -2274,7 +2254,7 @@ $arrow_color: $gray !default;
             transform: translate(-50%, 0);
 
             .owl-prev {
-              width:40%;
+              width: 40%;
 
             }
 
@@ -2341,54 +2321,55 @@ $arrow_color: $gray !default;
             .itemCardContainer {
               width: 70%;
 
-              .line_top {
-                width: 90%;
-                transform: translate(0, -30%);
-              }
+              .cardFilter {
 
-              .itemCardTopRow {
-                @include itemCardRow1_lg(4);
 
-                .itemCard1 {
+                .line_top {
+                  width: 90%;
+                  transform: translate(0, -30%);
+                }
+
+
+                @include itemCardRow1_lg(8);
+
+                #itemCard1 {
                   transform: translate(0, -100%) rotate(15deg);
                 }
 
-                .itemCard2 {
+                #itemCard2 {
                   transform: translate(0, -50%) rotate(355deg);
                 }
 
-                .itemCard3 {
+                #itemCard3 {
                   transform: translate(0, -30%) rotate(360deg);
                 }
 
-                .itemCard4 {
+                #itemCard4 {
                   transform: translate(0, -50%) rotate(355deg);
                 }
 
-                .itemCard5 {
+                #itemCard5 {
                   display: none;
                 }
-              }
 
-              .line_bottom {
-                width: 70%;
-                transform: translate(0%, -10%);
-              }
 
-              .itemCardBottomRow {
-                @include itemCardRow2_lg(8);
+                .line_bottom {
+                  width: 70%;
+                  transform: translate(0%, -10%);
+                }
 
-                .itemCard6 {
+
+                #itemCard6 {
                   transform: translate(0%, 0%) rotate(350deg);
                   margin-top: 0px;
                 }
 
-                .itemCard7 {
+                #itemCard7 {
                   transform: translate(-30%, 0%) rotate(15deg);
                   margin-top: 0px;
                 }
 
-                .itemCard8 {
+                #itemCard8 {
                   transform: translate(-70%, -40%) rotate(0deg);
                 }
               }
@@ -2539,51 +2520,50 @@ $arrow_color: $gray !default;
               padding-top: 70px;
               padding-left: 70px;
 
-              .line_top {
-                width: 90%;
-                transform: translate(5%, -10%);
-              }
+              .cardFilter {
 
-              .itemCardTopRow {
-                @include itemCardRow1_md(4);
 
-                .itemCard1 {
+                .line_top {
+                  width: 90%;
+                  transform: translate(5%, -10%);
+                }
+
+                @include itemCardRow1_md(8);
+
+                #itemCard1 {
                   transform: translate(0, -50%) rotate(15deg);
                 }
 
-                .itemCard3 {
+                #itemCard3 {
                   transform: translate(0, -10%) rotate(360deg);
                 }
 
-                .itemCard4 {
+                #itemCard4 {
                   transform: translate(0, -20%) rotate(360deg);
                 }
 
-                .itemCard5 {
+                #itemCard5 {
                   display: none;
                 }
 
-              }
 
-              .line_bottom {
-                width: 70%;
-                transform: translate(10%, 10%);
-              }
+                .line_bottom {
+                  width: 70%;
+                  transform: translate(10%, 10%);
+                }
 
-              .itemCardBottomRow {
-                @include itemCardRow2_md(8);
 
-                .itemCard6 {
+                #itemCard6 {
                   margin-top: 0px;
                   transform: translate(30%, 0%) rotate(350deg);
                 }
 
-                .itemCard7 {
+                #itemCard7 {
 
                   margin-top: 0px;
                 }
 
-                .itemCard8 {
+                #itemCard8 {
                   transform: translate(-10%, -40%) rotate(350deg);
                   margin-top: 0px;
 
@@ -3212,7 +3192,7 @@ $arrow_color: $gray !default;
       }
 
       #section3 {
-        padding-top:10%;
+        padding-top: 10%;
 
         .owl-carousel {
           .owl-nav {
@@ -3238,7 +3218,7 @@ $arrow_color: $gray !default;
             }
 
             .owl-next {
-              width:80%;
+              width: 80%;
 
             }
           }
@@ -3292,15 +3272,17 @@ $arrow_color: $gray !default;
               padding-left: 0px;
               padding-top: 100px;
 
-              .line_top {
-                width: 70%;
-                transform: translate(25%, -80%);
-              }
+              .cardFilter {
 
-              .itemCardTopRow {
-                @include itemCardRow1_sm(2);
 
-                .itemCard1 {
+                .line_top {
+                  width: 70%;
+                  transform: translate(25%, -80%);
+                }
+
+                @include itemCardRow1_sm(8);
+
+                #itemCard1 {
                   transform: translate(50%, -50%) rotate(15deg);
 
                   img {
@@ -3308,33 +3290,31 @@ $arrow_color: $gray !default;
                   }
                 }
 
-                .itemCard2 {
+                #itemCard2 {
                   img {
                     width: 5vw;
                   }
                 }
 
-                .itemCard3 {
+                #itemCard3 {
                   display: none;
                 }
 
-                .itemCard4 {
+                #itemCard4 {
                   display: none;
                 }
 
-                .itemCard5 {
+                #itemCard5 {
                   display: none;
                 }
-              }
 
-              .line_bottom {
-                transform: translate(25%, -10%);
-              }
 
-              .itemCardBottomRow {
-                @include itemCardRow2_sm(7);
+                .line_bottom {
+                  transform: translate(25%, -10%);
+                }
 
-                .itemCard6 {
+
+                #itemCard6 {
                   margin-top: 0px;
 
                   img {
@@ -3343,7 +3323,7 @@ $arrow_color: $gray !default;
 
                 }
 
-                .itemCard7 {
+                #itemCard7 {
                   margin-top: 0px;
 
                   img {
@@ -3351,9 +3331,55 @@ $arrow_color: $gray !default;
                   }
                 }
 
-                .itemCard8 {
-                  display: none;
+                #itemCard8 {
+                  margin-top: 0px;
 
+                  img {
+                    width: 5vw;
+                  }
+
+                }
+              }
+
+              #emptyBtn {
+
+                .switchBtnBox {
+                  .switchBtn {
+                    font-size: 1vw;
+                    width: 9vw;
+                    height: 3vw;
+
+                    &:before {
+                      width: 3vw;
+                      height: 1.5vw;
+                      left: -2.4vw;
+                      bottom: -0.3vw;
+                    }
+
+                    &:after {
+                      width: 9vw;
+                      height: 1.5vw;
+                      bottom: -1.65vw;
+                      left: -1.05vw;
+                    }
+
+                    &.clicked {
+                      left: -0.9vw;
+                      bottom: -0.375vw;
+
+                      &:before {
+                        height: 1.05vw;
+                        left: -2.25vw;
+                        bottom: 0.15vw;
+                      }
+
+                      &:after {
+                        height: 1vw;
+                        bottom: -1.2vw;
+                        left: -0.75vw;
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -3392,52 +3418,53 @@ $arrow_color: $gray !default;
 
               }
 
-              #emptyBtn {
-                .switchBtnBox {
-                  .switchBtn {
-                    font-size: 1vw;
-                    width: 13.5vw;
-                    height: 4.5vw;
+              // #emptyBtn {
+              //   .switchBtnBox {
+              //     .switchBtn {
+              //       font-size: 1vw;
+              //       width: 13.5vw;
+              //       height: 4.5vw;
 
-                    &:before {
-                      width: 4.5vw;
-                      height: 2.5vw;
-                      left: -3.6vw;
-                      bottom: -0.45vw;
-                    }
+              //       &:before {
+              //         width: 4.5vw;
+              //         height: 2.5vw;
+              //         left: -3.6vw;
+              //         bottom: -0.45vw;
+              //       }
 
-                    &:after {
-                      width: 13.5vw;
-                      height: 2.5vw;
-                      bottom: -2.475vw;
-                      left: -1.575vw;
-                    }
+              //       &:after {
+              //         width: 13.5vw;
+              //         height: 2.5vw;
+              //         bottom: -2.475vw;
+              //         left: -1.575vw;
+              //       }
 
-                    &.clicked {
-                      left: -1.5vw;
-                      bottom: -0.5625vw;
+              //       &.clicked {
+              //         left: -1.5vw;
+              //         bottom: -0.5625vw;
 
-                      &:before {
-                        height: 2.1vw;
-                        left: -3.375vw;
-                        bottom: 0.225vw;
-                      }
+              //         &:before {
+              //           height: 2.1vw;
+              //           left: -3.375vw;
+              //           bottom: 0.225vw;
+              //         }
 
-                      &:after {
-                        height: 2vw;
-                        bottom: -1.8vw;
-                        left: -1.125vw;
-                      }
-                    }
-                  }
-                }
-              }
+              //         &:after {
+              //           height: 2vw;
+              //           bottom: -1.8vw;
+              //           left: -1.125vw;
+              //         }
+              //       }
+              //     }
+              //   }
+              // }
             }
           }
         }
       }
+
       #section3 {
-        padding-top:10%;
+        padding-top: 10%;
 
         .owl-carousel {
           .owl-nav {
@@ -3463,7 +3490,7 @@ $arrow_color: $gray !default;
             }
 
             .owl-next {
-              width:80%;
+              width: 80%;
 
             }
           }
@@ -3514,21 +3541,22 @@ $arrow_color: $gray !default;
               padding-left: 0px;
               padding-top: 100px;
 
+              .cardFilter {
 
 
-              .line_top {
-                width: 70%;
-                transform: translate(25%, -80%);
-              }
 
-              .line_bottom {
-                transform: translate(25%, -10%);
-              }
+                .line_top {
+                  width: 70%;
+                  transform: translate(25%, -80%);
+                }
 
-              .itemCardTopRow {
-                @include itemCardRow1_sm(2);
+                .line_bottom {
+                  transform: translate(25%, -10%);
+                }
 
-                .itemCard1 {
+                @include itemCardRow1_sm(8);
+
+                #itemCard1 {
                   transform: translate(50%, -50%) rotate(15deg);
 
                   img {
@@ -3536,29 +3564,26 @@ $arrow_color: $gray !default;
                   }
                 }
 
-                .itemCard2 {
+                #itemCard2 {
                   img {
                     width: 5vw;
                   }
                 }
 
-                .itemCard3 {
+                #itemCard3 {
                   display: none;
                 }
 
-                .itemCard4 {
+                #itemCard4 {
                   display: none;
                 }
 
-                .itemCard5 {
+                #itemCard5 {
                   display: none;
                 }
-              }
 
-              .itemCardBottomRow {
-                @include itemCardRow2_sm(7);
 
-                .itemCard6 {
+                #itemCard6 {
                   margin-top: 0px;
 
                   img {
@@ -3567,7 +3592,7 @@ $arrow_color: $gray !default;
 
                 }
 
-                .itemCard7 {
+                #itemCard7 {
                   margin-top: 0px;
 
                   img {
@@ -3575,13 +3600,12 @@ $arrow_color: $gray !default;
                   }
                 }
 
-                .itemCard8 {
+                #itemCard8 {
                   display: none;
 
                 }
               }
             }
-
           }
         }
       }
@@ -3727,17 +3751,13 @@ $arrow_color: $gray !default;
                 width: 25%;
                 margin: 0% 0% 0% 0%;
               }
-
-              #emptyBtn {
-                display: none;
-              }
             }
           }
         }
       }
 
       #section3 {
-        padding-top:10%;
+        padding-top: 10%;
 
         .owl-carousel {
           .owl-nav {
@@ -3763,7 +3783,7 @@ $arrow_color: $gray !default;
             }
 
             .owl-next {
-              width:90%;
+              width: 90%;
 
             }
           }
