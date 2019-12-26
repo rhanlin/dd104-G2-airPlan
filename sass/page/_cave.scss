@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: $font;
 }
 .cav-body {
   background: radial-gradient(rgb(90, 155, 90) 30%, rgb(70, 131, 80) 20%);
@@ -65,17 +66,28 @@
           // border: 1px solid fuchsia;
           display: flex;
           justify-content: space-around;
-          // .cav-myLetter {
-          // }
-          // .cav-otherLetter {
-          // }
+          margin: 3% 0 1% 0;
+          .cav-myLetter {
+            @include btn_3d_module();
+            .btn {
+              height: 50px;
+              // padding: 0;
+            }
+          }
+          .cav-otherLetter {
+            @include btn_3d_module();
+            .btn {
+              height: 50px;
+              // padding: 0;
+            }
+          }
         }
         .cav-histLetter1 {
           border: 5px solid $main-black;
           background-color: #ddd;
           padding: 5px;
           // height: calc(100%-10px);
-          height: 97.7%;
+          height: 91.7%;
 
           .cav-histLetter2 {
             border: 5px solid $main-black;
@@ -377,17 +389,12 @@
       height: 60px;
       position: relative;
       /* 按鈕 */
-      .btn-wrapper-center {
-        position: absolute;
-        width: 58px;
-        // height: 40px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        //   //   // .btn{
-        //   //   //   @include btn_basic_module(red)
-        //   //   // }
-      }
+      // @include btn_3d_module();
+      // .btn {
+      //   margin: 0 auto;
+      //   height: 50px;
+      //   // padding: 0;
+      // }
     }
   }
   .cav-prod {
@@ -638,7 +645,7 @@
         // justify-content: space-between;
         // padding: 1%;
         // position: absolute;
-        top:-20%;
+        top: -20%;
         left: 20%;
 
         .cav-boxFrontLeft {
@@ -652,7 +659,7 @@
             border: 1px solid fuchsia;
             display: flex;
             justify-content: space-around;
-            }
+          }
           .cav-histLetter1 {
             border: 5px solid $main-black;
             background-color: #ddd;
@@ -760,7 +767,6 @@
                 width: 82.5%;
                 margin: 20px auto;
                 .cav-letImg {
-                
                   width: 100%;
                   overflow: hidden;
 
@@ -885,7 +891,6 @@
       > img {
         height: 100%;
       }
-      
     }
     .cav-prod {
       width: 30vw;
