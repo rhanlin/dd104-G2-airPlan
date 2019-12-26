@@ -15,9 +15,21 @@
     // cursor: url("../../img/catch-letter/net.png"), auto;
     cursor: none;
     // cursor: url("http://140.115.236.71/demo-personal/DD104/web/T1901175/img/net.png"),auto;
-
+    .missMsg{
+      display: inline-block;
+      width: 5vw;
+      height: 3vw;
+      position: absolute;
+      // background-color: red;
+      top: -25%;
+      left: 35%;
+      color: #fff;
+    }
     #mouseNet {
       position: absolute;
+      outline: none;
+      -webkit-user-select: none;   /* for Chrome */
+      user-select: none;
     }
     .active {
       position: absolute;
