@@ -2,119 +2,62 @@
   @for $i from 1 through $sum {
 
     //從1跑到5
-    .itemCard#{$i} {
+    #itemCard#{$i} {
       width: 8vw;
       height: 7vw;
       margin: 0 2%;
       border: $border;
-      background: url('/img/product/postmark/postmark_#{$i}.png') center #fff;
       background-size: contain;
+      background-position: center;
+      background-color: #fff;
       background-repeat: no-repeat;
     }
   }
 }
 
-@mixin itemCardRow2($sum) {
-  @for $i from 6 through $sum {
 
-    //從1跑到3
-    .itemCard#{$i} {
-      width: 8vw;
-      height: 7vw;
-      margin: 0 5%;
-      border: $border;
-      background: url('/img/product/postmark/postmark_#{$i}.png') center #fff;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-  }
-}
 
 
 @mixin itemCardRow1_lg($sum) {
   @for $i from 1 through $sum {
 
     //從1跑到5
-    .itemCard#{$i} {
+    #itemCard#{$i} {
       width: 12vw;
       height: 8vw;
       margin: 0 3%;
       border: $border;
-      background: url('/img/product/postmark/postmark_#{$i}.png') center #fff;
       background-size: contain;
       background-repeat: no-repeat;
     }
   }
 }
 
-@mixin itemCardRow2_lg($sum) {
-  @for $i from 6 through $sum {
-
-    //從1跑到3
-    .itemCard#{$i} {
-      width: 12vw;
-      height: 8vw;
-      margin: 0 6%;
-      border: $border;
-      background: url('/img/product/postmark/postmark_#{$i}.png') center #fff;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-  }
-}
 
 @mixin itemCardRow1_md($sum) {
   @for $i from 1 through $sum {
 
     //從1跑到5
-    .itemCard#{$i} {
+    #itemCard#{$i} {
       width: 14vw;
       height: 10vw;
       margin: 0 3%;
       border: $border;
-      background: url('/img/product/postmark/postmark_#{$i}.png') center #fff;
+      background: url('/img/product/postmark/postmark_#{$i}#png') center #fff;
       background-size: contain;
       background-repeat: no-repeat;
     }
   }
 }
 
-@mixin itemCardRow2_md($sum) {
-  @for $i from 6 through $sum {
-
-    //從1跑到3
-    .itemCard#{$i} {
-      width: 14vw;
-      height: 10vw;
-      margin: 0 6%;
-      border: $border;
-      background: url('/img/product/postmark/postmark_#{$i}.png') center #fff;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-  }
-}
 
 
 @mixin itemCardRow1_sm($sum) {
   @for $i from 1 through $sum {
 
     //從1跑到3
-    .itemCard#{$i} {
+    #itemCard#{$i} {
       width: 26vw;
-      height: 14vw;
-      margin: 0 10%;
-      border: $border;
-      background-color: #fff;
-    }
-  }
-}
-@mixin itemCardRow2_sm($sum) {
-  @for $i from 6 through $sum {
-
-    //從1跑到3
-    .itemCard#{$i} {
-      width: 30vw;
       height: 14vw;
       margin: 0 10%;
       border: $border;

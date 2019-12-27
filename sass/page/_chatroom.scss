@@ -107,15 +107,7 @@
             border-radius: 10px;
         }
 
-        .sectionMark1,
-        .sectionMark2,
-        .sectionMark3,
-        .sectionMark4,
-        .sectionMark5,
-        .sectionMark6,
-        .sectionMark7,
-        .sectionMark8,
-        .sectionMark9 {
+        .sectionMark1 {
             width: 130px;
             height: 130px;
             @include border();
@@ -126,7 +118,7 @@
             text-align: center;
         }
 
-        .sectionMark1 {
+        .MarkRed {
             background-color: $main-red;
         }
 
