@@ -131,13 +131,14 @@
     @@include("./html/footer.html")
 
     <script>
-        let Mark = document.getElementsByClassName('sectionMark1');
+        let Mark = document.querySelectorAll('.sectionMark1');
         for (let i = 0; i < Mark.length; i++) {
             Mark[i].addEventListener('click',function(e){
                 for(let j =0;j< Mark.length; j++){
                     Mark[j].classList.remove("MarkRed");
                 }
                 e.target.classList.add("MarkRed");
+                if(e.target.className)
             })
         };
     </script>
