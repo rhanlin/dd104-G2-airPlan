@@ -584,6 +584,35 @@
                     left: 5%;
                 }
             }
+
+            .smokeBox {
+                border: 1px solid blue;
+                width: 40%;
+                height: 16.5vw;
+                position: absolute;
+                right: 30%;
+                top: 20%;
+
+                .smokeS {
+                    filter: drop-shadow(0px -12px 9px rgba(0, 0, 0, 0.65));
+
+                }
+
+                .smokeM {
+                    position: absolute;
+                    bottom: 14.5%;
+                    left: 38%;
+                    filter: drop-shadow(0px -12px 9px rgba(0, 0, 0, 0.65));
+
+                }
+
+                .smokeL {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    filter: drop-shadow(0px -12px 9px rgba(0, 0, 0, 0.65));
+                }
+            }
         }
 
         .print {
@@ -762,129 +791,130 @@
             }
 
             .bulb_L1 {
-                background-color: grey;
+                background-color: $main-white;
                 position: absolute;
                 top: 0.5%;
                 left: 2%;
-                animation: lightRedYel 2s ease-in infinite;
+                animation: lightRedYel 2.1s ease-in infinite alternate 0.3s;
             }
 
             .bulb_L2 {
-                background-color: $main-yellow;
+                background-color: $main-white;
                 position: absolute;
                 top: 25%;
                 left: 2%;
-                animation: lightYelRed 2s ease-in infinite;
+                animation: lightYelRed 2.1s ease-in infinite alternate 0.6s;
             }
 
             .bulb_L3 {
-                background-color: $main-red;
+                background-color: $main-white;
                 position: absolute;
                 top: 50%;
                 left: 2%;
-                animation: lightRedYel 2s ease-in infinite;
+                animation: lightRedYel 2.1s ease-in infinite alternate 0.9s;
             }
 
             .bulb_L4 {
-                background-color: $main-yellow;
+                background-color: $main-white;
                 position: absolute;
                 top: 75%;
                 left: 2%;
-                animation: lightYelRed 2s ease-in infinite;
+                animation: lightYelRed 2.1s ease-in infinite alternate 1.2s;
             }
 
             .bulb_L5 {
-                background-color: $main-red;
+                background-color: $main-white;
                 position: absolute;
                 bottom: 0.5%;
                 left: 2%;
-                animation: lightRedYel 2s ease-in infinite;
-            }
-
-            .bulb_R1 {
-                background-color: $main-yellow;
-                position: absolute;
-                top: 0.5%;
-                right: 2%;
-                animation: lightYelRed 2s ease-in infinite;
-            }
-
-            .bulb_R2 {
-                background-color: $main-red;
-                position: absolute;
-                top: 25%;
-                right: 2%;
-                animation: lightRedYel 2s ease-in infinite;
-            }
-
-            .bulb_R3 {
-                background-color: $main-yellow;
-                position: absolute;
-                top: 50%;
-                right: 2%;
-                animation: lightYelRed 2s ease-in infinite;
-            }
-
-            .bulb_R4 {
-                background-color: $main-red;
-                position: absolute;
-                top: 75%;
-                right: 2%;
-                animation: lightRedYel 2s ease-in infinite;
-            }
-
-            .bulb_R5 {
-                background-color: $main-yellow;
-                position: absolute;
-                bottom: 0.5%;
-                right: 2%;
-                animation: lightYelRed 2s ease-in infinite;
-            }
-
-            .bulb_T1 {
-                background-color: $main-yellow;
-                position: absolute;
-                top: 0.5%;
-                left: 31%;
-                animation: lightYelRed 2s ease-in infinite;
-            }
-
-            .bulb_T2 {
-                background-color: $main-red;
-                position: absolute;
-                top: 0.5%;
-                right: 31%;
-                animation: lightRedYel 2s ease-in infinite;
+                animation: lightRedYel 2.1s ease-in infinite alternate 1.5s;
             }
 
             .bulb_B1 {
-                background-color: $main-yellow;
+                background-color: $main-white;
                 position: absolute;
                 bottom: 0.5%;
                 left: 31%;
-                animation: lightYelRed 2s ease-in infinite;
+                animation: lightYelRed 2.1s ease-in infinite alternate 1.8s;
             }
 
             .bulb_B2 {
-                background-color: $main-red;
+                background-color: $main-white;
                 position: absolute;
                 bottom: 0.5%;
                 right: 31%;
-                animation: lightRedYel 2s ease-in infinite;
+                animation: lightRedYel 2.1s ease-in infinite alternate 2.1s;
+            }
+
+            .bulb_R5 {
+                background-color: $main-white;
+                position: absolute;
+                bottom: 0.5%;
+                right: 2%;
+                animation: lightYelRed 2.1s ease-in infinite alternate 2.4s;
+            }
+
+            .bulb_R4 {
+                background-color: $main-white;
+                position: absolute;
+                top: 75%;
+                right: 2%;
+                animation: lightRedYel 2.1s ease-in infinite alternate 2.7s;
+            }
+
+            .bulb_R3 {
+                background-color: $main-white;
+                position: absolute;
+                top: 50%;
+                right: 2%;
+                animation: lightYelRed 2.1s ease-in infinite alternate 3.0s;
+            }
+
+            .bulb_R2 {
+                background-color: $main-white;
+                position: absolute;
+                top: 25%;
+                right: 2%;
+                animation: lightRedYel 2.1s ease-in infinite alternate 3.3s;
+            }
+
+            .bulb_R1 {
+                background-color: $main-white;
+                position: absolute;
+                top: 0.5%;
+                right: 2%;
+                animation: lightYelRed 2.1s ease-in infinite alternate 3.6s;
+            }
+
+            .bulb_T2 {
+                background-color: $main-white;
+                position: absolute;
+                top: 0.5%;
+                right: 31%;
+                animation: lightRedYel 2.1s ease-in infinite alternate 3.9s;
+            }
+
+            .bulb_T1 {
+                background-color: $main-white;
+                position: absolute;
+                top: 0.5%;
+                left: 31%;
+                animation: lightYelRed 2.1s ease-in infinite alternate 4.2s;
             }
 
             @keyframes lightRedYel {
                 0% {
-                    background-color: $main-yellow;
-
-                }
-
-                50% {
+                    // background-color: $main-yellow;
                     background-color: $main-white;
                 }
 
+                // 50% {
+                //     background-color: $main-white;
+                // }
+
                 100% {
                     background-color: $main-yellow;
+                    // background-color: $main-white;
                 }
             }
 
@@ -893,12 +923,13 @@
                     background-color: $main-white;
                 }
 
-                50% {
-                    background-color: $main-red;
-                }
+                // 50% {
+                //     background-color: $main-red;
+                // }
 
                 100% {
-                    background-color: $main-white;
+                    // background-color: $main-white;
+                    background-color: $main-red;
                 }
             }
         }
