@@ -389,21 +389,21 @@
                             }
                         }
                     }
-                    .admKanbanOverFlowOut::-webkit-scrollbar-track{
-                        -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
-                        background-color: rgba(255, 255, 255, .4);
-                        border-radius: 10px;
-                    }
-                    .admKanbanOverFlowOut::-webkit-scrollbar{
-                        width: 10px;
-                    }
-                    .admKanbanOverFlowOut::-webkit-scrollbar-thumb{
-                        // background-color: #AAA;
-                        background-color: rgba(255, 255, 255, 0.5);
-                        border-radius: 10px;
-                        // background-image: -webkit-linear-gradient(0deg,rgba(0, 0, 0, .2) 25%,transparent 25%,transparent 50%,rgba(0, 0, 0, .2) 50%,rgba(0, 0, 0, .2) 75%,transparent 75%,transparent);
-                        background:rgba(8, 8, 8, 0.2);
-                    }
+                    // .admKanbanOverFlowOut::-webkit-scrollbar-track{
+                    //     -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+                    //     background-color: rgba(255, 255, 255, .4);
+                    //     border-radius: 10px;
+                    // }
+                    // .admKanbanOverFlowOut::-webkit-scrollbar{
+                    //     width: 10px;
+                    // }
+                    // .admKanbanOverFlowOut::-webkit-scrollbar-thumb{
+                    //     // background-color: #AAA;
+                    //     background-color: rgba(255, 255, 255, 0.5);
+                    //     border-radius: 10px;
+                    //     // background-image: -webkit-linear-gradient(0deg,rgba(0, 0, 0, .2) 25%,transparent 25%,transparent 50%,rgba(0, 0, 0, .2) 50%,rgba(0, 0, 0, .2) 75%,transparent 75%,transparent);
+                    //     background:rgba(8, 8, 8, 0.2);
+                    // }
                     //userSetting_adm vue
                     .userSetting_mike{
                         background: radial-gradient(rgba(84, 179, 103, 0.5) 30%, rgb(255, 255, 255) 20%);
@@ -644,46 +644,4 @@
         }
     }
 }
-
-// h1 {
-//     font-size: 4.5rem;
-// }
-
-// h2 {
-//     font-size: 3.5rem;
-// }
-
-// h3 {
-//     font-size: 2.3rem;
-// }
-
-// h4 {
-//     font-size: 1.8rem;
-// }
-
-// h5 {
-//     font-size: 1.6rem;
-// }
-// span{
-//     font-size: 1.3rem;
-// }
-// p{
-//     font-size: 1.3rem;
-// }
-// li{
-//     font-size: 1.3rem;
-// }
-// td{
-//     font-size: 1.3rem;
-// }
-
-
-
-// .userSetting_body li, .userSetting_body span, .userSetting_body td, .userSetting_body p{
-//     // font-size: 20px;
-//     font-family: $font;
-// }
-// .userSetting_body h3{
-//     font-family: $font;
-//     // font-size: h3;
-// }
+  
