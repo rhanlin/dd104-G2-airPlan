@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Air-Plan | 首頁</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="home_body">
+        <div class="nav-body">
+    <div id="navHead" class="nav-navBgWrap">
+        <div class="nav-navBg">
+            <img src="../img/share/nav_lightBox.svg" alt="">
+            <nav class="nav-navWrap">
+                <!-- <div class="nav-topBlock">
+                登入和設定 
+            </div> -->
+            <div class="nav-logoWrap">
+                <a href="./home.html"><img src="./img/share/LOGO.png"></a>
+            </div>
+            <div class="nav-navPageWrap">
+                <ul class="nav-list" id="list">
+                    <li><a href="./write-letter.html">
+                            <p class="nav-pageName">寫信</p> <span class="nav-circle-1 nav-now"></span>
+                        </a> </li>
+                    <li><a href="../catch-letter.html">
+                            <p class="nav-pageName">撈信</p> <span class="nav-circle-2"></span>
+                        </a> </li>
+                    <li><a href="../shop.html">
+                            <p class="nav-pageName">商城</p> <span class="nav-circle-3"></span>
+                        </a> </li>
+                    <li><a href="../cave.html">
+                            <p class="nav-pageName">我的倉庫</p> <span class="nav-circle-4"></span>
+                        </a> </li>
+                    <li><a href="../chatroom.html">
+                            <p class="nav-pageName">聊天室</p> <span class="nav-circle-5"></span>
+                        </a> </li>
+                    <li><a href="../classic.html">
+                            <p class="nav-pageName">精華區</p> <span class="nav-circle-6"></span>
+                        </a> </li>
+                </ul>
+                <div class="nav-road">
+                    <div></div>
+                </div>
+            </div>
+        </nav>
+        <div class="nav-littleNav">
+            <a href="#"><i class="fas fa-user-circle"></i></a>
+            <a href="../user-setting.html"><i class="fas fa-cog"></i></a>
+        </div>
+        <div class="nav-pc">
+            <div class="cav-paper">信紙:999</div>
+            <div class="cav-coin">Air幣:777</div>
+        </div>
+    </div>
+</div>
+
+<div class="nav-hamPosition">
+    <div class="nav-hamburgerWrap">
+        <div class="hambuger" id="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+</div>
+<<<<<<< HEAD
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    var navBar_active = function () {
+        var scroll_top = $(window).scrollTop();
+=======
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        var navBar_active = function () {
+            var scroll_top = $(window).scrollTop();
+>>>>>>> dev
+
+        $("posision").html(scroll_top);
+
+        if (scroll_top >= 560) {
+            $("div.nav-navBgWrap").addClass("-on");
+        } else {
+            $("div.nav-navBgWrap").removeClass("-on");
+        }
+    };
+
+    $(function () {
+        $(window).scroll(function () {
+            navBar_active();
+        });
+
+    });
+</script>
+<script>
+    const hambuger = document.querySelector('.hambuger');
+
+    hambuger.addEventListener('click', () => {
+        hambuger.classList.toggle('change');
+    })
+</script>
+<script>
+    $(function () {
+        // hamburger icon 的切換
+        $("div.hamburger").on("click", function () {
+            $(this).toggleClass("is-active");
+        });
+
+    });
+    let hamburger = document.getElementById('hamburger');
+    let list = document.getElementById('list');
+    hamburger.addEventListener('click', function () {
+        list.classList.toggle('open');
+    })
+</script>
+
+
+    <section class="home_first" id="cloud">
+        <canvas class="p-canvas-webgl" id="canvas-webgl"></canvas>
+    </section>
+
+    <section class="home_skyPoint">
+        <div class="home_space"></div>
+        <img class="hang3" src="./img/home/write/hang3Paper.svg" alt="">
+        <img class="hang2" src="./img/home/write/hang2Paper.svg" alt="">
+        <div class="mountain_box">
+            <img class="floatPaper1" src="./img/home/write/floatPaper1.svg" alt="">
+            <img class="floatPaper2" src="./img/home/write/floatPaper2.svg" alt="">
+            <img class="floatPaper3" src="./img/home/write/floatPaper3.svg" alt="">
+        </div>
+
+        <div class="write">
+            <div class="write_L">
+                <div class="writeTitle">
+                    <div class="writeTitleBg1 box-white"></div>
+                    <div class="writeTitleBg2 box-white">
+                        <h1 class="threed-text-blue">寫信</h1>
+                    </div>
+                </div>
+                <div class="black_box">
+                    <img class="bottle" src="./img/home/write/blackBottle.svg" alt="">
+                    <div class="blackWater">
+                        <h1>快動起筆來，<br>寫下任何想和<br>大家分享的心情吧 !</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="write_R">
+                <div class="write_Rbox">
+                    <div class="write_many">
+                        <div class="write_paper box-white"></div>
+                    </div>
+                    <img src="./img/home/write/pen.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="fold1">
+            <img class="foldPaper1" src="./img/home/write/fold1.png" alt="">
+            <img class="left_hand1" src="./img/home/write/leftHand.svg" alt="">
+            <img class="right_hand1" src="./img/home/write/rightHand.svg" alt="">
+        </div>
+        <div class="fold2">
+            <img class="foldPaper2" src="./img/home/write/fold2.png" alt="">
+            <img class="left_hand2" src="./img/home/write/leftHand.svg" alt="">
+            <img class="right_hand2" src="./img/home/write/rightHand.svg" alt="">
+        </div>
+        <div class="shoot">
+            <img class="shootHand" src="./img/home/write/shootHand.svg" alt="">
+            <img class="foldPaper3" src="./img/home/write/fold3.svg" alt="">
+        </div>
+    </section>
+    <section class="home_catch">
+        <div class="grassBack"></div>
+        <div class="grassMid"></div>
+        <div class="grassFront">
+            <img class="catch_main" src="./img/home/catch/catchPlan.png" alt="">
+            <img class="catch_LT" src="./img/home/catch/catchPlan.png" alt="">
+            <img class="catch_LB" src="./img/home/catch/catchPlan.png" alt="">
+            <img class="catch_RT" src="./img/home/catch/catchPlan.png" alt="">
+            <img class="catch_RB" src="./img/home/catch/catchPlan.png" alt="">
+        </div>
+        <img class="net" src="./img/home/catch/net.svg" alt="">
+    </section>
+    <section class="home_catch">
+        <div class="grassBack"></div>
+        <div class="grassMid"></div>
+        <div class="grassFront">
+            <div class="catch_letter box-white"></div>
+        </div>
+        <img class="net cap" src="./img/home/catch/net.svg" alt="">
+        <div class="catchTitle">
+            <div class="boardTop">
+                <h1 class="threed-text-blue">撈信</h1>
+            </div>
+            <div class="boardBot">
+                <h1>立即撈信，<br>就能與他人<br>擁有共同話題</h1>
+            </div>
+        </div>
+    </section>
+    <section class="home_custom">
+        <div class="tube">
+            <div class="machineBox">
+                <img class="machine_base" src="./img/home/catch/machineBase.svg" alt="">
+                <img class="machine_hand" src="./img/home/catch/machineHand.svg" alt="">
+            </div>
+        </div>
+        <div class="print">
+            <h1>蓋郵戳中＿...</h1>
+        </div>
+    </section>
+    <section class="home_belt">
+        <div class="paintBox">
+            <img class="paint" src="./img/home/store/paint.svg" alt="">
+        </div>
+        <div class="belt"></div>
+        <img class="foldStamp" src="./img/home/store/foldStamp.png" alt="">
+        <div class="lightBox">
+            <img class="lightYes" src="./img/home/store/lightNo.svg" alt="">
+        </div>
+    </section>
+    <section class="home_store">
+        <div class="shed"></div>
+        <div class="cuboid cuboid-lb">
+            <div class="storeTitle">
+                <h1 class="threed-text-blue">商<br>城</h1>
+            </div>
+            <div class="smLight bulb_L1"></div>
+            <div class="smLight bulb_L2"></div>
+            <div class="smLight bulb_L3"></div>
+            <div class="smLight bulb_L4"></div>
+            <div class="smLight bulb_L5"></div>
+            <div class="smLight bulb_R1"></div>
+            <div class="smLight bulb_R2"></div>
+            <div class="smLight bulb_R3"></div>
+            <div class="smLight bulb_R4"></div>
+            <div class="smLight bulb_R5"></div>
+            <div class="smLight bulb_T1"></div>
+            <div class="smLight bulb_T2"></div>
+            <div class="smLight bulb_B1"></div>
+            <div class="smLight bulb_B2"></div>
+        </div>
+        <div class="shopWindow">
+            <div class="windowBg">
+                <img class="paintPlan" src="./img/home/store/paintPlan.svg" alt="">
+                <div class="price">
+                    <h1>$199</h1>
+                </div>
+            </div>
+        </div>
+        <div class="board">
+            <div class="board_text">
+                <h1>快來客製化商城<br>製造專屬於你的<br>飛機吧！</h1>
+            </div>
+        </div>
+    </section>
+    <section class="home_chat">
+        <div class="chatBox">
+            <div class="chat_L">
+                <div class="blueCover">
+                    <div class="line">
+                        <div class="chatPaper">
+                            <div class="chatWhite">
+                                <img class="ring" src="./img/chatroom/book.png" alt="">
+                                <div class="chatroom">
+                                    <div class="chatMix1">
+                                        <div class="chatFrame1">
+                                            <p>Hello!</p>
+                                        </div>
+                                    </div>
+                                    <div class="chatMix2">
+                                        <img src="./img/chatroom/mark.png" alt="">
+                                    </div>
+                                    <div class="chatMix3">
+                                        <div class="chatFrame2">
+                                            <p>好想去博物館哦~</p>
+                                        </div>
+                                    </div>
+                                    <div class="chatMix4">
+                                        <div class="chatFrame3">
+                                            <p>我們一起去吧!</p>
+                                        </div>
+                                    </div>
+                                    <div class="chatMix5">
+                                        <div class="send">
+                                            <img src="./img/chatroom/send.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chatYellow">
+                                <div class="yelPage"></div>
+                                <div class="yelPage"></div>
+                                <div class="yelPage"></div>
+                                <div class="yelPage"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="chat_R">
+                <div class="titleBox1">
+                    <div class="chat_title1">
+                        <h1 class="threed-text-blue">聊</h1>
+                    </div>
+                    <img src="./img/home/chat/tapeBlue.svg" alt="">
+                </div>
+                <div class="chat_title2">
+                    <h1 class="threed-text-blue">天</h1>
+                </div>
+                <div class="titleBox2">
+                    <div class="chat_title3">
+                        <h1 class="threed-text-blue">室</h1>
+                        <img src="./img/home/chat/tapeYellow.svg" alt="">
+                    </div>
+                </div>
+                <div class="noteYellow">
+                    <h1>匿名世界讓您<br>永遠不孤單，<br>每天都有好友<br>陪你聊天！</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./js/cloud.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <title>user-setting</title>
+</head>
+
+<body class="userSetting_body">
+        <div class="nav-body">
+    <div id="navHead" class="nav-navBgWrap">
+        <div class="nav-navBg">
+            <img src="../img/share/nav_lightBox.svg" alt="">
+            <nav class="nav-navWrap">
+                <!-- <div class="nav-topBlock">
+                登入和設定 
+            </div> -->
+            <div class="nav-logoWrap">
+                <a href="./home.html"><img src="./img/share/LOGO.png"></a>
+            </div>
+            <div class="nav-navPageWrap">
+                <ul class="nav-list" id="list">
+                    <li><a href="./write-letter.html">
+                            <p class="nav-pageName">寫信</p> <span class="nav-circle-1 nav-now"></span>
+                        </a> </li>
+                    <li><a href="../catch-letter.html">
+                            <p class="nav-pageName">撈信</p> <span class="nav-circle-2"></span>
+                        </a> </li>
+                    <li><a href="../shop.html">
+                            <p class="nav-pageName">商城</p> <span class="nav-circle-3"></span>
+                        </a> </li>
+                    <li><a href="../cave.html">
+                            <p class="nav-pageName">我的倉庫</p> <span class="nav-circle-4"></span>
+                        </a> </li>
+                    <li><a href="../chatroom.html">
+                            <p class="nav-pageName">聊天室</p> <span class="nav-circle-5"></span>
+                        </a> </li>
+                    <li><a href="../classic.html">
+                            <p class="nav-pageName">精華區</p> <span class="nav-circle-6"></span>
+                        </a> </li>
+                </ul>
+                <div class="nav-road">
+                    <div></div>
+                </div>
+            </div>
+        </nav>
+        <div class="nav-littleNav">
+            <a href="#"><i class="fas fa-user-circle"></i></a>
+            <a href="../user-setting.html"><i class="fas fa-cog"></i></a>
+        </div>
+        <div class="nav-pc">
+            <div class="cav-paper">信紙:999</div>
+            <div class="cav-coin">Air幣:777</div>
+        </div>
+    </div>
+</div>
+
+<div class="nav-hamPosition">
+    <div class="nav-hamburgerWrap">
+        <div class="hambuger" id="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+</div>
+<<<<<<< HEAD
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    var navBar_active = function () {
+        var scroll_top = $(window).scrollTop();
+=======
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        var navBar_active = function () {
+            var scroll_top = $(window).scrollTop();
+>>>>>>> dev
+
+        $("posision").html(scroll_top);
+
+        if (scroll_top >= 560) {
+            $("div.nav-navBgWrap").addClass("-on");
+        } else {
+            $("div.nav-navBgWrap").removeClass("-on");
+        }
+    };
+
+    $(function () {
+        $(window).scroll(function () {
+            navBar_active();
+        });
+
+    });
+</script>
+<script>
+    const hambuger = document.querySelector('.hambuger');
+
+    hambuger.addEventListener('click', () => {
+        hambuger.classList.toggle('change');
+    })
+</script>
+<script>
+    $(function () {
+        // hamburger icon 的切換
+        $("div.hamburger").on("click", function () {
+            $(this).toggleClass("is-active");
+        });
+
+    });
+    let hamburger = document.getElementById('hamburger');
+    let list = document.getElementById('list');
+    hamburger.addEventListener('click', function () {
+        list.classList.toggle('open');
+    })
+</script>
+
+    <link href="./css/main.css" rel="stylesheet" type="text/css">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script src="./js/kloud.min.js"></script>
+
+<header>
+    <div style="width: 100%; height: 18vw;">
+        <canvas id="myClouds" style="width: 100%; height: 40%;"></canvas>
+    </div>
+    <!-- 漂浮的雲 -->
+    <div class="white-space-bg">
+        <div class="head-box">
+            <div class="dot-box-blue bottom-bg">
+                <span class="share-clip clip-left"></span>
+                <span class="share-clip clip-right"></span>
+                <div class="box-white top-left-bg">
+                    <div class="box-white top-left-bg" id='headerVue'>
+                        <!-- 這裡會自動判斷頁面產生 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="clouds" id="clouds">
+            <div class="cloud_1"></div>
+            <template  v-for="(cloud, index) in 15">
+                <div :class=`cloud_${index}` :style="{left: `${Math.random() * innerWidth}px`}"></div>
+            </template>
+            
+        </div>
+    </div>
+
+
+    
+    <script>
+        $('#myClouds').Klouds({
+            speed: 1,
+            layerCount: 4,
+            cloudColor1: '#82afd9',
+            cloudColor2: '#F7FAFD',
+            // bgColor1: '#82afd9',
+            bgColor: '#ffffff',
+        })
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+    <script>
+        /*
+         * header Contant Change
+         */
+        const writeLetter = {
+            template: `
+            <h1 class="headpg-name threed-text-blue">
+                <div style="border: 1px solid red;">
+                寫
+                </div>
+                <br>
+                <div style="display:flex;flex-direction:column;justify-content:center;border: 1px solid red;">
+                    <img src="../img/share/line-paperPlane.svg" style="width:30%;">
+                    <span>
+                    一封信
+                    </span>
+                </div>
+            </h1>
+            `
+        }
+        const catchLetter = {
+            template: `
+            <h1 class="headpg-name threed-text-blue">
+                <div style="border: 1px solid red;">
+                撈
+                </div>
+                <br>
+                <div style="display:flex;flex-direction:column;justify-content:center;border: 1px solid red;">
+                    <img src="../img/share/line-paperPlane.svg" style="width:30%;">
+                    <span>
+                    信
+                    </span>
+                </div>
+            </h1>
+            `
+        }
+        const chatroom = {
+            template: `
+            <h1 style="font-size:48px;text-align: center;line-height: 125px;color: $main-blue;">
+                聊天室
+            </h1>
+            `
+        }
+        const cave = {
+            template: `
+            <h1 class="headpg-name threed-text-blue" @change="getHeaderName" style="position: relative;">
+                <div style="border: 1px solid red; width: 100%; height: 50%; text-align: center; margin-top: 6.5%;">
+                    我的倉庫
+                </div>
+                <div>
+                    <img style="height:100px; width:100px; position:absolute; right: 0;bottom: 0;"
+                        src="../img/cave/cavheaderImg.png" alt="">
+                </div>
+            </h1>
+            `
+        }
+        const shop = {
+            template: `
+            <h1 class="headpg-name threed-text-blue">
+                客製化商城
+            </h1>
+            `
+        }
+        const userSetting = {
+            template: `
+            <h1 class="headpg-name threed-text-blue">
+                <div style="display:flex;flex-direction:column;justify-content:center;">
+                    用戶
+                <img src="../img/userSetting/wrench.svg" style="width:8%; transform: rotate(110deg); position:absolute; left: 10%; top: -25%;">
+                </div>
+                <br>
+                <img src="../img/userSetting/gear.svg" alt="gear" style="width: 18%; text-align: center;">
+                <div style="display:flex;flex-direction:column;justify-content:center;">
+                    <img src="../img/userSetting/hammer.svg" style="width: 10%; transform: rotate(-45deg); position:absolute; right: 1%; top: 0;">
+                    設定
+                </div>
+                </h1>
+            `
+        }
+        const classic = {
+            template: `
+            <h1 class="headpg-name threed-text-blue">
+                精華區
+            </h1>
+            `
+        }
+        new Vue({
+            el: '#headerVue',
+            template: `
+                <div class="box-white top-left-bg">
+                    <component :is='pageTitle'/>
+                </div>
+            `,
+            components: {
+                writeLetter,
+                catchLetter,
+                chatroom,
+                cave,
+                shop,
+                userSetting,
+                classic,
+            },
+            data: {
+                pageTitle: null
+            },
+            mounted(){
+                console.log(location.href.split('/').reverse()[0].split('.')[0]);
+                this.pageTitle = location.href.split('/').reverse()[0].split('.')[0];
+                
+            }
+        })
+        
+        /*
+         * header Clouds
+         */
+        let vm = new Vue({
+            el:'#clouds',
+        });
+    </script>
+</header>
+    <div class="userSettingBanner">
+        <img class="picGrass" src="../img/user-setting/grass.png" alt="grass">
+        <img class="picTree" src="../img/user-setting/tree.svg" alt="tree">
+        <img class="picTree2" src="../img/user-setting/tree.svg" alt="tree2">
+        <img class="picTree3" src="../img/user-setting/tree_2.svg" alt="tree3">
+        <img class="picFactory" src="../img/user-setting/factory.svg" alt="factory">
+    </div>
+    <main class="userSetting_main">
+        <div class="floor">
+            <section class="userSetting_mem">
+                <!--airPlan會員資訊-->
+                <!-- <h1 class="memtitle">會員資訊</h1> -->
+                <h2 class="threed-text-red-endWhite">會員資訊</h2>
+                <div class="memKanban" id="memKanban">
+                    <div class="memKanbanIn">
+                        <!--會員資訊頁籤-->
+                        <div class="memData" @click="content='memData'">
+                            <h3>會員資料</h3>
+                        </div>
+                        <div class="airCoin" @click="content='airCoin'">
+                            <h3>打賞紀錄</h3>
+                        </div>
+                        <div class="memcolor" @click="content='memcolor'">
+                            <h3>外觀設定</h3>
+                        </div>
+                        <keep-alive>
+                            <component :is="content"></component>
+                        </keep-alive>
+                    </div>
+                </div>
+                <img class="robotB1" src="img/user-setting/robotB1.svg" alt="robotB1">
+                <img class="robotB1_2" src="img/user-setting/robotB1_2.svg" alt="robotB1_2">
+                <img class="box" src="img/user-setting/box.svg" alt="box">
+                <div class="space_B1"></div>
+            </section>
+
+            <section class="userSetting_sys">
+                <!--airPlan系統資訊-->
+                <h2 class="threed-text-red-endWhite">系統資訊</h2>
+                <div class="sysKanban" id="sysKanban">
+                    <!--系統資訊頁籤-->
+                    <div class="manu" @click="content='manu'">
+                        <h3>操作說明</h3>
+                    </div>
+                    <div class="ver" @click="content='ver'">
+                        <h3>版本資訊</h3>
+                    </div>
+                    <keep-alive>
+                        <component :is="content"></component>
+                    </keep-alive>
+                </div>
+                <img class="robotB2" src="img/user-setting/robotB2.svg" alt="robotB2">
+                <img class="robotB2_2" src="img/user-setting/robotB2_2.svg" alt="robotB2_2">
+                <img class="paper" src="img/user-setting/paper.svg" alt="">
+                <div class="space_B2"></div>
+            </section>
+            
+            <section class="userSetting_adm">
+                <!--airPlan開發者資訊-->
+                <h2 class="threed-text-red-endWhite">開發人員</h2>
+                <div class="admKanban" id="admKanban">
+                    <div class="admKanbanOverFlowOut">
+                        <div class="admKanbanOverFlowIn">
+                            <div class="mike" @click="content='mike'">
+                                <h3>峻瑜</h3>
+                            </div>
+                            <div class="spencer" @click="content='spencer'">
+                                <h3>宗翰</h3>
+                            </div>
+                            <div class="allen" @click="content='allen'">
+                                <h3>耀輝</h3>
+                            </div>
+                            <div class="grace" @click="content='grace'">
+                                <h3>雅珺</h3>
+                            </div>
+                            <div class="sharon" @click="content='sharon'">
+                                <h3>湘文</h3>
+                            </div>
+                            <div class="howard" @click="content='howard'">
+                                <h3>恒祥</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <keep-alive>
+                        <component :is="content"></component>
+                    </keep-alive>
+                </div>
+                <img class="robotB3" src="img/user-setting/robotB3.svg" alt="robotB3">
+                <img class="paperPlane" src="img/share/paper-plane.png" alt="paperPlane">
+            </section>
+            
+        </div>
+    </main>
+    <div class="userSetting_memcolor" id="userSetting_memcolor2"></div>
+    <div class="footer-bottom">Copyright © Air Plan All rights reserved.</div>
+;
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+    <script src="js/user-setting_adm.js"></script>
+</body>
+
+</html>
+
+

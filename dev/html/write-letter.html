@@ -15,8 +15,8 @@
 </head>
 
 <body class="wrletter-body">
-    @@include("./html/nav.html")
-    @@include("./html/header.html")
+    @@include("./layout/nav.html")
+    @@include("./layout/header.html")
     <main>
         <section class="writ-step-1" id="writStep1">
 
@@ -69,7 +69,7 @@
                     </div>
                     <div class="tv-machine"></div>
                     <div class="tv-show" :class="{active: tvStart === true}">
-                        @@include("./html/tv-category.html")
+                        @@include("./layout/tv-category.html")
                     </div>
                 </form>
             </div>
@@ -192,7 +192,7 @@
 
 
     </main>
-    @@include("./html/footer.html")
+    @@include("./layout/footer.html")
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
     <script>

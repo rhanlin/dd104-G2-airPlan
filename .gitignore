@@ -1,8 +1,8 @@
 .vscode/settings.json
-btn_all.html
+dev/btn_all.html
 node_modules/
-js/clouds.js
-js/main.js
+dev/js/clouds.js
+dev/js/main.js
 dist/
 css/main.css.map
 css/main.css
