@@ -391,7 +391,7 @@ $arrow_color: $gray !default;
     #medal {
       width: 450px;
       height: 600px;
-      background-image: url('/img/product/decorate/model.jpg');
+      background-image: url('../img/product/decorate/model.jpg');
       background-size: contain;
       background-repeat: no-repeat;
       z-index: 99;
@@ -542,7 +542,7 @@ $arrow_color: $gray !default;
               border-radius: 0.3em;
               border: $border;
               // background-color: #FFD139;
-              // background-image: url("/img/product/decorate/materail-04.svg");
+              // background-image: url("../img/product/decorate/materail-04.svg");
               // background-size: cover;
               transform: rotate(90deg) skew(60deg);
               background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -561,7 +561,7 @@ $arrow_color: $gray !default;
               border-radius: 0.3em;
               border: $border;
               // background-color: #FFD139;
-              // background-image: url("/img/product/decorate/materail-04.svg");
+              // background-image: url("../img/product/decorate/materail-04.svg");
               // background-size: cover;
               transform: rotate(90deg) skew(300deg);
               background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -660,7 +660,7 @@ $arrow_color: $gray !default;
         margin-left: 5%;
         width: 85vw;
         height: 150vw;
-        background-image: url("/img/product/decorate/pile.png");
+        background-image: url("../img/product/decorate/pile.png");
         background-repeat: no-repeat;
         position: relative;
         background-size: contain;
@@ -669,7 +669,7 @@ $arrow_color: $gray !default;
         .clock {
           width: 18%;
           padding-top: 100%;
-          background-image: url("../../img/product/decorate/clock-04.svg");
+          background-image: url("../img/product/decorate/clock-04.svg");
           background-repeat: no-repeat;
           position: absolute;
           background-size: contain;
@@ -680,7 +680,7 @@ $arrow_color: $gray !default;
         .redWheel {
           width: 18%;
           padding-top: 100%;
-          background-image: url("../../img/product/decorate/redWheel-04.svg");
+          background-image: url("../img/product/decorate/redWheel-04.svg");
           background-repeat: no-repeat;
           position: absolute;
           background-size: contain;
@@ -692,7 +692,7 @@ $arrow_color: $gray !default;
         .perpul {
           width: 18%;
           padding-top: 100%;
-          background-image: url("../../img/product/decorate/perpul.png");
+          background-image: url("../img/product/decorate/perpul.png");
           background-repeat: no-repeat;
           position: absolute;
           background-size: contain;
@@ -1125,7 +1125,7 @@ $arrow_color: $gray !default;
                         bottom: 31%;
                         border: $border;
                         background-color: rgb(0, 225, 255);
-                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-image: url("../img/product/decorate/materail-04.svg");
                         background-size: cover;
                         transform: rotate(90deg) skew(45deg);
                       }
@@ -1138,7 +1138,7 @@ $arrow_color: $gray !default;
                         background-color: rgb(0, 225, 255);
                         border: $border;
                         transform: skew(-45deg) rotate(0deg);
-                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-image: url("../img/product/decorate/materail-04.svg");
                         background-size: cover;
                       }
                     }
@@ -2056,7 +2056,7 @@ $arrow_color: $gray !default;
                     border-radius: 0.3em;
                     border: $border;
                     // background-color: #FFD139;
-                    // background-image: url("/img/product/decorate/materail-04.svg");
+                    // background-image: url("../img/product/decorate/materail-04.svg");
                     // background-size: cover;
                     transform: rotate(90deg) skew(60deg);
                     background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -2077,7 +2077,7 @@ $arrow_color: $gray !default;
                     border-radius: 0.3em;
                     border: $border;
                     // background-color: #FFD139;
-                    // background-image: url("/img/product/decorate/materail-04.svg");
+                    // background-image: url("../img/product/decorate/materail-04.svg");
                     // background-size: cover;
                     transform: rotate(90deg) skew(300deg);
                     background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -2131,8 +2131,8 @@ $arrow_color: $gray !default;
 
     #section3 {
       // background-color: #00b9d6;
-      // background-image: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444.99-1 .99-.552 0-1-.45-1-.99V8.99z' fill='%23242424' fill-opacity='0.61' fill-rule='evenodd'/%3E%3C/svg%3E");
-      background-image: url(../../img/product/postmark/123.png);
+      // background-image: url(".data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444.99-1 .99-.552 0-1-.45-1-.99V8.99z' fill='%23242424' fill-opacity='0.61' fill-rule='evenodd'/%3E%3C/svg%3E");
+      background-image: url(../img/product/postmark/123.png);
       padding-top: 5%;
       width: 100%;
       border: 5px solid black;
@@ -2178,7 +2178,7 @@ $arrow_color: $gray !default;
           z-index: 99;
 
           .owl-prev {
-            background-image: url('/img/product/decorate/arrow_pre-04.svg');
+            background-image: url('../img/product/decorate/arrow_pre-04.svg');
             width: 15%;
             background-size: contain;
             background-repeat: no-repeat;
@@ -2206,7 +2206,7 @@ $arrow_color: $gray !default;
 
           .owl-next {
 
-            background-image: url('/img/product/decorate/arrow_next-04.svg');
+            background-image: url('../img/product/decorate/arrow_next-04.svg');
             width: 15%;
             background-size: contain;
             background-repeat: no-repeat;
@@ -2413,7 +2413,7 @@ $arrow_color: $gray !default;
           margin-left: 0%;
           width: 100vw;
           height: 130vw;
-          background-image: url("/img/product/decorate/pile.png");
+          background-image: url("../img/product/decorate/pile.png");
           background-repeat: no-repeat;
           position: relative;
 
@@ -2794,7 +2794,7 @@ $arrow_color: $gray !default;
           margin-left: 0%;
           width: 100vw;
           height: 130vw;
-          background-image: url("/img/product/decorate/pile.png");
+          background-image: url("../img/product/decorate/pile.png");
           background-repeat: no-repeat;
           position: relative;
 

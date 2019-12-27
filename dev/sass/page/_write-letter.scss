@@ -26,7 +26,7 @@
                     height: 5vw;
                     margin: 0 30% 0 25%;
                     // border: 1px solid orange;
-                    background-image: url('../../img/share/number-one.svg');
+                    background-image: url('../img/share/number-one.svg');
                     background-repeat: no-repeat;
                     background-position: left;
                     background-size: contain;
@@ -64,7 +64,7 @@
                     .tv-machine {
                         width: 100%;
                         height: 100%;
-                        background-image: url(../../img/share/TV.svg);
+                        background-image: url(../img/share/TV.svg);
                         background-repeat: no-repeat;
                         background-position: 20% 0;
                         background-size: contain;
@@ -118,7 +118,7 @@
                 @include paper_cloud();
 
                 .note-pad {
-                    background-image: url(../../img/share/yellow-note.svg);
+                    background-image: url(../img/share/yellow-note.svg);
                     width: 24vw;
                     height: 24vw;
                     background-repeat: no-repeat;
@@ -171,7 +171,7 @@
                 height: 41.5vw;
                 max-height: 740px;
                 margin: 0 auto;
-                background-image: url(../../img/share/postCard.svg);
+                background-image: url(../img/share/postCard.svg);
                 background-position: center;
                 background-size: cover;
                 display: flex;
@@ -196,7 +196,7 @@
                         // border: 1px solid green;
                         height: 80%;
                         width: 100%;
-                        background-image: url(../../img/share/hook-and-imgfile.svg);
+                        background-image: url(../img/share/hook-and-imgfile.svg);
                         background-position: center;
                         background-size: contain;
                         background-repeat: no-repeat;
@@ -210,7 +210,7 @@
                         // border: 1px solid blue;
                         height: 35%;
                         width: 100%;
-                        background-image: url(../../img/share/printer.svg);
+                        background-image: url(../img/share/printer.svg);
                         background-position: center;
                         background-size: contain;
                         background-repeat: no-repeat;
@@ -248,7 +248,7 @@
                         height: 5vw;
                         margin: 0 35% 0 0%;
                         // border: 1px solid orange;
-                        background-image: url('../../img/share/number-two.svg');
+                        background-image: url('../img/share/number-two.svg');
                         background-repeat: no-repeat;
                         background-position: left;
                         background-size: contain;
@@ -422,7 +422,7 @@
                         height: 5vw;
                         margin: 0 0% 0 10%;
                         // border: 1px solid orange;
-                        background-image: url('../../img/share/number-three.svg');
+                        background-image: url('../img/share/number-three.svg');
                         background-repeat: no-repeat;
                         background-position: left;
                         background-size: contain;
@@ -454,7 +454,7 @@
                         width: 70%;
                         height: 68%;
                         margin: 0 0 0 30%;
-                        background-image: url(../../img/write-letter/print-paperPlane.png);
+                        background-image: url(../img/write-letter/print-paperPlane.png);
                         background-repeat: no-repeat;
                         background-position: center;
                         background-size: contain;
@@ -507,7 +507,7 @@
                     display: inline-block;
                     width: 10vw;
                     height: 6vw;
-                    background-image: url('../../img/share/arrow-white.svg');
+                    background-image: url('../img/share/arrow-white.svg');
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: contain;
@@ -530,7 +530,7 @@
                         width: 30%;
                         height: 100%;
                         // border: 1px solid green;
-                        background-image: url(../../img/write-letter/print-type-box-blue.svg);
+                        background-image: url(../img/write-letter/print-type-box-blue.svg);
                         background-repeat: no-repeat;
                         background-position: center;
                         position: relative;
@@ -539,7 +539,7 @@
 
                         &.active {
                             pointer-events: none;
-                            background-image: url(../../img/write-letter/print-type-box-red.svg);
+                            background-image: url(../img/write-letter/print-type-box-red.svg);
                             // animation: typeBoxActive 1s ease;
                             // animation-iteration-count: 1;
                             // animation-fill-mode: forwards;
@@ -550,7 +550,7 @@
                                 }
 
                                 100% {
-                                    background-image: url(../../img/write-letter/print-type-box-red.svg);
+                                    background-image: url(../img/write-letter/print-type-box-red.svg);
                                 }
                             }
                         }
@@ -559,7 +559,7 @@
                             display: inline-block;
                             width: 50%;
                             height: 50%;
-                            background-image: url(../../img/pattern/print-type-pattern-1.svg);
+                            background-image: url(../img/pattern/print-type-pattern-1.svg);
                             background-repeat: no-repeat;
                             background-position: center;
                             position: absolute;
@@ -572,7 +572,7 @@
                             display: inline-block;
                             width: 100%;
                             height: 100%;
-                            background-image: url(../../img/write-letter/print-scraper-blue.svg);
+                            background-image: url(../img/write-letter/print-scraper-blue.svg);
                             background-repeat: no-repeat;
                             background-position: center;
                             position: absolute;
@@ -603,13 +603,13 @@
                         &:hover {
                             // height: 110%;
                             transform: rotate3d(.11, 0.1, 0.1, -30deg);
-                            background-image: url(../../img/write-letter/print-type-box-red.svg);
+                            background-image: url(../img/write-letter/print-type-box-red.svg);
                         }
 
                         &:hover .printScraper {
                             top: -50%;
                             left: 105%;
-                            background-image: url(../../img/write-letter/print-scraper-yellow.svg);
+                            background-image: url(../img/write-letter/print-scraper-yellow.svg);
                         }
 
                         .preview-paper {
@@ -644,7 +644,7 @@
                                         top: 15%;
                                         left: 13%;
                                         opacity: 1;
-                                        background-image: url(../../img/pattern/plan-pattern-1.svg);
+                                        background-image: url(../img/pattern/plan-pattern-1.svg);
                                         background-size: cover;
                                     }
                                 }
@@ -672,7 +672,7 @@
                     top: -7%;
                     left: 6%;
                     height: auto;
-                    background-image: url(../../img/share/clip.svg);
+                    background-image: url(../img/share/clip.svg);
 
                     &:before {
                         content: '';
@@ -703,7 +703,7 @@
                     height: 5vw;
                     margin: 0 auto;
                     // border: 1px solid orange;
-                    background-image: url('../../img/share/number-four.svg');
+                    background-image: url('../img/share/number-four.svg');
                     background-repeat: no-repeat;
                     background-position: left;
                     background-size: contain;
@@ -731,7 +731,7 @@
                         display: inline-block;
                         width: 10vw;
                         height: 6vw;
-                        background-image: url('../../img/share/arrow-white.svg');
+                        background-image: url('../img/share/arrow-white.svg');
                         background-repeat: no-repeat;
                         background-position: center;
                         background-size: contain;
@@ -754,14 +754,14 @@
                             width: 30%;
                             height: 100%;
                             // border: 1px solid green;
-                            background-image: url(../../img/write-letter/stamp-btn-blue.svg);
+                            background-image: url(../img/write-letter/stamp-btn-blue.svg);
                             background-repeat: no-repeat;
                             background-position: center;
                             cursor: pointer;
 
                             &:hover {
                                 height: 150%;
-                                background-image: url(../../img/write-letter/stamp-btn-red.svg);
+                                background-image: url(../img/write-letter/stamp-btn-red.svg);
                             }
                         }
                     }

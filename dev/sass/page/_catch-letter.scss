@@ -12,7 +12,7 @@
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     // cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.png"), auto;
-    // cursor: url("../../img/catch-letter/net.png"), auto;
+    // cursor: url("../img/catch-letter/net.png"), auto;
     cursor: none;
     #planeLetter{
       cursor: pointer;
@@ -69,7 +69,7 @@
       max-height: 716px;
       margin: 0 40% 0 0;
       // background-color: #fff;
-      // background-image: url(../../img/catch-letter/letter-fold-1.png);
+      // background-image: url(../img/catch-letter/letter-fold-1.png);
       background-position: 0% 0%;
       background-size: cover;
       position: relative;
@@ -140,7 +140,7 @@
         top: -17%;
         right: 18%;
         height: auto;
-        background-image: url(../../img/share/clip.svg);
+        background-image: url(../img/share/clip.svg);
 
         &::before {
           content: '';
@@ -277,7 +277,7 @@
     max-height: 716px;
     margin: 0 40% 0 0;
     background-color: #fff;
-    background-image: url(../../img/share/postCard-vertical.svg);
+    background-image: url(../img/share/postCard-vertical.svg);
     background-position: center;
     background-size: cover;
     display: flex;
@@ -313,7 +313,7 @@
         height: 100%;
         width: 60%;
         // border: 1px solid red;
-        background-image: url(../../img/catch-letter/post-mark-test.png);
+        background-image: url(../img/catch-letter/post-mark-test.png);
         background-size: 95%;
         background-position: center;
         background-repeat: no-repeat;
@@ -351,7 +351,7 @@
           width: 50%;
           height: 9.5vw;
           // border: 1px solid slateblue;
-          background-image: url(../../img/catch-letter/tenor.gif);
+          background-image: url(../img/catch-letter/tenor.gif);
           background-size: 180%;
           background-position: 40% 50%;
           background-repeat: no-repeat;

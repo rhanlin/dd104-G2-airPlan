@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="/css/main.css">
+  <title>客製化商城</title>
+  <link rel="stylesheet" href="./css/main.css">
 
 </head>
 
@@ -20,11 +20,11 @@
                 登入和設定 
             </div> -->
             <div class="nav-logoWrap">
-                <a href="./home.html"><img src="./img/share/LOGO.png"></a>
+                <a href="../home.html"><img src="../img/share/LOGO.png"></a>
             </div>
             <div class="nav-navPageWrap">
                 <ul class="nav-list" id="list">
-                    <li><a href="./write-letter.html">
+                    <li><a href="../write-letter.html">
                             <p class="nav-pageName">寫信</p> <span class="nav-circle-1 nav-now"></span>
                         </a> </li>
                     <li><a href="../catch-letter.html">
@@ -68,19 +68,11 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-    var navBar_active = function () {
-        var scroll_top = $(window).scrollTop();
-=======
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         var navBar_active = function () {
             var scroll_top = $(window).scrollTop();
->>>>>>> dev
 
         $("posision").html(scroll_top);
 
@@ -202,20 +194,18 @@
         }
         const chatroom = {
             template: `
-            <h1 style="font-size:48px;text-align: center;line-height: 125px;color: $main-blue;">
+            <h1 class="headpg-name threed-text-blue">
                 聊天室
             </h1>
             `
         }
         const cave = {
             template: `
-            <h1 class="headpg-name threed-text-blue" @change="getHeaderName" style="position: relative;">
-                <div style="border: 1px solid red; width: 100%; height: 50%; text-align: center; margin-top: 6.5%;">
+            <h1 class="headpg-name threed-text-blue">
                     我的倉庫
-                </div>
                 <div>
                     <img style="height:100px; width:100px; position:absolute; right: 0;bottom: 0;"
-                        src="../img/cave/cavheaderImg.png" alt="">
+                        src="../img/cave/cavheaderImg.png">
                 </div>
             </h1>
             `
@@ -321,7 +311,7 @@
                 </div>
                 <div class="accordion" id="accordionExample">
                   <div class="card">
-                    <div class="card-header" id="headingOne">
+                    <div @click="typeStyle=1" class="card-header" id="headingOne" v-model="">
                       <h2 class="mb-0">
                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
                           aria-expanded="true" aria-controls="collapseOne">
@@ -339,7 +329,7 @@
                     </div>
                   </div>
                   <div class="card">
-                    <div class="card-header" id="headingTwo">
+                    <div @click="typeStyle=2" class="card-header" id="headingTwo">
                       <h2 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                           data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -355,7 +345,7 @@
                     </div>
                   </div>
                   <div class="card">
-                    <div class="card-header" id="headingThree">
+                    <div @click="typeStyle=3" class="card-header" id="headingThree">
                       <h2 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                           data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -378,8 +368,8 @@
               <div class="cardFilter">
                 <!-- <img src="/img/product/decorate/line_top.png" alt="" class="line_top">
                 <img src="/img/product/decorate/line_bottom.png" alt="" class="line_bottom"> -->
-                <div class="itemCard" v-if="change(index)" v-for="(item,index) in items" :style="{backgroundImage:`url(${item.url})`}"
-                  :id=item.id :class=item.class>
+                <div class="itemCard" v-if="change(index)" v-for="(item,index) in items"
+                  :style="{backgroundImage:`url(${item.url})`}" :id=item.id :class=item.class>
                   <img src="/img/product/decorate/clip-04.svg" alt="">
                 </div>
               </div>
@@ -723,72 +713,104 @@
     var addShuff = new Vue({
       el: '#app',
       data: {
+        typeStyle: 'all',
         items: [{
+
+            type: 1,
             id: 'itemCard1',
+            url: '/img/product/postmark/postmark_3.png'
+          },
+          {
+            type: 1,
+            id: 'itemCard2',
             url: '/img/product/postmark/postmark_1.png'
           },
           {
-            id: 'itemCard2',
-            url: '/img/product/postmark/postmark_8.png'
-          },
-          {
+            type: 1,
             id: 'itemCard3',
             url: '/img/product/postmark/postmark_2.png'
           },
           {
+            type: 1,
             id: 'itemCard4',
+            url: '/img/product/postmark/postmark_2.png'
+          },
+          {
+            type: 1,
+            id: 'itemCard5',
             url: '/img/product/postmark/postmark_3.png'
           },
           {
-            id: 'itemCard5',
-            url: '/img/product/postmark/postmark_4.png'
-          },
-          {
+            type: 2,
             id: 'itemCard6',
-            url: '/img/product/postmark/postmark_5.png'
+            url: '/img/product/postmark/postmark_3.png'
           },
           {
+            type: 2,
             id: 'itemCard7',
-            url: '/img/product/postmark/postmark_6.png'
+            url: '/img/product/postmark/postmark_2.png'
           },
           {
+            type: 2,
             id: 'itemCard8',
-            url: '/img/product/postmark/postmark_7.png'
+            url: '/img/product/postmark/postmark_1.png'
           },
           {
+            type: 2,
             id: 'itemCard9',
-            url: '/img/product/postmark/postmark_6.png'
+            url: '/img/product/postmark/postmark_3.png'
           },
           {
+            type: 2,
             id: 'itemCard10',
-            url: '/img/product/postmark/postmark_7.png'
+            url: '/img/product/postmark/postmark_1.png'
           },
           {
+            type: 3,
             id: 'itemCard11',
-            url: '/img/product/postmark/postmark_5.png'
+            url: '/img/product/postmark/postmark_1.png'
           },
           {
+            type: 3,
             id: 'itemCard12',
-            url: '/img/product/postmark/postmark_4.png'
+            url: '/img/product/postmark/postmark_3.png'
           },
           {
+            type: 3,
             id: 'itemCard13',
             url: '/img/product/postmark/postmark_3.png'
           },
           {
+            type: 3,
             id: 'itemCard14',
             url: '/img/product/postmark/postmark_2.png'
           },
           {
+            type: 3,
             id: 'itemCard15',
-            url: '/img/product/postmark/postmark_1.png'
+            url: '/img/product/postmark/postmark_2.png'
           },
         ],
         // filt: 'all',
         page: 1,
+
       },
       computed: {
-
+        filter() {
+          return this[this.typeStyle]
+        },
+        all() {
+          return this.type
+        },
+        type1() {
+          return this.type.filter((type) => item.type == 1)
+        },
+        type2() {
+          return this.type.filter((type) => item.type == 2)
+        },
+        type3() {
+          return this.type.filter((type) => item.type == 3)
+        },
       },
       methods: {
         change(index) {

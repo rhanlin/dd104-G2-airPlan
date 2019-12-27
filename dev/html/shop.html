@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="/css/main.css">
+  <title>客製化商城</title>
+  <link rel="stylesheet" href="./css/main.css">
 
 </head>
 
@@ -50,7 +50,7 @@
                 </div>
                 <div class="accordion" id="accordionExample">
                   <div class="card">
-                    <div class="card-header" id="headingOne">
+                    <div @click="typeStyle=1" class="card-header" id="headingOne" v-model="">
                       <h2 class="mb-0">
                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
                           aria-expanded="true" aria-controls="collapseOne">
@@ -68,7 +68,7 @@
                     </div>
                   </div>
                   <div class="card">
-                    <div class="card-header" id="headingTwo">
+                    <div @click="typeStyle=2" class="card-header" id="headingTwo">
                       <h2 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                           data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -84,7 +84,7 @@
                     </div>
                   </div>
                   <div class="card">
-                    <div class="card-header" id="headingThree">
+                    <div @click="typeStyle=3" class="card-header" id="headingThree">
                       <h2 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                           data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -107,8 +107,8 @@
               <div class="cardFilter">
                 <!-- <img src="/img/product/decorate/line_top.png" alt="" class="line_top">
                 <img src="/img/product/decorate/line_bottom.png" alt="" class="line_bottom"> -->
-                <div class="itemCard" v-if="change(index)" v-for="(item,index) in items" :style="{backgroundImage:`url(${item.url})`}"
-                  :id=item.id :class=item.class>
+                <div class="itemCard" v-if="change(index)" v-for="(item,index) in items"
+                  :style="{backgroundImage:`url(${item.url})`}" :id=item.id :class=item.class>
                   <img src="/img/product/decorate/clip-04.svg" alt="">
                 </div>
               </div>
@@ -452,72 +452,104 @@
     var addShuff = new Vue({
       el: '#app',
       data: {
+        typeStyle: 'all',
         items: [{
+
+            type: 1,
             id: 'itemCard1',
+            url: '/img/product/postmark/postmark_3.png'
+          },
+          {
+            type: 1,
+            id: 'itemCard2',
             url: '/img/product/postmark/postmark_1.png'
           },
           {
-            id: 'itemCard2',
-            url: '/img/product/postmark/postmark_8.png'
-          },
-          {
+            type: 1,
             id: 'itemCard3',
             url: '/img/product/postmark/postmark_2.png'
           },
           {
+            type: 1,
             id: 'itemCard4',
+            url: '/img/product/postmark/postmark_2.png'
+          },
+          {
+            type: 1,
+            id: 'itemCard5',
             url: '/img/product/postmark/postmark_3.png'
           },
           {
-            id: 'itemCard5',
-            url: '/img/product/postmark/postmark_4.png'
-          },
-          {
+            type: 2,
             id: 'itemCard6',
-            url: '/img/product/postmark/postmark_5.png'
+            url: '/img/product/postmark/postmark_3.png'
           },
           {
+            type: 2,
             id: 'itemCard7',
-            url: '/img/product/postmark/postmark_6.png'
+            url: '/img/product/postmark/postmark_2.png'
           },
           {
+            type: 2,
             id: 'itemCard8',
-            url: '/img/product/postmark/postmark_7.png'
+            url: '/img/product/postmark/postmark_1.png'
           },
           {
+            type: 2,
             id: 'itemCard9',
-            url: '/img/product/postmark/postmark_6.png'
+            url: '/img/product/postmark/postmark_3.png'
           },
           {
+            type: 2,
             id: 'itemCard10',
-            url: '/img/product/postmark/postmark_7.png'
+            url: '/img/product/postmark/postmark_1.png'
           },
           {
+            type: 3,
             id: 'itemCard11',
-            url: '/img/product/postmark/postmark_5.png'
+            url: '/img/product/postmark/postmark_1.png'
           },
           {
+            type: 3,
             id: 'itemCard12',
-            url: '/img/product/postmark/postmark_4.png'
+            url: '/img/product/postmark/postmark_3.png'
           },
           {
+            type: 3,
             id: 'itemCard13',
             url: '/img/product/postmark/postmark_3.png'
           },
           {
+            type: 3,
             id: 'itemCard14',
             url: '/img/product/postmark/postmark_2.png'
           },
           {
+            type: 3,
             id: 'itemCard15',
-            url: '/img/product/postmark/postmark_1.png'
+            url: '/img/product/postmark/postmark_2.png'
           },
         ],
         // filt: 'all',
         page: 1,
+
       },
       computed: {
-
+        filter() {
+          return this[this.typeStyle]
+        },
+        all() {
+          return this.type
+        },
+        type1() {
+          return this.type.filter((type) => item.type == 1)
+        },
+        type2() {
+          return this.type.filter((type) => item.type == 2)
+        },
+        type3() {
+          return this.type.filter((type) => item.type == 3)
+        },
       },
       methods: {
         change(index) {

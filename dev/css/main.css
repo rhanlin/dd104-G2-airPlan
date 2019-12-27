@@ -720,106 +720,6 @@ table {
   font-weight: normal;
   font-style: normal; }
 
-@media all and (max-width: 1199px) and (min-width: 992px) {
-  h1 {
-    font-size: 4.5rem; }
-  h2 {
-    font-size: 3.5rem; }
-  h3 {
-    font-size: 2.3rem; }
-  h4 {
-    font-size: 1.8rem; }
-  h5 {
-    font-size: 1.6rem; }
-  span {
-    font-size: 1.3rem; }
-  p {
-    font-size: 1.3rem; }
-  li {
-    font-size: 1.3rem; }
-  td {
-    font-size: 1.3rem; } }
-
-@media all and (max-width: 991px) and (min-width: 768px) {
-  h1 {
-    font-size: 4.5rem; }
-  h2 {
-    font-size: 3.5rem; }
-  h3 {
-    font-size: 2.3rem; }
-  h4 {
-    font-size: 1.8rem; }
-  h5 {
-    font-size: 1.6rem; }
-  span {
-    font-size: 1.3rem; }
-  p {
-    font-size: 1.3rem; }
-  li {
-    font-size: 1.3rem; }
-  td {
-    font-size: 1.3rem; } }
-
-@media all and (max-width: 767px) and (min-width: 576px) {
-  h1 {
-    font-size: 4.5rem; }
-  h2 {
-    font-size: 3.5rem; }
-  h3 {
-    font-size: 2.3rem; }
-  h4 {
-    font-size: 1.75rem; }
-  h5 {
-    font-size: 1.5rem; }
-  span {
-    font-size: 1.3rem; }
-  p {
-    font-size: 1.3rem; }
-  li {
-    font-size: 1.3rem; }
-  td {
-    font-size: 1.3rem; } }
-
-@media all and (max-width: 575px) and (min-width: 376px) {
-  h1 {
-    font-size: 4rem; }
-  h2 {
-    font-size: 3rem; }
-  h3 {
-    font-size: 2.5rem; }
-  h4 {
-    font-size: 1.55rem; }
-  h5 {
-    font-size: 1.5rem; }
-  span {
-    font-size: 1.4rem; }
-  p {
-    font-size: 1.4rem; }
-  li {
-    font-size: 1.4rem; }
-  td {
-    font-size: 1.4rem; } }
-
-@media all and (max-width: 375px) {
-  h1 {
-    font-size: 3.5rem; }
-  h2 {
-    font-size: 3rem; }
-  h3 {
-    font-size: 2.5rem; }
-  h4 {
-    font-size: 1.55rem; }
-  h5 {
-    font-size: 1.4rem; }
-  span {
-    font-size: 1.4rem; }
-  p {
-    font-size: 1.4rem; }
-  li {
-    font-size: 1.4rem; }
-  td {
-    font-size: 1.4rem; } }
-
 /*
  *  module
  */
@@ -1314,7 +1214,7 @@ table {
     .home_body .home_skyPoint .mountain_box {
       width: 100%;
       height: 1800px;
-      background-image: url(../../img/home/write/mountain.png);
+      background-image: url(../img/home/write/mountain.png);
       background-repeat: no-repeat;
       background-size: cover;
       position: relative;
@@ -1337,7 +1237,7 @@ table {
     .home_body .home_skyPoint .write {
       width: 100%;
       height: 1044px;
-      background-image: url(../../img/home/write/desk.png);
+      background-image: url(../img/home/write/desk.png);
       background-repeat: no-repeat;
       margin-top: -190px;
       padding-top: 180px;
@@ -1371,7 +1271,7 @@ table {
           .home_body .home_skyPoint .write .write_L .black_box .blackWater {
             width: 90%;
             height: 27vw;
-            background-image: url(../../img/home/write/black-water.png);
+            background-image: url(../img/home/write/black-water.png);
             background-repeat: no-repeat;
             background-size: cover;
             margin-top: -17.5%;
@@ -1393,7 +1293,7 @@ table {
             margin-left: 10%;
             width: 68%;
             height: 44vw;
-            background-image: url(../../img/home/write/writePaper.svg);
+            background-image: url(../img/home/write/writePaper.svg);
             background-repeat: no-repeat;
             display: flex;
             justify-content: center;
@@ -1401,7 +1301,7 @@ table {
             .home_body .home_skyPoint .write .write_R .write_Rbox .write_many .write_paper {
               width: 77%;
               height: 88%;
-              background-image: url(../../img/home/write/letter.png);
+              background-image: url(../img/home/write/letter.png);
               background-repeat: no-repeat;
               background-size: cover;
               z-index: 0; }
@@ -1415,7 +1315,7 @@ table {
     .home_body .home_skyPoint .shoot {
       width: 100%;
       height: 935px;
-      background-image: url(../../img/home/write/desk.png);
+      background-image: url(../img/home/write/desk.png);
       background-repeat: no-repeat;
       position: relative; }
       .home_body .home_skyPoint .fold1 .foldPaper1,
@@ -1503,21 +1403,21 @@ table {
     .home_body .home_catch .grassBack {
       width: 100%;
       height: 800px;
-      background-image: url(../../img/home/catch/grassBack.svg);
+      background-image: url(../img/home/catch/grassBack.svg);
       background-repeat: no-repeat;
       background-size: cover;
       margin-top: 60px; }
     .home_body .home_catch .grassMid {
       width: 100%;
       height: 800px;
-      background-image: url(../../img/home/catch/grassMid.svg);
+      background-image: url(../img/home/catch/grassMid.svg);
       background-repeat: no-repeat;
       background-size: cover;
       margin-top: -750px; }
     .home_body .home_catch .grassFront {
       width: 100%;
       height: 860px;
-      background-image: url(../../img/home/catch/grassFront.png);
+      background-image: url(../img/home/catch/grassFront.png);
       background-repeat: no-repeat;
       background-size: cover;
       margin-top: -650px;
@@ -1596,7 +1496,7 @@ table {
   .home_body .home_catch .grassFront .catch_letter {
     width: 25%;
     height: 34.9vw;
-    background-image: url(../../img/home/write/letter.png);
+    background-image: url(../img/home/write/letter.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -1612,7 +1512,7 @@ table {
   .home_body .home_catch .catchTitle {
     width: 35%;
     height: 47vw;
-    background-image: url(../../img/home/catch/stick.png);
+    background-image: url(../img/home/catch/stick.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 55%;
@@ -1622,7 +1522,7 @@ table {
     .home_body .home_catch .catchTitle .boardTop {
       width: 100%;
       height: 16.7vw;
-      background-image: url(../../img/home/catch/boardTop.svg);
+      background-image: url(../img/home/catch/boardTop.svg);
       background-repeat: no-repeat;
       margin-top: 10%;
       position: relative; }
@@ -1633,7 +1533,7 @@ table {
     .home_body .home_catch .catchTitle .boardBot {
       width: 72%;
       height: 17.3vw;
-      background-image: url(../../img/home/catch/boardBot.svg);
+      background-image: url(../img/home/catch/boardBot.svg);
       background-repeat: no-repeat;
       margin: 5% auto 0 18%;
       display: flex;
@@ -1650,7 +1550,7 @@ table {
     .home_body .home_custom .tube {
       width: 100%;
       height: 1571px;
-      background-image: url(../../img/home/catch/tube.png);
+      background-image: url(../img/home/catch/tube.png);
       background-repeat: no-repeat;
       background-size: cover;
       padding-top: 10%;
@@ -1669,10 +1569,29 @@ table {
           position: absolute;
           bottom: 15%;
           left: 5%; }
+      .home_body .home_custom .tube .smokeBox {
+        border: 1px solid blue;
+        width: 40%;
+        height: 16.5vw;
+        position: absolute;
+        right: 30%;
+        top: 20%; }
+        .home_body .home_custom .tube .smokeBox .smokeS {
+          filter: drop-shadow(0px -12px 9px rgba(0, 0, 0, 0.65)); }
+        .home_body .home_custom .tube .smokeBox .smokeM {
+          position: absolute;
+          bottom: 14.5%;
+          left: 38%;
+          filter: drop-shadow(0px -12px 9px rgba(0, 0, 0, 0.65)); }
+        .home_body .home_custom .tube .smokeBox .smokeL {
+          position: absolute;
+          top: 0;
+          right: 0;
+          filter: drop-shadow(0px -12px 9px rgba(0, 0, 0, 0.65)); }
     .home_body .home_custom .print {
       width: 100%;
       height: 1090px;
-      background-image: url(../../img/home/catch/print.png);
+      background-image: url(../img/home/catch/print.png);
       background-repeat: no-repeat;
       background-size: contain;
       margin-top: -270px;
@@ -1686,7 +1605,7 @@ table {
   .home_body .home_belt {
     width: 100%;
     height: 940px;
-    background-image: url(../../img/home/store/customBg.png);
+    background-image: url(../img/home/store/customBg.png);
     position: relative; }
     .home_body .home_belt .paintBox {
       width: 25%;
@@ -1697,7 +1616,7 @@ table {
     .home_body .home_belt .belt {
       width: 60%;
       height: 100%;
-      background-image: url(../../img/home/store/belt.png);
+      background-image: url(../img/home/store/belt.png);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: bottom;
@@ -1718,7 +1637,7 @@ table {
       content: "";
       width: 210%;
       height: 210%;
-      background-image: url(../../img/home/store/spotlight.png);
+      background-image: url(../img/home/store/spotlight.png);
       background-repeat: no-repeat;
       background-size: contain;
       position: absolute;
@@ -1755,12 +1674,12 @@ table {
   .home_body .home_store {
     width: 100%;
     height: 1000px;
-    background-image: url(../../img/home/store/storeBg.png);
+    background-image: url(../img/home/store/storeBg.png);
     position: relative; }
     .home_body .home_store .shed {
       width: 100%;
       height: 200px;
-      background-image: url(../../img/home/store/shed.svg);
+      background-image: url(../img/home/store/shed.svg);
       filter: drop-shadow(0px 14px 12px rgba(70, 70, 70, 0.7)); }
     .home_body .home_store .cuboid {
       width: 300px;
@@ -1794,94 +1713,92 @@ table {
         border-radius: 100%;
         filter: drop-shadow(0px 0px 5px rgba(209, 209, 209, 0.8)) contrast(200%); }
       .home_body .home_store .cuboid .bulb_L1 {
-        background-color: grey;
+        background-color: #ffffff;
         position: absolute;
         top: 0.5%;
         left: 2%;
-        animation: lightRedYel 2s ease-in infinite; }
+        animation: lightRedYel 2.1s ease-in infinite alternate 0.3s; }
       .home_body .home_store .cuboid .bulb_L2 {
-        background-color: #f3de6b;
+        background-color: #ffffff;
         position: absolute;
         top: 25%;
         left: 2%;
-        animation: lightYelRed 2s ease-in infinite; }
+        animation: lightYelRed 2.1s ease-in infinite alternate 0.6s; }
       .home_body .home_store .cuboid .bulb_L3 {
-        background-color: #f08b8c;
+        background-color: #ffffff;
         position: absolute;
         top: 50%;
         left: 2%;
-        animation: lightRedYel 2s ease-in infinite; }
+        animation: lightRedYel 2.1s ease-in infinite alternate 0.9s; }
       .home_body .home_store .cuboid .bulb_L4 {
-        background-color: #f3de6b;
+        background-color: #ffffff;
         position: absolute;
         top: 75%;
         left: 2%;
-        animation: lightYelRed 2s ease-in infinite; }
+        animation: lightYelRed 2.1s ease-in infinite alternate 1.2s; }
       .home_body .home_store .cuboid .bulb_L5 {
-        background-color: #f08b8c;
+        background-color: #ffffff;
         position: absolute;
         bottom: 0.5%;
         left: 2%;
-        animation: lightRedYel 2s ease-in infinite; }
-      .home_body .home_store .cuboid .bulb_R1 {
-        background-color: #f3de6b;
+        animation: lightRedYel 2.1s ease-in infinite alternate 1.5s; }
+      .home_body .home_store .cuboid .bulb_B1 {
+        background-color: #ffffff;
         position: absolute;
-        top: 0.5%;
+        bottom: 0.5%;
+        left: 31%;
+        animation: lightYelRed 2.1s ease-in infinite alternate 1.8s; }
+      .home_body .home_store .cuboid .bulb_B2 {
+        background-color: #ffffff;
+        position: absolute;
+        bottom: 0.5%;
+        right: 31%;
+        animation: lightRedYel 2.1s ease-in infinite alternate 2.1s; }
+      .home_body .home_store .cuboid .bulb_R5 {
+        background-color: #ffffff;
+        position: absolute;
+        bottom: 0.5%;
         right: 2%;
-        animation: lightYelRed 2s ease-in infinite; }
+        animation: lightYelRed 2.1s ease-in infinite alternate 2.4s; }
+      .home_body .home_store .cuboid .bulb_R4 {
+        background-color: #ffffff;
+        position: absolute;
+        top: 75%;
+        right: 2%;
+        animation: lightRedYel 2.1s ease-in infinite alternate 2.7s; }
+      .home_body .home_store .cuboid .bulb_R3 {
+        background-color: #ffffff;
+        position: absolute;
+        top: 50%;
+        right: 2%;
+        animation: lightYelRed 2.1s ease-in infinite alternate 3.0s; }
       .home_body .home_store .cuboid .bulb_R2 {
-        background-color: #f08b8c;
+        background-color: #ffffff;
         position: absolute;
         top: 25%;
         right: 2%;
-        animation: lightRedYel 2s ease-in infinite; }
-      .home_body .home_store .cuboid .bulb_R3 {
-        background-color: #f3de6b;
-        position: absolute;
-        top: 50%;
-        right: 2%;
-        animation: lightYelRed 2s ease-in infinite; }
-      .home_body .home_store .cuboid .bulb_R4 {
-        background-color: #f08b8c;
-        position: absolute;
-        top: 75%;
-        right: 2%;
-        animation: lightRedYel 2s ease-in infinite; }
-      .home_body .home_store .cuboid .bulb_R5 {
-        background-color: #f3de6b;
-        position: absolute;
-        bottom: 0.5%;
-        right: 2%;
-        animation: lightYelRed 2s ease-in infinite; }
-      .home_body .home_store .cuboid .bulb_T1 {
-        background-color: #f3de6b;
+        animation: lightRedYel 2.1s ease-in infinite alternate 3.3s; }
+      .home_body .home_store .cuboid .bulb_R1 {
+        background-color: #ffffff;
         position: absolute;
         top: 0.5%;
-        left: 31%;
-        animation: lightYelRed 2s ease-in infinite; }
+        right: 2%;
+        animation: lightYelRed 2.1s ease-in infinite alternate 3.6s; }
       .home_body .home_store .cuboid .bulb_T2 {
-        background-color: #f08b8c;
+        background-color: #ffffff;
         position: absolute;
         top: 0.5%;
         right: 31%;
-        animation: lightRedYel 2s ease-in infinite; }
-      .home_body .home_store .cuboid .bulb_B1 {
-        background-color: #f3de6b;
+        animation: lightRedYel 2.1s ease-in infinite alternate 3.9s; }
+      .home_body .home_store .cuboid .bulb_T1 {
+        background-color: #ffffff;
         position: absolute;
-        bottom: 0.5%;
+        top: 0.5%;
         left: 31%;
-        animation: lightYelRed 2s ease-in infinite; }
-      .home_body .home_store .cuboid .bulb_B2 {
-        background-color: #f08b8c;
-        position: absolute;
-        bottom: 0.5%;
-        right: 31%;
-        animation: lightRedYel 2s ease-in infinite; }
+        animation: lightYelRed 2.1s ease-in infinite alternate 4.2s; }
 
 @keyframes lightRedYel {
   0% {
-    background-color: #f3de6b; }
-  50% {
     background-color: #ffffff; }
   100% {
     background-color: #f3de6b; } }
@@ -1889,10 +1806,8 @@ table {
 @keyframes lightYelRed {
   0% {
     background-color: #ffffff; }
-  50% {
-    background-color: #f08b8c; }
   100% {
-    background-color: #ffffff; } }
+    background-color: #f08b8c; } }
     .home_body .home_store .cuboid-lb:before {
       content: "";
       height: 100%;
@@ -1919,7 +1834,7 @@ table {
       .home_body .home_store .shopWindow .windowBg {
         width: 100%;
         height: 100%;
-        background-image: url(../../img/home/store/window.svg);
+        background-image: url(../img/home/store/window.svg);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         filter: drop-shadow(0px 12px 8px rgba(70, 70, 70, 0.5));
@@ -1959,7 +1874,7 @@ table {
         content: "";
         width: 100%;
         height: 100%;
-        background-image: url(../../img/home/store/glass3.png);
+        background-image: url(../img/home/store/glass3.png);
         background-repeat: no-repeat;
         background-size: cover;
         position: absolute;
@@ -1972,7 +1887,7 @@ table {
       height: 300px;
       border: 0.2vw solid black;
       border-radius: 4%;
-      background-image: url(../../img/home/store/boardWood.png);
+      background-image: url(../img/home/store/boardWood.png);
       position: absolute;
       right: 5%;
       bottom: 25%;
@@ -1983,7 +1898,7 @@ table {
       .home_body .home_store .board .board_text {
         width: 90%;
         height: 90%;
-        background-image: url(../../img/home/store/boardBg.png);
+        background-image: url(../img/home/store/boardBg.png);
         display: flex;
         justify-content: center;
         align-items: center; }
@@ -1993,7 +1908,7 @@ table {
   .home_body .home_chat {
     width: 100%;
     height: 930px;
-    background-image: url(../../img/home/chat/chatBg.png);
+    background-image: url(../img/home/chat/chatBg.png);
     position: relative; }
     .home_body .home_chat .chatBox {
       width: 100%;
@@ -2153,7 +2068,7 @@ table {
           .home_body .home_chat .chatBox .chat_R .titleBox1 .chat_title1 {
             width: 100%;
             height: 100%;
-            background-image: url(../../img/home/chat/noteWhite.svg);
+            background-image: url(../img/home/chat/noteWhite.svg);
             background-repeat: no-repeat;
             animation: wave 2s linear infinite; }
             .home_body .home_chat .chatBox .chat_R .titleBox1 .chat_title1 h1 {
@@ -2181,7 +2096,7 @@ table {
         .home_body .home_chat .chatBox .chat_R .chat_title2 {
           width: 30%;
           height: 17vw;
-          background-image: url(../../img/home/chat/noteWhite.svg);
+          background-image: url(../img/home/chat/noteWhite.svg);
           background-repeat: no-repeat;
           position: absolute;
           top: 26%;
@@ -2201,7 +2116,7 @@ table {
           .home_body .home_chat .chatBox .chat_R .titleBox2 .chat_title3 {
             width: 100%;
             height: 100%;
-            background-image: url(../../img/home/chat/noteWhite.svg);
+            background-image: url(../img/home/chat/noteWhite.svg);
             background-repeat: no-repeat; }
             .home_body .home_chat .chatBox .chat_R .titleBox2 .chat_title3 h1 {
               font-family: "Noto Sans TC", sans-serif;
@@ -2217,7 +2132,7 @@ table {
         .home_body .home_chat .chatBox .chat_R .noteYellow {
           width: 33%;
           height: 17.5vw;
-          background-image: url(../../img/home/chat/noteYellow.svg);
+          background-image: url(../img/home/chat/noteYellow.svg);
           background-repeat: no-repeat;
           position: absolute;
           right: 3%;
@@ -2249,7 +2164,7 @@ table {
           width: 20vw;
           height: 5vw;
           margin: 0 30% 0 25%;
-          background-image: url("../../img/share/number-one.svg");
+          background-image: url("../img/share/number-one.svg");
           background-repeat: no-repeat;
           background-position: left;
           background-size: contain;
@@ -2355,7 +2270,7 @@ table {
           .wrletter-body main .writ-step-1 .select-category .tv-category .tv-machine {
             width: 100%;
             height: 100%;
-            background-image: url(../../img/share/TV.svg);
+            background-image: url(../img/share/TV.svg);
             background-repeat: no-repeat;
             background-position: 20% 0;
             background-size: contain;
@@ -2547,64 +2462,84 @@ table {
               animation: botani 3.5s linear reverse infinite; }
 
 @keyframes topani {
-  6% {
-    stroke-width: 41px; }
+  4% {
+    stroke-width: 40px; }
   9% {
+    stroke-width: 83px; }
+  11% {
+    stroke-width: 198px; }
+  16% {
+    stroke-width: 161px; }
+  23% {
+    stroke-width: 144px; }
+  29% {
+    stroke-width: 73px; }
+  31% {
+    stroke-width: 114px; }
+  38% {
+    stroke-width: 87px; }
+  43% {
+    stroke-width: 134px; }
+  45% {
+    stroke-width: 89px; }
+  54% {
     stroke-width: 29px; }
-  14% {
-    stroke-width: 195px; }
-  21% {
-    stroke-width: 47px; }
-  32% {
-    stroke-width: 185px; }
-  36% {
-    stroke-width: 181px; }
-  42% {
-    stroke-width: 110px; }
-  49% {
-    stroke-width: 189px; }
   56% {
-    stroke-width: 186px; }
-  69% {
-    stroke-width: 60px; }
-  74% {
-    stroke-width: 29px; }
-  78% {
-    stroke-width: 2px; }
-  87% {
-    stroke-width: 74px; }
-  96% {
-    stroke-width: 194px; } }
+    stroke-width: 154px; }
+  62% {
+    stroke-width: 100px; }
+  65% {
+    stroke-width: 28px; }
+  72% {
+    stroke-width: 188px; }
+  79% {
+    stroke-width: 182px; }
+  82% {
+    stroke-width: 185px; }
+  86% {
+    stroke-width: 82px; }
+  92% {
+    stroke-width: 80px; } }
 
 @keyframes botani {
-  4% {
-    stroke-width: 178px; }
+  1% {
+    stroke-width: 125px; }
+  9% {
+    stroke-width: 93px; }
   12% {
-    stroke-width: 69px; }
+    stroke-width: 141px; }
   15% {
-    stroke-width: 4px; }
+    stroke-width: 134px; }
+  20% {
+    stroke-width: 15px; }
   27% {
-    stroke-width: 5px; }
-  34% {
-    stroke-width: 102px; }
-  37% {
-    stroke-width: 124px; }
-  43% {
-    stroke-width: 73px; }
-  49% {
-    stroke-width: 7px; }
-  60% {
-    stroke-width: 52px; }
-  64% {
-    stroke-width: 72px; }
-  73% {
-    stroke-width: 179px; }
-  80% {
-    stroke-width: 61px; }
+    stroke-width: 178px; }
+  33% {
+    stroke-width: 172px; }
+  36% {
+    stroke-width: 75px; }
+  40% {
+    stroke-width: 96px; }
+  47% {
+    stroke-width: 77px; }
+  50% {
+    stroke-width: 31px; }
+  56% {
+    stroke-width: 33px; }
+  63% {
+    stroke-width: 107px; }
+  69% {
+    stroke-width: 153px; }
+  70% {
+    stroke-width: 172px; }
+  78% {
+    stroke-width: 158px; }
   84% {
-    stroke-width: 185px; }
-  94% {
-    stroke-width: 97px; } }
+    stroke-width: 39px; }
+  87% {
+    stroke-width: 108px; }
+  92% {
+    stroke-width: 53px; } }
 
 @keyframes rainbowMove {
   from {
@@ -2631,7 +2566,7 @@ table {
           z-index: 9;
           position: absolute; }
         .wrletter-body main .writ-step-1 .category-note .note-pad {
-          background-image: url(../../img/share/yellow-note.svg);
+          background-image: url(../img/share/yellow-note.svg);
           width: 24vw;
           height: 24vw;
           background-repeat: no-repeat;
@@ -2673,7 +2608,7 @@ table {
         height: 41.5vw;
         max-height: 740px;
         margin: 0 auto;
-        background-image: url(../../img/share/postCard.svg);
+        background-image: url(../img/share/postCard.svg);
         background-position: center;
         background-size: cover;
         display: flex;
@@ -2702,7 +2637,7 @@ table {
           .wrletter-body main .writ-step-2 .write-content .upload-img .hookimg {
             height: 80%;
             width: 100%;
-            background-image: url(../../img/share/hook-and-imgfile.svg);
+            background-image: url(../img/share/hook-and-imgfile.svg);
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
@@ -2713,7 +2648,7 @@ table {
           .wrletter-body main .writ-step-2 .write-content .upload-img .printer {
             height: 35%;
             width: 100%;
-            background-image: url(../../img/share/printer.svg);
+            background-image: url(../img/share/printer.svg);
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
@@ -2743,7 +2678,7 @@ table {
             width: 20vw;
             height: 5vw;
             margin: 0 35% 0 0%;
-            background-image: url("../../img/share/number-two.svg");
+            background-image: url("../img/share/number-two.svg");
             background-repeat: no-repeat;
             background-position: left;
             background-size: contain;
@@ -2877,7 +2812,7 @@ table {
             width: 20vw;
             height: 5vw;
             margin: 0 0% 0 10%;
-            background-image: url("../../img/share/number-three.svg");
+            background-image: url("../img/share/number-three.svg");
             background-repeat: no-repeat;
             background-position: left;
             background-size: contain;
@@ -2901,7 +2836,7 @@ table {
             width: 70%;
             height: 68%;
             margin: 0 0 0 30%;
-            background-image: url(../../img/write-letter/print-paperPlane.png);
+            background-image: url(../img/write-letter/print-paperPlane.png);
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain; }
@@ -2940,7 +2875,7 @@ table {
           display: inline-block;
           width: 10vw;
           height: 6vw;
-          background-image: url("../../img/share/arrow-white.svg");
+          background-image: url("../img/share/arrow-white.svg");
           background-repeat: no-repeat;
           background-position: center;
           background-size: contain;
@@ -2956,25 +2891,25 @@ table {
           .wrletter-body main .writ-step-3 .select-paintes .painte-type .type {
             width: 30%;
             height: 100%;
-            background-image: url(../../img/write-letter/print-type-box-blue.svg);
+            background-image: url(../img/write-letter/print-type-box-blue.svg);
             background-repeat: no-repeat;
             background-position: center;
             position: relative;
             cursor: pointer; }
             .wrletter-body main .writ-step-3 .select-paintes .painte-type .type.active {
               pointer-events: none;
-              background-image: url(../../img/write-letter/print-type-box-red.svg); }
+              background-image: url(../img/write-letter/print-type-box-red.svg); }
 
 @keyframes typeBoxActive {
   0% {
     transform: rotate3d(0.1, 0, 0, 30deg); }
   100% {
-    background-image: url(../../img/write-letter/print-type-box-red.svg); } }
+    background-image: url(../img/write-letter/print-type-box-red.svg); } }
             .wrletter-body main .writ-step-3 .select-paintes .painte-type .type .print-type-pattern {
               display: inline-block;
               width: 50%;
               height: 50%;
-              background-image: url(../../img/pattern/print-type-pattern-1.svg);
+              background-image: url(../img/pattern/print-type-pattern-1.svg);
               background-repeat: no-repeat;
               background-position: center;
               position: absolute;
@@ -2985,7 +2920,7 @@ table {
               display: inline-block;
               width: 100%;
               height: 100%;
-              background-image: url(../../img/write-letter/print-scraper-blue.svg);
+              background-image: url(../img/write-letter/print-scraper-blue.svg);
               background-repeat: no-repeat;
               background-position: center;
               position: absolute;
@@ -3006,11 +2941,11 @@ table {
     left: 33%; } }
             .wrletter-body main .writ-step-3 .select-paintes .painte-type .type:hover {
               transform: rotate3d(0.11, 0.1, 0.1, -30deg);
-              background-image: url(../../img/write-letter/print-type-box-red.svg); }
+              background-image: url(../img/write-letter/print-type-box-red.svg); }
             .wrletter-body main .writ-step-3 .select-paintes .painte-type .type:hover .printScraper {
               top: -50%;
               left: 105%;
-              background-image: url(../../img/write-letter/print-scraper-yellow.svg); }
+              background-image: url(../img/write-letter/print-scraper-yellow.svg); }
             .wrletter-body main .writ-step-3 .select-paintes .painte-type .type .preview-paper {
               display: inline-block;
               height: 126%;
@@ -3038,7 +2973,7 @@ table {
     top: 15%;
     left: 13%;
     opacity: 1;
-    background-image: url(../../img/pattern/plan-pattern-1.svg);
+    background-image: url(../img/pattern/plan-pattern-1.svg);
     background-size: cover; } }
     .wrletter-body main .writ-step-4 {
       font-size: 0;
@@ -3053,7 +2988,7 @@ table {
           top: -7%;
           left: 6%;
           height: auto;
-          background-image: url(../../img/share/clip.svg); }
+          background-image: url(../img/share/clip.svg); }
           .wrletter-body main .writ-step-4 .bottom-bg .clip-left:before {
             content: '';
             position: absolute;
@@ -3075,7 +3010,7 @@ table {
           width: 43.5vw;
           height: 5vw;
           margin: 0 auto;
-          background-image: url("../../img/share/number-four.svg");
+          background-image: url("../img/share/number-four.svg");
           background-repeat: no-repeat;
           background-position: left;
           background-size: contain;
@@ -3096,7 +3031,7 @@ table {
             display: inline-block;
             width: 10vw;
             height: 6vw;
-            background-image: url("../../img/share/arrow-white.svg");
+            background-image: url("../img/share/arrow-white.svg");
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
@@ -3112,13 +3047,13 @@ table {
             .wrletter-body main .writ-step-4 .bottom-bg .select-stamp .stamp-type .type {
               width: 30%;
               height: 100%;
-              background-image: url(../../img/write-letter/stamp-btn-blue.svg);
+              background-image: url(../img/write-letter/stamp-btn-blue.svg);
               background-repeat: no-repeat;
               background-position: center;
               cursor: pointer; }
               .wrletter-body main .writ-step-4 .bottom-bg .select-stamp .stamp-type .type:hover {
                 height: 150%;
-                background-image: url(../../img/write-letter/stamp-btn-red.svg); }
+                background-image: url(../img/write-letter/stamp-btn-red.svg); }
     .wrletter-body main .test-area {
       height: 10vw;
       width: 100%; }
@@ -3207,7 +3142,7 @@ table {
         top: -17%;
         right: 18%;
         height: auto;
-        background-image: url(../../img/share/clip.svg); }
+        background-image: url(../img/share/clip.svg); }
         .catchletter-body .catch-step-1 .comment-wrap .clip-left::before {
           content: '';
           display: block;
@@ -3300,7 +3235,7 @@ table {
     max-height: 716px;
     margin: 0 40% 0 0;
     background-color: #fff;
-    background-image: url(../../img/share/postCard-vertical.svg);
+    background-image: url(../img/share/postCard-vertical.svg);
     background-position: center;
     background-size: cover;
     display: flex;
@@ -3333,7 +3268,7 @@ table {
       .catchletter-body .catch-letter .letter-wrap .stamp-box {
         height: 100%;
         width: 60%;
-        background-image: url(../../img/catch-letter/post-mark-test.png);
+        background-image: url(../img/catch-letter/post-mark-test.png);
         background-size: 95%;
         background-position: center;
         background-repeat: no-repeat; }
@@ -3356,7 +3291,7 @@ table {
           float: right;
           width: 50%;
           height: 9.5vw;
-          background-image: url(../../img/catch-letter/tenor.gif);
+          background-image: url(../img/catch-letter/tenor.gif);
           background-size: 180%;
           background-position: 40% 50%;
           background-repeat: no-repeat; }
@@ -11155,7 +11090,7 @@ a.text-dark:hover, a.text-dark:focus {
     .shop-body .shop-main #medal {
       width: 450px;
       height: 600px;
-      background-image: url("/img/product/decorate/model.jpg");
+      background-image: url("../img/product/decorate/model.jpg");
       background-size: contain;
       background-repeat: no-repeat;
       z-index: 99;
@@ -11346,7 +11281,7 @@ a.text-dark:hover, a.text-dark:focus {
         margin-left: 5%;
         width: 85vw;
         height: 150vw;
-        background-image: url("/img/product/decorate/pile.png");
+        background-image: url("../img/product/decorate/pile.png");
         background-repeat: no-repeat;
         position: relative;
         background-size: contain;
@@ -11354,7 +11289,7 @@ a.text-dark:hover, a.text-dark:focus {
         .shop-body .shop-main #pile .pile .clock {
           width: 18%;
           padding-top: 100%;
-          background-image: url("../../img/product/decorate/clock-04.svg");
+          background-image: url("../img/product/decorate/clock-04.svg");
           background-repeat: no-repeat;
           position: absolute;
           background-size: contain;
@@ -11363,7 +11298,7 @@ a.text-dark:hover, a.text-dark:focus {
         .shop-body .shop-main #pile .pile .redWheel {
           width: 18%;
           padding-top: 100%;
-          background-image: url("../../img/product/decorate/redWheel-04.svg");
+          background-image: url("../img/product/decorate/redWheel-04.svg");
           background-repeat: no-repeat;
           position: absolute;
           background-size: contain;
@@ -11372,7 +11307,7 @@ a.text-dark:hover, a.text-dark:focus {
         .shop-body .shop-main #pile .pile .perpul {
           width: 18%;
           padding-top: 100%;
-          background-image: url("../../img/product/decorate/perpul.png");
+          background-image: url("../img/product/decorate/perpul.png");
           background-repeat: no-repeat;
           position: absolute;
           background-size: contain;
@@ -11698,7 +11633,7 @@ a.text-dark:hover, a.text-dark:focus {
                         bottom: 31%;
                         border: 0.2vw solid black;
                         background-color: #00e1ff;
-                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-image: url("../img/product/decorate/materail-04.svg");
                         background-size: cover;
                         transform: rotate(90deg) skew(45deg); }
                       .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox4 .controlBox4_button .controlBtn4.clicked:after {
@@ -11709,7 +11644,7 @@ a.text-dark:hover, a.text-dark:focus {
                         background-color: #00e1ff;
                         border: 0.2vw solid black;
                         transform: skew(-45deg) rotate(0deg);
-                        background-image: url("/img/product/decorate/materail-04.svg");
+                        background-image: url("../img/product/decorate/materail-04.svg");
                         background-size: cover; }
               .shop-body .shop-main #section2 .customizeArea .controlTool .controlToolTopFlex .controlToolTop .controlBox5 {
                 text-align: center;
@@ -12320,7 +12255,7 @@ a.text-dark:hover, a.text-dark:focus {
                   border-radius: 0.1em;
                   z-index: -1; }
     .shop-body .shop-main #section3 {
-      background-image: url(../../img/product/postmark/123.png);
+      background-image: url(../img/product/postmark/123.png);
       padding-top: 5%;
       width: 100%;
       border: 5px solid black; }
@@ -12353,7 +12288,7 @@ a.text-dark:hover, a.text-dark:focus {
           height: 4vw;
           z-index: 99; }
           .shop-body .shop-main #section3 .owl-carousel .owl-nav .owl-prev {
-            background-image: url("/img/product/decorate/arrow_pre-04.svg");
+            background-image: url("../img/product/decorate/arrow_pre-04.svg");
             width: 15%;
             background-size: contain;
             background-repeat: no-repeat;
@@ -12374,7 +12309,7 @@ a.text-dark:hover, a.text-dark:focus {
             color: white;
             text-shadow: 2px 2px 1px #000, -2px -2px 1px #000, 2px -2px 1px #000, -2px 2px 1px #000; }
           .shop-body .shop-main #section3 .owl-carousel .owl-nav .owl-next {
-            background-image: url("/img/product/decorate/arrow_next-04.svg");
+            background-image: url("../img/product/decorate/arrow_next-04.svg");
             width: 15%;
             background-size: contain;
             background-repeat: no-repeat;
@@ -12520,7 +12455,7 @@ a.text-dark:hover, a.text-dark:focus {
       margin-left: 0%;
       width: 100vw;
       height: 130vw;
-      background-image: url("/img/product/decorate/pile.png");
+      background-image: url("../img/product/decorate/pile.png");
       background-repeat: no-repeat;
       position: relative; }
       .shop-body .shop-main #pile .pile .clock {
@@ -12814,7 +12749,7 @@ a.text-dark:hover, a.text-dark:focus {
       margin-left: 0%;
       width: 100vw;
       height: 130vw;
-      background-image: url("/img/product/decorate/pile.png");
+      background-image: url("../img/product/decorate/pile.png");
       background-repeat: no-repeat;
       position: relative; }
       .shop-body .shop-main #pile .pile .clock {
@@ -13727,7 +13662,7 @@ a.text-dark:hover, a.text-dark:focus {
               border-radius: 10px; }
             .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg {
               border: 50px solid transparent;
-              border-image: url("../../img/cave/cav-postCard_b.svg") 50 50 round;
+              border-image: url("../img/cave/cav-postCard_b.svg") 50 50 round;
               background-color: #fff;
               width: 82.5%;
               margin: 20px auto; }
@@ -14373,7 +14308,7 @@ a.text-dark:hover, a.text-dark:focus {
                 border-radius: 10px; }
               .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg {
                 border: 50px solid transparent;
-                border-image: url("../../img/cave/cav-postCard_b.svg") 50 50 round;
+                border-image: url("../img/cave/cav-postCard_b.svg") 50 50 round;
                 background-color: #fff;
                 width: 82.5%;
                 margin: 20px auto; }
@@ -14549,7 +14484,7 @@ a.text-dark:hover, a.text-dark:focus {
                 border-radius: 10px; }
               .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg {
                 border: 50px solid transparent;
-                border-image: url("../../img/cave/cav-postCard_b.svg") 50 50 round;
+                border-image: url("../img/cave/cav-postCard_b.svg") 50 50 round;
                 background-color: #fff;
                 width: 82.5%;
                 margin: 20px auto; }
@@ -14893,7 +14828,7 @@ a.text-dark:hover, a.text-dark:focus {
                 border-radius: 10px; }
               .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg {
                 border: 50px solid transparent;
-                border-image: url("../../img/cave/cav-postCard_b.svg") 50 50 round;
+                border-image: url("../img/cave/cav-postCard_b.svg") 50 50 round;
                 background-color: #fff;
                 width: 82.5%;
                 margin: 20px auto; }
@@ -15064,7 +14999,7 @@ a.text-dark:hover, a.text-dark:focus {
               width: 30%;
               text-align: center;
               display: inline-block;
-              background-image: url(../../img/share/yellow-note.svg);
+              background-image: url(../img/share/yellow-note.svg);
               background-repeat: no-repeat; }
             .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .userSetting_memData, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .userSetting_airCoin, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .userSetting_memcolor {
               padding-bottom: 20px;
@@ -15187,7 +15122,7 @@ a.text-dark:hover, a.text-dark:focus {
             margin: 5% 0 5%;
             width: 45%;
             display: inline-block;
-            background-image: url(../../img/share/yellow-note.svg);
+            background-image: url(../img/share/yellow-note.svg);
             background-repeat: no-repeat; }
           .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .userSetting_manu, .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .userSetting_ver {
             width: 70%;
@@ -15281,7 +15216,7 @@ a.text-dark:hover, a.text-dark:focus {
               width: 900px;
               height: 250px; }
               .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn .mike {
-                background-image: url("../../img/user-setting/light_mike.svg");
+                background-image: url("../img/user-setting/light_mike.svg");
                 margin: 0 1.5% 5%;
                 width: 120px;
                 height: 215px;
@@ -15293,7 +15228,7 @@ a.text-dark:hover, a.text-dark:focus {
                   margin-top: 130px;
                   text-align: center; }
               .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn .spencer {
-                background-image: url("../../img/user-setting/light_spencer.svg");
+                background-image: url("../img/user-setting/light_spencer.svg");
                 margin: 0 1.5% 5%;
                 width: 120px;
                 height: 215px;
@@ -15305,7 +15240,7 @@ a.text-dark:hover, a.text-dark:focus {
                   margin-top: 130px;
                   text-align: center; }
               .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn .allen {
-                background-image: url("../../img/user-setting/light_allen.svg");
+                background-image: url("../img/user-setting/light_allen.svg");
                 margin: 0 1.5% 5%;
                 width: 120px;
                 height: 215px;
@@ -15317,7 +15252,7 @@ a.text-dark:hover, a.text-dark:focus {
                   margin-top: 130px;
                   text-align: center; }
               .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn .grace {
-                background-image: url("../../img/user-setting/light_grace.svg");
+                background-image: url("../img/user-setting/light_grace.svg");
                 margin: 0 1.5% 5%;
                 width: 120px;
                 height: 215px;
@@ -15328,7 +15263,7 @@ a.text-dark:hover, a.text-dark:focus {
                   margin-top: 130px;
                   text-align: center; }
               .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn .sharon {
-                background-image: url("../../img/user-setting/light_sharon.svg");
+                background-image: url("../img/user-setting/light_sharon.svg");
                 margin: 0 1.5% 5%;
                 width: 120px;
                 height: 215px;
@@ -15340,7 +15275,7 @@ a.text-dark:hover, a.text-dark:focus {
                   margin-top: 130px;
                   text-align: center; }
               .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn .howard {
-                background-image: url("../../img/user-setting/light_howard.svg");
+                background-image: url("../img/user-setting/light_howard.svg");
                 margin: 0 1.5% 5%;
                 width: 120px;
                 height: 215px;
@@ -15351,16 +15286,6 @@ a.text-dark:hover, a.text-dark:focus {
                   transform: rotate(25deg);
                   margin-top: 130px;
                   text-align: center; }
-          .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut::-webkit-scrollbar-track {
-            -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
-            background-color: rgba(255, 255, 255, 0.4);
-            border-radius: 10px; }
-          .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut::-webkit-scrollbar {
-            width: 10px; }
-          .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut::-webkit-scrollbar-thumb {
-            background-color: rgba(255, 255, 255, 0.5);
-            border-radius: 10px;
-            background: rgba(8, 8, 8, 0.2); }
           .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike {
             background: radial-gradient(rgba(84, 179, 103, 0.5) 30%, white 20%);
             animation: leftLight 80s infinite linear;
@@ -15603,12 +15528,6 @@ a.text-dark:hover, a.text-dark:focus {
     width: 375px; }
   .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard {
     max-width: 350px; } }
-
-.userSetting_body li, .userSetting_body span, .userSetting_body td, .userSetting_body p {
-  font-family: "Noto Sans TC", sans-serif; }
-
-.userSetting_body h3 {
-  font-family: "Noto Sans TC", sans-serif; }
 
 .chat-body {
   margin: 0; }
@@ -16298,7 +16217,7 @@ a.text-dark:hover, a.text-dark:focus {
       overflow-y: scroll; }
       .classic-body .classicLetter .letterOver .cav-letterBg {
         border: 50px solid transparent;
-        border-image: url("../../img/cave/cav-postCard_b.svg") 50 50 round;
+        border-image: url("../img/cave/cav-postCard_b.svg") 50 50 round;
         background-color: #fff;
         width: 100%;
         margin: 0px; }
@@ -16402,7 +16321,7 @@ header {
   box-sizing: border-box; }
 
 .nav-body {
-  width: 1180px;
+  width: 100%;
   margin: 0 auto; }
   .nav-body .nav-hamPosition {
     width: 1180px;
@@ -16701,3 +16620,132 @@ header {
 /*
  *  vender
  */
+/*
+ * base-fontstyle
+*/
+h1 {
+  font-size: 4.5rem; }
+
+h2 {
+  font-size: 3.5rem; }
+
+h3 {
+  font-size: 2.3rem; }
+
+h4 {
+  font-size: 1.8rem; }
+
+h5 {
+  font-size: 1.6rem; }
+
+span {
+  font-size: 1.3rem; }
+
+p {
+  font-size: 1.3rem; }
+
+li {
+  font-size: 1.3rem; }
+
+td {
+  font-size: 1.3rem; }
+
+@media all and (max-width: 1199px) and (min-width: 992px) {
+  h1 {
+    font-size: 4.5rem; }
+  h2 {
+    font-size: 3.5rem; }
+  h3 {
+    font-size: 2.3rem; }
+  h4 {
+    font-size: 1.8rem; }
+  h5 {
+    font-size: 1.6rem; }
+  span {
+    font-size: 1.3rem; }
+  p {
+    font-size: 1.3rem; }
+  li {
+    font-size: 1.3rem; }
+  td {
+    font-size: 1.3rem; } }
+
+@media all and (max-width: 991px) and (min-width: 768px) {
+  h1 {
+    font-size: 4.5rem; }
+  h2 {
+    font-size: 3.5rem; }
+  h3 {
+    font-size: 2.3rem; }
+  h4 {
+    font-size: 1.8rem; }
+  h5 {
+    font-size: 1.6rem; }
+  span {
+    font-size: 1.3rem; }
+  p {
+    font-size: 1.3rem; }
+  li {
+    font-size: 1.3rem; }
+  td {
+    font-size: 1.3rem; } }
+
+@media all and (max-width: 767px) and (min-width: 576px) {
+  h1 {
+    font-size: 4.5rem; }
+  h2 {
+    font-size: 3.5rem; }
+  h3 {
+    font-size: 2.3rem; }
+  h4 {
+    font-size: 1.75rem; }
+  h5 {
+    font-size: 1.5rem; }
+  span {
+    font-size: 1.3rem; }
+  p {
+    font-size: 1.3rem; }
+  li {
+    font-size: 1.3rem; }
+  td {
+    font-size: 1.3rem; } }
+
+@media all and (max-width: 575px) and (min-width: 376px) {
+  h1 {
+    font-size: 4rem; }
+  h2 {
+    font-size: 3rem; }
+  h3 {
+    font-size: 2.5rem; }
+  h4 {
+    font-size: 1.55rem; }
+  h5 {
+    font-size: 1.5rem; }
+  span {
+    font-size: 1.4rem; }
+  p {
+    font-size: 1.4rem; }
+  li {
+    font-size: 1.4rem; }
+  td {
+    font-size: 1.4rem; } }
+
+@media all and (max-width: 375px) {
+  h1 {
+    font-size: 3.5rem; }
+  h2 {
+    font-size: 3rem; }
+  h3 {
+    font-size: 2.5rem; }
+  h4 {
+    font-size: 1.55rem; }
+  h5 {
+    font-size: 1.4rem; }
+  span {
+    font-size: 1.4rem; }
+  p {
+    font-size: 1.4rem; }
+  li {
+    font-size: 1.4rem; }
+  td {
+    font-size: 1.4rem; } }

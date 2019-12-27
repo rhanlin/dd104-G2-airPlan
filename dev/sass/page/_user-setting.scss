@@ -89,7 +89,7 @@
                             width: 30%;
                             text-align: center;
                             display: inline-block;
-                            background-image: url(../../img/share/yellow-note.svg);
+                            background-image: url(../img/share/yellow-note.svg);
                             background-repeat: no-repeat;;
                         }
                         .airCoin{
@@ -231,7 +231,7 @@
                         margin:  5% 0 5% ;
                         width: 45%;
                         display: inline-block;
-                        background-image: url(../../img/share/yellow-note.svg);
+                        background-image: url(../img/share/yellow-note.svg);
                         background-repeat: no-repeat;
                     }
                     .ver{
@@ -335,7 +335,7 @@
                             width: 900px;
                             height: 250px;
                             .mike{
-                                background-image: url("../../img/user-setting/light_mike.svg");
+                                background-image: url("../img/user-setting/light_mike.svg");
                                 @include userSetting_admTag;
                                 h3{
                                     padding-right: 25px;
@@ -344,7 +344,7 @@
                                 }
                             }
                             .spencer{
-                                background-image: url("../../img/user-setting/light_spencer.svg");
+                                background-image: url("../img/user-setting/light_spencer.svg");
                                 @include userSetting_admTag;
                                 h3{
                                     padding-right: 25px;
@@ -353,7 +353,7 @@
                                 }
                             }
                             .allen{
-                                background-image: url("../../img/user-setting/light_allen.svg");
+                                background-image: url("../img/user-setting/light_allen.svg");
                                 @include userSetting_admTag;
                                 h3{
                                     padding-right: 25px;
@@ -362,7 +362,7 @@
                                 }
                             }
                             .grace{
-                                background-image: url("../../img/user-setting/light_grace.svg");
+                                background-image: url("../img/user-setting/light_grace.svg");
                                 @include userSetting_admTag;
                                 h3{
                                     padding-right: 25px;
@@ -370,7 +370,7 @@
                                 }
                             }
                             .sharon{
-                                background-image: url("../../img/user-setting/light_sharon.svg");
+                                background-image: url("../img/user-setting/light_sharon.svg");
                                 @include userSetting_admTag;
                                 h3{
                                     padding-left: 10px;
@@ -379,7 +379,7 @@
                                 }
                             }
                             .howard{
-                                background-image: url("../../img/user-setting/light_howard.svg");
+                                background-image: url("../img/user-setting/light_howard.svg");
                                 @include userSetting_admTag;
                                 h3{
                                     padding-left: 10px;
@@ -389,21 +389,21 @@
                             }
                         }
                     }
-                    .admKanbanOverFlowOut::-webkit-scrollbar-track{
-                        -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
-                        background-color: rgba(255, 255, 255, .4);
-                        border-radius: 10px;
-                    }
-                    .admKanbanOverFlowOut::-webkit-scrollbar{
-                        width: 10px;
-                    }
-                    .admKanbanOverFlowOut::-webkit-scrollbar-thumb{
-                        // background-color: #AAA;
-                        background-color: rgba(255, 255, 255, 0.5);
-                        border-radius: 10px;
-                        // background-image: -webkit-linear-gradient(0deg,rgba(0, 0, 0, .2) 25%,transparent 25%,transparent 50%,rgba(0, 0, 0, .2) 50%,rgba(0, 0, 0, .2) 75%,transparent 75%,transparent);
-                        background:rgba(8, 8, 8, 0.2);
-                    }
+                    // .admKanbanOverFlowOut::-webkit-scrollbar-track{
+                    //     -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+                    //     background-color: rgba(255, 255, 255, .4);
+                    //     border-radius: 10px;
+                    // }
+                    // .admKanbanOverFlowOut::-webkit-scrollbar{
+                    //     width: 10px;
+                    // }
+                    // .admKanbanOverFlowOut::-webkit-scrollbar-thumb{
+                    //     // background-color: #AAA;
+                    //     background-color: rgba(255, 255, 255, 0.5);
+                    //     border-radius: 10px;
+                    //     // background-image: -webkit-linear-gradient(0deg,rgba(0, 0, 0, .2) 25%,transparent 25%,transparent 50%,rgba(0, 0, 0, .2) 50%,rgba(0, 0, 0, .2) 75%,transparent 75%,transparent);
+                    //     background:rgba(8, 8, 8, 0.2);
+                    // }
                     //userSetting_adm vue
                     .userSetting_mike{
                         background: radial-gradient(rgba(84, 179, 103, 0.5) 30%, rgb(255, 255, 255) 20%);
@@ -644,184 +644,4 @@
         }
     }
 }
-
-
-
-// @mixin fontstyle{
-//     @include respond(desktop){
-//         h1 {
-//             font-size: 4.5rem;
-//         }
-
-//         h2 {
-//             font-size: 3.5rem;
-//         }
-
-//         h3 {
-//             font-size: 2.3rem;
-//         }
-
-//         h4 {
-//             font-size: 1.8rem;
-//         }
-
-//         h5 {
-//             font-size: 1.6rem;
-//         }
-//         span{
-//             font-size: 1.3rem;
-//         }
-//         p{
-//             font-size: 1.3rem;
-//         }
-//         li{
-//             font-size: 1.3rem;
-//         }
-//         td{
-//             font-size: 1.3rem;
-//         }
-//     }
-    
-//     @include respond(mediumSize){
-//         h1 {
-//             font-size: 4.5rem;
-//         }
-
-//         h2 {
-//             font-size: 3.5rem;
-//         }
-
-//         h3 {
-//             font-size: 2.3rem;
-//         }
-
-//         h4 {
-//             font-size: 1.8rem;
-//         }
-
-//         h5 {
-//             font-size: 1.6rem;
-//         }
-//         span{
-//             font-size: 1.3rem;
-//         }
-//         p{
-//             font-size: 1.3rem;
-//         }
-//         li{
-//             font-size: 1.3rem;
-//         }
-//         td{
-//             font-size: 1.3rem;
-//         }
-//     }
-//     @include respond(small){
-//         h1 {
-//             font-size: 4.5rem;
-//         }
-
-//         h2 {
-//             font-size: 3.5rem;
-//         }
-
-//         h3 {
-//             font-size: 2.3rem;
-//         }
-
-//         h4 {
-//             font-size: 1.75rem;
-//         }
-
-//         h5 {
-//             font-size: 1.5rem;
-//         }
-//         span{
-//             font-size: 1.3rem;
-//         }
-//         p{
-//             font-size: 1.3rem;
-//         }
-//         li{
-//             font-size: 1.3rem;
-//         }
-//         td{
-//             font-size: 1.3rem;
-//         }
-//     }
-//     @include respond(note){
-//         h1 {
-//             font-size: 4rem;
-//         }
-
-//         h2 {
-//             font-size: 3rem;
-//         }
-
-//         h3 {
-//             font-size: 2.5rem;
-//         }
-
-//         h4 {
-//             font-size: 1.55rem;
-//         }
-
-//         h5 {
-//             font-size: 1.5rem;
-//         }
-//         span{
-//             font-size: 1.4rem;
-//         }
-//         p{
-//             font-size: 1.4rem;
-//         }
-//         li{
-//             font-size: 1.4rem;
-//         }
-//         td{
-//             font-size: 1.4rem;
-//         }
-//     }
-//     @include respond(iphone){
-//         h1 {
-//             font-size: 3.5rem;
-//         }
-
-//         h2 {
-//             font-size: 3rem;
-//         }
-
-//         h3 {
-//             font-size: 2.5rem;
-//         }
-
-//         h4 {
-//             font-size: 1.55rem;
-//         }
-
-//         h5 {
-//             font-size: 1.4rem;
-//         }
-//         span{
-//             font-size: 1.4rem;
-//         }
-//         p{
-//             font-size: 1.4rem;
-//         }
-//         li{
-//             font-size: 1.4rem;
-//         }
-//         td{
-//             font-size: 1.4rem;
-//         }
-//     }
-// }
-// @include fontstyle;
-
-.userSetting_body li, .userSetting_body span, .userSetting_body td, .userSetting_body p{
-    // font-size: 20px;
-    font-family: $font;
-}
-.userSetting_body h3{
-    font-family: $font;
-    // font-size: h3;
-}
+  

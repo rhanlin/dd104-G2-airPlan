@@ -75,7 +75,7 @@
         .mountain_box {
             width: 100%;
             height: 1800px;
-            background-image: url(../../img/home/write/mountain.png);
+            background-image: url(../img/home/write/mountain.png);
             background-repeat: no-repeat;
             background-size: cover;
             position: relative;
@@ -107,7 +107,7 @@
         .write {
             width: 100%;
             height: 1044px;
-            background-image: url(../../img/home/write/desk.png);
+            background-image: url(../img/home/write/desk.png);
             background-repeat: no-repeat;
             // background-size: 100%;
             margin-top: -190px;
@@ -158,7 +158,7 @@
                         // border: 1px solid blue;
                         width: 90%;
                         height: 27vw;
-                        background-image: url(../../img/home/write/black-water.png);
+                        background-image: url(../img/home/write/black-water.png);
                         background-repeat: no-repeat;
                         background-size: cover;
                         margin-top: -17.5%;
@@ -190,7 +190,7 @@
                         // border: 1px solid greenyellow;
                         width: 68%;
                         height: 44vw;
-                        background-image: url(../../img/home/write/writePaper.svg);
+                        background-image: url(../img/home/write/writePaper.svg);
                         background-repeat: no-repeat;
                         display: flex;
                         justify-content: center;
@@ -199,7 +199,7 @@
                         .write_paper {
                             width: 77%;
                             height: 88%;
-                            background-image: url(../../img/home/write/letter.png);
+                            background-image: url(../img/home/write/letter.png);
                             background-repeat: no-repeat;
                             background-size: cover;
                             z-index: 0;
@@ -223,7 +223,7 @@
         .shoot {
             width: 100%;
             height: 935px;
-            background-image: url(../../img/home/write/desk.png);
+            background-image: url(../img/home/write/desk.png);
             background-repeat: no-repeat;
             // background-size: cover;
             // background-position: bottosm;
@@ -330,7 +330,7 @@
         .grassBack {
             width: 100%;
             height: 800px;
-            background-image: url(../../img/home/catch/grassBack.svg);
+            background-image: url(../img/home/catch/grassBack.svg);
             background-repeat: no-repeat;
             background-size: cover;
             // border: 1px solid pink;
@@ -340,7 +340,7 @@
         .grassMid {
             width: 100%;
             height: 800px;
-            background-image: url(../../img/home/catch/grassMid.svg);
+            background-image: url(../img/home/catch/grassMid.svg);
             background-repeat: no-repeat;
             background-size: cover;
             margin-top: -750px;
@@ -351,7 +351,7 @@
             width: 100%;
             height: 860px;
             // border: 1px solid red;
-            background-image: url(../../img/home/catch/grassFront.png);
+            background-image: url(../img/home/catch/grassFront.png);
             background-repeat: no-repeat;
             background-size: cover;
             margin-top: -650px;
@@ -478,7 +478,7 @@
                 // border: 5px solid $main-black;
                 width: 25%;
                 height: 34.9vw;
-                background-image: url(../../img/home/write/letter.png);
+                background-image: url(../img/home/write/letter.png);
                 background-repeat: no-repeat;
                 background-size: cover;
                 position: absolute;
@@ -500,7 +500,7 @@
             width: 35%;
             height: 47vw;
             // border: 1px solid blue;
-            background-image: url(../../img/home/catch/stick.png);
+            background-image: url(../img/home/catch/stick.png);
             background-repeat: no-repeat;
             background-size: contain;
             background-position: 55%;
@@ -512,7 +512,7 @@
                 width: 100%;
                 height: 16.7vw;
                 // border: 1px solid palevioletred;
-                background-image: url(../../img/home/catch/boardTop.svg);
+                background-image: url(../img/home/catch/boardTop.svg);
                 background-repeat: no-repeat;
                 margin-top: 10%;
                 position: relative;
@@ -528,7 +528,7 @@
                 width: 72%;
                 height: 17.3vw;
                 // border: 1px solid slateblue;
-                background-image: url(../../img/home/catch/boardBot.svg);
+                background-image: url(../img/home/catch/boardBot.svg);
                 background-repeat: no-repeat;
                 margin: 5% auto 0 18%;
                 display: flex;
@@ -558,7 +558,7 @@
         .tube {
             width: 100%;
             height: 1571px;
-            background-image: url(../../img/home/catch/tube.png);
+            background-image: url(../img/home/catch/tube.png);
             background-repeat: no-repeat;
             background-size: cover;
             padding-top: 10%;
@@ -584,13 +584,42 @@
                     left: 5%;
                 }
             }
+
+            .smokeBox {
+                border: 1px solid blue;
+                width: 40%;
+                height: 16.5vw;
+                position: absolute;
+                right: 30%;
+                top: 20%;
+
+                .smokeS {
+                    filter: drop-shadow(0px -12px 9px rgba(0, 0, 0, 0.65));
+
+                }
+
+                .smokeM {
+                    position: absolute;
+                    bottom: 14.5%;
+                    left: 38%;
+                    filter: drop-shadow(0px -12px 9px rgba(0, 0, 0, 0.65));
+
+                }
+
+                .smokeL {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    filter: drop-shadow(0px -12px 9px rgba(0, 0, 0, 0.65));
+                }
+            }
         }
 
         .print {
             width: 100%;
             height: 1090px;
             // border: 1px solid blue;
-            background-image: url(../../img/home/catch/print.png);
+            background-image: url(../img/home/catch/print.png);
             background-repeat: no-repeat;
             background-size: contain;
             margin-top: -270px;
@@ -609,7 +638,7 @@
     .home_belt {
         width: 100%;
         height: 940px;
-        background-image: url(../../img/home/store/customBg.png);
+        background-image: url(../img/home/store/customBg.png);
         position: relative;
 
         .paintBox {
@@ -623,7 +652,7 @@
         .belt {
             width: 60%;
             height: 100%;
-            background-image: url(../../img/home/store/belt.png);
+            background-image: url(../img/home/store/belt.png);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: bottom;
@@ -651,7 +680,7 @@
             width: 210%;
             height: 210%;
             // border: 1px solid red;
-            background-image: url(../../img/home/store/spotlight.png);
+            background-image: url(../img/home/store/spotlight.png);
             background-repeat: no-repeat;
             background-size: contain;
             position: absolute;
@@ -711,13 +740,13 @@
     .home_store {
         width: 100%;
         height: 1000px;
-        background-image: url(../../img/home/store/storeBg.png);
+        background-image: url(../img/home/store/storeBg.png);
         position: relative;
 
         .shed {
             width: 100%;
             height: 200px;
-            background-image: url(../../img/home/store/shed.svg);
+            background-image: url(../img/home/store/shed.svg);
             filter: drop-shadow(0px 14px 12px rgba(70, 70, 70, 0.7));
         }
 
@@ -762,129 +791,130 @@
             }
 
             .bulb_L1 {
-                background-color: grey;
+                background-color: $main-white;
                 position: absolute;
                 top: 0.5%;
                 left: 2%;
-                animation: lightRedYel 2s ease-in infinite;
+                animation: lightRedYel 2.1s ease-in infinite alternate 0.3s;
             }
 
             .bulb_L2 {
-                background-color: $main-yellow;
+                background-color: $main-white;
                 position: absolute;
                 top: 25%;
                 left: 2%;
-                animation: lightYelRed 2s ease-in infinite;
+                animation: lightYelRed 2.1s ease-in infinite alternate 0.6s;
             }
 
             .bulb_L3 {
-                background-color: $main-red;
+                background-color: $main-white;
                 position: absolute;
                 top: 50%;
                 left: 2%;
-                animation: lightRedYel 2s ease-in infinite;
+                animation: lightRedYel 2.1s ease-in infinite alternate 0.9s;
             }
 
             .bulb_L4 {
-                background-color: $main-yellow;
+                background-color: $main-white;
                 position: absolute;
                 top: 75%;
                 left: 2%;
-                animation: lightYelRed 2s ease-in infinite;
+                animation: lightYelRed 2.1s ease-in infinite alternate 1.2s;
             }
 
             .bulb_L5 {
-                background-color: $main-red;
+                background-color: $main-white;
                 position: absolute;
                 bottom: 0.5%;
                 left: 2%;
-                animation: lightRedYel 2s ease-in infinite;
-            }
-
-            .bulb_R1 {
-                background-color: $main-yellow;
-                position: absolute;
-                top: 0.5%;
-                right: 2%;
-                animation: lightYelRed 2s ease-in infinite;
-            }
-
-            .bulb_R2 {
-                background-color: $main-red;
-                position: absolute;
-                top: 25%;
-                right: 2%;
-                animation: lightRedYel 2s ease-in infinite;
-            }
-
-            .bulb_R3 {
-                background-color: $main-yellow;
-                position: absolute;
-                top: 50%;
-                right: 2%;
-                animation: lightYelRed 2s ease-in infinite;
-            }
-
-            .bulb_R4 {
-                background-color: $main-red;
-                position: absolute;
-                top: 75%;
-                right: 2%;
-                animation: lightRedYel 2s ease-in infinite;
-            }
-
-            .bulb_R5 {
-                background-color: $main-yellow;
-                position: absolute;
-                bottom: 0.5%;
-                right: 2%;
-                animation: lightYelRed 2s ease-in infinite;
-            }
-
-            .bulb_T1 {
-                background-color: $main-yellow;
-                position: absolute;
-                top: 0.5%;
-                left: 31%;
-                animation: lightYelRed 2s ease-in infinite;
-            }
-
-            .bulb_T2 {
-                background-color: $main-red;
-                position: absolute;
-                top: 0.5%;
-                right: 31%;
-                animation: lightRedYel 2s ease-in infinite;
+                animation: lightRedYel 2.1s ease-in infinite alternate 1.5s;
             }
 
             .bulb_B1 {
-                background-color: $main-yellow;
+                background-color: $main-white;
                 position: absolute;
                 bottom: 0.5%;
                 left: 31%;
-                animation: lightYelRed 2s ease-in infinite;
+                animation: lightYelRed 2.1s ease-in infinite alternate 1.8s;
             }
 
             .bulb_B2 {
-                background-color: $main-red;
+                background-color: $main-white;
                 position: absolute;
                 bottom: 0.5%;
                 right: 31%;
-                animation: lightRedYel 2s ease-in infinite;
+                animation: lightRedYel 2.1s ease-in infinite alternate 2.1s;
+            }
+
+            .bulb_R5 {
+                background-color: $main-white;
+                position: absolute;
+                bottom: 0.5%;
+                right: 2%;
+                animation: lightYelRed 2.1s ease-in infinite alternate 2.4s;
+            }
+
+            .bulb_R4 {
+                background-color: $main-white;
+                position: absolute;
+                top: 75%;
+                right: 2%;
+                animation: lightRedYel 2.1s ease-in infinite alternate 2.7s;
+            }
+
+            .bulb_R3 {
+                background-color: $main-white;
+                position: absolute;
+                top: 50%;
+                right: 2%;
+                animation: lightYelRed 2.1s ease-in infinite alternate 3.0s;
+            }
+
+            .bulb_R2 {
+                background-color: $main-white;
+                position: absolute;
+                top: 25%;
+                right: 2%;
+                animation: lightRedYel 2.1s ease-in infinite alternate 3.3s;
+            }
+
+            .bulb_R1 {
+                background-color: $main-white;
+                position: absolute;
+                top: 0.5%;
+                right: 2%;
+                animation: lightYelRed 2.1s ease-in infinite alternate 3.6s;
+            }
+
+            .bulb_T2 {
+                background-color: $main-white;
+                position: absolute;
+                top: 0.5%;
+                right: 31%;
+                animation: lightRedYel 2.1s ease-in infinite alternate 3.9s;
+            }
+
+            .bulb_T1 {
+                background-color: $main-white;
+                position: absolute;
+                top: 0.5%;
+                left: 31%;
+                animation: lightYelRed 2.1s ease-in infinite alternate 4.2s;
             }
 
             @keyframes lightRedYel {
                 0% {
-                    background-color: $main-yellow;
-
-                }
-
-                50% {
+                    // background-color: $main-yellow;
                     background-color: $main-white;
                 }
 
+                // 50% {
+                //     background-color: $main-white;
+                // }
+
                 100% {
                     background-color: $main-yellow;
+                    // background-color: $main-white;
                 }
             }
 
@@ -893,12 +923,13 @@
                     background-color: $main-white;
                 }
 
-                50% {
-                    background-color: $main-red;
-                }
+                // 50% {
+                //     background-color: $main-red;
+                // }
 
                 100% {
-                    background-color: $main-white;
+                    // background-color: $main-white;
+                    background-color: $main-red;
                 }
             }
         }
@@ -935,7 +966,7 @@
             .windowBg {
                 width: 100%;
                 height: 100%;
-                background-image: url(../../img/home/store/window.svg);
+                background-image: url(../img/home/store/window.svg);
                 background-repeat: no-repeat;
                 background-size: 100% 100%;
                 filter: drop-shadow(0px 12px 8px rgba(70, 70, 70, 0.5));
@@ -986,7 +1017,7 @@
                 content: "";
                 width: 100%;
                 height: 100%;
-                background-image: url(../../img/home/store/glass3.png);
+                background-image: url(../img/home/store/glass3.png);
                 background-repeat: no-repeat;
                 background-size: cover;
                 position: absolute;
@@ -1002,7 +1033,7 @@
             height: 300px;
             border: $border;
             border-radius: 4%;
-            background-image: url(../../img/home/store/boardWood.png);
+            background-image: url(../img/home/store/boardWood.png);
             position: absolute;
             right: 5%;
             bottom: 25%;
@@ -1015,7 +1046,7 @@
                 width: 90%;
                 height: 90%;
                 // border: 5px solid $main-black;
-                background-image: url(../../img/home/store/boardBg.png);
+                background-image: url(../img/home/store/boardBg.png);
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -1031,7 +1062,7 @@
     .home_chat {
         width: 100%;
         height: 930px;
-        background-image: url(../../img/home/chat/chatBg.png);
+        background-image: url(../img/home/chat/chatBg.png);
         position: relative;
 
         .chatBox {
@@ -1251,7 +1282,7 @@
                         // border: 1px solid green;
                         width: 100%;
                         height: 100%;
-                        background-image: url(../../img/home/chat/noteWhite.svg);
+                        background-image: url(../img/home/chat/noteWhite.svg);
                         background-repeat: no-repeat;
                         animation: wave 2s linear infinite;
 
@@ -1293,7 +1324,7 @@
                     width: 30%;
                     height: 17vw;
                     // border: 1px solid olive;
-                    background-image: url(../../img/home/chat/noteWhite.svg);
+                    background-image: url(../img/home/chat/noteWhite.svg);
                     background-repeat: no-repeat;
                     position: absolute;
                     top: 26%;
@@ -1318,7 +1349,7 @@
                     .chat_title3 {
                         width: 100%;
                         height: 100%;
-                        background-image: url(../../img/home/chat/noteWhite.svg);
+                        background-image: url(../img/home/chat/noteWhite.svg);
                         background-repeat: no-repeat;
 
                         h1 {
@@ -1341,7 +1372,7 @@
                 .noteYellow {
                     width: 33%;
                     height: 17.5vw;
-                    background-image: url(../../img/home/chat/noteYellow.svg);
+                    background-image: url(../img/home/chat/noteYellow.svg);
                     background-repeat: no-repeat;
                     // border: 1px solid slateblue;
                     position: absolute;
