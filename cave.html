@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="./css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <title>caveP2</title>
@@ -27,11 +27,33 @@
                     <div class="cav-boxFrontLeft">
                         <div class="cav-whoLetter">
                             <div class="cav-myLetter">
-                                <div class="btn">我的信件</div>
+                                <div class="orderBtnBoxGroup ">
+                                    <div class="orderBtnBox ">
+                                        <div class="orderBtn clicked">
+                                            <div class="orderText">
+                                                <h2>我的信件</h2>
+                                            </div>
+                                        </div>
+                                        <div class="orderBtnBottom"></div>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="btn">我的信件</div> -->
                             </div>
 
                             <div class="cav-otherLetter">
-                                <div class="btn">撈的信件</div>
+                                <div class="orderBtnBoxGroup ">
+                                    <div class="orderBtnBox ">
+                                        <div class="orderBtn clicked">
+                                            <div class="orderText">
+                                                <h2>撈的信件</h2>
+                                            </div>
+                                        </div>
+                                        <div class="orderBtnBottom"></div>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="btn">撈的信件</div> -->
                             </div>
                         </div>
                         <div class="cav-histLetter1">
@@ -263,6 +285,39 @@
 
 
     </main>
+    <script>
+        $('.switchBtn').mousedown(function () {
+          $(this).addClass('clicked');
+        });
+        $('.switchBtn').mouseup(function () {
+          $(this).removeClass('clicked');
+        });
+    
+        $('.orderBtn').mousedown(function () {
+          $(this).addClass('clicked');
+        });
+        $('.orderBtn').mouseup(function () {
+          $(this).removeClass('clicked');
+        });
+    
+    
+    
+        $('.itemCard').click(function () {
+          $('#outshadow').css('opacity', '0.7');
+          $('#outshadow').css('visibility', 'visible');
+          $('#outshadow').css('zIndex', '99');
+          $('#medal').css('display', 'block');
+          $('#medal').css('zIndex', '100');
+          e ? e.stopPropagation() : event.cancelBubble = true;
+        })
+    
+        $('.cross').click(function () {
+          $('#outshadow').css('visibility', 'hidden');
+          $('#outshadow').css('zIndex', '-99');
+          $('#medal').css('display', 'none');
+          e ? e.stopPropagation() : event.cancelBubble = true;
+        })
+      </script>
     @@include("./html/footer.html")
     <script src="./js/bookMarkL.js"></script>
     <script src="./js/bookMarkR.js"></script>
