@@ -2447,52 +2447,76 @@ table {
               animation: botani 3.5s linear reverse infinite; }
 
 @keyframes topani {
-  1% {
-    stroke-width: 30px; }
-  15% {
-    stroke-width: 57px; }
-  25% {
+  2% {
     stroke-width: 67px; }
-  27% {
-    stroke-width: 23px; }
-  42% {
-    stroke-width: 42px; }
-  49% {
-    stroke-width: 6px; }
-  60% {
-    stroke-width: 156px; }
-  70% {
-    stroke-width: 129px; }
-  76% {
-    stroke-width: 6px; }
-  89% {
-    stroke-width: 51px; }
-  96% {
-    stroke-width: 189px; } }
+  7% {
+    stroke-width: 178px; }
+  12% {
+    stroke-width: 83px; }
+  20% {
+    stroke-width: 19px; }
+  29% {
+    stroke-width: 2px; }
+  35% {
+    stroke-width: 43px; }
+  40% {
+    stroke-width: 168px; }
+  45% {
+    stroke-width: 189px; }
+  53% {
+    stroke-width: 85px; }
+  59% {
+    stroke-width: 63px; }
+  62% {
+    stroke-width: 98px; }
+  66% {
+    stroke-width: 38px; }
+  72% {
+    stroke-width: 134px; }
+  81% {
+    stroke-width: 128px; }
+  86% {
+    stroke-width: 117px; }
+  90% {
+    stroke-width: 100px; }
+  97% {
+    stroke-width: 129px; } }
 
 @keyframes botani {
-  6% {
-    stroke-width: 53px; }
-  14% {
-    stroke-width: 9px; }
-  25% {
-    stroke-width: 80px; }
-  34% {
-    stroke-width: 1px; }
-  42% {
-    stroke-width: 26px; }
-  46% {
-    stroke-width: 104px; }
-  56% {
+  2% {
     stroke-width: 179px; }
+  9% {
+    stroke-width: 197px; }
+  17% {
+    stroke-width: 72px; }
+  18% {
+    stroke-width: 167px; }
+  27% {
+    stroke-width: 116px; }
+  34% {
+    stroke-width: 187px; }
+  38% {
+    stroke-width: 111px; }
+  44% {
+    stroke-width: 96px; }
+  53% {
+    stroke-width: 152px; }
+  59% {
+    stroke-width: 197px; }
+  64% {
+    stroke-width: 76px; }
   66% {
-    stroke-width: 117px; }
-  78% {
-    stroke-width: 175px; }
-  89% {
-    stroke-width: 41px; }
-  92% {
-    stroke-width: 144px; } }
+    stroke-width: 126px; }
+  76% {
+    stroke-width: 22px; }
+  80% {
+    stroke-width: 169px; }
+  86% {
+    stroke-width: 5px; }
+  95% {
+    stroke-width: 199px; }
+  99% {
+    stroke-width: 94px; } }
 
 @keyframes rainbowMove {
   from {
@@ -15239,16 +15263,6 @@ a.text-dark:hover, a.text-dark:focus {
                   transform: rotate(25deg);
                   margin-top: 130px;
                   text-align: center; }
-          .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut::-webkit-scrollbar-track {
-            -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
-            background-color: rgba(255, 255, 255, 0.4);
-            border-radius: 10px; }
-          .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut::-webkit-scrollbar {
-            width: 10px; }
-          .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut::-webkit-scrollbar-thumb {
-            background-color: rgba(255, 255, 255, 0.5);
-            border-radius: 10px;
-            background: rgba(8, 8, 8, 0.2); }
           .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike {
             background: radial-gradient(rgba(84, 179, 103, 0.5) 30%, white 20%);
             animation: leftLight 80s infinite linear;
