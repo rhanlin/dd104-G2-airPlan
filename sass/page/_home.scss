@@ -131,8 +131,6 @@
                     .writeTitleBg2 {
                         width: 95%;
                         height: 90%;
-                        border: 6px solid $main-black;
-                        background-color: white;
                     }
 
                     .writeTitleBg2 {
@@ -199,12 +197,13 @@
                         align-items: center;
 
                         .write_paper {
-                            border: 5px solid $main-black;
                             width: 77%;
                             height: 88%;
                             background-image: url(../../img/home/write/letter.png);
                             background-repeat: no-repeat;
                             background-size: cover;
+                            z-index: 0;
+
                         }
                     }
 
@@ -212,6 +211,8 @@
                         width: 32%;
                         align-self: flex-end;
                         margin-left: -15%;
+                        // position: relative;
+                        z-index: 5;
                     }
                 }
             }
@@ -474,7 +475,7 @@
     .home_catch {
         .grassFront {
             .catch_letter {
-                border: 5px solid $main-black;
+                // border: 5px solid $main-black;
                 width: 25%;
                 height: 34.9vw;
                 background-image: url(../../img/home/write/letter.png);
@@ -484,6 +485,7 @@
                 left: 50%;
                 bottom: 3%;
                 transform: translate(-50%, 0);
+                z-index: 0;
             }
         }
 
@@ -941,6 +943,7 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 align-content: space-around;
+                position: relative;
 
                 .paintPlan {
                     width: 70%;
@@ -978,12 +981,26 @@
                     transform: translate(-50%, 0);
                 }
             }
+
+            .windowBg::before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background-image: url(../../img/home/store/glass3.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0.4;
+                z-index: 10;
+            }
         }
 
         .board {
             width: 400px;
             height: 300px;
-            border: 5px solid $main-black;
+            border: $border;
             border-radius: 4%;
             background-image: url(../../img/home/store/boardWood.png);
             position: absolute;
@@ -1035,7 +1052,7 @@
                     background: radial-gradient($main-black 20%, $main-blue 20%);
                     background-size: 12px 12px;
                     border-radius: 0 7% 7% 0;
-                    border: 5px solid $main-black;
+                    border: $border;
                     display: flex;
                     align-items: center;
 
@@ -1043,7 +1060,7 @@
                         width: 95%;
                         height: 90%;
                         border-radius: 0 7% 7% 0;
-                        border: 5px dashed brown;
+                        border: 0.2vw dashed brown;
                         border-left: 0px;
                         display: flex;
                         align-items: center;
@@ -1051,15 +1068,13 @@
                         .chatPaper {
                             width: 93%;
                             height: 95%;
-                            border: 5px solid $main-black;
-                            border-left: 0px;
                             display: flex;
 
                             .chatWhite {
                                 width: 85%;
                                 height: 100%;
                                 background-color: $main-white;
-                                border: 5px solid $main-black;
+                                border: $border;
                                 border-right: 0px;
                                 border-left: 0px;
                                 position: relative;
@@ -1088,7 +1103,7 @@
                                         .chatFrame1 {
                                             width: 30%;
                                             height: 100%;
-                                            border: 5px solid $main-black;
+                                            border: $border;
                                             background-color: $main-yellow;
                                             border-radius: 30px 0 30px 30px;
                                             display: flex;
@@ -1125,7 +1140,7 @@
                                         .chatFrame2 {
                                             width: 60%;
                                             height: 100%;
-                                            border: 5px solid $main-black;
+                                            border: $border;
                                             background-color: $main-blue;
                                             border-radius: 0px 30px 30px 30px;
                                             display: flex;
@@ -1151,7 +1166,7 @@
                                         .chatFrame3 {
                                             width: 55%;
                                             height: 100%;
-                                            border: 5px solid $main-black;
+                                            border: $border;
                                             background-color: $main-yellow;
                                             border-radius: 30px 0 30px 30px;
                                             display: flex;
@@ -1179,7 +1194,7 @@
                                         .send {
                                             width: 95%;
                                             height: 100%;
-                                            border: 5px solid $main-black;
+                                            border: $border;
                                             border-radius: 30px 30px 30px 30px;
                                             float: right;
                                             margin-right: 3%;
@@ -1200,7 +1215,7 @@
                             .chatYellow {
                                 width: 15%;
                                 height: 100%;
-                                border: 5px solid $main-black;
+                                border: $border;
                                 background: linear-gradient(-40deg, #f3de6b 45%, #000 45%, #000 55%, #f3de6b 55%);
                                 background-size: 9px 12px;
                                 border-left: 0px;
@@ -1209,7 +1224,7 @@
                                 .yelPage {
                                     width: 25%;
                                     height: 100%;
-                                    border-left: 5px solid $main-black;
+                                    border-left: $border;
                                 }
                             }
                         }
