@@ -33,73 +33,121 @@
           </div>
         </div>
 
-        <div class="col-12 col-sm-12  col-md-12 col-lg-12 itemCardBox ">
-          <div class="itemCardAside">
-            <div class="itemCardAsideBox">
-              <div class="itemCardAsideh3">
+
+
+        <div id="app">
+          <div class="col-12 col-sm-12  col-md-12 col-lg-12 itemCardBox ">
+            <div class="itemCardAside">
+              <div class="itemCardAsideBox">
+                <div class="itemCardAsideh3">
+                  <h3>商品項目</h3>
+                </div>
+                <div class="itemCardAsideh4">
+                  <h4>信紙</h4>
+                </div>
+                <div class="itemCardAsideh4">
+                  <h4></h4>
+                </div>
+                <div class="accordion" id="accordionExample">
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                          aria-expanded="true" aria-controls="collapseOne">
+                          <h4>圖案</h4>
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                      data-parent="#accordionExample">
+                      <div class="card-body">
+                        <h5>向量素材</h5>
+                        <h5>壁紙素材</h5>
+                        <h5>動物素材</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="headingTwo">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                          data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          <h4>郵戳</h4>
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <h5>外框素材</h5>
+                        <h5>內容圖案</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="headingThree">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                          data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          <h4>DIY工具</h4>
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                      data-parent="#accordionExample">
+                      <div class="card-body">
+                        <h5>繪畫相關</h5>
+                        <h5>其他</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" itemCardContainer">
+              <div class="cardFilter">
+                <!-- <img src="/img/product/decorate/line_top.png" alt="" class="line_top">
+                <img src="/img/product/decorate/line_bottom.png" alt="" class="line_bottom"> -->
+                <div class="itemCard" v-if="change(index)" v-for="(item,index) in items" :style="{backgroundImage:`url(${item.url})`}"
+                  :id=item.id :class=item.class>
+                  <img src="/img/product/decorate/clip-04.svg" alt="">
+                </div>
+              </div>
+              <div id="emptyBtn">
+                <div @click="page = 1" class="switchBtnBox">
+                  <div class="switchBtn">page1</div>
+                </div>
+                <div @click="page = 2" class="switchBtnBox">
+                  <div class="switchBtn">page2</div>
+                </div>
+                <div @click="page = 3" class="switchBtnBox">
+                  <div class="switchBtn">page</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="filter_forSamll">
+            <div class="filter_forSamllBox">
+              <div class="filter_forSamllh3">
                 <h3>商品項目</h3>
               </div>
-              <div class="itemCardAsideh4">
-                <h4>信紙</h4>
+              <div class="filter_forSamllh4">
+                <h5>信紙</h5>
               </div>
-              <div class="itemCardAsideh4">
-                <h4>DIY工具</h4>
+              <div class="filter_forSamllh4">
+                <h5>DIY工具</h5>
               </div>
-              <div class="itemCardAsideh4">
-                <h4>郵戳</h4>
+              <div class="filter_forSamllh4" @click="filt='postmark'">
+                <h5>郵戳</h5>
               </div>
-              <div class="itemCardAsideh4">
-                <h4>圖案</h4>
+              <div class="filter_forSamllh4">
+                <h5>圖案</h5>
               </div>
-              <div class="itemCardAsideh4">
-                <h4>費用</h4>
+              <div class="filter_forSamllh4">
+                <h5>費用</h5>
               </div>
-            </div>
-          </div>
-          <div class=" itemCardContainer">
-            <img src="/img/product/decorate/line_top.png" alt="" class="line_top">
-            <div class="itemCardTopRow">
-              <div class="itemCard itemCard1"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
-              <div class="itemCard itemCard2"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
-              <div class="itemCard itemCard3">
-                <img src="/img/product/decorate/clip-04.svg" alt="" class="itemCard3Img_1">
-                <img src="/img/product/decorate/clip-04.svg" alt="" class="itemCard3Img_2">
-              </div>
-              <div class="itemCard itemCard4"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
-              <div class="itemCard itemCard5"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
-            </div>
-            <img src="/img/product/decorate/line_bottom.png" alt="" class="line_bottom">
-            <div class="itemCardBottomRow">
-              <div class="itemCard itemCard6"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
-              <div class="itemCard itemCard7"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
-              <div class="itemCard itemCard8"><img src="/img/product/decorate/clip-04.svg" alt=""></div>
             </div>
           </div>
         </div>
-        <div class="filter_forSamll">
-          <div class="filter_forSamllBox">
-            <div class="filter_forSamllh3">
-              <h3>商品項目</h3>
-            </div>
-            <div class="filter_forSamllh4">
-              <h5>信紙</h5>
-            </div>
-            <div class="filter_forSamllh4">
-              <h5>DIY工具</h5>
-            </div>
-            <div class="filter_forSamllh4">
-              <h5>郵戳</h5>
-            </div>
-            <div class="filter_forSamllh4">
-              <h5>圖案</h5>
-            </div>
-            <div class="filter_forSamllh4">
-              <h5>費用</h5>
-            </div>
-          </div>
-        </div>
-
-
     </section>
     <div id="outshadow"></div>
     <div id="medal">
@@ -334,28 +382,7 @@
                   </div>
                 </div>
                 <div class="orderBtnBottom"></div>
-
               </div>
-            </div>
-            <div id="emptyBtn">
-              <div class="switchBtnBox clicked">
-                <div class="switchBtn">empty</div>
-              </div>
-              <div class="switchBtnBox">
-                <div class="switchBtn">empty</div>
-              </div>
-              <!-- <div class="switchBtnBox">
-                <div class="switchBtn">empty</div>
-              </div>
-              <div class="switchBtnBox">
-                <div class="switchBtn">empty</div>
-              </div>
-              <div class="switchBtnBox">
-                <div class="switchBtn">empty</div>
-              </div>
-              <div class="switchBtnBox">
-                <div class="switchBtn">empty</div>
-              </div> -->
             </div>
           </div>
         </div>
@@ -403,13 +430,114 @@
     </section>
   </main>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.0.1/fabric.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.9/vue.js'></script>
   <script src="./js/fastclick.js"></script>
   <script src="./js/jquery.nice-select.min.js"></script>
   <script src="/js/shop_carousel.js"></script>
   <script src="/js/shop_draw.js"></script>
+  <script>
+    $('#myCollapsible').on('hidden.bs.collapse', function () {
+      // do something…
+    })
+  </script>
+  <script>
+    var addShuff = new Vue({
+      el: '#app',
+      data: {
+        items: [{
+            id: 'itemCard1',
+            url: '/img/product/postmark/postmark_1.png'
+          },
+          {
+            id: 'itemCard2',
+            url: '/img/product/postmark/postmark_8.png'
+          },
+          {
+            id: 'itemCard3',
+            url: '/img/product/postmark/postmark_2.png'
+          },
+          {
+            id: 'itemCard4',
+            url: '/img/product/postmark/postmark_3.png'
+          },
+          {
+            id: 'itemCard5',
+            url: '/img/product/postmark/postmark_4.png'
+          },
+          {
+            id: 'itemCard6',
+            url: '/img/product/postmark/postmark_5.png'
+          },
+          {
+            id: 'itemCard7',
+            url: '/img/product/postmark/postmark_6.png'
+          },
+          {
+            id: 'itemCard8',
+            url: '/img/product/postmark/postmark_7.png'
+          },
+          {
+            id: 'itemCard9',
+            url: '/img/product/postmark/postmark_6.png'
+          },
+          {
+            id: 'itemCard10',
+            url: '/img/product/postmark/postmark_7.png'
+          },
+          {
+            id: 'itemCard11',
+            url: '/img/product/postmark/postmark_5.png'
+          },
+          {
+            id: 'itemCard12',
+            url: '/img/product/postmark/postmark_4.png'
+          },
+          {
+            id: 'itemCard13',
+            url: '/img/product/postmark/postmark_3.png'
+          },
+          {
+            id: 'itemCard14',
+            url: '/img/product/postmark/postmark_2.png'
+          },
+          {
+            id: 'itemCard15',
+            url: '/img/product/postmark/postmark_1.png'
+          },
+        ],
+        // filt: 'all',
+        page: 1,
+      },
+      computed: {
 
+      },
+      methods: {
+        change(index) {
+          if (this.page == 1) {
+            if (index < 10) return true;
+          } else if (this.page == 2) {
+            if (index < 20 && index >= 10) return true;
+          } else if (this.page == 3) {
+            if (index < 30 && index >= 20) return true;
+          }
+        }
+      },
+      watch: {
+        page() {
+          this.change();
+        }
+      },
+
+    })
+  </script>
   <script>
     $('.switchBtn').mousedown(function () {
       $(this).addClass('clicked');

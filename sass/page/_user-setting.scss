@@ -609,6 +609,9 @@
                             }
                         }
                     }
+                    .box{
+                        display: none;
+                    }
                 }
                 .userSetting_sys{
                     h2{
@@ -619,6 +622,9 @@
                         .manu{
                             width: 75px;
                         }
+                    }
+                    .paper{
+                        display: none;
                     }
                 }
                 .userSetting_adm{
@@ -639,11 +645,45 @@
     }
 }
 
-.userSetting_body li, .userSetting_body span, .userSetting_body td, .userSetting_body p{
-    font-size: 20px;
-    margin: 0;
-    font-family: $font;
-}
-.userSetting_body h3{
-    font-family: $font;
-}
+// h1 {
+//     font-size: 4.5rem;
+// }
+
+// h2 {
+//     font-size: 3.5rem;
+// }
+
+// h3 {
+//     font-size: 2.3rem;
+// }
+
+// h4 {
+//     font-size: 1.8rem;
+// }
+
+// h5 {
+//     font-size: 1.6rem;
+// }
+// span{
+//     font-size: 1.3rem;
+// }
+// p{
+//     font-size: 1.3rem;
+// }
+// li{
+//     font-size: 1.3rem;
+// }
+// td{
+//     font-size: 1.3rem;
+// }
+
+
+
+// .userSetting_body li, .userSetting_body span, .userSetting_body td, .userSetting_body p{
+//     // font-size: 20px;
+//     font-family: $font;
+// }
+// .userSetting_body h3{
+//     font-family: $font;
+//     // font-size: h3;
+// }
