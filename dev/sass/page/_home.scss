@@ -169,8 +169,8 @@
                         align-items: center;
 
                         h1 {
-                            font-family: $font;
-                            font-size: 3vw;
+                            // font-family: $font;
+                            // font-size: 3vw;
                             color: white;
                         }
                     }
@@ -994,7 +994,7 @@
                     align-items: center;
 
                     h1 {
-                        font-family: $font;
+                        // font-family: $font;
                         font-size: 54px;
                     }
                 }
@@ -1051,8 +1051,8 @@
                 justify-content: center;
                 align-items: center;
 
-                h1 {
-                    font-family: $font;
+                h2 {
+                    // font-family: $font;
                     color: $main-white;
                 }
             }
@@ -1381,7 +1381,7 @@
                     display: flex;
                     justify-content: center;
 
-                    h1 {
+                    h3 {
                         font-family: $font;
                         margin-top: 10%;
                     }
