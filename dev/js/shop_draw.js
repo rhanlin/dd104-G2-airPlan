@@ -49,13 +49,21 @@ $('#ungroup').attr('title', '解散群組')
 $('#clear').attr('title', '全部清除')
 $('#outputPngBtn').attr('title', '儲存圖檔')
 $('#text').attr('title', '建立文字')
-$('#frame_design').attr('title', '設計控制框')
+$('#eraser').attr('title', '橡皮擦工具')
 $('#copy').attr('title', '複製圖形')
 $('#filter').attr('title', '復古濾鏡')
 $('.controlBox9').attr('title', '載入圖檔')
 
 
 //=======================畫筆區===============
+//畫筆顏色
+$(".lineColorInput").change(function () {
+  console.log(this.value)
+  canvas.freeDrawingBrush.color = this.value
+
+})
+
+
 //切換
 canvas.isDrawingMode = false;
 
@@ -63,13 +71,14 @@ $('#mode').click(function () {
   canvas.isDrawingMode = !canvas.isDrawingMode;
   if (!canvas.isDrawingMode) {
     drawingOptionArea.style.display = "none";
-    $('#modeImg').attr('src', '/img/product/tool/banWrite.png')
+    $('#modeImg').attr('src', './img/product/tool/banWrite.png')
     $('#modeImg').attr('title', '物件選取狀態')
 
   } else {
     drawingOptionArea.style.display = "";
-    $('#modeImg').attr('src', '/img/product/tool/control_write.svg')
+    $('#modeImg').attr('src', './img/product/tool/control_write.svg')
     $('#modeImg').attr('title', '繪畫板狀態')
+    canvas.freeDrawingBrush.color = $(".lineColorInput").val()
   }
 })
 
@@ -79,6 +88,9 @@ $('#clear').click(function () {
   canvas.clear();
 })
 
+const width = parseInt(this.value, 10) || 10;
+canvas.freeDrawingBrush.width = width
+$(".lineWidthValue").html(width);
 
 $(".lineWidthInput").change(function () {
   const newWidth = parseInt(this.value, 10) || 1;
@@ -87,9 +99,6 @@ $(".lineWidthInput").change(function () {
 })
 
 
-$(".lineColorInput").change(function () {
-  canvas.freeDrawingBrush.color = this.value
-})
 
 //加陰影
 myShadow = new fabric.Shadow({
@@ -102,14 +111,14 @@ myShadow = new fabric.Shadow({
 // 或是這樣使用 setShadow
 // canvas.freeDrawingBrush.setShadow('10px 10px black');
 
-//畫筆顏色
+//陰影顏色
 $(".shadowColorInput").change(function () {
   myShadow.color = this.value
   canvas.freeDrawingBrush.setShadow(myShadow)
   canvas.freeDrawingBrush.shadow.color = this.value
 })
 
-//陰影顏色
+//陰影模糊
 $(".shadowBlurInput").change(function () {
 
   myShadow.blur = this.value
@@ -185,15 +194,50 @@ $(".brushSelect").change(function () {
   } else {
     canvas.freeDrawingBrush = new fabric[`${this.value}Brush`](canvas)
   }
-  const lineColorInput = querySelectorAll(".lineColorInput")
+  lineColorInput = document.querySelectorAll(".lineColorInput")
   canvas.freeDrawingBrush.color = lineColorInput.value
 
-  const lineWidthInput = querySelectorAll(".lineWidthInput");
+  lineWidthInput = document.querySelectorAll(".lineWidthInput");
   canvas.freeDrawingBrush.width = parseInt(lineWidthInput.value, 10) || 1
 
   canvas.freeDrawingBrush.setShadow(myShadow)
 })
 
+
+//橡皮擦功能
+$("#eraser").click(function () {
+  canvas.freeDrawingBrush.color = '#E5E5E5';
+  canvas.freeDrawingBrush.width = $(".lineWidthInput").val()
+});
+
+
+
+
+
+//相片復古濾鏡功能
+
+$('#filter_Sepia').on("click", function () {
+  var filter = $(this).data("filter"),
+    obj = canvas.getActiveObject();
+  console.log(obj)
+  var filter = new fabric.Image.filters.Grayscale();
+  obj.filters.push(filter);
+  obj.applyFilters(canvas.renderAll.bind(canvas));
+});
+
+
+
+//文字功能
+$('#text').on("click", function () {
+  canvas.add(new fabric.IText('Tap and Type', {
+    left: 0,
+    top: 0,
+    fontFamily: 'arial black',
+    fill: '#333',
+    fontSize: 20,
+
+  }));
+})
 
 
 //===========上傳圖檔========================
@@ -239,6 +283,9 @@ function handleFile() {
     // console.log(imgset)
 
     fabric.Image.fromURL(dataURL, function (img) { //使用fabric.Image方法
+
+      // img.filters.push(new fabric.Image.filters.Grayscale());
+      // img.applyFilters();
       img.scaleToHeight(100); //指定img寬
       img.scaleToWidth(100); //指定img高
       img.center();
@@ -268,15 +315,15 @@ function dropImg(e) {
     scaleY: 100 / movingImage.naturalHeight,
     top: offsetY - imgDragOffset.offsetY,
     left: offsetX - imgDragOffset.offsetX
-    
+
   })
   canvas.renderAll();
   canvas.add(image)
 }
 
 
-imageUploader.addEventListener('click', uploadFile, true)
-file.addEventListener('change', handleFile)
+imageUploader.addEventListener('click', uploadFile, true);
+file.addEventListener('change', handleFile);
 
 
 canvas.on('drop', dropImg)
