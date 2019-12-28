@@ -424,3 +424,81 @@
     display: none;
   }
 }
+
+
+//登入頁
+
+.signInBg{
+  width: 100%;
+  height: 100%;
+  background: radial-gradient($main-black 30%, rgba(255, 255, 255, 0.9) 20%);
+  background-size: 10px 10px;
+  position: fixed;
+  z-index: 80;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: none;
+  .signInData{
+    padding: 20px;
+    width: 500px;
+    background-image: url("../img/user-setting/setDataletter.png");
+    background-size: 100% 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 70;
+    h4{
+      text-align: center;
+    }
+    .signInClose{
+      position: absolute;
+      top: 3%;
+      right: 4%;
+    }
+    .formsignInData{
+      width: 100%;
+      @include marginAuto;
+      p{
+        margin-top: 10px;
+      }
+      .signInLogo{
+        width: 50%;
+        display: block;
+        @include marginAuto;
+        margin-top: 10px;
+      }
+      input{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 16px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        @include border;
+      }
+      button{
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        background: #82afd9;
+        background-size: 10px 10px;
+        color: aliceblue;
+        margin-top: 10px;
+      }
+    }
+  }
+  .envelopedown{
+    width: 30%;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%,0);
+    z-index: 69;
+  }
+  .envelopeup{
+    z-index: 71;
+    @extend.envelopedown;
+  }
+}

@@ -55,7 +55,7 @@
             </div>
         </nav>
         <div class="nav-littleNav">
-            <a href="#"><i class="fas fa-user-circle"></i></a>
+            <a onclick="showSigin()" href="#"><i class="fas fa-user-circle"></i></a>
             <a href="./user-setting.html"><i class="fas fa-cog"></i></a>
         </div>
         <div class="nav-pc">
@@ -74,6 +74,29 @@
         </div>
     </div>
 </div>
+<div class="signInBg" id="signInBg">
+    <div class="signInData">
+        <h4>LogIn</h4>
+        <p class="signInClose" onclick="closeSigin()">X</p>
+        <form class="formsignInData">
+            <img class="signInLogo" src="./img/share/LOGO.png" alt="Logo" >
+            
+            <label for="signInEmail"><P>Email:</P></label>
+            <input class="signInEmail" input type="email" id="signInEmail" placeholder="請輸入Email" required autofocus>
+
+            <label for="signInPassword"><P>Password:</P></label>
+            <input class="signInPassword" type="password" id="signInPassword" placeholder="請輸入密碼" required>
+
+            <a class="forger" href=""><p>忘記密碼</p></a>
+            <a class="" href=""><p>註冊</p></a>
+            <br>
+            <button class="signInBtn" type="submit">Sign in</button>
+        </form>
+    </div>
+    <!-- <img class="envelopeup" src="./img/user-setting/envelopeup.png" alt="">
+    <img class="envelopedown" src="./img/user-setting/envelopedown.png" alt=""> -->
+</div>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
@@ -104,6 +127,7 @@
     })
 </script>
 <script>
+
     $(function () {
         // hamburger icon 的切換
         $("div.hamburger").on("click", function () {
@@ -117,7 +141,16 @@
         list.classList.toggle('open');
     })
 </script>
-
+<!-- 會員登入燈箱 -->
+<script>
+var signInBg = document.querySelector(".signInBg");
+function showSigin() {
+    signInBg.style.display = "block";
+};
+function closeSigin() {
+    signInBg.style.display = "none";
+};
+</script>
   
   <div
   id="threeWorld"

@@ -8,16 +8,6 @@
         width: 100%;
         height: 800px;
         overflow: hidden;
-
-        .p-canvas-webgl {
-            // position: absolute;
-            // top: 0;
-            // right: 0;
-            // bottom: 0;
-            // left: 0;
-
-            // z-index: 1;
-        }
     }
 
     .home_skyPoint {
@@ -50,26 +40,17 @@
             }
         }
 
-        .home_space {
-            opacity: 0.9;
-            width: 100%;
-            height: 100px;
-            // background: linear-gradient(-90deg, rgb(214, 225, 219)70%, transparent 70%) center center /100% 100%, rgba(255, 255, 255, .5);
-            background: linear-gradient(0deg, rgba(195, 215, 233, .0) 30%, transparent 100%) center center /100% 100%, #eeeeee;
-            position: relative;
-        }
-
         .hang2 {
             // padding-top: 20px;
             position: absolute;
             top: 20px;
-            z-index: 5;
+            z-index: 10;
         }
 
         .hang3 {
             position: absolute;
             top: 20px;
-            z-index: 5;
+            z-index: 10;
         }
 
         .mountain_box {
@@ -80,39 +61,46 @@
             background-size: cover;
             position: relative;
             margin-top: 100px;
+            z-index: 5;
 
             .floatPaper1 {
                 width: 22%;
                 position: absolute;
-                top: 37%;
-                left: 10%;
+                top: 7%;
+                left: 50%;
+                transform: translate(-50%, 0);
+                opacity: 0;
             }
 
             .floatPaper2 {
-                width: 22%;
+                width: 24%;
                 position: absolute;
-                top: 58%;
-                right: 15%;
+                top: 35%;
+                left: 13.5%;
+                opacity: 0;
             }
 
             .floatPaper3 {
                 width: 15%;
                 position: absolute;
-                bottom: 5%;
-                left: 17%;
+                bottom: 20%;
+                right: 18%;
+                opacity: 0;
+                z-index: 105;
             }
         }
 
-
         .write {
             width: 100%;
-            height: 1044px;
+            height: 940px;
             background-image: url(../img/home/write/desk.png);
             background-repeat: no-repeat;
+            background-position-y: 100%;
             // background-size: 100%;
             margin-top: -190px;
             padding-top: 180px;
             display: flex;
+            position: relative;
 
             .write_L {
                 width: 47%;
@@ -131,6 +119,7 @@
                     .writeTitleBg2 {
                         width: 95%;
                         height: 90%;
+                        z-index: 1
                     }
 
                     .writeTitleBg2 {
@@ -151,7 +140,10 @@
 
                     .bottle {
                         width: 17%;
-                        transform: rotate(125deg);
+                        transform: translate(-20%, -100%);
+                        position: relative;
+                        z-index: 102;
+                        // transform: rotate(125deg);
                     }
 
                     .blackWater {
@@ -162,15 +154,16 @@
                         background-repeat: no-repeat;
                         background-size: cover;
                         margin-top: -17.5%;
-                        margin-left: 8%;
+                        margin-left: 9%;
                         position: relative;
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        z-index: 104;
 
-                        h1 {
+                        h2 {
                             font-family: $font;
-                            font-size: 3vw;
+                            // font-size: 3vw;
                             color: white;
                         }
                     }
@@ -490,7 +483,6 @@
         }
 
         .cap {
-            opacity: 50%;
             transform: rotate(90deg);
             top: 0%;
             left: 17%;
@@ -535,9 +527,9 @@
                 justify-content: center;
                 align-items: center;
 
-                h1 {
+                h2 {
                     font-family: $font;
-                    font-size: 3vw;
+                    // font-size: 3vw;
                 }
             }
         }
@@ -625,9 +617,8 @@
             margin-top: -270px;
             position: relative;
 
-            h1 {
+            h2 {
                 font-family: $font;
-                font-size: 54px;
                 position: absolute;
                 top: 45%;
                 left: 43%;
@@ -993,9 +984,9 @@
                     justify-content: center;
                     align-items: center;
 
-                    h1 {
+                    h2 {
                         font-family: $font;
-                        font-size: 54px;
+                        // font-size: 54px;
                     }
                 }
 
@@ -1051,7 +1042,7 @@
                 justify-content: center;
                 align-items: center;
 
-                h1 {
+                h3 {
                     font-family: $font;
                     color: $main-white;
                 }
@@ -1381,7 +1372,7 @@
                     display: flex;
                     justify-content: center;
 
-                    h1 {
+                    h4 {
                         font-family: $font;
                         margin-top: 10%;
                     }

@@ -1,26 +1,18 @@
-function showLarge(e) {
-    let memsmall = e.target;
-    document.getElementById("memcolorBigLarge").src = memsmall.src;
-    };
-    let picture_small = document.querySelectorAll(".memcolorSmall img");
-    for (let i = 0; i < picture_small.length; i++) {
-        picture_small[i].onclick = showLarge;
-    };
 
 Vue.component('memData', {
     template: `
         <div class="userSetting_memData">
             <table class="userSetting_memDataTable">
                 <tr>
-                    <td colspan="6"><img class="mempic" src="../img/chatroom/mark_1.png" alt="mempic"></td>
+                    <td colspan="6"><img class="mempic" src="./img/chatroom/mark_1.png" alt="mempic"></td>
                 </tr>
                 <tr>
-                    <td>會員帳號:</td>
+                    <td id="memNo">會員帳號:</td>
                     <td colspan="5">波音777-1</td>
                 </tr>
                 <tr>
                     <td>Email:</td>
-                    <td colspan="5">aaa@gmail.com</td>
+                    <td colspan="5">aaa@gmail.com<img onclick="showForm()" class="emailSet" src="./img/user-setting/gear.svg" alt="robotB3"></td>
                 </tr>
                 <tr>
                     <td>Air幣:</td>
@@ -326,4 +318,28 @@ new Vue({
 });
 
 
-                
+
+//外觀設定
+function showLarge(e) {
+    let memsmall = e.target;
+    document.getElementById("memcolorBigLarge").src = memsmall.src;
+    };
+
+let picture_small = document.querySelectorAll(".memcolorSmall img");
+for (let i = 0; i < picture_small.length; i++) {
+    picture_small[i].onclick = showLarge;
+};
+
+
+
+//會員資料修改燈箱
+var setDataBg = document.querySelector(".setDataBg");
+function showForm() {
+    setDataBg.style.display = "block";
+};
+function closeForm() {
+    setDataBg.style.display = "none";
+};
+
+
+

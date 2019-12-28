@@ -78,6 +78,7 @@
                 }
                 .memKanban{
                     padding: 20px;
+                    // height: 650px;
                     background-color: $main-green;
                     border-radius: 15px;
                     @include userSetting_mem;
@@ -116,6 +117,11 @@
                         }
                         .userSetting_memData td{
                             border: 3px solid $main-green;
+                            vertical-align: middle;
+                        }
+                        .emailSet{
+                            width: 5%;
+                            vertical-align: middle;
                         }
                         .mempic{
                             width: 200px;
@@ -157,8 +163,70 @@
                         }
                     }
                 }
+                .setDataBg{
+                    width: 100%;
+                    height: 100%;
+                    background: radial-gradient($main-black 30%, rgba(255, 255, 255, 0.9) 20%);
+                    background-size: 10px 10px;
+                    position: fixed;
+                    z-index: 80;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    display: none;
+                    .setData{
+                        padding: 20px;
+                        width: 500px;
+                        background-image: url("../img/user-setting/setDataletter.png");
+                        background-size: 100% 100%;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        h4{
+                            text-align: center;
+                        }
+                        .setDataClose{
+                            position: absolute;
+                            top: 3%;
+                            right: 4%;
+                        }
+                        .formSetData{
+                            width: 100%;
+                            @include marginAuto;
+                            p{
+                                margin-top: 10px;
+                            }
+                            img{
+                                width: 50%;
+                                display: block;
+                                @include marginAuto;
+                                margin-top: 10px;
+                            }
+                            input{
+                                width: 100%;
+                                box-sizing: border-box;
+                                padding: 10px;
+                                font-size: 16px;
+                                border-bottom-right-radius: 0;
+                                border-bottom-left-radius: 0;
+                                @include border;
+                            }
+                            button{
+                                width: 100%;
+                                height: 40px;
+                                border-radius: 5px;
+                                // max-width: 330px;
+                                background: #82afd9;
+                                background-size: 10px 10px;
+                                color: aliceblue;
+                                margin-top: 10px;
+                            }
+                        }
+                    }
+                }
                 .robotB1{
-                    width: 34%;
+                    width: 30%;
                     position: absolute;
                     left: 0px;
                     bottom: 0;
@@ -239,7 +307,7 @@
                     }
                     //userSetting_mem vue
                     .userSetting_manu{
-                        width: 70%;
+                        width: 85%;
                         height: 375px;
                         text-align: left;
                         overflow: auto;
@@ -320,15 +388,11 @@
                     z-index: 12;
                 }
                 .admKanban{
-                    width: 50%;
-                    min-width: 900px;
-                    height: 100%;
-                    border-top: 10px solid $main-black;
+                    @include userSetting_mem;
                     transform: translate(-50%,0%);
-                    position: absolute;
-                    left: 50%;
-                    z-index: 11;
+                    border: none;
                     .admKanbanOverFlowOut{
+                        width: 100%;
                         @include marginAuto;
                         overflow-x: scroll;
                         .admKanbanOverFlowIn{
@@ -389,21 +453,6 @@
                             }
                         }
                     }
-                    // .admKanbanOverFlowOut::-webkit-scrollbar-track{
-                    //     -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
-                    //     background-color: rgba(255, 255, 255, .4);
-                    //     border-radius: 10px;
-                    // }
-                    // .admKanbanOverFlowOut::-webkit-scrollbar{
-                    //     width: 10px;
-                    // }
-                    // .admKanbanOverFlowOut::-webkit-scrollbar-thumb{
-                    //     // background-color: #AAA;
-                    //     background-color: rgba(255, 255, 255, 0.5);
-                    //     border-radius: 10px;
-                    //     // background-image: -webkit-linear-gradient(0deg,rgba(0, 0, 0, .2) 25%,transparent 25%,transparent 50%,rgba(0, 0, 0, .2) 50%,rgba(0, 0, 0, .2) 75%,transparent 75%,transparent);
-                    //     background:rgba(8, 8, 8, 0.2);
-                    // }
                     //userSetting_adm vue
                     .userSetting_mike{
                         background: radial-gradient(rgba(84, 179, 103, 0.5) 30%, rgb(255, 255, 255) 20%);
@@ -489,17 +538,17 @@
                     }
                 }
                 .robotB3{
-                    width: 30%;
+                    width: 20%;
                     max-height: 600px;
                     position: absolute;
-                    left: 0px;
+                    left: 5%;
                     bottom: 0;
-                    z-index: 8;
+                    z-index: 13;
                 }
                 .paperPlane{
                     width: 8%;
                     position: absolute;
-                    z-index: 7;
+                    z-index: 12;
                     animation: paperPlane 5s ease-in-out infinite;
                 }
             }
@@ -511,10 +560,24 @@
     .userSetting_body {
         .userSetting_main {
             .floor {
+                .userSetting_mem{
+                    .memKanban{
+                        .memKanbanIn{
+                            .memData{
+                                width: 90px;
+                            }
+                        }
+                    }
+                    .setDataBg{
+                        .setData{
+                            padding: 20px;
+                            width: 60%;
+                        }
+                    }
+                }
                 .userSetting_adm{
                     .admKanban{
                         .admKanbanOverFlowOut{
-                            width: 767px;
                             .admKanbanOverFlowIn{
                                 width: 900px;
                                 height: 250px;
@@ -531,10 +594,24 @@
     .userSetting_body {
         .userSetting_main {
             .floor {
+                .userSetting_mem{
+                    .memKanban{
+                        .memKanbanIn{
+                            .memData{
+                                width: 90px;
+                            }
+                        }
+                    }
+                    .setDataBg{
+                        .setData{
+                            padding: 20px;
+                            width: 60%;
+                        }
+                    }
+                }
                 .userSetting_adm{
                     .admKanban{
                         .admKanbanOverFlowOut{
-                            width: 575px;
                             .admKanbanOverFlowIn{
                                 width: 900px;
                                 height: 250px;
@@ -559,9 +636,12 @@
                         @include kanbanSize;
                         .memKanbanIn{
                             .memData{
-                                width: 75px;
+                                width: 80px;
                             }
                         }
+                    }
+                    .robotB1, .robotB1_2, .box{
+                        display: none;
                     }
                 }
                 .userSetting_sys{
@@ -571,8 +651,11 @@
                     .sysKanban{
                         @include kanbanSize;
                         .manu{
-                            width: 75px;
+                            width: 80px;
                         }
+                    }
+                    .robotB2, .robotB2_2, .paper{
+                        display: none;
                     }
                 }
                 .userSetting_adm{
@@ -580,12 +663,10 @@
                         @include userSetting_title_note;
                     }
                     .admKanban{
-                        .admKanbanOverFlowOut{
-                            width: 420px;
-                        }
-                        .userSetting_mike, .userSetting_spencer, .userSetting_allen, .userSetting_grace, .userSetting_sharon, .userSetting_howard{
-                            max-width: 420px;
-                        }
+                        @include kanbanSize;
+                    }
+                    .robotB3,.paperPlane{
+                        display: none;
                     }
                 }
             }
@@ -605,11 +686,11 @@
                         @include kanbanSize;
                         .memKanbanIn{
                             .memData{
-                                width: 75px;
+                                width: 80px;
                             }
                         }
                     }
-                    .box{
+                    .robotB1, .robotB1_2, .box{
                         display: none;
                     }
                 }
@@ -620,10 +701,10 @@
                     .sysKanban{
                         @include kanbanSize;
                         .manu{
-                            width: 75px;
+                            width: 80px;
                         }
                     }
-                    .paper{
+                    .robotB2, .robotB2_2, .paper{
                         display: none;
                     }
                 }
@@ -632,12 +713,10 @@
                         @include userSetting_title_iphone;
                     }
                     .admKanban{
-                        .admKanbanOverFlowOut{
-                            width: 375px;
-                        }
-                        .userSetting_mike, .userSetting_spencer, .userSetting_allen, .userSetting_grace, .userSetting_sharon, .userSetting_howard{
-                            max-width: 350px;
-                        }
+                        @include kanbanSize;
+                    }
+                    .robotB3, .paperPlane{
+                        display: none;
                     }
                 }
             }

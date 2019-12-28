@@ -6,32 +6,36 @@ $(document).ready(function () {
     mouseDrag: true,
     touchDrag: true,
     responsive: {
-      0: {
+      499: {
         items: 4,
         nav: true
       },
       575: {
-        items: 6,
+        items: 5,
         nav: true,
       },
       767: {
-        items: 6,
+        items: 8,
         nav: true,
       },
       991: {
-        items: 7,
+        items: 10,
         nav: true,
       },
       1199: {
-        items: 11,
+        items: 12,
         nav: true,
       }
     }
   })
-  owl.on('mousewheel', '.owl-stage', function (e) {
-    if (e.deltaY > 0) {
+
+  $('.owl-carousel').on('mousewheel', function (e) {
+
+    if (e.originalEvent.deltaY > 0) {
+      console.log(e.deltaY)
       owl.trigger('next.owl');
     } else {
+      console.log(e.deltaY)
       owl.trigger('prev.owl');
     }
     e.preventDefault();
