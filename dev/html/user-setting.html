@@ -42,6 +42,29 @@
                         </keep-alive>
                     </div>
                 </div>
+                <div class="setDataBg" id="setDataBg">
+                    <div class="setData">
+                        <h4>會員資料修改</h4>
+                        <p class="setDataClose" onclick="closeForm()">X</p>
+                        <form class="formSetData">
+                            <img class="setMempic" src="./img/chatroom/mark_1.png" alt="會員圖片" >
+                            
+                            <label for="memNo"><P>會員帳號:</P></label>
+                            <input class="memNo" input type="text" disabled="disabled" id="memNo" placeholder="後台撈出的value" required autofocus>
+
+                            <label for="setEmail"><P>Email:</P></label>
+                            <input class="setEmail" type="email" id="setEmail" placeholder="後台撈出的value" required autofocus>
+                
+                            <label for="setPassword"><P>Password:</P></label>
+                            <input class="setPassword" type="password" id="setPassword" placeholder="後台撈出的value" required>
+
+                            <label for="setPasswordCheck"><P>Password again:</P></label>
+                            <input class="setPasswordCheck" type="password" id="setPasswordCheck" placeholder="password again" required>
+                            <br>
+                            <button class="setDataBtn" type="submit">確定</button>
+                        </form>
+                    </div>
+                </div>
                 <img class="robotB1" src="./img/user-setting/robotB1.svg" alt="robotB1">
                 <img class="robotB1_2" src="./img/user-setting/robotB1_2.svg" alt="robotB1_2">
                 <img class="box" src="./img/user-setting/box.svg" alt="box">
@@ -64,7 +87,7 @@
                     </keep-alive>
                 </div>
                 <img class="robotB2" src="./img/user-setting/robotB2.svg" alt="robotB2">
-                <img class="robotB2_2" src=./img/user-setting/robotB2_2.svg" alt="robotB2_2">
+                <img class="robotB2_2" src="./img/user-setting/robotB2_2.svg" alt="robotB2_2">
                 <img class="paper" src="./img/user-setting/paper.svg" alt="">
                 <div class="space_B2"></div>
             </section>
@@ -102,7 +125,6 @@
                 <img class="robotB3" src="./img/user-setting/robotB3.svg" alt="robotB3">
                 <img class="paperPlane" src="./img/share/paper-plane.png" alt="paperPlane">
             </section>
-            
         </div>
     </main>
     <div class="userSetting_memcolor" id="userSetting_memcolor2"></div>
@@ -112,5 +134,3 @@
 </body>
 
 </html>
-
-
