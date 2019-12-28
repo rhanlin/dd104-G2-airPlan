@@ -3,7 +3,7 @@
   style="position: relative; overflow: hidden;"
 >
   <span id="mouseNet">
-    <img src="../img/catch-letter/net.png">
+    <img id="netImg" src="./img/catch-letter/net.png">
     <span id="missMsg"></span>
   </span>
   <div id="planeContainer"></div>
@@ -46,7 +46,7 @@
   </div>
 </div>
 
-<script src="../js/butterflyRock.js"></script>
+<script src="./js/butterflyRock.js"></script>
 <script>
   let threeWorld = document.getElementById('threeWorld');
   let planeLetter = document.getElementById('planeLetter');
@@ -79,8 +79,12 @@
       missMsg.innerText = "Oh No~~";
     }
     if (successNum == 10) {
-      net.firstChild.src = "../img/catch-letter/catch-the-plane.gif";
-      net.style.transform = 'rotate(0deg)'; //.....????
+      document.getElementById('netImg').src = "./img/catch-letter/catch-the-plane.gif";
+      net.style.transform = 'rotate(0deg)';
+
+      /*
+       *  要把滑鼠事件鎖起來，直到信開好為止
+       */
       openLetter();//開信
       document.getElementById('navHead').classList.add('-on');//將navBar推上去
       stampShot();//蓋章
@@ -115,7 +119,7 @@
           console.log(catchLetterShow);
         }, 400)
       } else {
-        openMotion.style.backgroundImage = `url(../img/catch-letter/letter-fold-${time+1}.png)`
+        openMotion.style.backgroundImage = `url(./img/catch-letter/letter-fold-${time+1}.png)`
         letterFlim()
       }
       console.log(time)
@@ -140,7 +144,7 @@
       
       stampEffectDiv.style.top = `${e.offsetY-50}px`;
       stampEffectDiv.style.left = `${e.offsetX-50}px`;
-      stampEffectDiv.style.backgroundImage = `url(../img/catch-letter/user-stamp/user-stamp_${Math.floor(Math.random() * 9) + 1}.png)`;
+      stampEffectDiv.style.backgroundImage = `url(./img/catch-letter/user-stamp/user-stamp_${Math.floor(Math.random() * 9) + 1}.png)`;
       stampshot.appendChild(stampEffectDiv);
     })
   }

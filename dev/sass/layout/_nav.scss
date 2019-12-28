@@ -209,7 +209,7 @@
                   color: $main-dark-red;
                   + %nav-circle {
                     background-color: $main-yellow;
-                    background-image: url(../../img/share/nav-paper-plane.png);
+                    background-image: url(../img/share/nav-paper-plane.png);
                     background-position: center;
                     background-size: 35px;
                     background-repeat: no-repeat;
@@ -237,7 +237,7 @@
                 @extend %nav-circle;
                 &:hover {
                   background-color: $main-yellow;
-                  background-image: url(../../img/share/nav-paper-plane.png);
+                  background-image: url(../img/share/nav-paper-plane.png);
                   background-position: center;
                   background-size: 35px;
                   background-repeat: no-repeat;
@@ -250,7 +250,7 @@
 
               .nav-now {
                 background-color: $main-yellow;
-                background-image: url(../../img/share/nav-paper-plane.png);
+                background-image: url(../img/share/nav-paper-plane.png);
                 background-position: center;
                 background-size: 36px;
                 background-repeat: no-repeat;
@@ -308,7 +308,7 @@
 
             .nav-circle:hover {
               background-color: yellow;
-              background-image: url(../../img/share/nav-paper-plane.png);
+              background-image: url(../img/share/nav-paper-plane.png);
               background-position: center;
               background-size: 35px;
               background-repeat: no-repeat;
