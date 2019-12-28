@@ -52,7 +52,7 @@ gulp.task('dist:js', () => {
  *  watch 監看 
  */
 gulp.task('watch', () => {
-    gulp.watch('./dev/sass/*.scss', ['minicss']);
+    gulp.watch(['./dev/sass/*.scss', './dev/sass/**/*.scss'], ['minicss']);
     gulp.watch(['./dev/html/*.html', './dev/html/**/*.html'], ['fileinclude']);
     // gulp.watch(["./dev/img/*.*", "./dev/img/**/*.*", "./dev/img/**/**/*.*"], ['concatImg']);
 });
