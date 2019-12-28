@@ -15,6 +15,7 @@
     @@include("./layout/nav.html")
     @@include("./layout/header.html")
 
+
     <main class="cav-main">
         <!-- 瀏覽信件 -->
         <div class="cav-titleBlock">
@@ -27,75 +28,68 @@
                     <div class="cav-boxFrontLeft">
                         <div class="cav-whoLetter">
                             <div class="cav-myLetter">
-                                <div class="orderBtnBoxGroup ">
-                                    <div class="orderBtnBox ">
-                                        <div class="orderBtn clicked">
-                                            <div class="orderText">
-                                                <h2>我的信件</h2>
-                                            </div>
-                                        </div>
-                                        <div class="orderBtnBottom"></div>
-                                    </div>
-                                </div>
-
-                                <!-- <div class="btn">我的信件</div> -->
+                                <div class="btn click">我的信件</div>
                             </div>
 
                             <div class="cav-otherLetter">
-                                <div class="orderBtnBoxGroup ">
-                                    <div class="orderBtnBox ">
-                                        <div class="orderBtn clicked">
-                                            <div class="orderText">
-                                                <h2>撈的信件</h2>
-                                            </div>
-                                        </div>
-                                        <div class="orderBtnBottom"></div>
-                                    </div>
-                                </div>
-
-                                <!-- <div class="btn">撈的信件</div> -->
+                                <div class="btn">撈的信件</div>
                             </div>
                         </div>
                         <div class="cav-histLetter1">
                             <div class="cav-histLetter2">
-                                <div class="cav-letters cav-looking">
+                                <div class="cav-letters cav-looking" onclick="popLetter()" data-aaa="sss">
                                     <div class="cav-letWord">
                                         <div>
                                             <p class="cav-letTitle">Title:雞排脆皮還是酥皮好吃?</p>
                                         </div>
                                         <div>
-                                            <p class="cav-letTime">2019/12/31 12:00</p>
+                                            <h6 class="cav-letTime">2019/12/31 12:00</h6>
                                         </div>
                                     </div>
                                     <div class="cav-letSetting">
-                                        <div><i class="fas fa-ellipsis-h"></i></div>
+                                        <div><i class="fas fa-ellipsis-h" ></i></div>
+                                        <div class="cav-landLetter">
+                                            <span class="cav-land ">
+                                                <h6>下架信件</h6>
+                                            </span>
+                                        </div>
                                     </div>
 
                                 </div>
-                                <div class="cav-letters">
-                                    <div class="cav-letWord">
+                                <div class="cav-letters" onclick="popLetter()">
+                                    <div class="cav-letWord" data-aaa="xxx">
                                         <div>
                                             <p class="cav-letTitle">Title:今晚吃宵嗎?</p>
                                         </div>
                                         <div>
-                                            <p class="cav-letTime">2019/12/31 10:00</p>
+                                            <h6 class="cav-letTime">2019/12/31 10:00</h6>
                                         </div>
                                     </div>
                                     <div class="cav-letSetting">
                                         <div><i class="fas fa-ellipsis-h"></i></div>
+                                        <div class="cav-landLetter">
+                                            <span class="cav-land">
+                                                <h6>下架信件</h6>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="cav-letters">
-                                    <div class="cav-letWord">
+                                <div class="cav-letters" onclick="popLetter()">
+                                    <div class=" cav-letWord">
                                         <div>
                                             <p class="cav-letTitle">Title:世界上真的有聖誕老公公嗎?</p>
                                         </div>
                                         <div>
-                                            <p class="cav-letTime">2019/12/31 8:00</p>
+                                            <h6 class="cav-letTime">2019/12/31 8:00</h6>
                                         </div>
                                     </div>
                                     <div class="cav-letSetting">
                                         <div><i class="fas fa-ellipsis-h"></i></div>
+                                        <div class="cav-landLetter">
+                                            <span class="cav-land">
+                                                <h6>下架信件</h6>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -107,11 +101,12 @@
                                 <!-- 單一信件 -->
                                 <div class="cav-letterBg">
                                     <div class="cav-letterBg_content">
+                                        <span class="cav-letClose" onclick="closeLetter()">x</span>
                                         <div>
-                                            <h2>Title:雞排脆皮還是酥皮好吃?</h2>
+                                            <h4>Title:雞排脆皮還是酥皮好吃?</h4>
                                         </div>
                                         <div>
-                                            <h5>Date:2019/12/31 12:00</h5>
+                                            <h6>Date:2019/12/31 12:00</h6>
                                         </div>
                                         <div class="cav-letWord">
                                             <p>大家覺得雞排是脆皮的好吃還是傳統的酥皮好吃勒?
@@ -127,21 +122,11 @@
                                         <div class="cav-letNavbar">
                                             <label class="cav-letNavOption" for=""><img src="./img/cave/coin.png"
                                                     alt=""></label>
-                                            <label class="cav-letNavOption" for=""><img src="./img/cave/fallow.png"
-                                                    alt=""></label>
-                                            <!-- <div class="btn-big-test">
-                                                <div class="back side-way"></div>
-                                                <div class="left side-way"></div>
-                                                <div class="right side-way"></div>
-                                                <div class="top side-way"></div>
-                                                <div class="bottom side-way">
-                                                    <div class='side-way__text'><img src="./img/cave/like.svg" alt=""></div>
-                                                </div>
-                                                <div class="front side-way"></div>
-                                            </div> -->
+                                            <!-- <label class="cav-letNavOption" for=""><img src="./img/cave/fallow.png"
+                                                    alt=""></label> -->
                                         </div>
 
-                                        <h3 class="cav-h3">留言</h3>
+                                        <h4 class="cav-h3">留言</h4>
                                         <div class="cav-letComment">
                                             <div class="cav-commMain">
                                                 <div class="cav-commHead">
@@ -205,30 +190,32 @@
                     <div class="cav-tabWrap">
                         <div class="tab1 cav-leftBlock-1 -on">
                             <div class="cav-prodWrap">
-                                <div class="cav-prod"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod"><img src="./img/product/decorate/clip-04.svg"></div>
+                                <div class="cav-prod cav-prodI wearing"><img src="./img/product/decorate/clip-04.svg">
+                                </div>
+                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
                             </div>
                         </div>
                         <div class="tab1 cav-leftBlock-2">
                             <div class="cav-prodWrap">
-                                <div class="cav-prod"><img src="https://via.placeholder.com/150"></div>
-                                <div class="cav-prod"><img src="https://via.placeholder.com/150"></div>
-                                <div class="cav-prod"><img src="https://via.placeholder.com/150"></div>
+                                <div class="cav-prod cav-prodU wearing"><img src="https://via.placeholder.com/150">
+                                </div>
+                                <div class="cav-prod cav-prodU"><img src="https://via.placeholder.com/150"></div>
+                                <div class="cav-prod cav-prodU"><img src="https://via.placeholder.com/150"></div>
                             </div>
                         </div>
                     </div>
@@ -281,46 +268,12 @@
                 </div>
             </div>
         </section>
-
-
-
     </main>
-    <script>
-        $('.switchBtn').mousedown(function () {
-          $(this).addClass('clicked');
-        });
-        $('.switchBtn').mouseup(function () {
-          $(this).removeClass('clicked');
-        });
-    
-        $('.orderBtn').mousedown(function () {
-          $(this).addClass('clicked');
-        });
-        $('.orderBtn').mouseup(function () {
-          $(this).removeClass('clicked');
-        });
-    
-    
-    
-        $('.itemCard').click(function () {
-          $('#outshadow').css('opacity', '0.7');
-          $('#outshadow').css('visibility', 'visible');
-          $('#outshadow').css('zIndex', '99');
-          $('#medal').css('display', 'block');
-          $('#medal').css('zIndex', '100');
-          e ? e.stopPropagation() : event.cancelBubble = true;
-        })
-    
-        $('.cross').click(function () {
-          $('#outshadow').css('visibility', 'hidden');
-          $('#outshadow').css('zIndex', '-99');
-          $('#medal').css('display', 'none');
-          e ? e.stopPropagation() : event.cancelBubble = true;
-        })
-      </script>
+
     @@include("./layout/footer.html")
-    <script src="./js/bookMarkL.js"></script>
-    <script src="./js/bookMarkR.js"></script>
+
+    
+    <script src="./js/cave.js"></script>
     <!-- <script src="./js/btn.js"></script> -->
 </body>
 

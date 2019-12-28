@@ -1,13 +1,11 @@
 /* 我的倉庫CSS */
-* {
+.cav-body {
+  background: radial-gradient(rgb(90, 155, 90) 30%, rgb(70, 131, 80) 20%);
+  background-size: 10px 10px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: $font;
-}
-.cav-body {
-  background: radial-gradient(rgb(90, 155, 90) 30%, rgb(70, 131, 80) 20%);
-  background-size: 10px 10px;
 }
 
 .cav-main {
@@ -69,234 +67,24 @@
           margin: 2% 0 1% 0;
           max-height: 60%;
           .cav-myLetter {
-            border: 1px solid sandybrown;
+            // border: 1px solid sandybrown;
             position: relative;
             width: 50%;
-
-            .orderBtnBoxGroup {
-              width: 88%;
-              margin: -10% 0% 20% 15%;
-
-              .orderBtnBox {
-                position: relative;
-
-                .orderBtn {
-                  font-size: 20px;
-                  letter-spacing: 0.2em;
-                  position: relative;
-                  width: 80%;
-                  height: 45px;
-                  background-color: #ffd139;
-                  border: $border;
-                  text-align: center;
-                  line-height: 40px;
-                  border-radius: 0.3em;
-                  cursor: pointer;
-                  color: white;
-                  text-shadow: 1px 1px 1px black;
-                  z-index: 1;
-
-                  .orderText {
-                    position: absolute;
-                    width: 100%;
-                    top: 35%;
-                    left: 49%;
-                    transform: translate(-47.5%, -25%);
-                    font-weight: 900;
-                    color: #fff;
-                    @include stroke(2, #0f0f0f);
-                    font-family: $font;
-                    font-weight: 400;
-                    z-index: 3;
-                  }
-
-                  &:before {
-                    content: "";
-                    position: absolute;
-                    width: 40%;
-                    height: 45%;
-                    left: -26%;
-                    bottom: -20%;
-                    border-radius: 0.3em;
-                    border: $border;
-                    // background-color: #FFD139;
-                    // background-image: url("../img/product/decorate/materail-04.svg");
-                    // background-size: cover;
-                    transform: rotate(90deg) skew(60deg);
-                    background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background-size: 7px 7px;
-                  }
-
-                  &:after {
-                    content: "";
-                    position: absolute;
-                    position: absolute;
-                    width: 40%;
-                    height: 45%;
-                    left: 85%;
-                    bottom: -20%;
-                    border-radius: 0.3em;
-                    border: $border;
-                    // background-color: #FFD139;
-                    // background-image: url("../img/product/decorate/materail-04.svg");
-                    // background-size: cover;
-                    transform: rotate(90deg) skew(300deg);
-                    background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background-size: 7px 7px;
-                  }
-
-                  &.clicked {
-                    top: 15px;
-
-                    &:before {
-                      width: 38%;
-                      height: 40%;
-                      left: -26%;
-                      bottom: 0%;
-                      transform: rotate(90deg) skew(50deg);
-                    }
-
-                    &:after {
-                      width: 39%;
-                      height: 40%;
-                      left: 85%;
-                      bottom: 0%;
-                      transform: rotate(90deg) skew(310deg);
-                    }
-                  }
-                }
-
-                .orderBtnBottom {
-                  position: absolute;
-                  // width: 100%;
-                  width: 95%;
-                  height: 40px;
-                  left: -8%;
-                  top: 90%;
-                  border: $border;
-                  background: -webkit-linear-gradient(-70deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                  background: linear-gradient(-70deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                  background-size: 7px 7px;
-                  border-radius: 0.1em;
-                  // z-index: -1;
-                }
-              }
+            @include btn_3d_module();
+            .btn {
+              padding: 0.8vw 2vw;
+              top: 5%;
+              left: 10%;
             }
           }
           .cav-otherLetter {
-            border: 1px solid sandybrown;
+            // border: 1px solid sandybrown;
             width: 50%;
-            .orderBtnBoxGroup {
-              width: 88%;
-              margin: -10% 0% 20% 15%;
-
-              .orderBtnBox {
-                position: relative;
-
-                .orderBtn {
-                  font-size: 20px;
-                  letter-spacing: 0.2em;
-                  position: relative;
-                  width: 80%;
-                  height: 50px;
-                  background-color: #ffd139;
-                  border: $border;
-                  text-align: center;
-                  line-height: 40px;
-                  border-radius: 0.3em;
-                  cursor: pointer;
-                  color: white;
-                  text-shadow: 1px 1px 1px black;
-                  z-index: 1;
-
-                  .orderText {
-                    position: absolute;
-                    width: 100%;
-                    top: 35%;
-                    left: 49%;
-                    transform: translate(-47.5%, -25%);
-                    font-weight: 900;
-                    color: #fff;
-                    @include stroke(2, #0f0f0f);
-                    font-family: $font;
-                    font-weight: 400;
-                    z-index: 3;
-                  }
-
-                  &:before {
-                    content: "";
-                    position: absolute;
-                    width: 38%;
-                    height: 40%;
-                    left: -25%;
-                    bottom: -25%;
-                    border-radius: 0.3em;
-                    border: $border;
-                    // background-color: #FFD139;
-                    // background-image: url("../img/product/decorate/materail-04.svg");
-                    // background-size: cover;
-                    transform: rotate(90deg) skew(60deg);
-                    background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background-size: 7px 7px;
-                  }
-
-                  &:after {
-                    content: "";
-                    position: absolute;
-                    position: absolute;
-                    width: 38%;
-                    height: 40%;
-                    left: 87%;
-                    bottom: -5%;
-                    border-radius: 0.3em;
-                    border: $border;
-                    // background-color: #FFD139;
-                    // background-image: url("../img/product/decorate/materail-04.svg");
-                    // background-size: cover;
-                    transform: rotate(90deg) skew(300deg);
-                    background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background-size: 7px 7px;
-                  }
-
-                  &.clicked {
-                    top: 15px;
-
-                    &:before {
-                      width: 38%;
-                      height: 40%;
-                      left: -25%;
-                      bottom: -25%;
-                      transform: rotate(90deg) skew(50deg);
-                    }
-
-                    &:after {
-                      width: 39%;
-                      height: 40%;
-                      left: 87%;
-                      bottom: 3%;
-                      transform: rotate(90deg) skew(310deg);
-                    }
-                  }
-                }
-
-                .orderBtnBottom {
-                  position: absolute;
-                  width: 95%;
-                  height: 40px;
-                  left: -8%;
-                  top: 85%;
-                  border: $border;
-                  background: -webkit-linear-gradient(-70deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                  background: linear-gradient(-70deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                  background-size: 7px 7px;
-                  border-radius: 0.1em;
-                  // z-index: -1;
-                }
-              }
+            @include btn_3d_module();
+            .btn {
+              padding: 0.8vw 2vw;
+              top: 5%;
+              left: 10%;
             }
           }
         }
@@ -304,6 +92,7 @@
           border: $border;
           background-color: #ddd;
           padding: 5px;
+          margin-top: 6.5%;
           // height: calc(100%-10px);
           height: 87.5%;
 
@@ -333,7 +122,7 @@
               padding: 3%;
               border-radius: 20px;
               background-color: $main-yellow;
-              overflow: hidden;
+              // overflow: hidden;
               display: flex;
               cursor: pointer;
               &.cav-looking {
@@ -346,6 +135,9 @@
 
                 .cav-letTitle {
                   margin: 0;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
                 }
                 .cav-letTime {
                   margin: 0;
@@ -357,7 +149,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-
+                position: relative;
                 > div {
                   margin: 0 auto;
                   height: 50%;
@@ -368,6 +160,22 @@
                     &:hover {
                       color: $main-dark-red;
                     }
+                  }
+                }
+                .cav-landLetter {
+                  border: 1px solid firebrick;
+                  position: absolute;
+                  top: 55%;
+                  left: 00%;
+                  width: 70px;
+                  z-index: 20;
+                  background-color: #fff;
+                  padding-bottom: 0;
+                  height: 25px;
+                  display: none;
+                  &:hover {
+                    background-color: $main-blue;
+                    color: #fff;
                   }
                 }
               }
@@ -412,11 +220,19 @@
               width: 82.5%;
               // height: 45vw;
               margin: 20px auto;
+              position: relative;
+              display: none;
               // &_content {
               //    width: 100%;
               //    height: 100%;
               //    overflow: auto;
               // }
+              .cav-letClose {
+                position: absolute;
+                right: -5%;
+                top: -3%;
+                cursor: pointer;
+              }
               .cav-letImg {
                 // border: 5px solid $main-black;
                 // width: 90%;
@@ -448,9 +264,6 @@
                     cursor: pointer;
                   }
                 }
-                // .btn-big-test {
-                //   @include btn_big_module();
-                // }
               }
 
               .cav-h3 {
@@ -589,6 +402,9 @@
         justify-content: flex-start;
         background-color: #777;
       }
+      .wearing {
+        border: 0.4vw solid $main-dark-red;
+      }
       .tab1 {
         display: none;
       }
@@ -604,7 +420,7 @@
       background-color: #ddd;
       width: 100%;
       // height: 10%;
-      height: 60px;
+      height: 9.5%;
       position: relative;
       /* 按鈕 */
       @include btn_3d_module();
@@ -612,6 +428,9 @@
         margin: 0 auto;
         height: 50px;
         // padding: 0;
+        position: absolute;
+        top: 40%;
+        left: 35%;
       }
     }
   }
@@ -708,7 +527,7 @@
       height: 85%;
       width: 100%;
       position: absolute;
-      top: 6.5%;
+      top: 7.4%;
       padding: 4% 3%;
       // overflow: scroll;
       overflow-y: scroll;
@@ -818,10 +637,16 @@
     .cav-leftWrap {
       .cav-tabWrap {
         min-height: 400px;
-        max-height: 80%;
+        max-height: 76%;
         // height: 44vw;
+        top: 8.4%;
         padding: 10px;
         overflow-y: scroll;
+      }
+    }
+    .cav-rightWrap {
+      .cav-tabWrap {
+        top: 8.4%;
       }
     }
     .cav-boxImg {
@@ -840,238 +665,45 @@
       margin: 2.5%;
     }
   }
-  .cav-whoLetter {
-    .cav-myLetter {
-      border: 1px solid sandybrown;
-      position: relative;
-      width: 50%;
-
-      .orderBtnBoxGroup {
-        width: 100%;
-        margin: 0% 2% 30% 11%;
-
-        .orderBtnBox {
-          position: relative;
-          width: 90%;
-
-          .orderBtn {
-            font-size: 20px;
-            letter-spacing: 0.2em;
+  .cav-readLetterWrap {
+    .cav-boxImg {
+      .cav-boxFront {
+        .cav-boxFrontLeft {
+          .cav-whoLetter {
+            border: 1px solid sandybrown;
             position: relative;
-            width: 88%;
-            height: 50px;
-            background-color: #ffd139;
-            border: $border;
-            text-align: center;
-            line-height: 40px;
-            border-radius: 0.3em;
-            cursor: pointer;
-            color: white;
-            text-shadow: 1px 1px 1px black;
-            z-index: 1;
-
-            .orderText {
-              position: absolute;
-              width: 100%;
-              top: 35%;
-              left: 49%;
-              transform: translate(-47.5%, -25%);
-              font-weight: 900;
-              color: #fff;
-              @include stroke(2, #0f0f0f);
-              font-family: $font;
-              font-weight: 400;
-              z-index: 3;
-            }
-
-            &:before {
-              content: "";
-              position: absolute;
-              width: 94%;
-              height: 45%;
-              left: -45%;
-              bottom: 3%;
-              border-radius: 0.3em;
-              border: $border;
-              // background-color: #FFD139;
-              // background-image: url("../img/product/decorate/materail-04.svg");
-              // background-size: cover;
-              transform: rotate(90deg) skew(60deg);
-              background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-              background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-              background-size: 7px 7px;
-            }
-
-            &:after {
-              content: "";
-              position: absolute;
-              position: absolute;
-              width: 38%;
-              height: 40%;
-              left: 87%;
-              bottom: -5%;
-              border-radius: 0.3em;
-              border: $border;
-              // background-color: #FFD139;
-              // background-image: url("../img/product/decorate/materail-04.svg");
-              // background-size: cover;
-              transform: rotate(90deg) skew(300deg);
-              background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-              background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-              background-size: 7px 7px;
-            }
-
-            &.clicked {
-              top: 16px;
-
-              &:before {
-                width: 38%;
-                height: 40%;
-                left: -26%;
-                bottom: 3%;
-                transform: rotate(90deg) skew(50deg);
+            width: 50%;
+            .cav-myLetter {
+              // border: 1px solid sandybrown;
+              position: relative;
+              width: 50%;
+              @include btn_3d_module();
+              .btn {
+                padding: -1.2vw 1vw;
+                top: 5%;
+                left: 10%;
               }
-
-              &:after {
-                width: 39%;
-                height: 40%;
-                left: 87%;
-                bottom: 3%;
-                transform: rotate(90deg) skew(310deg);
+            }
+            .cav-otherLetter {
+              // border: 1px solid sandybrown;
+              width: 50%;
+              @include btn_3d_module();
+              .btn {
+                padding: 0.8vw 2vw;
+                top: 5%;
+                left: 10%;
               }
             }
           }
-
-          .orderBtnBottom {
-            position: absolute;
-            // width: 100%;
-            width: 107%;
-            height: 45px;
-            left: -8%;
-            top: 85%;
-            border: $border;
-            background: -webkit-linear-gradient(-70deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-            background: linear-gradient(-70deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-            background-size: 7px 7px;
-            border-radius: 0.1em;
-            // z-index: -1;
-          }
-        }
-      }
     }
+
     .cav-otherLetter {
       border: 1px solid sandybrown;
       width: 50%;
-
-      .orderBtnBoxGroup {
-        width: 90%;
-        margin: -20% 0% 20% 10%;
-
-        .orderBtnBox {
-          position: relative;
-
-          .orderBtn {
-            font-size: 20px;
-            letter-spacing: 0.2em;
-            position: relative;
-            width: 80%;
-            height: 50px;
-            background-color: #ffd139;
-            border: $border;
-            text-align: center;
-            line-height: 40px;
-            border-radius: 0.3em;
-            cursor: pointer;
-            color: white;
-            text-shadow: 1px 1px 1px black;
-            z-index: 1;
-
-            .orderText {
-              position: absolute;
-              width: 100%;
-              top: 35%;
-              left: 59%;
-              transform: translate(-47.5%, -25%);
-              font-weight: 900;
-              color: #fff;
-              @include stroke(2, #0f0f0f);
-              font-family: $font;
-              font-weight: 400;
-              z-index: 3;
-            }
-
-            &:before {
-              content: "";
-              position: absolute;
-              width: 55%;
-              height: 45%;
-              left: -39%;
-              bottom: 3%;
-              border-radius: 0.3em;
-              border: $border;
-              // background-color: #FFD139;
-              // background-image: url("../img/product/decorate/materail-04.svg");
-              // background-size: cover;
-              transform: rotate(90deg) skew(60deg);
-              background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-              background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-              background-size: 7px 7px;
-            }
-
-            &:after {
-              content: "";
-              position: absolute;
-              position: absolute;
-              width: 38%;
-              height: 40%;
-              left: 87%;
-              bottom: -5%;
-              border-radius: 0.3em;
-              border: $border;
-              // background-color: #FFD139;
-              // background-image: url("../img/product/decorate/materail-04.svg");
-              // background-size: cover;
-              transform: rotate(90deg) skew(300deg);
-              background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-              background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-              background-size: 7px 7px;
-            }
-
-            &.clicked {
-              top: 16px;
-
-              &:before {
-                width: 38%;
-                height: 40%;
-                left: -26%;
-                bottom: 3%;
-                transform: rotate(90deg) skew(50deg);
-              }
-
-              &:after {
-                width: 39%;
-                height: 40%;
-                left: 87%;
-                bottom: 3%;
-                transform: rotate(90deg) skew(310deg);
-              }
-            }
-          }
-
-          .orderBtnBottom {
-            position: absolute;
-            width: 95%;
-            height: 45px;
-            left: -8%;
-            top: 85%;
-            border: $border;
-            background: -webkit-linear-gradient(-70deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-            background: linear-gradient(-70deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-            background-size: 7px 7px;
-            border-radius: 0.1em;
-            // z-index: -1;
-          }
-        }
+      .btn {
+        padding: -1.2vw 2vw;
+        top: 5%;
+        left: 10%;
       }
     }
   }
@@ -1358,6 +990,7 @@
         min-height: 400px;
         max-height: 80%;
         // height: 44vw;
+        top: 10.4%;
         padding: 10px;
         overflow-y: scroll;
       }
@@ -1594,7 +1227,7 @@
       margin-left: 10%;
 
       .cav-tabWrap {
-        top: 55px;
+        top: 10.4%;
 
         .cav-prod {
           width: 20vw;
@@ -2103,7 +1736,7 @@
       margin-left: 10%;
 
       .cav-tabWrap {
-        top: 55px;
+        top: 10.4%;
 
         .cav-prod {
           width: 20vw;
