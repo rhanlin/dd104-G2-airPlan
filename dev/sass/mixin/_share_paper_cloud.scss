@@ -9,7 +9,7 @@
 @mixin paper_cloud($width:30vw) {
   .paper-cloud {
     width: $width;
-    background-image: url(../../img/share/paper-cloud.png);
+    background-image: url(../img/share/paper-cloud.png);
     height: 18vw;
     max-width: 440px;
     max-height: 325px;

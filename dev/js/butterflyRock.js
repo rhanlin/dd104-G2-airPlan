@@ -33,7 +33,7 @@
     butterflies = [];
     boids = [];
 
-    const skinMap = new THREE.TextureLoader().load('../img/catch-letter/plane-pattern/stamp.jpg');
+    const skinMap = new THREE.TextureLoader().load('./img/catch-letter/plane-pattern/stamp.jpg');
     skinMap.wrapS = skinMap.wrapT = THREE.RepeatWrapping;
     var mat = new THREE.MeshBasicMaterial({
       // shading: THREE.FlatShading, color: Math.random()*0xffffff, 

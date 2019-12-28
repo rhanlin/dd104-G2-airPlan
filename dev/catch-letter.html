@@ -20,32 +20,32 @@
       <div class="nav-body">
     <div id="navHead" class="nav-navBgWrap">
         <div class="nav-navBg">
-            <img src="../img/share/nav_lightBox.svg" alt="">
+            <img src="./img/share/nav_lightBox.svg" alt="">
             <nav class="nav-navWrap">
                 <!-- <div class="nav-topBlock">
                 登入和設定 
             </div> -->
             <div class="nav-logoWrap">
-                <a href="../home.html"><img src="../img/share/LOGO.png"></a>
+                <a href="./home.html"><img src="./img/share/LOGO.png"></a>
             </div>
             <div class="nav-navPageWrap">
                 <ul class="nav-list" id="list">
-                    <li><a href="../write-letter.html">
+                    <li><a href="./write-letter.html">
                             <p class="nav-pageName">寫信</p> <span class="nav-circle-1 nav-now"></span>
                         </a> </li>
-                    <li><a href="../catch-letter.html">
+                    <li><a href="./catch-letter.html">
                             <p class="nav-pageName">撈信</p> <span class="nav-circle-2"></span>
                         </a> </li>
-                    <li><a href="../shop.html">
+                    <li><a href="./shop.html">
                             <p class="nav-pageName">商城</p> <span class="nav-circle-3"></span>
                         </a> </li>
-                    <li><a href="../cave.html">
+                    <li><a href="./cave.html">
                             <p class="nav-pageName">我的倉庫</p> <span class="nav-circle-4"></span>
                         </a> </li>
-                    <li><a href="../chatroom.html">
+                    <li><a href="./chatroom.html">
                             <p class="nav-pageName">聊天室</p> <span class="nav-circle-5"></span>
                         </a> </li>
-                    <li><a href="../classic.html">
+                    <li><a href="./classic.html">
                             <p class="nav-pageName">精華區</p> <span class="nav-circle-6"></span>
                         </a> </li>
                 </ul>
@@ -56,7 +56,7 @@
         </nav>
         <div class="nav-littleNav">
             <a href="#"><i class="fas fa-user-circle"></i></a>
-            <a href="../user-setting.html"><i class="fas fa-cog"></i></a>
+            <a href="./user-setting.html"><i class="fas fa-cog"></i></a>
         </div>
         <div class="nav-pc">
             <div class="cav-paper">信紙:999</div>
@@ -124,7 +124,7 @@
   style="position: relative; overflow: hidden;"
 >
   <span id="mouseNet">
-    <img src="../img/catch-letter/net.png">
+    <img id="netImg" src="./img/catch-letter/net.png">
     <span id="missMsg"></span>
   </span>
   <div id="planeContainer"></div>
@@ -167,7 +167,7 @@
   </div>
 </div>
 
-<script src="../js/butterflyRock.js"></script>
+<script src="./js/butterflyRock.js"></script>
 <script>
   let threeWorld = document.getElementById('threeWorld');
   let planeLetter = document.getElementById('planeLetter');
@@ -200,8 +200,8 @@
       missMsg.innerText = "Oh No~~";
     }
     if (successNum == 10) {
-      net.firstChild.src = "../img/catch-letter/catch-the-plane.gif";
-      net.style.transform = 'rotate(0deg)'; //.....????
+      document.getElementById('netImg').src = "./img/catch-letter/catch-the-plane.gif";
+      net.style.transform = 'rotate(0deg)';
       openLetter();//開信
       document.getElementById('navHead').classList.add('-on');//將navBar推上去
       stampShot();//蓋章
@@ -236,7 +236,7 @@
           console.log(catchLetterShow);
         }, 400)
       } else {
-        openMotion.style.backgroundImage = `url(../img/catch-letter/letter-fold-${time+1}.png)`
+        openMotion.style.backgroundImage = `url(./img/catch-letter/letter-fold-${time+1}.png)`
         letterFlim()
       }
       console.log(time)
@@ -261,7 +261,7 @@
       
       stampEffectDiv.style.top = `${e.offsetY-50}px`;
       stampEffectDiv.style.left = `${e.offsetX-50}px`;
-      stampEffectDiv.style.backgroundImage = `url(../img/catch-letter/user-stamp/user-stamp_${Math.floor(Math.random() * 9) + 1}.png)`;
+      stampEffectDiv.style.backgroundImage = `url(./img/catch-letter/user-stamp/user-stamp_${Math.floor(Math.random() * 9) + 1}.png)`;
       stampshot.appendChild(stampEffectDiv);
     })
   }
