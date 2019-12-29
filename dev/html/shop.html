@@ -40,7 +40,7 @@
             <div class="itemCardAside">
               <div class="itemCardAsideBox">
                 <div class="itemCardAsideh3">
-                  <h3 @click="filter('all')">商品項目</h3>
+                  <h3>商品項目</h3>
                 </div>
                 <div class="itemCardAsideh4">
                   <h4>信紙</h4>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="accordion" id="accordionExample">
                   <div class="card">
-                    <div @click="filter('1')" class="card-header" id="headingOne">
+                    <div class="card-header" id="headingOne">
                       <h2 class="mb-0">
                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
                           aria-expanded="true" aria-controls="collapseOne">
@@ -68,7 +68,7 @@
                     </div>
                   </div>
                   <div class="card">
-                    <div @click="filter('2')" class="card-header" id="headingTwo">
+                    <div class="card-header" id="headingTwo">
                       <h2 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                           data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -84,7 +84,7 @@
                     </div>
                   </div>
                   <div class="card">
-                    <div @click="filter('3')" class="card-header" id="headingThree">
+                    <div class="card-header" id="headingThree">
                       <h2 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                           data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -104,14 +104,44 @@
               </div>
             </div>
             <div class=" itemCardContainer">
+
+
               <div class="cardFilter">
+
                 <!-- <img src="./img/product/decorate/line_top.png" alt="" class="line_top">
                 <img src="./img/product/decorate/line_bottom.png" alt="" class="line_bottom"> -->
-                <div class="itemCard" v-if="change(index)" v-for="(item,index) in filteredItems"
-                  :style="{backgroundImage:`url(${item.url})`}" :id=item.id :class=item.class>
-                  <img src="./img/product/decorate/clip-04.svg" alt="">
+                <div id="itemCard1" class="itemCard itemCard1"><img src="/img/product/decorate/clip-04.svg" alt="">
+                </div>
+                <div id="itemCard2" class="itemCard itemCard2"><img src="/img/product/decorate/clip-04.svg" alt="">
+                </div>
+                <div id="itemCard3" class="itemCard itemCard3"><img src="/img/product/decorate/clip-04.svg" alt="">
+                </div>
+                <div id="itemCard4" class="itemCard itemCard4"><img src="/img/product/decorate/clip-04.svg" alt="">
+                </div>
+                <div id="itemCard5" class="itemCard itemCard5"><img src="/img/product/decorate/clip-04.svg" alt="">
+                </div>
+                <div id="itemCard6" class="itemCard itemCard6"><img src="/img/product/decorate/clip-04.svg" alt="">
+                </div>
+                <div id="itemCard7" class="itemCard itemCard7"><img src="/img/product/decorate/clip-04.svg" alt="">
+                </div>
+                <div id="itemCard8" class="itemCard itemCard8"><img src="/img/product/decorate/clip-04.svg" alt="">
+                </div>
+                <div id="itemCard9" class="itemCard itemCard9"><img src="/img/product/decorate/clip-04.svg" alt="">
+                </div>
+                <div id="itemCard10" class="itemCard itemCard10"><img src="/img/product/decorate/clip-04.svg" alt="">
+                </div>
+                <div id="itemCard11" class="itemCard itemCard11"><img src="/img/product/decorate/clip-04.svg" alt="">
+                </div>
+                <div id="itemCard12" class="itemCard itemCard12"><img src="/img/product/decorate/clip-04.svg" alt="">
+                </div>
+                <div id="itemCard13" class="itemCard itemCard13"><img src="/img/product/decorate/clip-04.svg" alt="">
+                </div>
+                <div id="itemCard14" class="itemCard itemCard14"><img src="/img/product/decorate/clip-04.svg" alt="">
+                </div>
+                <div id="itemCard15" class="itemCard itemCard15"><img src="/img/product/decorate/clip-04.svg" alt="">
                 </div>
               </div>
+          
               <div id="emptyBtn">
                 <div @click="page = 1" class="switchBtnBox">
                   <div class="switchBtn">page1</div>
@@ -460,120 +490,113 @@
     })
   </script>
   <script>
-    var addShuff = new Vue({
-      el: '#app',
-      data: {
+    // var addShuff = new Vue({
+    //   el: '#app',
+    //   data: {
 
-        items: [{
-            tags: ['all', '3'],
-            id: '1',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            tags: ['all', '2'],
-            id: '2',
-            url: './img/product/postmark/postmark_1.png'
-          },
-          {
-            tags: ['all', '3'],
-            id: '3',
-            url: './img/product/postmark/postmark_2.png'
-          },
-          {
-            tags: ['all', '1'],
-            id: '4',
-            url: './img/product/postmark/postmark_2.png'
-          },
-          {
-            tags: ['all', '1'],
-            id: '5',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            tags: ['all', '2'],
-            id: '6',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            tags: ['all', '1'],
-            id: '7',
-            url: './img/product/postmark/postmark_2.png'
-          },
-          {
-            tags: ['all', '2'],
-            id: '8',
-            url: './img/product/postmark/postmark_1.png'
-          },
-          {
-            tags: ['all', '3'],
-            id: '9',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            tags: ['all', '1'],
-            id: '10',
-            url: './img/product/postmark/postmark_1.png'
-          },
-          {
-            tags: ['all', '1'],
-            id: '11',
-            url: './img/product/postmark/postmark_1.png'
-          },
-          {
-            tags: ['all', '2'],
-            id: '12',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            tags: ['all', '3'],
-            id: '13',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            tags: ['all', '2'],
-            id: '14',
-            url: './img/product/postmark/postmark_2.png'
-          },
-          {
-            tags: ['all', '2'],
-            id: '15',
-            url: './img/product/postmark/postmark_2.png'
-          },
-        ],
-        currentTag: "all",
-        // page: 1,
+    //     items: [{
+    //         type: 1,
+    //         id: '1',
+    //         url: './img/product/postmark/postmark_3.png'
+    //       },
+    //       {
+    //         type: 2,
+    //         id: '2',
+    //         url: './img/product/postmark/postmark_1.png'
+    //       },
+    //       {
+    //         type: 1,
+    //         id: '3',
+    //         url: './img/product/postmark/postmark_2.png'
+    //       },
+    //       {
+    //         type: 2,
+    //         id: '4',
+    //         url: './img/product/postmark/postmark_2.png'
+    //       },
+    //       {
+    //         type: 1,
+    //         id: '5',
+    //         url: './img/product/postmark/postmark_3.png'
+    //       },
+    //       {
+    //         type: 3,
+    //         id: '6',
+    //         url: './img/product/postmark/postmark_3.png'
+    //       },
+    //       {
+    //         type: 3,
+    //         id: '7',
+    //         url: './img/product/postmark/postmark_2.png'
+    //       },
+    //       {
+    //         type: 1,
+    //         id: '8',
+    //         url: './img/product/postmark/postmark_1.png'
+    //       },
+    //       {
+    //         type: 2,
+    //         id: '9',
+    //         url: './img/product/postmark/postmark_3.png'
+    //       },
+    //       {
+    //         type: 1,
+    //         id: '10',
+    //         url: './img/product/postmark/postmark_1.png'
+    //       },
+    //       {
+    //         type: 2,
+    //         id: '11',
+    //         url: './img/product/postmark/postmark_1.png'
+    //       },
+    //       {
+    //         type: 3,
+    //         id: '12',
+    //         url: './img/product/postmark/postmark_3.png'
+    //       },
+    //       {
+    //         type: 3,
+    //         id: '13',
+    //         url: './img/product/postmark/postmark_3.png'
+    //       },
+    //       {
+    //         type: 1,
+    //         id: '14',
+    //         url: './img/product/postmark/postmark_2.png'
+    //       },
+    //       {
+    //         type: 3,
+    //         id: '15',
+    //         url: './img/product/postmark/postmark_2.png'
+    //       },
+    //     ],
+    //     currentTag: 'all'
+    //     // page: 1,
+    //   },
+    //   computed: {
 
+    //   },
+    //   methods: {
+    //     filterEvents: function (filter) {
+    //       this.filter = filter
+    //     }
+    //     // change(index) {
+    //     //   if (this.page == 1) {
+    //     //     if (index < 10) return true;
+    //     //   } else if (this.page == 2) {
+    //     //     if (index < 20 && index >= 10) return true;
+    //     //   } else if (this.page == 3) {
+    //     //     if (index < 30 && index >= 20) return true;
+    //     //   }
+    //     // }
+    //   },
+    //   // watch: {
+    //   //   page() {
+    //   //     this.change();
+    //   //   }
+    //   // },
 
-      },
-      computed: {
-        filteredItems: function () {
-          var filter = this.currentTag;
-          return this.items.filter(function (item) {
-            return item.tags.indexOf(filter) !== -1;
-          });
-        }
-      },
-      methods: {
-        filter: function (tag) {
-          this.currentTag = tag;
-        },
-        // change(index) {
-        //   if (this.page == 1) {
-        //     if (index < 10) return true;
-        //   } else if (this.page == 2) {
-        //     if (index < 20 && index >= 10) return true;
-        //   } else if (this.page == 3) {
-        //     if (index < 30 && index >= 20) return true;
-        //   }
-        // }
-      },
-      // watch: {
-      //   page() {
-      //     this.change();
-      //   }
-      // },
-
-    })
+    // })
   </script>
   <script>
     $('.switchBtn').mousedown(function () {
