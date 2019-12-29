@@ -239,7 +239,11 @@
                                 }
 
                                 .pageContent {
-
+                                    width: 100%;
+                                    display: none;
+                                    &:first-child{
+                                        display: inline-block;
+                                    }
                                     .contentYour,
                                     .contentYour_1,
                                     .contentYour_2 {
