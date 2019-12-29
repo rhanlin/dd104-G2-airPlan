@@ -2463,60 +2463,64 @@ table {
               animation: botani 3.5s linear reverse infinite; }
 
 @keyframes topani {
-  0% {
-    stroke-width: 186px; }
-  12% {
-    stroke-width: 161px; }
-  18% {
+  3% {
+    stroke-width: 55px; }
+  11% {
+    stroke-width: 171px; }
+  19% {
+    stroke-width: 101px; }
+  24% {
+    stroke-width: 37px; }
+  33% {
+    stroke-width: 37px; }
+  38% {
+    stroke-width: 144px; }
+  45% {
+    stroke-width: 16px; }
+  50% {
     stroke-width: 157px; }
-  27% {
-    stroke-width: 164px; }
-  32% {
-    stroke-width: 45px; }
-  44% {
-    stroke-width: 167px; }
-  54% {
-    stroke-width: 150px; }
-  61% {
-    stroke-width: 23px; }
-  66% {
-    stroke-width: 104px; }
-  73% {
-    stroke-width: 190px; }
-  83% {
-    stroke-width: 182px; }
-  93% {
+  56% {
+    stroke-width: 54px; }
+  69% {
     stroke-width: 116px; }
+  75% {
+    stroke-width: 50px; }
+  82% {
+    stroke-width: 122px; }
+  87% {
+    stroke-width: 14px; }
   96% {
-    stroke-width: 58px; } }
+    stroke-width: 66px; } }
 
 @keyframes botani {
-  6% {
-    stroke-width: 96px; }
-  10% {
-    stroke-width: 117px; }
-  22% {
-    stroke-width: 106px; }
-  27% {
-    stroke-width: 49px; }
-  35% {
-    stroke-width: 144px; }
-  41% {
+  2% {
+    stroke-width: 100px; }
+  13% {
+    stroke-width: 88px; }
+  18% {
+    stroke-width: 169px; }
+  21% {
     stroke-width: 81px; }
+  29% {
+    stroke-width: 169px; }
+  39% {
+    stroke-width: 65px; }
+  48% {
+    stroke-width: 143px; }
   54% {
-    stroke-width: 1px; }
-  56% {
-    stroke-width: 108px; }
-  71% {
-    stroke-width: 85px; }
-  79% {
-    stroke-width: 108px; }
-  81% {
-    stroke-width: 40px; }
-  90% {
-    stroke-width: 2px; }
-  100% {
-    stroke-width: 111px; } }
+    stroke-width: 185px; }
+  61% {
+    stroke-width: 47px; }
+  65% {
+    stroke-width: 53px; }
+  72% {
+    stroke-width: 20px; }
+  83% {
+    stroke-width: 19px; }
+  88% {
+    stroke-width: 178px; }
+  92% {
+    stroke-width: 138px; } }
 
 @keyframes rainbowMove {
   from {
