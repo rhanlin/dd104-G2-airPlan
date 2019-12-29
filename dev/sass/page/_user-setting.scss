@@ -1,17 +1,18 @@
 .userSetting_body{
     width: 100%;
     font-size: 0;
+    font-family: $font;
     background: radial-gradient($main-blue 30%, rgb(255, 255, 255) 20%);
-    background-size: 20px 20px;
-    animation: sky 140s infinite linear;
-    @keyframes sky {
-        0% {
-            background-position: 0 0;
-        }
-        100% {                        
-            background-position: 100% -100%;
-        }
-    }
+    background-size: 8px 8px;
+    // animation: sky 140s infinite linear;
+    // @keyframes sky {
+    //     0% {
+    //         background-position: 0 0;
+    //     }
+    //     100% {                        
+    //         background-position: 100% -100%;
+    //     }
+    // }
     .userSettingBanner{
         height: 880px; 
         position: relative;
@@ -62,8 +63,8 @@
         @include marginAuto;
         .floor{
             width: 100%;
-            background: radial-gradient(rgb(139, 98, 130) 30%, rgb(248, 230, 228) 20%);
-            background-size: 10px 10px;
+            background: radial-gradient($main-red 30%, rgb(248, 230, 228) 20%);
+            background-size: 8px 8px;
             overflow: hidden;
             position: relative;
             @include marginAuto;
@@ -72,13 +73,12 @@
                 height: 800px;
                 border-top: 80px solid $main-blue;
                 position: relative;
-                h2{
+                h1{
                     right: 5%;
                     @include userSetting_title;
                 }
                 .memKanban{
                     padding: 20px;
-                    // height: 650px;
                     background-color: $main-green;
                     border-radius: 15px;
                     @include userSetting_mem;
@@ -86,7 +86,7 @@
                         background-color: rgb(255, 255, 255);
                         @include border;
                         .memData{
-                            margin:  10% 0 10px ;
+                            margin:  5% 0 10px ;
                             width: 30%;
                             text-align: center;
                             display: inline-block;
@@ -120,7 +120,7 @@
                             vertical-align: middle;
                         }
                         .emailSet{
-                            width: 5%;
+                            width: 25px;
                             vertical-align: middle;
                         }
                         .mempic{
@@ -176,7 +176,7 @@
                     display: none;
                     .setData{
                         padding: 20px;
-                        width: 500px;
+                        width: 550px;
                         background-image: url("../img/user-setting/setDataletter.png");
                         background-size: 100% 100%;
                         position: absolute;
@@ -194,14 +194,10 @@
                         .formSetData{
                             width: 100%;
                             @include marginAuto;
-                            p{
-                                margin-top: 10px;
-                            }
                             img{
                                 width: 50%;
                                 display: block;
                                 @include marginAuto;
-                                margin-top: 10px;
                             }
                             input{
                                 width: 100%;
@@ -211,16 +207,15 @@
                                 border-bottom-right-radius: 0;
                                 border-bottom-left-radius: 0;
                                 @include border;
+                                margin-bottom: 1rem;
                             }
                             button{
                                 width: 100%;
                                 height: 40px;
                                 border-radius: 5px;
-                                // max-width: 330px;
                                 background: #82afd9;
                                 background-size: 10px 10px;
                                 color: aliceblue;
-                                margin-top: 10px;
                             }
                         }
                     }
@@ -287,7 +282,7 @@
                 height: 800px;
                 border-top: 80px solid $main-blue;
                 position: relative;
-                h2{
+                h1{
                     left: 5%;
                     @include userSetting_title;
                 }
@@ -382,7 +377,7 @@
                 height: 800px;
                 border-top: 80px solid $main-blue;
                 position: relative;
-                h2{
+                h1{
                     right: 5%;
                     @include userSetting_title;
                     z-index: 12;
@@ -455,8 +450,8 @@
                     }
                     //userSetting_adm vue
                     .userSetting_mike{
-                        background: radial-gradient(rgba(84, 179, 103, 0.5) 30%, rgb(255, 255, 255) 20%);
-                        animation: leftLight 80s infinite linear;
+                        background: radial-gradient(rgba(169, 228, 180, 0.5) 30%, rgb(255, 255, 255) 20%);
+                        animation: leftLight 100s infinite linear;
                         display: flex;
                         @include userSetting_adm;
                         // .lighting{
@@ -469,8 +464,8 @@
                         // }
                     }
                     .userSetting_spencer{
-                        background: radial-gradient(rgba(148, 203, 255, 0.5) 30%, rgb(255, 255, 255) 20%);
-                        animation: leftLight 80s infinite linear;
+                        background: radial-gradient(rgba(178, 212, 243, 0.5) 30%, rgb(255, 255, 255) 20%);
+                        animation: leftLight 100s infinite linear;
                         display: flex;
                         @include userSetting_adm;
                         // .lighting{
@@ -554,6 +549,10 @@
             }
         }
     }
+    p{
+        margin: 0;
+        padding: 0;
+    }
 }
 
 @include respond(mediumSize) {
@@ -605,7 +604,7 @@
                     .setDataBg{
                         .setData{
                             padding: 20px;
-                            width: 60%;
+                            width: 70%;
                         }
                     }
                 }
@@ -629,7 +628,7 @@
         .userSetting_main {
             .floor {
                 .userSetting_mem{
-                    h2{
+                    h1{
                         @include userSetting_title_note;
                     }
                     .memKanban{
@@ -640,12 +639,18 @@
                             }
                         }
                     }
+                    .setDataBg{
+                        .setData{
+                            padding: 20px;
+                            width: 80%;
+                        }
+                    }
                     .robotB1, .robotB1_2, .box{
                         display: none;
                     }
                 }
                 .userSetting_sys{
-                    h2{
+                    h1{
                         @include userSetting_title_note;
                     }
                     .sysKanban{
@@ -659,7 +664,7 @@
                     }
                 }
                 .userSetting_adm{
-                    h2{
+                    h1{
                         @include userSetting_title_note;
                     }
                     .admKanban{
@@ -679,7 +684,7 @@
         .userSetting_main {
             .floor {
                 .userSetting_mem{
-                    h2{
+                    h1{
                         @include userSetting_title_iphone;
                     }
                     .memKanban{
@@ -690,12 +695,18 @@
                             }
                         }
                     }
+                    .setDataBg{
+                        .setData{
+                            padding: 20px;
+                            width: 100%;
+                        }
+                    }
                     .robotB1, .robotB1_2, .box{
                         display: none;
                     }
                 }
                 .userSetting_sys{
-                    h2{
+                    h1{
                         @include userSetting_title_iphone;
                     }
                     .sysKanban{
@@ -709,7 +720,7 @@
                     }
                 }
                 .userSetting_adm{
-                    h2{
+                    h1{
                         @include userSetting_title_iphone;
                     }
                     .admKanban{
@@ -723,4 +734,15 @@
         }
     }
 }
-  
+
+.panel-title{
+    position: relative;
+}
+.panel-heading .accordion-toggle:before {  
+    content: "▼"; 
+    color:$main-blue;
+}
+.panel-heading .accordion-toggle.collapsed:before {
+    content: "▶";
+    color:$main-blue;
+}

@@ -31,9 +31,9 @@ Vue.component('airCoin', {
         <div class="userSetting_airCoin">
             <table class="userSetting_airCoinTable">
                 <tr>
-                    <td>時間</td>
-                    <td>信件</td>
-                    <td>打賞者</td>
+                    <td><h4>時間</h4></td>
+                    <td><h4>信件</h4></td>
+                    <td><h4>打賞者</h4></td>
                 </tr>
                 <tr>
                     <td>2019/12/18 12:00</td>
@@ -90,38 +90,79 @@ new Vue({
 });
 Vue.component('manu', {
     template: `
-        <div class="userSetting_manu">
-            <div class="userSetting_item">
-                <h3>會員</h3>
+        <div class = "userSetting_manu">  
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h4 class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#post1">寫信</h4>
+                        </div>
+                    </div>
+                    <div id="post1" class="panel-collapse collapse in">
+                        <p class="panel-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis nam natus error et deserunt molestias placeat debitis nobis facilis quae. Sunt laudantium inventore hic omnis ab aliquam assumenda delectus corporis.</p>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h4 class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#post2">撈信</h4>
+                        </div>
+                    </div>
+                    <div id="post2" class="panel-collapse collapse">
+                        <p class="panel-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis nam natus error et deserunt molestias placeat debitis nobis facilis quae. Sunt laudantium inventore hic omnis ab aliquam assumenda delectus corporis.</p>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h4 class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#post3">商城</h4>
+                        </div>
+                    </div>
+                    <div id="post3" class="panel-collapse collapse">
+                        <p class="panel-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis nam natus error et deserunt molestias placeat debitis nobis facilis quae. Sunt laudantium inventore hic omnis ab aliquam assumenda delectus corporis.</p>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h4 class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#post4">我的倉庫</h4>
+                        </div>
+                    </div>
+                    <div id="post4" class="panel-collapse collapse">
+                        <p class="panel-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis nam natus error et deserunt molestias placeat debitis nobis facilis quae. Sunt laudantium inventore hic omnis ab aliquam assumenda delectus corporis.</p>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h4 class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#post5">聊天室</h4>
+                        </div>
+                    </div>
+                    <div id="post5" class="panel-collapse collapse">
+                        <p class="panel-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis nam natus error et deserunt molestias placeat debitis nobis facilis quae. Sunt laudantium inventore hic omnis ab aliquam assumenda delectus corporis.</p>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <h4 class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#post6">用戶設定</h4>
+                        </div>
+                    </div>
+                    <div id="post6" class="panel-collapse collapse">
+                        <p class="panel-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis nam natus error et deserunt molestias placeat debitis nobis facilis quae. Sunt laudantium inventore hic omnis ab aliquam assumenda delectus corporis.</p>
+                    </div>
+                </div>
             </div>
-            <div class="userSetting_item">
-                <h3>寫信</h3>
-            </div>
-            <div class="userSetting_item">
-                <h3>撈信</h3>
-            </div>
-            <div class="userSetting_item">
-                <h3>倉庫</h3>
-            </div>
-            <div class="userSetting_item">
-                <h3>商店</h3>
-            </div>
-            <div class="userSetting_item">
-                <h3>聊天</h3>
-            </div>
-            <div class="userSetting_item">
-                <h3>精華</h3>
-            </div>
-        </div>
+        </div> 
      `,
 });
 Vue.component('ver', {
     template: `
     
         <div class="userSetting_ver">
-            <h3>版本</h3>
+            <h4>版本</h4>
             <p>1.0.0</p>
-            <h3>版本內容</h3>
+            <h4>版本內容</h4>
             <p>飛出手的紙飛機，若再次回到手上，會帶回什麼樣的感受呢?</p>
         </div>
             
@@ -142,17 +183,17 @@ Vue.component('mike', {
             <div class="lighting"></div>
             <div class="userSetting_wrap">
                 <div class="userSetting_Name">
-                    <h3>開發者</h3>
+                    <h4>開發者</h4>
                     <span>峻瑜</span>
                 </div>
                 <ul class="userSetting_work">
-                    <h3>分工項目</h3>
+                    <h4>分工項目</h4>
                     <li>UI視覺整合</li>
                     <li>首頁、精華區</li>
                     <li>後台管理員帳號管理</li>
                 </ul>
                 <div class="userSetting_portfolio">
-                    <h3>作品</h3>
+                    <h4>作品</h4>
                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901173/" target="_blank">
                         <span>Radara</span>
                     </a><br>
@@ -171,17 +212,17 @@ Vue.component('spencer', {
             <div class="lighting"></div>
             <div class="userSetting_wrap">
                 <div class="userSetting_Name">
-                    <h3>開發者</h3>
+                    <h4>開發者</h4>
                     <span>宗翰</span>
                 </div>
                 <ul class="userSetting_work">
-                    <h3>分工項目</h3>
+                    <h4>分工項目</h4>
                     <li>寫信、撈信</li>
                     <li>前台網站整合</li>
                     <li>Git版本控管</li>
                 </ul>
                 <div class="userSetting_portfolio">
-                    <h3>作品</h3>
+                    <h4>作品</h4>
                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901175/" target="_blank">
                         <span>&on</span>
                     </a><br>
@@ -200,17 +241,17 @@ Vue.component('allen', {
             <div class="lighting"></div>
             <div class="userSetting_wrap">
                 <div class="userSetting_Name">
-                    <h3>開發者</h3>
+                    <h4>開發者</h4>
                     <span>耀輝</span>
                 </div>
                 <ul class="userSetting_work">
-                    <h3>分工項目</h3>
+                    <h4>分工項目</h4>
                     <li>我的倉庫</li>
                     <li>明信片紀錄</li>
                     <li>後台審核檢舉</li>
                 </ul>
                 <div class="userSetting_portfolio">
-                    <h3>作品</h3>
+                    <h4>作品</h4>
                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901167/" target="_blank">
                         <span>Snack Snake</span>
                     </a><br>
@@ -229,17 +270,17 @@ Vue.component('grace', {
             <div class="lighting"></div>
             <div class="userSetting_wrap">
                 <div class="userSetting_Name">
-                    <h3>開發者</h3>
+                    <h4>開發者</h4>
                     <span>雅珺</span>
                 </div>
                 <ul class="userSetting_work">
-                    <h3>分工項目</h3>
+                    <h4>分工項目</h4>
                     <li>購物商品</li>
-                    <li>製作客製化商品</li>
+                    <li>客製化素材</li>
                     <li>後台商品管理</li>
                 </ul>
                 <div class="userSetting_portfolio">
-                    <h3>作品</h3>
+                    <h4>作品</h4>
                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901164/1103demo/" target="_blank">
                         <span>Powder Ski Resort</span>
                     </a><br>
@@ -258,17 +299,17 @@ Vue.component('sharon', {
             <div class="lighting"></div>
             <div class="userSetting_wrap">
                 <div class="userSetting_Name">
-                    <h3>開發者</h3>
+                    <h4>開發者</h4>
                     <span>湘文</span>
                 </div>
                 <ul class="userSetting_work">
-                    <h3>分工項目</h3>
+                    <h4>分工項目</h4>
                     <li>即時聊天</li>
                     <li>邀約提醒</li>
                     <li>後台網站整合</li>
                 </ul>
                 <div class="userSetting_portfolio">
-                    <h3>作品</h3>
+                    <h4>作品</h4>
                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901158/" target="_blank">
                         <span>Bonheur</span>
                     </a><br>
@@ -287,17 +328,17 @@ Vue.component('howard', {
             <div class="lighting"></div>
             <div class="userSetting_wrap">
                 <div class="userSetting_Name">
-                    <h3>開發者</h3>
+                    <h4>開發者</h4>
                     <span>恒祥</span>
                 </div>
                 <ul class="userSetting_work">
-                    <h3>分工項目</h3>
+                    <h4>分工項目</h4>
                     <li>用戶設定</li>
                     <li>後台會員管理</li>
                     <li>資料庫建置與控管</li>
                 </ul>
                 <div class="userSetting_portfolio">
-                    <h3>作品</h3>
+                    <h4>作品</h4>
                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/" target="_blank">
                         <span>岳世界</span>
                     </a><br>

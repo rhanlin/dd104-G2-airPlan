@@ -2463,6 +2463,7 @@ table {
               animation: botani 3.5s linear reverse infinite; }
 
 @keyframes topani {
+<<<<<<< HEAD
   1% {
     stroke-width: 84px; }
   8% {
@@ -2471,6 +2472,70 @@ table {
     stroke-width: 38px; }
   15% {
     stroke-width: 148px; }
+=======
+<<<<<<< HEAD
+  5% {
+    stroke-width: 58px; }
+  15% {
+    stroke-width: 14px; }
+  21% {
+    stroke-width: 124px; }
+  31% {
+    stroke-width: 93px; }
+  34% {
+    stroke-width: 159px; }
+  42% {
+    stroke-width: 7px; }
+  48% {
+    stroke-width: 157px; }
+  60% {
+    stroke-width: 81px; }
+  68% {
+    stroke-width: 199px; }
+  79% {
+    stroke-width: 198px; }
+  86% {
+    stroke-width: 124px; }
+  92% {
+    stroke-width: 174px; }
+  102% {
+    stroke-width: 67px; } }
+
+@keyframes botani {
+  3% {
+    stroke-width: 13px; }
+  14% {
+    stroke-width: 98px; }
+  22% {
+    stroke-width: 67px; }
+  31% {
+    stroke-width: 196px; }
+  33% {
+    stroke-width: 10px; }
+  42% {
+    stroke-width: 6px; }
+  52% {
+    stroke-width: 6px; }
+  59% {
+    stroke-width: 74px; }
+  71% {
+    stroke-width: 77px; }
+  76% {
+    stroke-width: 121px; }
+  80% {
+    stroke-width: 91px; }
+  89% {
+    stroke-width: 84px; }
+  98% {
+    stroke-width: 188px; } }
+=======
+  3% {
+    stroke-width: 55px; }
+  11% {
+    stroke-width: 171px; }
+  19% {
+    stroke-width: 101px; }
+>>>>>>> kang
   24% {
     stroke-width: 48px; }
   28% {
@@ -2513,6 +2578,7 @@ table {
     stroke-width: 197px; }
   23% {
     stroke-width: 20px; }
+<<<<<<< HEAD
   26% {
     stroke-width: 197px; }
   31% {
@@ -2541,6 +2607,15 @@ table {
     stroke-width: 46px; }
   94% {
     stroke-width: 173px; } }
+=======
+  83% {
+    stroke-width: 19px; }
+  88% {
+    stroke-width: 178px; }
+  92% {
+    stroke-width: 138px; } }
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
+>>>>>>> kang
 
 @keyframes rainbowMove {
   from {
@@ -14923,6 +14998,11 @@ a.text-dark:hover, a.text-dark:focus {
 .userSetting_body {
   width: 100%;
   font-size: 0;
+<<<<<<< HEAD
+  font-family: "Noto Sans TC", sans-serif;
+  background: radial-gradient(#82afd9 30%, white 20%);
+  background-size: 8px 8px; }
+=======
   background: radial-gradient(#82afd9 30%, white 20%);
   background-size: 20px 20px;
   animation: sky 140s infinite linear; }
@@ -14932,6 +15012,7 @@ a.text-dark:hover, a.text-dark:focus {
     background-position: 0 0; }
   100% {
     background-position: 100% -100%; } }
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
   .userSetting_body .userSettingBanner {
     height: 880px;
     position: relative;
@@ -14976,8 +15057,13 @@ a.text-dark:hover, a.text-dark:focus {
     margin: 0 auto; }
     .userSetting_body .userSetting_main .floor {
       width: 100%;
+<<<<<<< HEAD
+      background: radial-gradient(#f08b8c 30%, #f8e6e4 20%);
+      background-size: 8px 8px;
+=======
       background: radial-gradient(#8b6282 30%, #f8e6e4 20%);
       background-size: 10px 10px;
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
       overflow: hidden;
       position: relative;
       margin: 0 auto; }
@@ -14986,7 +15072,11 @@ a.text-dark:hover, a.text-dark:focus {
         height: 800px;
         border-top: 80px solid #82afd9;
         position: relative; }
+<<<<<<< HEAD
+        .userSetting_body .userSetting_main .floor .userSetting_mem h1 {
+=======
         .userSetting_body .userSetting_main .floor .userSetting_mem h2 {
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
           right: 5%;
           padding: 10px;
           width: 450px;
@@ -15014,7 +15104,11 @@ a.text-dark:hover, a.text-dark:focus {
             background-color: white;
             border: .3vw solid #353535; }
             .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memData, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .airCoin, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memcolor {
+<<<<<<< HEAD
+              margin: 5% 0 10px;
+=======
               margin: 10% 0 10px;
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
               width: 30%;
               text-align: center;
               display: inline-block;
@@ -15036,7 +15130,11 @@ a.text-dark:hover, a.text-dark:focus {
               border: 3px solid #39ac72;
               vertical-align: middle; }
             .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .emailSet {
+<<<<<<< HEAD
+              width: 25px;
+=======
               width: 5%;
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
               vertical-align: middle; }
             .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .mempic {
               width: 200px;
@@ -15076,7 +15174,11 @@ a.text-dark:hover, a.text-dark:focus {
           display: none; }
           .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData {
             padding: 20px;
+<<<<<<< HEAD
+            width: 550px;
+=======
             width: 500px;
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
             background-image: url("../img/user-setting/setDataletter.png");
             background-size: 100% 100%;
             position: absolute;
@@ -15092,6 +15194,12 @@ a.text-dark:hover, a.text-dark:focus {
             .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData .formSetData {
               width: 100%;
               margin: 0 auto; }
+<<<<<<< HEAD
+              .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData .formSetData img {
+                width: 50%;
+                display: block;
+                margin: 0 auto; }
+=======
               .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData .formSetData p {
                 margin-top: 10px; }
               .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData .formSetData img {
@@ -15099,6 +15207,7 @@ a.text-dark:hover, a.text-dark:focus {
                 display: block;
                 margin: 0 auto;
                 margin-top: 10px; }
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
               .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData .formSetData input {
                 width: 100%;
                 box-sizing: border-box;
@@ -15106,15 +15215,24 @@ a.text-dark:hover, a.text-dark:focus {
                 font-size: 16px;
                 border-bottom-right-radius: 0;
                 border-bottom-left-radius: 0;
+<<<<<<< HEAD
+                border: .3vw solid #353535;
+                margin-bottom: 1rem; }
+=======
                 border: .3vw solid #353535; }
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
               .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData .formSetData button {
                 width: 100%;
                 height: 40px;
                 border-radius: 5px;
                 background: #82afd9;
                 background-size: 10px 10px;
+<<<<<<< HEAD
+                color: aliceblue; }
+=======
                 color: aliceblue;
                 margin-top: 10px; }
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
         .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1 {
           width: 30%;
           position: absolute;
@@ -15161,7 +15279,11 @@ a.text-dark:hover, a.text-dark:focus {
           z-index: 1;
           width: 22%;
           height: 80px;
+<<<<<<< HEAD
+          background: radial-gradient(#f08b8c 30%, #f8e6e4 20%);
+=======
           background: radial-gradient(#643c5b 30%, #f8e6e4 20%);
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
           background-size: 10px 10px;
           position: absolute;
           bottom: -80px; }
@@ -15170,7 +15292,11 @@ a.text-dark:hover, a.text-dark:focus {
         height: 800px;
         border-top: 80px solid #82afd9;
         position: relative; }
+<<<<<<< HEAD
+        .userSetting_body .userSetting_main .floor .userSetting_sys h1 {
+=======
         .userSetting_body .userSetting_main .floor .userSetting_sys h2 {
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
           left: 5%;
           padding: 10px;
           width: 450px;
@@ -15253,7 +15379,11 @@ a.text-dark:hover, a.text-dark:focus {
           z-index: 2;
           width: 22%;
           height: 80px;
+<<<<<<< HEAD
+          background: radial-gradient(#f08b8c 30%, #f8e6e4 20%);
+=======
           background: radial-gradient(#643c5b 30%, #f8e6e4 20%);
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
           background-size: 10px 10px;
           position: absolute;
           bottom: -80px; }
@@ -15262,7 +15392,11 @@ a.text-dark:hover, a.text-dark:focus {
         height: 800px;
         border-top: 80px solid #82afd9;
         position: relative; }
+<<<<<<< HEAD
+        .userSetting_body .userSetting_main .floor .userSetting_adm h1 {
+=======
         .userSetting_body .userSetting_main .floor .userSetting_adm h2 {
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
           right: 5%;
           padding: 10px;
           width: 450px;
@@ -15365,22 +15499,38 @@ a.text-dark:hover, a.text-dark:focus {
                   margin-top: 130px;
                   text-align: center; }
           .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike {
+<<<<<<< HEAD
+            background: radial-gradient(rgba(169, 228, 180, 0.5) 30%, white 20%);
+            animation: leftLight 100s infinite linear;
+            display: flex;
+            width: 100%;
+            background-size: 8px 8px;
+=======
             background: radial-gradient(rgba(84, 179, 103, 0.5) 30%, white 20%);
             animation: leftLight 80s infinite linear;
             display: flex;
             width: 100%;
             background-size: 10px 20px;
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
             z-index: 10;
             position: relative;
             margin: 0 auto; }
             .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike .userSetting_wrap {
               padding-top: 10px;
               width: 50%;
+<<<<<<< HEAD
+              height: 420px;
+              opacity: .8; }
+              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike .userSetting_wrap .userSetting_Name, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike .userSetting_wrap .userSetting_work, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike .userSetting_wrap .userSetting_portfolio {
+                margin: 0 10%;
+                padding: 5px; }
+=======
               height: 400px;
               opacity: .8; }
               .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike .userSetting_wrap .userSetting_Name, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike .userSetting_wrap .userSetting_work, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike .userSetting_wrap .userSetting_portfolio {
                 margin: 0 10%;
                 padding: 10px; }
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
             .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike .userSetting_picture {
               width: 38%;
               position: absolute;
@@ -15388,22 +15538,38 @@ a.text-dark:hover, a.text-dark:focus {
               right: 0;
               opacity: .8; }
           .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer {
+<<<<<<< HEAD
+            background: radial-gradient(rgba(178, 212, 243, 0.5) 30%, white 20%);
+            animation: leftLight 100s infinite linear;
+            display: flex;
+            width: 100%;
+            background-size: 8px 8px;
+=======
             background: radial-gradient(rgba(148, 203, 255, 0.5) 30%, white 20%);
             animation: leftLight 80s infinite linear;
             display: flex;
             width: 100%;
             background-size: 10px 20px;
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
             z-index: 10;
             position: relative;
             margin: 0 auto; }
             .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer .userSetting_wrap {
               padding-top: 10px;
               width: 50%;
+<<<<<<< HEAD
+              height: 420px;
+              opacity: .8; }
+              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer .userSetting_wrap .userSetting_Name, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer .userSetting_wrap .userSetting_work, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer .userSetting_wrap .userSetting_portfolio {
+                margin: 0 10%;
+                padding: 5px; }
+=======
               height: 400px;
               opacity: .8; }
               .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer .userSetting_wrap .userSetting_Name, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer .userSetting_wrap .userSetting_work, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer .userSetting_wrap .userSetting_portfolio {
                 margin: 0 10%;
                 padding: 10px; }
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
             .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer .userSetting_picture {
               width: 38%;
               position: absolute;
@@ -15415,18 +15581,30 @@ a.text-dark:hover, a.text-dark:focus {
             animation: downLight 80s infinite linear;
             display: flex;
             width: 100%;
+<<<<<<< HEAD
+            background-size: 8px 8px;
+=======
             background-size: 10px 20px;
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
             z-index: 10;
             position: relative;
             margin: 0 auto; }
             .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen .userSetting_wrap {
               padding-top: 10px;
               width: 50%;
+<<<<<<< HEAD
+              height: 420px;
+              opacity: .8; }
+              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen .userSetting_wrap .userSetting_Name, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen .userSetting_wrap .userSetting_work, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen .userSetting_wrap .userSetting_portfolio {
+                margin: 0 10%;
+                padding: 5px; }
+=======
               height: 400px;
               opacity: .8; }
               .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen .userSetting_wrap .userSetting_Name, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen .userSetting_wrap .userSetting_work, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen .userSetting_wrap .userSetting_portfolio {
                 margin: 0 10%;
                 padding: 10px; }
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
             .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen .userSetting_picture {
               width: 38%;
               position: absolute;
@@ -15438,18 +15616,30 @@ a.text-dark:hover, a.text-dark:focus {
             animation: downLight 80s infinite linear;
             display: flex;
             width: 100%;
+<<<<<<< HEAD
+            background-size: 8px 8px;
+=======
             background-size: 10px 20px;
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
             z-index: 10;
             position: relative;
             margin: 0 auto; }
             .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace .userSetting_wrap {
               padding-top: 10px;
               width: 50%;
+<<<<<<< HEAD
+              height: 420px;
+              opacity: .8; }
+              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace .userSetting_wrap .userSetting_Name, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace .userSetting_wrap .userSetting_work, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace .userSetting_wrap .userSetting_portfolio {
+                margin: 0 10%;
+                padding: 5px; }
+=======
               height: 400px;
               opacity: .8; }
               .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace .userSetting_wrap .userSetting_Name, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace .userSetting_wrap .userSetting_work, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace .userSetting_wrap .userSetting_portfolio {
                 margin: 0 10%;
                 padding: 10px; }
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
             .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace .userSetting_picture {
               width: 38%;
               position: absolute;
@@ -15461,18 +15651,30 @@ a.text-dark:hover, a.text-dark:focus {
             animation: rightLight 80s infinite linear;
             display: flex;
             width: 100%;
+<<<<<<< HEAD
+            background-size: 8px 8px;
+=======
             background-size: 10px 20px;
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
             z-index: 10;
             position: relative;
             margin: 0 auto; }
             .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon .userSetting_wrap {
               padding-top: 10px;
               width: 50%;
+<<<<<<< HEAD
+              height: 420px;
+              opacity: .8; }
+              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon .userSetting_wrap .userSetting_Name, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon .userSetting_wrap .userSetting_work, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon .userSetting_wrap .userSetting_portfolio {
+                margin: 0 10%;
+                padding: 5px; }
+=======
               height: 400px;
               opacity: .8; }
               .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon .userSetting_wrap .userSetting_Name, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon .userSetting_wrap .userSetting_work, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon .userSetting_wrap .userSetting_portfolio {
                 margin: 0 10%;
                 padding: 10px; }
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
             .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon .userSetting_picture {
               width: 38%;
               position: absolute;
@@ -15484,18 +15686,30 @@ a.text-dark:hover, a.text-dark:focus {
             animation: rightLight 80s infinite linear;
             display: flex;
             width: 100%;
+<<<<<<< HEAD
+            background-size: 8px 8px;
+=======
             background-size: 10px 20px;
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
             z-index: 10;
             position: relative;
             margin: 0 auto; }
             .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard .userSetting_wrap {
               padding-top: 10px;
               width: 50%;
+<<<<<<< HEAD
+              height: 420px;
+              opacity: .8; }
+              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard .userSetting_wrap .userSetting_Name, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard .userSetting_wrap .userSetting_work, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard .userSetting_wrap .userSetting_portfolio {
+                margin: 0 10%;
+                padding: 5px; }
+=======
               height: 400px;
               opacity: .8; }
               .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard .userSetting_wrap .userSetting_Name, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard .userSetting_wrap .userSetting_work, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard .userSetting_wrap .userSetting_portfolio {
                 margin: 0 10%;
                 padding: 10px; }
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
             .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard .userSetting_picture {
               width: 38%;
               position: absolute;
@@ -15514,6 +15728,12 @@ a.text-dark:hover, a.text-dark:focus {
           position: absolute;
           z-index: 12;
           animation: paperPlane 5s ease-in-out infinite; }
+<<<<<<< HEAD
+  .userSetting_body p {
+    margin: 0;
+    padding: 0; }
+=======
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
 
 @media all and (max-width: 991px) and (min-width: 768px) {
   .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memData, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .airCoin, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memcolor {
@@ -15530,13 +15750,21 @@ a.text-dark:hover, a.text-dark:focus {
     width: 90px; }
   .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData {
     padding: 20px;
+<<<<<<< HEAD
+    width: 70%; }
+=======
     width: 60%; }
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
   .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn {
     width: 900px;
     height: 250px; } }
 
 @media all and (max-width: 575px) and (min-width: 376px) {
+<<<<<<< HEAD
+  .userSetting_body .userSetting_main .floor .userSetting_mem h1 {
+=======
   .userSetting_body .userSetting_main .floor .userSetting_mem h2 {
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
     width: 100%;
     height: 100px;
     left: 50%;
@@ -15547,9 +15775,18 @@ a.text-dark:hover, a.text-dark:focus {
     min-width: 350px; }
     .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memData, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .airCoin, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memcolor {
       width: 80px; }
+<<<<<<< HEAD
+  .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData {
+    padding: 20px;
+    width: 80%; }
+  .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1, .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1_2, .userSetting_body .userSetting_main .floor .userSetting_mem .box {
+    display: none; }
+  .userSetting_body .userSetting_main .floor .userSetting_sys h1 {
+=======
   .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1, .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1_2, .userSetting_body .userSetting_main .floor .userSetting_mem .box {
     display: none; }
   .userSetting_body .userSetting_main .floor .userSetting_sys h2 {
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
     width: 100%;
     height: 100px;
     left: 50%;
@@ -15562,7 +15799,11 @@ a.text-dark:hover, a.text-dark:focus {
       width: 80px; }
   .userSetting_body .userSetting_main .floor .userSetting_sys .robotB2, .userSetting_body .userSetting_main .floor .userSetting_sys .robotB2_2, .userSetting_body .userSetting_main .floor .userSetting_sys .paper {
     display: none; }
+<<<<<<< HEAD
+  .userSetting_body .userSetting_main .floor .userSetting_adm h1 {
+=======
   .userSetting_body .userSetting_main .floor .userSetting_adm h2 {
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
     width: 100%;
     height: 100px;
     left: 50%;
@@ -15575,7 +15816,11 @@ a.text-dark:hover, a.text-dark:focus {
     display: none; } }
 
 @media all and (max-width: 375px) {
+<<<<<<< HEAD
+  .userSetting_body .userSetting_main .floor .userSetting_mem h1 {
+=======
   .userSetting_body .userSetting_main .floor .userSetting_mem h2 {
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
     width: 100%;
     height: 85px;
     left: 50%;
@@ -15586,9 +15831,18 @@ a.text-dark:hover, a.text-dark:focus {
     min-width: 350px; }
     .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memData, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .airCoin, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memcolor {
       width: 80px; }
+<<<<<<< HEAD
+  .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData {
+    padding: 20px;
+    width: 100%; }
+  .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1, .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1_2, .userSetting_body .userSetting_main .floor .userSetting_mem .box {
+    display: none; }
+  .userSetting_body .userSetting_main .floor .userSetting_sys h1 {
+=======
   .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1, .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1_2, .userSetting_body .userSetting_main .floor .userSetting_mem .box {
     display: none; }
   .userSetting_body .userSetting_main .floor .userSetting_sys h2 {
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
     width: 100%;
     height: 85px;
     left: 50%;
@@ -15601,7 +15855,11 @@ a.text-dark:hover, a.text-dark:focus {
       width: 80px; }
   .userSetting_body .userSetting_main .floor .userSetting_sys .robotB2, .userSetting_body .userSetting_main .floor .userSetting_sys .robotB2_2, .userSetting_body .userSetting_main .floor .userSetting_sys .paper {
     display: none; }
+<<<<<<< HEAD
+  .userSetting_body .userSetting_main .floor .userSetting_adm h1 {
+=======
   .userSetting_body .userSetting_main .floor .userSetting_adm h2 {
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
     width: 100%;
     height: 85px;
     left: 50%;
@@ -15613,6 +15871,20 @@ a.text-dark:hover, a.text-dark:focus {
   .userSetting_body .userSetting_main .floor .userSetting_adm .robotB3, .userSetting_body .userSetting_main .floor .userSetting_adm .paperPlane {
     display: none; } }
 
+<<<<<<< HEAD
+.panel-title {
+  position: relative; }
+
+.panel-heading .accordion-toggle:before {
+  content: "▼";
+  color: #82afd9; }
+
+.panel-heading .accordion-toggle.collapsed:before {
+  content: "▶";
+  color: #82afd9; }
+
+=======
+>>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
 .chat-body {
   margin: 0; }
 

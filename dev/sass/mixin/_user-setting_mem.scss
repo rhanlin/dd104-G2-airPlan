@@ -12,7 +12,7 @@
 @mixin userSetting_space {
     width: 22%;
     height: 80px;
-    background: radial-gradient(rgb(100, 60, 91) 30%, rgb(248, 230, 228) 20%);
+    background: radial-gradient($main-red 30%, rgb(248, 230, 228) 20%);
     background-size: 10px 10px;
     position: absolute;
     bottom: -80px;
