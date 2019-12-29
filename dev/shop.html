@@ -344,11 +344,7 @@ function closeSigin() {
                 </div>
                 <div class="accordion" id="accordionExample">
                   <div class="card">
-<<<<<<< HEAD
-                    <div @click="typefilter;item.type = 1" class="card-header" id="headingOne" v-model="">
-=======
                     <div @click="filter('1')" class="card-header" id="headingOne">
->>>>>>> newDev
                       <h2 class="mb-0">
                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
                           aria-expanded="true" aria-controls="collapseOne">
@@ -366,11 +362,7 @@ function closeSigin() {
                     </div>
                   </div>
                   <div class="card">
-<<<<<<< HEAD
-                    <div @click="item.type ='1'" class="card-header" id="headingTwo">
-=======
                     <div @click="filter('2')" class="card-header" id="headingTwo">
->>>>>>> newDev
                       <h2 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                           data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -386,11 +378,7 @@ function closeSigin() {
                     </div>
                   </div>
                   <div class="card">
-<<<<<<< HEAD
-                    <div @click="item.type = 3" class="card-header" id="headingThree">
-=======
                     <div @click="filter('3')" class="card-header" id="headingThree">
->>>>>>> newDev
                       <h2 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                           data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -411,15 +399,9 @@ function closeSigin() {
             </div>
             <div class=" itemCardContainer">
               <div class="cardFilter">
-<<<<<<< HEAD
-                <!-- <img src="/img/product/decorate/line_top.png" alt="" class="line_top">
-                <img src="/img/product/decorate/line_bottom.png" alt="" class="line_bottom"> -->
-                <div class="itemCard" v-if="change(index)" v-for="(item,index) in typefilter"
-=======
                 <!-- <img src="./img/product/decorate/line_top.png" alt="" class="line_top">
                 <img src="./img/product/decorate/line_bottom.png" alt="" class="line_bottom"> -->
                 <div class="itemCard" v-if="change(index)" v-for="(item,index) in filteredItems"
->>>>>>> newDev
                   :style="{backgroundImage:`url(${item.url})`}" :id=item.id :class=item.class>
                   <img src="./img/product/decorate/clip-04.svg" alt="">
                 </div>
@@ -777,116 +759,6 @@ function closeSigin() {
       data: {
 
         items: [{
-<<<<<<< HEAD
-            type: 1,
-            id: 'itemCard1',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            type: 3,
-            id: 'itemCard2',
-            url: './img/product/postmark/postmark_1.png'
-          },
-          {
-            type: 2,
-            id: 'itemCard3',
-            url: './img/product/postmark/postmark_2.png'
-          },
-          {
-            type: 1,
-            id: 'itemCard4',
-            url: './img/product/postmark/postmark_2.png'
-          },
-          {
-            type: 2,
-            id: 'itemCard5',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            type: 2,
-            id: 'itemCard6',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            type: 1,
-            id: 'itemCard7',
-            url: './img/product/postmark/postmark_2.png'
-          },
-          {
-            type: 2,
-            id: 'itemCard8',
-            url: './img/product/postmark/postmark_1.png'
-          },
-          {
-            type: 1,
-            id: 'itemCard9',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            type: 3,
-            id: 'itemCard10',
-            url: './img/product/postmark/postmark_1.png'
-          },
-          {
-            type: 3,
-            id: 'itemCard11',
-            url: './img/product/postmark/postmark_1.png'
-          },
-          {
-            type: 3,
-            id: 'itemCard12',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            type: 3,
-            id: 'itemCard13',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            type: 1,
-            id: 'itemCard14',
-            url: './img/product/postmark/postmark_2.png'
-          },
-          {
-            type: 2,
-            id: 'itemCard15',
-            url: './img/product/postmark/postmark_2.png'
-          },
-        ],
-        page: 1,
-
-      },
-      computed: {
-        // all() {
-        //   return this.type
-        // },
-        typefilter() {
-          return this.items
-          if (item.type == 1) {
-            return this.items.filter(item => {
-              return item.type == 1
-            })
-          } else if (item.type == 2) {
-            return this.items.filter(item => {
-              return item.type == 2
-            })
-          } else if (item.type == 3) {
-            return this.items.filter(item => {
-              return item.type == 3
-            })
-          }
-        }
-      },
-      methods: {
-        change(index) {
-          if (this.page == 1) {
-            if (index < 10) return true;
-          } else if (this.page == 2) {
-            if (index < 20 && index >= 10) return true;
-          } else if (this.page == 3) {
-            if (index < 30 && index >= 20) return true;
-          }
-=======
             tags: ['all', '3'],
             id: '1',
             url: './img/product/postmark/postmark_3.png'
@@ -973,7 +845,6 @@ function closeSigin() {
           return this.items.filter(function (item) {
             return item.tags.indexOf(filter) !== -1;
           });
->>>>>>> newDev
         }
       },
       methods: {
