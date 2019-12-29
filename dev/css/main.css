@@ -2463,68 +2463,60 @@ table {
               animation: botani 3.5s linear reverse infinite; }
 
 @keyframes topani {
-  0% {
-    stroke-width: 179px; }
-  9% {
-    stroke-width: 13px; }
-  14% {
+  5% {
+    stroke-width: 58px; }
+  15% {
+    stroke-width: 14px; }
+  21% {
+    stroke-width: 124px; }
+  31% {
+    stroke-width: 93px; }
+  34% {
+    stroke-width: 159px; }
+  42% {
+    stroke-width: 7px; }
+  48% {
+    stroke-width: 157px; }
+  60% {
     stroke-width: 81px; }
-  26% {
-    stroke-width: 186px; }
-  32% {
-    stroke-width: 77px; }
-  36% {
-    stroke-width: 1px; }
-  45% {
-    stroke-width: 69px; }
-  49% {
-    stroke-width: 184px; }
-  58% {
-    stroke-width: 122px; }
-  64% {
-    stroke-width: 34px; }
-  74% {
-    stroke-width: 88px; }
-  82% {
-    stroke-width: 16px; }
-  85% {
-    stroke-width: 31px; }
-  94% {
-    stroke-width: 194px; }
-  103% {
-    stroke-width: 78px; } }
+  68% {
+    stroke-width: 199px; }
+  79% {
+    stroke-width: 198px; }
+  86% {
+    stroke-width: 124px; }
+  92% {
+    stroke-width: 174px; }
+  102% {
+    stroke-width: 67px; } }
 
 @keyframes botani {
-  6% {
-    stroke-width: 51px; }
-  10% {
-    stroke-width: 121px; }
-  19% {
-    stroke-width: 73px; }
+  3% {
+    stroke-width: 13px; }
+  14% {
+    stroke-width: 98px; }
   22% {
-    stroke-width: 158px; }
-  30% {
-    stroke-width: 200px; }
-  41% {
-    stroke-width: 74px; }
-  44% {
     stroke-width: 67px; }
-  55% {
-    stroke-width: 198px; }
-  57% {
-    stroke-width: 48px; }
-  69% {
-    stroke-width: 55px; }
-  73% {
-    stroke-width: 195px; }
-  83% {
-    stroke-width: 155px; }
-  87% {
-    stroke-width: 86px; }
-  95% {
-    stroke-width: 127px; }
-  100% {
-    stroke-width: 155px; } }
+  31% {
+    stroke-width: 196px; }
+  33% {
+    stroke-width: 10px; }
+  42% {
+    stroke-width: 6px; }
+  52% {
+    stroke-width: 6px; }
+  59% {
+    stroke-width: 74px; }
+  71% {
+    stroke-width: 77px; }
+  76% {
+    stroke-width: 121px; }
+  80% {
+    stroke-width: 91px; }
+  89% {
+    stroke-width: 84px; }
+  98% {
+    stroke-width: 188px; } }
 
 @keyframes rainbowMove {
   from {
