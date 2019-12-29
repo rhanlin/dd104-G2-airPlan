@@ -1,8 +1,70 @@
 //=================素材點按進畫板==============================
 
+
 let canvas = new fabric.Canvas('canvas'); //創建fabric環境
 canvas.setHeight(400);
 // canvas.setWidth(1900);
+
+
+fabric.Image.fromURL('../dev/img/product/decorate/background-04.png', function (image) {
+  var mask = image.scale(0.5, 0.5).set({
+    name: 'mask'
+  });
+
+  fabric.Image.fromURL('../dev/img/product/decorate/background-04.png', function (image) {
+    var frame = image.scale(0.5, 0.5).set({
+      name: 'frame'
+    });
+
+    fabric.Image.fromURL('../dev/img/product/decorate/background-04.png', function (image) {
+      var img = image.scale(0.5, 0.5).set({
+        name: 'img',
+        globalCompositeOperation: 'source-out'
+      });
+
+      img.clipTo = function (ctx) {
+        return _.bind(clip, img, ctx, frame)(ctx)
+      };
+
+      canvas.add(new fabric.Group([mask, img, frame], {
+        name: 'group'
+      }));
+      /*canvas.add(mask);
+      canvas.add(img);
+      canvas.add(frame);*/
+    });
+  });
+});
+
+function degToRad(degrees) {
+  return degrees * (Math.PI / 180);
+}
+
+var clip = function (ctx, clipObj) {
+  this.setCoords();
+  var scaleXTo1 = (1 / this.scaleX);
+  var scaleYTo1 = (1 / this.scaleY);
+  ctx.save();
+
+  var ctxLeft = -(this.width / 2) + clipObj.strokeWidth;
+  var ctxTop = -(this.height / 2) + clipObj.strokeWidth;
+  var ctxWidth = clipObj.width - clipObj.strokeWidth;
+  var ctxHeight = clipObj.height - clipObj.strokeWidth;
+
+  ctx.translate(ctxLeft, ctxTop);
+  ctx.scale(scaleXTo1, scaleYTo1);
+  ctx.rotate(degToRad(this.angle * -1));
+
+  ctx.beginPath();
+
+  ctx.rect(clipObj.left - this.oCoords.tl.x, clipObj.top - this.oCoords.tl.y, ctxWidth * clipObj.scaleX,
+    ctxHeight * clipObj.scaleY);
+
+  ctx.closePath();
+
+  ctx.restore();
+}
+
 
 
 drawingOptionArea = document.getElementById('drawingOptionArea');
@@ -34,25 +96,111 @@ $('.figure').click(function () {
   })
 });
 
-$('#group').click(function () {
-  canvas.getActiveObject().toGroup()
-})
-$('#ungroup').click(function () {
-  canvas.getActiveObject().toActiveSelection();
-})
+// $('#group').click(function () {
+//   canvas.getActiveObject().toGroup()
+// })
+// $('#ungroup').click(function () {
+//   canvas.getActiveObject().toActiveSelection();
+// })
 
 
 //===========title==========================
 
-$('#group').attr('title', '合併群組')
-$('#ungroup').attr('title', '解散群組')
+// $('#group').attr('title', '合併群組')
+// $('#ungroup').attr('title', '解散群組')
 $('#clear').attr('title', '全部清除')
 $('#outputPngBtn').attr('title', '儲存圖檔')
 $('#text').attr('title', '建立文字')
 $('#eraser').attr('title', '橡皮擦工具')
 $('#copy').attr('title', '複製圖形')
-$('#filter').attr('title', '復古濾鏡')
+$('#filter_Grayscale').attr('title', '復古濾鏡')
 $('.controlBox9').attr('title', '載入圖檔')
+
+//======================提示框變換============
+
+$('#mode').mouseover(function () {
+  $('.manualTitle').html('<h3>繪畫板</h3>');
+  $('.manualinnerText').html('<h5>點選可切換畫筆狀態或是物件選取狀態</h5>')
+})
+$('#mode').mouseout(function () {
+  $('.manualTitle').html('<h3>工具使用提示框</h3>');
+  $('.manualinnerText').html(' <h6>滑鼠移入會提示您工具的使用方法喔</h6>')
+})
+
+// $('#mode').mouseover(function () {
+//   $('.manualTitle').html('<h3>繪畫板</h3>');
+//   $('.manualinnerText').html('<h6>點選可切換畫筆狀態或是物件選取狀態</h6>')
+// })
+// $('#mode').mouseout(function () {
+//   $('.manualTitle').html('<h3>工具使用提示框</h3>');
+//   $('.manualinnerText').html(' <h6>滑鼠移入會提示您工具的使用方法喔</h6>')
+// })
+
+$('#text').mouseover(function () {
+  $('.manualTitle').html('<h3>填寫文字</h3>');
+  $('.manualinnerText').html('<h6>點選可召喚文字框，框內點兩下可自由修改內文喔</h6>')
+})
+$('#text').mouseout(function () {
+  $('.manualTitle').html('<h3>工具使用提示框</h3>');
+  $('.manualinnerText').html(' <h6>滑鼠移入會提示您工具的使用方法喔</h6>')
+})
+
+$('#eraser').mouseover(function () {
+  $('.manualTitle').html('<h3>橡皮擦工具</h3>');
+  $('.manualinnerText').html('<h6>可使用筆畫粗細調整橡皮擦大小喔</h6>')
+})
+$('#eraser').mouseout(function () {
+  $('.manualTitle').html('<h3>工具使用提示框</h3>');
+  $('.manualinnerText').html(' <h6>滑鼠移入會提示您工具的使用方法喔</h6>')
+})
+
+$('#eraser').mouseover(function () {
+  $('.manualTitle').html('<h3>橡皮擦工具</h3>');
+  $('.manualinnerText').html('<h6>可使用筆畫粗細調整橡皮擦大小喔</h6>')
+})
+$('#eraser').mouseout(function () {
+  $('.manualTitle').html('<h3>工具使用提示框</h3>');
+  $('.manualinnerText').html(' <h6>滑鼠移入會提示您工具的使用方法喔</h6>')
+})
+
+$('#filter_Sepia').mouseover(function () {
+  $('.manualTitle').html('<h3>復古濾鏡功能</h3>');
+  $('.manualinnerText').html('<h6>點擊就可將選取的圖案加上復古濾鏡啦!</h6>')
+})
+$('#filter_Sepia').mouseout(function () {
+  $('.manualTitle').html('<h3>工具使用提示框</h3>');
+  $('.manualinnerText').html(' <h6>滑鼠移入會提示您工具的使用方法喔</h6>')
+})
+
+$('#filter_Grayscale').mouseover(function () {
+  $('.manualTitle').html('<h3>灰階濾鏡功能</h3>');
+  $('.manualinnerText').html('<h6>點擊就可將選取的圖案加上灰階濾鏡啦!</h6>')
+})
+$('#filter_Grayscale').mouseout(function () {
+  $('.manualTitle').html('<h3>工具使用提示框</h3>');
+  $('.manualinnerText').html(' <h6>滑鼠移入會提示您工具的使用方法喔</h6>')
+})
+
+$('#imageUploader').mouseover(function () {
+  $('.manualTitle').html('<h3>上傳圖檔</h3>');
+  $('.manualinnerText').html('<h6>點擊就可任意上傳你自己的圖檔來進行編輯喔</h6>')
+})
+$('#imageUploader').mouseout(function () {
+  $('.manualTitle').html('<h3>工具使用提示框</h3>');
+  $('.manualinnerText').html(' <h6>滑鼠移入會提示您工具的使用方法喔</h6>')
+})
+
+$('#outputPngBtn').mouseover(function () {
+  $('.manualTitle').html('<h3>轉存PNG圖檔</h3>');
+  $('.manualinnerText').html('<h6>點擊就可將畫完的圖案轉存成PNG圖檔保存囉</h6>')
+})
+$('#outputPngBtn').mouseout(function () {
+  $('.manualTitle').html('<h3>工具使用提示框</h3>');
+  $('.manualinnerText').html(' <h6>滑鼠移入會提示您工具的使用方法喔</h6>')
+})
+
+
+
 
 
 //=======================畫筆區===============
@@ -214,9 +362,20 @@ $("#eraser").click(function () {
 
 
 
-//相片復古濾鏡功能
+//相片灰階濾鏡功能
 
 $('#filter_Sepia').on("click", function () {
+  var filter = $(this).data("filter"),
+    obj = canvas.getActiveObject();
+  console.log(obj)
+  var filter = new fabric.Image.filters.Sepia();
+  obj.filters.push(filter);
+  obj.applyFilters(canvas.renderAll.bind(canvas));
+});
+
+//相片灰階濾鏡功能
+
+$('#filter_Grayscale').on("click", function () {
   var filter = $(this).data("filter"),
     obj = canvas.getActiveObject();
   console.log(obj)
@@ -327,6 +486,14 @@ file.addEventListener('change', handleFile);
 
 
 canvas.on('drop', dropImg)
+
+
+
+
+//=================剪裁飛機或郵戳畫板==========================
+
+
+
 
 
 

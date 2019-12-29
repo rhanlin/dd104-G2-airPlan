@@ -307,7 +307,6 @@ function closeSigin() {
         });
     </script>
 </header>
-
   <main class="shop-main">
     <section id="section1">
       <div class="container">
@@ -326,119 +325,172 @@ function closeSigin() {
             </div>
           </div>
         </div>
-
-
-
-        <div id="app">
-          <div class="col-12 col-sm-12  col-md-12 col-lg-12 itemCardBox ">
-            <div class="itemCardAside">
-              <div class="itemCardAsideBox">
-                <div class="itemCardAsideh3">
-                  <h3 @click="filter('all')">商品項目</h3>
-                </div>
-                <div class="itemCardAsideh4">
+        <div class="col-12 col-sm-12  col-md-12 col-lg-12 itemCardBox ">
+          <div class="itemCardAside">
+            <div class="itemCardAsideBox portfolioFilter">
+              <div class="itemCardAsideh3">
+                <span href="#" data-filter="*" class="current">
+                  <h3>商品項目</h3>
+                  </a>
+              </div>
+              <div class="itemCardAsideh4">
+                <span href="#" data-filter=".letter">
                   <h4>信紙</h4>
-                </div>
-                <div class="itemCardAsideh4">
-                  <h4></h4>
-                </div>
-                <div class="accordion" id="accordionExample">
-                  <div class="card">
-                    <div @click="filter('1')" class="card-header" id="headingOne">
-                      <h2 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                          aria-expanded="true" aria-controls="collapseOne">
+                  </a>
+              </div>
+              <div class="itemCardAsideh4">
+                <h4></h4>
+              </div>
+              <div class="accordion" id="accordionExample">
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                        <span href="#" data-filter=".pattern">
                           <h4>圖案</h4>
-                        </button>
-                      </h2>
-                    </div>
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                      data-parent="#accordionExample">
-                      <div class="card-body">
-                        <h5>向量素材</h5>
-                        <h5>壁紙素材</h5>
-                        <h5>動物素材</h5>
-                      </div>
+                        </span>
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                      <h5>向量素材</h5>
+                      <h5>壁紙素材</h5>
+                      <h5>動物素材</h5>
                     </div>
                   </div>
-                  <div class="card">
-                    <div @click="filter('2')" class="card-header" id="headingTwo">
-                      <h2 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                          data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <span href="#" data-filter=".postmark">
                           <h4>郵戳</h4>
-                        </button>
-                      </h2>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                      <div class="card-body">
-                        <h5>外框素材</h5>
-                        <h5>內容圖案</h5>
-                      </div>
+                        </span>
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <h5>外框素材</h5>
+                      <h5>內容圖案</h5>
                     </div>
                   </div>
-                  <div class="card">
-                    <div @click="filter('3')" class="card-header" id="headingThree">
-                      <h2 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                          data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <span href="#" data-filter=".diy">
                           <h4>DIY工具</h4>
-                        </button>
-                      </h2>
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                      data-parent="#accordionExample">
-                      <div class="card-body">
-                        <h5>繪畫相關</h5>
-                        <h5>其他</h5>
-                      </div>
+                        </span>
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                      <h5>繪畫相關</h5>
+                      <h5>其他</h5>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class=" itemCardContainer">
-              <div class="cardFilter">
-                <!-- <img src="./img/product/decorate/line_top.png" alt="" class="line_top">
-                <img src="./img/product/decorate/line_bottom.png" alt="" class="line_bottom"> -->
-                <div class="itemCard" v-if="change(index)" v-for="(item,index) in filteredItems"
-                  :style="{backgroundImage:`url(${item.url})`}" :id=item.id :class=item.class>
-                  <img src="./img/product/decorate/clip-04.svg" alt="">
-                </div>
-              </div>
-              <div id="emptyBtn">
-                <div @click="page = 1" class="switchBtnBox">
-                  <div class="switchBtn">page1</div>
-                </div>
-                <div @click="page = 2" class="switchBtnBox">
-                  <div class="switchBtn">page2</div>
-                </div>
-                <div @click="page = 3" class="switchBtnBox">
-                  <div class="switchBtn">page</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="filter_forSamll">
-            <div class="filter_forSamllBox">
-              <div class="filter_forSamllh3">
-                <h3>商品項目</h3>
+          <div class="itemCardContainerBox">
+            <div class=" itemCardContainer">
+
+
+              <div class="cardFilter portfolioContainer" style="overflow: visible;">
+
+                <!-- <img src="./img/product/decorate/line_top.png" alt="" class="line_top">
+                <img src="./img/product/decorate/line_bottom.png" alt="" class="line_bottom"> -->
+
+                <div id="itemCard1" class="postmark itemCard itemCard1"><img src="./img/product/decorate/clip-04.svg"
+                    alt="">
+                </div>
+                <div id="itemCard2" class="postmark itemCard itemCard2"><img src="./img/product/decorate/clip-04.svg"
+                    alt="">
+                </div>
+                <div id="itemCard3" class="letter itemCard itemCard3"><img src="./img/product/decorate/clip-04.svg"
+                    alt="">
+                </div>
+                <div id="itemCard4" class="letter itemCard itemCard4">
+                  <img src="./img/product/decorate/clip-04.svg" alt="">
+                </div>
+                <div id="itemCard5" class="postmark itemCard itemCard5"><img src="./img/product/decorate/clip-04.svg"
+                    alt="">
+                </div>
+                <div id="itemCard6" class="diy itemCard itemCard6"><img src="./img/product/decorate/clip-04.svg" alt="">
+                </div>
+                <div id="itemCard7" class="pattern itemCard itemCard7"><img src="./img/product/decorate/clip-04.svg"
+                    alt="">
+                </div>
+                <div id="itemCard8" class="letter itemCard itemCard8"><img src="./img/product/decorate/clip-04.svg"
+                    alt="">
+                </div>
+                <div id="itemCard9" class="postmark itemCard itemCard9"><img src="./img/product/decorate/clip-04.svg"
+                    alt="">
+                </div>
+                <div id="itemCard10" class="diy itemCard itemCard10"><img src="./img/product/decorate/clip-04.svg"
+                    alt="">
+                </div>
+                <div id="itemCard11" class="postmark itemCard itemCard11"><img src="./img/product/decorate/clip-04.svg"
+                    alt="">
+                </div>
+                <div id="itemCard12" class="letter itemCard itemCard12"><img src="./img/product/decorate/clip-04.svg"
+                    alt="">
+                </div>
+                <div id="itemCard13" class="letter itemCard itemCard13"><img src="./img/product/decorate/clip-04.svg"
+                    alt="">
+                </div>
+                <div id="itemCard14" class="postmark itemCard itemCard14"><img src="./img/product/decorate/clip-04.svg"
+                    alt="">
+                </div>
+                <div id="itemCard15" class="pattern objects itemCard itemCard15"><img
+                    src="./img/product/decorate/clip-04.svg" alt="">
+                </div>
               </div>
-              <div class="filter_forSamllh4">
-                <h5>信紙</h5>
+            </div>
+
+            <div id="emptyBtn">
+              <div @click="page = 1" class="switchBtnBox">
+                <div class="switchBtn">page1</div>
               </div>
-              <div class="filter_forSamllh4">
-                <h5>DIY工具</h5>
+              <div @click="page = 2" class="switchBtnBox">
+                <div class="switchBtn">page2</div>
               </div>
-              <div class="filter_forSamllh4">
-                <h5>郵戳</h5>
+              <div @click="page = 3" class="switchBtnBox">
+                <div class="switchBtn">page</div>
               </div>
-              <div class="filter_forSamllh4">
-                <h5>圖案</h5>
-              </div>
-              <div class="filter_forSamllh4">
-                <h5>費用</h5>
-              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="filter_forSamll">
+          <div class="filter_forSamllBox">
+            <div class="filter_forSamllh3">
+              <h3>商品項目</h3>
+            </div>
+            <div class="filter_forSamllh4">
+              <h5>信紙</h5>
+            </div>
+            <div class="filter_forSamllh4">
+              <h5>DIY工具</h5>
+            </div>
+            <div class="filter_forSamllh4">
+              <h5>郵戳</h5>
+            </div>
+            <div class="filter_forSamllh4">
+              <h5>圖案</h5>
+            </div>
+            <div class="filter_forSamllh4">
+              <h5>費用</h5>
             </div>
           </div>
         </div>
@@ -448,14 +500,14 @@ function closeSigin() {
       <div class="cross"></div>
       <div id="textBox">
         <div class="textBox">
-          <h1>商品名稱:飛往巴黎</h1>
+          <h2>商品名稱:飛往巴黎</h2>
         </div>
         <div class="textBox">
-          <h3>跟著紙飛機一起來場浪漫的旅行吧</h3>
+          <h>跟著紙飛機一起來場浪漫的旅行吧</h6>
         </div>
         <div class="textBox">
-          <h3>信件被撈機率加乘 : 2%</h3>
-          <h3>商品價格 : 50air幣</h3>
+          <h5>信件被撈機率加乘 : 2%</h5>
+          <h5>商品價格 : 50air幣</h5>
         </div>
       </div>
       <div class="product_display">
@@ -484,9 +536,15 @@ function closeSigin() {
     </div>
     <div class="container">
       <div class="row customize">
-        <div class="customizeTitleText">NEXT</div>
         <div class="customizeTitle">
-          <div class="col-12 customizeTitleContainer">
+          <div class="customizeTitleText">NEXT</div>
+        </div>
+        <div class="manual">
+          <div class="manualTitle">
+            <h3>工具使用提示框</h3>
+          </div>
+          <div class="manualinnerText">
+            <h6>滑鼠移入會提示您工具的使用方法喔</h6>
           </div>
         </div>
       </div>
@@ -507,9 +565,9 @@ function closeSigin() {
                   <div class="controlBtn2 "><img src="./img/product/tool/reset.svg" alt=""></div>
                 </div>
               </div>
-              <div id="group" class="controlBox3">
+              <div id="eraser" class="controlBox3">
                 <div class="controlBox3_button">
-                  <div class="controlBtn3 "><img src="./img/product/tool/merged.svg" alt=""></div>
+                  <div class="controlBtn3 "><img src="./img/product/tool/control_eraser.svg" alt=""></div>
                 </div>
               </div>
               <div id="ungroup" class="controlBox4">
@@ -522,9 +580,9 @@ function closeSigin() {
                   <div class="controlBtn5"><img src="./img/product/tool/text-symbol.svg" alt=""></div>
                 </div>
               </div>
-              <div id="eraser" class="controlBox6">
+              <div id="filter_Sepia" class="controlBox6">
                 <div class="controlBox6_button clicked">
-                  <div class="controlBtn6 clicked"><img src="./img/product/tool/control_eraser.svg" alt=""></div>
+                  <div class="controlBtn6 clicked"><img src="./img/product/tool/change.svg" alt=""></div>
                 </div>
               </div>
               <!-- <div id="copy" class="controlBox7">
@@ -532,7 +590,7 @@ function closeSigin() {
                   <div class="controlBtn7 clicked"><img src="./img/product/tool/archives.svg" alt=""></div>
                 </div>
               </div> -->
-              <div id="filter_Sepia" class="controlBox8">
+              <div id="filter_Grayscale" class="controlBox8">
                 <div class="controlBox8_button">
                   <div class="controlBtn8"><img src="./img/product/tool/change.svg" alt=""></div>
                 </div>
@@ -666,8 +724,7 @@ function closeSigin() {
             <canvas id="canvas">
               <div class="drawingPanel" id="drawingOptionArea"></div>
             </canvas>
-          </div> <!-- <img src="./img/product/decorate/planeBoard-05.svg" alt="" class="planeBoard" > -->
-
+          </div>
           <div id="btns" class="btns">
             <div class="orderBtnBoxGroup ">
               <div class="orderBtnBox ">
@@ -734,6 +791,7 @@ function closeSigin() {
     </section>
   </main>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+  <script src="https://isotope.metafizzy.co/v1/jquery.isotope.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
     integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
   </script>
@@ -754,122 +812,37 @@ function closeSigin() {
     })
   </script>
   <script>
-    var addShuff = new Vue({
-      el: '#app',
-      data: {
+    //  ================這是商品Filter用=========================
+    var $container = $('.portfolioContainer');
+    $container.isotope({
+      filter: '*',
+      animationOptions: {
+        duration: 750,
+        easing: 'linear',
+        queue: false
+      }
+    });
 
-        items: [{
-            tags: ['all', '3'],
-            id: '1',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            tags: ['all', '2'],
-            id: '2',
-            url: './img/product/postmark/postmark_1.png'
-          },
-          {
-            tags: ['all', '3'],
-            id: '3',
-            url: './img/product/postmark/postmark_2.png'
-          },
-          {
-            tags: ['all', '1'],
-            id: '4',
-            url: './img/product/postmark/postmark_2.png'
-          },
-          {
-            tags: ['all', '1'],
-            id: '5',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            tags: ['all', '2'],
-            id: '6',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            tags: ['all', '1'],
-            id: '7',
-            url: './img/product/postmark/postmark_2.png'
-          },
-          {
-            tags: ['all', '2'],
-            id: '8',
-            url: './img/product/postmark/postmark_1.png'
-          },
-          {
-            tags: ['all', '3'],
-            id: '9',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            tags: ['all', '1'],
-            id: '10',
-            url: './img/product/postmark/postmark_1.png'
-          },
-          {
-            tags: ['all', '1'],
-            id: '11',
-            url: './img/product/postmark/postmark_1.png'
-          },
-          {
-            tags: ['all', '2'],
-            id: '12',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            tags: ['all', '3'],
-            id: '13',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            tags: ['all', '2'],
-            id: '14',
-            url: './img/product/postmark/postmark_2.png'
-          },
-          {
-            tags: ['all', '2'],
-            id: '15',
-            url: './img/product/postmark/postmark_2.png'
-          },
-        ],
-        currentTag: "all",
-        // page: 1,
+    $('.portfolioFilter span').click(function () {
+      $('.portfolioFilter .current').removeClass('current');
+      $(this).addClass('current');
 
 
-      },
-      computed: {
-        filteredItems: function () {
-          var filter = this.currentTag;
-          return this.items.filter(function (item) {
-            return item.tags.indexOf(filter) !== -1;
-          });
+      var selector = $(this).attr('data-filter');
+      $container.isotope({
+        filter: selector,
+        animationOptions: {
+          duration: 750,
+          easing: 'linear',
+          queue: false
         }
-      },
-      methods: {
-        filter: function (tag) {
-          this.currentTag = tag;
-        },
-        // change(index) {
-        //   if (this.page == 1) {
-        //     if (index < 10) return true;
-        //   } else if (this.page == 2) {
-        //     if (index < 20 && index >= 10) return true;
-        //   } else if (this.page == 3) {
-        //     if (index < 30 && index >= 20) return true;
-        //   }
-        // }
-      },
-      // watch: {
-      //   page() {
-      //     this.change();
-      //   }
-      // },
-
-    })
+      });
+      return false;
+    });
   </script>
+
   <script>
+    //  ================這是3D按鈕用=========================
     $('.switchBtn').mousedown(function () {
       $(this).addClass('clicked');
     });
@@ -884,7 +857,7 @@ function closeSigin() {
       $(this).removeClass('clicked');
     });
 
-
+    //  ================這是跳窗用=========================
 
     $('.itemCard').click(function () {
       $('#outshadow').css('opacity', '0.7');
@@ -902,7 +875,9 @@ function closeSigin() {
       e ? e.stopPropagation() : event.cancelBubble = true;
     })
   </script>
+
   <script>
+    // =====================這是美化下拉式選單=======================
     $(document).ready(function () {
       $('select:not(.ignore)').niceSelect();
       FastClick.attach(document.body);

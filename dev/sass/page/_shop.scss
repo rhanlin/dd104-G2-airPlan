@@ -17,6 +17,7 @@ $arrow_color: $gray !default;
 
 
 .shop-body {
+  font-family: $font;
   box-sizing: border-box;
   width: 100%;
   background: radial-gradient($main-yellow 30%, rgb(255, 255, 255) 40%);
@@ -115,20 +116,25 @@ $arrow_color: $gray !default;
           .itemCardAside {
             width: 20%;
 
-            .itemCardAsideBox {
+            .portfolioFilter {
               width: 65%;
               margin: 30% 10% 0 30%;
 
               .itemCardAsideh3 {
-                font-weight: 900;
-                font-family: $font;
+
+                span {
+                  font-weight: 900;
+                }
               }
 
               .itemCardAsideh4 {
-                letter-spacing: 0.3rem;
-                font-weight: 900;
-                // font-family: $font;
+
                 margin: 40px 0;
+
+                span {
+                  letter-spacing: 0.3rem;
+                  font-weight: 900;
+                }
               }
 
               .accordion {
@@ -173,116 +179,122 @@ $arrow_color: $gray !default;
             }
           }
 
-          .itemCardContainer {
-
+          .itemCardContainerBox {
             width: 80%;
             padding-top: 15%;
             padding-left: 5%;
 
 
-            .cardFilter {
+            .itemCardContainer {
               width: 100%;
               height: 500px;
-              display: flex;
-              flex-wrap: wrap;
 
-              @include itemCardRow1(15);
 
-              .line_top {
-                position: relative;
-                width: 70%;
-                transform: translate(5%, -10%);
-              }
+              .portfolioContainer {
 
-              .line_bottom {
-                position: relative;
-                width: 70%;
-                transform: translate(10%, 30%);
-              }
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
 
-              #itemCard1,
-              #itemCard9 {
-                transform: translate(0, -0%) rotate(15deg);
+                @include itemCardRow1(15);
 
-                img {
-                  width: 2.5vw;
-                  transform: translate(0%, -70%) rotate(330deg);
-                }
-              }
-
-              #itemCard2,
-              #itemCard10 {
-                transform: translate(0, -30%) rotate(355deg);
-
-                img {
-                  width: 2.5vw;
-                  transform: translate(70%, -70%) rotate(360deg);
-                }
-              }
-
-              #itemCard3,
-              #itemCard11 {
-                font-size: 0;
-                transform: translate(0, -10%) rotate(360deg);
-
-                img {
-                  width: 2.5vw;
-                  transform: translate(70%, -70%) rotate(360deg);
+                .line_top {
+                  position: relative;
+                  width: 70%;
+                  transform: translate(5%, -10%);
                 }
 
-              }
-
-              #itemCard4,
-              #itemCard12 {
-                transform: translate(0, 0%) rotate(350deg);
-
-                img {
-                  width: 2.5vw;
-                  transform: translate(90%, -70%) rotate(0deg);
+                .line_bottom {
+                  position: relative;
+                  width: 70%;
+                  transform: translate(10%, 30%);
                 }
-              }
 
+                #itemCard1,
+                #itemCard9 {
 
-              #itemCard5,
-              #itemCard13 {
-                transform: translate(0, -10%) rotate(360deg);
+                  transform: ranslate3d(0px, 0px, 0px) rotate(15deg);
 
-                img {
-                  width: 2.5vw;
-                  transform: translate(0%, -80%) rotate(350deg);
+                  img {
+                    width: 2.5vw;
+                    transform: translate(0%, -70%) rotate(330deg);
+                  }
                 }
-              }
 
+                #itemCard2,
+                #itemCard10 {
+                  transform: translate(0, -30%) rotate(355deg);
 
-
-              #itemCard6,
-              #itemCard14 {
-                transform: translate(0%, 0%) rotate(350deg);
-
-
-                img {
-                  width: 2.5vw;
-                  transform: translate(100%, -80%) rotate(360deg);
+                  img {
+                    width: 2.5vw;
+                    transform: translate(70%, -70%) rotate(360deg);
+                  }
                 }
-              }
 
-              #itemCard7,
-              #itemCard15 {
-                transform: translate(0%, 0%) rotate(15deg);
+                #itemCard3,
+                #itemCard11 {
+                  font-size: 0;
+                  transform: translate(0, -10%) rotate(360deg);
 
+                  img {
+                    width: 2.5vw;
+                    transform: translate(70%, -70%) rotate(360deg);
+                  }
 
-                img {
-                  width: 2.5vw;
-                  transform: translate(0%, -70%) rotate(340deg);
                 }
-              }
 
-              #itemCard8 {
-                transform: translate(-0%, -0%) rotate(0deg);
+                #itemCard4,
+                #itemCard12 {
+                  transform: translate(0, 0%) rotate(350deg);
 
-                img {
-                  width: 2.5vw;
-                  transform: translate(15%, -70%) rotate(330deg);
+                  img {
+                    width: 2.5vw;
+                    transform: translate(90%, -70%) rotate(0deg);
+                  }
+                }
+
+
+                #itemCard5,
+                #itemCard13 {
+                  transform: translate(0, -10%) rotate(360deg);
+
+                  img {
+                    width: 2.5vw;
+                    transform: translate(0%, -80%) rotate(350deg);
+                  }
+                }
+
+
+
+                #itemCard6,
+                #itemCard14 {
+                  transform: translate(0%, 0%) rotate(350deg);
+
+
+                  img {
+                    width: 2.5vw;
+                    transform: translate(100%, -80%) rotate(360deg);
+                  }
+                }
+
+                #itemCard7,
+                #itemCard15 {
+                  transform: translate(0%, 0%) rotate(15deg);
+
+
+                  img {
+                    width: 2.5vw;
+                    transform: translate(0%, -70%) rotate(340deg);
+                  }
+                }
+
+                #itemCard8 {
+                  transform: translate(-0%, -0%) rotate(0deg);
+
+                  img {
+                    width: 2.5vw;
+                    transform: translate(15%, -70%) rotate(330deg);
+                  }
                 }
               }
             }
@@ -290,15 +302,14 @@ $arrow_color: $gray !default;
 
             #emptyBtn {
               margin: 0 auto;
-              width: 60%;
+              width: 50%;
               display: flex;
 
               .switchBtnBox {
-                width: 33.3%;
+                width: 33%;
 
                 .switchBtn {
                   // margin-top: 30%;
-                  font-family: $font;
                   font-size: 1vw;
                   letter-spacing: 0.2em;
                   position: relative;
@@ -364,6 +375,7 @@ $arrow_color: $gray !default;
               }
             }
           }
+
         }
 
 
@@ -439,17 +451,15 @@ $arrow_color: $gray !default;
         width: 65%;
         margin: 12% 15% 5% 15%;
 
-        .textBox h1 {
+        .textBox {
           font-size: 35px;
           font-weight: 700;
-          font-family: $font;
           line-height: 60px;
         }
 
-        .textBox h3 {
+        .textBox {
           font-size: 24px;
           letter-spacing: 0.2rem;
-          font-family: $font;
           line-height: 2.5rem;
         }
       }
@@ -516,7 +526,6 @@ $arrow_color: $gray !default;
               font-size: 40px;
               color: #06a4ff;
               @include stroke(2, #0f0f0f);
-              font-family: $font;
               font-weight: 500;
 
               &::before {
@@ -527,7 +536,6 @@ $arrow_color: $gray !default;
                 font-size: 40px;
                 color: #fff;
                 @include stroke(2, #0f0f0f);
-                font-family: $font;
                 font-weight: 500;
               }
             }
@@ -639,7 +647,6 @@ $arrow_color: $gray !default;
 
         span {
           font-size: 20px;
-          font-family: $font;
 
         }
 
@@ -703,43 +710,67 @@ $arrow_color: $gray !default;
     }
 
     .container {
-
       .customize {
+        padding-top: 40%;
+        width: 100%;
+        display: flex;
 
-        .customizeTitleText {
-
-          padding-top: 5%;
-          transform: translate(0, 80%);
-          width: 40vw;
-          margin-left: 10%;
-          position: relative;
-          font-weight: 900;
-          letter-spacing: 1rem;
-          font-size: 10vw;
-          color: #dbcd00;
-          @include stroke(2, #0f0f0f);
-          z-index: 20;
-
-          &::before {
-            content: 'NEXT';
-            text-align: center;
-            position: absolute;
-            left: -1%;
-            letter-spacing: 1rem;
-            font-weight: 900;
-            font-size: 10vw;
-            color: #83afd9;
-            @include stroke(2, #0f0f0f);
-          }
-        }
 
         .customizeTitle {
-          margin-left: 5%;
-          width: 44vw;
-          height: 17vw;
+          // margin-left: 5%;
+
+          width: 50%;
+          height: 10vw;
           border: $border;
           background: #fff;
           margin-bottom: 5%;
+
+          .customizeTitleText {
+
+            // padding-top: 5%;
+            // transform: translate(0, 80%);
+            width: 100vw;
+            margin-left: 10%;
+            position: relative;
+            font-weight: 900;
+            letter-spacing: 1rem;
+            font-size: 8vw;
+            color: #dbcd00;
+            @include stroke(2, #0f0f0f);
+            z-index: 20;
+
+            &::before {
+              content: 'NEXT';
+              text-align: center;
+              position: absolute;
+              left: -1%;
+              letter-spacing: 1rem;
+              font-weight: 900;
+              font-size: 8vw;
+              color: #83afd9;
+              @include stroke(2, #0f0f0f);
+            }
+          }
+        }
+
+        .manual {
+          transform: translate(0, 50%);
+          width: 50%;
+          height: 200px;
+          background-image: url("../img/product/decorate/textBox-04.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+
+          .manualTitle {
+            padding-top: 2%;
+            width: 90%;
+            margin: 0 auto;
+          }
+
+          .manualinnerText {
+            width: 90%;
+            margin: 0 auto;
+          }
         }
       }
     }
@@ -1539,16 +1570,17 @@ $arrow_color: $gray !default;
 
                 .controlBox9_button {
                   position: relative;
+                  transform: translateY(-5%);
                   width: 100%;
                   top: -35%;
-                  left: 30%;
+                  left:15%;
 
 
 
                   &.clicked {
                     width: 100%;
-                    top: -15%;
-                    left: 15%;
+                    top: -18%;
+                    left: 0%;
                   }
 
                   input[type="file"] {
@@ -1557,24 +1589,24 @@ $arrow_color: $gray !default;
 
                   .controlBtn9 {
                     outline: none;
-                    width: 100%;
+                    width: 135%;
                     background-color: #FFD139;
                     border: $border;
                     text-align: center;
                     cursor: pointer;
 
                     img {
-                      padding: 20%;
+                      padding: 25%;
                       width: 100%;
                     }
 
                     &:before {
                       content: '';
                       position: absolute;
-                      width: 97%;
-                      height: 35%;
+                      width: 105%;
+                      height: 50%;
                       left: -65%;
-                      bottom: 14%;
+                      bottom:5%;
                       border: $border;
                       transform: rotate(90deg) skew(45deg);
                       background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -1588,8 +1620,8 @@ $arrow_color: $gray !default;
                       position: absolute;
                       width: 100%;
                       height: 35%;
-                      bottom: -35%;
-                      left: -17%;
+                      bottom: -30%;
+                      left: -5%;
                       border: $border;
                       transform: skew(-45deg) rotate(0deg);
                       background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -1599,15 +1631,13 @@ $arrow_color: $gray !default;
 
                     &.clicked {
                       background-color: $main-blue2;
-
-
-
+                      
 
                       &:before {
                         width: 100%;
-                        height: 17%;
-                        left: -57%;
-                        bottom: 31%;
+                        height: 30%;
+                        left: -50%;
+                        bottom: 20%;
                         border: $border;
                         transform: rotate(90deg) skew(45deg);
                         background: -webkit-linear-gradient(40deg, $main-blue2 45%, #000 45%, #000 55%, $main-blue2 55%);
@@ -1617,10 +1647,10 @@ $arrow_color: $gray !default;
                       }
 
                       &:after {
-                        width: 100%;
+                        width: 105%;
                         height: 20%;
                         bottom: -18%;
-                        left: -9%;
+                        left: 0%;
                         border: $border;
                         transform: skew(-45deg) rotate(0deg);
                         background: -webkit-linear-gradient(40deg, $main-blue2 45%, #000 45%, #000 55%, $main-blue2 55%);
@@ -1740,9 +1770,7 @@ $arrow_color: $gray !default;
             .brushType {
               display: flex;
 
-              .brushlabel {
-                font-family: $font;
-              }
+              .brushlabel {}
 
               .box {
 
@@ -1930,25 +1958,19 @@ $arrow_color: $gray !default;
             .lineWidth {
               margin-top: 10%;
 
-              .lineWidthlabel {
-                font-family: $font;
-              }
+              .lineWidthlabel {}
             }
 
             .lineColor {
               margin-top: 15%;
 
-              .lineColorlabel {
-                font-family: $font;
-              }
+              .lineColorlabel {}
             }
 
             .shadowColor {
               margin-top: 15%;
 
-              .shadowColorlabel {
-                font-family: $font;
-              }
+              .shadowColorlabel {}
             }
 
 
@@ -1956,26 +1978,20 @@ $arrow_color: $gray !default;
             .shadowBlur {
               margin-top: 5%;
 
-              .shadowBlurlabel {
-                font-family: $font;
-              }
+              .shadowBlurlabel {}
             }
 
 
             .shadowOffsetX {
               margin-top: 5%;
 
-              .shadowOffsetXlabel {
-                font-family: $font;
-              }
+              .shadowOffsetXlabel {}
             }
 
             .shadowOffsetY {
               margin-top: 5%;
 
-              .shadowOffsetYlabel {
-                font-family: $font;
-              }
+              .shadowOffsetYlabel {}
             }
           }
         }
@@ -2040,7 +2056,6 @@ $arrow_color: $gray !default;
                     font-weight: 900;
                     color: #fff;
                     @include stroke(2, #0f0f0f);
-                    font-family: $font;
                     font-weight: 400;
                     z-index: 3;
 
@@ -2203,7 +2218,6 @@ $arrow_color: $gray !default;
             left: 25%;
             margin: 0 2%;
             transform: translate(10%, -50%);
-            font-family: $font;
             font-size: 2vw;
             letter-spacing: 1em;
             color: rgb(255, 255, 255);
@@ -2386,7 +2400,6 @@ $arrow_color: $gray !default;
 
           span {
             font-size: 0.1vh;
-            font-family: $font;
 
           }
 
@@ -2580,14 +2593,12 @@ $arrow_color: $gray !default;
 
               .filter_forSamllh3 {
                 font-weight: 900;
-                font-family: $font;
 
               }
 
               .filter_forSamllh4 {
                 letter-spacing: 0.2rem;
                 font-weight: 900;
-                font-family: $font;
                 margin: 20px 0;
               }
             }
@@ -2616,17 +2627,15 @@ $arrow_color: $gray !default;
           width: 70%;
           margin: 10% auto 3%;
 
-          .textBox h1 {
+          .textBox {
             font-size: 25px;
             font-weight: 700;
-            font-family: $font;
             line-height: 60px;
           }
 
-          .textBox h3 {
+          .textBox {
             font-size: 18px;
             letter-spacing: 0.1rem;
-            font-family: $font;
             line-height: 2rem;
           }
         }
@@ -2662,7 +2671,6 @@ $arrow_color: $gray !default;
                 font-size: 40px;
                 color: #06a4ff;
                 @include stroke(2, #0f0f0f);
-                font-family: $font;
                 font-weight: 500;
 
                 &::before {
@@ -2673,7 +2681,6 @@ $arrow_color: $gray !default;
                   font-size: 40px;
                   color: #fff;
                   @include stroke(2, #0f0f0f);
-                  font-family: $font;
                   font-weight: 500;
                 }
               }
@@ -2930,9 +2937,7 @@ $arrow_color: $gray !default;
               width: 33%;
               display: flex;
 
-              .brushlabel {
-                font-family: $font;
-              }
+              .brushlabel {}
 
               .box {
 
@@ -3120,54 +3125,42 @@ $arrow_color: $gray !default;
               width: 33%;
               font-size: 14px;
 
-              .lineColorlabel {
-                font-family: $font;
-              }
+              .lineColorlabel {}
             }
 
             .shadowColor {
               width: 33%;
               font-size: 14px;
 
-              .shadowColorlabel {
-                font-family: $font;
-              }
+              .shadowColorlabel {}
             }
 
             .lineWidth {
               width: 25%;
               font-size: 14px;
 
-              .lineWidthlabel {
-                font-family: $font;
-              }
+              .lineWidthlabel {}
             }
 
             .shadowBlur {
               width: 25%;
               font-size: 14px;
 
-              .shadowBlurlabel {
-                font-family: $font;
-              }
+              .shadowBlurlabel {}
             }
 
             .shadowOffsetX {
               width: 25%;
               font-size: 14px;
 
-              .shadowOffsetXlabel {
-                font-family: $font;
-              }
+              .shadowOffsetXlabel {}
             }
 
             .shadowOffsetY {
               width: 25%;
               font-size: 14px;
 
-              .shadowOffsetYlabel {
-                font-family: $font;
-              }
+              .shadowOffsetYlabel {}
             }
           }
 
