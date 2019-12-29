@@ -186,7 +186,7 @@ $arrow_color: $gray !default;
               display: flex;
               flex-wrap: wrap;
 
-              @include itemCardRow1(15);
+              @include itemCardRow1(7);
 
               .line_top {
                 position: relative;
