@@ -5,13 +5,13 @@
     #itemCard#{$i} {
       width: 8vw;
       height: 7vw;
-      margin: 0 2%;
+      margin: 4.5% 2%;
       border: $border;
       background-size: contain;
       background-position: center;
       background-color: #fff;
       background-repeat: no-repeat;
-      // background-image: url('../img/product/postmark/postmark_#{$i}.png');
+      background-image: url('../img/product/postmark/postmark_#{$i}.png');
     }
   }
 }
@@ -26,7 +26,7 @@
     #itemCard#{$i} {
       width: 12vw;
       height: 8vw;
-      margin: 0 3%;
+      margin: 4.5% 2%;
       border: $border;
       background-size: contain;
       background-repeat: no-repeat;
@@ -42,7 +42,7 @@
     #itemCard#{$i} {
       width: 14vw;
       height: 10vw;
-      margin: 0 3%;
+      margin: 4.5% 2%;
       border: $border;
       background: url('/img/product/postmark/postmark_#{$i}#png') center #fff;
       background-size: contain;
