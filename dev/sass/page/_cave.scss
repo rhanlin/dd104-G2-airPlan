@@ -695,15 +695,17 @@
               }
             }
           }
-    }
+        }
 
-    .cav-otherLetter {
-      border: 1px solid sandybrown;
-      width: 50%;
-      .btn {
-        padding: -1.2vw 2vw;
-        top: 5%;
-        left: 10%;
+        .cav-otherLetter {
+          border: 1px solid sandybrown;
+          width: 50%;
+          .btn {
+            padding: -1.2vw 2vw;
+            top: 5%;
+            left: 10%;
+          }
+        }
       }
     }
   }
