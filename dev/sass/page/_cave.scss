@@ -14,16 +14,19 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+
 .cav-titleBlock {
   border: $border;
   background-color: #fff;
   width: 45%;
   padding: 2%;
   margin: 100px 0 50px;
+
   h1 {
     font-size: 5rem;
   }
 }
+
 .cav-readLetterWrap {
   // border: 1px solid red;
   width: 100%;
@@ -32,7 +35,8 @@
   .cav-boxImg {
     width: 100%;
     position: relative;
-    > img {
+
+    >img {
       // border: 1px solid firebrick;
       width: 100%;
       height: 800px;
@@ -66,21 +70,25 @@
           justify-content: space-around;
           margin: 2% 0 1% 0;
           max-height: 60%;
+
           .cav-myLetter {
             // border: 1px solid sandybrown;
             position: relative;
             width: 50%;
             @include btn_3d_module();
+
             .btn {
               padding: 0.8vw 2vw;
               top: 5%;
               left: 10%;
             }
           }
+
           .cav-otherLetter {
             // border: 1px solid sandybrown;
             width: 50%;
             @include btn_3d_module();
+
             .btn {
               padding: 0.8vw 2vw;
               top: 5%;
@@ -88,6 +96,7 @@
             }
           }
         }
+
         .cav-histLetter1 {
           border: $border;
           background-color: #ddd;
@@ -102,6 +111,7 @@
             padding: 10px;
             height: 100%;
             overflow-y: scroll;
+
             &::-webkit-scrollbar {
               // border:1px solid firebrick;
               // width: 9px;
@@ -115,7 +125,8 @@
               background-color: slategrey;
               border-radius: 10px;
             }
-            > .cav-letters {
+
+            >.cav-letters {
               border: $border;
               height: 100px;
               margin: 0 auto 10px;
@@ -125,6 +136,7 @@
               // overflow: hidden;
               display: flex;
               cursor: pointer;
+
               &.cav-looking {
                 background-color: $main-red;
               }
@@ -139,10 +151,12 @@
                   overflow: hidden;
                   text-overflow: ellipsis;
                 }
+
                 .cav-letTime {
                   margin: 0;
                 }
               }
+
               .cav-letSetting {
                 // border: 1px solid blueviolet;
                 width: 20%;
@@ -150,7 +164,8 @@
                 justify-content: center;
                 align-items: center;
                 position: relative;
-                > div {
+
+                >div {
                   margin: 0 auto;
                   height: 50%;
 
@@ -162,6 +177,7 @@
                     }
                   }
                 }
+
                 .cav-landLetter {
                   border: 1px solid firebrick;
                   position: absolute;
@@ -173,6 +189,7 @@
                   padding-bottom: 0;
                   height: 25px;
                   display: none;
+
                   &:hover {
                     background-color: $main-blue;
                     color: #fff;
@@ -183,6 +200,7 @@
           }
         }
       }
+
       .cav-boxFrontRight {
         border: $border;
         display: inline-block;
@@ -200,6 +218,7 @@
             width: 100%;
             height: 100%;
             overflow-y: scroll;
+
             &::-webkit-scrollbar {
               // border:1px solid firebrick;
               // width: 9px;
@@ -213,6 +232,7 @@
               background-color: slategrey;
               border-radius: 10px;
             }
+
             .cav-letterBg {
               border: 50px solid transparent;
               border-image: url("../img/cave/cav-postCard_b.svg") 50 50 round;
@@ -222,6 +242,7 @@
               margin: 20px auto;
               position: relative;
               display: none;
+
               // &_content {
               //    width: 100%;
               //    height: 100%;
@@ -233,6 +254,7 @@
                 top: -3%;
                 cursor: pointer;
               }
+
               .cav-letImg {
                 // border: 5px solid $main-black;
                 // width: 90%;
@@ -244,10 +266,12 @@
                   width: 100%;
                 }
               }
+
               hr {
                 border: 1px solid #ccc;
                 margin: 15px auto;
               }
+
               .cav-letNavbar {
                 display: flex;
                 justify-content: flex-end;
@@ -259,6 +283,7 @@
                   height: 35px;
                   margin-left: 5px;
                   vertical-align: middle;
+
                   img {
                     width: 100%;
                     cursor: pointer;
@@ -271,21 +296,26 @@
                 padding-bottom: 5px;
                 border-bottom: 1px solid #ccc;
               }
+
               .cav-letComment {
                 // border: 1px solid rosybrown;
                 border-bottom: 1px solid #ccc;
                 display: flex;
+
                 .cav-commMain {
                   // border-bottom: 1px solid #ccc;
                   width: 80%;
+
                   .cav-commHead {
                     // display: flex;
                     margin-bottom: 5px;
+
                     .cav-commId {
                       font-weight: bold;
                       font-size: 14px;
                       margin-right: 5px;
                     }
+
                     .cav-commTime {
                       color: #777;
                       font-size: 10px;
@@ -293,6 +323,7 @@
                     }
                   }
                 }
+
                 .cav-commOption {
                   display: flex;
                   flex-direction: column;
@@ -315,6 +346,7 @@
   max-height: 850px;
   height: 100vw;
   margin-bottom: 150px;
+
   .cav-leftWrap {
     border: $border;
     display: flex;
@@ -331,21 +363,24 @@
       height: 30%;
       overflow: hidden;
 
-      > img {
+      >img {
         width: 100%;
         height: 100%;
       }
     }
+
     .cav-leftBMWrap {
       height: 70%;
       width: 100%;
+
       .cav-leftBlockBM {
         // border: 1px solid rebeccapurple;
         list-style: none;
         margin: 0;
         display: flex;
         justify-content: space-between;
-        > li {
+
+        >li {
           border: $border;
           width: 50%;
           text-align: center;
@@ -353,17 +388,20 @@
           color: #fff;
           font-weight: 700;
           overflow: hidden;
-          > a {
+
+          >a {
             cursor: pointer;
             display: block;
             padding: 0.8em;
           }
-          > a.-on {
+
+          >a.-on {
             background-color: $main-blue;
           }
         }
       }
     }
+
     .cav-tabWrap {
       // border: 5px solid $main-black;
       // border-top: 5px solid $main-black;
@@ -379,6 +417,7 @@
       // height: 44vw;
       padding: 10px;
       overflow-y: scroll;
+
       &::-webkit-scrollbar {
         // border:1px solid firebrick;
         // width: 9px;
@@ -392,6 +431,7 @@
         background-color: slategrey;
         border-radius: 10px;
       }
+
       .cav-prodWrap {
         border: $border;
         width: 100%;
@@ -402,12 +442,15 @@
         justify-content: flex-start;
         background-color: #777;
       }
+
       .wearing {
         border: 0.4vw solid $main-dark-red;
       }
+
       .tab1 {
         display: none;
       }
+
       .tab1.-on {
         display: inline-block;
         width: 100%;
@@ -424,6 +467,7 @@
       position: relative;
       /* 按鈕 */
       @include btn_3d_module();
+
       .btn {
         margin: 0 auto;
         height: 50px;
@@ -434,6 +478,7 @@
       }
     }
   }
+
   .cav-prod {
     border: $border;
     margin: 14px;
@@ -448,7 +493,8 @@
     &:hover {
       border: 0.2vw solid $main-dark-red;
     }
-    > img {
+
+    >img {
       width: 100%;
       height: 100%;
     }
@@ -464,12 +510,13 @@
     overflow: hidden;
     cursor: pointer;
 
-    > a {
+    >a {
       display: block;
       width: 100%;
       height: 100%;
       position: relative;
-      > img {
+
+      >img {
         width: 80%;
         height: 80%;
         margin: 0 auto;
@@ -490,13 +537,14 @@
     overflow: hidden;
     position: relative;
 
-    > .cav-rightBlockBM {
+    >.cav-rightBlockBM {
       // border: 1px solid black;
       list-style: none;
       margin: 0;
       display: flex;
       justify-content: space-between;
-      > li {
+
+      >li {
         border: $border;
         // border-radius: 1em 1em 0 0;
         width: 50%;
@@ -506,22 +554,26 @@
         color: #fff;
         font-weight: 700;
         overflow: hidden;
-        > a {
+
+        >a {
           cursor: pointer;
           display: block;
           // border: 1px solid red;
           padding: 0.8em;
         }
-        > a.-on {
+
+        >a.-on {
           background-color: $main-green;
         }
       }
     }
-    > img {
+
+    >img {
       width: 100%;
       object-fit: cover;
       margin-top: -1%;
     }
+
     .cav-tabWrap {
       border: $border;
       height: 85%;
@@ -531,6 +583,7 @@
       padding: 4% 3%;
       // overflow: scroll;
       overflow-y: scroll;
+
       &::-webkit-scrollbar {
         // border:1px solid firebrick;
         // width: 9px;
@@ -554,12 +607,13 @@
         justify-content: flex-start;
         width: 100%;
 
-        > img {
+        >img {
           width: 100%;
           // height:100%;
           object-fit: cover;
         }
-        > .cav-products {
+
+        >.cav-products {
           // border: 1px solid blue;
           position: absolute;
           top: 1%;
@@ -571,15 +625,18 @@
           // flex-wrap: wrap;
         }
       }
+
       .tab2 {
         display: none;
         width: 100%;
       }
+
       .tab2.-on {
         display: inline-block;
         width: 100%;
       }
     }
+
     .cav-pc {
       border: $border;
       border-top: none;
@@ -591,6 +648,7 @@
       background-color: #ca8355;
       position: absolute;
       bottom: 0;
+
       .cav-paper {
         width: 45%;
         color: $main-black;
@@ -598,6 +656,7 @@
         font-size: 32px;
         text-align: center;
       }
+
       .cav-coin {
         width: 45%;
         color: $main-black;
@@ -614,15 +673,17 @@
     width: 100%;
 
     .cav-boxImg {
-      > img {
+      >img {
         height: 100%;
       }
     }
+
     .cav-prod {
       width: 14vw;
       height: 14vw;
       margin: 2.1%;
     }
+
     .cav-addProd {
       width: 14vw;
       height: 14vw;
@@ -630,6 +691,7 @@
     }
   }
 }
+
 @include respond(mediumSize) {
   .cav-main {
     width: 100%;
@@ -644,27 +706,32 @@
         overflow-y: scroll;
       }
     }
+
     .cav-rightWrap {
       .cav-tabWrap {
         top: 8.4%;
       }
     }
+
     .cav-boxImg {
-      > img {
+      >img {
         height: 100%;
       }
     }
+
     .cav-prod {
       width: 14vw;
       height: 14vw;
       margin: 2.5%;
     }
+
     .cav-addProd {
       width: 14vw;
       height: 14vw;
       margin: 2.5%;
     }
   }
+
   .cav-readLetterWrap {
     .cav-boxImg {
       .cav-boxFront {
@@ -673,21 +740,25 @@
             border: 1px solid sandybrown;
             position: relative;
             width: 50%;
+
             .cav-myLetter {
               // border: 1px solid sandybrown;
               position: relative;
               width: 50%;
               @include btn_3d_module();
+
               .btn {
                 padding: -1.2vw 1vw;
                 top: 5%;
                 left: 10%;
               }
             }
+
             .cav-otherLetter {
               // border: 1px solid sandybrown;
               width: 50%;
               @include btn_3d_module();
+
               .btn {
                 padding: 0.8vw 2vw;
                 top: 5%;
@@ -700,6 +771,8 @@
         .cav-otherLetter {
           border: 1px solid sandybrown;
           width: 50%;
+<<<<<<< HEAD
+=======
           .btn {
             padding: -1.2vw 2vw;
             top: 5%;
@@ -713,1044 +786,1129 @@
 @include respond(small) {
   .cav-main {
     width: 100%;
+>>>>>>> newDev
 
-    .cav-leftWrap {
-      .cav-tabWrap {
-        min-height: 400px;
-        max-height: 80%;
-        // height: 44vw;
-        padding: 10px;
-        overflow-y: scroll;
-      }
-    }
-    .cav-boxImg {
-      width: 100%;
-      position: relative;
-      margin: 150px auto 0;
-      min-width: 650px;
-      > img {
-        // border: 1px solid firebrick;
-        // width: 100%;
-        // height: 800px;
-        transform: rotate(90deg);
-        height: 100%;
-        // margin-top: auto;
-      }
-
-      .cav-boxFront {
-        width: 60%;
-        height: 93vw;
-        min-height: 610px;
-        // display: flex;
-        // justify-content: space-between;
-        // padding: 1%;
-        // position: absolute;
-        top: -20%;
-        left: 20%;
-
-        .cav-boxFrontLeft {
-          border: 1px solid green;
-          display: inline-block;
-          width: 100%;
-          height: 100%;
-          padding: 10px;
-
-          .cav-whoLetter {
-            border: 1px solid fuchsia;
-            display: flex;
-            justify-content: space-around;
-          }
-          .cav-histLetter1 {
-            border: $border;
-            background-color: #ddd;
-            padding: 5px;
-            height: 90.7%;
-
-            .cav-histLetter2 {
-              border: $border;
-              background-color: rgb(74, 117, 112);
-              padding: 10px;
-              height: 100%;
-              overflow-y: scroll;
-              &::-webkit-scrollbar {
-                width: 0;
-                background-color: #ccc;
-                border-radius: 2px;
-              }
-
-              &::-webkit-scrollbar-thumb {
-                width: 5px;
-                background-color: slategrey;
-                border-radius: 10px;
-              }
-              > .cav-letters {
-                border: $border;
-                height: 100px;
-                margin: 0 auto 10px;
-                padding: 3%;
-                border-radius: 20px;
-                background-color: $main-yellow;
-                overflow: hidden;
-                display: flex;
-                cursor: pointer;
-                &.cav-looking {
-                  background-color: $main-red;
-                }
-
-                .cav-letWord {
-                  border: 1px solid blue;
-                  width: 80%;
-
-                  .cav-letTitle {
-                    margin: 0;
-                  }
-                  .cav-letTime {
-                    margin: 0;
-                  }
-                }
-                .cav-letSetting {
-                  border: 1px solid blueviolet;
-                  width: 20%;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-
-                  > div {
-                    margin: 0 auto;
-                    height: 50%;
-
-                    i {
-                      font-size: 30px;
-
-                      &:hover {
-                        color: $main-dark-red;
-                      }
-                    }
-                  }
-                }
-              }
-            }
+          .btn {
+            padding: -1.2vw 2vw;
+            top: 5%;
+            left: 10%;
           }
         }
-        .cav-boxFrontRight {
-          // border: 5px solid $main-black;
-          display: none;
-          // width: 57%;
-          // background-color: #ddd;
-          // padding: 5px;
+      }
+    }
 
-          .cav-showLetterBack {
-            border: $border;
+    @include respond(small) {
+      .cav-main {
+        width: 100%;
+
+        .cav-leftWrap {
+          .cav-tabWrap {
+            min-height: 400px;
+            max-height: 80%;
+            // height: 44vw;
+            padding: 10px;
+            overflow-y: scroll;
+          }
+        }
+
+        .cav-boxImg {
+          width: 100%;
+          position: relative;
+          margin: 150px auto 0;
+          min-width: 650px;
+
+          >img {
+            // border: 1px solid firebrick;
+            // width: 100%;
+            // height: 800px;
+            transform: rotate(90deg);
             height: 100%;
-            background-color: rgb(74, 117, 112);
+            // margin-top: auto;
+          }
 
-            .cav-showLetter {
-              // border: 1px solid red;
+          .cav-boxFront {
+            width: 60%;
+            height: 93vw;
+            min-height: 610px;
+            // display: flex;
+            // justify-content: space-between;
+            // padding: 1%;
+            // position: absolute;
+            top: -20%;
+            left: 20%;
+
+            .cav-boxFrontLeft {
+              border: 1px solid green;
+              display: inline-block;
               width: 100%;
               height: 100%;
-              overflow-y: scroll;
-              &::-webkit-scrollbar {
-                width: 0;
-                background-color: #ccc;
-                border-radius: 2px;
+              padding: 10px;
+
+              .cav-whoLetter {
+                border: 1px solid fuchsia;
+                display: flex;
+                justify-content: space-around;
               }
 
-              &::-webkit-scrollbar-thumb {
-                width: 5px;
-                background-color: slategrey;
-                border-radius: 10px;
-              }
-              .cav-letterBg {
-                border: 50px solid transparent;
-                border-image: url("../img/cave/cav-postCard_b.svg") 50 50 round;
-                background-color: #fff;
-                width: 82.5%;
-                margin: 20px auto;
-                .cav-letImg {
-                  width: 100%;
-                  overflow: hidden;
+              .cav-histLetter1 {
+                border: $border;
+                background-color: #ddd;
+                padding: 5px;
+                height: 90.7%;
 
-                  img {
-                    width: 100%;
-                  }
-                }
-                hr {
-                  border: 1px solid #ccc;
-                  margin: 15px auto;
-                }
-                .cav-letNavbar {
-                  display: flex;
-                  justify-content: flex-end;
-                  // border: 1px solid #ccc;
+                .cav-histLetter2 {
+                  border: $border;
+                  background-color: rgb(74, 117, 112);
+                  padding: 10px;
+                  height: 100%;
+                  overflow-y: scroll;
 
-                  .cav-letNavOption {
-                    // border: 1px solid tomato;
-                    width: 35px;
-                    height: 35px;
-                    margin-left: 5px;
-                    vertical-align: middle;
-                    img {
-                      width: 100%;
-                      cursor: pointer;
-                    }
+                  &::-webkit-scrollbar {
+                    width: 0;
+                    background-color: #ccc;
+                    border-radius: 2px;
                   }
-                  // .btn-big-test {
-                  //   @include btn_big_module();
-                  // }
-                }
 
-                .cav-h3 {
-                  margin: 15px 0;
-                  padding-bottom: 5px;
-                  border-bottom: 1px solid #ccc;
-                }
-                .cav-letComment {
-                  // border: 1px solid rosybrown;
-                  border-bottom: 1px solid #ccc;
-                  display: flex;
-                  .cav-commMain {
-                    // border-bottom: 1px solid #ccc;
-                    width: 80%;
-                    .cav-commHead {
-                      // display: flex;
-                      margin-bottom: 5px;
-                      .cav-commId {
-                        font-weight: bold;
-                        font-size: 14px;
-                        margin-right: 5px;
-                      }
-                      .cav-commTime {
-                        color: #777;
-                        font-size: 10px;
-                        text-align: initial;
-                      }
-                    }
+                  &::-webkit-scrollbar-thumb {
+                    width: 5px;
+                    background-color: slategrey;
+                    border-radius: 10px;
                   }
-                  .cav-commOption {
+
+                  >.cav-letters {
+                    border: $border;
+                    height: 100px;
+                    margin: 0 auto 10px;
+                    padding: 3%;
+                    border-radius: 20px;
+                    background-color: $main-yellow;
+                    overflow: hidden;
                     display: flex;
-                    flex-direction: column;
-                    justify-content: space-around;
-                    margin: 0 auto;
+                    cursor: pointer;
+
+                    &.cav-looking {
+                      background-color: $main-red;
+                    }
+
+                    .cav-letWord {
+                      border: 1px solid blue;
+                      width: 80%;
+
+                      .cav-letTitle {
+                        margin: 0;
+                      }
+
+                      .cav-letTime {
+                        margin: 0;
+                      }
+                    }
+
+                    .cav-letSetting {
+                      border: 1px solid blueviolet;
+                      width: 20%;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+
+                      >div {
+                        margin: 0 auto;
+                        height: 50%;
+
+                        i {
+                          font-size: 30px;
+
+                          &:hover {
+                            color: $main-dark-red;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .cav-boxFrontRight {
+              // border: 5px solid $main-black;
+              display: none;
+              // width: 57%;
+              // background-color: #ddd;
+              // padding: 5px;
+
+              .cav-showLetterBack {
+                border: $border;
+                height: 100%;
+                background-color: rgb(74, 117, 112);
+
+                .cav-showLetter {
+                  // border: 1px solid red;
+                  width: 100%;
+                  height: 100%;
+                  overflow-y: scroll;
+
+                  &::-webkit-scrollbar {
+                    width: 0;
+                    background-color: #ccc;
+                    border-radius: 2px;
+                  }
+
+                  &::-webkit-scrollbar-thumb {
+                    width: 5px;
+                    background-color: slategrey;
+                    border-radius: 10px;
+                  }
+
+                  .cav-letterBg {
+                    border: 50px solid transparent;
+                    border-image: url("../img/cave/cav-postCard_b.svg") 50 50 round;
+                    background-color: #fff;
+                    width: 82.5%;
+                    margin: 20px auto;
+
+                    .cav-letImg {
+                      width: 100%;
+                      overflow: hidden;
+
+                      img {
+                        width: 100%;
+                      }
+                    }
+
+                    hr {
+                      border: 1px solid #ccc;
+                      margin: 15px auto;
+                    }
+
+                    .cav-letNavbar {
+                      display: flex;
+                      justify-content: flex-end;
+                      // border: 1px solid #ccc;
+
+                      .cav-letNavOption {
+                        // border: 1px solid tomato;
+                        width: 35px;
+                        height: 35px;
+                        margin-left: 5px;
+                        vertical-align: middle;
+
+                        img {
+                          width: 100%;
+                          cursor: pointer;
+                        }
+                      }
+
+                      // .btn-big-test {
+                      //   @include btn_big_module();
+                      // }
+                    }
+
+                    .cav-h3 {
+                      margin: 15px 0;
+                      padding-bottom: 5px;
+                      border-bottom: 1px solid #ccc;
+                    }
+
+                    .cav-letComment {
+                      // border: 1px solid rosybrown;
+                      border-bottom: 1px solid #ccc;
+                      display: flex;
+
+                      .cav-commMain {
+                        // border-bottom: 1px solid #ccc;
+                        width: 80%;
+
+                        .cav-commHead {
+                          // display: flex;
+                          margin-bottom: 5px;
+
+                          .cav-commId {
+                            font-weight: bold;
+                            font-size: 14px;
+                            margin-right: 5px;
+                          }
+
+                          .cav-commTime {
+                            color: #777;
+                            font-size: 10px;
+                            text-align: initial;
+                          }
+                        }
+                      }
+
+                      .cav-commOption {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        margin: 0 auto;
+                      }
+                    }
                   }
                 }
               }
             }
           }
         }
-      }
-    }
 
-    // .cav-boxImg {
-    //   > img {
-    //     height: 100%;
-    //     margin-top: auto;
-    //   }
-    // }
-    .cav-prod {
-      width: 18vw;
-      height: 18vw;
-      margin: 1.3%;
-    }
-    .cav-myItem {
-      display: inline-block;
-      height: auto;
-
-      .cav-leftWrap {
-        width: 70%;
-        margin: 0 auto;
-      }
-    }
-    .cav-rightWrap {
-      display: inline-block;
-      width: 70%;
-      margin-top: 100px;
-      margin-left: 15%;
-
-      .cav-tabWrap {
-        top: 55px;
-
+        // .cav-boxImg {
+        //   > img {
+        //     height: 100%;
+        //     margin-top: auto;
+        //   }
+        // }
         .cav-prod {
           width: 18vw;
           height: 18vw;
-          margin: 2%;
+          margin: 1.3%;
         }
-        .cav-addProd {
-          width: 18vw;
-          height: 18vw;
-          margin: 2%;
-        }
-      }
-    }
-  }
-}
-@include respond(note) {
-  .cav-main {
-    width: 100%;
 
-    .cav-leftWrap {
-      .cav-tabWrap {
-        min-height: 400px;
-        max-height: 80%;
-        // height: 44vw;
-        top: 10.4%;
-        padding: 10px;
-        overflow-y: scroll;
-      }
-    }
-    .cav-boxImg {
-      width: 100%;
-      min-width: 650px;
-      position: relative;
-      margin: 150px auto 0;
-      > img {
-        transform: rotate(90deg);
-        height: 100%;
-      }
-      .cav-boxFront {
-        width: 60%;
-        height: 93vw;
-        min-height: 610px;
-        // display: flex;
-        // justify-content: space-between;
-        // padding: 1%;
-        // position: absolute;
-        top: -20%;
-        left: 20%;
-
-        .cav-boxFrontLeft {
-          border: 1px solid green;
+        .cav-myItem {
           display: inline-block;
-          width: 100%;
-          height: 100%;
-          padding: 10px;
+          height: auto;
 
-          .cav-whoLetter {
-            border: 1px solid fuchsia;
-            display: flex;
-            justify-content: space-around;
+          .cav-leftWrap {
+            width: 70%;
+            margin: 0 auto;
           }
-          .cav-histLetter1 {
-            border: $border;
-            background-color: #ddd;
-            padding: 5px;
-            height: 90.7%;
+        }
 
-            .cav-histLetter2 {
-              border: $border;
-              background-color: rgb(74, 117, 112);
-              padding: 10px;
-              height: 100%;
-              overflow-y: scroll;
-              &::-webkit-scrollbar {
-                width: 0;
-                background-color: #ccc;
-                border-radius: 2px;
-              }
+        .cav-rightWrap {
+          display: inline-block;
+          width: 70%;
+          margin-top: 100px;
+          margin-left: 15%;
 
-              &::-webkit-scrollbar-thumb {
-                width: 5px;
-                background-color: slategrey;
-                border-radius: 10px;
-              }
-              > .cav-letters {
-                border: $border;
-                height: 100px;
-                margin: 0 auto 10px;
-                padding: 3%;
-                border-radius: 20px;
-                background-color: $main-yellow;
-                overflow: hidden;
-                display: flex;
-                cursor: pointer;
-                &.cav-looking {
-                  background-color: $main-red;
-                }
+          .cav-tabWrap {
+            top: 55px;
 
-                .cav-letWord {
-                  border: 1px solid blue;
-                  width: 80%;
+            .cav-prod {
+              width: 18vw;
+              height: 18vw;
+              margin: 2%;
+            }
 
-                  .cav-letTitle {
-                    margin: 0;
-                  }
-                  .cav-letTime {
-                    margin: 0;
-                  }
-                }
-                .cav-letSetting {
-                  border: 1px solid blueviolet;
-                  width: 20%;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-
-                  > div {
-                    margin: 0 auto;
-                    height: 50%;
-
-                    i {
-                      font-size: 30px;
-
-                      &:hover {
-                        color: $main-dark-red;
-                      }
-                    }
-                  }
-                }
-              }
+            .cav-addProd {
+              width: 18vw;
+              height: 18vw;
+              margin: 2%;
             }
           }
         }
-        .cav-boxFrontRight {
-          // border: 5px solid $main-black;
-          display: none;
-          // width: 57%;
-          // background-color: #ddd;
-          // padding: 5px;
+      }
+    }
 
-          .cav-showLetterBack {
-            border: $border;
+    @include respond(note) {
+      .cav-main {
+        width: 100%;
+
+        .cav-leftWrap {
+          .cav-tabWrap {
+            min-height: 400px;
+            max-height: 80%;
+            // height: 44vw;
+            top: 10.4%;
+            padding: 10px;
+            overflow-y: scroll;
+          }
+        }
+
+        .cav-boxImg {
+          width: 100%;
+          min-width: 650px;
+          position: relative;
+          margin: 150px auto 0;
+
+          >img {
+            transform: rotate(90deg);
             height: 100%;
-            background-color: rgb(74, 117, 112);
+          }
 
-            .cav-showLetter {
-              // border: 1px solid red;
+          .cav-boxFront {
+            width: 60%;
+            height: 93vw;
+            min-height: 610px;
+            // display: flex;
+            // justify-content: space-between;
+            // padding: 1%;
+            // position: absolute;
+            top: -20%;
+            left: 20%;
+
+            .cav-boxFrontLeft {
+              border: 1px solid green;
+              display: inline-block;
               width: 100%;
               height: 100%;
-              overflow-y: scroll;
-              &::-webkit-scrollbar {
-                width: 0;
-                background-color: #ccc;
-                border-radius: 2px;
+              padding: 10px;
+
+              .cav-whoLetter {
+                border: 1px solid fuchsia;
+                display: flex;
+                justify-content: space-around;
               }
 
-              &::-webkit-scrollbar-thumb {
-                width: 5px;
-                background-color: slategrey;
-                border-radius: 10px;
-              }
-              .cav-letterBg {
-                border: 50px solid transparent;
-                border-image: url("../img/cave/cav-postCard_b.svg") 50 50 round;
-                background-color: #fff;
-                width: 82.5%;
-                margin: 20px auto;
-                .cav-letImg {
-                  width: 100%;
-                  overflow: hidden;
+              .cav-histLetter1 {
+                border: $border;
+                background-color: #ddd;
+                padding: 5px;
+                height: 90.7%;
 
-                  img {
-                    width: 100%;
-                  }
-                }
-                hr {
-                  border: 1px solid #ccc;
-                  margin: 15px auto;
-                }
-                .cav-letNavbar {
-                  display: flex;
-                  justify-content: flex-end;
-                  // border: 1px solid #ccc;
+                .cav-histLetter2 {
+                  border: $border;
+                  background-color: rgb(74, 117, 112);
+                  padding: 10px;
+                  height: 100%;
+                  overflow-y: scroll;
 
-                  .cav-letNavOption {
-                    // border: 1px solid tomato;
-                    width: 35px;
-                    height: 35px;
-                    margin-left: 5px;
-                    vertical-align: middle;
-                    img {
-                      width: 100%;
-                      cursor: pointer;
-                    }
+                  &::-webkit-scrollbar {
+                    width: 0;
+                    background-color: #ccc;
+                    border-radius: 2px;
                   }
-                  // .btn-big-test {
-                  //   @include btn_big_module();
-                  // }
-                }
 
-                .cav-h3 {
-                  margin: 15px 0;
-                  padding-bottom: 5px;
-                  border-bottom: 1px solid #ccc;
-                }
-                .cav-letComment {
-                  // border: 1px solid rosybrown;
-                  border-bottom: 1px solid #ccc;
-                  display: flex;
-                  .cav-commMain {
-                    // border-bottom: 1px solid #ccc;
-                    width: 80%;
-                    .cav-commHead {
-                      // display: flex;
-                      margin-bottom: 5px;
-                      .cav-commId {
-                        font-weight: bold;
-                        font-size: 14px;
-                        margin-right: 5px;
-                      }
-                      .cav-commTime {
-                        color: #777;
-                        font-size: 10px;
-                        text-align: initial;
-                      }
-                    }
+                  &::-webkit-scrollbar-thumb {
+                    width: 5px;
+                    background-color: slategrey;
+                    border-radius: 10px;
                   }
-                  .cav-commOption {
+
+                  >.cav-letters {
+                    border: $border;
+                    height: 100px;
+                    margin: 0 auto 10px;
+                    padding: 3%;
+                    border-radius: 20px;
+                    background-color: $main-yellow;
+                    overflow: hidden;
                     display: flex;
-                    flex-direction: column;
-                    justify-content: space-around;
-                    margin: 0 auto;
+                    cursor: pointer;
+
+                    &.cav-looking {
+                      background-color: $main-red;
+                    }
+
+                    .cav-letWord {
+                      border: 1px solid blue;
+                      width: 80%;
+
+                      .cav-letTitle {
+                        margin: 0;
+                      }
+
+                      .cav-letTime {
+                        margin: 0;
+                      }
+                    }
+
+                    .cav-letSetting {
+                      border: 1px solid blueviolet;
+                      width: 20%;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+
+                      >div {
+                        margin: 0 auto;
+                        height: 50%;
+
+                        i {
+                          font-size: 30px;
+
+                          &:hover {
+                            color: $main-dark-red;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .cav-boxFrontRight {
+              // border: 5px solid $main-black;
+              display: none;
+              // width: 57%;
+              // background-color: #ddd;
+              // padding: 5px;
+
+              .cav-showLetterBack {
+                border: $border;
+                height: 100%;
+                background-color: rgb(74, 117, 112);
+
+                .cav-showLetter {
+                  // border: 1px solid red;
+                  width: 100%;
+                  height: 100%;
+                  overflow-y: scroll;
+
+                  &::-webkit-scrollbar {
+                    width: 0;
+                    background-color: #ccc;
+                    border-radius: 2px;
+                  }
+
+                  &::-webkit-scrollbar-thumb {
+                    width: 5px;
+                    background-color: slategrey;
+                    border-radius: 10px;
+                  }
+
+                  .cav-letterBg {
+                    border: 50px solid transparent;
+                    border-image: url("../img/cave/cav-postCard_b.svg") 50 50 round;
+                    background-color: #fff;
+                    width: 82.5%;
+                    margin: 20px auto;
+
+                    .cav-letImg {
+                      width: 100%;
+                      overflow: hidden;
+
+                      img {
+                        width: 100%;
+                      }
+                    }
+
+                    hr {
+                      border: 1px solid #ccc;
+                      margin: 15px auto;
+                    }
+
+                    .cav-letNavbar {
+                      display: flex;
+                      justify-content: flex-end;
+                      // border: 1px solid #ccc;
+
+                      .cav-letNavOption {
+                        // border: 1px solid tomato;
+                        width: 35px;
+                        height: 35px;
+                        margin-left: 5px;
+                        vertical-align: middle;
+
+                        img {
+                          width: 100%;
+                          cursor: pointer;
+                        }
+                      }
+
+                      // .btn-big-test {
+                      //   @include btn_big_module();
+                      // }
+                    }
+
+                    .cav-h3 {
+                      margin: 15px 0;
+                      padding-bottom: 5px;
+                      border-bottom: 1px solid #ccc;
+                    }
+
+                    .cav-letComment {
+                      // border: 1px solid rosybrown;
+                      border-bottom: 1px solid #ccc;
+                      display: flex;
+
+                      .cav-commMain {
+                        // border-bottom: 1px solid #ccc;
+                        width: 80%;
+
+                        .cav-commHead {
+                          // display: flex;
+                          margin-bottom: 5px;
+
+                          .cav-commId {
+                            font-weight: bold;
+                            font-size: 14px;
+                            margin-right: 5px;
+                          }
+
+                          .cav-commTime {
+                            color: #777;
+                            font-size: 10px;
+                            text-align: initial;
+                          }
+                        }
+                      }
+
+                      .cav-commOption {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        margin: 0 auto;
+                      }
+                    }
                   }
                 }
               }
             }
           }
         }
-      }
-    }
-    .cav-prod {
-      width: 30vw;
-      height: 30vw;
-      margin: 1%;
-    }
-    .cav-myItem {
-      display: inline-block;
-      height: auto;
-
-      .cav-leftWrap {
-        width: 80%;
-        margin: 0 auto;
-      }
-    }
-    .cav-rightWrap {
-      display: inline-block;
-      width: 80%;
-      margin-top: 100px;
-      margin-left: 10%;
-
-      .cav-tabWrap {
-        top: 10.4%;
 
         .cav-prod {
-          width: 20vw;
-          height: 20vw;
-          margin: 2%;
+          width: 30vw;
+          height: 30vw;
+          margin: 1%;
         }
-        .cav-addProd {
-          width: 20vw;
-          height: 20vw;
-          margin: 2%;
+
+        .cav-myItem {
+          display: inline-block;
+          height: auto;
+
+          .cav-leftWrap {
+            width: 80%;
+            margin: 0 auto;
+          }
+        }
+
+        .cav-rightWrap {
+          display: inline-block;
+          width: 80%;
+          margin-top: 100px;
+          margin-left: 10%;
+
+          .cav-tabWrap {
+            top: 10.4%;
+
+            .cav-prod {
+              width: 20vw;
+              height: 20vw;
+              margin: 2%;
+            }
+
+            .cav-addProd {
+              width: 20vw;
+              height: 20vw;
+              margin: 2%;
+            }
+          }
         }
       }
     }
-  }
-}
 
-@include respond(iphone) {
-  .cav-main {
-    width: 100%;
+    @include respond(iphone) {
+      .cav-main {
+        width: 100%;
 
-    .cav-boxImg {
-      min-width: 650px;
-      > img {
-        height: 100%;
-        transform: rotate(90deg);
-      }
-      .cav-boxFront {
-        width: 60%;
-        height: 93vw;
-        min-height: 610px;
-        // display: flex;
-        // justify-content: space-between;
-        // padding: 1%;
-        // position: absolute;
-        top: -20%;
-        left: 20%;
+        .cav-boxImg {
+          min-width: 650px;
 
-        .cav-boxFrontLeft {
-          border: 1px solid green;
-          display: inline-block;
-          width: 100%;
-          height: 100%;
-          padding: 10px;
+          >img {
+            height: 100%;
+            transform: rotate(90deg);
+          }
 
-          .cav-whoLetter {
-            border: 1px solid fuchsia;
-            display: flex;
-            justify-content: space-around;
+          .cav-boxFront {
+            width: 60%;
+            height: 93vw;
+            min-height: 610px;
+            // display: flex;
+            // justify-content: space-between;
+            // padding: 1%;
+            // position: absolute;
+            top: -20%;
+            left: 20%;
 
-            .cav-myLetter {
-              border: 1px solid sandybrown;
-              position: relative;
-              width: 50%;
+            .cav-boxFrontLeft {
+              border: 1px solid green;
+              display: inline-block;
+              width: 100%;
+              height: 100%;
+              padding: 10px;
 
-              .orderBtnBoxGroup {
-                width: 95%;
-                margin: -20% 0% 20% 10%;
+              .cav-whoLetter {
+                border: 1px solid fuchsia;
+                display: flex;
+                justify-content: space-around;
 
-                .orderBtnBox {
+                .cav-myLetter {
+                  border: 1px solid sandybrown;
                   position: relative;
-                  width: 90%;
+                  width: 50%;
 
-                  .orderBtn {
-                    font-size: 20px;
-                    letter-spacing: 0.2em;
-                    position: relative;
-                    width: 88%;
-                    height: 50px;
-                    background-color: #ffd139;
-                    border: $border;
-                    text-align: center;
-                    line-height: 40px;
-                    border-radius: 0.3em;
-                    cursor: pointer;
-                    color: white;
-                    text-shadow: 1px 1px 1px black;
-                    z-index: 1;
-
-                    .orderText {
-                      position: absolute;
-                      width: 100%;
-                      top: 35%;
-                      left: 49%;
-                      transform: translate(-47.5%, -25%);
-                      font-weight: 900;
-                      color: #fff;
-                      @include stroke(2, #0f0f0f);
-                      font-family: $font;
-                      font-weight: 400;
-                      z-index: 3;
-                    }
-
-                    &:before {
-                      content: "";
-                      position: absolute;
-                      width: 38%;
-                      height: 40%;
-                      left: -35%;
-                      bottom: -5%;
-                      border-radius: 0.3em;
-                      border: $border;
-                      // background-color: #FFD139;
-                      // background-image: url("../img/product/decorate/materail-04.svg");
-                      // background-size: cover;
-                      transform: rotate(90deg) skew(60deg);
-                      background: -webkit-linear-gradient(
-                        40deg,
-                        $main-yellow 45%,
-                        #000 45%,
-                        #000 55%,
-                        $main-yellow 55%
-                      );
-                      background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                      background-size: 7px 7px;
-                    }
-
-                    &:after {
-                      content: "";
-                      position: absolute;
-                      position: absolute;
-                      width: 38%;
-                      height: 40%;
-                      left: 87%;
-                      bottom: -5%;
-                      border-radius: 0.3em;
-                      border: $border;
-                      // background-color: #FFD139;
-                      // background-image: url("../img/product/decorate/materail-04.svg");
-                      // background-size: cover;
-                      transform: rotate(90deg) skew(300deg);
-                      background: -webkit-linear-gradient(
-                        220deg,
-                        $main-yellow 45%,
-                        #000 45%,
-                        #000 55%,
-                        $main-yellow 55%
-                      );
-                      background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                      background-size: 7px 7px;
-                    }
-
-                    &.clicked {
-                      top: 16px;
-
-                      &:before {
-                        width: 38%;
-                        height: 40%;
-                        left: -26%;
-                        bottom: 3%;
-                        transform: rotate(90deg) skew(50deg);
-                      }
-
-                      &:after {
-                        width: 39%;
-                        height: 40%;
-                        left: 87%;
-                        bottom: 3%;
-                        transform: rotate(90deg) skew(310deg);
-                      }
-                    }
-                  }
-
-                  .orderBtnBottom {
-                    position: absolute;
-                    // width: 100%;
-                    width: 107%;
-                    height: 45px;
-                    left: -8%;
-                    top: 85%;
-                    border: $border;
-                    background: -webkit-linear-gradient(-70deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background: linear-gradient(-70deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background-size: 7px 7px;
-                    border-radius: 0.1em;
-                    // z-index: -1;
-                  }
-                }
-              }
-            }
-            .cav-otherLetter {
-              border: 1px solid sandybrown;
-              width: 50%;
-
-              .orderBtnBoxGroup {
-                width: 95%;
-                margin: -20% 0% 20% 10%;
-
-                .orderBtnBox {
-                  position: relative;
-
-                  .orderBtn {
-                    font-size: 20px;
-                    letter-spacing: 0.2em;
-                    position: relative;
-                    width: 80%;
-                    height: 45px;
-                    background-color: #ffd139;
-                    border: $border;
-                    text-align: center;
-                    line-height: 40px;
-                    border-radius: 0.3em;
-                    cursor: pointer;
-                    color: white;
-                    text-shadow: 1px 1px 1px black;
-                    z-index: 1;
-
-                    .orderText {
-                      position: absolute;
-                      width: 100%;
-                      top: 35%;
-                      left: 49%;
-                      transform: translate(-47.5%, -25%);
-                      font-weight: 900;
-                      color: #fff;
-                      @include stroke(2, #0f0f0f);
-                      font-family: $font;
-                      font-weight: 400;
-                      z-index: 3;
-                    }
-
-                    &:before {
-                      content: "";
-                      position: absolute;
-                      width: 38%;
-                      height: 40%;
-                      left: -35%;
-                      bottom: -5%;
-                      border-radius: 0.3em;
-                      border: $border;
-                      // background-color: #FFD139;
-                      // background-image: url("../img/product/decorate/materail-04.svg");
-                      // background-size: cover;
-                      transform: rotate(90deg) skew(60deg);
-                      background: -webkit-linear-gradient(
-                        40deg,
-                        $main-yellow 45%,
-                        #000 45%,
-                        #000 55%,
-                        $main-yellow 55%
-                      );
-                      background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                      background-size: 7px 7px;
-                    }
-
-                    &:after {
-                      content: "";
-                      position: absolute;
-                      position: absolute;
-                      width: 38%;
-                      height: 40%;
-                      left: 87%;
-                      bottom: -5%;
-                      border-radius: 0.3em;
-                      border: $border;
-                      // background-color: #FFD139;
-                      // background-image: url("../img/product/decorate/materail-04.svg");
-                      // background-size: cover;
-                      transform: rotate(90deg) skew(300deg);
-                      background: -webkit-linear-gradient(
-                        220deg,
-                        $main-yellow 45%,
-                        #000 45%,
-                        #000 55%,
-                        $main-yellow 55%
-                      );
-                      background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                      background-size: 7px 7px;
-                    }
-
-                    &.clicked {
-                      top: 16px;
-
-                      &:before {
-                        width: 38%;
-                        height: 40%;
-                        left: -26%;
-                        bottom: 3%;
-                        transform: rotate(90deg) skew(50deg);
-                      }
-
-                      &:after {
-                        width: 39%;
-                        height: 40%;
-                        left: 87%;
-                        bottom: 3%;
-                        transform: rotate(90deg) skew(310deg);
-                      }
-                    }
-                  }
-
-                  .orderBtnBottom {
-                    position: absolute;
+                  .orderBtnBoxGroup {
                     width: 95%;
-                    height: 45px;
-                    left: -8%;
-                    top: 85%;
-                    border: $border;
-                    background: -webkit-linear-gradient(-70deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background: linear-gradient(-70deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background-size: 7px 7px;
-                    border-radius: 0.1em;
-                    // z-index: -1;
+                    margin: -20% 0% 20% 10%;
+
+                    .orderBtnBox {
+                      position: relative;
+                      width: 90%;
+
+                      .orderBtn {
+                        font-size: 20px;
+                        letter-spacing: 0.2em;
+                        position: relative;
+                        width: 88%;
+                        height: 50px;
+                        background-color: #ffd139;
+                        border: $border;
+                        text-align: center;
+                        line-height: 40px;
+                        border-radius: 0.3em;
+                        cursor: pointer;
+                        color: white;
+                        text-shadow: 1px 1px 1px black;
+                        z-index: 1;
+
+                        .orderText {
+                          position: absolute;
+                          width: 100%;
+                          top: 35%;
+                          left: 49%;
+                          transform: translate(-47.5%, -25%);
+                          font-weight: 900;
+                          color: #fff;
+                          @include stroke(2, #0f0f0f);
+                          font-family: $font;
+                          font-weight: 400;
+                          z-index: 3;
+                        }
+
+                        &:before {
+                          content: "";
+                          position: absolute;
+                          width: 38%;
+                          height: 40%;
+                          left: -35%;
+                          bottom: -5%;
+                          border-radius: 0.3em;
+                          border: $border;
+                          // background-color: #FFD139;
+                          // background-image: url("../img/product/decorate/materail-04.svg");
+                          // background-size: cover;
+                          transform: rotate(90deg) skew(60deg);
+                          background: -webkit-linear-gradient(40deg,
+                              $main-yellow 45%,
+                              #000 45%,
+                              #000 55%,
+                              $main-yellow 55%);
+                          background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                          background-size: 7px 7px;
+                        }
+
+                        &:after {
+                          content: "";
+                          position: absolute;
+                          position: absolute;
+                          width: 38%;
+                          height: 40%;
+                          left: 87%;
+                          bottom: -5%;
+                          border-radius: 0.3em;
+                          border: $border;
+                          // background-color: #FFD139;
+                          // background-image: url("../img/product/decorate/materail-04.svg");
+                          // background-size: cover;
+                          transform: rotate(90deg) skew(300deg);
+                          background: -webkit-linear-gradient(220deg,
+                              $main-yellow 45%,
+                              #000 45%,
+                              #000 55%,
+                              $main-yellow 55%);
+                          background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                          background-size: 7px 7px;
+                        }
+
+                        &.clicked {
+                          top: 16px;
+
+                          &:before {
+                            width: 38%;
+                            height: 40%;
+                            left: -26%;
+                            bottom: 3%;
+                            transform: rotate(90deg) skew(50deg);
+                          }
+
+                          &:after {
+                            width: 39%;
+                            height: 40%;
+                            left: 87%;
+                            bottom: 3%;
+                            transform: rotate(90deg) skew(310deg);
+                          }
+                        }
+                      }
+
+                      .orderBtnBottom {
+                        position: absolute;
+                        // width: 100%;
+                        width: 107%;
+                        height: 45px;
+                        left: -8%;
+                        top: 85%;
+                        border: $border;
+                        background: -webkit-linear-gradient(-70deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                        background: linear-gradient(-70deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                        background-size: 7px 7px;
+                        border-radius: 0.1em;
+                        // z-index: -1;
+                      }
+                    }
+                  }
+                }
+
+                .cav-otherLetter {
+                  border: 1px solid sandybrown;
+                  width: 50%;
+
+                  .orderBtnBoxGroup {
+                    width: 95%;
+                    margin: -20% 0% 20% 10%;
+
+                    .orderBtnBox {
+                      position: relative;
+
+                      .orderBtn {
+                        font-size: 20px;
+                        letter-spacing: 0.2em;
+                        position: relative;
+                        width: 80%;
+                        height: 45px;
+                        background-color: #ffd139;
+                        border: $border;
+                        text-align: center;
+                        line-height: 40px;
+                        border-radius: 0.3em;
+                        cursor: pointer;
+                        color: white;
+                        text-shadow: 1px 1px 1px black;
+                        z-index: 1;
+
+                        .orderText {
+                          position: absolute;
+                          width: 100%;
+                          top: 35%;
+                          left: 49%;
+                          transform: translate(-47.5%, -25%);
+                          font-weight: 900;
+                          color: #fff;
+                          @include stroke(2, #0f0f0f);
+                          font-family: $font;
+                          font-weight: 400;
+                          z-index: 3;
+                        }
+
+                        &:before {
+                          content: "";
+                          position: absolute;
+                          width: 38%;
+                          height: 40%;
+                          left: -35%;
+                          bottom: -5%;
+                          border-radius: 0.3em;
+                          border: $border;
+                          // background-color: #FFD139;
+                          // background-image: url("../img/product/decorate/materail-04.svg");
+                          // background-size: cover;
+                          transform: rotate(90deg) skew(60deg);
+                          background: -webkit-linear-gradient(40deg,
+                              $main-yellow 45%,
+                              #000 45%,
+                              #000 55%,
+                              $main-yellow 55%);
+                          background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                          background-size: 7px 7px;
+                        }
+
+                        &:after {
+                          content: "";
+                          position: absolute;
+                          position: absolute;
+                          width: 38%;
+                          height: 40%;
+                          left: 87%;
+                          bottom: -5%;
+                          border-radius: 0.3em;
+                          border: $border;
+                          // background-color: #FFD139;
+                          // background-image: url("../img/product/decorate/materail-04.svg");
+                          // background-size: cover;
+                          transform: rotate(90deg) skew(300deg);
+                          background: -webkit-linear-gradient(220deg,
+                              $main-yellow 45%,
+                              #000 45%,
+                              #000 55%,
+                              $main-yellow 55%);
+                          background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                          background-size: 7px 7px;
+                        }
+
+                        &.clicked {
+                          top: 16px;
+
+                          &:before {
+                            width: 38%;
+                            height: 40%;
+                            left: -26%;
+                            bottom: 3%;
+                            transform: rotate(90deg) skew(50deg);
+                          }
+
+                          &:after {
+                            width: 39%;
+                            height: 40%;
+                            left: 87%;
+                            bottom: 3%;
+                            transform: rotate(90deg) skew(310deg);
+                          }
+                        }
+                      }
+
+                      .orderBtnBottom {
+                        position: absolute;
+                        width: 95%;
+                        height: 45px;
+                        left: -8%;
+                        top: 85%;
+                        border: $border;
+                        background: -webkit-linear-gradient(-70deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                        background: linear-gradient(-70deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                        background-size: 7px 7px;
+                        border-radius: 0.1em;
+                        // z-index: -1;
+                      }
+                    }
                   }
                 }
               }
-            }
-          }
-          .cav-histLetter1 {
-            border: $border;
-            background-color: #ddd;
-            padding: 5px;
-            height: 90.7%;
 
-            .cav-histLetter2 {
-              border: $border;
-              background-color: rgb(74, 117, 112);
-              padding: 10px;
-              height: 100%;
-              overflow-y: scroll;
-              &::-webkit-scrollbar {
-                width: 0;
-                background-color: #ccc;
-                border-radius: 2px;
-              }
-
-              &::-webkit-scrollbar-thumb {
-                width: 5px;
-                background-color: slategrey;
-                border-radius: 10px;
-              }
-              > .cav-letters {
+              .cav-histLetter1 {
                 border: $border;
-                height: 100px;
-                margin: 0 auto 10px;
-                padding: 3%;
-                border-radius: 20px;
-                background-color: $main-yellow;
-                overflow: hidden;
-                display: flex;
-                cursor: pointer;
-                &.cav-looking {
-                  background-color: $main-red;
-                }
+                background-color: #ddd;
+                padding: 5px;
+                height: 90.7%;
 
-                .cav-letWord {
-                  border: 1px solid blue;
-                  width: 80%;
+                .cav-histLetter2 {
+                  border: $border;
+                  background-color: rgb(74, 117, 112);
+                  padding: 10px;
+                  height: 100%;
+                  overflow-y: scroll;
 
-                  .cav-letTitle {
-                    margin: 0;
+                  &::-webkit-scrollbar {
+                    width: 0;
+                    background-color: #ccc;
+                    border-radius: 2px;
                   }
-                  .cav-letTime {
-                    margin: 0;
+
+                  &::-webkit-scrollbar-thumb {
+                    width: 5px;
+                    background-color: slategrey;
+                    border-radius: 10px;
                   }
-                }
-                .cav-letSetting {
-                  border: 1px solid blueviolet;
-                  width: 20%;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
 
-                  > div {
-                    margin: 0 auto;
-                    height: 50%;
-
-                    i {
-                      font-size: 30px;
-
-                      &:hover {
-                        color: $main-dark-red;
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        .cav-boxFrontRight {
-          // border: 5px solid $main-black;
-          display: none;
-          // width: 57%;
-          // background-color: #ddd;
-          // padding: 5px;
-
-          .cav-showLetterBack {
-            border: $border;
-            height: 100%;
-            background-color: rgb(74, 117, 112);
-
-            .cav-showLetter {
-              // border: 1px solid red;
-              width: 100%;
-              height: 100%;
-              overflow-y: scroll;
-              &::-webkit-scrollbar {
-                width: 0;
-                background-color: #ccc;
-                border-radius: 2px;
-              }
-
-              &::-webkit-scrollbar-thumb {
-                width: 5px;
-                background-color: slategrey;
-                border-radius: 10px;
-              }
-              .cav-letterBg {
-                border: 50px solid transparent;
-                border-image: url("../img/cave/cav-postCard_b.svg") 50 50 round;
-                background-color: #fff;
-                width: 82.5%;
-                margin: 20px auto;
-                .cav-letImg {
-                  width: 100%;
-                  overflow: hidden;
-
-                  img {
-                    width: 100%;
-                  }
-                }
-                hr {
-                  border: 1px solid #ccc;
-                  margin: 15px auto;
-                }
-                .cav-letNavbar {
-                  display: flex;
-                  justify-content: flex-end;
-                  // border: 1px solid #ccc;
-
-                  .cav-letNavOption {
-                    // border: 1px solid tomato;
-                    width: 35px;
-                    height: 35px;
-                    margin-left: 5px;
-                    vertical-align: middle;
-                    img {
-                      width: 100%;
-                      cursor: pointer;
-                    }
-                  }
-                  // .btn-big-test {
-                  //   @include btn_big_module();
-                  // }
-                }
-
-                .cav-h3 {
-                  margin: 15px 0;
-                  padding-bottom: 5px;
-                  border-bottom: 1px solid #ccc;
-                }
-                .cav-letComment {
-                  // border: 1px solid rosybrown;
-                  border-bottom: 1px solid #ccc;
-                  display: flex;
-                  .cav-commMain {
-                    // border-bottom: 1px solid #ccc;
-                    width: 80%;
-                    .cav-commHead {
-                      // display: flex;
-                      margin-bottom: 5px;
-                      .cav-commId {
-                        font-weight: bold;
-                        font-size: 14px;
-                        margin-right: 5px;
-                      }
-                      .cav-commTime {
-                        color: #777;
-                        font-size: 10px;
-                        text-align: initial;
-                      }
-                    }
-                  }
-                  .cav-commOption {
+                  >.cav-letters {
+                    border: $border;
+                    height: 100px;
+                    margin: 0 auto 10px;
+                    padding: 3%;
+                    border-radius: 20px;
+                    background-color: $main-yellow;
+                    overflow: hidden;
                     display: flex;
-                    flex-direction: column;
-                    justify-content: space-around;
-                    margin: 0 auto;
+                    cursor: pointer;
+
+                    &.cav-looking {
+                      background-color: $main-red;
+                    }
+
+                    .cav-letWord {
+                      border: 1px solid blue;
+                      width: 80%;
+
+                      .cav-letTitle {
+                        margin: 0;
+                      }
+
+                      .cav-letTime {
+                        margin: 0;
+                      }
+                    }
+
+                    .cav-letSetting {
+                      border: 1px solid blueviolet;
+                      width: 20%;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+
+                      >div {
+                        margin: 0 auto;
+                        height: 50%;
+
+                        i {
+                          font-size: 30px;
+
+                          &:hover {
+                            color: $main-dark-red;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .cav-boxFrontRight {
+              // border: 5px solid $main-black;
+              display: none;
+              // width: 57%;
+              // background-color: #ddd;
+              // padding: 5px;
+
+              .cav-showLetterBack {
+                border: $border;
+                height: 100%;
+                background-color: rgb(74, 117, 112);
+
+                .cav-showLetter {
+                  // border: 1px solid red;
+                  width: 100%;
+                  height: 100%;
+                  overflow-y: scroll;
+
+                  &::-webkit-scrollbar {
+                    width: 0;
+                    background-color: #ccc;
+                    border-radius: 2px;
+                  }
+
+                  &::-webkit-scrollbar-thumb {
+                    width: 5px;
+                    background-color: slategrey;
+                    border-radius: 10px;
+                  }
+
+                  .cav-letterBg {
+                    border: 50px solid transparent;
+                    border-image: url("../img/cave/cav-postCard_b.svg") 50 50 round;
+                    background-color: #fff;
+                    width: 82.5%;
+                    margin: 20px auto;
+
+                    .cav-letImg {
+                      width: 100%;
+                      overflow: hidden;
+
+                      img {
+                        width: 100%;
+                      }
+                    }
+
+                    hr {
+                      border: 1px solid #ccc;
+                      margin: 15px auto;
+                    }
+
+                    .cav-letNavbar {
+                      display: flex;
+                      justify-content: flex-end;
+                      // border: 1px solid #ccc;
+
+                      .cav-letNavOption {
+                        // border: 1px solid tomato;
+                        width: 35px;
+                        height: 35px;
+                        margin-left: 5px;
+                        vertical-align: middle;
+
+                        img {
+                          width: 100%;
+                          cursor: pointer;
+                        }
+                      }
+
+                      // .btn-big-test {
+                      //   @include btn_big_module();
+                      // }
+                    }
+
+                    .cav-h3 {
+                      margin: 15px 0;
+                      padding-bottom: 5px;
+                      border-bottom: 1px solid #ccc;
+                    }
+
+                    .cav-letComment {
+                      // border: 1px solid rosybrown;
+                      border-bottom: 1px solid #ccc;
+                      display: flex;
+
+                      .cav-commMain {
+                        // border-bottom: 1px solid #ccc;
+                        width: 80%;
+
+                        .cav-commHead {
+                          // display: flex;
+                          margin-bottom: 5px;
+
+                          .cav-commId {
+                            font-weight: bold;
+                            font-size: 14px;
+                            margin-right: 5px;
+                          }
+
+                          .cav-commTime {
+                            color: #777;
+                            font-size: 10px;
+                            text-align: initial;
+                          }
+                        }
+                      }
+
+                      .cav-commOption {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        margin: 0 auto;
+                      }
+                    }
                   }
                 }
               }
             }
           }
         }
-      }
-    }
-
-    .cav-prod {
-      width: 30vw;
-      height: 30vw;
-      margin: 1%;
-    }
-    .cav-myItem {
-      display: inline-block;
-      height: auto;
-
-      .cav-leftWrap {
-        width: 80%;
-        margin: 0 auto;
-      }
-    }
-    .cav-rightWrap {
-      display: inline-block;
-      width: 80%;
-      margin-top: 100px;
-      margin-left: 10%;
-
-      .cav-tabWrap {
-        top: 10.4%;
 
         .cav-prod {
-          width: 20vw;
-          height: 20vw;
-          margin: 2%;
+          width: 30vw;
+          height: 30vw;
+          margin: 1%;
         }
-        .cav-addProd {
-          width: 20vw;
-          height: 20vw;
-          margin: 2%;
+
+        .cav-myItem {
+          display: inline-block;
+          height: auto;
+
+          .cav-leftWrap {
+            width: 80%;
+            margin: 0 auto;
+          }
+        }
+
+        .cav-rightWrap {
+          display: inline-block;
+          width: 80%;
+          margin-top: 100px;
+          margin-left: 10%;
+
+          .cav-tabWrap {
+            top: 10.4%;
+
+            .cav-prod {
+              width: 20vw;
+              height: 20vw;
+              margin: 2%;
+            }
+
+            .cav-addProd {
+              width: 20vw;
+              height: 20vw;
+              margin: 2%;
+            }
+          }
         }
       }
     }
-  }
-}
