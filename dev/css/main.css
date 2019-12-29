@@ -2463,64 +2463,84 @@ table {
               animation: botani 3.5s linear reverse infinite; }
 
 @keyframes topani {
-  3% {
-    stroke-width: 55px; }
-  11% {
-    stroke-width: 171px; }
-  19% {
-    stroke-width: 101px; }
+  1% {
+    stroke-width: 84px; }
+  8% {
+    stroke-width: 163px; }
+  14% {
+    stroke-width: 38px; }
+  15% {
+    stroke-width: 148px; }
   24% {
-    stroke-width: 37px; }
-  33% {
-    stroke-width: 37px; }
-  38% {
-    stroke-width: 144px; }
+    stroke-width: 48px; }
+  28% {
+    stroke-width: 11px; }
+  32% {
+    stroke-width: 35px; }
+  36% {
+    stroke-width: 190px; }
+  41% {
+    stroke-width: 34px; }
   45% {
-    stroke-width: 16px; }
-  50% {
+    stroke-width: 133px; }
+  54% {
+    stroke-width: 150px; }
+  58% {
     stroke-width: 157px; }
-  56% {
-    stroke-width: 54px; }
-  69% {
-    stroke-width: 116px; }
-  75% {
-    stroke-width: 50px; }
-  82% {
-    stroke-width: 122px; }
-  87% {
-    stroke-width: 14px; }
-  96% {
-    stroke-width: 66px; } }
+  61% {
+    stroke-width: 178px; }
+  66% {
+    stroke-width: 39px; }
+  72% {
+    stroke-width: 110px; }
+  76% {
+    stroke-width: 114px; }
+  84% {
+    stroke-width: 102px; }
+  89% {
+    stroke-width: 57px; }
+  91% {
+    stroke-width: 76px; } }
 
 @keyframes botani {
-  2% {
-    stroke-width: 100px; }
-  13% {
-    stroke-width: 88px; }
-  18% {
-    stroke-width: 169px; }
-  21% {
-    stroke-width: 81px; }
-  29% {
-    stroke-width: 169px; }
-  39% {
-    stroke-width: 65px; }
-  48% {
-    stroke-width: 143px; }
-  54% {
-    stroke-width: 185px; }
-  61% {
-    stroke-width: 47px; }
-  65% {
-    stroke-width: 53px; }
-  72% {
+  3% {
+    stroke-width: 161px; }
+  5% {
+    stroke-width: 108px; }
+  11% {
+    stroke-width: 14px; }
+  19% {
+    stroke-width: 197px; }
+  23% {
     stroke-width: 20px; }
-  83% {
-    stroke-width: 19px; }
-  88% {
-    stroke-width: 178px; }
-  92% {
-    stroke-width: 138px; } }
+  26% {
+    stroke-width: 197px; }
+  31% {
+    stroke-width: 65px; }
+  39% {
+    stroke-width: 50px; }
+  41% {
+    stroke-width: 109px; }
+  45% {
+    stroke-width: 68px; }
+  52% {
+    stroke-width: 69px; }
+  58% {
+    stroke-width: 130px; }
+  62% {
+    stroke-width: 184px; }
+  68% {
+    stroke-width: 150px; }
+  71% {
+    stroke-width: 118px; }
+  76% {
+    stroke-width: 107px; }
+  84% {
+    stroke-width: 195px; }
+  86% {
+    stroke-width: 46px; }
+  94% {
+    stroke-width: 173px; } }
 
 @keyframes rainbowMove {
   from {
