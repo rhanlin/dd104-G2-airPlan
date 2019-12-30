@@ -771,8 +771,6 @@
         .cav-otherLetter {
           border: 1px solid sandybrown;
           width: 50%;
-<<<<<<< HEAD
-=======
           .btn {
             padding: -1.2vw 2vw;
             top: 5%;
@@ -786,7 +784,6 @@
 @include respond(small) {
   .cav-main {
     width: 100%;
->>>>>>> newDev
 
           .btn {
             padding: -1.2vw 2vw;
@@ -795,7 +792,7 @@
           }
         }
       }
-    }
+    
 
     @include respond(small) {
       .cav-main {
@@ -1912,8 +1909,3 @@
         }
       }
     }
-<<<<<<< HEAD
-  }
-}
-=======
->>>>>>> 9a9ba6a545f39eb770b5cb981f2fca4117143921
