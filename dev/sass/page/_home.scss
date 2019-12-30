@@ -86,7 +86,7 @@
                 bottom: 20%;
                 right: 18%;
                 opacity: 0;
-                z-index: 105;
+                // z-index: 104;
             }
         }
 
@@ -100,13 +100,14 @@
             margin-top: -190px;
             padding-top: 180px;
             display: flex;
+            flex-wrap: wrap;
             position: relative;
 
             .write_L {
                 width: 47%;
                 // height: 100%;
                 // border: 1px solid pink;
-                margin-top: -1vw;
+                margin-top: -7.5vw;
 
                 .writeTitle {
                     width: 30vw;
@@ -119,7 +120,7 @@
                     .writeTitleBg2 {
                         width: 95%;
                         height: 90%;
-                        z-index: 1
+                        z-index: 0;
                     }
 
                     .writeTitleBg2 {
@@ -137,13 +138,24 @@
                     width: 42vw;
                     margin-left: 7%;
                     margin-top: -2.75vw;
+                    position: relative;
 
                     .bottle {
                         width: 17%;
                         transform: translate(-20%, -100%);
                         position: relative;
-                        z-index: 102;
+                        // z-index: 2;
                         // transform: rotate(125deg);
+                    }
+
+                    .inkImg {
+                        // border: 1px solid yellow;
+                        width: 20%;
+                        position: absolute;
+                        top: 20%;
+                        left: 12%;
+                        z-index: 104;
+                        opacity: 0;
                     }
 
                     .blackWater {
@@ -160,11 +172,15 @@
                         justify-content: center;
                         align-items: center;
                         z-index: 104;
+                        opacity: 0;
+                        // transform-origin: left top;
+                        // transform: scale(0.5);
 
                         h2 {
                             font-family: $font;
                             // font-size: 3vw;
                             color: white;
+                            opacity: 0;
                         }
                     }
                 }
@@ -173,10 +189,12 @@
             .write_R {
                 width: 53%;
                 // border: 1px solid aqua;
-                margin-top: -1vw;
+                margin-top: -7.5vw;
 
                 .write_Rbox {
                     display: flex;
+                    flex-wrap: wrap;
+                    position: relative;
 
                     .write_many {
                         margin-left: 10%;
@@ -188,19 +206,22 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
-
-                        .write_paper {
-                            width: 77%;
-                            height: 88%;
-                            background-image: url(../img/home/write/letter.png);
-                            background-repeat: no-repeat;
-                            background-size: cover;
-                            z-index: 0;
-
-                        }
                     }
 
-                    img {
+                    .write_paper {
+                        width: 52.5%;
+                        height: 39.5vw;
+                        background-image: url(../img/share/postCard-vertical.svg);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                        position: absolute;
+                        top: 6.25%;
+                        left: 17%;
+                        z-index: 0;
+                    }
+
+                    .pen {
                         width: 32%;
                         align-self: flex-end;
                         margin-left: -15%;
@@ -209,19 +230,6 @@
                     }
                 }
             }
-        }
-
-        .fold1,
-        .fold2,
-        .shoot {
-            width: 100%;
-            height: 935px;
-            background-image: url(../img/home/write/desk.png);
-            background-repeat: no-repeat;
-            // background-size: cover;
-            // background-position: bottosm;
-            position: relative;
-            // display: flex;
 
             .foldPaper1 {
                 width: 27.5vw;
@@ -229,25 +237,23 @@
                 left: 50%;
                 top: 50%;
                 transform: translate(-50%, -50%);
+                opacity: 0;
             }
 
-            .left_hand1 {
-                // RWD手對不到紙 ; 方法一:單純用absolute; 方法二:absolute配上translate
+            .left_hand {
                 width: 60%;
                 position: absolute;
-                left: -15%;
-                // bottom: -25%;
-                top: 73%;
-                transform: translate(0, -50%);
+                left: -100%;
+                bottom: -100%;
+                // transform: translate(0, -50%);
             }
 
-            .right_hand1 {
+            .right_hand {
                 width: 60%;
                 position: absolute;
-                right: -15%;
-                // bottom: -25%;
-                top: 73%;
-                transform: translate(0, -50%);
+                right: -100%;
+                bottom: -100%;
+                // transform: translate(0, -50%);
             }
 
             .foldPaper2 {
@@ -256,20 +262,7 @@
                 left: 50%;
                 top: 50%;
                 transform: translate(-50%, -50%);
-            }
-
-            .left_hand2 {
-                width: 60%;
-                position: absolute;
-                left: -15%;
-                bottom: -50%;
-            }
-
-            .right_hand2 {
-                width: 60%;
-                position: absolute;
-                right: -15%;
-                bottom: -50%;
+                opacity: 0;
             }
 
             .shootHand {
@@ -277,6 +270,7 @@
                 position: absolute;
                 left: -29%;
                 bottom: 28%;
+                opacity: 0;
             }
 
             .foldPaper3 {
@@ -285,13 +279,16 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+                opacity: 0;
             }
         }
+
     }
 
     .home_catch {
+        border: 1px solid red;
         width: 100%;
-        // height: 900px;
+        height: 940px;
         background: -webkit-linear-gradient(45deg, rgb(247, 239, 197) 45%, rgb(235, 215, 109) 45%, rgb(235, 215, 109) 55%, rgb(247, 239, 197) 55%);
         background: linear-gradient(45deg, rgb(247, 239, 197) 45%, rgb(235, 215, 109) 45%, rgb(235, 215, 109) 55%, rgb(247, 239, 197) 55%);
         background-size: 20px 20px;
@@ -327,7 +324,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             // border: 1px solid pink;
-            margin-top: 60px;
+            margin-top: 360px;
         }
 
         .grassMid {
@@ -336,8 +333,7 @@
             background-image: url(../img/home/catch/grassMid.svg);
             background-repeat: no-repeat;
             background-size: cover;
-            margin-top: -750px;
-            ;
+            margin-top: -500px;
         }
 
         .grassFront {
@@ -347,36 +343,41 @@
             background-image: url(../img/home/catch/grassFront.png);
             background-repeat: no-repeat;
             background-size: cover;
-            margin-top: -650px;
+            margin-top: -500px;
             position: relative;
 
             .catch_main {
                 position: absolute;
+                width: 25vw;
                 top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                animation: shake 2s infinite linear;
-            }
+                right: -28%;
+                transform: translate(0, -50%);
 
-            @keyframes shake {
-                0% {
-                    transform: translate(-50%, -50%) rotate(0);
+                .catch_plan {
+                    width: 100%;
+                    animation: shake 2s infinite linear;
                 }
 
-                25% {
-                    transform: translate(-50%, -50%) rotate(10deg);
-                }
+                @keyframes shake {
+                    0% {
+                        transform: rotate(0);
+                    }
 
-                50% {
-                    transform: translate(-50%, -50%) rotate(0);
-                }
+                    25% {
+                        transform: rotate(10deg);
+                    }
 
-                75% {
-                    transform: translate(-50%, -50%) rotate(-10deg);
-                }
+                    50% {
+                        transform: rotate(0);
+                    }
 
-                100% {
-                    transform: translate(-50%, -50%) rotate(0);
+                    75% {
+                        transform: rotate(-10deg);
+                    }
+
+                    100% {
+                        transform: rotate(0);
+                    }
                 }
             }
 
@@ -460,7 +461,7 @@
         .net {
             width: 38%;
             position: absolute;
-            top: 20%;
+            bottom: -128%;
             left: -28%;
         }
     }
