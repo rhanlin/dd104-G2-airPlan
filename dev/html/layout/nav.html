@@ -1,4 +1,4 @@
-    <div class="nav-body">
+<div class="nav-body">
     <div id="navHead" class="nav-navBgWrap">
         <div class="nav-navBg">
             <img src="./img/share/nav_lightBox.svg" alt="">
@@ -6,129 +6,161 @@
                 <!-- <div class="nav-topBlock">
                 登入和設定 
             </div> -->
-            <div class="nav-logoWrap">
-                <a href="./home.html"><img src="./img/share/LOGO.png"></a>
-            </div>
-            <div class="nav-navPageWrap">
-                <ul class="nav-list" id="list">
-                    <li><a href="./write-letter.html">
-                            <p class="nav-pageName">寫信</p> <span class="nav-circle-1 nav-now"></span>
-                        </a> </li>
-                    <li><a href="./catch-letter.html">
-                            <p class="nav-pageName">撈信</p> <span class="nav-circle-2"></span>
-                        </a> </li>
-                    <li><a href="./shop.html">
-                            <p class="nav-pageName">商城</p> <span class="nav-circle-3"></span>
-                        </a> </li>
-                    <li><a href="./cave.html">
-                            <p class="nav-pageName">我的倉庫</p> <span class="nav-circle-4"></span>
-                        </a> </li>
-                    <li><a href="./chatroom.html">
-                            <p class="nav-pageName">聊天室</p> <span class="nav-circle-5"></span>
-                        </a> </li>
-                    <li><a href="./classic.html">
-                            <p class="nav-pageName">精華區</p> <span class="nav-circle-6"></span>
-                        </a> </li>
-                </ul>
-                <div class="nav-road">
-                    <div></div>
+                <div class="nav-logoWrap">
+                    <a href="./home.html"><img src="./img/share/LOGO.png"></a>
                 </div>
+                <div class="nav-navPageWrap hbg">
+                    <ul class="nav-list" id="list">
+                        <a class="nav-logo" href="./home.html"><img src="./img/share/LOGO.png"></a>
+                        <li><a href="./write-letter.html">
+                                <p class="nav-pageName">寫信</p> <span class="nav-circle-1 nav-now"></span>
+                            </a> </li>
+                        <li><a href="./catch-letter.html">
+                                <p class="nav-pageName">撈信</p> <span class="nav-circle-2"></span>
+                            </a> </li>
+                        <li><a href="./shop.html">
+                                <p class="nav-pageName">商城</p> <span class="nav-circle-3"></span>
+                            </a> </li>
+                        <li><a href="./cave.html">
+                                <p class="nav-pageName">我的倉庫</p> <span class="nav-circle-4"></span>
+                            </a> </li>
+                        <li><a href="./chatroom.html">
+                                <p class="nav-pageName">聊天室</p> <span class="nav-circle-5"></span>
+                            </a> </li>
+                        <li><a href="./classic.html">
+                                <p class="nav-pageName">精華區</p> <span class="nav-circle-6"></span>
+                            </a> </li>
+                        <div class="hbg-pc">
+                            <div class="cav-paper">信紙:999</div>
+                            <div class="cav-coin">Air幣:777</div>
+                        </div>
+                    </ul>
+                    <div class="nav-road">
+                        <div></div>
+                    </div>
+                </div>
+            </nav>
+            <div class="nav-littleNav">
+                <a onclick="showSigin()" href="#"><i class="fas fa-user-circle"></i></a>
+                <a href="./user-setting.html"><i class="fas fa-cog"></i></a>
             </div>
-        </nav>
-        <div class="nav-littleNav">
-            <a onclick="showSigin()" href="#"><i class="fas fa-user-circle"></i></a>
-            <a href="./user-setting.html"><i class="fas fa-cog"></i></a>
-        </div>
-        <div class="nav-pc">
-            <div class="cav-paper">信紙:999</div>
-            <div class="cav-coin">Air幣:777</div>
+            <div class="nav-pc">
+                <div class="cav-paper">信紙:999</div>
+                <div class="cav-coin">Air幣:777</div>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="nav-hamPosition">
-    <div class="nav-hamburgerWrap">
-        <div class="hambuger" id="hamburger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
+    <div class="nav-hamPosition">
+        <div class="nav-hamburgerWrap">
+            <div class="hambuger" id="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
         </div>
     </div>
-</div>
-<div class="signInBg" id="signInBg">
-    <div class="signInData">
-        <h4>LogIn</h4>
-        <p class="signInClose" onclick="closeSigin()">X</p>
-        <form class="formsignInData">
-            <img class="signInLogo" src="./img/share/LOGO.png" alt="Logo" >
-            
-            <label for="signInEmail"><P>Email:</P></label>
-            <input class="signInEmail" input type="email" id="signInEmail" placeholder="請輸入Email" required autofocus>
+    <div class="signInBg" id="signInBg">
+        <div class="signInData">
+            <h4>LogIn</h4>
+            <p class="signInClose" onclick="closeSigin()">X</p>
+            <form class="formsignInData">
+                <img class="signInLogo" src="./img/share/LOGO.png" alt="Logo">
 
-            <label for="signInPassword"><P>Password:</P></label>
-            <input class="signInPassword" type="password" id="signInPassword" placeholder="請輸入密碼" required>
+                <label for="signInEmail">
+                    <P>Email:</P>
+                </label>
+                <input class="signInEmail" input type="email" id="signInEmail" placeholder="請輸入Email" required
+                    autofocus>
 
-            <a class="forger" href=""><p>忘記密碼</p></a>
-            <a class="" href=""><p>註冊</p></a>
-            <br>
-            <button class="signInBtn" type="submit">Sign in</button>
-        </form>
-    </div>
-    <!-- <img class="envelopeup" src="./img/user-setting/envelopeup.png" alt="">
+                <label for="signInPassword">
+                    <P>Password:</P>
+                </label>
+                <input class="signInPassword" type="password" id="signInPassword" placeholder="請輸入密碼" required>
+
+                <a class="forger" href="">
+                    <p>忘記密碼</p>
+                </a>
+                <a class="" href="">
+                    <p>註冊</p>
+                </a>
+                <br>
+                <button class="signInBtn" type="submit">Sign in</button>
+            </form>
+        </div>
+        <!-- <img class="envelopeup" src="./img/user-setting/envelopeup.png" alt="">
     <img class="envelopedown" src="./img/user-setting/envelopedown.png" alt=""> -->
-</div>
+    </div>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- 控制navbar上移 -->
     <script>
         var navBar_active = function () {
             var scroll_top = $(window).scrollTop();
 
-        $("posision").html(scroll_top);
+            $("posision").html(scroll_top);
 
-        if (scroll_top >= 560) {
-            $("div.nav-navBgWrap").addClass("-on");
-        } else {
-            $("div.nav-navBgWrap").removeClass("-on");
-        }
-    };
+            if (scroll_top >= 560) {
+                $("div.nav-navBgWrap").addClass("-on");
+            } else {
+                $("div.nav-navBgWrap").removeClass("-on");
+            }
+        };
 
-    $(function () {
-        $(window).scroll(function () {
-            navBar_active();
+        $(function () {
+            $(window).scroll(function () {
+                navBar_active();
+            });
+
         });
+    </script>
+    <script>
+        const hambuger = document.querySelector('.hambuger');
 
-    });
-</script>
-<script>
-    const hambuger = document.querySelector('.hambuger');
-
-    hambuger.addEventListener('click', () => {
-        hambuger.classList.toggle('change');
-    })
-</script>
-<script>
-
-    $(function () {
+        hambuger.addEventListener('click', () => {
+            hambuger.classList.toggle('change');
+        })
+    </script>
+    <script>
         // hamburger icon 的切換
-        $("div.hamburger").on("click", function () {
-            $(this).toggleClass("is-active");
-        });
+        $(function () {
 
-    });
-    let hamburger = document.getElementById('hamburger');
-    let list = document.getElementById('list');
-    hamburger.addEventListener('click', function () {
-        list.classList.toggle('open');
-    })
-</script>
-<!-- 會員登入燈箱 -->
-<script>
-var signInBg = document.querySelector(".signInBg");
-function showSigin() {
-    signInBg.style.display = "block";
-};
-function closeSigin() {
-    signInBg.style.display = "none";
-};
-</script>
+            $("div.hambuger").on("click", function () {
+                $('#list').toggleClass('open');
+            });
+
+        });
+        // let navStatus = document.getElementsByClassName(".nav-navPageWrap")[0];
+        // if ("navStatus.style.display = none") {
+        //     $(".nav-navPageWrap").toggle();
+        // };
+
+        // hamburger.addEventListener('click', function () {
+        //     list.classList.toggle('open');
+        //     console.log($(".nav-navPageWrap").css("display"));
+
+        //     if ($(".hambuger").attr("class") == "hambuger change") {
+        //         $(".nav-navPageWrap").css("display", "block");
+        //         console.log("666");
+        //     } else if ($(window).width() > 991) {
+        //         $(".nav-navPageWrap").css("display", "block");
+        //         console.log("991");
+        //     } else {
+        //         $(".nav-navPageWrap").css("display", "none");
+        //     };
+
+
+        // })
+    </script>
+    <!-- 會員登入燈箱 -->
+    <script>
+        var signInBg = document.querySelector(".signInBg");
+        function showSigin() {
+            signInBg.style.display = "block";
+        };
+        function closeSigin() {
+            signInBg.style.display = "none";
+        };
+    </script>
