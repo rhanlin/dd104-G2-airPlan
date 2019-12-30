@@ -686,24 +686,6 @@ table {
 /*
  *  3D文字 : 任意色+白色立體
  */
-@keyframes leftLight {
-  0% {
-    background-position: 0 0; }
-  100% {
-    background-position: 100% 100%; } }
-
-@keyframes downLight {
-  0% {
-    background-position: 0 0; }
-  100% {
-    background-position: 0 100%; } }
-
-@keyframes rightLight {
-  0% {
-    background-position: 0 0; }
-  100% {
-    background-position: -100% 100%; } }
-
 @keyframes paperPlane {
   0% {
     bottom: 10%;
@@ -2451,80 +2433,68 @@ table {
               animation: botani 3.5s linear reverse infinite; }
 
 @keyframes topani {
-  1% {
-    stroke-width: 43px; }
-  10% {
-    stroke-width: 171px; }
-  15% {
-    stroke-width: 116px; }
-  19% {
-    stroke-width: 21px; }
-  29% {
-    stroke-width: 36px; }
-  35% {
-    stroke-width: 142px; }
-  37% {
-    stroke-width: 98px; }
+  2% {
+    stroke-width: 186px; }
+  7% {
+    stroke-width: 162px; }
+  16% {
+    stroke-width: 41px; }
+  21% {
+    stroke-width: 103px; }
+  28% {
+    stroke-width: 97px; }
+  40% {
+    stroke-width: 152px; }
   44% {
-    stroke-width: 151px; }
-  51% {
-    stroke-width: 62px; }
-  54% {
-    stroke-width: 178px; }
-  64% {
-    stroke-width: 137px; }
+    stroke-width: 120px; }
+  53% {
+    stroke-width: 150px; }
+  62% {
+    stroke-width: 6px; }
   67% {
-    stroke-width: 14px; }
-  74% {
-    stroke-width: 46px; }
-  82% {
-    stroke-width: 117px; }
-  87% {
-    stroke-width: 126px; }
-  90% {
-    stroke-width: 2px; }
+    stroke-width: 79px; }
+  70% {
+    stroke-width: 90px; }
+  77% {
+    stroke-width: 69px; }
+  84% {
+    stroke-width: 49px; }
+  92% {
+    stroke-width: 142px; }
   100% {
-    stroke-width: 196px; }
-  104% {
-    stroke-width: 108px; } }
+    stroke-width: 53px; } }
 
 @keyframes botani {
   5% {
-    stroke-width: 106px; }
-  7% {
-    stroke-width: 77px; }
-  16% {
+    stroke-width: 119px; }
+  12% {
+    stroke-width: 194px; }
+  15% {
     stroke-width: 160px; }
-  18% {
-    stroke-width: 143px; }
-  29% {
-    stroke-width: 142px; }
-  32% {
-    stroke-width: 68px; }
-  37% {
-    stroke-width: 146px; }
-  44% {
-    stroke-width: 4px; }
-  49% {
-    stroke-width: 1px; }
-  58% {
-    stroke-width: 73px; }
-  62% {
-    stroke-width: 55px; }
-  66% {
+  26% {
+    stroke-width: 192px; }
+  31% {
     stroke-width: 95px; }
-  75% {
-    stroke-width: 77px; }
-  83% {
-    stroke-width: 107px; }
-  88% {
+  37% {
+    stroke-width: 76px; }
+  46% {
+    stroke-width: 101px; }
+  51% {
+    stroke-width: 4px; }
+  58% {
+    stroke-width: 131px; }
+  69% {
+    stroke-width: 148px; }
+  74% {
+    stroke-width: 11px; }
+  82% {
     stroke-width: 17px; }
-  93% {
-    stroke-width: 178px; }
-  101% {
-    stroke-width: 149px; }
-  106% {
-    stroke-width: 132px; } }
+  84% {
+    stroke-width: 190px; }
+  95% {
+    stroke-width: 16px; }
+  99% {
+    stroke-width: 54px; } }
 
 @keyframes rainbowMove {
   from {
@@ -14199,13 +14169,20 @@ a.text-dark:hover, a.text-dark:focus {
         padding: 0.8vw 2vw;
         top: 5%;
         left: 10%; }
-  .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-otherLetter {
+  .cav-readLetterWrap .cav-otherLetter {
     border: 1px solid sandybrown;
     width: 50%; }
-    .cav-readLetterWrap .cav-boxImg .cav-boxFront .cav-otherLetter .btn {
+    .cav-readLetterWrap .cav-otherLetter .btn {
       padding: -1.2vw 2vw;
       top: 5%;
-      left: 10%; } }
+      left: 10%; }
+      .cav-readLetterWrap .cav-otherLetter .btn .cav-otherLetter {
+        border: 1px solid sandybrown;
+        width: 50%; }
+        .cav-readLetterWrap .cav-otherLetter .btn .cav-otherLetter .btn {
+          padding: -1.2vw 2vw;
+          top: 5%;
+          left: 10%; } }
 
 @media all and (max-width: 767px) and (min-width: 576px) {
   .cav-main {
@@ -14223,50 +14200,50 @@ a.text-dark:hover, a.text-dark:focus {
       max-height: 80%;
       padding: 10px;
       overflow-y: scroll; }
-    .cav-main .cav-boxImg {
+    .cav-main .cav-leftWrap .cav-boxImg {
       width: 100%;
       position: relative;
       margin: 150px auto 0;
       min-width: 650px; }
-      .cav-main .cav-boxImg > img {
+      .cav-main .cav-leftWrap .cav-boxImg > img {
         transform: rotate(90deg);
         height: 100%; }
-      .cav-main .cav-boxImg .cav-boxFront {
+      .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront {
         width: 60%;
         height: 93vw;
         min-height: 610px;
         top: -20%;
         left: 20%; }
-        .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft {
+        .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft {
           border: 1px solid green;
           display: inline-block;
           width: 100%;
           height: 100%;
           padding: 10px; }
-          .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter {
+          .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-whoLetter {
             border: 1px solid fuchsia;
             display: flex;
             justify-content: space-around; }
-          .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 {
+          .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 {
             border: 0.2vw solid black;
             background-color: #ddd;
             padding: 5px;
             height: 90.7%; }
-            .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 {
+            .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 {
               border: 0.2vw solid black;
               background-color: #4a7570;
               padding: 10px;
               height: 100%;
               overflow-y: scroll; }
-              .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2::-webkit-scrollbar {
+              .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2::-webkit-scrollbar {
                 width: 0;
                 background-color: #ccc;
                 border-radius: 2px; }
-              .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2::-webkit-scrollbar-thumb {
+              .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2::-webkit-scrollbar-thumb {
                 width: 5px;
                 background-color: slategrey;
                 border-radius: 10px; }
-              .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters {
+              .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters {
                 border: 0.2vw solid black;
                 height: 100px;
                 margin: 0 auto 10px;
@@ -14276,122 +14253,122 @@ a.text-dark:hover, a.text-dark:focus {
                 overflow: hidden;
                 display: flex;
                 cursor: pointer; }
-                .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters.cav-looking {
+                .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters.cav-looking {
                   background-color: #f08b8c; }
-                .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letWord {
+                .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letWord {
                   border: 1px solid blue;
                   width: 80%; }
-                  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letWord .cav-letTitle {
+                  .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letWord .cav-letTitle {
                     margin: 0; }
-                  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letWord .cav-letTime {
+                  .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letWord .cav-letTime {
                     margin: 0; }
-                .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letSetting {
+                .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letSetting {
                   border: 1px solid blueviolet;
                   width: 20%;
                   display: flex;
                   justify-content: center;
                   align-items: center; }
-                  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letSetting > div {
+                  .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letSetting > div {
                     margin: 0 auto;
                     height: 50%; }
-                    .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letSetting > div i {
+                    .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letSetting > div i {
                       font-size: 30px; }
-                      .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letSetting > div i:hover {
+                      .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontLeft .cav-histLetter1 .cav-histLetter2 > .cav-letters .cav-letSetting > div i:hover {
                         color: #DC5453; }
-        .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight {
+        .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight {
           display: none; }
-          .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack {
+          .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack {
             border: 0.2vw solid black;
             height: 100%;
             background-color: #4a7570; }
-            .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter {
+            .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter {
               width: 100%;
               height: 100%;
               overflow-y: scroll; }
-              .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter::-webkit-scrollbar {
+              .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter::-webkit-scrollbar {
                 width: 0;
                 background-color: #ccc;
                 border-radius: 2px; }
-              .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter::-webkit-scrollbar-thumb {
+              .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter::-webkit-scrollbar-thumb {
                 width: 5px;
                 background-color: slategrey;
                 border-radius: 10px; }
-              .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg {
+              .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg {
                 border: 50px solid transparent;
                 border-image: url("../img/cave/cav-postCard_b.svg") 50 50 round;
                 background-color: #fff;
                 width: 82.5%;
                 margin: 20px auto; }
-                .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letImg {
+                .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letImg {
                   width: 100%;
                   overflow: hidden; }
-                  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letImg img {
+                  .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letImg img {
                     width: 100%; }
-                .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg hr {
+                .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg hr {
                   border: 1px solid #ccc;
                   margin: 15px auto; }
-                .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letNavbar {
+                .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letNavbar {
                   display: flex;
                   justify-content: flex-end; }
-                  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letNavbar .cav-letNavOption {
+                  .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letNavbar .cav-letNavOption {
                     width: 35px;
                     height: 35px;
                     margin-left: 5px;
                     vertical-align: middle; }
-                    .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letNavbar .cav-letNavOption img {
+                    .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letNavbar .cav-letNavOption img {
                       width: 100%;
                       cursor: pointer; }
-                .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-h3 {
+                .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-h3 {
                   margin: 15px 0;
                   padding-bottom: 5px;
                   border-bottom: 1px solid #ccc; }
-                .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment {
+                .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment {
                   border-bottom: 1px solid #ccc;
                   display: flex; }
-                  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commMain {
+                  .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commMain {
                     width: 80%; }
-                    .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commMain .cav-commHead {
+                    .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commMain .cav-commHead {
                       margin-bottom: 5px; }
-                      .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commMain .cav-commHead .cav-commId {
+                      .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commMain .cav-commHead .cav-commId {
                         font-weight: bold;
                         font-size: 14px;
                         margin-right: 5px; }
-                      .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commMain .cav-commHead .cav-commTime {
+                      .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commMain .cav-commHead .cav-commTime {
                         color: #777;
                         font-size: 10px;
                         text-align: initial; }
-                  .cav-main .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commOption {
+                  .cav-main .cav-leftWrap .cav-boxImg .cav-boxFront .cav-boxFrontRight .cav-showLetterBack .cav-showLetter .cav-letterBg .cav-letComment .cav-commOption {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-around;
                     margin: 0 auto; }
-    .cav-main .cav-prod {
+    .cav-main .cav-leftWrap .cav-prod {
       width: 18vw;
       height: 18vw;
       margin: 1.3%; }
-    .cav-main .cav-myItem {
+    .cav-main .cav-leftWrap .cav-myItem {
       display: inline-block;
       height: auto; }
-      .cav-main .cav-myItem .cav-leftWrap {
+      .cav-main .cav-leftWrap .cav-myItem .cav-leftWrap {
         width: 70%;
         margin: 0 auto; }
-    .cav-main .cav-rightWrap {
+    .cav-main .cav-leftWrap .cav-rightWrap {
       display: inline-block;
       width: 70%;
       margin-top: 100px;
       margin-left: 15%; }
-      .cav-main .cav-rightWrap .cav-tabWrap {
+      .cav-main .cav-leftWrap .cav-rightWrap .cav-tabWrap {
         top: 55px; }
-        .cav-main .cav-rightWrap .cav-tabWrap .cav-prod {
+        .cav-main .cav-leftWrap .cav-rightWrap .cav-tabWrap .cav-prod {
           width: 18vw;
           height: 18vw;
           margin: 2%; }
-        .cav-main .cav-rightWrap .cav-tabWrap .cav-addProd {
+        .cav-main .cav-leftWrap .cav-rightWrap .cav-tabWrap .cav-addProd {
           width: 18vw;
           height: 18vw;
           margin: 2%; } }
 
-@media all and (max-width: 575px) and (min-width: 376px) {
+@media all and (max-width: 767px) and (min-width: 576px) and (max-width: 575px) and (min-width: 376px) {
   .cav-main {
     width: 100%; }
     .cav-main .cav-leftWrap .cav-tabWrap {
@@ -14568,7 +14545,7 @@ a.text-dark:hover, a.text-dark:focus {
           height: 20vw;
           margin: 2%; } }
 
-@media all and (max-width: 375px) {
+@media all and (max-width: 767px) and (min-width: 576px) and (max-width: 375px) {
   .cav-main {
     width: 100%; }
     .cav-main .cav-boxImg {
@@ -14978,10 +14955,11 @@ a.text-dark:hover, a.text-dark:focus {
           width: 450px;
           height: 100px;
           background-color: #ffffff;
-          font-size: 4rem;
+          background-image: url("../img/user-setting/signboard.jpg");
+          font-size: 4.5rem;
           letter-spacing: 1.25rem;
           position: absolute;
-          top: -5%;
+          top: -10%;
           z-index: 6;
           border: .3vw solid #353535; }
         .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban {
@@ -14994,14 +14972,13 @@ a.text-dark:hover, a.text-dark:focus {
           text-align: center;
           position: absolute;
           left: 50%;
-          transform: translate(-50%, 10%);
+          transform: translate(-50%, 5%);
           border: .3vw solid #353535; }
           .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn {
             background-color: white;
             border: .3vw solid #353535; }
             .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memData, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .airCoin, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memcolor {
-              margin: 5% 0 10px;
-              width: 30%;
+              width: 100px;
               text-align: center;
               display: inline-block;
               background-image: url(../img/share/yellow-note.svg);
@@ -15052,7 +15029,7 @@ a.text-dark:hover, a.text-dark:focus {
         .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg {
           width: 100%;
           height: 100%;
-          background: radial-gradient(#212121 30%, rgba(255, 255, 255, 0.9) 20%);
+          background-color: rgba(68, 68, 68, 0.99);
           background-size: 10px 10px;
           position: fixed;
           z-index: 80;
@@ -15085,12 +15062,12 @@ a.text-dark:hover, a.text-dark:focus {
               .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData .formSetData input {
                 width: 100%;
                 box-sizing: border-box;
-                padding: 10px;
+                padding: 5px;
                 font-size: 16px;
                 border-bottom-right-radius: 0;
                 border-bottom-left-radius: 0;
-                border: .3vw solid #353535;
-                margin-bottom: 1rem; }
+                margin-bottom: 5px;
+                border: .3vw solid #353535; }
               .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData .formSetData button {
                 width: 100%;
                 height: 40px;
@@ -15145,7 +15122,7 @@ a.text-dark:hover, a.text-dark:focus {
           width: 22%;
           height: 80px;
           background: radial-gradient(#f08b8c 30%, #f8e6e4 20%);
-          background-size: 10px 10px;
+          background-size: 8px 8px;
           position: absolute;
           bottom: -80px; }
       .userSetting_body .userSetting_main .floor .userSetting_sys {
@@ -15159,13 +15136,15 @@ a.text-dark:hover, a.text-dark:focus {
           width: 450px;
           height: 100px;
           background-color: #ffffff;
-          font-size: 4rem;
+          background-image: url("../img/user-setting/signboard.jpg");
+          font-size: 4.5rem;
           letter-spacing: 1.25rem;
           position: absolute;
-          top: -5%;
+          top: -10%;
           z-index: 6;
           border: .3vw solid #353535; }
         .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban {
+          padding: 20px;
           background: radial-gradient(rgba(238, 216, 233, 0.9) 30%, white 20%);
           background-size: 1px 40px;
           width: 50%;
@@ -15174,11 +15153,10 @@ a.text-dark:hover, a.text-dark:focus {
           text-align: center;
           position: absolute;
           left: 50%;
-          transform: translate(-50%, 10%);
+          transform: translate(-50%, 5%);
           border: .3vw solid #353535; }
           .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .manu, .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .ver {
-            margin: 5% 0 5%;
-            width: 45%;
+            width: 100px;
             display: inline-block;
             background-image: url(../img/share/yellow-note.svg);
             background-repeat: no-repeat; }
@@ -15188,9 +15166,14 @@ a.text-dark:hover, a.text-dark:focus {
             text-align: left;
             overflow: auto;
             margin: 0 auto; }
-            .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .userSetting_manu .userSetting_item, .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .userSetting_ver .userSetting_item {
-              height: 10%;
-              border-bottom: 2px dashed #212121; }
+            .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .userSetting_manu .panel-title, .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .userSetting_ver .panel-title {
+              position: relative; }
+            .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .userSetting_manu .panel-heading .accordion-toggle:before, .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .userSetting_ver .panel-heading .accordion-toggle:before {
+              content: "▼";
+              color: #82afd9; }
+            .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .userSetting_manu .panel-heading .accordion-toggle.collapsed:before, .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .userSetting_ver .panel-heading .accordion-toggle.collapsed:before {
+              content: "▶";
+              color: #82afd9; }
           .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .userSetting_ver h3 {
             border-bottom: 2px dashed #212121; }
         .userSetting_body .userSetting_main .floor .userSetting_sys .robotB2 {
@@ -15237,7 +15220,7 @@ a.text-dark:hover, a.text-dark:focus {
           width: 22%;
           height: 80px;
           background: radial-gradient(#f08b8c 30%, #f8e6e4 20%);
-          background-size: 10px 10px;
+          background-size: 8px 8px;
           position: absolute;
           bottom: -80px; }
       .userSetting_body .userSetting_main .floor .userSetting_adm {
@@ -15251,10 +15234,11 @@ a.text-dark:hover, a.text-dark:focus {
           width: 450px;
           height: 100px;
           background-color: #ffffff;
-          font-size: 4rem;
+          background-image: url("../img/user-setting/signboard.jpg");
+          font-size: 4.5rem;
           letter-spacing: 1.25rem;
           position: absolute;
-          top: -5%;
+          top: -10%;
           z-index: 6;
           border: .3vw solid #353535;
           z-index: 12; }
@@ -15265,226 +15249,116 @@ a.text-dark:hover, a.text-dark:focus {
           text-align: center;
           position: absolute;
           left: 50%;
-          transform: translate(-50%, 10%);
+          transform: translate(-50%, 5%);
           border: .3vw solid #353535;
-          transform: translate(-50%, 0%);
-          border: none; }
-          .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut {
+          border: none;
+          z-index: 12; }
+          .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .box {
             width: 100%;
-            margin: 0 auto;
-            overflow-x: scroll; }
-            .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn {
-              width: 900px;
-              height: 250px; }
-              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn .mike {
-                background-image: url("../img/user-setting/light_mike.svg");
-                margin: 0 1.5% 5%;
-                width: 120px;
-                height: 215px;
-                display: inline-block;
-                background-repeat: no-repeat; }
-                .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn .mike h3 {
-                  padding-right: 25px;
-                  transform: rotate(-25deg);
-                  margin-top: 130px;
-                  text-align: center; }
-              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn .spencer {
-                background-image: url("../img/user-setting/light_spencer.svg");
-                margin: 0 1.5% 5%;
-                width: 120px;
-                height: 215px;
-                display: inline-block;
-                background-repeat: no-repeat; }
-                .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn .spencer h3 {
-                  padding-right: 25px;
-                  transform: rotate(-25deg);
-                  margin-top: 130px;
-                  text-align: center; }
-              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn .allen {
-                background-image: url("../img/user-setting/light_allen.svg");
-                margin: 0 1.5% 5%;
-                width: 120px;
-                height: 215px;
-                display: inline-block;
-                background-repeat: no-repeat; }
-                .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn .allen h3 {
-                  padding-right: 25px;
-                  color: #ffffff;
-                  margin-top: 130px;
-                  text-align: center; }
-              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn .grace {
-                background-image: url("../img/user-setting/light_grace.svg");
-                margin: 0 1.5% 5%;
-                width: 120px;
-                height: 215px;
-                display: inline-block;
-                background-repeat: no-repeat; }
-                .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn .grace h3 {
-                  padding-right: 25px;
-                  margin-top: 130px;
-                  text-align: center; }
-              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn .sharon {
-                background-image: url("../img/user-setting/light_sharon.svg");
-                margin: 0 1.5% 5%;
-                width: 120px;
-                height: 215px;
-                display: inline-block;
-                background-repeat: no-repeat; }
-                .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn .sharon h3 {
-                  padding-left: 10px;
-                  transform: rotate(25deg);
-                  margin-top: 130px;
-                  text-align: center; }
-              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn .howard {
-                background-image: url("../img/user-setting/light_howard.svg");
-                margin: 0 1.5% 5%;
-                width: 120px;
-                height: 215px;
-                display: inline-block;
-                background-repeat: no-repeat; }
-                .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn .howard h3 {
-                  padding-left: 10px;
-                  transform: rotate(25deg);
-                  margin-top: 130px;
-                  text-align: center; }
-          .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike {
-            background: radial-gradient(rgba(169, 228, 180, 0.5) 30%, white 20%);
-            animation: leftLight 100s infinite linear;
-            display: flex;
-            width: 100%;
-            background-size: 8px 8px;
-            z-index: 10;
-            position: relative;
-            margin: 0 auto; }
-            .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike .userSetting_wrap {
-              padding-top: 10px;
-              width: 50%;
-              height: 420px;
-              opacity: .8; }
-              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike .userSetting_wrap .userSetting_Name, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike .userSetting_wrap .userSetting_work, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike .userSetting_wrap .userSetting_portfolio {
-                margin: 0 10%;
-                padding: 5px; }
-            .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_mike .userSetting_picture {
-              width: 38%;
-              position: absolute;
-              bottom: 0;
-              right: 0;
-              opacity: .8; }
-          .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer {
-            background: radial-gradient(rgba(178, 212, 243, 0.5) 30%, white 20%);
-            animation: leftLight 100s infinite linear;
-            display: flex;
-            width: 100%;
-            background-size: 8px 8px;
-            z-index: 10;
-            position: relative;
-            margin: 0 auto; }
-            .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer .userSetting_wrap {
-              padding-top: 10px;
-              width: 50%;
-              height: 420px;
-              opacity: .8; }
-              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer .userSetting_wrap .userSetting_Name, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer .userSetting_wrap .userSetting_work, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer .userSetting_wrap .userSetting_portfolio {
-                margin: 0 10%;
-                padding: 5px; }
-            .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_spencer .userSetting_picture {
-              width: 38%;
-              position: absolute;
-              bottom: 0;
-              right: 0;
-              opacity: .8; }
-          .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen {
-            background: radial-gradient(rgba(170, 170, 170, 0.5) 30%, white 20%);
-            animation: downLight 80s infinite linear;
-            display: flex;
-            width: 100%;
-            background-size: 8px 8px;
-            z-index: 10;
-            position: relative;
-            margin: 0 auto; }
-            .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen .userSetting_wrap {
-              padding-top: 10px;
-              width: 50%;
-              height: 420px;
-              opacity: .8; }
-              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen .userSetting_wrap .userSetting_Name, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen .userSetting_wrap .userSetting_work, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen .userSetting_wrap .userSetting_portfolio {
-                margin: 0 10%;
-                padding: 5px; }
-            .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_allen .userSetting_picture {
-              width: 38%;
-              position: absolute;
-              bottom: 0;
-              right: 0;
-              opacity: .8; }
-          .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace {
-            background: radial-gradient(rgba(255, 224, 124, 0.5) 30%, white 20%);
-            animation: downLight 80s infinite linear;
-            display: flex;
-            width: 100%;
-            background-size: 8px 8px;
-            z-index: 10;
-            position: relative;
-            margin: 0 auto; }
-            .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace .userSetting_wrap {
-              padding-top: 10px;
-              width: 50%;
-              height: 420px;
-              opacity: .8; }
-              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace .userSetting_wrap .userSetting_Name, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace .userSetting_wrap .userSetting_work, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace .userSetting_wrap .userSetting_portfolio {
-                margin: 0 10%;
-                padding: 5px; }
-            .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_grace .userSetting_picture {
-              width: 38%;
-              position: absolute;
-              bottom: 0;
-              right: 0;
-              opacity: .8; }
-          .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon {
-            background: radial-gradient(rgba(255, 180, 199, 0.5) 30%, white 20%);
-            animation: rightLight 80s infinite linear;
-            display: flex;
-            width: 100%;
-            background-size: 8px 8px;
-            z-index: 10;
-            position: relative;
-            margin: 0 auto; }
-            .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon .userSetting_wrap {
-              padding-top: 10px;
-              width: 50%;
-              height: 420px;
-              opacity: .8; }
-              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon .userSetting_wrap .userSetting_Name, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon .userSetting_wrap .userSetting_work, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon .userSetting_wrap .userSetting_portfolio {
-                margin: 0 10%;
-                padding: 5px; }
-            .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_sharon .userSetting_picture {
-              width: 38%;
-              position: absolute;
-              bottom: 0;
-              right: 0;
-              opacity: .8; }
-          .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard {
-            background: radial-gradient(rgba(255, 255, 255, 0.5) 30%, white 20%);
-            animation: rightLight 80s infinite linear;
-            display: flex;
-            width: 100%;
-            background-size: 8px 8px;
-            z-index: 10;
-            position: relative;
-            margin: 0 auto; }
-            .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard .userSetting_wrap {
-              padding-top: 10px;
-              width: 50%;
-              height: 420px;
-              opacity: .8; }
-              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard .userSetting_wrap .userSetting_Name, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard .userSetting_wrap .userSetting_work, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard .userSetting_wrap .userSetting_portfolio {
-                margin: 0 10%;
-                padding: 5px; }
-            .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .userSetting_howard .userSetting_picture {
-              width: 38%;
-              position: absolute;
-              bottom: 0;
-              right: 0;
-              opacity: .8; }
+            height: 100%;
+            overflow: hidden;
+            background-image: url("../img/user-setting/admdeveloper.png");
+            border: 5px solid #212121;
+            border-bottom: 25px solid #212121;
+            border-top: 25px solid #212121;
+            border-radius: 10px; }
+            .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .box #app {
+              width: 100%;
+              height: 550px;
+              margin: 0 auto;
+              display: flex;
+              justify-content: center;
+              align-items: center; }
+              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .box #app .postarea {
+                width: 960px;
+                height: 450px;
+                margin: 0 auto;
+                white-space: nowrap; }
+                .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .box #app .postarea .posts {
+                  width: 100%;
+                  height: 100%;
+                  margin: 0 auto;
+                  position: relative;
+                  transition: 0.5s; }
+                  .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .box #app .postarea .posts .postbox {
+                    display: inline-block;
+                    width: 960px;
+                    height: 100%;
+                    margin: 0 auto; }
+                    .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .box #app .postarea .posts .postbox .cover {
+                      width: 340px;
+                      height: 100%;
+                      margin: auto 300px;
+                      background-size: cover;
+                      background-position: center;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      transition: 0.5s; }
+                    .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .box #app .postarea .posts .postbox .cover:hover {
+                      width: 340px;
+                      height: 108%; }
+                      .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .box #app .postarea .posts .postbox .cover:hover .cover:hover .infos {
+                        transform: translate(-20%, -50%); }
+                      .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .box #app .postarea .posts .postbox .cover:hover .infos {
+                        color: white;
+                        transform: translateX(-50%);
+                        text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+                        transition: 0.5s;
+                        margin: 0; }
+                        .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .box #app .postarea .posts .postbox .cover:hover .infos .postbox .infos h1 {
+                          margin-bottom: 10px;
+                          font-size: 50px;
+                          font-weight: 400; }
+                        .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .box #app .postarea .posts .postbox .cover:hover .infos .postbox .infos h5 {
+                          background-color: white;
+                          color: whitesmoke;
+                          padding: 4px 12px;
+                          font-size: 20px;
+                          font-weight: 300;
+                          box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3); }
+              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .box #app .control_left, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .box #app .control_right {
+                width: 40px;
+                height: 40px;
+                border: solid 1px white;
+                position: fixed;
+                border-radius: 50%;
+                color: black;
+                font-size: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer; }
+              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .box #app .control_left:hover, .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .box #app .control_right:hover {
+                background-color: rgba(0, 0, 0, 0.5);
+                color: white;
+                transition: 0.5s 0s; }
+              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .box #app .control_left {
+                left: 50px;
+                background-color: rgba(255, 255, 255, 0.5); }
+              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .box #app .control_right {
+                right: 50px;
+                background-color: rgba(255, 255, 255, 0.5); }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+    filter: saturate(0%); }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+    filter: saturate(100%); } }
+
+@keyframes sliceIn {
+  0% {
+    transform: translateX(-30px); }
+  100% {
+    transform: translateX(0px); } }
+              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .box #app .cover {
+                animation: fadeIn 1s ease both; }
+              .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .box #app h5 {
+                animation: sliceIn 1s 0.1s ease both; }
         .userSetting_body .userSetting_main .floor .userSetting_adm .robotB3 {
           width: 20%;
           max-height: 600px;
@@ -15497,60 +15371,91 @@ a.text-dark:hover, a.text-dark:focus {
           position: absolute;
           z-index: 12;
           animation: paperPlane 5s ease-in-out infinite; }
+        .userSetting_body .userSetting_main .floor .userSetting_adm .tripod {
+          width: 150px;
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%);
+          z-index: 10; }
   .userSetting_body p {
     margin: 0;
     padding: 0; }
 
 @media all and (max-width: 991px) and (min-width: 768px) {
-  .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memData, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .airCoin, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memcolor {
-    width: 90px; }
-  .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData {
-    padding: 20px;
-    width: 60%; }
+  .userSetting_body .userSetting_main .floor .userSetting_mem {
+    height: 700px; }
+    .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memData, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .airCoin, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memcolor {
+      width: 100px; }
+    .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData {
+      padding: 20px;
+      width: 60%; }
+    .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1, .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1_2, .userSetting_body .userSetting_main .floor .userSetting_mem .box {
+      display: none; }
+  .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .manu, .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .ver {
+    width: 100px; }
+  .userSetting_body .userSetting_main .floor .userSetting_sys .paper {
+    display: none; }
   .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn {
     width: 900px;
     height: 250px; } }
 
 @media all and (max-width: 767px) and (min-width: 576px) {
-  .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memData, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .airCoin, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memcolor {
-    width: 90px; }
-  .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData {
-    padding: 20px;
-    width: 70%; }
+  .userSetting_body .userSetting_main .floor .userSetting_mem {
+    height: 700px; }
+    .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memData, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .airCoin, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memcolor {
+      width: 100px; }
+    .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData {
+      padding: 20px;
+      width: 70%; }
+    .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1, .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1_2, .userSetting_body .userSetting_main .floor .userSetting_mem .box {
+      display: none; }
+  .userSetting_body .userSetting_main .floor .userSetting_sys {
+    height: 700px; }
+    .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .manu, .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .ver {
+      width: 100px; }
+    .userSetting_body .userSetting_main .floor .userSetting_sys .robotB2, .userSetting_body .userSetting_main .floor .userSetting_sys .robotB2_2, .userSetting_body .userSetting_main .floor .userSetting_sys .paper {
+      display: none; }
   .userSetting_body .userSetting_main .floor .userSetting_adm .admKanban .admKanbanOverFlowOut .admKanbanOverFlowIn {
     width: 900px;
-    height: 250px; } }
+    height: 250px; }
+  .userSetting_body .userSetting_main .floor .userSetting_adm .robotB3, .userSetting_body .userSetting_main .floor .userSetting_adm .paperPlane {
+    display: none; } }
 
 @media all and (max-width: 575px) and (min-width: 376px) {
-  .userSetting_body .userSetting_main .floor .userSetting_mem h1 {
-    width: 100%;
-    height: 100px;
-    left: 50%;
-    transform: translate(-50%, 10%);
-    font-size: 3.75rem; }
-  .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban {
-    width: 100%;
-    min-width: 350px; }
-    .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memData, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .airCoin, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memcolor {
-      width: 80px; }
-  .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData {
-    padding: 20px;
-    width: 80%; }
-  .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1, .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1_2, .userSetting_body .userSetting_main .floor .userSetting_mem .box {
-    display: none; }
-  .userSetting_body .userSetting_main .floor .userSetting_sys h1 {
-    width: 100%;
-    height: 100px;
-    left: 50%;
-    transform: translate(-50%, 10%);
-    font-size: 3.75rem; }
-  .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban {
-    width: 100%;
-    min-width: 350px; }
-    .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .manu, .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .ver {
-      width: 80px; }
-  .userSetting_body .userSetting_main .floor .userSetting_sys .robotB2, .userSetting_body .userSetting_main .floor .userSetting_sys .robotB2_2, .userSetting_body .userSetting_main .floor .userSetting_sys .paper {
-    display: none; }
+  .userSetting_body .userSetting_main .floor .userSetting_mem {
+    height: 700px; }
+    .userSetting_body .userSetting_main .floor .userSetting_mem h1 {
+      width: 100%;
+      height: 100px;
+      left: 50%;
+      transform: translate(-50%, 10%);
+      font-size: 3.75rem; }
+    .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban {
+      width: 100%;
+      min-width: 350px; }
+      .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memData, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .airCoin, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memcolor {
+        width: 100px; }
+    .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData {
+      padding: 20px;
+      width: 80%; }
+    .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1, .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1_2, .userSetting_body .userSetting_main .floor .userSetting_mem .box {
+      display: none; }
+  .userSetting_body .userSetting_main .floor .userSetting_sys {
+    height: 700px; }
+    .userSetting_body .userSetting_main .floor .userSetting_sys h1 {
+      width: 100%;
+      height: 100px;
+      left: 50%;
+      transform: translate(-50%, 10%);
+      font-size: 3.75rem; }
+    .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban {
+      width: 100%;
+      min-width: 350px; }
+      .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .manu, .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .ver {
+        width: 100px; }
+    .userSetting_body .userSetting_main .floor .userSetting_sys .robotB2, .userSetting_body .userSetting_main .floor .userSetting_sys .robotB2_2, .userSetting_body .userSetting_main .floor .userSetting_sys .paper {
+      display: none; }
   .userSetting_body .userSetting_main .floor .userSetting_adm h1 {
     width: 100%;
     height: 100px;
@@ -15564,35 +15469,41 @@ a.text-dark:hover, a.text-dark:focus {
     display: none; } }
 
 @media all and (max-width: 375px) {
-  .userSetting_body .userSetting_main .floor .userSetting_mem h1 {
-    width: 100%;
-    height: 85px;
-    left: 50%;
-    transform: translate(-50%, 10%);
-    font-size: 3rem; }
-  .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban {
-    width: 100%;
-    min-width: 350px; }
-    .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memData, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .airCoin, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memcolor {
-      width: 80px; }
-  .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData {
-    padding: 20px;
-    width: 100%; }
-  .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1, .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1_2, .userSetting_body .userSetting_main .floor .userSetting_mem .box {
-    display: none; }
-  .userSetting_body .userSetting_main .floor .userSetting_sys h1 {
-    width: 100%;
-    height: 85px;
-    left: 50%;
-    transform: translate(-50%, 10%);
-    font-size: 3rem; }
-  .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban {
-    width: 100%;
-    min-width: 350px; }
-    .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .manu, .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .ver {
-      width: 80px; }
-  .userSetting_body .userSetting_main .floor .userSetting_sys .robotB2, .userSetting_body .userSetting_main .floor .userSetting_sys .robotB2_2, .userSetting_body .userSetting_main .floor .userSetting_sys .paper {
-    display: none; }
+  .userSetting_body .userSettingBanner {
+    height: 700px; }
+  .userSetting_body .userSetting_main .floor .userSetting_mem {
+    height: 700px; }
+    .userSetting_body .userSetting_main .floor .userSetting_mem h1 {
+      width: 100%;
+      height: 85px;
+      left: 50%;
+      transform: translate(-50%, 10%);
+      font-size: 3rem; }
+    .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban {
+      width: 100%;
+      min-width: 350px; }
+      .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memData, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .airCoin, .userSetting_body .userSetting_main .floor .userSetting_mem .memKanban .memKanbanIn .memcolor {
+        width: 100px; }
+    .userSetting_body .userSetting_main .floor .userSetting_mem .setDataBg .setData {
+      padding: 20px;
+      width: 100%; }
+    .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1, .userSetting_body .userSetting_main .floor .userSetting_mem .robotB1_2, .userSetting_body .userSetting_main .floor .userSetting_mem .box {
+      display: none; }
+  .userSetting_body .userSetting_main .floor .userSetting_sys {
+    height: 700px; }
+    .userSetting_body .userSetting_main .floor .userSetting_sys h1 {
+      width: 100%;
+      height: 85px;
+      left: 50%;
+      transform: translate(-50%, 10%);
+      font-size: 3rem; }
+    .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban {
+      width: 100%;
+      min-width: 350px; }
+      .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .manu, .userSetting_body .userSetting_main .floor .userSetting_sys .sysKanban .ver {
+        width: 100px; }
+    .userSetting_body .userSetting_main .floor .userSetting_sys .robotB2, .userSetting_body .userSetting_main .floor .userSetting_sys .robotB2_2, .userSetting_body .userSetting_main .floor .userSetting_sys .paper {
+      display: none; }
   .userSetting_body .userSetting_main .floor .userSetting_adm h1 {
     width: 100%;
     height: 85px;
@@ -15604,17 +15515,6 @@ a.text-dark:hover, a.text-dark:focus {
     min-width: 350px; }
   .userSetting_body .userSetting_main .floor .userSetting_adm .robotB3, .userSetting_body .userSetting_main .floor .userSetting_adm .paperPlane {
     display: none; } }
-
-.panel-title {
-  position: relative; }
-
-.panel-heading .accordion-toggle:before {
-  content: "▼";
-  color: #82afd9; }
-
-.panel-heading .accordion-toggle.collapsed:before {
-  content: "▶";
-  color: #82afd9; }
 
 .chat-body {
   margin: 0; }
@@ -16401,6 +16301,8 @@ header {
   font-weight: 800;
   background: radial-gradient(#777 30%, #212121 20%);
   background-size: 10px 10px; }
+  .footer-bottom p {
+    margin: 0; }
 
 .nav-body {
   width: 100%;
@@ -16413,15 +16315,18 @@ header {
     display: flex;
     justify-content: flex-end;
     position: fixed;
-    margin: 0 auto; }
+    right: 4%;
+    margin: 0 auto;
+    z-index: 999; }
     .nav-body .nav-hamPosition .nav-hamburgerWrap {
       width: 70px;
       height: 70px;
       background-color: #f3de6b;
       border-radius: 50%;
-      position: relative;
+      position: fixed;
       border: 5px solid #212121;
-      margin: 50px 20px 0 0; }
+      margin: 50px 20px 0 0;
+      z-index: 990; }
       .nav-body .nav-hamPosition .nav-hamburgerWrap .hambuger {
         cursor: pointer;
         height: 60px;
@@ -16429,8 +16334,7 @@ header {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 9999; }
+        transform: translate(-50%, -50%); }
         .nav-body .nav-hamPosition .nav-hamburgerWrap .hambuger .line {
           background-color: #212121;
           height: 5px;
@@ -16486,14 +16390,15 @@ header {
 
 .nav-navBgWrap {
   position: fixed;
-  left: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   top: -3%;
-  transform: translateX(-50%);
   width: 100%;
   height: 144px;
-  z-index: 9999;
+  z-index: 998;
   max-width: 960px;
-  transition: transform 2s; }
+  transition: top 2s; }
   .nav-navBgWrap .nav-navBg {
     position: relative; }
     .nav-navBgWrap .nav-navBg .nav-navWrap {
@@ -16513,7 +16418,8 @@ header {
           width: 70%;
           margin: 5% auto; }
           .nav-navBgWrap .nav-navBg .nav-navWrap .nav-logoWrap a img {
-            height: 100%; }
+            height: 100%;
+            z-index: 990; }
       .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap {
         width: 80%;
         height: 100%; }
@@ -16524,6 +16430,8 @@ header {
           justify-content: space-around;
           align-items: center;
           list-style: none; }
+          .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list .nav-logo {
+            display: none; }
           .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list li {
             vertical-align: bottom;
             display: flex;
@@ -16551,8 +16459,8 @@ header {
                   .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list li a > p:hover + .nav-circle-6 {
                     background-color: #f3de6b;
                     background-image: url(../img/share/nav-paper-plane.png);
-                    background-position: center;
-                    background-size: 35px;
+                    background-position: 40% 55%;
+                    background-size: 36px;
                     background-repeat: no-repeat; }
               .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list li a .nav-circle-1,
               .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list li a .nav-circle-2,
@@ -16576,35 +16484,66 @@ header {
               .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list li a .nav-circle-6:hover {
                 background-color: #f3de6b;
                 background-image: url(../img/share/nav-paper-plane.png);
-                background-position: center;
-                background-size: 35px;
+                background-position: 40% 55%;
+                background-size: 36px;
                 background-repeat: no-repeat; }
               .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list li a .nav-now {
                 background-color: #f3de6b;
                 background-image: url(../img/share/nav-paper-plane.png);
-                background-position: center;
+                background-position: 40% 55%;
                 background-size: 36px;
                 background-repeat: no-repeat; }
-        .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list.open {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-          align-items: center;
-          list-style: none;
-          position: fixed;
-          top: 25vw;
-          right: 0vw; }
-          .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list li a .nav-list.open ~ .nav-circle-1,
-          .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list li a .nav-list.open ~ .nav-circle-2,
-          .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list li a .nav-list.open ~ .nav-circle-3,
-          .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list li a .nav-list.open ~ .nav-circle-4,
-          .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list li a .nav-list.open ~ .nav-circle-5,
-          .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list li a .nav-list.open ~ .nav-circle-6 {
+          .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list .hbg-pc {
             display: none; }
-          .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list.open + .nav-road {
-            display: none; }
+          .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list.open {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            list-style: none;
+            position: fixed;
+            background-color: rgba(68, 68, 68, 0.99);
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%); }
+            .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list.open .nav-logo {
+              display: inline-block;
+              width: 13%;
+              object-fit: cover; }
+              .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list.open .nav-logo img {
+                width: 100%;
+                height: 100%; }
+            .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list.open li {
+              width: 15%;
+              text-align: center; }
+              .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list.open li a {
+                width: 100%;
+                display: block;
+                height: 100%; }
+                .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list.open li a p {
+                  display: inline-block;
+                  margin: 0;
+                  line-height: 60px;
+                  font-size: 1.2rem;
+                  color: #ffffff; }
+                  .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list.open li a p:hover {
+                    color: #f08b8c; }
+                .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list.open li a .nav-circle-1,
+                .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list.open li a .nav-circle-2,
+                .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list.open li a .nav-circle-3,
+                .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list.open li a .nav-circle-4,
+                .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list.open li a .nav-circle-5,
+                .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list.open li a .nav-circle-6 {
+                  display: flex;
+                  float: left;
+                  vertical-align: middle;
+                  margin-left: 20%; }
+            .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list.open .hbg-pc {
+              display: inline-block;
+              color: #ffffff; }
+            .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-list.open + .nav-road {
+              display: none; }
         .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-road {
           width: 70%;
           height: 25px;
@@ -16624,8 +16563,8 @@ header {
             .nav-navBgWrap .nav-navBg .nav-navWrap .nav-navPageWrap .nav-road > div .nav-circle:hover {
               background-color: yellow;
               background-image: url(../img/share/nav-paper-plane.png);
-              background-position: center;
-              background-size: 35px;
+              background-position: 40% 55%;
+              background-size: 36px;
               background-repeat: no-repeat; }
     .nav-navBgWrap .nav-navBg .nav-littleNav {
       position: absolute;
@@ -16658,64 +16597,115 @@ header {
 .nav-navBgWrap.-on {
   position: fixed;
   animation: 0.2 all;
-  transform: translate(-50%, -150%); }
+  top: -150%; }
 
 @media all and (max-width: 1199px) and (min-width: 992px) {
   .nav-body {
     width: 100%; }
     .nav-body .nav-hamPosition {
-      width: 100%; } }
+      width: 100%; }
+  .open li {
+    width: 30%;
+    text-align: center; }
+    .open li a {
+      width: 100%;
+      display: block;
+      height: 100%; }
+      .open li a p {
+        display: inline-block;
+        margin: 0;
+        line-height: 60px;
+        font-size: 1.2rem;
+        color: #ffffff; }
+        .open li a p:hover {
+          color: #f08b8c; } }
 
 @media all and (max-width: 991px) and (min-width: 768px) {
   .nav-body {
     width: 100%; }
     .nav-body .nav-hamPosition {
       width: 100%; }
-  .nav-navBgWrap,
-  .nav-navBgWrap.-on {
-    display: none; } }
+  .nav-navBgWrap .nav-navBg > img {
+    display: none; }
+  .nav-navBgWrap .nav-navBg .nav-logoWrap img {
+    display: none; }
+  .nav-navBgWrap .nav-navBg .nav-pc {
+    display: none; }
+  .nav-navBgWrap .nav-navBg .nav-road {
+    display: none; }
+  .nav-navWrap {
+    top: -200px !important; }
+  .open {
+    display: block; } }
 
 @media all and (max-width: 767px) and (min-width: 576px) {
   .nav-body {
     width: 100%; }
     .nav-body .nav-hamPosition {
       width: 100%; }
-  .nav-navBgWrap,
-  .nav-navBgWrap.-on {
-    display: none; } }
+  .nav-navBgWrap .nav-navBg > img {
+    display: none; }
+  .nav-navBgWrap .nav-navBg .nav-logoWrap img {
+    display: none; }
+  .nav-navBgWrap .nav-navBg .nav-pc {
+    display: none; }
+  .nav-navBgWrap .nav-navBg .nav-road {
+    display: none; }
+  .nav-navWrap {
+    top: -200px !important; }
+  .open {
+    display: block; } }
 
 @media all and (max-width: 575px) and (min-width: 376px) {
   .nav-body {
     width: 100%; }
     .nav-body .nav-hamPosition {
       width: 100%; }
-  .nav-navBgWrap,
-  .nav-navBgWrap.-on {
-    display: none; } }
+  .nav-navBgWrap .nav-navBg > img {
+    display: none; }
+  .nav-navBgWrap .nav-navBg .nav-logoWrap img {
+    display: none; }
+  .nav-navBgWrap .nav-navBg .nav-pc {
+    display: none; }
+  .nav-navBgWrap .nav-navBg .nav-road {
+    display: none; }
+  .nav-navWrap {
+    top: -200px !important; }
+  .open {
+    display: block; } }
 
 @media all and (max-width: 375px) {
   .nav-body {
     width: 100%; }
     .nav-body .nav-hamPosition {
       width: 100%; }
-  .nav-navBgWrap,
-  .nav-navBgWrap.-on {
-    display: none; } }
+  .nav-navBgWrap .nav-navBg > img {
+    display: none; }
+  .nav-navBgWrap .nav-navBg .nav-logoWrap img {
+    display: none; }
+  .nav-navBgWrap .nav-navBg .nav-pc {
+    display: none; }
+  .nav-navBgWrap .nav-navBg .nav-road {
+    display: none; }
+  .nav-navWrap {
+    top: -200px !important; }
+  .open {
+    display: block; } }
 
 .signInBg {
   width: 100%;
   height: 100%;
-  background: radial-gradient(#212121 30%, rgba(255, 255, 255, 0.9) 20%);
+  background-color: rgba(68, 68, 68, 0.99);
   background-size: 10px 10px;
   position: fixed;
-  z-index: 80;
+  z-index: 1000;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: none; }
   .signInBg .signInData {
     padding: 20px;
-    width: 500px;
+    width: 550px;
     background-image: url("../img/user-setting/setDataletter.png");
     background-size: 100% 100%;
     position: absolute;
@@ -16732,20 +16722,18 @@ header {
     .signInBg .signInData .formsignInData {
       width: 100%;
       margin: 0 auto; }
-      .signInBg .signInData .formsignInData p {
-        margin-top: 10px; }
       .signInBg .signInData .formsignInData .signInLogo {
         width: 50%;
         display: block;
-        margin: 0 auto;
-        margin-top: 10px; }
+        margin: 0 auto; }
       .signInBg .signInData .formsignInData input {
         width: 100%;
         box-sizing: border-box;
-        padding: 10px;
+        padding: 5px;
         font-size: 16px;
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
+        margin-bottom: 5px;
         border: .3vw solid #353535; }
       .signInBg .signInData .formsignInData button {
         width: 100%;
@@ -16753,8 +16741,7 @@ header {
         border-radius: 5px;
         background: #82afd9;
         background-size: 10px 10px;
-        color: aliceblue;
-        margin-top: 10px; }
+        color: aliceblue; }
   .signInBg .envelopedown, .signInBg .envelopeup {
     width: 30%;
     position: absolute;
@@ -16764,6 +16751,26 @@ header {
     z-index: 69; }
   .signInBg .envelopeup {
     z-index: 71; }
+
+@media all and (max-width: 991px) and (min-width: 768px) {
+  .signInBg .signInData {
+    padding: 20px;
+    width: 60%; } }
+
+@media all and (max-width: 767px) and (min-width: 576px) {
+  .signInBg .signInData {
+    padding: 20px;
+    width: 70%; } }
+
+@media all and (max-width: 575px) and (min-width: 376px) {
+  .signInBg .signInData {
+    padding: 20px;
+    width: 80%; } }
+
+@media all and (max-width: 375px) {
+  .signInBg .signInData {
+    padding: 20px;
+    width: 100%; } }
 
 /*
  *  vender
@@ -16890,10 +16897,10 @@ td {
   h5 {
     font-size: 1.4rem; }
   span {
-    font-size: 1.4rem; }
+    font-size: 1.25rem; }
   p {
-    font-size: 1.4rem; }
+    font-size: 1rem; }
   li {
-    font-size: 1.4rem; }
+    font-size: 1.25rem; }
   td {
-    font-size: 1.4rem; } }
+    font-size: 1.25rem; } }
