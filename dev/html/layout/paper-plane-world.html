@@ -9,15 +9,9 @@
   <div id="planeContainer"></div>
   <span id="statsBox"></span>
   <div id="planeLetter">
-    <div
-      id="openMotion"
-      class="open-motion"
-    ></div>
-    <div
-      id="catchLetterShow"
-      class="catch-letter"
-      style="display: none;"
-    >
+    <span id="nextStepArrow"></span>
+    <div id="openMotion" class="open-motion"></div>
+    <div id="catchLetterShow" class="catch-letter" style="display: none;">
       <div class="letter-wrap">
         <div class="letter-head">
           <div class="stamp-box"></div>
@@ -47,105 +41,3 @@
 </div>
 
 <script src="./js/butterflyRock.js"></script>
-<script>
-  let threeWorld = document.getElementById('threeWorld');
-  let planeLetter = document.getElementById('planeLetter');
-  let openMotion = document.getElementById('openMotion');
-  let catchLetterShow = document.getElementById('catchLetterShow');
-  let net = document.getElementById('mouseNet');
-  let missMsg = document.getElementById('missMsg');
-  let planeContainer = document.getElementById('planeContainer');
-  planeLetter.style = "";
-  //mouseMove
-  threeWorld.addEventListener('mousemove', function (e) {
-    net.style.left = e.pageX + 'px';
-    net.style.top = e.pageY + 'px';
-  })
-
-  threeWorld.addEventListener('mousedown', mouseDownFn);
-  
-  function mouseDownFn() {
-    net.style.transform = 'rotate(-45deg)';
-    let successNum = getRandom(10);
-    // successNum = 10;//.......test
-    missMsg.classList = "";
-    if(successNum ==  10 ){
-      missMsg.innerText = "Success!";
-    }else if( successNum >= 7 ){
-      missMsg.innerText = "Miss!";
-    }else if( successNum >= 4 ){
-      missMsg.innerText = "Try Again!";
-    }else{
-      missMsg.innerText = "Oh No~~";
-    }
-    if (successNum == 10) {
-      document.getElementById('netImg').src = "./img/catch-letter/catch-the-plane.gif";
-      net.style.transform = 'rotate(0deg)';
-
-      /*
-       *  要把滑鼠事件鎖起來，直到信開好為止
-       */
-      openLetter();//開信
-      document.getElementById('navHead').classList.add('-on');//將navBar推上去
-      stampShot();//蓋章
-      threeWorld.removeEventListener('mousedown', mouseDownFn);//解除撈信滑鼠事件
-      threeWorld.removeEventListener('mouseup', mouseUpFn );//解除撈信滑鼠事件
-      // changeMouseToStamp();//把滑鼠變成戳章
-    } else {
-      threeWorld.addEventListener('mouseup', mouseUpFn );
-      function mouseUpFn(){
-        net.style.transform = 'rotate(45deg)';
-        missMsg.classList.add("fadeAway");
-      }
-    }
-  }
-
-  function openLetter() {
-    planeLetter.classList.add('active');
-    letterFlim();
-    threeWorld.style.cursor = 'auto';
-  }
-
-  let time = 5
-
-  function letterFlim() {
-    setTimeout(() => {
-      time--;
-      if (time < 0) {
-        setTimeout(() => {
-          openMotion.style.display = "none";
-          net.style.display = "none";
-          catchLetterShow.style.display = "block";
-          console.log(catchLetterShow);
-        }, 400)
-      } else {
-        openMotion.style.backgroundImage = `url(./img/catch-letter/letter-fold-${time+1}.png)`
-        letterFlim()
-      }
-      console.log(time)
-    }, 400)
-  }
-
-  function getRandom(num) {
-    return Math.floor(Math.random() * num) + 1;
-  };
-  //蓋印章
-  function stampShot(){
-    planeLetter.addEventListener('click',(e)=>{
-      // console.log("e.offsetX: ",e.offsetX);
-      // console.log("e.offsetY: ",e.offsetY);
-      let stampshot = document.getElementById('stampshot');
-      let stampEffectDiv = document.createElement('div');
-      stampshot.style.display = "block";
-      stampEffectDiv.setAttribute('id','stampEffect');
-      // document.querySelector(".stampEffect")
-      let LETTER_HEIGHT = planeLetter.offsetHeight;
-      let LETTER_WIDTH = planeLetter.offsetWidth;
-      
-      stampEffectDiv.style.top = `${e.offsetY-50}px`;
-      stampEffectDiv.style.left = `${e.offsetX-50}px`;
-      stampEffectDiv.style.backgroundImage = `url(./img/catch-letter/user-stamp/user-stamp_${Math.floor(Math.random() * 9) + 1}.png)`;
-      stampshot.appendChild(stampEffectDiv);
-    })
-  }
-</script>

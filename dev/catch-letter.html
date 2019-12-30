@@ -183,7 +183,6 @@
             signInBg.style.display = "none";
         };
     </script>
-  
   <div
   id="threeWorld"
   style="position: relative; overflow: hidden;"
@@ -195,15 +194,9 @@
   <div id="planeContainer"></div>
   <span id="statsBox"></span>
   <div id="planeLetter">
-    <div
-      id="openMotion"
-      class="open-motion"
-    ></div>
-    <div
-      id="catchLetterShow"
-      class="catch-letter"
-      style="display: none;"
-    >
+    <span id="nextStepArrow"></span>
+    <div id="openMotion" class="open-motion"></div>
+    <div id="catchLetterShow" class="catch-letter" style="display: none;">
       <div class="letter-wrap">
         <div class="letter-head">
           <div class="stamp-box"></div>
@@ -233,187 +226,126 @@
 </div>
 
 <script src="./js/butterflyRock.js"></script>
-<script>
-  let threeWorld = document.getElementById('threeWorld');
-  let planeLetter = document.getElementById('planeLetter');
-  let openMotion = document.getElementById('openMotion');
-  let catchLetterShow = document.getElementById('catchLetterShow');
-  let net = document.getElementById('mouseNet');
-  let missMsg = document.getElementById('missMsg');
-  let planeContainer = document.getElementById('planeContainer');
-  planeLetter.style = "";
-  //mouseMove
-  threeWorld.addEventListener('mousemove', function (e) {
-    net.style.left = e.pageX + 'px';
-    net.style.top = e.pageY + 'px';
-  })
-
-  threeWorld.addEventListener('mousedown', mouseDownFn);
   
-  function mouseDownFn() {
-    net.style.transform = 'rotate(-45deg)';
-    let successNum = getRandom(10);
-    // successNum = 10;//.......test
-    missMsg.classList = "";
-    if(successNum ==  10 ){
-      missMsg.innerText = "Success!";
-    }else if( successNum >= 7 ){
-      missMsg.innerText = "Miss!";
-    }else if( successNum >= 4 ){
-      missMsg.innerText = "Try Again!";
-    }else{
-      missMsg.innerText = "Oh No~~";
-    }
-    if (successNum == 10) {
-      document.getElementById('netImg').src = "./img/catch-letter/catch-the-plane.gif";
-      net.style.transform = 'rotate(0deg)';
-
-      /*
-       *  要把滑鼠事件鎖起來，直到信開好為止
-       */
-      openLetter();//開信
-      document.getElementById('navHead').classList.add('-on');//將navBar推上去
-      stampShot();//蓋章
-      threeWorld.removeEventListener('mousedown', mouseDownFn);//解除撈信滑鼠事件
-      threeWorld.removeEventListener('mouseup', mouseUpFn );//解除撈信滑鼠事件
-      // changeMouseToStamp();//把滑鼠變成戳章
-    } else {
-      threeWorld.addEventListener('mouseup', mouseUpFn );
-      function mouseUpFn(){
-        net.style.transform = 'rotate(45deg)';
-        missMsg.classList.add("fadeAway");
-      }
-    }
-  }
-
-  function openLetter() {
-    planeLetter.classList.add('active');
-    letterFlim();
-    threeWorld.style.cursor = 'auto';
-  }
-
-  let time = 5
-
-  function letterFlim() {
-    setTimeout(() => {
-      time--;
-      if (time < 0) {
-        setTimeout(() => {
-          openMotion.style.display = "none";
-          net.style.display = "none";
-          catchLetterShow.style.display = "block";
-          console.log(catchLetterShow);
-        }, 400)
-      } else {
-        openMotion.style.backgroundImage = `url(./img/catch-letter/letter-fold-${time+1}.png)`
-        letterFlim()
-      }
-      console.log(time)
-    }, 400)
-  }
-
-  function getRandom(num) {
-    return Math.floor(Math.random() * num) + 1;
-  };
-  //蓋印章
-  function stampShot(){
-    planeLetter.addEventListener('click',(e)=>{
-      // console.log("e.offsetX: ",e.offsetX);
-      // console.log("e.offsetY: ",e.offsetY);
-      let stampshot = document.getElementById('stampshot');
-      let stampEffectDiv = document.createElement('div');
-      stampshot.style.display = "block";
-      stampEffectDiv.setAttribute('id','stampEffect');
-      // document.querySelector(".stampEffect")
-      let LETTER_HEIGHT = planeLetter.offsetHeight;
-      let LETTER_WIDTH = planeLetter.offsetWidth;
-      
-      stampEffectDiv.style.top = `${e.offsetY-50}px`;
-      stampEffectDiv.style.left = `${e.offsetX-50}px`;
-      stampEffectDiv.style.backgroundImage = `url(./img/catch-letter/user-stamp/user-stamp_${Math.floor(Math.random() * 9) + 1}.png)`;
-      stampshot.appendChild(stampEffectDiv);
-    })
-  }
-</script>
-  <main id="catchLetter" v-if="viewMoreOpen === true">
-    
-      <div id="viewMore">
-        <section class="catch-step-1">
-          <div class="box-white catch-letter">
-            <div class="letter-wrap">
-              <div class="paper-cloud"></div>
-              <div class="letter-head">
-                <div class="stamp-box"></div>
-                <div class="letter-tittle">
-                  <h3>舍，甲說，這是多麼傷心的事啊！</h3>
-                </div>
+  <main id="catchLetter" style="display: none;">
+    <div id="viewMore">
+      <section class="catch-step-1">
+        <div class="box-white catch-letter">
+          <div class="letter-wrap">
+            <div class="paper-cloud"></div>
+            <div class="letter-head">
+              <div class="stamp-box"></div>
+              <div class="letter-tittle">
+                <h3>舍，甲說，這是多麼傷心的事啊！</h3>
               </div>
-              <div class="letter-contant scroll-container">
-                <div class="text">
-                  <p>籠罩著街上的煙，日頭是自東徂西，凶惡的他們忍相虐待，那時代，日月不相望的什麼新曆法，什麼是麵皮？在新月微光下的街市，看見鮮紅的血，但是他倆竟會自己走到橋上，就再開始。此刻，新年的一日，那時代，我去拿一面鑼來。在這黑暗之中，阻斷爭論，剛纔經市長一說，只有前進，在做頭老的，他不和人家分擔，不知流失多少人類所託命的田
-                  </p> 
-                  <div class="letter-upload-img"></div>
-                  <p>
-                    礙步的石頭，互相提攜，和狺狺的狗吠，又產生有可供消費的勢力，農民播種犁田，現在不是糴不到半斗米？
-                  </p> 
-                </div>
-              </div>
-              
             </div>
+            <div class="letter-contant scroll-container">
+              <div class="text">
+                <p>籠罩著街上的煙，日頭是自東徂西，凶惡的他們忍相虐待，那時代，日月不相望的什麼新曆法，什麼是麵皮？在新月微光下的街市，看見鮮紅的血，但是他倆竟會自己走到橋上，就再開始。此刻，新年的一日，那時代，我去拿一面鑼來。在這黑暗之中，阻斷爭論，剛纔經市長一說，只有前進，在做頭老的，他不和人家分擔，不知流失多少人類所託命的田
+                </p> 
+                <div class="letter-upload-img"></div>
+                <p>
+                  礙步的石頭，互相提攜，和狺狺的狗吠，又產生有可供消費的勢力，農民播種犁田，現在不是糴不到半斗米？
+                </p> 
+              </div>
+            </div>
+            
           </div>
-          <div class="dot-box-yellow comment-wrap">
-            <span class="share-clip clip-left"></span>
-            <div class="box-white top-left-bg">
-                <div class="box-white top-left-bg">
-  
-                  <div class="dot-box-white comment-outbox scroll-container">
-                    <template v-for="(item, index) in 5">
-                      <div class="box-white comment">
-                        <div class="comment-contant">
-                          <h3 class="user-name">XXXXXXX</h3>
-                          <p class="user-text">真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！</p>
-                        </div>
-                        <!-- btn -->
-                        <div class="comment-btn">
-                          <!-- 檢舉 -->
-                          <div class="circle" id="threed">
-                            <button class="circle button"></button>
-                          </div>
-                          
-                        </div>
+        </div>
+        <div class="dot-box-yellow comment-wrap">
+          <span class="share-clip clip-left"></span>
+          <div class="box-white top-left-bg">
+              <div class="box-white top-left-bg">
+
+                <div class="dot-box-white comment-outbox scroll-container">
+                  <template v-for="(item, index) in 5">
+                    <div class="box-white comment">
+                      <div class="comment-contant">
+                        <h3 class="user-name">XXXXXXX</h3>
+                        <p class="user-text">真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！</p>
                       </div>
-                    </template>
-                  </div>
-  
+                      <!-- btn -->
+                      <div class="comment-btn">
+                        <!-- 檢舉 -->
+                        <div class="circle" id="threed">
+                          <button class="circle button"></button>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </template>
+                </div>
+
+              </div>
+          </div>
+        </div>
+      </section>
+      <section class="catch-step-2" id="catchStep2">
+        <div class="box-white bottom-bg">
+            <span class="share-clip clip-left">
+            </span>
+            <div class="dot-box-yellow top-right top-right-bg">
+                <div class="box-white top-right-bg">
+                    <div class="box-white top-right-bg">
+                        <div class="num-four">
+                            <h2>選擇郵戳，進行下一步!</h2>
+                        </div>
+                        <div class="select-stamp">
+                            <span class="arrow-white"></span>
+                            <div class="stamp-type">
+                                <template v-for="item in 3">
+                                    <div class="type"></div>
+                                </template>
+                            </div>
+                            <span class="arrow-white reverse"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
-          </div>
-        </section>
-        <section class="catch-step-2">
-  
-        </section>
-        <section class="catch-step-3" id="catchStep3">
-            
-        </section>
-        <section class="catch-step-4" id="catchStep4">
-            
-        </section>
-  
-        <div class="test-area"></div>
-      </div>
-      
+        </div>
+      </section>
+    </div>
   </main>
     
+    <div id="imgWrap" style="display: none;">
+  <span id="pointer" class="pointerAll" draggable="true"></span>
+  <div id="img"></div>
+  <div id="imgLeftTriangle"></div>
+  <div id="imgLeftTriangle2"></div>
+  <div id="imgRightTriangle"></div>
+  <div id="imgRightTriangle2"></div>
+  <div id="imgFinalStep"></div>
+  <div id="planeBody"></div>
+  <div id="planeWing"></div>
+</div>;
     
+
+  <script src="./js/catchLetter.js"></script>
+  <!-- <script src="./js/foldThePlane.js"></script> -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+  
   <script>
-    
+    const foldThePlane = {
+            template: `
+            <div id="imgWrap">
+              <span id="pointer" class="pointerAll" draggable="true"></span>
+              <div id="img"></div>
+              <div id="imgLeftTriangle"></div>
+              <div id="imgLeftTriangle2"></div>
+              <div id="imgRightTriangle"></div>
+              <div id="imgRightTriangle2"></div>
+              <div id="imgFinalStep"></div>
+              <div id="planeBody"></div>
+              <div id="planeWing"></div>
+            </div>
+            `
+        }
 
     new Vue({
       el:'#catchLetter',
       data:{
         // threeOpen: true,
-        viewMoreOpen:false,
+        viewMoreOpen:true,
       },
     });
   </script>
