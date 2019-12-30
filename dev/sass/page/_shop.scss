@@ -178,123 +178,117 @@ $arrow_color: $gray !default;
               }
             }
           }
+          .itemCardContainer {
 
-          .itemCardContainerBox {
             width: 80%;
             padding-top: 15%;
             padding-left: 5%;
 
 
-            .itemCardContainer {
+            .cardFilter {
               width: 100%;
               height: 500px;
+              display: flex;
+              flex-wrap: wrap;
 
+              @include itemCardRow1(15);
 
-              .portfolioContainer {
+              .line_top {
+                position: relative;
+                width: 70%;
+                transform: translate(5%, -10%);
+              }
 
-                width: 100%;
-                display: flex;
-                flex-wrap: wrap;
+              .line_bottom {
+                position: relative;
+                width: 70%;
+                transform: translate(10%, 30%);
+              }
 
-                @include itemCardRow1(15);
+              #itemCard1,
+              #itemCard9 {
+                width: 100px;
+                transform: translate(0, -0%) rotate(15deg);
 
-                .line_top {
-                  position: relative;
-                  width: 70%;
-                  transform: translate(5%, -10%);
+                img {
+                  width: 2.5vw;
+                  transform: translate(0%, -70%) rotate(330deg);
+                }
+              }
+
+              #itemCard2,
+              #itemCard10 {
+                transform: translate(0, -30%) rotate(355deg);
+
+                img {
+                  width: 2.5vw;
+                  transform: translate(70%, -70%) rotate(360deg);
+                }
+              }
+
+              #itemCard3,
+              #itemCard11 {
+                font-size: 0;
+                transform: translate(0, -10%) rotate(360deg);
+
+                img {
+                  width: 2.5vw;
+                  transform: translate(70%, -70%) rotate(360deg);
                 }
 
-                .line_bottom {
-                  position: relative;
-                  width: 70%;
-                  transform: translate(10%, 30%);
+              }
+
+              #itemCard4,
+              #itemCard12 {
+                transform: translate(0, 0%) rotate(350deg);
+
+                img {
+                  width: 2.5vw;
+                  transform: translate(90%, -70%) rotate(0deg);
                 }
+              }
 
-                #itemCard1,
-                #itemCard9 {
 
-                  transform: ranslate3d(0px, 0px, 0px) rotate(15deg);
+              #itemCard5,
+              #itemCard13 {
+                transform: translate(0, -10%) rotate(360deg);
 
-                  img {
-                    width: 2.5vw;
-                    transform: translate(0%, -70%) rotate(330deg);
-                  }
+                img {
+                  width: 2.5vw;
+                  transform: translate(0%, -80%) rotate(350deg);
                 }
+              }
 
-                #itemCard2,
-                #itemCard10 {
-                  transform: translate(0, -30%) rotate(355deg);
 
-                  img {
-                    width: 2.5vw;
-                    transform: translate(70%, -70%) rotate(360deg);
-                  }
+
+              #itemCard6,
+              #itemCard14 {
+                transform: translate(0%, 0%) rotate(350deg);
+
+
+                img {
+                  width: 2.5vw;
+                  transform: translate(100%, -80%) rotate(360deg);
                 }
+              }
 
-                #itemCard3,
-                #itemCard11 {
-                  font-size: 0;
-                  transform: translate(0, -10%) rotate(360deg);
+              #itemCard7,
+              #itemCard15 {
+                transform: translate(0%, 0%) rotate(15deg);
 
-                  img {
-                    width: 2.5vw;
-                    transform: translate(70%, -70%) rotate(360deg);
-                  }
 
+                img {
+                  width: 2.5vw;
+                  transform: translate(0%, -70%) rotate(340deg);
                 }
+              }
 
-                #itemCard4,
-                #itemCard12 {
-                  transform: translate(0, 0%) rotate(350deg);
+              #itemCard8 {
+                transform: translate(-0%, -0%) rotate(0deg);
 
-                  img {
-                    width: 2.5vw;
-                    transform: translate(90%, -70%) rotate(0deg);
-                  }
-                }
-
-
-                #itemCard5,
-                #itemCard13 {
-                  transform: translate(0, -10%) rotate(360deg);
-
-                  img {
-                    width: 2.5vw;
-                    transform: translate(0%, -80%) rotate(350deg);
-                  }
-                }
-
-
-
-                #itemCard6,
-                #itemCard14 {
-                  transform: translate(0%, 0%) rotate(350deg);
-
-
-                  img {
-                    width: 2.5vw;
-                    transform: translate(100%, -80%) rotate(360deg);
-                  }
-                }
-
-                #itemCard7,
-                #itemCard15 {
-                  transform: translate(0%, 0%) rotate(15deg);
-
-
-                  img {
-                    width: 2.5vw;
-                    transform: translate(0%, -70%) rotate(340deg);
-                  }
-                }
-
-                #itemCard8 {
-                  transform: translate(-0%, -0%) rotate(0deg);
-
-                  img {
-                    width: 2.5vw;
-                    transform: translate(15%, -70%) rotate(330deg);
-                  }
+                img {
+                  width: 2.5vw;
+                  transform: translate(15%, -70%) rotate(330deg);
                 }
               }
             }
@@ -302,14 +296,15 @@ $arrow_color: $gray !default;
 
             #emptyBtn {
               margin: 0 auto;
-              width: 50%;
+              width: 60%;
               display: flex;
 
               .switchBtnBox {
-                width: 33%;
+                width: 33.3%;
 
                 .switchBtn {
                   // margin-top: 30%;
+                  font-family: $font;
                   font-size: 1vw;
                   letter-spacing: 0.2em;
                   position: relative;
@@ -2013,7 +2008,7 @@ $arrow_color: $gray !default;
             #canvas {
               height: 100%;
               width: 100%;
-              background: #e5e5e5;
+              background: #b5b5b6;
 
               .drawingPanel {}
             }
