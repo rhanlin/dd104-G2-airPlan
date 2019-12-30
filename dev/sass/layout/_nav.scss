@@ -30,6 +30,7 @@
       border: 5px solid $main-black;
       margin: 50px 20px 0 0;
       z-index: 990;
+      display: none;
       .hambuger {
         cursor: pointer;
         height: 60px;
@@ -355,8 +356,6 @@
       position: absolute;
       top: 36%;
       right: 2.5%;
-      z-index: 999;
-      // border: 1px solid lightseagreen;
 
       > a {
         display: inline-block;
@@ -437,6 +436,10 @@
     width: 100%;
     .nav-hamPosition {
       width: 100%;
+
+      .nav-hamburgerWrap {
+        display: block;
+      }
     }
   }
 
@@ -574,25 +577,23 @@
   }
 }
 
-
-
-
 //登入頁
 
 .signInBg {
   width: 100%;
   height: 100%;
-  background: radial-gradient($main-black 30%, rgba(255, 255, 255, 0.9) 20%);
+  // background: radial-gradient($main-black 30%,  rgba(68, 68, 68, 0.9) 20%);
+  background-color: rgba(68, 68, 68, 0.99);
   background-size: 10px 10px;
   position: fixed;
-  z-index: 80;
+  z-index: 1000;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
   .signInData {
     padding: 20px;
-    width: 500px;
+    width: 550px;
     background-image: url("../img/user-setting/setDataletter.png");
     background-size: 100% 100%;
     position: absolute;
@@ -611,22 +612,23 @@
     .formsignInData {
       width: 100%;
       @include marginAuto;
-      p {
-        margin-top: 10px;
-      }
+      // p {
+      //   margin-top: 10px;
+      // }
       .signInLogo {
         width: 50%;
         display: block;
         @include marginAuto;
-        margin-top: 10px;
+        // margin-top: 10px;
       }
       input {
         width: 100%;
         box-sizing: border-box;
-        padding: 10px;
+        padding: 5px;
         font-size: 16px;
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
+        margin-bottom: 5px;
         @include border;
       }
       button {
@@ -636,7 +638,7 @@
         background: #82afd9;
         background-size: 10px 10px;
         color: aliceblue;
-        margin-top: 10px;
+        // margin-top: 10px;
       }
     }
   }
@@ -651,5 +653,39 @@
   .envelopeup {
     z-index: 71;
     @extend.envelopedown;
+  }
+}
+
+
+@include respond(mediumSize){
+  .signInBg{
+    .signInData{
+        padding: 20px;
+        width: 60%;
+    }
+  }
+}
+@include respond(small){
+  .signInBg{
+    .signInData{
+        padding: 20px;
+        width: 70%;
+    }
+  }
+}
+@include respond(note){
+  .signInBg{
+    .signInData{
+        padding: 20px;
+        width: 80%;
+    }
+  }
+}
+@include respond(iphone){
+  .signInBg{
+    .signInData{
+        padding: 20px;
+        width: 100%;
+    }
   }
 }

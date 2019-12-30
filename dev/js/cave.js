@@ -34,6 +34,29 @@ $(function () {
 });
 
 
+//顯示正在看的歷史信件
+$(function () {
+  $(".cav-letters").on("click", function () {
+    $(".cav-letters").removeClass("cav-looking");
+    $(this).addClass("cav-looking");
+  })
+});
+
+
+//更換按鈕
+$('.switchBtn').mousedown(function () {
+  $(this).addClass('clicked');
+});
+$('.switchBtn').mouseup(function () {
+  $(this).removeClass('clicked');
+});
+
+$('.orderBtn').mousedown(function () {
+  $(this).addClass('clicked');
+});
+$('.orderBtn').mouseup(function () {
+  $(this).removeClass('clicked');
+});
 
 
 //單一信件跳窗
@@ -45,6 +68,23 @@ function popLetter() {
 }
 function closeLetter() {
   document.getElementsByClassName("cav-letterBg")[0].style.display = "none";
+}
+
+//顯示單一信件(手機版)
+if ($(window).width() < 768) {
+  $(function () {
+    var boxFront = $(".cav-boxFront").width();
+    var letWidth = $(".cav-boxFront div").length;
+
+    $(".cav-letters").click(function () {
+      var boxFront = $(".cav-boxFront").width();
+      $(".cav-boxFrontRight").css(
+        "transform", `translateX(${boxFront * -1}px)` );
+      console.log("78");
+    });
+
+  });
+
 }
 
 //顯示信件紀錄更多選項
