@@ -781,10 +781,6 @@
         .cav-otherLetter {
           border: 1px solid sandybrown;
           width: 50%;
-<<<<<<< HEAD
-
-=======
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
           .btn {
             padding: -1.2vw 2vw;
             top: 5%;
@@ -807,11 +803,6 @@
     }
   }
 }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
 @include respond(small) {
   .cav-main {
     width: 100%;
@@ -831,18 +822,6 @@
       position: relative;
       margin: 150px auto 0;
       min-width: 650px;
-<<<<<<< HEAD
-
-      >img {
-        // border: 1px solid firebrick;
-        // width: 100%;
-        // height: 800px;
-        transform: rotate(90deg);
-        height: 100%;
-        // margin-top: auto;
-      }
-
-=======
 
       > img {
         // border: 1px solid firebrick;
@@ -853,7 +832,6 @@
         // margin-top: auto;
       }
 
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
       .cav-boxFront {
         width: 60%;
         height: 93vw;
@@ -903,11 +881,7 @@
                 border-radius: 10px;
               }
 
-<<<<<<< HEAD
-              >.cav-letters {
-=======
               > .cav-letters {
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
                 border: $border;
                 height: 100px;
                 margin: 0 auto 10px;
@@ -942,11 +916,7 @@
                   justify-content: center;
                   align-items: center;
 
-<<<<<<< HEAD
-                  >div {
-=======
                   > div {
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
                     margin: 0 auto;
                     height: 50%;
 
@@ -981,7 +951,6 @@
               width: 100%;
               height: 100%;
               overflow-y: scroll;
-<<<<<<< HEAD
 
               &::-webkit-scrollbar {
                 width: 0;
@@ -989,15 +958,6 @@
                 border-radius: 2px;
               }
 
-=======
-
-              &::-webkit-scrollbar {
-                width: 0;
-                background-color: #ccc;
-                border-radius: 2px;
-              }
-
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
               &::-webkit-scrollbar-thumb {
                 width: 5px;
                 background-color: slategrey;
@@ -1024,7 +984,6 @@
                   border: 1px solid #ccc;
                   margin: 15px auto;
                 }
-<<<<<<< HEAD
 
                 .cav-letNavbar {
                   display: flex;
@@ -1038,21 +997,6 @@
                     margin-left: 5px;
                     vertical-align: middle;
 
-=======
-
-                .cav-letNavbar {
-                  display: flex;
-                  justify-content: flex-end;
-                  // border: 1px solid #ccc;
-
-                  .cav-letNavOption {
-                    // border: 1px solid tomato;
-                    width: 35px;
-                    height: 35px;
-                    margin-left: 5px;
-                    vertical-align: middle;
-
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
                     img {
                       width: 100%;
                       cursor: pointer;
@@ -1078,19 +1022,11 @@
                   .cav-commMain {
                     // border-bottom: 1px solid #ccc;
                     width: 80%;
-<<<<<<< HEAD
 
                     .cav-commHead {
                       // display: flex;
                       margin-bottom: 5px;
 
-=======
-
-                    .cav-commHead {
-                      // display: flex;
-                      margin-bottom: 5px;
-
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
                       .cav-commId {
                         font-weight: bold;
                         font-size: 14px;
@@ -1187,24 +1123,6 @@
       position: relative;
       margin: 150px auto 0;
 
-<<<<<<< HEAD
-      >img {
-        transform: rotate(90deg);
-        height: 100%;
-      }
-
-      .cav-boxFront {
-        width: 60%;
-        height: 93vw;
-        min-height: 610px;
-        // display: flex;
-        // justify-content: space-between;
-        // padding: 1%;
-        // position: absolute;
-        top: -20%;
-        left: 20%;
-
-=======
       > img {
         transform: rotate(90deg);
         height: 100%;
@@ -1221,7 +1139,6 @@
         top: -20%;
         left: 20%;
 
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
         .cav-boxFrontLeft {
           border: 1px solid green;
           display: inline-block;
@@ -1260,11 +1177,7 @@
                 border-radius: 10px;
               }
 
-<<<<<<< HEAD
-              >.cav-letters {
-=======
               > .cav-letters {
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
                 border: $border;
                 height: 100px;
                 margin: 0 auto 10px;
@@ -1299,11 +1212,7 @@
                   justify-content: center;
                   align-items: center;
 
-<<<<<<< HEAD
-                  >div {
-=======
                   > div {
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
                     margin: 0 auto;
                     height: 50%;
 
@@ -1332,7 +1241,6 @@
             border: $border;
             height: 100%;
             background-color: rgb(74, 117, 112);
-<<<<<<< HEAD
 
             .cav-showLetter {
               // border: 1px solid red;
@@ -1346,21 +1254,6 @@
                 border-radius: 2px;
               }
 
-=======
-
-            .cav-showLetter {
-              // border: 1px solid red;
-              width: 100%;
-              height: 100%;
-              overflow-y: scroll;
-
-              &::-webkit-scrollbar {
-                width: 0;
-                background-color: #ccc;
-                border-radius: 2px;
-              }
-
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
               &::-webkit-scrollbar-thumb {
                 width: 5px;
                 background-color: slategrey;
@@ -1387,7 +1280,6 @@
                   border: 1px solid #ccc;
                   margin: 15px auto;
                 }
-<<<<<<< HEAD
 
                 .cav-letNavbar {
                   display: flex;
@@ -1401,21 +1293,6 @@
                     margin-left: 5px;
                     vertical-align: middle;
 
-=======
-
-                .cav-letNavbar {
-                  display: flex;
-                  justify-content: flex-end;
-                  // border: 1px solid #ccc;
-
-                  .cav-letNavOption {
-                    // border: 1px solid tomato;
-                    width: 35px;
-                    height: 35px;
-                    margin-left: 5px;
-                    vertical-align: middle;
-
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
                     img {
                       width: 100%;
                       cursor: pointer;
@@ -1522,11 +1399,7 @@
     .cav-boxImg {
       min-width: 650px;
 
-<<<<<<< HEAD
-      >img {
-=======
       > img {
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
         height: 100%;
         transform: rotate(90deg);
       }
@@ -1535,13 +1408,6 @@
         width: 60%;
         height: 93vw;
         min-height: 610px;
-<<<<<<< HEAD
-        // display: flex;
-        // justify-content: space-between;
-        // padding: 1%;
-        // position: absolute;
-=======
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
         top: -20%;
         left: 20%;
 
@@ -1556,21 +1422,12 @@
             border: 1px solid fuchsia;
             display: flex;
             justify-content: space-around;
-<<<<<<< HEAD
 
             .cav-myLetter {
               border: 1px solid sandybrown;
               position: relative;
               width: 50%;
 
-=======
-
-            .cav-myLetter {
-              border: 1px solid sandybrown;
-              position: relative;
-              width: 50%;
-
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
               .orderBtnBoxGroup {
                 width: 95%;
                 margin: -20% 0% 20% 10%;
@@ -1622,13 +1479,6 @@
                       // background-image: url("../img/product/decorate/materail-04.svg");
                       // background-size: cover;
                       transform: rotate(90deg) skew(60deg);
-<<<<<<< HEAD
-                      background: -webkit-linear-gradient(40deg,
-                          $main-yellow 45%,
-                          #000 45%,
-                          #000 55%,
-                          $main-yellow 55%);
-=======
                       background: -webkit-linear-gradient(
                         40deg,
                         $main-yellow 45%,
@@ -1636,7 +1486,6 @@
                         #000 55%,
                         $main-yellow 55%
                       );
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
                       background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
                       background-size: 7px 7px;
                     }
@@ -1655,13 +1504,6 @@
                       // background-image: url("../img/product/decorate/materail-04.svg");
                       // background-size: cover;
                       transform: rotate(90deg) skew(300deg);
-<<<<<<< HEAD
-                      background: -webkit-linear-gradient(220deg,
-                          $main-yellow 45%,
-                          #000 45%,
-                          #000 55%,
-                          $main-yellow 55%);
-=======
                       background: -webkit-linear-gradient(
                         220deg,
                         $main-yellow 45%,
@@ -1669,7 +1511,6 @@
                         #000 55%,
                         $main-yellow 55%
                       );
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
                       background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
                       background-size: 7px 7px;
                     }
@@ -1720,17 +1561,10 @@
               .orderBtnBoxGroup {
                 width: 95%;
                 margin: -20% 0% 20% 10%;
-<<<<<<< HEAD
 
                 .orderBtnBox {
                   position: relative;
 
-=======
-
-                .orderBtnBox {
-                  position: relative;
-
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
                   .orderBtn {
                     font-size: 20px;
                     letter-spacing: 0.2em;
@@ -1759,16 +1593,6 @@
                       font-family: $font;
                       font-weight: 400;
                       z-index: 3;
-<<<<<<< HEAD
-                    }
-
-                    &:before {
-                      content: "";
-                      position: absolute;
-                      width: 38%;
-                      height: 40%;
-                      left: -35%;
-=======
                     }
 
                     &:before {
@@ -1802,21 +1626,12 @@
                       width: 38%;
                       height: 40%;
                       left: 87%;
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
                       bottom: -5%;
                       border-radius: 0.3em;
                       border: $border;
                       // background-color: #FFD139;
                       // background-image: url("../img/product/decorate/materail-04.svg");
                       // background-size: cover;
-<<<<<<< HEAD
-                      transform: rotate(90deg) skew(60deg);
-                      background: -webkit-linear-gradient(40deg,
-                          $main-yellow 45%,
-                          #000 45%,
-                          #000 55%,
-                          $main-yellow 55%);
-=======
                       transform: rotate(90deg) skew(300deg);
                       background: -webkit-linear-gradient(
                         220deg,
@@ -1825,37 +1640,10 @@
                         #000 55%,
                         $main-yellow 55%
                       );
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
                       background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
                       background-size: 7px 7px;
                     }
 
-<<<<<<< HEAD
-                    &:after {
-                      content: "";
-                      position: absolute;
-                      position: absolute;
-                      width: 38%;
-                      height: 40%;
-                      left: 87%;
-                      bottom: -5%;
-                      border-radius: 0.3em;
-                      border: $border;
-                      // background-color: #FFD139;
-                      // background-image: url("../img/product/decorate/materail-04.svg");
-                      // background-size: cover;
-                      transform: rotate(90deg) skew(300deg);
-                      background: -webkit-linear-gradient(220deg,
-                          $main-yellow 45%,
-                          #000 45%,
-                          #000 55%,
-                          $main-yellow 55%);
-                      background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                      background-size: 7px 7px;
-                    }
-
-=======
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
                     &.clicked {
                       top: 16px;
 
@@ -1907,32 +1695,6 @@
               padding: 10px;
               height: 100%;
               overflow-y: scroll;
-<<<<<<< HEAD
-
-              &::-webkit-scrollbar {
-                width: 0;
-                background-color: #ccc;
-                border-radius: 2px;
-              }
-
-              &::-webkit-scrollbar-thumb {
-                width: 5px;
-                background-color: slategrey;
-                border-radius: 10px;
-              }
-
-              >.cav-letters {
-                border: $border;
-                height: 100px;
-                margin: 0 auto 10px;
-                padding: 3%;
-                border-radius: 20px;
-                background-color: $main-yellow;
-                overflow: hidden;
-                display: flex;
-                cursor: pointer;
-
-=======
 
               &::-webkit-scrollbar {
                 width: 0;
@@ -1957,7 +1719,6 @@
                 display: flex;
                 cursor: pointer;
 
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
                 &.cav-looking {
                   background-color: $main-red;
                 }
@@ -1982,11 +1743,7 @@
                   justify-content: center;
                   align-items: center;
 
-<<<<<<< HEAD
-                  >div {
-=======
                   > div {
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
                     margin: 0 auto;
                     height: 50%;
 
@@ -2021,7 +1778,6 @@
               width: 100%;
               height: 100%;
               overflow-y: scroll;
-<<<<<<< HEAD
 
               &::-webkit-scrollbar {
                 width: 0;
@@ -2029,15 +1785,6 @@
                 border-radius: 2px;
               }
 
-=======
-
-              &::-webkit-scrollbar {
-                width: 0;
-                background-color: #ccc;
-                border-radius: 2px;
-              }
-
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
               &::-webkit-scrollbar-thumb {
                 width: 5px;
                 background-color: slategrey;
@@ -2064,7 +1811,6 @@
                   border: 1px solid #ccc;
                   margin: 15px auto;
                 }
-<<<<<<< HEAD
 
                 .cav-letNavbar {
                   display: flex;
@@ -2078,21 +1824,6 @@
                     margin-left: 5px;
                     vertical-align: middle;
 
-=======
-
-                .cav-letNavbar {
-                  display: flex;
-                  justify-content: flex-end;
-                  // border: 1px solid #ccc;
-
-                  .cav-letNavOption {
-                    // border: 1px solid tomato;
-                    width: 35px;
-                    height: 35px;
-                    margin-left: 5px;
-                    vertical-align: middle;
-
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
                     img {
                       width: 100%;
                       cursor: pointer;
@@ -2118,19 +1849,11 @@
                   .cav-commMain {
                     // border-bottom: 1px solid #ccc;
                     width: 80%;
-<<<<<<< HEAD
 
                     .cav-commHead {
                       // display: flex;
                       margin-bottom: 5px;
 
-=======
-
-                    .cav-commHead {
-                      // display: flex;
-                      margin-bottom: 5px;
-
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
                       .cav-commId {
                         font-weight: bold;
                         font-size: 14px;
@@ -2198,8 +1921,4 @@
       }
     }
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
