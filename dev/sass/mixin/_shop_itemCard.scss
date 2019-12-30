@@ -3,15 +3,14 @@
 
     //從1跑到5
     #itemCard#{$i} {
-      width: 8vw;
+      width: 100px;
       height: 7vw;
-      margin: 4.5% 2%;
+      margin: 0 2%;
       border: $border;
       background-size: contain;
       background-position: center;
       background-color: #fff;
       background-repeat: no-repeat;
-      background-image: url('../img/product/postmark/postmark_#{$i}.png');
     }
   }
 }
@@ -26,7 +25,7 @@
     #itemCard#{$i} {
       width: 12vw;
       height: 8vw;
-      margin: 4.5% 2%;
+      margin: 0 3%;
       border: $border;
       background-size: contain;
       background-repeat: no-repeat;
@@ -42,9 +41,8 @@
     #itemCard#{$i} {
       width: 14vw;
       height: 10vw;
-      margin: 4.5% 2%;
+      margin: 0 3%;
       border: $border;
-      background: url('/img/product/postmark/postmark_#{$i}#png') center #fff;
       background-size: contain;
       background-repeat: no-repeat;
     }

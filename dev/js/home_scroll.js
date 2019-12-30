@@ -343,16 +343,16 @@ let sceneBottle = new ScrollMagic.Scene({
 
 //草地上的動畫
 let grassPin = new TimelineMax();
-//後、中、前 的草出現
-let catchGrassBack = TweenMax.to('.grassBack', 2, {
+//---後、中、前 的草出現---
+let catchGrassBack = TweenMax.to('.grassBack', 10, {
     y: "-44%",
     ease: Power1.easeInOut,
 });
-let catchGrassMid = TweenMax.to('.grassMid', 2, {
+let catchGrassMid = TweenMax.to('.grassMid', 10, {
     y: "-78%",
     ease: Power1.easeInOut,
 });
-let catchGrassFront = TweenMax.to('.grassFront', 2, {
+let catchGrassFront = TweenMax.to('.grassFront', 10, {
     y: "-102%",
     ease: Power1.easeInOut,
 });
@@ -360,12 +360,12 @@ let catchGrassFront = TweenMax.to('.grassFront', 2, {
 grassPin.add([catchGrassBack, catchGrassMid, catchGrassFront]);
 
 
-//紙飛機、網子進入
-let catchPlan = TweenMax.to('.catch_main', 1, {
+//---紙飛機、網子進入---
+let catchPlan = TweenMax.to('.catch_main', 5, {
     x: "-270%",
     ease: Power0.easeInOut,
 });
-let catchNet = TweenMax.to('.net', 1, {
+let catchNet = TweenMax.to('.net', 5, {
     y: "-100%",
     ease: Power0.easeNone,
 });
@@ -373,18 +373,170 @@ let catchNet = TweenMax.to('.net', 1, {
 grassPin.add([catchPlan, catchNet]);
 
 
-//網子撈撈撈
-grassPin.add(TweenMax.to('.net', 1, {
-    x:"80%",
-    y:"-180%",
-    rotation:90,
-    transformOrigin:"left bottom",
+//---網子撈撈撈---
+grassPin.add(TweenMax.to('.net', 3, {
+    x: "80%",
+    y: "-180%",
+    rotation: 90,
+    transformOrigin: "left bottom",
     ease: Power0.easeInOut,
 }))
 
 
+//---4隻其餘飛機飛走---
+let catchLT = TweenMax.to('.LT_box', 4, {
+    x: "-270%",
+    ease: Power0.easeInOut,
+});
+let catchLB = TweenMax.to('.LB_box', 4, {
+    x: "-300%",
+    ease: Power0.easeInOut,
+});
+let catchRT = TweenMax.to('.RT_box', 5, {
+    x: "-650%",
+    ease: Power0.easeInOut,
+});
+let catchRB = TweenMax.to('.RB_box', 4, {
+    x: "-480%",
+    ease: Power0.easeInOut,
+});
+
+grassPin.add([catchLT, catchLB, catchRT, catchRB]);
+
+
+//---撈信標題及介紹進入---
+grassPin.add(TweenMax.to('.catchTitle', 4, {
+    bezier: {
+        curviness: 1.25,
+        values: [{
+            x: "130%",
+            y: "110%"
+        }],
+    },
+    rotation: -30,
+    transformOrigin: 'bottom center',
+    ease: Power1.easeOut,
+}));
+grassPin.add(TweenMax.to('.catchTitle', 2, {
+    bezier: {
+        curviness: 1.25,
+        values: [{
+            x: "140%",
+            y: "115%"
+        }],
+    },
+    rotation: 0,
+    transformOrigin: 'bottom center',
+    ease: Power1.easeOut,
+}));
+
+
+//---被撈的紙飛機打開---
+grassPin.add(TweenMax.to('.catch_main', 2, {
+    y: "-100%",
+    rotation: 85,
+    ease: Power0.easeNone,
+}));
+grassPin.add(TweenMax.to('.catch_main', 2, {
+    opacity: 0,
+    ease: Power0.easeNone,
+}));
+grassPin.add(TweenMax.to('.catch_fold2', 2, {
+    opacity: 1,
+    ease: Power0.easeNone,
+}));
+grassPin.add(TweenMax.to('.catch_fold2', 2, {
+    opacity: 0,
+    ease: Power0.easeNone,
+}));
+grassPin.add(TweenMax.to('.catch_fold1', 2, {
+    opacity: 1,
+    ease: Power0.easeNone,
+}));
+
+let catchFold = TweenMax.to('.catch_fold1', 2, {
+    y: "9%",
+    opacity: 0,
+    ease: Power0.easeOut,
+});
+let catchPaper = TweenMax.to('.catch_letter', 2, {
+    opacity: 1,
+    ease: Power1.easeIn,
+});
+grassPin.add([catchFold, catchPaper]);
+
+grassPin.add(TweenMax.to('.catch_letter', 2, {
+    y: "30%",
+    ease: Power0.easeNone,
+}));
+
 let sceneGrass = new ScrollMagic.Scene({
     triggerElement: ".home_catch",
-    duration: '200%',
+    duration: '400%',
     triggerHook: 0
 }).setPin('.home_catch').setTween(grassPin).addIndicators().addTo(controller);
+
+
+
+//---冒煙---
+let smokePara = new TimelineMax({
+    repeat: -1,
+});
+
+smokePara.to('.smokeS', 3, {
+    x: "500%",
+    y: "-250%",
+    opacity: 0,
+    scale: 2.5,
+    ease: Power1.easeIn,
+}).to('.smokeM', 0.1, {
+    opacity: 1,
+    ease: Power0.easeNone,
+}).to('.smokeM', 3, {
+    x: "500%",
+    y: "-250%",
+    opacity: 0,
+    scale: 2.5,
+    ease: Power1.easeIn,
+}).to('.smokeL', 0.1, {
+    opacity: 1,
+    ease: Power0.easeNone,
+}).to('.smokeL', 3, {
+    x: "500%",
+    y: "-300%",
+    opacity: 0,
+    scale: 2.8,
+    ease: Power1.easeIn,
+});
+
+let sceneSmoke = new ScrollMagic.Scene({
+    triggerElement: '.home_custom',
+    daration: '100%'
+}).setTween(smokePara).addIndicators().addTo(controller);
+
+
+//---機械手臂旋轉---
+let machineHand = TweenMax.to('.machine_hand', 1, {
+    rotation: 55,
+    transformOrigin: "left bottom",
+});
+
+let sceneMachine = new ScrollMagic.Scene({
+    triggerElement: '.home_custom',
+    // offset: 350,
+    duration: '100%',
+    ease: Power0.easeNone,
+}).setTween(machineHand).addIndicators().addTo(controller);
+
+
+//---輪子旋轉---
+let wheel = TweenMax.to('.wheel', 1, {
+    rotation: 450,
+});
+
+let scenewheel = new ScrollMagic.Scene({
+    triggerElement: '.home_custom',
+    // offset: 350,
+    duration: '150%',
+    ease: Power0.easeNone,
+}).setTween(wheel).addIndicators().addTo(controller);

@@ -102,6 +102,7 @@
             display: flex;
             flex-wrap: wrap;
             position: relative;
+            overflow: hidden;
 
             .write_L {
                 width: 47%;
@@ -286,7 +287,7 @@
     }
 
     .home_catch {
-        border: 1px solid red;
+        // border: 1px solid red;
         width: 100%;
         height: 940px;
         background: -webkit-linear-gradient(45deg, rgb(247, 239, 197) 45%, rgb(235, 215, 109) 45%, rgb(235, 215, 109) 55%, rgb(247, 239, 197) 55%);
@@ -381,81 +382,128 @@
                 }
             }
 
-            .catch_LT {
+            .LT_box {
                 width: 17%;
                 position: absolute;
                 top: 10%;
                 left: 5%;
-                animation: shake2 4s infinite linear;
+
+                .catch_LT {
+                    width: 100%;
+                    animation: shake2 4s infinite linear;
+                }
+
+                @keyframes shake2 {
+                    0% {
+                        transform: rotate(0);
+                    }
+
+                    25% {
+                        transform: rotate(-10deg);
+                    }
+
+                    50% {
+                        transform: rotate(0);
+                    }
+
+                    75% {
+                        transform: rotate(10deg);
+                    }
+
+                    100% {
+                        transform: rotate(0);
+                    }
+                }
             }
 
-            @keyframes shake2 {
-                0% {
-                    transform: rotate(0);
-                }
-
-                25% {
-                    transform: rotate(-10deg);
-                }
-
-                50% {
-                    transform: rotate(0);
-                }
-
-                75% {
-                    transform: rotate(10deg);
-                }
-
-                100% {
-                    transform: rotate(0);
-                }
-            }
-
-            .catch_LB {
+            .LB_box {
                 width: 12%;
                 position: absolute;
                 bottom: 20%;
                 left: 15%;
-                animation: shake3 3s infinite linear;
+
+                .catch_LB {
+                    width: 100%;
+                    animation: shake3 3s infinite linear;
+                }
+
+                @keyframes shake3 {
+                    0% {
+                        transform: rotate(0);
+                    }
+
+                    25% {
+                        transform: rotate(5deg);
+                    }
+
+                    50% {
+                        transform: rotate(0);
+                    }
+
+                    75% {
+                        transform: rotate(-5deg);
+                    }
+
+                    100% {
+                        transform: rotate(0);
+                    }
+                }
             }
 
-            @keyframes shake3 {
-                0% {
-                    transform: rotate(0);
-                }
-
-                25% {
-                    transform: rotate(5deg);
-                }
-
-                50% {
-                    transform: rotate(0);
-                }
-
-                75% {
-                    transform: rotate(-5deg);
-                }
-
-                100% {
-                    transform: rotate(0);
-                }
-            }
-
-            .catch_RT {
+            .RT_box {
                 width: 15%;
                 position: absolute;
                 top: 23%;
                 right: 5%;
-                animation: shake2 5s infinite linear;
+
+                .catch_RT {
+                    width: 100%;
+                    animation: shake2 5s infinite linear;
+                }
             }
 
-            .catch_RB {
+            .RB_box {
                 width: 20%;
                 position: absolute;
                 bottom: 3%;
                 right: 16%;
-                animation: shake3 5s infinite linear;
+
+                .catch_RB {
+                    width: 100%;
+                    animation: shake3 5s infinite linear;
+                }
             }
+        }
+
+        .catch_fold2 {
+            width: 22%;
+            position: absolute;
+            bottom: 27%;
+            left: 36.5%;
+            opacity: 0;
+        }
+
+        .catch_fold1 {
+            width: 22%;
+            position: absolute;
+            bottom: 27%;
+            left: 36.5%;
+            opacity: 0;
+        }
+
+        .catch_letter {
+            border: $border;
+            background-color: $main-white;
+            width: 22%;
+            height: 31.5vw;
+            background-image: url(../img/share/postCard-vertical.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            position: absolute;
+            bottom: 20%;
+            left: 36.5%;
+            opacity: 0;
         }
 
         .net {
@@ -464,50 +512,26 @@
             bottom: -128%;
             left: -28%;
         }
-    }
-
-    .home_catch {
-        .grassFront {
-            .catch_letter {
-                // border: 5px solid $main-black;
-                width: 25%;
-                height: 34.9vw;
-                background-image: url(../img/home/write/letter.png);
-                background-repeat: no-repeat;
-                background-size: cover;
-                position: absolute;
-                left: 50%;
-                bottom: 3%;
-                transform: translate(-50%, 0);
-                z-index: 0;
-            }
-        }
-
-        .cap {
-            transform: rotate(90deg);
-            top: 0%;
-            left: 17%;
-        }
 
         .catchTitle {
             width: 35%;
-            height: 47vw;
+            height: 45vw;
             // border: 1px solid blue;
             background-image: url(../img/home/catch/stick.png);
             background-repeat: no-repeat;
             background-size: contain;
             background-position: 55%;
             position: absolute;
-            right: 3%;
-            bottom: 1%;
+            top: -100%;
+            left: 10%;
 
             .boardTop {
-                width: 100%;
+                width: 90%;
                 height: 16.7vw;
                 // border: 1px solid palevioletred;
                 background-image: url(../img/home/catch/boardTop.svg);
                 background-repeat: no-repeat;
-                margin-top: 10%;
+                margin: 13% auto 0 auto;
                 position: relative;
 
                 h1 {
@@ -518,19 +542,18 @@
             }
 
             .boardBot {
-                width: 72%;
-                height: 17.3vw;
+                width: 67%;
+                height: 16vw;
                 // border: 1px solid slateblue;
                 background-image: url(../img/home/catch/boardBot.svg);
                 background-repeat: no-repeat;
-                margin: 5% auto 0 18%;
+                margin: 5% auto 0 20%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
 
                 h2 {
                     font-family: $font;
-                    // font-size: 3vw;
                 }
             }
         }
@@ -565,58 +588,124 @@
                 top: 0;
 
                 .machine_base {
-                    width: 20%;
+                    width: 30%;
                     position: absolute;
                     bottom: 0;
                 }
 
                 .machine_hand {
-                    width: 90%;
+                    width: 80%;
                     position: absolute;
-                    bottom: 15%;
-                    left: 5%;
+                    bottom: 24%;
+                    left: 14%;
                 }
             }
 
             .smokeBox {
-                border: 1px solid blue;
-                width: 40%;
-                height: 16.5vw;
+                // border: 1px solid blue;
+                width: 33%;
+                height: 23vw;
                 position: absolute;
-                right: 30%;
-                top: 20%;
+                right: 0%;
+                top: 0%;
+                overflow: hidden;
 
                 .smokeS {
-                    filter: drop-shadow(0px -12px 9px rgba(0, 0, 0, 0.65));
-
+                    // border: 1px solid red;
+                    width: 15%;
+                    position: absolute;
+                    bottom: 0%;
+                    left: 0%;
                 }
 
                 .smokeM {
+                    // border: 1px solid green;
+                    width: 15%;
                     position: absolute;
-                    bottom: 14.5%;
-                    left: 38%;
-                    filter: drop-shadow(0px -12px 9px rgba(0, 0, 0, 0.65));
-
+                    bottom: 0%;
+                    left: 0%;
+                    opacity: 0;
                 }
 
                 .smokeL {
+                    // border: 1px solid yellow;
+                    width: 15%;
                     position: absolute;
-                    top: 0;
-                    right: 0;
-                    filter: drop-shadow(0px -12px 9px rgba(0, 0, 0, 0.65));
+                    bottom: 0%;
+                    left: 0%;
+                    opacity: 0;
                 }
+            }
+
+            .wheel {
+                width: 15%;
+                position: absolute;
+                top: 37%;
+                right: 24%;
+            }
+
+            .pointer {
+                width: 5%;
+                position: absolute;
+                bottom: 20.5%;
+                right: 29.2%;
+                animation: turn 2s ease-in-out infinite;
+            }
+
+            @keyframes turn {
+                0% {
+                    transform: rotate(0deg);
+                    // transform-origin: left bottom;
+                }
+
+                25% {
+                    transform: rotate(-45deg);
+                    // transform-origin: left bottom;
+                }
+
+                50% {
+                    transform: rotate(0deg);
+                    // transform-origin: left bottom;
+                }
+
+                75% {
+                    transform: rotate(-120deg);
+                    // transform-origin: left bottom;
+                }
+
+                100% {
+                    transform: rotate(0deg);
+                    // transform-origin: left bottom;
+                }
+            }
+
+            .catch_letter {
+                border: $border;
+                background-color: $main-white;
+                width: 22%;
+                height: 31.5vw;
+                background-image: url(../img/share/postCard-vertical.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                position: absolute;
+                bottom: 20%;
+                left: 40%;
+                // transform: translate(-50%, -50%);
             }
         }
 
         .print {
-            width: 100%;
+            width: 80%;
             height: 1090px;
             // border: 1px solid blue;
             background-image: url(../img/home/catch/print.png);
             background-repeat: no-repeat;
             background-size: contain;
-            margin-top: -270px;
+            margin: -270px auto 0 auto;
             position: relative;
+
+
 
             h2 {
                 font-family: $font;
@@ -652,9 +741,9 @@
         }
 
         .foldStamp {
-            width: 20%;
+            width: 22%;
             position: absolute;
-            top: 50%;
+            top: 45%;
             left: 51%;
             transform: translate(-50%, -50%);
         }
