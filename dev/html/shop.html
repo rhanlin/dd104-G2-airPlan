@@ -31,173 +31,122 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-sm-12  col-md-12 col-lg-12 itemCardBox ">
-          <div class="itemCardAside">
-            <div class="itemCardAsideBox portfolioFilter">
-              <div class="itemCardAsideh3">
-                <span href="#" data-filter="*" class="current">
-                  <h3>商品項目</h3>
-                  </a>
-              </div>
-              <div class="itemCardAsideh4">
-                <span href="#" data-filter=".letter">
+
+
+
+
+        <div id="app">
+          <div class="col-12 col-sm-12  col-md-12 col-lg-12 itemCardBox ">
+            <div class="itemCardAside">
+              <div class="itemCardAsideBox">
+                <div class="itemCardAsideh3">
+                  <h3 @click="visibility='all'">商品項目</h3>
+                </div>
+                <div class="itemCardAsideh4">
                   <h4>信紙</h4>
-                  </a>
-              </div>
-              <div class="itemCardAsideh4">
-                <h4></h4>
-              </div>
-              <div class="accordion" id="accordionExample">
-                <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                        aria-expanded="true" aria-controls="collapseOne">
-                        <span href="#" data-filter=".pattern">
+                </div>
+                <div class="itemCardAsideh4">
+                  <h4></h4>
+                </div>
+                <div class="accordion" id="accordionExample">
+                  <div class="card">
+                    <div @click="visibility='pattern'" class="card-header" id="headingOne">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                          aria-expanded="true" aria-controls="collapseOne">
                           <h4>圖案</h4>
-                        </span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                      <h5>向量素材</h5>
-                      <h5>壁紙素材</h5>
-                      <h5>動物素材</h5>
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                      data-parent="#accordionExample">
+                      <div class="card-body">
+                        <h5>向量素材</h5>
+                        <h5>壁紙素材</h5>
+                        <h5>動物素材</h5>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="card">
-                  <div class="card-header" id="headingTwo">
-                    <h2 class="mb-0">
-                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <span href="#" data-filter=".postmark">
+                  <div class="card">
+                    <div @click="visibility='postmark'" class="card-header" id="headingTwo">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                          data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                           <h4>郵戳</h4>
-                        </span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body">
-                      <h5>外框素材</h5>
-                      <h5>內容圖案</h5>
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <h5>外框素材</h5>
+                        <h5>內容圖案</h5>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="card">
-                  <div class="card-header" id="headingThree">
-                    <h2 class="mb-0">
-                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        <span href="#" data-filter=".diy">
+                  <div class="card">
+                    <div @click="visibility='tool'" class="card-header" id="headingThree">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                          data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                           <h4>DIY工具</h4>
-                        </span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                      <h5>繪畫相關</h5>
-                      <h5>其他</h5>
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                      data-parent="#accordionExample">
+                      <div class="card-body">
+                        <h5>繪畫相關</h5>
+                        <h5>其他</h5>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="itemCardContainerBox">
             <div class=" itemCardContainer">
-
-
-              <div class="cardFilter portfolioContainer" style="overflow: visible;">
-
+              <div class="cardFilter">
                 <!-- <img src="./img/product/decorate/line_top.png" alt="" class="line_top">
-              <img src="./img/product/decorate/line_bottom.png" alt="" class="line_bottom"> -->
-
-                <div id="itemCard1" class="postmark itemCard itemCard1"><img src="./img/product/decorate/clip-04.svg"
-                    alt="">
-                </div>
-                <div id="itemCard2" class="postmark itemCard itemCard2"><img src="./img/product/decorate/clip-04.svg"
-                    alt="">
-                </div>
-                <div id="itemCard3" class="letter itemCard itemCard3"><img src="./img/product/decorate/clip-04.svg"
-                    alt="">
-                </div>
-                <div id="itemCard4" class="letter itemCard itemCard4">
+                <img src="./img/product/decorate/line_bottom.png" alt="" class="line_bottom"> -->
+               
+                <!-- v-if="change(index)" -->
+                <div class="itemCard"  v-for="item in filteredItems" :style="{backgroundImage:`url(${item.url})`}"
+                  :id=item.id :class=item.class>
                   <img src="./img/product/decorate/clip-04.svg" alt="">
                 </div>
-                <div id="itemCard5" class="postmark itemCard itemCard5"><img src="./img/product/decorate/clip-04.svg"
-                    alt="">
-                </div>
-                <div id="itemCard6" class="diy itemCard itemCard6"><img src="./img/product/decorate/clip-04.svg"
-                    alt="">
-                </div>
-                <div id="itemCard7" class="pattern itemCard itemCard7"><img src="./img/product/decorate/clip-04.svg"
-                    alt="">
-                </div>
-                <div id="itemCard8" class="letter itemCard itemCard8"><img src="./img/product/decorate/clip-04.svg"
-                    alt="">
-                </div>
-                <div id="itemCard9" class="postmark itemCard itemCard9"><img src="./img/product/decorate/clip-04.svg"
-                    alt="">
-                </div>
-                <div id="itemCard10" class="diy itemCard itemCard10"><img src="./img/product/decorate/clip-04.svg"
-                    alt="">
-                </div>
-                <div id="itemCard11" class="postmark itemCard itemCard11"><img
-                    src="./img/product/decorate/clip-04.svg" alt="">
-                </div>
-                <div id="itemCard12" class="letter itemCard itemCard12"><img src="./img/product/decorate/clip-04.svg"
-                    alt="">
-                </div>
-                <div id="itemCard13" class="letter itemCard itemCard13"><img src="./img/product/decorate/clip-04.svg"
-                    alt="">
-                </div>
-                <div id="itemCard14" class="postmark itemCard itemCard14"><img
-                    src="./img/product/decorate/clip-04.svg" alt="">
-                </div>
-                <div id="itemCard15" class="pattern objects itemCard itemCard15"><img
-                    src="./img/product/decorate/clip-04.svg" alt="">
-                </div>
               </div>
-            </div>
-
-            <div id="emptyBtn">
-              <div @click="page = 1" class="switchBtnBox">
-                <div class="switchBtn">page1</div>
-              </div>
-              <div @click="page = 2" class="switchBtnBox">
-                <div class="switchBtn">page2</div>
-              </div>
-              <div @click="page = 3" class="switchBtnBox">
-                <div class="switchBtn">page</div>
+              <div id="emptyBtn">
+                <div @click="page = 1" class="switchBtnBox">
+                  <div class="switchBtn">page1</div>
+                </div>
+                <div @click="page = 2" class="switchBtnBox">
+                  <div class="switchBtn">page2</div>
+                </div>
+                <div @click="page = 3" class="switchBtnBox">
+                  <div class="switchBtn">page</div>
+                </div>
               </div>
             </div>
           </div>
-
-        </div>
-        <div class="filter_forSamll">
-          <div class="filter_forSamllBox">
-            <div class="filter_forSamllh3">
-              <h3>商品項目</h3>
-            </div>
-            <div class="filter_forSamllh4">
-              <h5>信紙</h5>
-            </div>
-            <div class="filter_forSamllh4">
-              <h5>DIY工具</h5>
-            </div>
-            <div class="filter_forSamllh4">
-              <h5>郵戳</h5>
-            </div>
-            <div class="filter_forSamllh4">
-              <h5>圖案</h5>
-            </div>
-            <div class="filter_forSamllh4">
-              <h5>費用</h5>
+          <div class="filter_forSamll">
+            <div class="filter_forSamllBox">
+              <div class="filter_forSamllh3">
+                <h3>商品項目</h3>
+              </div>
+              <div class="filter_forSamllh4">
+                <h5>信紙</h5>
+              </div>
+              <div class="filter_forSamllh4">
+                <h5>DIY工具</h5>
+              </div>
+              <div class="filter_forSamllh4">
+                <h5>郵戳</h5>
+              </div>
+              <div class="filter_forSamllh4">
+                <h5>圖案</h5>
+              </div>
+              <div class="filter_forSamllh4">
+                <h5>費用</h5>
+              </div>
             </div>
           </div>
         </div>
@@ -497,7 +446,7 @@
     </section>
   </main>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
-  <script src="https://isotope.metafizzy.co/v1/jquery.isotope.min.js"></script>
+  <!-- <script src="https://isotope.metafizzy.co/v1/jquery.isotope.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
     integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
   </script>
@@ -508,7 +457,6 @@
   <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.12/fabric.js'></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.4.0/fabric.js"></script>
   <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
-  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
   <script src="./js/fastclick.js"></script>
   <script src="./js/jquery.nice-select.min.js"></script>
@@ -521,32 +469,139 @@
   </script>
   <script>
     //  ================這是商品Filter用=========================
-    var $container = $('.portfolioContainer');
-    $container.isotope({
-      filter: '*',
-      animationOptions: {
-        duration: 750,
-        easing: 'linear',
-        queue: false
-      }
-    });
 
-    $('.portfolioFilter span').click(function () {
-      $('.portfolioFilter .current').removeClass('current');
-      $(this).addClass('current');
+    new Vue({
+          el: '#app',
+          data: {
+            visibility: 'all',
+            items: [{
+                style: 'postmark',
+                id: 'itemCard1',
+                url: './img/product/postmark/postmark_3.png'
+              },
+              {
+                style: 'pattern',
+                id: 'itemCard2',
+                url: './img/product/postmark/postmark_1.png'
+              },
+              {
+                style: 'postmark',
+                id: 'itemCard3',
+                url: './img/product/postmark/postmark_2.png'
+              },
+              {
+                style: 'tool',
+                id: 'itemCard4',
+                url: './img/product/postmark/postmark_2.png'
+              },
+              {
+                style: 'tool',
+                id: 'itemCard5',
+                url: './img/product/postmark/postmark_3.png'
+              },
+              {
+                style: 'postmark',
+                id: 'itemCard6',
+                url: './img/product/postmark/postmark_3.png'
+              },
+              {
+                style: 'tool',
+                id: 'itemCard7',
+                url: './img/product/postmark/postmark_2.png'
+              },
+              {
+                style: 'tool',
+                id: 'itemCard8',
+                url: './img/product/postmark/postmark_1.png'
+              },
+              {
+                style: 'tool',
+                id: 'itemCard9',
+                url: './img/product/postmark/postmark_3.png'
+              },
+              {
+                style: 'pattern',
+                id: 'itemCard10',
+                url: './img/product/postmark/postmark_1.png'
+              },
+              {
+                style: 'tool',
+                id: 'itemCard11',
+                url: './img/product/postmark/postmark_1.png'
+              },
+              {
+                style: 'pattern',
+                id: 'itemCard12',
+                url: './img/product/postmark/postmark_3.png'
+              },
+              {
+                style: 'pattern',
+                id: 'itemCard13',
+                url: './img/product/postmark/postmark_3.png'
+              },
+              {
+                style: 'tool',
+                id: 'itemCard14',
+                url: './img/product/postmark/postmark_2.png'
+              },
+              {
+                style: 'postmark',
+                id: 'itemCard15',
+                url: './img/product/postmark/postmark_2.png'
+              },
+            ],
+            
+          },
+          page:1,
+          computed: {
+            // filteredItems() {
 
+            //   const vm = this;
+            //   if (vm.visibility == 'all') {
+            //     return vm.items
+            //   } else {
+            //     return vm.items.filter(
 
-      var selector = $(this).attr('data-filter');
-      $container.isotope({
-        filter: selector,
-        animationOptions: {
-          duration: 750,
-          easing: 'linear',
-          queue: false
-        }
-      });
-      return false;
-    });
+            //       item => item.style == vm.visibility
+           
+            //     );
+
+            //   }
+            // },
+
+            filteredItems() {
+              var newitems = [];
+              const vm = this;
+              if (vm.visibility == 'all') {
+                return vm.items
+              } else {
+                vm.items.filter(function (item) {
+                  if (vm.visibility == item.style) {
+                    newitems.push(item)
+                  }
+                })
+                return newitems
+              }
+            }
+            },
+            methods: {
+              // change(index) {
+              //   if (this.page == 1) {
+              //     if ([index] <3) return true;
+              //   } else if (this.page == 2) {
+              //     if ([index] < 8 && [index] >= 4) return true;
+              //   } else if (this.page == 3) {
+              //     if ([index]< 15 && [index] >= 8) return true;
+              //   }
+              // }
+            },
+            watch: {
+              // page() {
+              //   this.change();
+              // }
+            },
+
+          })
   </script>
 
   <script>
