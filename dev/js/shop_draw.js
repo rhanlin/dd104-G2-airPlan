@@ -3,69 +3,23 @@
 
 let canvas = new fabric.Canvas('canvas'); //創建fabric環境
 canvas.setHeight(400);
-// canvas.setWidth(1900);
 
-
-fabric.Image.fromURL('../dev/img/product/decorate/background-04.png', function (image) {
-  var mask = image.scale(0.5, 0.5).set({
-    name: 'mask'
-  });
-
-  fabric.Image.fromURL('../dev/img/product/decorate/background-04.png', function (image) {
-    var frame = image.scale(0.5, 0.5).set({
-      name: 'frame'
-    });
-
-    fabric.Image.fromURL('../dev/img/product/decorate/background-04.png', function (image) {
-      var img = image.scale(0.5, 0.5).set({
-        name: 'img',
-        globalCompositeOperation: 'source-out'
-      });
-
-      img.clipTo = function (ctx) {
-        return _.bind(clip, img, ctx, frame)(ctx)
-      };
-
-      canvas.add(new fabric.Group([mask, img, frame], {
-        name: 'group'
-      }));
-      /*canvas.add(mask);
-      canvas.add(img);
-      canvas.add(frame);*/
-    });
-  });
+canvas.controlsAboveOverlay = true;
+var clipPath = new fabric.Circle({
+  radius: 200,
+  top: 50,
+  left: 50,
+  stroke: 'black',
+  fill: 'red'
 });
-
-function degToRad(degrees) {
-  return degrees * (Math.PI / 180);
-}
-
-var clip = function (ctx, clipObj) {
-  this.setCoords();
-  var scaleXTo1 = (1 / this.scaleX);
-  var scaleYTo1 = (1 / this.scaleY);
-  ctx.save();
-
-  var ctxLeft = -(this.width / 2) + clipObj.strokeWidth;
-  var ctxTop = -(this.height / 2) + clipObj.strokeWidth;
-  var ctxWidth = clipObj.width - clipObj.strokeWidth;
-  var ctxHeight = clipObj.height - clipObj.strokeWidth;
-
-  ctx.translate(ctxLeft, ctxTop);
-  ctx.scale(scaleXTo1, scaleYTo1);
-  ctx.rotate(degToRad(this.angle * -1));
-
-  ctx.beginPath();
-
-  ctx.rect(clipObj.left - this.oCoords.tl.x, clipObj.top - this.oCoords.tl.y, ctxWidth * clipObj.scaleX,
-    ctxHeight * clipObj.scaleY);
-
-  ctx.closePath();
-
-  ctx.restore();
-}
-
-
+var group = new fabric.Group([
+  // new fabric.Rect({ width: 100, height: 100, fill: 'red' }),
+  // new fabric.Rect({ width: 100, height: 100, fill: 'yellow', left: 100 }),
+  // new fabric.Rect({ width: 100, height: 100, fill: 'blue', top: 100 }),
+  // new fabric.Rect({ width: 100, height: 100, fill: 'green', left: 100, top: 100 })
+]);
+canvas.clipPath = clipPath;
+canvas.add(group);
 
 drawingOptionArea = document.getElementById('drawingOptionArea');
 
@@ -96,18 +50,18 @@ $('.figure').click(function () {
   })
 });
 
-// $('#group').click(function () {
-//   canvas.getActiveObject().toGroup()
-// })
-// $('#ungroup').click(function () {
-//   canvas.getActiveObject().toActiveSelection();
-// })
+$('#group').click(function () {
+  canvas.getActiveObject().toGroup()
+})
+$('#ungroup').click(function () {
+  canvas.getActiveObject().toActiveSelection();
+})
 
 
 //===========title==========================
 
-// $('#group').attr('title', '合併群組')
-// $('#ungroup').attr('title', '解散群組')
+$('#group').attr('title', '合併群組')
+$('#ungroup').attr('title', '解散群組')
 $('#clear').attr('title', '全部清除')
 $('#outputPngBtn').attr('title', '儲存圖檔')
 $('#text').attr('title', '建立文字')
@@ -120,21 +74,40 @@ $('.controlBox9').attr('title', '載入圖檔')
 
 $('#mode').mouseover(function () {
   $('.manualTitle').html('<h3>繪畫板</h3>');
-  $('.manualinnerText').html('<h5>點選可切換畫筆狀態或是物件選取狀態</h5>')
+  $('.manualinnerText').html('<h6>點選可切換畫筆狀態或是物件選取狀態</h6>')
 })
 $('#mode').mouseout(function () {
   $('.manualTitle').html('<h3>工具使用提示框</h3>');
   $('.manualinnerText').html(' <h6>滑鼠移入會提示您工具的使用方法喔</h6>')
 })
 
-// $('#mode').mouseover(function () {
-//   $('.manualTitle').html('<h3>繪畫板</h3>');
-//   $('.manualinnerText').html('<h6>點選可切換畫筆狀態或是物件選取狀態</h6>')
-// })
-// $('#mode').mouseout(function () {
-//   $('.manualTitle').html('<h3>工具使用提示框</h3>');
-//   $('.manualinnerText').html(' <h6>滑鼠移入會提示您工具的使用方法喔</h6>')
-// })
+$('#clear').mouseover(function () {
+  $('.manualTitle').html('<h3>清除全部</h3>');
+  $('.manualinnerText').html('<h6>點選會直接清除畫板上全部物件喔</h6>')
+})
+$('#clear').mouseout(function () {
+  $('.manualTitle').html('<h3>工具使用提示框</h3>');
+  $('.manualinnerText').html(' <h6>滑鼠移入會提示您工具的使用方法喔</h6>')
+})
+
+
+$('#group').mouseover(function () {
+  $('.manualTitle').html('<h3>合併物件</h3>');
+  $('.manualinnerText').html('<h6>點選可框選畫板上所有物件合併成一個物件</h6>')
+})
+$('#group').mouseout(function () {
+  $('.manualTitle').html('<h3>工具使用提示框</h3>');
+  $('.manualinnerText').html(' <h6>滑鼠移入會提示您工具的使用方法喔</h6>')
+})
+
+$('#ungroup').mouseover(function () {
+  $('.manualTitle').html('<h3>解除合併</h3>');
+  $('.manualinnerText').html('<h6>點選可框選畫板上被合併的物件並解除群組</h6>')
+})
+$('#ungroup').mouseout(function () {
+  $('.manualTitle').html('<h3>工具使用提示框</h3>');
+  $('.manualinnerText').html(' <h6>滑鼠移入會提示您工具的使用方法喔</h6>')
+})
 
 $('#text').mouseover(function () {
   $('.manualTitle').html('<h3>填寫文字</h3>');
@@ -239,6 +212,7 @@ $('#clear').click(function () {
 const width = parseInt(this.value, 10) || 10;
 canvas.freeDrawingBrush.width = width
 $(".lineWidthValue").html(width);
+
 
 $(".lineWidthInput").change(function () {
   const newWidth = parseInt(this.value, 10) || 1;
@@ -364,24 +338,35 @@ $("#eraser").click(function () {
 
 //相片灰階濾鏡功能
 
-$('#filter_Sepia').on("click", function () {
-  var filter = $(this).data("filter"),
-    obj = canvas.getActiveObject();
-  console.log(obj)
-  var filter = new fabric.Image.filters.Sepia();
-  obj.filters.push(filter);
-  obj.applyFilters(canvas.renderAll.bind(canvas));
-});
+
+
+// $('#filter_Sepia').on("click", function () {
+//   var filter = new fabric.Image.filters.BlendColor({
+//     color: 'red',
+//     mode: 'tint',
+//     alpha: 0.5
+//   });
+//   obj = canvas.getActiveObject();
+//   console.log(obj)
+//   var filter = new fabric.Image.filters.Sepia();
+//   obj.filters.push(filter);
+//   obj.applyFilters(canvas.renderAll.bind(canvas));
+// });
 
 //相片灰階濾鏡功能
 
 $('#filter_Grayscale').on("click", function () {
-  var filter = $(this).data("filter"),
-    obj = canvas.getActiveObject();
+  obj = canvas.getActiveObject();
+  var filter = new fabric.Image.filters.BlendImage({
+    image: obj,
+    mode: 'multiply',
+    alpha: 0.5
+  });
+
   console.log(obj)
-  var filter = new fabric.Image.filters.Grayscale();
   obj.filters.push(filter);
-  obj.applyFilters(canvas.renderAll.bind(canvas));
+  obj.applyFilters();
+  canvas.renderAll()
 });
 
 

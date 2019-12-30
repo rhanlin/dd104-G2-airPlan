@@ -24,7 +24,7 @@
             <section class="userSetting_mem">
                 <!--airPlan會員資訊-->
                 <!-- <h1 class="memtitle">會員資訊</h1> -->
-                <h1 class="threed-text-red-endWhite">會員資訊</h1>
+                <h1 class="threed-text-yellow-endWhite">會員資訊</h1>
                 <div class="memKanban" id="memKanban">
                     <div class="memKanbanIn">
                         <!--會員資訊頁籤-->
@@ -73,7 +73,7 @@
 
             <section class="userSetting_sys">
                 <!--airPlan系統資訊-->
-                <h1 class="threed-text-red-endWhite">系統資訊</h1>
+                <h1 class="threed-text-yellow-endWhite">系統資訊</h1>
                 <div class="sysKanban" id="sysKanban">
                     <!--系統資訊頁籤-->
                     <div class="manu" @click="content='manu'">
@@ -94,9 +94,27 @@
             
             <section class="userSetting_adm">
                 <!--airPlan開發者資訊-->
-                <h1 class="threed-text-red-endWhite">開發人員</h1>
+                <h1 class="threed-text-yellow-endWhite">開發人員</h1>
                 <div class="admKanban" id="admKanban">
-                    <div class="admKanbanOverFlowOut">
+                    <div class="box">
+                        <div id="app">
+                            <div class="postarea">
+                                <div class="posts" :style="computed_left">
+                                    <div class="postbox" v-for="(work,id) in works" :class="{cur_item:id==now_index}">
+                                        <div class="cover" :style="bg_css(work.cover)">
+                                            <div class="infos">
+                                                <h5>{{work.title}}</h5>
+                                                <p>{{work.description}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control_left" @click="delta(-1)"><i class="fa fa-angle-left"></i></div>
+                            <div class="control_right" @click="delta(1)"><i class="fa fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                    <!-- <div class="admKanbanOverFlowOut">
                         <div class="admKanbanOverFlowIn">
                             <div class="mike" @click="content='mike'">
                                 <h3>峻瑜</h3>
@@ -118,12 +136,16 @@
                             </div>
                         </div>
                     </div>
-                    <keep-alive>
-                        <component :is="content"></component>
-                    </keep-alive>
+                    <div class="userSettingScreen">
+                        <keep-alive>
+                            <component :is="content"></component>
+                        </keep-alive>
+                    </div> -->
+                    
                 </div>
                 <img class="robotB3" src="./img/user-setting/robotB3.svg" alt="robotB3">
                 <img class="paperPlane" src="./img/share/paper-plane.png" alt="paperPlane">
+                <img class="tripod" src="./img/user-setting/tripod.svg" alt="tripod">
             </section>
         </div>
     </main>
@@ -135,68 +157,3 @@
 </body>
 
 </html>
-
-<!-- <div class = "container">  
-    <div class="panel-group" id="accordion">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="panel-title">
-                    <h4 class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#post1">寫信</h4>
-                </div>
-            </div>
-            <div id="post1" class="panel-collapse collapse in">
-                <p class="panel-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis nam natus error et deserunt molestias placeat debitis nobis facilis quae. Sunt laudantium inventore hic omnis ab aliquam assumenda delectus corporis.</p>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="panel-title">
-                    <h4 class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#post2">撈信</h4>
-                </div>
-            </div>
-            <div id="post2" class="panel-collapse collapse">
-                <p class="panel-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis nam natus error et deserunt molestias placeat debitis nobis facilis quae. Sunt laudantium inventore hic omnis ab aliquam assumenda delectus corporis.</p>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="panel-title">
-                    <h4 class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#post3">商城</h4>
-                </div>
-            </div>
-            <div id="post3" class="panel-collapse collapse">
-                <p class="panel-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis nam natus error et deserunt molestias placeat debitis nobis facilis quae. Sunt laudantium inventore hic omnis ab aliquam assumenda delectus corporis.</p>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="panel-title">
-                    <h4 class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#post4">我的倉庫</h4>
-                </div>
-            </div>
-            <div id="post4" class="panel-collapse collapse">
-                <p class="panel-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis nam natus error et deserunt molestias placeat debitis nobis facilis quae. Sunt laudantium inventore hic omnis ab aliquam assumenda delectus corporis.</p>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="panel-title">
-                    <h4 class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#post5">聊天室</h4>
-                </div>
-            </div>
-            <div id="post5" class="panel-collapse collapse">
-                <p class="panel-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis nam natus error et deserunt molestias placeat debitis nobis facilis quae. Sunt laudantium inventore hic omnis ab aliquam assumenda delectus corporis.</p>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="panel-title">
-                    <h4 class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#post6">用戶設定</h4>
-                </div>
-            </div>
-            <div id="post6" class="panel-collapse collapse">
-                <p class="panel-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis nam natus error et deserunt molestias placeat debitis nobis facilis quae. Sunt laudantium inventore hic omnis ab aliquam assumenda delectus corporis.</p>
-            </div>
-        </div>
-    </div>
-</div>  -->

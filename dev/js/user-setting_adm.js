@@ -1,4 +1,3 @@
-
 Vue.component('memData', {
     template: `
         <div class="userSetting_memData">
@@ -177,187 +176,245 @@ new Vue({
 });
 
 
-Vue.component('mike', {
-    template: `
-        <div class="userSetting_mike">
-            <div class="lighting"></div>
-            <div class="userSetting_wrap">
-                <div class="userSetting_Name">
-                    <h4>開發者</h4>
-                    <span>峻瑜</span>
-                </div>
-                <ul class="userSetting_work">
-                    <h4>分工項目</h4>
-                    <li>UI視覺整合</li>
-                    <li>首頁、精華區</li>
-                    <li>後台管理員帳號管理</li>
-                </ul>
-                <div class="userSetting_portfolio">
-                    <h4>作品</h4>
-                    <a href="http://140.115.236.71/demo-personal/DD104/web/T1901173/" target="_blank">
-                        <span>Radara</span>
-                    </a><br>
-                    <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
-                        <span>Air Plan</span>
-                    </a>
-                </div>
-            </div>
-            <img class="userSetting_picture" src="img/user-developer/mike.png">
-        </div>
-     `,
-});
-Vue.component('spencer', {
-    template: `
-        <div class="userSetting_spencer">
-            <div class="lighting"></div>
-            <div class="userSetting_wrap">
-                <div class="userSetting_Name">
-                    <h4>開發者</h4>
-                    <span>宗翰</span>
-                </div>
-                <ul class="userSetting_work">
-                    <h4>分工項目</h4>
-                    <li>寫信、撈信</li>
-                    <li>前台網站整合</li>
-                    <li>Git版本控管</li>
-                </ul>
-                <div class="userSetting_portfolio">
-                    <h4>作品</h4>
-                    <a href="http://140.115.236.71/demo-personal/DD104/web/T1901175/" target="_blank">
-                        <span>&on</span>
-                    </a><br>
-                    <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
-                        <span>Air Plan</span>
-                    </a>
-                </div>
-            </div>
-            <img class="userSetting_picture" src="img/user-developer/spencer.png">
-        </div>
-     `,
-});
-Vue.component('allen', {
-    template: `
-        <div class="userSetting_allen">
-            <div class="lighting"></div>
-            <div class="userSetting_wrap">
-                <div class="userSetting_Name">
-                    <h4>開發者</h4>
-                    <span>耀輝</span>
-                </div>
-                <ul class="userSetting_work">
-                    <h4>分工項目</h4>
-                    <li>我的倉庫</li>
-                    <li>明信片紀錄</li>
-                    <li>後台審核檢舉</li>
-                </ul>
-                <div class="userSetting_portfolio">
-                    <h4>作品</h4>
-                    <a href="http://140.115.236.71/demo-personal/DD104/web/T1901167/" target="_blank">
-                        <span>Snack Snake</span>
-                    </a><br>
-                    <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
-                        <span>Air Plan</span>
-                    </a>
-                </div>
-            </div>
-            <img class="userSetting_picture" src="img/user-developer/allen.png">
-        </div>
-     `,
-});
-Vue.component('grace', {
-    template: `
-        <div class="userSetting_grace">
-            <div class="lighting"></div>
-            <div class="userSetting_wrap">
-                <div class="userSetting_Name">
-                    <h4>開發者</h4>
-                    <span>雅珺</span>
-                </div>
-                <ul class="userSetting_work">
-                    <h4>分工項目</h4>
-                    <li>購物商品</li>
-                    <li>客製化素材</li>
-                    <li>後台商品管理</li>
-                </ul>
-                <div class="userSetting_portfolio">
-                    <h4>作品</h4>
-                    <a href="http://140.115.236.71/demo-personal/DD104/web/T1901164/1103demo/" target="_blank">
-                        <span>Powder Ski Resort</span>
-                    </a><br>
-                    <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
-                        <span>Air Plan</span>
-                    </a>
-                </div>
-            </div>
-            <img class="userSetting_picture" src="img/user-developer/grace.png">
-        </div>
-     `,
-});
-Vue.component('sharon', {
-    template: `
-        <div class="userSetting_sharon">
-            <div class="lighting"></div>
-            <div class="userSetting_wrap">
-                <div class="userSetting_Name">
-                    <h4>開發者</h4>
-                    <span>湘文</span>
-                </div>
-                <ul class="userSetting_work">
-                    <h4>分工項目</h4>
-                    <li>即時聊天</li>
-                    <li>邀約提醒</li>
-                    <li>後台網站整合</li>
-                </ul>
-                <div class="userSetting_portfolio">
-                    <h4>作品</h4>
-                    <a href="http://140.115.236.71/demo-personal/DD104/web/T1901158/" target="_blank">
-                        <span>Bonheur</span>
-                    </a><br>
-                    <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
-                        <span>Air Plan</span>
-                    </a>
-                </div>
-            </div>
-            <img class="userSetting_picture" src="img/user-developer/sharon.png">
-        </div>
-     `,
-});
-Vue.component('howard', {
-    template: `
-        <div class="userSetting_howard">
-            <div class="lighting"></div>
-            <div class="userSetting_wrap">
-                <div class="userSetting_Name">
-                    <h4>開發者</h4>
-                    <span>恒祥</span>
-                </div>
-                <ul class="userSetting_work">
-                    <h4>分工項目</h4>
-                    <li>用戶設定</li>
-                    <li>後台會員管理</li>
-                    <li>資料庫建置與控管</li>
-                </ul>
-                <div class="userSetting_portfolio">
-                    <h4>作品</h4>
-                    <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/" target="_blank">
-                        <span>岳世界</span>
-                    </a><br>
-                    <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
-                        <span>Air Plan</span>
-                    </a>
-                </div>
-            </div>
-            <img class="userSetting_picture" src="img/user-developer/howard.png">
-        </div>
-     `,
-});
+// Vue.component('mike', {
+//     template: `
+//         <div class="userSetting_mike">
+//             <div class="lighting"></div>
+//             <div class="userSetting_wrap">
+//                 <div class="userSetting_Name">
+//                     <h4>開發者</h4>
+//                     <span>峻瑜</span>
+//                 </div>
+//                 <ul class="userSetting_work">
+//                     <h4>分工項目</h4>
+//                     <li>UI視覺整合</li>
+//                     <li>首頁、精華區</li>
+//                     <li>後台管理員帳號管理</li>
+//                 </ul>
+//                 <div class="userSetting_portfolio">
+//                     <h4>作品</h4>
+//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901173/" target="_blank">
+//                         <span>Radara</span>
+//                     </a><br>
+//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
+//                         <span>Air Plan</span>
+//                     </a>
+//                 </div>
+//             </div>
+//             <img class="userSetting_picture" src="img/user-developer/mike.png">
+//         </div>
+//      `,
+// });
+// Vue.component('spencer', {
+//     template: `
+//         <div class="userSetting_spencer">
+//             <div class="lighting"></div>
+//             <div class="userSetting_wrap">
+//                 <div class="userSetting_Name">
+//                     <h4>開發者</h4>
+//                     <span>宗翰</span>
+//                 </div>
+//                 <ul class="userSetting_work">
+//                     <h4>分工項目</h4>
+//                     <li>寫信、撈信</li>
+//                     <li>前台網站整合</li>
+//                     <li>Git版本控管</li>
+//                 </ul>
+//                 <div class="userSetting_portfolio">
+//                     <h4>作品</h4>
+//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901175/" target="_blank">
+//                         <span>&on</span>
+//                     </a><br>
+//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
+//                         <span>Air Plan</span>
+//                     </a>
+//                 </div>
+//             </div>
+//             <img class="userSetting_picture" src="img/user-developer/spencer.png">
+//         </div>
+//      `,
+// });
+// Vue.component('allen', {
+//     template: `
+//         <div class="userSetting_allen">
+//             <div class="lighting"></div>
+//             <div class="userSetting_wrap">
+//                 <div class="userSetting_Name">
+//                     <h4>開發者</h4>
+//                     <span>耀輝</span>
+//                 </div>
+//                 <ul class="userSetting_work">
+//                     <h4>分工項目</h4>
+//                     <li>我的倉庫</li>
+//                     <li>明信片紀錄</li>
+//                     <li>後台審核檢舉</li>
+//                 </ul>
+//                 <div class="userSetting_portfolio">
+//                     <h4>作品</h4>
+//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901167/" target="_blank">
+//                         <span>Snack Snake</span>
+//                     </a><br>
+//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
+//                         <span>Air Plan</span>
+//                     </a>
+//                 </div>
+//             </div>
+//             <img class="userSetting_picture" src="img/user-developer/allen.png">
+//         </div>
+//      `,
+// });
+// Vue.component('grace', {
+//     template: `
+//         <div class="userSetting_grace">
+//             <div class="lighting"></div>
+//             <div class="userSetting_wrap">
+//                 <div class="userSetting_Name">
+//                     <h4>開發者</h4>
+//                     <span>雅珺</span>
+//                 </div>
+//                 <ul class="userSetting_work">
+//                     <h4>分工項目</h4>
+//                     <li>購物商品</li>
+//                     <li>客製化素材</li>
+//                     <li>後台商品管理</li>
+//                 </ul>
+//                 <div class="userSetting_portfolio">
+//                     <h4>作品</h4>
+//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901164/1103demo/" target="_blank">
+//                         <span>Powder Ski Resort</span>
+//                     </a><br>
+//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
+//                         <span>Air Plan</span>
+//                     </a>
+//                 </div>
+//             </div>
+//             <img class="userSetting_picture" src="img/user-developer/grace.png">
+//         </div>
+//      `,
+// });
+// Vue.component('sharon', {
+//     template: `
+//         <div class="userSetting_sharon">
+//             <div class="lighting"></div>
+//             <div class="userSetting_wrap">
+//                 <div class="userSetting_Name">
+//                     <h4>開發者</h4>
+//                     <span>湘文</span>
+//                 </div>
+//                 <ul class="userSetting_work">
+//                     <h4>分工項目</h4>
+//                     <li>即時聊天</li>
+//                     <li>邀約提醒</li>
+//                     <li>後台網站整合</li>
+//                 </ul>
+//                 <div class="userSetting_portfolio">
+//                     <h4>作品</h4>
+//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901158/" target="_blank">
+//                         <span>Bonheur</span>
+//                     </a><br>
+//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
+//                         <span>Air Plan</span>
+//                     </a>
+//                 </div>
+//             </div>
+//             <img class="userSetting_picture" src="img/user-developer/sharon.png">
+//         </div>
+//      `,
+// });
+// Vue.component('howard', {
+//     template: `
+//         <div class="userSetting_howard">
+//             <div class="lighting"></div>
+//             <div class="userSetting_wrap">
+//                 <div class="userSetting_Name">
+//                     <h4>開發者</h4>
+//                     <span>恒祥</span>
+//                 </div>
+//                 <ul class="userSetting_work">
+//                     <h4>分工項目</h4>
+//                     <li>用戶設定</li>
+//                     <li>後台會員管理</li>
+//                     <li>資料庫建置與控管</li>
+//                 </ul>
+//                 <div class="userSetting_portfolio">
+//                     <h4>作品</h4>
+//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/" target="_blank">
+//                         <span>岳世界</span>
+//                     </a><br>
+//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
+//                         <span>Air Plan</span>
+//                     </a>
+//                 </div>
+//             </div>
+//             <img class="userSetting_picture" src="img/user-developer/howard.png">
+//         </div>
+//      `,
+// });
+// new Vue({
+//     el: '#admKanban',
+//     data: {
+//         content: 'mike',
+//     }
+// });
+
+//開發人員
+var works = [
+    {
+      title: "阿瑜",
+      description: "Radara",
+      cover: "./img/user-developer/mike.png",
+    },
+    {
+      title: "阿翰",
+      description: "&on",
+      cover: "./img/user-developer/spencer.png"
+    },
+    {
+      title: "阿輝",
+      description: "Snack Snake",
+      cover: "./img/user-developer/allen.png"
+    },
+    {
+      title: "小鴨",
+      description: "Powder Ski Resort",
+      cover: "./img/user-developer/grace.png"
+    },
+    {
+      title: "香菇",
+      description: "Bonheur",
+      cover: "./img/user-developer/sharon.png"
+    },
+    {
+      title: "阿康",
+      description: "岳世界",
+      cover: "./img/user-developer/howard.png"
+    }
+];
+
 new Vue({
-    el: '#admKanban',
+    el: "#app",
     data: {
-        content: 'mike',
+    now_index: 0,
+    works: works,
+    span: 962
+    },
+    computed: {
+        computed_left() {
+            var result = { 
+                left: -this.now_index * this.span + "px" };
+            // console.log(result);
+            return result;
+        }
+    },
+    methods: {
+        delta(d) {
+            this.now_index =(this.now_index + d + this.works.length) % this.works.length;
+        },
+        bg_css(url) {
+            return "background-image:url(" + url + ")";
+        }
     }
 });
-
 
 
 //外觀設定
