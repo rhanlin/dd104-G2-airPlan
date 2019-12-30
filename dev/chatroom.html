@@ -9,36 +9,10 @@
     <link href="./css/main.css" rel="stylesheet" type="text/css">
     <script src="./js/chatroom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./js/chatroom.php"></script>
 </head>
 
 <body class="chatroom-body">
-    <!-- <header class="chatroom-header">
-        <div>
-            <div style="width: 5px;height: 100px;background-color: $main-black;margin-left: 500px;display: inline-block;" class="line1"></div>
-            <div style="width: 5px;height: 100px;background-color: $main-black;margin-left: 920px;display: inline-block;" class="line2"></div>
-        </div>
-        <div>
-            <img style="display: inline-block;width: 80px;margin-left: 465px;" class="clip1" src="./img/chatroom/Clip.png" alt="">
-            <img style="display: inline-block;width: 80px;margin-left: 840px;" class="clip2" src="./img/chatroom/Clip.png" alt="">
-        </div>
-        <div>
-            <div style="width: 1100px;height: 200px;@include border();margin: 0 auto;margin-left: 365px;margin-top: 65px;background-image: url(../images/dot.svg);background-size: 100px;" class="title_bg">
-                <div style="width: 1100px;height: 200px;margin-left: -5px;margin-top: -35px;@include border();background-color: #fff;" class="title1">
-                    <div style="width: 1100px;height: 200px;margin-left: 15px;margin-top: -22px;@include border();background-color: #fff;" class="title2">
-                        <div style="width: 1100px;height: 200px;margin-left: 15px;margin-top: -22px;@include border();background-color: #fff;" class="title3">
-                            <div style="width: 1100px;height: 200px;margin-left: 15px;margin-top: -22px;@include border();background-color: #fff;" class="title4">
-                                <h1 style="font-size:48px;text-align: center;line-height: 125px;color: $main-blue;">
-                                    聊天室
-                                
-                                </h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </header> -->
     <div class="nav-body">
     <div id="navHead" class="nav-navBgWrap">
         <div class="nav-navBg">
@@ -103,7 +77,7 @@
     </div>
     <div class="signInBg" id="signInBg">
         <div class="signInData">
-            <h4>LogIn</h4>
+            <h4>Sign In</h4>
             <p class="signInClose" onclick="closeSigin()">X</p>
             <form class="formsignInData">
                 <img class="signInLogo" src="./img/share/LOGO.png" alt="Logo">
@@ -126,7 +100,7 @@
                     <p>註冊</p>
                 </a>
                 <br>
-                <button class="signInBtn" type="submit">Sign in</button>
+                <button class="signInBtn" type="submit"><p>Sign in</p></button>
             </form>
         </div>
         <!-- <img class="envelopeup" src="./img/user-setting/envelopeup.png" alt="">
@@ -437,11 +411,188 @@
                                             <img src="./img/chatroom/mark.png" alt="">
                                             <p>鏡頭前面是從前的我們</p>
                                         </div>
-
+                                    </div>
+                                    <div class="pageContent">
+                                        <div class="contentYour">
+                                            <img src="./img/chatroom/mark_1.png" alt="">
+                                            <p>我是香菇啦2</p>
+                                        </div>
+                                        <div class="contentMe">
+                                            <p>誰都不要說抱歉</p>
+                                        </div>
+                                        <div class="meClearfix"></div>
+                                        <div class="contentYour_1">
+                                            <img src="./img/chatroom/mark_1.png" alt="">
+                                            <p>何來虧欠</p>
+                                        </div>
+                                        <div class="contentMe">
+                                            <p>我敢給就敢心碎</p>
+                                        </div>
+                                        <div class="meClearfix"></div>
+                                        <div class="contentYour_2">
+                                            <img src="./img/chatroom/mark_1.png" alt="">
+                                            <p>鏡頭前面是從前的我們</p>
+                                        </div>
+                                    </div>
+                                    <div class="pageContent">
+                                        <div class="contentYour">
+                                            <img src="./img/chatroom/mark_2.png" alt="">
+                                            <p>我是香菇啦3</p>
+                                        </div>
+                                        <div class="contentMe">
+                                            <p>誰都不要說抱歉</p>
+                                        </div>
+                                        <div class="meClearfix"></div>
+                                        <div class="contentYour_1">
+                                            <img src="./img/chatroom/mark_2.png" alt="">
+                                            <p>何來虧欠</p>
+                                        </div>
+                                        <div class="contentMe">
+                                            <p>我敢給就敢心碎</p>
+                                        </div>
+                                        <div class="meClearfix"></div>
+                                        <div class="contentYour_2">
+                                            <img src="./img/chatroom/mark_2.png" alt="">
+                                            <p>鏡頭前面是從前的我們</p>
+                                        </div>
+                                    </div>
+                                    <div class="pageContent">
+                                        <div class="contentYour">
+                                            <img src="./img/chatroom/mark_3.png" alt="">
+                                            <p>我是香菇啦4</p>
+                                        </div>
+                                        <div class="contentMe">
+                                            <p>誰都不要說抱歉</p>
+                                        </div>
+                                        <div class="meClearfix"></div>
+                                        <div class="contentYour_1">
+                                            <img src="./img/chatroom/mark_3.png" alt="">
+                                            <p>何來虧欠</p>
+                                        </div>
+                                        <div class="contentMe">
+                                            <p>我敢給就敢心碎</p>
+                                        </div>
+                                        <div class="meClearfix"></div>
+                                        <div class="contentYour_2">
+                                            <img src="./img/chatroom/mark_3.png" alt="">
+                                            <p>鏡頭前面是從前的我們</p>
+                                        </div>
+                                    </div>
+                                    <div class="pageContent">
+                                        <div class="contentYour">
+                                            <img src="./img/chatroom/mark.png" alt="">
+                                            <p>我是香菇啦5</p>
+                                        </div>
+                                        <div class="contentMe">
+                                            <p>誰都不要說抱歉</p>
+                                        </div>
+                                        <div class="meClearfix"></div>
+                                        <div class="contentYour_1">
+                                            <img src="./img/chatroom/mark.png" alt="">
+                                            <p>何來虧欠</p>
+                                        </div>
+                                        <div class="contentMe">
+                                            <p>我敢給就敢心碎</p>
+                                        </div>
+                                        <div class="meClearfix"></div>
+                                        <div class="contentYour_2">
+                                            <img src="./img/chatroom/mark.png" alt="">
+                                            <p>鏡頭前面是從前的我們</p>
+                                        </div>
+                                    </div>
+                                    <div class="pageContent">
+                                        <div class="contentYour">
+                                            <img src="./img/chatroom/mark_1.png" alt="">
+                                            <p>我是香菇啦6</p>
+                                        </div>
+                                        <div class="contentMe">
+                                            <p>誰都不要說抱歉</p>
+                                        </div>
+                                        <div class="meClearfix"></div>
+                                        <div class="contentYour_1">
+                                            <img src="./img/chatroom/mark_1.png" alt="">
+                                            <p>何來虧欠</p>
+                                        </div>
+                                        <div class="contentMe">
+                                            <p>我敢給就敢心碎</p>
+                                        </div>
+                                        <div class="meClearfix"></div>
+                                        <div class="contentYour_2">
+                                            <img src="./img/chatroom/mark_1.png" alt="">
+                                            <p>鏡頭前面是從前的我們</p>
+                                        </div>
+                                    </div>
+                                    <div class="pageContent">
+                                        <div class="contentYour">
+                                            <img src="./img/chatroom/mark_2.png" alt="">
+                                            <p>我是香菇啦7</p>
+                                        </div>
+                                        <div class="contentMe">
+                                            <p>誰都不要說抱歉</p>
+                                        </div>
+                                        <div class="meClearfix"></div>
+                                        <div class="contentYour_1">
+                                            <img src="./img/chatroom/mark_2.png" alt="">
+                                            <p>何來虧欠</p>
+                                        </div>
+                                        <div class="contentMe">
+                                            <p>我敢給就敢心碎</p>
+                                        </div>
+                                        <div class="meClearfix"></div>
+                                        <div class="contentYour_2">
+                                            <img src="./img/chatroom/mark_2.png" alt="">
+                                            <p>鏡頭前面是從前的我們</p>
+                                        </div>
+                                    </div>
+                                    <div class="pageContent">
+                                        <div class="contentYour">
+                                            <img src="./img/chatroom/mark_3.png" alt="">
+                                            <p>我是香菇啦8</p>
+                                        </div>
+                                        <div class="contentMe">
+                                            <p>誰都不要說抱歉</p>
+                                        </div>
+                                        <div class="meClearfix"></div>
+                                        <div class="contentYour_1">
+                                            <img src="./img/chatroom/mark_3.png" alt="">
+                                            <p>何來虧欠</p>
+                                        </div>
+                                        <div class="contentMe">
+                                            <p>我敢給就敢心碎</p>
+                                        </div>
+                                        <div class="meClearfix"></div>
+                                        <div class="contentYour_2">
+                                            <img src="./img/chatroom/mark_3.png" alt="">
+                                            <p>鏡頭前面是從前的我們</p>
+                                        </div>
+                                    </div>
+                                    <div class="pageContent">
+                                        <div class="contentYour">
+                                            <img src="./img/chatroom/mark.png" alt="">
+                                            <p>我是香菇啦9</p>
+                                        </div>
+                                        <div class="contentMe">
+                                            <p>誰都不要說抱歉</p>
+                                        </div>
+                                        <div class="meClearfix"></div>
+                                        <div class="contentYour_1">
+                                            <img src="./img/chatroom/mark.png" alt="">
+                                            <p>何來虧欠</p>
+                                        </div>
+                                        <div class="contentMe">
+                                            <p>我敢給就敢心碎</p>
+                                        </div>
+                                        <div class="meClearfix"></div>
+                                        <div class="contentYour_2">
+                                            <img src="./img/chatroom/mark.png" alt="">
+                                            <p>鏡頭前面是從前的我們</p>
+                                        </div>
                                     </div>
                                     <div class="contentSend">
-                                        <input class="sendText" type="text">
-                                        <button><img src="./img/chatroom/send.png" alt=""></button>
+                                        <form action="./js/chatroom.php">
+                                            <input class="sendText" type="text">
+                                            <button><img src="./img/chatroom/send.png" alt=""></button>
+                                        </form>
                                         <div class="sendClearfix"></div>
                                     </div>
                                 </div>
@@ -463,8 +614,11 @@
             Mark[i].addEventListener('click',function(e){
                 for(let j =0;j< Mark.length; j++){
                     Mark[j].classList.remove("MarkRed");
+                    document.querySelectorAll('.pageContent')[j].style.display="none";
                 }
                 e.currentTarget.classList.add("MarkRed");
+                document.querySelectorAll('.pageContent')[i].style.display="inline-block";
+                console.log(document.querySelectorAll('.pageContent')[i]);
             })
         };
     </script>
