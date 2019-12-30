@@ -8,4 +8,8 @@
 //   background-color: $main-black;
   background: radial-gradient(#777 30%, $main-black 20%);
   background-size: 10px 10px;
+
+  p {
+    margin: 0;
+  }
 }

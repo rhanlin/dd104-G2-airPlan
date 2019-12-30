@@ -1,8 +1,4 @@
 .vscode/settings.json
-btn_all.html
-gulpfile.js
 node_modules/
-package-lock.json
-package.json
-js/
 dist/
+dev/css/main.css
