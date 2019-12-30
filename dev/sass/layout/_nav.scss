@@ -30,6 +30,7 @@
       border: 5px solid $main-black;
       margin: 50px 20px 0 0;
       z-index: 990;
+      display: none;
       .hambuger {
         cursor: pointer;
         height: 60px;
@@ -355,8 +356,6 @@
       position: absolute;
       top: 36%;
       right: 2.5%;
-      z-index: 999;
-      // border: 1px solid lightseagreen;
 
       > a {
         display: inline-block;
@@ -437,6 +436,10 @@
     width: 100%;
     .nav-hamPosition {
       width: 100%;
+
+      .nav-hamburgerWrap {
+        display: block;
+      }
     }
   }
 
@@ -573,9 +576,6 @@
     display: block;
   }
 }
-
-
-
 
 //登入頁
 

@@ -349,7 +349,8 @@
         </div>
         <section class="cav-readLetterWrap">
             <div class="cav-boxImg">
-                <img src="./img/cave/letterBox.svg" alt="">
+                <img class="cav-horiImg" src="./img/cave/letterBox.svg" alt="letterBox">
+                <img class="cav-vertImg" src="./img/cave/letterBox-Vertiacal.svg" alt="letterBox-Vertiacal">
                 <div class="cav-boxFront">
                     <div class="cav-boxFrontLeft">
                         <div class="cav-whoLetter">
@@ -373,7 +374,7 @@
                                         </div>
                                     </div>
                                     <div class="cav-letSetting">
-                                        <div><i class="fas fa-ellipsis-h" ></i></div>
+                                        <div><i class="fas fa-ellipsis-h"></i></div>
                                         <div class="cav-landLetter">
                                             <span class="cav-land ">
                                                 <h6>下架信件</h6>
@@ -546,10 +547,23 @@
                         </div>
                     </div>
                     <div class="cav-botBlock">
-                        <div class="btn">更換</div>
+                        <div id="btns" class="btns">
+                            <div class="orderBtnBoxGroup ">
+                                <div class="orderBtnBox ">
+                                    <div class="orderBtn">
+                                        <div class="orderText">
+                                            <h6>更換</h6>
+                                        </div>
+                                    </div>
+                                    <div class="orderBtnBottom"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <!-- <div class="cav-botBlock">
+                        <div class="btn">更換</div>
+                    </div> -->
                 </div>
-                <!-- <div class="">更換</div> -->
 
             </div>
             <div class="cav-rightWrap">
@@ -599,7 +613,7 @@
     <div class="footer-bottom"><p> Copyright © Air Plan All rights reserved.</p></div>
 
 
-    
+
     <script src="./js/cave.js"></script>
     <!-- <script src="./js/btn.js"></script> -->
 </body>
