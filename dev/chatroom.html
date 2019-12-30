@@ -9,36 +9,10 @@
     <link href="./css/main.css" rel="stylesheet" type="text/css">
     <script src="./js/chatroom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./js/chatroom.php"></script>
 </head>
 
 <body class="chatroom-body">
-    <!-- <header class="chatroom-header">
-        <div>
-            <div style="width: 5px;height: 100px;background-color: $main-black;margin-left: 500px;display: inline-block;" class="line1"></div>
-            <div style="width: 5px;height: 100px;background-color: $main-black;margin-left: 920px;display: inline-block;" class="line2"></div>
-        </div>
-        <div>
-            <img style="display: inline-block;width: 80px;margin-left: 465px;" class="clip1" src="./img/chatroom/Clip.png" alt="">
-            <img style="display: inline-block;width: 80px;margin-left: 840px;" class="clip2" src="./img/chatroom/Clip.png" alt="">
-        </div>
-        <div>
-            <div style="width: 1100px;height: 200px;@include border();margin: 0 auto;margin-left: 365px;margin-top: 65px;background-image: url(../images/dot.svg);background-size: 100px;" class="title_bg">
-                <div style="width: 1100px;height: 200px;margin-left: -5px;margin-top: -35px;@include border();background-color: #fff;" class="title1">
-                    <div style="width: 1100px;height: 200px;margin-left: 15px;margin-top: -22px;@include border();background-color: #fff;" class="title2">
-                        <div style="width: 1100px;height: 200px;margin-left: 15px;margin-top: -22px;@include border();background-color: #fff;" class="title3">
-                            <div style="width: 1100px;height: 200px;margin-left: 15px;margin-top: -22px;@include border();background-color: #fff;" class="title4">
-                                <h1 style="font-size:48px;text-align: center;line-height: 125px;color: $main-blue;">
-                                    聊天室
-                                
-                                </h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </header> -->
     <div class="nav-body">
     <div id="navHead" class="nav-navBgWrap">
         <div class="nav-navBg">
@@ -615,8 +589,10 @@
                                         </div>
                                     </div>
                                     <div class="contentSend">
-                                        <input class="sendText" type="text">
-                                        <button><img src="./img/chatroom/send.png" alt=""></button>
+                                        <form action="./js/chatroom.php">
+                                            <input class="sendText" type="text">
+                                            <button><img src="./img/chatroom/send.png" alt=""></button>
+                                        </form>
                                         <div class="sendClearfix"></div>
                                     </div>
                                 </div>
