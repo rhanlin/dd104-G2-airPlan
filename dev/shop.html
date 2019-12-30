@@ -368,6 +368,22 @@
               <div class="itemCardAsideh4">
                 <span href="#" data-filter=".letter">
                   <h4>信紙</h4>
+<<<<<<< HEAD
+                </div>
+                <div class="itemCardAsideh4">
+                  <h4></h4>
+                </div>
+                <div class="accordion" id="accordionExample">
+                  <div class="card">
+<<<<<<< HEAD
+                    <div @click="filter('1')" class="card-header" id="headingOne">
+=======
+                    <div class="card-header" id="headingOne">
+>>>>>>> newDev
+                      <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                          aria-expanded="true" aria-controls="collapseOne">
+=======
                   </a>
               </div>
               <div class="itemCardAsideh4">
@@ -380,6 +396,7 @@
                       <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
                         aria-expanded="true" aria-controls="collapseOne">
                         <span href="#" data-filter=".pattern">
+>>>>>>> newDev
                           <h4>圖案</h4>
                         </span>
                       </button>
@@ -393,6 +410,17 @@
                       <h5>動物素材</h5>
                     </div>
                   </div>
+<<<<<<< HEAD
+                  <div class="card">
+<<<<<<< HEAD
+                    <div @click="filter('2')" class="card-header" id="headingTwo">
+=======
+                    <div class="card-header" id="headingTwo">
+>>>>>>> newDev
+                      <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                          data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+=======
                 </div>
                 <div class="card">
                   <div class="card-header" id="headingTwo">
@@ -400,6 +428,7 @@
                       <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                         data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                         <span href="#" data-filter=".postmark">
+>>>>>>> newDev
                           <h4>郵戳</h4>
                         </span>
                       </button>
@@ -411,6 +440,17 @@
                       <h5>內容圖案</h5>
                     </div>
                   </div>
+<<<<<<< HEAD
+                  <div class="card">
+<<<<<<< HEAD
+                    <div @click="filter('3')" class="card-header" id="headingThree">
+=======
+                    <div class="card-header" id="headingThree">
+>>>>>>> newDev
+                      <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                          data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+=======
                 </div>
                 <div class="card">
                   <div class="card-header" id="headingThree">
@@ -418,6 +458,7 @@
                       <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                         data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         <span href="#" data-filter=".diy">
+>>>>>>> newDev
                           <h4>DIY工具</h4>
                         </span>
                       </button>
@@ -438,7 +479,18 @@
             <div class=" itemCardContainer">
 
 
+<<<<<<< HEAD
+              <div class="cardFilter">
+<<<<<<< HEAD
+                <!-- <img src="./img/product/decorate/line_top.png" alt="" class="line_top">
+                <img src="./img/product/decorate/line_bottom.png" alt="" class="line_bottom"> -->
+                <div class="itemCard" v-if="change(index)" v-for="(item,index) in filteredItems"
+                  :style="{backgroundImage:`url(${item.url})`}" :id=item.id :class=item.class>
+                  <img src="./img/product/decorate/clip-04.svg" alt="">
+=======
+=======
               <div class="cardFilter portfolioContainer" style="overflow: visible;">
+>>>>>>> newDev
 
                 <!-- <img src="./img/product/decorate/line_top.png" alt="" class="line_top">
                 <img src="./img/product/decorate/line_bottom.png" alt="" class="line_bottom"> -->
@@ -478,8 +530,13 @@
                 <div id="itemCard12" class="letter itemCard itemCard12"><img src="./img/product/decorate/clip-04.svg"
                     alt="">
                 </div>
+<<<<<<< HEAD
+                <div id="itemCard15" class="itemCard itemCard15"><img src="/img/product/decorate/clip-04.svg" alt="">
+>>>>>>> newDev
+=======
                 <div id="itemCard13" class="letter itemCard itemCard13"><img src="./img/product/decorate/clip-04.svg"
                     alt="">
+>>>>>>> newDev
                 </div>
                 <div id="itemCard14" class="postmark itemCard itemCard14"><img src="./img/product/decorate/clip-04.svg"
                     alt="">
@@ -844,6 +901,232 @@
     })
   </script>
   <script>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    var addShuff = new Vue({
+      el: '#app',
+      data: {
+
+        items: [{
+            tags: ['all', '3'],
+            id: '1',
+            url: './img/product/postmark/postmark_3.png'
+          },
+          {
+            tags: ['all', '2'],
+            id: '2',
+            url: './img/product/postmark/postmark_1.png'
+          },
+          {
+            tags: ['all', '3'],
+            id: '3',
+            url: './img/product/postmark/postmark_2.png'
+          },
+          {
+            tags: ['all', '1'],
+            id: '4',
+            url: './img/product/postmark/postmark_2.png'
+          },
+          {
+            tags: ['all', '1'],
+            id: '5',
+            url: './img/product/postmark/postmark_3.png'
+          },
+          {
+            tags: ['all', '2'],
+            id: '6',
+            url: './img/product/postmark/postmark_3.png'
+          },
+          {
+            tags: ['all', '1'],
+            id: '7',
+            url: './img/product/postmark/postmark_2.png'
+          },
+          {
+            tags: ['all', '2'],
+            id: '8',
+            url: './img/product/postmark/postmark_1.png'
+          },
+          {
+            tags: ['all', '3'],
+            id: '9',
+            url: './img/product/postmark/postmark_3.png'
+          },
+          {
+            tags: ['all', '1'],
+            id: '10',
+            url: './img/product/postmark/postmark_1.png'
+          },
+          {
+            tags: ['all', '1'],
+            id: '11',
+            url: './img/product/postmark/postmark_1.png'
+          },
+          {
+            tags: ['all', '2'],
+            id: '12',
+            url: './img/product/postmark/postmark_3.png'
+          },
+          {
+            tags: ['all', '3'],
+            id: '13',
+            url: './img/product/postmark/postmark_3.png'
+          },
+          {
+            tags: ['all', '2'],
+            id: '14',
+            url: './img/product/postmark/postmark_2.png'
+          },
+          {
+            tags: ['all', '2'],
+            id: '15',
+            url: './img/product/postmark/postmark_2.png'
+          },
+        ],
+        currentTag: "all",
+        // page: 1,
+
+
+      },
+      computed: {
+        filteredItems: function () {
+          var filter = this.currentTag;
+          return this.items.filter(function (item) {
+            return item.tags.indexOf(filter) !== -1;
+          });
+        }
+      },
+      methods: {
+        filter: function (tag) {
+          this.currentTag = tag;
+        },
+        // change(index) {
+        //   if (this.page == 1) {
+        //     if (index < 10) return true;
+        //   } else if (this.page == 2) {
+        //     if (index < 20 && index >= 10) return true;
+        //   } else if (this.page == 3) {
+        //     if (index < 30 && index >= 20) return true;
+        //   }
+        // }
+      },
+      // watch: {
+      //   page() {
+      //     this.change();
+      //   }
+      // },
+
+    })
+=======
+    // var addShuff = new Vue({
+    //   el: '#app',
+    //   data: {
+
+    //     items: [{
+    //         type: 1,
+    //         id: '1',
+    //         url: './img/product/postmark/postmark_3.png'
+    //       },
+    //       {
+    //         type: 2,
+    //         id: '2',
+    //         url: './img/product/postmark/postmark_1.png'
+    //       },
+    //       {
+    //         type: 1,
+    //         id: '3',
+    //         url: './img/product/postmark/postmark_2.png'
+    //       },
+    //       {
+    //         type: 2,
+    //         id: '4',
+    //         url: './img/product/postmark/postmark_2.png'
+    //       },
+    //       {
+    //         type: 1,
+    //         id: '5',
+    //         url: './img/product/postmark/postmark_3.png'
+    //       },
+    //       {
+    //         type: 3,
+    //         id: '6',
+    //         url: './img/product/postmark/postmark_3.png'
+    //       },
+    //       {
+    //         type: 3,
+    //         id: '7',
+    //         url: './img/product/postmark/postmark_2.png'
+    //       },
+    //       {
+    //         type: 1,
+    //         id: '8',
+    //         url: './img/product/postmark/postmark_1.png'
+    //       },
+    //       {
+    //         type: 2,
+    //         id: '9',
+    //         url: './img/product/postmark/postmark_3.png'
+    //       },
+    //       {
+    //         type: 1,
+    //         id: '10',
+    //         url: './img/product/postmark/postmark_1.png'
+    //       },
+    //       {
+    //         type: 2,
+    //         id: '11',
+    //         url: './img/product/postmark/postmark_1.png'
+    //       },
+    //       {
+    //         type: 3,
+    //         id: '12',
+    //         url: './img/product/postmark/postmark_3.png'
+    //       },
+    //       {
+    //         type: 3,
+    //         id: '13',
+    //         url: './img/product/postmark/postmark_3.png'
+    //       },
+    //       {
+    //         type: 1,
+    //         id: '14',
+    //         url: './img/product/postmark/postmark_2.png'
+    //       },
+    //       {
+    //         type: 3,
+    //         id: '15',
+    //         url: './img/product/postmark/postmark_2.png'
+    //       },
+    //     ],
+    //     currentTag: 'all'
+    //     // page: 1,
+    //   },
+    //   computed: {
+
+    //   },
+    //   methods: {
+    //     filterEvents: function (filter) {
+    //       this.filter = filter
+    //     }
+    //     // change(index) {
+    //     //   if (this.page == 1) {
+    //     //     if (index < 10) return true;
+    //     //   } else if (this.page == 2) {
+    //     //     if (index < 20 && index >= 10) return true;
+    //     //   } else if (this.page == 3) {
+    //     //     if (index < 30 && index >= 20) return true;
+    //     //   }
+    //     // }
+    //   },
+    //   // watch: {
+    //   //   page() {
+    //   //     this.change();
+    //   //   }
+    //   // },
+
+    // })
+>>>>>>> newDev
+=======
     //  ================這是商品Filter用=========================
     var $container = $('.portfolioContainer');
     $container.isotope({
@@ -871,6 +1154,7 @@
       });
       return false;
     });
+>>>>>>> newDev
   </script>
 
   <script>
