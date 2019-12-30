@@ -1,25 +1,101 @@
 //=================素材點按進畫板==============================
 
 
-let canvas = new fabric.Canvas('canvas'); //創建fabric環境
-canvas.setHeight(400);
+let canvas = new fabric.Canvas('canvas', {
+  backgroundColor: "white"
+}); //創建fabric環境
+canvas.setHeight(500);
 
 canvas.controlsAboveOverlay = true;
-var clipPath = new fabric.Circle({
-  radius: 200,
-  top: 50,
-  left: 50,
-  stroke: 'black',
-  fill: 'red'
-});
-var group = new fabric.Group([
-  // new fabric.Rect({ width: 100, height: 100, fill: 'red' }),
-  // new fabric.Rect({ width: 100, height: 100, fill: 'yellow', left: 100 }),
-  // new fabric.Rect({ width: 100, height: 100, fill: 'blue', top: 100 }),
-  // new fabric.Rect({ width: 100, height: 100, fill: 'green', left: 100, top: 100 })
+// var clipPath = new fabric.Circle({
+//   radius: 100,
+//   top: 50,
+//   left: 50,
+//   // fill: 'bisque'
+// });
+
+
+
+
+var clipPath = new fabric.Group([
+  new fabric.Polyline([{
+      x: 10,
+      y: 250
+    },
+    {
+      x: 700,
+      y: 10
+    },
+    {
+      x: 670,
+      y: 200
+    },
+    {
+      x: 40,
+      y: 250
+    },
+    {
+      x: 670,
+      y: 300
+    },
+    {
+      x: 700,
+      y: 490
+    },
+    {
+      x: 10,
+      y: 250
+    },
+
+  ], {
+    stroke: 'red',
+    color: 'red',
+    left: 10,
+    top: 10,
+    fill: 'red'
+  }),
+  new fabric.Polyline([{
+    x: 120,
+    y: 248
+  },
+
+  {
+    x: 670,
+    y: 205
+  },
+  {
+    x: 650,
+    y: 248
+  },
+  {
+    x: 120,
+    y: 248
+  },
+]),
+  new fabric.Polyline([{
+      x: 120,
+      y:253
+    },
+  
+    {
+      x: 650,
+      y: 253
+    },
+    {
+      x: 670,
+      y: 295
+    },
+    {
+      x: 120,
+      y: 253
+    },
+  ]),
 ]);
 canvas.clipPath = clipPath;
-canvas.add(group);
+canvas.renderAll();
+
+
+
 
 drawingOptionArea = document.getElementById('drawingOptionArea');
 
@@ -209,8 +285,10 @@ $('#clear').click(function () {
   canvas.clear();
 })
 
-const width = parseInt(this.value, 10) || 10;
-canvas.freeDrawingBrush.width = width
+
+
+canvas.freeDrawingBrush.width = 10;
+var width = 10;
 $(".lineWidthValue").html(width);
 
 
@@ -219,6 +297,15 @@ $(".lineWidthInput").change(function () {
   canvas.freeDrawingBrush.width = newWidth
   $(".lineWidthValue").html(newWidth);
 })
+
+
+//橡皮擦功能
+$("#eraser").click(function () {
+  canvas.freeDrawingBrush.color = '#ffffff';
+  $(".lineWidthInput").val() = 10;
+  canvas.freeDrawingBrush.width = $(".lineWidthInput").val()
+});
+
 
 
 
@@ -324,16 +411,6 @@ $(".brushSelect").change(function () {
 
   canvas.freeDrawingBrush.setShadow(myShadow)
 })
-
-
-//橡皮擦功能
-$("#eraser").click(function () {
-  canvas.freeDrawingBrush.color = '#E5E5E5';
-  canvas.freeDrawingBrush.width = $(".lineWidthInput").val()
-});
-
-
-
 
 
 //相片灰階濾鏡功能
