@@ -596,36 +596,46 @@
 }
 
   @include scroller();
-
+.planeBox{
+  width: auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #444;
+  box-sizing: border-box;
+}
   #imgWrap {
   width: 55.6vw;
   max-width: 495px;
   height: 80vw;
   max-height: 716px;
   position: relative;
+  opacity: 0;
   animation-delay: .5s;
   animation-duration: .5s;
   animation-fill-mode: forwards;
   margin: 0 auto;
-  opacity: 0;
 }
 @keyframes showImgWrap {
   from{
-    transform:translateY(50%);
+    transform:translateY(100%);
     opacity: 0;
   }
   to{
-    transform:translateY(10%);    
+    transform:translateY(0%);    
     opacity: 1;
   }
 }
 @keyframes rotatePlane {
   from {
     transform: rotate(0);
+    opacity: 1;
   }
 
   to {
     transform: rotate(-85deg);
+    opacity: 1;
   }
 }
 
