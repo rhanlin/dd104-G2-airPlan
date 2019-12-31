@@ -1003,133 +1003,7 @@
         padding: 10px;
         overflow-y: scroll;
       }
-<<<<<<< HEAD
-      .cav-botBlock {
-        background-color: #ddd;
-        width: 100%;
-        height: 9.5%;
-        position: relative;
-        /* 按鈕 */
-        #btns {
-          width: 40%;
-          display: flex;
-          margin-left: 40%;
-
-          .orderBtnBoxGroup {
-            width: 50%;
-            // margin: 0;
-
-            .orderBtnBox {
-              position: relative;
-
-              .orderBtn {
-                font-size: 20px;
-                letter-spacing: 0.2em;
-                position: relative;
-                width: 95%;
-                height: 30px;
-                background-color: #ffd139;
-                border: $border;
-                text-align: center;
-                line-height: 40px;
-                border-radius: 0.3em;
-                cursor: pointer;
-                color: white;
-                text-shadow: 1px 1px 1px black;
-                z-index: 1;
-
-                .orderText {
-                  position: absolute;
-                  width: 100%;
-                  top: 35%;
-                  left: 50%;
-                  transform: translate(-47.5%, -25%);
-                  font-weight: 900;
-                  color: #fff;
-                  @include stroke(2, #0f0f0f);
-                  font-weight: 400;
-                  z-index: 3;
-                }
-
-                &:before {
-                  content: "";
-                  position: absolute;
-                  width: 40%;
-                  height: 60%;
-                  left: -30%;
-                  bottom: -36%;
-                  border-radius: 0.3em;
-                  border: $border;
-                  // background-color: #FFD139;
-                  // background-image: url("../img/product/decorate/materail-04.svg");
-                  // background-size: cover;
-                  transform: rotate(90deg) skew(60deg);
-                  background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                  background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                  background-size: 7px 7px;
-                }
-
-                &:after {
-                  content: "";
-                  position: absolute;
-                  position: absolute;
-                  width: 40%;
-                  height: 60%;
-                  left: 89%;
-                  bottom: -36%;
-                  border-radius: 0.3em;
-                  border: $border;
-                  // background-color: #FFD139;
-                  // background-image: url("../img/product/decorate/materail-04.svg");
-                  // background-size: cover;
-                  transform: rotate(90deg) skew(300deg);
-                  background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                  background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                  background-size: 7px 7px;
-                }
-
-                &.clicked {
-                  top: 10px;
-
-                  &:before {
-                    width: 40%;
-                    height: 44%;
-                    left: -27%;
-                    bottom: 4%;
-                    transform: rotate(90deg) skew(50deg);
-                  }
-
-                  &:after {
-                    width: 40%;
-                    height: 44%;
-                    left: 87%;
-                    bottom: 4%;
-                    transform: rotate(90deg) skew(310deg);
-                  }
-                }
-              }
-
-              .orderBtnBottom {
-                position: absolute;
-                width: 115%;
-                height: 30px;
-                left: -10%;
-                top: 80%;
-                border: $border;
-                background: -webkit-linear-gradient(-70deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                background: linear-gradient(-70deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                background-size: 7px 7px;
-                border-radius: 0.1em;
-                z-index: 0;
-              }
-            }
-          }
-        }
-      }
-    }
-=======
     
->>>>>>> newDev
 
     .cav-boxImg {
       width: 100%;
@@ -1397,6 +1271,7 @@
         }
       }
     }
+  }
   }
 }
 
@@ -2259,19 +2134,4 @@
       }
     }
   }
-<<<<<<< HEAD
 }
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> b576762971bc138e568e0e4742e6ad35d6a8a7ea
-=======
-}
-=======
->>>>>>> newDev
-}
->>>>>>> e94cbea26f4efc906a6bbafcdf6f6f665f220089
->>>>>>> newDev
