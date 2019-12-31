@@ -77,12 +77,15 @@
                         background-color: rgb(255, 255, 255);
                         @include border;
                         .memData{
-                            // margin:  5% 0 10px ;
+                            margin:0 5px;
                             width: 100px;
                             text-align: center;
                             display: inline-block;
                             background-image: url(../img/share/yellow-note.svg);
-                            background-repeat: no-repeat;;
+                            background-repeat: no-repeat;
+                        }
+                        .memData:hover{
+                            cursor: pointer;
                         }
                         .airCoin{
                             @extend.memData;
@@ -113,6 +116,9 @@
                         .emailSet{
                             width: 25px;
                             vertical-align: middle;
+                        }
+                        .emailSet:hover{
+                            cursor: pointer;
                         }
                         .mempic{
                             width: 200px;
@@ -182,6 +188,9 @@
                             position: absolute;
                             top: 3%;
                             right: 4%;
+                        }
+                        .setDataClose:hover{
+                            cursor: pointer;
                         }
                         .formSetData{
                             width: 100%;
@@ -284,11 +293,14 @@
                     background-size: 1px 40px;
                     @include userSetting_mem;
                     .manu{
-                        // margin:  5% 0 5% ;
+                        margin: 0 5px;
                         width: 100px;
                         display: inline-block;
                         background-image: url(../img/share/yellow-note.svg);
                         background-repeat: no-repeat;
+                    }
+                    .manu:hover{
+                        cursor: pointer;
                     }
                     .ver{
                         @extend.manu;
