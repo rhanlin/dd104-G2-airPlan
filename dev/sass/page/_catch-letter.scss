@@ -17,7 +17,7 @@
         opacity: 0;
       }
       to{
-        transform:translateY(-40%);    
+        transform:translateY(15%);    
         opacity: 1;
       }
     }
@@ -607,14 +607,15 @@
   animation-duration: .5s;
   animation-fill-mode: forwards;
   margin: 0 auto;
+  opacity: 0;
 }
 @keyframes showImgWrap {
   from{
-    transform:translateY(0%);
+    transform:translateY(50%);
     opacity: 0;
   }
   to{
-    transform:translateY(-105%);    
+    transform:translateY(10%);    
     opacity: 1;
   }
 }

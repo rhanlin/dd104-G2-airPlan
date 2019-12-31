@@ -106,13 +106,13 @@
         nextStepArrow.style.display="block";
       }
       nextStepArrow.addEventListener('click',()=>{
-        threeWorld.style.animation = "none";
         threeWorld.style.animationName = "elementDisappear";
         threeWorld.style.animationDelay = ".5s";
         threeWorld.style.animationDuration = ".8s";
         threeWorld.style.animationFillMode = "forwards";
         setTimeout(()=>{
-          // threeWorld.style.display = "none";
+          threeWorld.style.display = "none";
+          document.getElementById('navHead').classList = "nav-navBgWrap";//選單向下出來
           document.getElementById('catchLetter').style.display = "block";
           document.getElementById('catchLetter').style.animationName = "showCatchLetter";
 
@@ -121,13 +121,15 @@
           for(let i = 0 ; i<submitStamp.length ; i++){
             submitStamp[i].addEventListener('click',()=>{
               console.log('NextStep!');
-              document.getElementById('catchLetter').style.display = "none";
+              document.getElementById('navHead').style.display = "none";//選單消失
               document.getElementById('catchLetter').style.animationName = "elementDisappear";
               document.getElementById('catchLetter').style.animationDelay = ".5s";
               document.getElementById('catchLetter').style.animationDuration = ".8s";
               document.getElementById('catchLetter').style.animationFillMode = "forwards";
               //摺紙開始
               setTimeout(()=>{
+                document.querySelector('.catchletter-body').style.background = "#aaa";//改背景色
+                document.getElementById('catchLetter').style.display = "none";
                 document.getElementById('imgWrap').style.display = "block";
                 document.getElementById('imgWrap').style.animationName = "showImgWrap";
               },500);
