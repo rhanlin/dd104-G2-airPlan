@@ -60,32 +60,26 @@ $('.orderBtn').mouseup(function () {
 
 
 //單一信件跳窗
-let cavLet = document.getElementsByClassName("cav-letters")[0];
-cavLet.addEventListener("click", popLetter);
+// let cavLet = document.getElementsByClassName("cav-letters")[0];
+// let cavBoxFrontRight = document.querySelector('.cav-boxFrontRight');
+// $('.cav-letClose').click(()=>{
+//   cavBoxFrontRight.classList.remove('active');
+// })
+// cavLet.addEventListener("click", ()=>{
+//   cavBoxFrontRight.classList.add('active');
+// });
 
-function popLetter() {
-  document.getElementsByClassName("cav-letterBg")[0].style.display = "block";
-}
-function closeLetter() {
-  document.getElementsByClassName("cav-letterBg")[0].style.display = "none";
-}
-
-//顯示單一信件(手機版)
-if ($(window).width() < 768) {
-  $(function () {
-    var boxFront = $(".cav-boxFront").width();
-    var letWidth = $(".cav-boxFront div").length;
-
-    $(".cav-letters").click(function () {
-      var boxFront = $(".cav-boxFront").width();
-      $(".cav-boxFrontRight").css(
-        "transform", `translateX(${boxFront * -1}px)` );
-      console.log("78");
-    });
-
+$(function () {
+  let cavBoxRight = document.querySelector('.cav-boxFrontRight');
+  $(".cav-letters").on("click", function (e) {
+    cavBoxRight.classList.add('active');
   });
+  $('.cav-letClose').click(() => {
+    cavBoxRight.classList.remove('active');
+  });
+});
 
-}
+
 
 //顯示信件紀錄更多選項
 $(function () {
@@ -95,15 +89,6 @@ $(function () {
   });
 
 });
-// let landLet = document.getElementsByClassName("fas")[0];
-// landLet.addEventListener("click", showlandLetter);
-
-// function showlandLetter() {
-//   document.getElementsByClassName("cav-landLetter")[0].style.display = "block";
-// }
-// function closelandLetter() {
-//   document.getElementsByClassName("cav-landLetter")[0].style.display = "none";
-// }
 
 //選取所要套用的圖案
 $(function () {
