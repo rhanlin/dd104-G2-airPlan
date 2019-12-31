@@ -184,14 +184,14 @@ $arrow_color: $gray !default;
             padding-top: 15%;
             padding-left: 5%;
 
-
+@include itemCardRow1(8);
             .cardFilter {
               width: 100%;
               height: 500px;
               display: flex;
               flex-wrap: wrap;
 
-              @include itemCardRow1(15);
+              
 
               .line_top {
                 position: relative;
