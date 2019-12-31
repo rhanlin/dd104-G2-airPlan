@@ -9,7 +9,6 @@
     <link href="./css/main.css" rel="stylesheet" type="text/css">
     <script src="./js/chatroom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="./js/chatroom.php"></script>
 </head>
 
 <body class="chatroom-body">
@@ -589,7 +588,7 @@
                                         </div>
                                     </div>
                                     <div class="contentSend">
-                                        <form action="./js/chatroom.php">
+                                        <form action="./js/chatroom.php" method="POST">
                                             <input class="sendText" type="text">
                                             <button><img src="./img/chatroom/send.png" alt=""></button>
                                         </form>
@@ -621,6 +620,31 @@
                 console.log(document.querySelectorAll('.pageContent')[i]);
             })
         };
+        // get_chat("chat")
+        function get_chat(test)
+        {
+            $.ajax({
+                    url: './js/chatroom.php',  //網址或檔案
+                    type: 'POST', //GET或POST
+                    dataType: 'json',
+                    data: {
+                        "type": type,
+                        "memNo1": memNo1,
+                        "memNo2": memNo2,
+                        "chatNo": chatNo
+                    },
+                    success: function(data){
+                        console.log(data);
+                    },error: function (data){
+                        console.log(data);
+                    }
+                });
+        }
+        function comm(array){
+
+        }
+        // let test = comm(array("type"=> type, "memNo1"=>memNo1));
+        // get_chat(test);
     </script>
 </body>
 
