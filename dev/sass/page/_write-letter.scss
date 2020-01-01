@@ -753,7 +753,7 @@
                         .type {
                             width: 30%;
                             height: 100%;
-                            // border: 1px solid green;
+                            position: relative;
                             background-image: url(../img/write-letter/stamp-btn-blue.svg);
                             background-repeat: no-repeat;
                             background-position: center;
@@ -763,6 +763,25 @@
                                 height: 150%;
                                 background-image: url(../img/write-letter/stamp-btn-red.svg);
                             }
+                            span {
+                                display: inline-block;
+                                width: 64%;
+                                height: 69%;
+                                // background-color: #fff;
+                                background-image: url(../img/catch-letter/user-stamp/user-stamp_3.png);
+                                background-position: center;
+                                background-size: contain;
+                                background-repeat: no-repeat;
+                                position: absolute;
+                                top: 17%;
+                                left: 20%;
+                              }
+                              &:hover span{
+                                width: 70%;
+                                height: 75%;
+                                top: 14%;
+                                left: 18%;
+                              }
                         }
                     }
                 }
