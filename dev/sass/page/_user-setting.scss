@@ -79,18 +79,25 @@
                         .memData{
                             margin:0 5px;
                             width: 100px;
+                            height: 100px;
                             text-align: center;
                             display: inline-block;
-                            background-image: url(../img/share/yellow-note.svg);
+                            background-image: url("../img/share/red-note.svg");
+                            color: $main-white;
                             background-repeat: no-repeat;
+                            transition: 0.3s 0s;
                         }
                         .memData:hover{
-                            cursor: pointer;
+                            @include hoverDeg;
                         }
                         .airCoin{
+                            background-image: url("../img/share/blue-note.svg");
+                            color: $main-black;
                             @extend.memData;
                         }
                         .memcolor{
+                            background-image: url("../img/share/blue-note.svg");
+                            color: $main-black;
                             @extend.memData;
                         }
                         //userSetting_mem vue
@@ -107,18 +114,19 @@
                             @include marginAuto;
                         }
                         .userSetting_memData tr{
-                            height: 40px;
+                            height: 50px;
                         }
                         .userSetting_memData td{
                             border: 3px solid $main-green;
                             vertical-align: middle;
                         }
                         .emailSet{
-                            width: 25px;
+                            width: 2rem;
                             vertical-align: middle;
+                            transition: 0.3s 0s;
                         }
                         .emailSet:hover{
-                            cursor: pointer;
+                            @include hoverDeg;
                         }
                         .mempic{
                             width: 200px;
@@ -132,7 +140,10 @@
                         .userSetting_airCoinTable{
                             @extend.userSetting_memDataTable;
                         }
-                        .userSetting_airCoin table td{
+                        .userSetting_airCoinTable tr:hover{
+                            @include hoverFontsize;
+                        }
+                        .userSetting_airCoinTable td{
                             width: 33.33%;
                             border: none;
                             border-bottom: 3px dashed $main-green;
@@ -190,7 +201,7 @@
                             right: 4%;
                         }
                         .setDataClose:hover{
-                            cursor: pointer;
+                            @include hoverFontsize;
                         }
                         .formSetData{
                             width: 100%;
@@ -295,14 +306,19 @@
                     .manu{
                         margin: 0 5px;
                         width: 100px;
+                        height: 100px;
                         display: inline-block;
-                        background-image: url(../img/share/yellow-note.svg);
+                        background-image: url("../img/share/red-note.svg");
+                        color: $main-white;
                         background-repeat: no-repeat;
+                        transition: 0.3s 0s;
                     }
                     .manu:hover{
-                        cursor: pointer;
+                        @include hoverDeg;
                     }
                     .ver{
+                        background-image: url("../img/share/blue-note.svg");
+                        color: $main-black;
                         @extend.manu;
                     }
                     //userSetting_mem vue
@@ -314,15 +330,21 @@
                         @include marginAuto;
                         .panel-title{
                             position: relative;
+                            display: inline-block;
                         }
                         .panel-heading .accordion-toggle:before {  
                             content: "▼"; 
                             color:$main-blue;
+                            transition: 0.3s 0s;
+                        }
+                        .panel-heading .accordion-toggle:hover{
+                            @include hoverFontsize;
                         }
                         .panel-heading .accordion-toggle.collapsed:before {
                             content: "▶";
                             color:$main-blue;
                         }
+
                     }
                     .userSetting_ver{
                         @extend.userSetting_manu;
@@ -440,41 +462,44 @@
                                             background-size: cover;
                                             background-position: center;
                                             display: flex;
-                                            justify-content: center;
+                                            // justify-content: center;
                                             align-items: center;
-                                            transition: 0.5s;
+                                            transition: 0.3s 0s;
+                                            animation: fadeIn 1s ease both;
+                                            .infos {
+                                                // color: white;
+                                                // transform: translateX(-50%);
+                                                text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+                                                transition: 0.3s 0s;
+                                                // margin: 0;
+                                                h5 {
+                                                    // margin-bottom: 10px;
+                                                    // font-size: 50px;
+                                                    // font-weight: 400;
+                                                    animation: sliceIn 1s 0.1s ease both;
+                                                }
+                                                p {
+                                                    // background-color: white;
+                                                    // color: rgb(245, 245, 245);
+                                                    // padding: 4px 12px;
+                                                    // font-size: 20px;
+                                                    // font-weight: 300;
+                                                    // box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+                                                }
+                                            }
                                         }
                                         .cover:hover {
                                             width: 340px;
-                                            height: 108%;
-                                            .cover:hover .infos {
-                                                transform: translate(-20%,-50%);
-                                            }
-                                            .infos {
-                                                color: white;
-                                                transform: translateX(-50%);
-                                                text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
-                                                transition: 0.5s;
-                                                margin: 0;
-                                                .postbox .infos h1 {
-                                                    margin-bottom: 10px;
-                                                    font-size: 50px;
-                                                    font-weight: 400;
-                                                }
-                                                .postbox .infos h5 {
-                                                    background-color: white;
-                                                    color: rgb(245, 245, 245);
-                                                    padding: 4px 12px;
-                                                    font-size: 20px;
-                                                    font-weight: 300;
-                                                    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
-                                                }
-                                            }
+                                            height: 110%;
                                         }
+                                        .cover:hover .infos {
+                                            transform: translate(-20%,-30%);
+                                        }
+                                        
                                     }
                                 }
                             }
-                            .control_left, .control_right {
+                            .control_left {
                                 width: 40px;
                                 height: 40px;
                                 border: solid 1px white;
@@ -485,211 +510,22 @@
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
-                                cursor: pointer;
-                            }
-                            .control_left:hover, .control_right:hover {
-                                background-color: rgba(0, 0, 0, .5);
-                                color: rgb(255, 255, 255);
-                                transition: 0.5s 0s;
-                            }
-                            .control_left {
+                                transition: 0.3s 0s;
                                 left: 50px;
                                 background-color: rgba(255, 255, 255, .5);
                             }
-                              
-                              .control_right {
+                            .control_right {
+                                @extend.control_left;
+                                left: unset;
                                 right: 50px;
-                                background-color: rgba(255, 255, 255, .5);
                             }
-                            @keyframes fadeIn {
-                                0% {
-                                  opacity: 0;
-                                  transform: translateX(30px);
-                                  filter: saturate(0%);
-                                }
-                                100% {
-                                  opacity: 1;
-                                  transform: translateX(0px);
-                                  filter: saturate(100%);
-                                }
-                            }
-                              @keyframes sliceIn {
-                                0% {
-                                  transform: translateX(-30px);
-                                }
-                                100% {
-                                  transform: translateX(0px);
-                                }
-                            }
-                            .cover {
-                                animation: fadeIn 1s ease both;
-                            }
-                               h5 {
-                                animation: sliceIn 1s 0.1s ease both;
+                            .control_left:hover, .control_right:hover {
+                                width: 50px;
+                                height: 50px;
+                                @include hoverFontsize;
                             }
                         }
                     }
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                       
-                //     .admKanbanOverFlowOut{
-                //         width: 100%;
-                //         @include marginAuto;
-                //         overflow-x: scroll;
-                //         .admKanbanOverFlowIn{
-                //             width: 100%;
-                //             height: 220px;
-                //             .mike{
-                //                 background-image: url("../img/user-setting/light_mike.svg");
-                //                 @include userSetting_admTag;
-                //                 h3{
-                //                     padding-right: 25px;
-                //                     transform: rotate(-25deg);
-                //                     @include userSetting_admTagName;
-                //                 }
-                //             }
-                //             .spencer{
-                //                 background-image: url("../img/user-setting/light_spencer.svg");
-                //                 @include userSetting_admTag;
-                //                 h3{
-                //                     padding-right: 25px;
-                //                     transform: rotate(-25deg);
-                //                     @include userSetting_admTagName;
-                //                 }
-                //             }
-                //             .allen{
-                //                 background-image: url("../img/user-setting/light_allen.svg");
-                //                 @include userSetting_admTag;
-                //                 h3{
-                //                     padding-right: 25px;
-                //                     color: $main-white;
-                //                     @include userSetting_admTagName;
-                //                 }
-                //             }
-                //             .grace{
-                //                 background-image: url("../img/user-setting/light_grace.svg");
-                //                 @include userSetting_admTag;
-                //                 h3{
-                //                     padding-right: 25px;
-                //                     @include userSetting_admTagName;
-                //                 }
-                //             }
-                //             .sharon{
-                //                 background-image: url("../img/user-setting/light_sharon.svg");
-                //                 @include userSetting_admTag;
-                //                 h3{
-                //                     padding-left: 10px;
-                //                     transform: rotate(25deg);
-                //                     @include userSetting_admTagName;
-                //                 }
-                //             }
-                //             .howard{
-                //                 background-image: url("../img/user-setting/light_howard.svg");
-                //                 @include userSetting_admTag;
-                //                 h3{
-                //                     padding-left: 10px;
-                //                     transform: rotate(25deg);
-                //                     @include userSetting_admTagName;
-                //                 }
-                //             }
-                //         }
-                //     }
-                //     .userSettingScreen{
-                //         width: 70%;
-                //         @include marginAuto;
-                //         background-image: url("../img/user-setting/admdeveloper.jpg");
-                //     }
-                //     //userSetting_adm vue
-                //     .userSetting_mike{
-                //         background: radial-gradient(rgba(169, 228, 180, 0.5) 30%, rgba(255, 255, 255, 0) 20%);
-                //         animation: leftLight 100s infinite linear;
-                //         display: flex;
-                //         @include userSetting_adm;
-                //         // .lighting{
-                //         //     bottom: 45%;
-                //         //     left: -9%;
-                //         //     transform: rotate(-24deg);
-                //         //     background: radial-gradient(rgba(84, 179, 103, 0.5) 30%, rgba(255, 255, 255, .6) 20%);
-                //         //     animation: leftLight 80s infinite linear;
-                //         //     @include lighting;
-                //         // }
-                //     }
-                //     .userSetting_spencer{
-                //         background: radial-gradient(rgba(178, 212, 243, 0.5) 30%, rgba(255, 255, 255, 0) 20%);
-                //         animation: leftLight 100s infinite linear;
-                //         display: flex;
-                //         @include userSetting_adm;
-                //         // .lighting{
-                //         //     bottom: 45%;
-                //         //     left: 15%;
-                //         //     transform: rotate(-24deg);
-                //         //     background: radial-gradient(rgba(148, 203, 255, 0.5) 30%, rgba(255, 255, 255, .6) 20%);
-                //         //     animation: leftLight 80s infinite linear;
-                //         //     @include lighting;
-                //         // }
-                //     }
-                //     .userSetting_allen{
-                //         background: radial-gradient(rgba(170, 170, 170, 0.5) 30%, rgba(255, 255, 255, 0) 20%);
-                //         animation: downLight 80s infinite linear;
-                //         display: flex;
-                //         @include userSetting_adm;
-                //         // .lighting{
-                //         //     bottom: 39%;
-                //         //     left: 25.5%;
-                //         //     background: radial-gradient(rgba(170, 170, 170, 0.5) 30%, rgba(255, 255, 255, .6) 20%);
-                //         //     animation: downLight 80s infinite linear;
-                //         //     @include lighting;
-                //         // }
-                //     }
-                //     .userSetting_grace{
-                //         background: radial-gradient(rgba(255, 224, 124, 0.5) 30%, rgba(255, 255, 255, 0) 20%);
-                //         animation: downLight 80s infinite linear;
-                //         display: flex;
-                //         @include userSetting_adm;
-                //         // .lighting{
-                //         //     bottom: 39%;
-                //         //     left: 50.5%;
-                //         //     background: radial-gradient(rgba(255, 224, 124, 0.5) 30%, rgba(255, 255, 255, .6) 20%);
-                //         //     animation: downLight 80s infinite linear;
-                //         //     @include lighting;
-                //         // }
-                //     }
-                //     .userSetting_sharon{
-                //         background: radial-gradient(rgba(255, 180, 199, 0.5) 30%, rgba(255, 255, 255, 0) 20%);
-                //         animation: rightLight 80s infinite linear;
-                //         display: flex;
-                //         @include userSetting_adm;
-                //         // .lighting{
-                //         //     bottom: 45%;
-                //         //     left: 64%;
-                //         //     transform: rotate(24deg);
-                //         //     background: radial-gradient(rgba(255, 180, 199, 0.5) 30%, rgba(255, 255, 255, .6) 20%);
-                //         //     animation: rightLight 80s infinite linear;
-                //         //     @include lighting;
-                //         // }
-                //     }
-                //     .userSetting_howard{
-                //         background: radial-gradient(rgba(223, 223, 223, 0.5) 30%, rgba(255, 255, 255, 0) 20%);
-                //         animation: rightLight 80s infinite linear;
-                //         display: flex;
-                //         @include userSetting_adm;
-                //         // .lighting{
-                //         //     bottom: 45%;
-                //         //     left: 88.5%;
-                //         //     transform: rotate(24deg);
-                //         //     background: radial-gradient(rgba(255, 255, 255, 0.5) 30%, rgba(255, 255, 255, .6) 20%);
-                //         //     animation: rightLight 80s infinite linear;
-                //         //     @include lighting;
-                //         // }
-                //     }
                  }
                 .robotB3{
                     width: 20%;
@@ -758,8 +594,6 @@
                 .userSetting_adm{
                     .admKanban{
                         .admKanbanOverFlowOut{
-                            // width: 100%;
-                            // overflow-x: scroll;
                             .admKanbanOverFlowIn{
                                 width: 900px;
                                 height: 250px;
