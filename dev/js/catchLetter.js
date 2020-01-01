@@ -6,8 +6,8 @@
   let missMsg = document.getElementById('missMsg');
   let planeContainer = document.getElementById('planeContainer');
   let nextStepArrow = document.getElementById('nextStepArrow');
-  let catchLetter = document.getElementById('catchLetter');
-
+  let catchLetterMain = document.getElementById('catchLetterMain');
+  document.querySelector('header').style.display = "none"; //將header隱藏
   planeLetter.style = "";
   //mouseMove
   threeWorld.addEventListener('mousemove', function (e) {
@@ -20,7 +20,7 @@
   function mouseDownFn() {
     net.style.transform = 'rotate(-45deg)';
     let successNum = getRandom(10);
-    // successNum = 10;//.......test
+    successNum = 10;//.......測試用
     missMsg.classList = "";
     if(successNum ==  10 ){
       missMsg.innerText = "Success!";
@@ -113,8 +113,10 @@
         setTimeout(()=>{
           threeWorld.style.display = "none";
           document.getElementById('navHead').classList = "nav-navBgWrap";//選單向下出來
-          document.getElementById('catchLetter').style.display = "block";
-          document.getElementById('catchLetter').style.animationName = "showCatchLetter";
+          document.getElementById('catchLetterMain').style.display = "block";
+          document.getElementById('catchLetterMain').style.animationName = "showCatchLetter";
+          document.querySelector('header').style.display = "block"; //將header顯示出來
+          document.querySelector('header').style.animationName = "showHeader";
 
           //監聽所有的submit按鈕(用戶郵戳)，當觸發點擊事件後，前往下一步->摺紙
           let submitStamp = document.querySelectorAll('.type');
@@ -136,14 +138,17 @@ function confirmSubmit(){
   if(confirm("Press a button!")){
     console.log('NextStep!');
     document.getElementById('navHead').style.display = "none";//選單消失
-  document.getElementById('catchLetter').style.animationName = "elementDisappear";
-  document.getElementById('catchLetter').style.animationDelay = ".5s";
-  document.getElementById('catchLetter').style.animationDuration = ".8s";
-  document.getElementById('catchLetter').style.animationFillMode = "forwards";
+    document.querySelector('header').style.display = "none"; //將header消失
+
+    document.getElementById('catchLetterMain').style.animationName = "elementDisappear";
+    document.getElementById('catchLetterMain').style.animationDelay = ".5s";
+    document.getElementById('catchLetterMain').style.animationDuration = ".8s";
+    document.getElementById('catchLetterMain').style.animationFillMode = "forwards";
   //摺紙開始
   setTimeout(()=>{
     document.querySelector('.catchletter-body').style.background = "#aaa";//改背景色
-    document.getElementById('catchLetter').style.display = "none";
+    document.querySelector('.planeBox').style.display = "flex";
+    document.getElementById('catchLetterMain').style.display = "none";
     document.getElementById('imgWrap').style.display = "block";
     document.getElementById('imgWrap').style.animationName = "showImgWrap";
     foldThePlane();
@@ -156,7 +161,7 @@ function confirmSubmit(){
 
 function foldThePlane(){
   //進入摺紙階段
-  if(document.getElementById('catchLetter').style.display === "block"){
+  if(document.getElementById('catchLetterMain').style.display === "block"){
     console.log('begin');
   }
   const pointerAll = document.querySelector('.pointerAll');

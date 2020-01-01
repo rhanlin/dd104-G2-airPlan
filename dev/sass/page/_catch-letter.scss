@@ -5,19 +5,33 @@
   font-family: 'Noto Sans TC', sans-serif;
   header{
     display: none;
+    animation-delay: .5s;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    @keyframes showHeader {
+      from{
+        transform:translateY(-40%);
+        opacity: 0;
+      }
+      to{
+        transform:translateY(0%);    
+        opacity: 1;
+      }
+    }
   }
-  #catchLetter{
+  #catchLetterMain{
     animation-delay: .5s;
     animation-duration: .5s;
     animation-fill-mode: forwards;
     opacity: 0;
     @keyframes showCatchLetter {
       from{
-        transform:translateY(50%);
+        transform:translateY(40%);
         opacity: 0;
       }
       to{
-        transform:translateY(15%);    
+        transform:translateY(0%);    
         opacity: 1;
       }
     }
@@ -297,39 +311,56 @@
           width: 100%;
           height: 5vw;
           position: relative;
+          display: flex;
+          flex-direction: row;
+          .like{
+            right: 20%;
+          }
+          .report{
+            right: 0;
+          }
+          .like .button{
+            background: $main-blue;
+            box-shadow: 0 .5vw 0 0 $main-dark-blue;
+          }
+          .report .button{
+            background: $main-red;
+            box-shadow: 0 .5vw 0 0 $main-dark-red;
+          }
         }
 
-        #threed {
+        .circleBtn {
           background: $main-black;
           width: 3vw;
           height: 3vw;
           position: absolute;
           margin: 0 auto;
           display: block;
-          right: 0;
           bottom: 0;
-
           // transform: translateY(-50%);
           // box-shadow: 15px 15px 50px 5px #5f5f5f;
           .button {
-            background: #f00000;
             width: 80%;
             height: 80%;
             position: absolute;
             top: -7%;
             left: 50%;
             transform: translateX(-50%);
-            box-shadow: 0 .5vw 0 0 #8C0606;
             border: none;
             transition: all .2s ease;
             outline: none;
           }
 
           .button:active {
-            box-shadow: 0 1px 1px 1px #8C0606;
+            box-shadow: 0 1px 1px 1px $main-black;
             top: 10%;
             outline: none;
           }
+          // .report.button:active {
+          //   box-shadow: 0 1px 1px 1px #b33c3c;
+          //   top: 10%;
+          //   outline: none;
+          // }
         }
 
         .circle {
@@ -599,11 +630,11 @@
 .planeBox{
   width: auto;
   height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
   background-color: #444;
   box-sizing: border-box;
+  display: none;
 }
   #imgWrap {
   width: 55.6vw;
