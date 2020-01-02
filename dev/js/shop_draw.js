@@ -7,13 +7,6 @@ let canvas = new fabric.Canvas('canvas', {
 canvas.setHeight(500);
 
 canvas.controlsAboveOverlay = true;
-// var clipPath = new fabric.Circle({
-//   radius: 100,
-//   top: 50,
-//   left: 50,
-//   // fill: 'bisque'
-// });
-
 
 
 
@@ -55,28 +48,28 @@ var clipPath = new fabric.Group([
     fill: 'red'
   }),
   new fabric.Polyline([{
-    x: 120,
-    y: 248
-  },
+      x: 120,
+      y: 248
+    },
 
-  {
-    x: 670,
-    y: 205
-  },
-  {
-    x: 650,
-    y: 248
-  },
-  {
-    x: 120,
-    y: 248
-  },
-]),
+    {
+      x: 670,
+      y: 205
+    },
+    {
+      x: 650,
+      y: 248
+    },
+    {
+      x: 120,
+      y: 248
+    },
+  ]),
   new fabric.Polyline([{
       x: 120,
-      y:253
+      y: 253
     },
-  
+
     {
       x: 650,
       y: 253
@@ -95,6 +88,23 @@ canvas.clipPath = clipPath;
 canvas.renderAll();
 
 
+var clipPath2 = new fabric.Circle({
+  radius: 250,
+  top: 0,
+  left: 100,
+  // fill: 'bisque'
+})
+
+$('#boardSwitchBtn').click(function () {
+  if (canvas.clipPath != clipPath2) {
+    canvas.clipPath = clipPath2;
+    canvas.renderAll();
+  } else {
+    canvas.clipPath = clipPath;
+    canvas.renderAll();
+  }
+
+})
 
 
 drawingOptionArea = document.getElementById('drawingOptionArea');

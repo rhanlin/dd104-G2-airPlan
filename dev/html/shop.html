@@ -39,8 +39,11 @@
           <div class="col-12 col-sm-12  col-md-12 col-lg-12 itemCardBox ">
             <div class="itemCardAside">
               <div class="itemCardAsideBox">
-                <div class="itemCardAsideh3">
-                  <h3 @click="visibility='all'">商品項目</h3>
+                <div class="itemCardAsideh3 .threed-text-black-endWhite">
+                  <h3>商品項目</h3>
+                </div>
+                <div>
+                  <h3 class="itemCardAsideh4" @click="visibility='all'">全部</h3>
                 </div>
                 <div class="itemCardAsideh4">
                   <h4>信紙</h4>
@@ -384,7 +387,7 @@
           <div id="btns" class="btns">
             <div class="orderBtnBoxGroup ">
               <div class="orderBtnBox ">
-                <div class="orderBtn">
+                <div id="boardSwitchBtn" class="orderBtn">
                   <div class="orderText">
                     <h6>切換郵戳畫板</h6>
                   </div>

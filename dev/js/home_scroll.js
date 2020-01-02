@@ -465,8 +465,8 @@ let catchPaper = TweenMax.to('.catch_letter', 2, {
 });
 grassPin.add([catchFold, catchPaper]);
 
-grassPin.add(TweenMax.to('.catch_letter', 2, {
-    y: "30%",
+grassPin.add(TweenMax.to('.catch_letter', 5, {
+    y: "32%",
     ease: Power0.easeNone,
 }));
 
@@ -515,20 +515,6 @@ let sceneSmoke = new ScrollMagic.Scene({
 }).setTween(smokePara).addIndicators().addTo(controller);
 
 
-//---機械手臂旋轉---
-let machineHand = TweenMax.to('.machine_hand', 1, {
-    rotation: 55,
-    transformOrigin: "left bottom",
-});
-
-let sceneMachine = new ScrollMagic.Scene({
-    triggerElement: '.home_custom',
-    // offset: 350,
-    duration: '100%',
-    ease: Power0.easeNone,
-}).setTween(machineHand).addIndicators().addTo(controller);
-
-
 //---輪子旋轉---
 let wheel = TweenMax.to('.wheel', 1, {
     rotation: 450,
@@ -540,3 +526,117 @@ let scenewheel = new ScrollMagic.Scene({
     duration: '150%',
     ease: Power0.easeNone,
 }).setTween(wheel).addIndicators().addTo(controller);
+
+
+//---網子中信紙消失---
+let netLetter = TweenMax.to('.catch_letter', 1, {
+    opacity: 0,
+});
+
+let sceneNetLetter = new ScrollMagic.Scene({
+    triggerElement: '.home_custom',
+    offset: -300,
+    duration: '80%',
+    ease: Power0.easeNone,
+}).setTween(netLetter).addIndicators().addTo(controller);
+
+
+//---機械手臂旋轉---
+let machineHand = TweenMax.to('.machine_hand', 1, {
+    rotation: 55,
+    transformOrigin: "left bottom",
+});
+
+let sceneMachine = new ScrollMagic.Scene({
+    triggerElement: '.home_custom',
+    duration: '100%',
+    ease: Power0.easeNone,
+}).setTween(machineHand).addIndicators().addTo(controller);
+
+
+//---水管背景的信 出現並移動---
+let tubeLetter = TweenMax.to('.print_letterBoxIn', 1, {
+    opacity: 1,
+    y: "159%",
+    x: "16%",
+});
+
+let sceneTubeLetter = new ScrollMagic.Scene({
+    triggerElement: '.home_custom',
+    duration: '100%',
+    offset: 250,
+    ease: Power0.easeNone,
+}).setTween(tubeLetter).addIndicators().addTo(controller);
+
+
+//---信紙進入印表機---
+let printLetterIn = TweenMax.to('.print_letterIn', 1, {
+    y: "100%",
+    ease: Power0.easeNone,
+});
+
+let scenePrintIn = new ScrollMagic.Scene({
+    triggerElement: '.print',
+    duration: '50%',
+    offset: -100,
+    ease: Power0.easeNone,
+}).setTween(printLetterIn).addIndicators().addTo(controller);
+
+
+//---信紙從印表機出來---
+let printLetterOut = TweenMax.to('.print_letterOut', 1, {
+    y: "100%",
+    ease: Power0.easeNone,
+});
+
+let scenePrintOut = new ScrollMagic.Scene({
+    triggerElement: '.print',
+    duration: '70%',
+    offset: 150,
+    ease: Power0.easeNone,
+}).setTween(printLetterOut).addIndicators().addTo(controller);
+
+
+//---印表機震動---
+let printPara = new TimelineMax({
+    repeat: -1,
+});
+
+printPara.to('.print', 1, {
+    y: "2%",
+    ease: RoughEase.ease.config({
+        template: Power0.easeInOut,
+        strength: 1,
+        points: 5,
+        taper: "none",
+        randomize: false,
+        clamp: false
+    }),
+}).to('.print', 1, {
+    y: "0%",
+    ease: RoughEase.ease.config({
+        template: Power0.easeInOut,
+        strength: 1,
+        points: 5,
+        taper: "none",
+        randomize: false,
+        clamp: false
+    }),
+});
+
+let sceneQuake = new ScrollMagic.Scene({
+    triggerElement: '.print',
+    // offset: 100,
+    daration: '100%'
+}).setTween(printPara).addIndicators().addTo(controller);
+
+
+//輸送帶section的動畫
+// let beltPin = new TimelineMax();
+//---第一次工具進入(照燈第一次)---
+
+// let sceneGrass = new ScrollMagic.Scene({
+//     triggerElement: ".home_belt",
+//     duration: '400%',
+//     triggerHook: 0
+// }).setPin('.home_belt').setTween(beltPin).addIndicators().addTo(controller);
