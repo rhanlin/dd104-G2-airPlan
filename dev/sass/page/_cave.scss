@@ -248,7 +248,7 @@
               border: 50px solid transparent;
               border-image: url("../img/cave/cav-postCard_b.svg") 50 50 round;
               background-color: #fff;
-              width: 82.5%;
+              width: 95%;
               // height: 45vw;
               margin: 20px auto;
               position: relative;
@@ -342,7 +342,7 @@
                   // flex-direction: column;
                   // justify-content: space-around;
                   // margin: 0 auto;
-                  width: 100%;
+                  width: 20%;
                   height: 5vw;
                   position: relative;
                 }
@@ -591,6 +591,41 @@
               background-size: 7px 7px;
               border-radius: 0.1em;
               z-index: 0;
+
+              #threed {
+                background: $main-black;
+                width: 3vw;
+                height: 3vw;
+                position: absolute;
+                margin: 0 auto;
+                display: block;
+                right: 0;
+                bottom: 0;
+
+                .button {
+                  background: #f00000;
+                  width: 80%;
+                  height: 80%;
+                  position: absolute;
+                  top: -7%;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  box-shadow: 0 0.5vw 0 0 #8c0606;
+                  border: none;
+                  transition: all 0.2s ease;
+                  outline: none;
+                }
+
+                .button:active {
+                  box-shadow: 0 1px 1px 1px #8c0606;
+                  top: 10%;
+                  outline: none;
+                }
+              }
+
+              .circle {
+                border-radius: 50%;
+              }
             }
           }
         }
