@@ -38,7 +38,7 @@
                         </div>
                         <div class="cav-histLetter1">
                             <div class="cav-histLetter2">
-                                <div class="cav-letters cav-looking" onclick="popLetter()" data-aaa="sss">
+                                <div class="cav-letters cav-looking" data-aaa="sss">
                                     <div class="cav-letWord">
                                         <div>
                                             <p class="cav-letTitle">Title:雞排脆皮還是酥皮好吃?</p>
@@ -57,7 +57,7 @@
                                     </div>
 
                                 </div>
-                                <div class="cav-letters" onclick="popLetter()">
+                                <div class="cav-letters">
                                     <div class="cav-letWord" data-aaa="xxx">
                                         <div>
                                             <p class="cav-letTitle">Title:今晚吃宵嗎?</p>
@@ -75,7 +75,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="cav-letters" onclick="popLetter()">
+                                <div class="cav-letters">
                                     <div class=" cav-letWord">
                                         <div>
                                             <p class="cav-letTitle">Title:世界上真的有聖誕老公公嗎?</p>
@@ -102,7 +102,7 @@
                                 <!-- 單一信件 -->
                                 <div class="cav-letterBg">
                                     <div class="cav-letterBg_content">
-                                        <span class="cav-letClose" onclick="closeLetter()">x</span>
+                                        <span class="cav-letClose">x</span>
                                         <div>
                                             <h4>Title:雞排脆皮還是酥皮好吃?</h4>
                                         </div>
@@ -150,21 +150,36 @@
                                                 <p class="cav-commText">傳統派+1</p>
                                             </div>
                                             <div class="cav-commOption">
-                                                <div class="cav-commLike">money</div>
-                                                <div class="cav-commReport">report</div>
-                                            </div>
-                                        </div>
-                                        <div class="cav-letComment">
-                                            <div class="cav-commMain">
-                                                <div class="cav-commHead">
-                                                    <div class="cav-commId">波音747</div>
-                                                    <div class="cav-commTime">2019/12/31 12:17</div>
+                                                <!-- <div class="cav-commLike">money</div> -->
+
+                                                <div class="cav-commLike">money
+                                                    <!-- 打賞 -->
+                                                    <div class="circle" id="threed">
+                                                        <button class="circle button"></button>
+                                                    </div>
+
                                                 </div>
-                                                <p class="cav-commText">脆皮最高!!</p>
+                                                <!-- <div class="cav-commReport">report</div> -->
+                                                
+                                                <div class="cav-commLike">report
+                                                    <!-- 檢舉 -->
+                                                    <div class="circle" id="threed">
+                                                        <button class="circle button"></button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="cav-commOption">
-                                                <div class="cav-commLike">money</div>
-                                                <div class="cav-commReport">report</div>
+                                            <div class="cav-letComment">
+                                                <div class="cav-commMain">
+                                                    <div class="cav-commHead">
+                                                        <div class="cav-commId">波音747</div>
+                                                        <div class="cav-commTime">2019/12/31 12:17</div>
+                                                    </div>
+                                                    <p class="cav-commText">脆皮最高!!</p>
+                                                </div>
+                                                <div class="cav-commOption">
+                                                    <div class="cav-commLike">money</div>
+                                                    <div class="cav-commReport">report</div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -173,7 +188,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
 
         <!-- 我的物品 -->

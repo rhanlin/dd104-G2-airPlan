@@ -1,3 +1,5 @@
+//Vue
+//會員資訊
 Vue.component('memData', {
     template: `
         <div class="userSetting_memData">
@@ -29,11 +31,11 @@ Vue.component('airCoin', {
     template: `
         <div class="userSetting_airCoin">
             <table class="userSetting_airCoinTable">
-                <tr>
-                    <td><h4>時間</h4></td>
-                    <td><h4>信件</h4></td>
-                    <td><h4>打賞者</h4></td>
-                </tr>
+                <thead>
+                    <th><h4>時間</h4></th>
+                    <th><h4>信件</h4></th>
+                    <th><h4>打賞者</h4></th>
+                </thead>
                 <tr>
                     <td>2019/12/18 12:00</td>
                     <td>被遺忘的外套</td>
@@ -87,6 +89,8 @@ new Vue({
         content: 'memData',
     },
 });
+
+//系統資訊
 Vue.component('manu', {
     template: `
         <div class = "userSetting_manu">  
@@ -98,7 +102,7 @@ Vue.component('manu', {
                         </div>
                     </div>
                     <div id="post1" class="panel-collapse collapse in">
-                        <p class="panel-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis nam natus error et deserunt molestias placeat debitis nobis facilis quae. Sunt laudantium inventore hic omnis ab aliquam assumenda delectus corporis.</p>
+                        <p class="panel-body"><ul><li>1.選擇分類<br>紙飛機的意義由自己賦予，也許心情抒發，也許生活趣事，一切就由選擇分類開始吧。</li><br><li>2.寫下內容<br>獨樂樂不如眾樂樂，有什麼大家必須知道的事情，最勁爆的踢爆、直擊與新聞，在此盡覽無遺。</li><br><li>3.漆上彩繪<br>選擇要漆上的彩繪，彩繪樣式可於<a href="./shop.html">商城</a>裡購買及設計。</li><br><li>4.選擇郵戳<br>選擇屬於自己的郵戳，郵戳樣式可於<a href="./shop.html">商城</a>裡購買及設計。</li><br><li>了解這些流程後快到<a href="./write-letter.html">寫信頁面</a>寫一封信吧。</li></ul></p><br>
                     </div>
                 </div>
                 <div class="panel panel-default">
@@ -108,7 +112,7 @@ Vue.component('manu', {
                         </div>
                     </div>
                     <div id="post2" class="panel-collapse collapse">
-                        <p class="panel-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis nam natus error et deserunt molestias placeat debitis nobis facilis quae. Sunt laudantium inventore hic omnis ab aliquam assumenda delectus corporis.</p>
+                    <p class="panel-body"><ul><li>1.選擇分類<br>紙飛機的意義由自己賦予，也許心情抒發，也許生活趣事，一切就由選擇分類開始吧。</li><br><li>2.寫下內容<br>獨樂樂不如眾樂樂，有什麼大家必須知道的事情，最勁爆的踢爆、直擊與新聞，在此盡覽無遺。</li><br><li>3.漆上彩繪<br>選擇要漆上的彩繪，彩繪樣式可於<a href="./shop.html">商城</a>裡購買及設計。</li><br><li>4.選擇郵戳<br>選擇屬於自己的郵戳，郵戳樣式可於<a href="./shop.html">商城</a>裡購買及設計。</li><br><li>了解這些流程後快到<a href="./write-letter.html">寫信頁面</a>寫一封信吧。</li></ul></p><br>
                     </div>
                 </div>
                 <div class="panel panel-default">
@@ -162,7 +166,7 @@ Vue.component('ver', {
             <h4>版本</h4>
             <p>1.0.0</p>
             <h4>版本內容</h4>
-            <p>飛出手的紙飛機，若再次回到手上，會帶回什麼樣的感受呢?</p>
+            <p>紙飛機對每個人有不同意義<br>也許思念、也許請訴<br>也許祝福、也許願望<br>不論翱翔或墜落<br>飛出手的紙飛機<br>如果能再次回到手裡<br>會是什麼模樣呢？</p>
         </div>
             
        
@@ -175,240 +179,65 @@ new Vue({
     }
 });
 
-
-// Vue.component('mike', {
-//     template: `
-//         <div class="userSetting_mike">
-//             <div class="lighting"></div>
-//             <div class="userSetting_wrap">
-//                 <div class="userSetting_Name">
-//                     <h4>開發者</h4>
-//                     <span>峻瑜</span>
-//                 </div>
-//                 <ul class="userSetting_work">
-//                     <h4>分工項目</h4>
-//                     <li>UI視覺整合</li>
-//                     <li>首頁、精華區</li>
-//                     <li>後台管理員帳號管理</li>
-//                 </ul>
-//                 <div class="userSetting_portfolio">
-//                     <h4>作品</h4>
-//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901173/" target="_blank">
-//                         <span>Radara</span>
-//                     </a><br>
-//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
-//                         <span>Air Plan</span>
-//                     </a>
-//                 </div>
-//             </div>
-//             <img class="userSetting_picture" src="img/user-developer/mike.png">
-//         </div>
-//      `,
-// });
-// Vue.component('spencer', {
-//     template: `
-//         <div class="userSetting_spencer">
-//             <div class="lighting"></div>
-//             <div class="userSetting_wrap">
-//                 <div class="userSetting_Name">
-//                     <h4>開發者</h4>
-//                     <span>宗翰</span>
-//                 </div>
-//                 <ul class="userSetting_work">
-//                     <h4>分工項目</h4>
-//                     <li>寫信、撈信</li>
-//                     <li>前台網站整合</li>
-//                     <li>Git版本控管</li>
-//                 </ul>
-//                 <div class="userSetting_portfolio">
-//                     <h4>作品</h4>
-//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901175/" target="_blank">
-//                         <span>&on</span>
-//                     </a><br>
-//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
-//                         <span>Air Plan</span>
-//                     </a>
-//                 </div>
-//             </div>
-//             <img class="userSetting_picture" src="img/user-developer/spencer.png">
-//         </div>
-//      `,
-// });
-// Vue.component('allen', {
-//     template: `
-//         <div class="userSetting_allen">
-//             <div class="lighting"></div>
-//             <div class="userSetting_wrap">
-//                 <div class="userSetting_Name">
-//                     <h4>開發者</h4>
-//                     <span>耀輝</span>
-//                 </div>
-//                 <ul class="userSetting_work">
-//                     <h4>分工項目</h4>
-//                     <li>我的倉庫</li>
-//                     <li>明信片紀錄</li>
-//                     <li>後台審核檢舉</li>
-//                 </ul>
-//                 <div class="userSetting_portfolio">
-//                     <h4>作品</h4>
-//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901167/" target="_blank">
-//                         <span>Snack Snake</span>
-//                     </a><br>
-//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
-//                         <span>Air Plan</span>
-//                     </a>
-//                 </div>
-//             </div>
-//             <img class="userSetting_picture" src="img/user-developer/allen.png">
-//         </div>
-//      `,
-// });
-// Vue.component('grace', {
-//     template: `
-//         <div class="userSetting_grace">
-//             <div class="lighting"></div>
-//             <div class="userSetting_wrap">
-//                 <div class="userSetting_Name">
-//                     <h4>開發者</h4>
-//                     <span>雅珺</span>
-//                 </div>
-//                 <ul class="userSetting_work">
-//                     <h4>分工項目</h4>
-//                     <li>購物商品</li>
-//                     <li>客製化素材</li>
-//                     <li>後台商品管理</li>
-//                 </ul>
-//                 <div class="userSetting_portfolio">
-//                     <h4>作品</h4>
-//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901164/1103demo/" target="_blank">
-//                         <span>Powder Ski Resort</span>
-//                     </a><br>
-//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
-//                         <span>Air Plan</span>
-//                     </a>
-//                 </div>
-//             </div>
-//             <img class="userSetting_picture" src="img/user-developer/grace.png">
-//         </div>
-//      `,
-// });
-// Vue.component('sharon', {
-//     template: `
-//         <div class="userSetting_sharon">
-//             <div class="lighting"></div>
-//             <div class="userSetting_wrap">
-//                 <div class="userSetting_Name">
-//                     <h4>開發者</h4>
-//                     <span>湘文</span>
-//                 </div>
-//                 <ul class="userSetting_work">
-//                     <h4>分工項目</h4>
-//                     <li>即時聊天</li>
-//                     <li>邀約提醒</li>
-//                     <li>後台網站整合</li>
-//                 </ul>
-//                 <div class="userSetting_portfolio">
-//                     <h4>作品</h4>
-//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901158/" target="_blank">
-//                         <span>Bonheur</span>
-//                     </a><br>
-//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
-//                         <span>Air Plan</span>
-//                     </a>
-//                 </div>
-//             </div>
-//             <img class="userSetting_picture" src="img/user-developer/sharon.png">
-//         </div>
-//      `,
-// });
-// Vue.component('howard', {
-//     template: `
-//         <div class="userSetting_howard">
-//             <div class="lighting"></div>
-//             <div class="userSetting_wrap">
-//                 <div class="userSetting_Name">
-//                     <h4>開發者</h4>
-//                     <span>恒祥</span>
-//                 </div>
-//                 <ul class="userSetting_work">
-//                     <h4>分工項目</h4>
-//                     <li>用戶設定</li>
-//                     <li>後台會員管理</li>
-//                     <li>資料庫建置與控管</li>
-//                 </ul>
-//                 <div class="userSetting_portfolio">
-//                     <h4>作品</h4>
-//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/" target="_blank">
-//                         <span>岳世界</span>
-//                     </a><br>
-//                     <a href="http://140.115.236.71/demo-personal/DD104/web/T1901163/">
-//                         <span>Air Plan</span>
-//                     </a>
-//                 </div>
-//             </div>
-//             <img class="userSetting_picture" src="img/user-developer/howard.png">
-//         </div>
-//      `,
-// });
-// new Vue({
-//     el: '#admKanban',
-//     data: {
-//         content: 'mike',
-//     }
-// });
-
 //開發人員
 var works = [
     {
-      title: "阿瑜",
-      description: "Radara",
-      cover: "./img/user-developer/mike.png",
+        title: "峻瑜",
+        description: "Radara",
+        cover: "./img/user-developer/mike.png",
+        src: "http://140.115.236.71/demo-personal/DD104/web/T1901173/"
     },
     {
-      title: "阿翰",
-      description: "&on",
-      cover: "./img/user-developer/spencer.png"
+        title: "宗翰",
+        description: "&on",
+        cover: "./img/user-developer/spencer.png",
+        src: "http://140.115.236.71/demo-personal/DD104/web/T1901175/"
     },
     {
-      title: "阿輝",
-      description: "Snack Snake",
-      cover: "./img/user-developer/allen.png"
+        title: "耀輝",
+        description: "Snack Snake",
+        cover: "./img/user-developer/allen.png",
+        src: "http://140.115.236.71/demo-personal/DD104/web/T1901167/"
     },
     {
-      title: "小鴨",
-      description: "Powder Ski Resort",
-      cover: "./img/user-developer/grace.png"
+        title: "雅珺",
+        description: "Powder Ski Resort",
+        cover: "./img/user-developer/grace.png",
+        src: "http://140.115.236.71/demo-personal/DD104/web/T1901164/1103demo/"
     },
     {
-      title: "香菇",
-      description: "Bonheur",
-      cover: "./img/user-developer/sharon.png"
+        title: "湘文",
+        description: "Bonheur",
+        cover: "./img/user-developer/sharon.png",
+        src: "http://140.115.236.71/demo-personal/DD104/web/T1901158/"
     },
     {
-      title: "阿康",
-      description: "岳世界",
-      cover: "./img/user-developer/howard.png"
+        title: "恒祥",
+        description: "岳世界",
+        cover: "./img/user-developer/howard.png",
+        src: "http://140.115.236.71/demo-personal/DD104/web/T1901163/"
     }
 ];
 
 new Vue({
     el: "#app",
     data: {
-    now_index: 0,
-    works: works,
-    span: 962
+        now_index: 0,
+        works: works,
+        span: 962
     },
     computed: {
         computed_left() {
-            var result = { 
-                left: -this.now_index * this.span + "px" };
+            var result = {
+                left: -this.now_index * this.span + "px"
+            };
             // console.log(result);
             return result;
         }
     },
     methods: {
         delta(d) {
-            this.now_index =(this.now_index + d + this.works.length) % this.works.length;
+            this.now_index = (this.now_index + d + this.works.length) % this.works.length;
         },
         bg_css(url) {
             return "background-image:url(" + url + ")";
@@ -417,11 +246,12 @@ new Vue({
 });
 
 
-//外觀設定
+//JS
+//會員資訊_外觀設定
 function showLarge(e) {
     let memsmall = e.target;
     document.getElementById("memcolorBigLarge").src = memsmall.src;
-    };
+};
 
 let picture_small = document.querySelectorAll(".memcolorSmall img");
 for (let i = 0; i < picture_small.length; i++) {
@@ -430,7 +260,7 @@ for (let i = 0; i < picture_small.length; i++) {
 
 
 
-//會員資料修改燈箱
+//會員資訊_會員資料修改燈箱
 var setDataBg = document.querySelector(".setDataBg");
 function showForm() {
     setDataBg.style.display = "block";
@@ -440,4 +270,52 @@ function closeForm() {
 };
 
 
+//會員資訊_頁籤樣式切換
+var btnMemData = document.getElementById("btnMemData");
+var btnAirCoin = document.getElementById("btnAirCoin");
+var btnMemcolor = document.getElementById("btnMemcolor");
+function showMemData() {
+    btnMemData.style.backgroundImage = 'url("./img/share/red-note.svg")';
+    btnAirCoin.style.backgroundImage = 'url("./img/share/blue-note.svg")';
+    btnMemcolor.style.backgroundImage = 'url("./img/share/blue-note.svg")';
+    btnMemData.style.color = 'white';
+    btnAirCoin.style.color = 'black';
+    btnMemcolor.style.color = 'black';
+}
+function showAirCoin() {
+    btnMemData.style.backgroundImage = "url(./img/share/blue-note.svg)";
+    btnAirCoin.style.backgroundImage = "url(./img/share/red-note.svg)";
+    btnMemcolor.style.backgroundImage = "url(./img/share/blue-note.svg)";
+    btnMemData.style.color = 'black';
+    btnAirCoin.style.color = 'white';
+    btnMemcolor.style.color = 'black';
+}
+function showMemcolor() {
+    btnMemData.style.backgroundImage = "url(./img/share/blue-note.svg)";
+    btnAirCoin.style.backgroundImage = "url(./img/share/blue-note.svg)";
+    btnMemcolor.style.backgroundImage = "url(./img/share/red-note.svg)";
+    btnMemData.style.color = 'black';
+    btnAirCoin.style.color = 'black';
+    btnMemcolor.style.color = 'white';
+}
+btnMemData.onclick = showMemData;
+btnAirCoin.onclick = showAirCoin;
+btnMemcolor.onclick = showMemcolor;
 
+//系統資訊_頁籤樣式切換
+var btnMemData = document.getElementById("btnMemData");
+var btnAirCoin = document.getElementById("btnAirCoin");
+function showManu() {
+    btnManu.style.backgroundImage = 'url("./img/share/red-note.svg")';
+    btnVar.style.backgroundImage = 'url("./img/share/blue-note.svg")';
+    btnManu.style.color = 'white';
+    btnVar.style.color = 'black';
+}
+function showVar() {
+    btnManu.style.backgroundImage = "url(./img/share/blue-note.svg)";
+    btnVar.style.backgroundImage = "url(./img/share/red-note.svg)";
+    btnManu.style.color = 'black';
+    btnVar.style.color = 'white';
+}
+btnManu.onclick = showManu;
+btnVar.onclick = showVar;
