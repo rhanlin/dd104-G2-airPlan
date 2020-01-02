@@ -6,10 +6,82 @@
     main {
         margin-top: 10vw;
         font-family: 'Noto Sans TC', sans-serif;
+        overflow: hidden;
+        .goto-shop-btn {
+            // border: 1px solid blue;
+            height: 65%;
+            width: 14.7vw;
+            position: relative;
+            display: flex;
+            align-items: center;
+            z-index: 9999;
+            @include paper_cloud();
+
+            .paper-cloud {
+                top: -5%;
+                left: 89%;
+                transform: translate(-50%, -50%);
+                z-index: 999;
+            }
+
+            img {
+                width: 17%;
+            }
+
+            .shop-signboard {
+                width: 86%;
+                height: 17vw;
+                border-radius: $main-borderRadius;
+                position: absolute;
+                top: 50%;
+                left: 58.4%;
+                transform: translate(-50%, -50%);
+                z-index: 99;
+
+                .shop-title {
+                    width: 80%;
+                    height: 80%;
+                    border-radius: $main-borderRadius;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    .shop-text {
+                        font-size: 4vw;
+                        -webkit-writing-mode: vertical-lr;
+                        writing-mode: vertical-lr;
+                        letter-spacing: 1.2vw;
+                        line-height: 1.1;
+                        height: 110%;
+                        width: 100%;
+                        color: $main-dark-red;
+                    }
+                }
+            }
+        }
+
+        .dress-up-plane {
+            width: 21vw;
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
 
         .writ-step-1 {
             display: flex;
             height: auto;
+            position: relative;
+
+            .dress-up {
+                position: absolute;
+                top: 40%;
+                right: 3%;
+                width: 25vw;
+                z-index: -1;
+            }
 
             .select-category {
                 height: 35vw;
@@ -168,6 +240,23 @@
             margin-top: 7vw;
             // border: 1px solid red;
             display: flex;
+            position: relative;
+
+            .dress-up {
+                position: absolute;
+                top: -15%;
+                left: -10%;
+                width: 25vw;
+                z-index: -1;
+            }
+
+            .dress-up2 {
+                position: absolute;
+                bottom: -42%;
+                left: 12%;
+                width: 25vw;
+                z-index: -1;
+            }
 
             .write-content {
                 width: 71.25vw;
@@ -190,7 +279,7 @@
                     @include paper_cloud();
 
                     .paper-cloud {
-                        top: -23.5%;
+                        top: -19.7%;
                         left: 50%;
                         transform: scaleX(-1) translateX(50%);
                         z-index: 99;
@@ -208,6 +297,139 @@
                         top: -5%;
                         left: 3%;
                         z-index: 9;
+                        position: relative;
+                        animation-delay: .5s;
+                        animation-duration: 3s;
+                        animation-fill-mode: forwards;
+                        cursor: pointer;
+
+                        @keyframes hookimgRise {
+                            from {
+                                top: -5%;
+                            }
+
+                            to {
+                                top: -13.5%;
+                                pointer-events: none;
+                            }
+                        }
+
+                        &:hover {
+                            animation: hookAnimate 5s ease infinite;
+
+                            @keyframes hookAnimate {
+                                0% {
+                                    transform: rotate(0deg);
+                                }
+
+                                30% {
+                                    transform: rotate(10deg);
+                                }
+
+                                35% {
+                                    transform: rotate(10deg);
+                                }
+
+                                65% {
+                                    transform: rotate(-10deg);
+                                }
+
+                                70% {
+                                    transform: rotate(-10deg);
+                                }
+
+                                100% {
+                                    transform: rotate(0deg);
+                                }
+                            }
+                        }
+
+                        &:active {
+                            // animation: hookUpAnimate 5s ease infinite;
+                            animation-name: hookUpAnimate;
+                            animation-delay: .5s;
+                            animation-duration: 3s;
+                            animation-fill-mode: forwards;
+
+                            @keyframes hookUpAnimate {
+                                0% {
+                                    transform: translateY(0%);
+                                }
+
+                                100% {
+                                    transform: translateY(-20%);
+                                }
+                            }
+                        }
+
+                        #letterImg {
+                            display: inline-block;
+                            width: 48%;
+                            height: 26%;
+                            background-color: $main-red;
+                            position: absolute;
+                            bottom: 0;
+                            left: 46%;
+                            transform: translateX(-50%);
+                            border-radius: $main-borderRadius;
+                            border: .3vw $main-black;
+                            border-style: dashed;
+                            background-size: 80%;
+                            background-position: center;
+                            background-repeat: no-repeat;
+
+                            &::before {
+                                content: '';
+                                width: 26%;
+                                height: 7%;
+                                background-color: $main-blue;
+                                position: absolute;
+                                top: -6%;
+                                right: -16%;
+                                transform: translate(0, 0);
+                                z-index: 9;
+                            }
+
+                            &::after {
+                                content: '';
+                                width: 26%;
+                                height: 7%;
+                                background-color: $main-blue;
+                                position: absolute;
+                                top: -6%;
+                                right: -16%;
+                                transform: translate(0, 0) rotate(90deg);
+                                z-index: 9;
+                            }
+                        }
+
+                        .add-circle {
+                            display: inline-block;
+                            width: 3.5vw;
+                            height: 3.5vw;
+                            background-color: $main-yellow;
+                            position: absolute;
+                            top: -25%;
+                            right: -25%;
+                            transform: translate(0%, 0%);
+                            border-radius: 50%;
+                            border: .2vw $main-black;
+                            border-style: dashed;
+                            background-size: 80%;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                        }
+
+                        input {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            appearance: none;
+                            z-index: 0;
+                            opacity: 0;
+                        }
                     }
 
                     .printer {
@@ -359,6 +581,16 @@
             margin-top: 7vw;
             display: flex;
             flex-direction: column;
+            position: relative;
+
+            .dress-up {
+                position: absolute;
+                top: 27%;
+                right: 0%;
+                width: 25vw;
+                z-index: -1;
+                transform: scaleX(-1);
+            }
 
             .top-paintes-part {
                 // border: 1px solid red;
@@ -368,51 +600,6 @@
                 display: flex;
                 align-items: flex-end;
                 justify-content: space-between;
-
-                .goto-shop-btn {
-                    // border: 1px solid blue;
-                    height: 65%;
-                    width: 14.7vw;
-                    position: relative;
-                    display: flex;
-                    align-items: center;
-
-                    img {
-                        width: 17%;
-                    }
-
-                    .shop-signboard {
-                        width: 86%;
-                        height: 100%;
-                        border-radius: $main-borderRadius;
-                        position: absolute;
-                        top: 50%;
-                        left: 58.4%;
-                        transform: translate(-50%, -50%);
-                        z-index: 99;
-
-                        .shop-title {
-                            width: 80%;
-                            height: 80%;
-                            border-radius: $main-borderRadius;
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-
-                            .shop-text {
-                                font-size: 4vw;
-                                -webkit-writing-mode: vertical-lr;
-                                writing-mode: vertical-lr;
-                                letter-spacing: 1.2vw;
-                                line-height: 1.1;
-                                height: 110%;
-                                width: 100%;
-                                color: $main-dark-red;
-                            }
-                        }
-                    }
-                }
 
                 .painting-plan {
                     height: 100%;
@@ -461,7 +648,7 @@
                         background-image: url(../img/write-letter/print-paperPlane.png);
                         background-repeat: no-repeat;
                         background-position: center;
-                        background-size: contain;
+                        background-size: cover;
                         position: relative;
 
                         span {
@@ -476,7 +663,7 @@
                             background-repeat: no-repeat;
                             background-position: center;
                             background-size: contain;
-                            clip-path: polygon(13% 11%, 85% 4%, 62.5% 96.5%, 42% 61%, 27% 75%, 27% 37%);
+                            clip-path: polygon(12% 10%, 86% 3%, 62.5% 96.5%, 42% 61%, 27% 75%, 27% 37%);
                         }
                     }
 
@@ -509,6 +696,27 @@
                         position: absolute;
                         top: -6%;
                         right: -5%;
+                    }
+                }
+
+                .discription {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 20vw;
+                    height: 4vw;
+                    background-image: url('../img/share/message-frame-long.svg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    position: absolute;
+                    right: -78%;
+                    top: 50%;
+                    transform: translate(50%, 50%);
+
+                    p {
+                        margin: 0;
+                        letter-spacing: .6rem;
                     }
                 }
             }
@@ -679,15 +887,58 @@
 
         .writ-step-4 {
             font-size: 0;
-            margin-top: 7vw;
+            margin-top: 10vw;
+            margin-bottom: 10vw;
             // border: 1px solid blue;
             display: flex;
             align-items: center;
+            position: relative;
 
             .bottom-bg {
                 width: 71.25vw;
                 height: 35vw;
-                margin: 0 auto;
+                margin: 0 20% 0 10%;
+
+                .discription {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    // justify-content: center;
+                    width: 4vw;
+                    height: 20vw;
+                    background-image: url('../img/share/message-frame-lg.svg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    position: absolute;
+                    right: -30%;
+                    top:-25%;
+                    transform: translate(50%, 50%) scaleX(-1);
+
+                    p {
+                        -webkit-writing-mode: vertical-lr;
+                        writing-mode: vertical-lr;
+                        margin: 0;
+                        padding: 0 15%;
+                        letter-spacing: .6rem;
+                    }
+                }
+
+                .rightshopBtn {
+                    position: absolute;
+                    top: -13%;
+                    right: -25.5%;
+                    transform: scaleX(-1);
+
+                    .paper-cloud {
+                        top: 10%;
+                        left: 90%;
+                    }
+
+                    h3 {
+                        transform: scaleX(-1);
+                    }
+                }
 
                 // animation: shad-anim 10s linear infinite;
                 .clip-left {
@@ -700,9 +951,9 @@
                         content: '';
                         position: absolute;
                         width: 2.5%;
-                        height: 56.6vw;
-                        background-color: #212121;
-                        top: -27.5vw;
+                        height: 62vw;
+                        background: linear-gradient(#e5e5e500 10%, #212121 60%, #212121);
+                        top: -30.8vw;
                         left: 50%;
                         transform: translate(-50%, -50%);
                     }
@@ -814,9 +1065,6 @@
             ;
         }
 
-        .test-area {
-            height: 10vw;
-            width: 100%;
-        }
+
     }
 }

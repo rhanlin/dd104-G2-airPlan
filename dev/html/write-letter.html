@@ -19,7 +19,7 @@
     @@include("./layout/header.html")
     <main>
         <section class="writ-step-1" id="writStep1">
-
+            <img class="dress-up" src="./img/share/blue-paint-bigline.svg"></img>
             <div class="box-white select-category">
                 <img src="./img/share/blue-tape.svg" class="blue-tape">
                 <div class="num-one">
@@ -82,11 +82,24 @@
                 </div>
             </div>
         </section>
-        <section class="writ-step-2">
+        <section class="writ-step-2" id="writStep2">
+            <img class="dress-up" src="./img/share/yellow-paint-bigline.svg"></img>
+            <img class="dress-up2" src="./img/share/yellow-paint-bigline.svg"></img>
             <div class="box-white write-content">
                 <div class="upload-img">
                     <div class="paper-cloud"></div>
-                    <div class="hookimg"></div>
+                    <label class="hookimg" id="hookimg">
+                        <input 
+                            type="file" 
+                            name="imgUrl"
+                            accept="image/gif, image/jpeg, image/png"
+                            @change="fileSelected">
+                        <span 
+                            id="letterImg" 
+                            :style= "{backgroundImage: letterUploadImg}">
+                            <span class="add-circle"></span>
+                        </span>
+                    </label>
                     <div class="printer">
                         <h3>上傳圖片</h3>
                     </div>
@@ -107,17 +120,24 @@
             </div>
         </section>
         <section class="writ-step-3" id="writStep3">
+            <img class="dress-up" src="./img/share/blue-paint-bigline.svg"></img>
+
             <div class="top-paintes-part">
-                <div class="goto-shop-btn">
+
+                <a href="./shop.html" class="goto-shop-btn">
+                    <div class="paper-cloud"></div>
                     <img src="./img/write-letter/goto-shop-btn.svg">
                     <div class="dot-box-blue shop-signboard">
                         <div class="box-white shop-title">
                             <h3 class="threed-text-red shop-text">
-                                前往<br>商城
+                                客製<br>彩繪
                             </h3>
                         </div>
                     </div>
-                </div>
+                    <div class="discription">
+                        <p>彩繪圖案不夠嗎？</p>
+                    </div>
+                </a>
                 <div class="box-white painting-plan">
                     <div class="num-three">
                         <h2>漆上彩繪</h2>
@@ -150,7 +170,22 @@
             </div>
         </section>
         <section class="writ-step-4" id="writStep4">
+            <img src="./img/share/paper-plane.png" class="dress-up-plane">
             <div class="box-white bottom-bg">
+                <a href="./shop.html" class="goto-shop-btn rightshopBtn">
+                    <div class="paper-cloud"></div>
+                    <img src="./img/write-letter/goto-shop-btn.svg">
+                    <div class="dot-box-blue shop-signboard">
+                        <div class="box-white shop-title">
+                            <h3 class="threed-text-red shop-text">
+                                客製<br>郵戳
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="discription">
+                        <p>想要客製化郵戳嗎？</p>
+                    </div>
+                </a>
                 <span class="share-clip clip-left">
                 </span>
                 <div class="dot-box-yellow top-right top-right-bg">
@@ -174,7 +209,7 @@
             </div>
         </section>
 
-        <div class="test-area"></div>
+        
 
         <!-- <div class="btn-big-test" id="bigBtn">
             <div class="back side-way"></div>
@@ -225,7 +260,7 @@
             </div>
             `
         }
-        let nm1 = new Vue({
+        let vm1 = new Vue({
             el:"#writStep1",
             data:{
                 tvStart: false,
@@ -253,7 +288,24 @@
                 },
             },
         });
-
+        let vm2 = new Vue({
+            el: '#writStep2',
+            data:{
+                letterUploadImg: 'url(./img/share/imgIcon-white.svg)',
+            },
+            methods:{
+                fileSelected(e){
+                    let file = e.target.files[0];
+                    let readFile = new FileReader();
+                    readFile.readAsDataURL(file);
+                    readFile.addEventListener('load',this.loadImage);
+                },
+                loadImage(e){
+                    this.letterUploadImg = `url('${e.target.result}')`;
+                    document.getElementById('hookimg').style.animationName = "hookimgRise";
+                },
+            },
+        });
         let vm3 = new Vue({
             el: '#writStep3',
             data: {
