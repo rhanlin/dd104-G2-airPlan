@@ -88,17 +88,22 @@ canvas.clipPath = clipPath;
 canvas.renderAll();
 
 
-
+var clipPath2 = new fabric.Circle({
+  radius: 250,
+  top: 0,
+  left: 100,
+  // fill: 'bisque'
+})
 
 $('#boardSwitchBtn').click(function () {
-  clipPath = new fabric.Circle({
-    radius: 100,
-    top: 50,
-    left: 50,
-    // fill: 'bisque'
-  });
-  canvas.clipPath = clipPath;
-  canvas.renderAll();
+  if (canvas.clipPath != clipPath2) {
+    canvas.clipPath = clipPath2;
+    canvas.renderAll();
+  } else {
+    canvas.clipPath = clipPath;
+    canvas.renderAll();
+  }
+
 })
 
 
