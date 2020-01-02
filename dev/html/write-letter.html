@@ -19,7 +19,7 @@
     @@include("./layout/header.html")
     <main>
         <section class="writ-step-1" id="writStep1">
-
+            <img class="dress-up" src="./img/share/blue-paint-bigline.svg"></img>
             <div class="box-white select-category">
                 <img src="./img/share/blue-tape.svg" class="blue-tape">
                 <div class="num-one">
@@ -34,7 +34,7 @@
                         >
                             <input 
                                 type="radio" 
-                                name="爆料" 
+                                name="newsCat" 
                                 v-model="letterCategory" 
                                 value="爆料" 
                                 
@@ -47,7 +47,7 @@
                         >
                             <input 
                                 type="radio"
-                                name="心情"
+                                name="moodCat"
                                 v-model="letterCategory"
                                 value="心情"
                                 
@@ -60,7 +60,7 @@
                         >
                             <input
                                 type="radio"
-                                name="娛樂"
+                                name="funCat"
                                 v-model="letterCategory"
                                 value="娛樂"
                                 
@@ -77,17 +77,29 @@
                 <div class="note-pad">
                     <div class="paper-cloud"></div>
                     <div class="note-text">
-                        <h3>爆料版說明:</h3>
-                        <p>獨樂樂不如眾樂樂，有什麼大家必須知道的事情，最勁爆的踢爆、直擊與新聞，在此盡覽無遺。</p>
+                        <component :is='catIllustrate'/>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="writ-step-2">
+        <section class="writ-step-2" id="writStep2">
+            <img class="dress-up" src="./img/share/yellow-paint-bigline.svg"></img>
+            <img class="dress-up2" src="./img/share/yellow-paint-bigline.svg"></img>
             <div class="box-white write-content">
                 <div class="upload-img">
                     <div class="paper-cloud"></div>
-                    <div class="hookimg"></div>
+                    <label class="hookimg" id="hookimg">
+                        <input 
+                            type="file" 
+                            name="imgUrl"
+                            accept="image/gif, image/jpeg, image/png"
+                            @change="fileSelected">
+                        <span 
+                            id="letterImg" 
+                            :style= "{backgroundImage: letterUploadImg}">
+                            <span class="add-circle"></span>
+                        </span>
+                    </label>
                     <div class="printer">
                         <h3>上傳圖片</h3>
                     </div>
@@ -108,24 +120,34 @@
             </div>
         </section>
         <section class="writ-step-3" id="writStep3">
+            <img class="dress-up" src="./img/share/blue-paint-bigline.svg"></img>
+
             <div class="top-paintes-part">
-                <div class="goto-shop-btn">
+
+                <a href="./shop.html" class="goto-shop-btn">
+                    <div class="paper-cloud"></div>
                     <img src="./img/write-letter/goto-shop-btn.svg">
                     <div class="dot-box-blue shop-signboard">
                         <div class="box-white shop-title">
                             <h3 class="threed-text-red shop-text">
-                                前往<br>商城
+                                客製<br>彩繪
                             </h3>
                         </div>
                     </div>
-                </div>
+                    <div class="discription">
+                        <p>彩繪圖案不夠嗎？</p>
+                    </div>
+                </a>
                 <div class="box-white painting-plan">
                     <div class="num-three">
                         <h2>漆上彩繪</h2>
                     </div>
                     <img src="./img/share/pipe.png" class="pipe">
                     <img src="./img/share/water-drop.png" class="water-drop">
-                    <div class="preview-plan"></div>
+                    <div class="preview-plan"> 
+                        <span :style="{backgroundImage: previewPattern}"></span> 
+                    </div>
+                    
                     <img src="./img/share/blue-tape-rough.svg" class="blue-tape-rough-tl">
                     <img src="./img/share/blue-tape-rough.svg" class="blue-tape-rough-tr">
                     <img src="./img/share/blue-tape-rough.svg" class="blue-tape-rough-bl">
@@ -134,14 +156,13 @@
             </div>
             <div class="select-paintes">
                 <span class="arrow-white"></span>
-                <div class="painte-type">
+                <div id="painteType" class="painte-type">
                     <template v-for="(item, index) in 3">
-                        <div class="type" :class="{active: index === openIndex}" @click="openIndex = index">
+                        <div class="type" :class="{active: index === openIndex}" @click="clickPattern(index)">
                             <span class="box-white preview-paper" :class="{active: index === openIndex}"></span>
-                            <span class="print-type-pattern">
-                                <span class="printScraper" :class="{active: index === openIndex}"></span>
+                            <span class="print-type-pattern" ref='bg' :style="{backgroundImage: userPattern[0]}">
                             </span>
-
+                            <span class="printScraper" :class="{active: index === openIndex}"></span>
                         </div>
                     </template>
                 </div>
@@ -149,7 +170,22 @@
             </div>
         </section>
         <section class="writ-step-4" id="writStep4">
+            <img src="./img/share/paper-plane.png" class="dress-up-plane">
             <div class="box-white bottom-bg">
+                <a href="./shop.html" class="goto-shop-btn rightshopBtn">
+                    <div class="paper-cloud"></div>
+                    <img src="./img/write-letter/goto-shop-btn.svg">
+                    <div class="dot-box-blue shop-signboard">
+                        <div class="box-white shop-title">
+                            <h3 class="threed-text-red shop-text">
+                                客製<br>郵戳
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="discription">
+                        <p>想要客製化郵戳嗎？</p>
+                    </div>
+                </a>
                 <span class="share-clip clip-left">
                 </span>
                 <div class="dot-box-yellow top-right top-right-bg">
@@ -162,7 +198,7 @@
                                 <span class="arrow-white"></span>
                                 <div class="stamp-type">
                                     <template v-for="item in 3">
-                                        <div class="type"></div>
+                                        <div class="type"><span></span></div>
                                     </template>
                                 </div>
                                 <span class="arrow-white reverse"></span>
@@ -173,7 +209,7 @@
             </div>
         </section>
 
-        <div class="test-area"></div>
+        
 
         <!-- <div class="btn-big-test" id="bigBtn">
             <div class="back side-way"></div>
@@ -188,19 +224,54 @@
         <!-- <div class="btn-wrapper-center">
             <a href="#" class="btn3d btn-basic-yellow">Click</a>
         </div> -->
-
-
-
     </main>
     @@include("./layout/footer.html")
-
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
     <script>
-        let nm1 = new Vue({
+        const newsCat = {
+            template: `
+            <div>
+            <h3>爆料版說明:</h3>
+            <p>獨樂樂不如眾樂樂，有什麼大家必須知道的事情，最勁爆的踢爆、直擊與新聞，在此盡覽無遺。</p>
+            </div>
+            `
+        }
+        const moodCat = {
+            template: `
+            <div>
+            <h3>心情版說明:</h3>
+            <p>提供分享生活情緒、抒發心情或交流各種情緒處理的經歷故事。在這裡你可以安心匿名，讓世界可以安慰你的心靈。</p>
+            </div>
+            `
+        }
+        const funCat = {
+            template: `
+            <div>
+            <h3>娛樂版說明:</h3>
+            <p>最新國內外流行娛樂，由你帶領世界走向環遊星世界！拋棄所有煩惱，來到娛樂世界讓你歡樂百分百。</p>
+            </div>
+            `
+        }
+        const defaultCat = {
+            template: `
+            <div>
+                <h3>分類說明:</h3>
+                <p>blablabla</p>
+            </div>
+            `
+        }
+        let vm1 = new Vue({
             el:"#writStep1",
             data:{
                 tvStart: false,
                 letterCategory:'',
+                catIllustrate: defaultCat,
+            },
+            components: {
+                newsCat,
+                moodCat,
+                funCat,
+                defaultCat,
             },
             methods:{
                 setCategoryName(e){
@@ -213,16 +284,46 @@
                     e.target.parentNode.childNodes
                     e.target.classList.add("click");
                     this.letterCategory = e.target.firstChild.value;
+                    this.catIllustrate = e.target.firstChild.name;
                 },
             },
         });
-
+        let vm2 = new Vue({
+            el: '#writStep2',
+            data:{
+                letterUploadImg: 'url(./img/share/imgIcon-white.svg)',
+            },
+            methods:{
+                fileSelected(e){
+                    let file = e.target.files[0];
+                    let readFile = new FileReader();
+                    readFile.readAsDataURL(file);
+                    readFile.addEventListener('load',this.loadImage);
+                },
+                loadImage(e){
+                    this.letterUploadImg = `url('${e.target.result}')`;
+                    document.getElementById('hookimg').style.animationName = "hookimgRise";
+                },
+            },
+        });
         let vm3 = new Vue({
             el: '#writStep3',
             data: {
                 openIndex: null,
+                userPattern:[
+                    "url(./img/pattern/plan-pattern-1.svg)",
+                    "url(./img/pattern/plan-pattern-2.svg)",
+                    "url(./img/pattern/heart.png)",
+                ],
+                previewPattern: null,
             },
-            methods: {},
+            methods: {
+                clickPattern(index){
+                    this.openIndex = index;
+                    console.log(this.$refs.bg[0].style);
+                    this.previewPattern = this.$refs.bg[0].style.backgroundImage;
+                },
+            },
             computed: {
 
             },
@@ -234,6 +335,8 @@
 
         });
     </script>
+
+    <script src="./js/writeLetter.js"></script>
 </body>
 
 </html>

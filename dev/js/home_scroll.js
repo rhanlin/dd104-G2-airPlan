@@ -361,7 +361,7 @@ grassPin.add([catchGrassBack, catchGrassMid, catchGrassFront]);
 
 
 //---紙飛機、網子進入---
-let catchPlan = TweenMax.to('.catch_main', 5, {
+let catchPlane = TweenMax.to('.catch_main', 5, {
     x: "-270%",
     ease: Power0.easeInOut,
 });
@@ -370,7 +370,7 @@ let catchNet = TweenMax.to('.net', 5, {
     ease: Power0.easeNone,
 });
 
-grassPin.add([catchPlan, catchNet]);
+grassPin.add([catchPlane, catchNet]);
 
 
 //---網子撈撈撈---
@@ -597,6 +597,34 @@ let scenePrintOut = new ScrollMagic.Scene({
 }).setTween(printLetterOut).addIndicators().addTo(controller);
 
 
+//---印出來的信紙消失---
+let printLetterNone = TweenMax.to('.print_letterOut', 0.5, {
+    display: "none",
+    ease: Power0.easeNone,
+});
+
+let scenePrintNone = new ScrollMagic.Scene({
+    triggerElement: '.print',
+    duration: '53%',
+    offset: 1050,
+    ease: Power0.easeNone,
+}).setTween(printLetterNone).addIndicators().addTo(controller);
+
+
+//---輸送帶上的第一章信紙(重疊處)出現---
+let beltLetterShow = TweenMax.to('.belt_letter', 0.5, {
+    opacity: 1,
+    ease: Power0.easeNone,
+});
+
+let sceneBeltShow = new ScrollMagic.Scene({
+    triggerElement: '.print',
+    duration: '10%',
+    offset: 900,
+    ease: Power0.easeNone,
+}).setTween(beltLetterShow).addIndicators().addTo(controller);
+
+
 //---印表機震動---
 let printPara = new TimelineMax({
     repeat: -1,
@@ -632,11 +660,161 @@ let sceneQuake = new ScrollMagic.Scene({
 
 
 //輸送帶section的動畫
-// let beltPin = new TimelineMax();
-//---第一次工具進入(照燈第一次)---
+let beltPin = new TimelineMax();
+//---第一張信紙移至中間---
+beltPin.add(TweenMax.to('.belt_letter', 2, {
+    y: "101.5%"
+}));
 
-// let sceneGrass = new ScrollMagic.Scene({
-//     triggerElement: ".home_belt",
-//     duration: '400%',
-//     triggerHook: 0
-// }).setPin('.home_belt').setTween(beltPin).addIndicators().addTo(controller);
+
+//---右邊照燈進入---
+beltPin.add(TweenMax.to('.lightBox', 2, {
+    y: "-245%",
+    ease: Power0.easeInOut
+}));
+
+
+//---信紙消失---
+beltPin.add(TweenMax.to('.belt_letter', 1, {
+    opacity: 0
+}));
+
+
+//---第一次摺紙出現---
+beltPin.add(TweenMax.to('.foldStamp1', 1, {
+    opacity: 1
+}));
+
+
+//---第一次摺紙消失---
+beltPin.add(TweenMax.to('.foldStamp1', 1, {
+    opacity: 0
+}));
+
+
+//---第二次摺紙出現---
+beltPin.add(TweenMax.to('.foldStamp2', 1, {
+    opacity: 1
+}));
+
+
+//---第二次摺紙消失---
+beltPin.add(TweenMax.to('.foldStamp2', 1, {
+    opacity: 0
+}));
+
+
+//---紙飛機摺好了---
+beltPin.add(TweenMax.to('.beltPlane', 1, {
+    opacity: 1
+}));
+
+
+//---右邊照燈出去，左邊顏料筆進入---
+let lightOut = TweenMax.to('.lightBox', 2, {
+    y: "-500%",
+    ease: Power0.easeInOut
+});
+let paintIn = TweenMax.to('.paintBox', 2, {
+    y: "-320%",
+    ease: Power0.easeInOut
+});
+
+beltPin.add([lightOut, paintIn]);
+
+
+//---紙飛機上色---
+beltPin.add(TweenMax.to('.beltRedPlane', 2, {
+    opacity: 0.5,
+    ease: Power1.easeInOut
+}));
+beltPin.add(TweenMax.to('.beltRedPlane', 2, {
+    opacity: 0.25,
+    ease: Power1.easeInOut
+}));
+beltPin.add(TweenMax.to('.beltRedPlane', 2, {
+    opacity: 0.75,
+    ease: Power1.easeInOut
+}));
+beltPin.add(TweenMax.to('.beltRedPlane', 2, {
+    opacity: 0.5,
+    ease: Power1.easeInOut
+}));
+beltPin.add(TweenMax.to('.beltRedPlane', 2, {
+    opacity: 1,
+    ease: Power1.easeInOut
+}));
+
+
+//---左邊顏料筆出去，被蓋在底下的原紙飛機消失---
+
+let paintOut = TweenMax.to('.paintBox', 2, {
+    y: "-710%",
+    ease: Power0.easeInOut
+});
+let noPaintPlane = TweenMax.to('.beltPlane', 1, {
+    opacity: 0,
+    ease: Power0.easeNone
+});
+
+beltPin.add([paintOut, noPaintPlane]);
+
+
+let sceneTool = new ScrollMagic.Scene({
+    triggerElement: ".home_belt",
+    duration: '400%',
+    triggerHook: 0
+}).setPin('.home_belt').setTween(beltPin).addIndicators().addTo(controller);
+
+
+//---上色紙飛機向下移動縮小---
+let beltPlaneOut = TweenMax.to('.beltRedPlane', 1, {
+    y: "200%",
+    scale: 0.7,
+    ease: Power0.easeNone,
+});
+
+let sceneBeltPlane_Out = new ScrollMagic.Scene({
+    triggerElement: '.home_store',
+    duration: '80%',
+    offset: -400,
+    ease: Power0.easeNone,
+}).setTween(beltPlaneOut).addIndicators().addTo(controller);
+
+
+
+//---紙飛機商品進入---
+let storePlaneIn = TweenMax.to('.fall_plane', 1, {
+    y: "130%",
+    ease: Power0.easeInOut,
+});
+
+let sceneStorePlane_In = new ScrollMagic.Scene({
+    triggerElement: '.home_store',
+    duration: '35%',
+    offset: 138,
+    ease: Power0.easeNone,
+}).setTween(storePlaneIn).addIndicators().addTo(controller);
+
+
+//商城的動畫
+let storePin = new TimelineMax();
+//---被蓋的紙飛機消失，上方紙飛機出現---
+let fallPlane_Hide = TweenMax.to('.fall_plane', 1, {
+    // opacity:0,
+    visibility: "hidden",
+    ease: Power0.easeNone
+});
+let windowPlane_Show = TweenMax.to('.paintPlane', 1, {
+    // opacity:1,
+    visibility: "visible",
+    ease: Power0.easeNone
+});
+
+storePin.add([fallPlane_Hide, windowPlane_Show]);
+
+let sceneStore = new ScrollMagic.Scene({
+    triggerElement: ".home_store",
+    duration: '100%',
+    triggerHook: 0
+}).setPin('.home_store').setTween(storePin).addIndicators().addTo(controller);

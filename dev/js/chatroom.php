@@ -1,13 +1,12 @@
 <?php
 try{
     $dsn = "mysql:host=localhost;post=3306;dbname=dd104g2;charset=utf8";
-    $user = "root";
-    $password = "qwert2321";
+    $user = "dd104g2";
+    $password = "dd104g2";
     $options = array(PDO::ATTR_CASE => PDO::CASE_NATURAL,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,PDO::ATTR_ORACLE_NULLS => PDO::NULL_NATURAL);
     $pdo = new PDO($dsn,$user,$password,$options);
     $type = $_POST["type"];
-    switch($type)
-    {
+    switch($type){
         case "chat":
             $memNo1 = $_POST["memNo1"];
             $memNo2 = $_POST["memNo2"];
@@ -22,7 +21,6 @@ try{
             echo json_decode($chat);
             break;
     }
-    
 }catch(PDOException $e){
     echo "例外行號 : ", $e->getLine(),"<br>";
 	echo "例外原因 : ", $e->getMessage(),"<br>";
