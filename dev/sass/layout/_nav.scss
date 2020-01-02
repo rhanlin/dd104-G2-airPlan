@@ -356,7 +356,7 @@
       position: absolute;
       top: 36%;
       right: 2.5%;
-
+      z-index: 999;
       > a {
         display: inline-block;
         height: 24px;
@@ -365,16 +365,15 @@
           font-size: 24px;
           color: #aaa;
           cursor: pointer;
-          // vertical-align: middle;
 
           &:hover {
             color: $main-dark-red;
           }
-          &::after {
-            content: "|";
-            vertical-align: top;
-            color: #ccc;
-          }
+          // &::after {
+          //   content: "|";
+          //   vertical-align: top;
+          //   color: #ccc;
+          // }
         }
       }
       .fa-cog::after {
