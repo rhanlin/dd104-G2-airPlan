@@ -129,9 +129,7 @@
                     <img src="./img/write-letter/goto-shop-btn.svg">
                     <div class="dot-box-blue shop-signboard">
                         <div class="box-white shop-title">
-                            <h3 class="threed-text-red shop-text">
-                                客製<br>彩繪
-                            </h3>
+                            <h3 class="threed-text-red shop-text">客製彩繪</h3>
                         </div>
                     </div>
                     <div class="discription">
@@ -159,8 +157,8 @@
                 <div id="painteType" class="painte-type">
                     <template v-for="(item, index) in 3">
                         <div class="type" :class="{active: index === openIndex}" @click="clickPattern(index)">
-                            <span class="box-white preview-paper" :class="{active: index === openIndex}"></span>
-                            <span class="print-type-pattern" ref='bg' :style="{backgroundImage: userPattern[0]}">
+                            <span class="box-white preview-paper" :class="{active: index === openIndex}" :style="{backgroundImage: userPattern[index]}"></span>
+                            <span class="print-type-pattern" ref='bg' :style="{backgroundImage: userPattern[index]}">
                             </span>
                             <span class="printScraper" :class="{active: index === openIndex}"></span>
                         </div>
@@ -177,9 +175,7 @@
                     <img src="./img/write-letter/goto-shop-btn.svg">
                     <div class="dot-box-blue shop-signboard">
                         <div class="box-white shop-title">
-                            <h3 class="threed-text-red shop-text">
-                                客製<br>郵戳
-                            </h3>
+                            <h3 class="threed-text-red shop-text">客製郵戳</h3>
                         </div>
                     </div>
                     <div class="discription">
@@ -208,9 +204,7 @@
                 </div>
             </div>
         </section>
-
-        
-
+        @@include("./layout/foldthePlane.html")
         <!-- <div class="btn-big-test" id="bigBtn">
             <div class="back side-way"></div>
             <div class="left side-way"></div>
@@ -313,29 +307,61 @@
                 userPattern:[
                     "url(./img/pattern/plan-pattern-1.svg)",
                     "url(./img/pattern/plan-pattern-2.svg)",
-                    "url(./img/pattern/heart.png)",
+                    "url(./img/pattern/plan-pattern-3.png)",
                 ],
                 previewPattern: null,
             },
             methods: {
                 clickPattern(index){
                     this.openIndex = index;
-                    console.log(this.$refs.bg[0].style);
-                    this.previewPattern = this.$refs.bg[0].style.backgroundImage;
+                    console.log(this.$refs.bg[index].style);
+                    this.previewPattern = this.$refs.bg[index].style.backgroundImage;
                 },
             },
             computed: {
 
             },
         });
-
         let vm4 = new Vue({
             el: '#writStep4',
             data: {},
 
         });
     </script>
+    <script>
+        //打字動畫
+        function typeEffect(element, speed) {
+            var text = element.innerHTML;
+            element.innerHTML = "";
+            
+            var i = 0;
+            var timer = setInterval(function() {
+                if (i < text.length) {
+                element.append(text.charAt(i));
+                i++;
+                } else {
+                clearInterval(timer);
+                }
+            }, speed);
+        }  
+        
+        var speed = 200;
+        var disciptionText = document.querySelectorAll('.discription');
+        // var shopBtnText = document.querySelectorAll('.shop-title');
+        // var delay = disciptionText[0].innerHTML.length * speed + speed;
 
+        //商城按鈕文字
+        setInterval(() => {
+            typeEffect(disciptionText[0].firstChild, speed);
+            typeEffect(disciptionText[1].firstChild, speed);
+        }, 2000);
+
+        //對話視窗文字
+        // setTimeout(function(){
+        // typeEffect(shopBtnText[0].firstChild, speed);
+        // typeEffect(shopBtnText[1].firstChild, speed);
+        // }, delay);
+    </script>
     <script src="./js/writeLetter.js"></script>
 </body>
 

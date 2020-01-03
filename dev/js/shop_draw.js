@@ -6,10 +6,10 @@ let canvas = new fabric.Canvas('canvas', {
 }); //創建fabric環境
 canvas.setHeight(500);
 
+
+
+//=================剪裁飛機或郵戳畫板==========================
 canvas.controlsAboveOverlay = true;
-
-
-
 var clipPath = new fabric.Group([
   new fabric.Polyline([{
       x: 10,
@@ -125,23 +125,47 @@ $('.figure').click(function () {
   drawingPanel.appendChild(divImage); //div插入畫板空間
   // canvas.appendChild(drawingPanel);
 
-  fabric.Image.fromURL(itemImage, function (img) { //使用fabric.Image方法
 
-    img.scaleToHeight(100); //指定img寬
-    img.scaleToWidth(100); //指定img高
-    img.center();
-    img.setCoords();
-    canvas.renderAll(); //選染畫布
-    canvas.add(img); //畫布加入新的圖片
+
+
+  fabric.Image.fromURL(itemImage, function (img) { //使用fabric.Image方法
+    // canvas.on('after:render', function () {
+    //   this.calcOffset();
+    //   console.log(this.calcOffset()); //每次渲染後抓到canvas的寬
+    //   canvasWidth = this.width;
+    //   canvasHeight = this.height;
+    //   console.log(canvasHeight);
+    //   img.scale(0.5).set({
+    //     left: canvasWidth / 2,
+    //     top: canvasHeight / 2,
+    //     selectable: true,
+    //     originX: 'left',
+    //     originY: 'top'
+    //   });
+    // });
+    img.scale(0.5).set({
+      left: 200,
+      top: 200,
+      selectable: true,
+      originX: 'left',
+      originY: 'top'
+    });
+    canvas.renderAll();
+    canvas.add(img).setActiveObject(img);;
+
+    // img.scaleToHeight(100); //指定img寬
+    // img.scaleToWidth(100); //指定img高
+    // img.center();
+    // img.setCoords();
+    // canvas.renderAll(); //選染畫布
+    // canvas.add(img); //畫布加入新的圖片
+
+    canvas.renderAll();
+    canvas.add(img).setActiveObject(img);;
   })
 });
 
-$('#group').click(function () {
-  canvas.getActiveObject().toGroup()
-})
-$('#ungroup').click(function () {
-  canvas.getActiveObject().toActiveSelection();
-})
+
 
 
 //===========title==========================
@@ -263,6 +287,15 @@ $('#outputPngBtn').mouseout(function () {
 
 
 //=======================畫筆區===============
+//群組
+$('#group').click(function () {
+  canvas.getActiveObject().toGroup()
+})
+$('#ungroup').click(function () {
+  canvas.getActiveObject().toActiveSelection();
+})
+
+
 //畫筆顏色
 $(".lineColorInput").change(function () {
   console.log(this.value)
@@ -278,12 +311,12 @@ $('#mode').click(function () {
   canvas.isDrawingMode = !canvas.isDrawingMode;
   if (!canvas.isDrawingMode) {
     drawingOptionArea.style.display = "none";
-    $('#modeImg').attr('src', './img/product/tool/banWrite.png')
+    $('#modeImg').attr('src', './img/product/toolcontrolbar/cannotWrite.png')
     $('#modeImg').attr('title', '物件選取狀態')
 
   } else {
     drawingOptionArea.style.display = "";
-    $('#modeImg').attr('src', './img/product/tool/control_write.svg')
+    $('#modeImg').attr('src', './img/product/toolcontrolbar/control_write.svg')
     $('#modeImg').attr('title', '繪畫板狀態')
     canvas.freeDrawingBrush.color = $(".lineColorInput").val()
   }
@@ -365,8 +398,13 @@ $(".shadowOffsetYInput").change(function () {
 outputPngBtn = document.getElementById("outputPngBtn")
 outputPngBtn.addEventListener('click', () => output('png'))
 
+
+
 function output(formatType) {
-  const dataURL = canvas.toDataURL({
+
+  var patternName = $('#patternName').val();
+  console.log(patternName)
+  let dataURL = canvas.toDataURL({
     format: `image/${formatType}`,
     top: 0,
     left: 0,
@@ -375,13 +413,58 @@ function output(formatType) {
     multiplier: 1,
     quality: 0.1
   })
+
+  $.ajax({
+    type: "POST",
+    url: "http://localhost/dev/js/saveImg.php",
+    data: {
+      image: dataURL,
+      matName: patternName,
+    }
+  })
+  // .done(function (respond) {
+  //   console.log("done:" + respond);
+  // })
+  // .fail(function (respond) {
+  //   console.log("fail");
+  // })
+  // .always(function (respond) {
+  //   console.log("always");
+  // })
+  
   const a = document.createElement('a');
+
   a.href = dataURL
+  console.log(dataURL);
   a.download = `output.${formatType}`
   document.body.appendChild(a);
   a.click()
   document.body.removeChild(a)
 }
+
+
+//轉存成JPG
+// outputJpgBtn = document.getElementById("outputJpgBtn")
+// outputJpgBtn.addEventListener('click', () => output2('jpeg'))
+
+// function output2(formatType) {
+
+//     let dataURL = canvas.toDataURL({
+//     format: `image/${formatType}`,
+//     top: 0,
+//     left: 0,
+//     width: 800,
+//     height: 500,
+//     multiplier: 1,
+//     quality: 0.1
+//   })
+//   const a = document.createElement('a');
+//   a.href = dataURL
+//   a.download = `output.${formatType}`
+//   document.body.appendChild(a);
+//   a.click()
+//   document.body.removeChild(a)
+// }
 
 
 
@@ -423,35 +506,14 @@ $(".brushSelect").change(function () {
 })
 
 
-//相片灰階濾鏡功能
-
-
-
-// $('#filter_Sepia').on("click", function () {
-//   var filter = new fabric.Image.filters.BlendColor({
-//     color: 'red',
-//     mode: 'tint',
-//     alpha: 0.5
-//   });
-//   obj = canvas.getActiveObject();
-//   console.log(obj)
-//   var filter = new fabric.Image.filters.Sepia();
-//   obj.filters.push(filter);
-//   obj.applyFilters(canvas.renderAll.bind(canvas));
-// });
 
 //相片灰階濾鏡功能
-
 $('#filter_Grayscale').on("click", function () {
-  obj = canvas.getActiveObject();
-  var filter = new fabric.Image.filters.BlendImage({
-    image: obj,
-    mode: 'multiply',
-    alpha: 0.5
-  });
 
-  console.log(obj)
-  obj.filters.push(filter);
+  obj = canvas.getActiveObject();
+  obj.filters.push(new fabric.Image.filters.Grayscale({
+
+  }));
   obj.applyFilters();
   canvas.renderAll()
 });
@@ -515,14 +577,22 @@ function handleFile() {
 
     fabric.Image.fromURL(dataURL, function (img) { //使用fabric.Image方法
 
-      // img.filters.push(new fabric.Image.filters.Grayscale());
-      // img.applyFilters();
-      img.scaleToHeight(100); //指定img寬
-      img.scaleToWidth(100); //指定img高
-      img.center();
-      img.setCoords();
-      canvas.renderAll(); //選染畫布
-      canvas.add(img); //畫布加入新的圖片
+      // img.scaleToHeight(100); //指定img寬
+      // img.scaleToWidth(100); //指定img高
+      // img.center();
+      // img.setCoords();
+      // canvas.renderAll(); //選染畫布
+      // canvas.add(img); //畫布加入新的圖片
+      img.scale(0.5).set({
+        left: 200,
+        top: 200,
+        selectable: true,
+        originX: 'left',
+        originY: 'top'
+      });
+      canvas.renderAll();
+      canvas.add(img).setActiveObject(img);;
+
     })
   };
 }
@@ -562,7 +632,7 @@ canvas.on('drop', dropImg)
 
 
 
-//=================剪裁飛機或郵戳畫板==========================
+
 
 
 
@@ -570,10 +640,10 @@ canvas.on('drop', dropImg)
 
 
 // =======START RESPONSIVE CANVAS=======================
-// canvas.on('after:render', function () {
-//   this.calcOffset();
-//   console.log(this.calcOffset()); //每次渲染後抓到canvas的寬
-// });
+canvas.on('after:render', function () {
+  this.calcOffset();
+  console.log(this.calcOffset()); //每次渲染後抓到canvas的寬
+});
 widthscrencan = (window.innerWidth > 0) ? window.innerWidth : screen.width; // capture width screen onload
 canvasScale = 1; //global 1倍大  
 

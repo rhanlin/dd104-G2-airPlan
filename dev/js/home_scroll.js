@@ -801,20 +801,28 @@ let sceneStorePlane_In = new ScrollMagic.Scene({
 let storePin = new TimelineMax();
 //---被蓋的紙飛機消失，上方紙飛機出現---
 let fallPlane_Hide = TweenMax.to('.fall_plane', 1, {
-    // opacity:0,
     visibility: "hidden",
     ease: Power0.easeNone
 });
 let windowPlane_Show = TweenMax.to('.paintPlane', 1, {
-    // opacity:1,
     visibility: "visible",
     ease: Power0.easeNone
 });
+let price_Show = TweenMax.to('.price', 1, {
+    opacity:1,
+    y:"130%",
+    ease: Bounce.easeOut
+});
 
-storePin.add([fallPlane_Hide, windowPlane_Show]);
+storePin.add([fallPlane_Hide, windowPlane_Show,price_Show]);
+
+
+storePin.add(TweenMax.to('.glass', 1, {
+    x: "-100%",
+}));
 
 let sceneStore = new ScrollMagic.Scene({
     triggerElement: ".home_store",
-    duration: '100%',
+    duration: '200%',
     triggerHook: 0
 }).setPin('.home_store').setTween(storePin).addIndicators().addTo(controller);

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  
+  <input type="button" value="取得目前資料" onclick="getMember()" />
+  <script>
+    function showMaterial(jsonStr) {
+
+      let material = JSON.parse(jsonStr);
+      console.log(material)
+      let html;
+      if (material.matName) {
+        html = `<table>
+          <img src="${material.matURL}" alt="">
+  <tr><th></th><td>${material.matName}</td></tr>
+  </table>`
+      } else {
+        html = "無任何素材"
+      }
+      document.querySelector("body").innerHTML = html;
+    }
+
+
+    function getMember() {
+      var xhr = new XMLHttpRequest();
+      xhr.onload = function () {
+        if (xhr.status == 200) {
+          //modify here
+          showMaterial(xhr.responseText);
+          console.log(xhr.responseText)
+        } else {
+          alert(xhr.status);
+        }
+      }
+
+      var url = "getImg.php?memNo=5";
+      xhr.open("Get", url, true);
+      xhr.send(null);
+    }
+  </script>
+</body>
+
+</html>

@@ -7,10 +7,11 @@
   .share-clip{
     display: inline-block;
     width: 6vw;
-    height: 80%;
+    // height: 80%;
+    height: auto;
     min-height: 100px;
     z-index: 999;
-    background-image: url('../img/share/share-clip.svg');
+    background-image: url('../img/share/clip.svg');
     background-size:contain;
     background-position: center;
     background-repeat: no-repeat;
