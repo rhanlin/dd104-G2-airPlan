@@ -81,6 +81,18 @@ $(function () {
 
 });
 
+//打賞跳金幣
+$(function(){
+  $(".like").on("click",function(){
+    $(this).parents(".cav-letComment").find(".cav-commId").addClass("active");
+    console.log("coin");
+    setTimeout(() => {
+      $(".cav-commId").removeClass('active');
+  }, 1000)
+  });
+});
+
+
 //選取所要套用的圖案
 $(function () {
   $("div.cav-prodI").on("click", function (e) {
