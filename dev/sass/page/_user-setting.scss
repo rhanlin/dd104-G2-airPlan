@@ -201,7 +201,7 @@
                             right: 4%;
                         }
                         .setDataClose:hover{
-                            @include hoverFontsize;
+                            cursor: pointer;
                         }
                         .formSetData{
                             width: 100%;
@@ -671,6 +671,7 @@
                         @include kanbanSize;
                         .memKanbanIn{
                             .memData{
+                                margin:0;
                                 width: 100px;
                             }
                         }
@@ -732,6 +733,7 @@
                         @include kanbanSize;
                         .memKanbanIn{
                             .memData{
+                                margin:0;
                                 width: 100px;
                             }
                         }

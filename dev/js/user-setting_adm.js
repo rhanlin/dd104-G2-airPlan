@@ -13,7 +13,7 @@ Vue.component('memData', {
                 </tr>
                 <tr>
                     <td>Email:</td>
-                    <td colspan="5">aaa@gmail.com<img onclick="showForm()" class="emailSet" src="./img/user-setting/gear.svg" alt="robotB3"></td>
+                    <td colspan="5">aaa@gmail.com<img id="showForm" class="emailSet" src="./img/user-setting/gear.svg" alt="robotB3"></td>
                 </tr>
                 <tr>
                     <td>Air幣:</td>
@@ -261,11 +261,13 @@ for (let i = 0; i < picture_small.length; i++) {
 
 
 //會員資訊_會員資料修改燈箱
-var setDataBg = document.querySelector(".setDataBg");
-function showForm() {
+var setDataBg = document.getElementById("setDataBg");
+var showForm = document.getElementById("showForm");
+var closeForm = document.getElementById("closeForm");
+showForm.onclick = function(){
     setDataBg.style.display = "block";
 };
-function closeForm() {
+closeForm.onclick = function(){
     setDataBg.style.display = "none";
 };
 
@@ -274,48 +276,43 @@ function closeForm() {
 var btnMemData = document.getElementById("btnMemData");
 var btnAirCoin = document.getElementById("btnAirCoin");
 var btnMemcolor = document.getElementById("btnMemcolor");
-function showMemData() {
+btnMemData.onclick = function(){
     btnMemData.style.backgroundImage = 'url("./img/share/red-note.svg")';
     btnAirCoin.style.backgroundImage = 'url("./img/share/blue-note.svg")';
     btnMemcolor.style.backgroundImage = 'url("./img/share/blue-note.svg")';
     btnMemData.style.color = 'white';
     btnAirCoin.style.color = 'black';
     btnMemcolor.style.color = 'black';
-}
-function showAirCoin() {
+};
+btnAirCoin.onclick = function(){
     btnMemData.style.backgroundImage = "url(./img/share/blue-note.svg)";
     btnAirCoin.style.backgroundImage = "url(./img/share/red-note.svg)";
     btnMemcolor.style.backgroundImage = "url(./img/share/blue-note.svg)";
     btnMemData.style.color = 'black';
     btnAirCoin.style.color = 'white';
     btnMemcolor.style.color = 'black';
-}
-function showMemcolor() {
+};
+btnMemcolor.onclick = function(){
     btnMemData.style.backgroundImage = "url(./img/share/blue-note.svg)";
     btnAirCoin.style.backgroundImage = "url(./img/share/blue-note.svg)";
     btnMemcolor.style.backgroundImage = "url(./img/share/red-note.svg)";
     btnMemData.style.color = 'black';
     btnAirCoin.style.color = 'black';
     btnMemcolor.style.color = 'white';
-}
-btnMemData.onclick = showMemData;
-btnAirCoin.onclick = showAirCoin;
-btnMemcolor.onclick = showMemcolor;
+};
 
 //系統資訊_頁籤樣式切換
 var btnMemData = document.getElementById("btnMemData");
 var btnAirCoin = document.getElementById("btnAirCoin");
-function showManu() {
+btnManu.onclick = function(){
     btnManu.style.backgroundImage = 'url("./img/share/red-note.svg")';
     btnVar.style.backgroundImage = 'url("./img/share/blue-note.svg")';
     btnManu.style.color = 'white';
     btnVar.style.color = 'black';
-}
-function showVar() {
+};
+btnVar.onclick = function(){
     btnManu.style.backgroundImage = "url(./img/share/blue-note.svg)";
     btnVar.style.backgroundImage = "url(./img/share/red-note.svg)";
     btnManu.style.color = 'black';
     btnVar.style.color = 'white';
-}
-btnManu.onclick = showManu;
-btnVar.onclick = showVar;
+};

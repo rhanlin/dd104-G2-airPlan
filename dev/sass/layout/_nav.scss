@@ -238,10 +238,6 @@
                   background-position: 40% 55%;
                   background-size: 36px;
                   background-repeat: no-repeat;
-
-                  // + .nav-pageName {
-                  //   color: $main-dark-red;
-                  // }
                 }
               }
 
@@ -272,10 +268,7 @@
 
             .nav-logo {
               display: inline-block;
-              width: 13%;
-              // min-width: 20%;
-              // height: 15%;
-              // border: 1px solid lawngreen;
+              width: 150px;
               object-fit: cover;
 
               img {
@@ -285,29 +278,30 @@
             }
 
             li {
-              width: 15%;
-              // min-width: 300px;
+              width: 150px;
               text-align: center;
               a {
                 width: 100%;
-                display: block;
                 height: 100%;
+                display: flex;
 
                 p {
-                  display: inline-block;
                   margin: 0;
+                  text-align: left;
                   line-height: 60px;
                   font-size: 1.2rem;
                   color: $main-white;
+                  order: 2;
                   &:hover {
                     color: $main-red;
                   }
                 }
                 %nav-circle {
-                  display: flex;
-                  float: left;
+                  // width: 50%;
+                  order: 1;
+                  // float: left;
                   vertical-align: middle;
-                  margin-left: 20%;
+                  // margin-left: 20%;
                 }
               }
             }
@@ -392,8 +386,6 @@
 }
 .nav-navBgWrap.-on {
   position: fixed;
-  // top: 0;
-  // left: 0;
   animation: 0.2 all;
   top: -150%;
 }
@@ -437,7 +429,7 @@
       width: 100%;
 
       .nav-hamburgerWrap {
-        display: block;
+        display: inline-block;
       }
     }
   }
@@ -463,7 +455,6 @@
 
   .nav-navWrap {
     top: -200px !important;
-    // display: none;
   }
   .open {
     display: block;
@@ -474,34 +465,39 @@
     width: 100%;
     .nav-hamPosition {
       width: 100%;
-    }
-  }
 
-  .nav-navBgWrap {
-    .nav-navBg {
-      > img {
-        display: none;
+      .nav-hamburgerWrap {
+        display: inline-block;
       }
-      .nav-logoWrap {
-        img {
+    }
+
+    .nav-navBgWrap {
+      display: inline-block;
+      .nav-navBg {
+        > img {
+          display: none;
+        }
+        .nav-logoWrap {
+          img {
+            display: none;
+          }
+        }
+        .nav-pc {
+          display: none;
+        }
+        .nav-road {
           display: none;
         }
       }
-      .nav-pc {
-        display: none;
-      }
-      .nav-road {
-        display: none;
-      }
     }
-  }
 
-  .nav-navWrap {
+    .nav-navWrap {
     top: -200px !important;
     // display: none;
-  }
-  .open {
+    }
+    .open {
     display: block;
+    }
   }
 }
 @include respond(note) {
@@ -509,6 +505,9 @@
     width: 100%;
     .nav-hamPosition {
       width: 100%;
+      .nav-hamburgerWrap {
+        display: inline-block;
+      }
     }
   }
 
@@ -545,6 +544,9 @@
     width: 100%;
     .nav-hamPosition {
       width: 100%;
+      .nav-hamburgerWrap {
+        display: inline-block;
+      }
     }
   }
 
@@ -577,11 +579,9 @@
 }
 
 //登入頁
-
-.signInBg {
+.signInBg{
   width: 100%;
   height: 100%;
-  // background: radial-gradient($main-black 30%,  rgba(68, 68, 68, 0.9) 20%);
   background-color: rgba(68, 68, 68, 0.99);
   background-size: 10px 10px;
   position: fixed;
@@ -593,6 +593,7 @@
   .signInData {
     padding: 20px;
     width: 550px;
+    height: 560px;
     background-image: url("../img/user-setting/setDataletter.png");
     background-size: 100% 100%;
     position: absolute;
@@ -603,22 +604,92 @@
     h4 {
       text-align: center;
     }
-    .signInClose {
+    .closeSignin {
       position: absolute;
       top: 3%;
       right: 4%;
+      cursor: pointer;
     }
     .formsignInData {
       width: 100%;
       @include marginAuto;
-      // p {
-      //   margin-top: 10px;
-      // }
+      p{
+        margin-bottom: 0;
+      }
       .signInLogo {
         width: 50%;
         display: block;
         @include marginAuto;
-        // margin-top: 10px;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px;
+        font-size: 16px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        margin-bottom: 5px;
+        @include border;
+      }
+      .showForget,.showRegister{
+        // display: inline-block;
+        
+        cursor: pointer;
+      }
+      button {
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        background: #82afd9;
+        background-size: 10px 10px;
+        color: aliceblue;
+      }
+    }
+  }
+}
+
+//註冊
+.registerBg{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(68, 68, 68, 0.99);
+  background-size: 10px 10px;
+  position: fixed;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  .registerData {
+    padding: 20px;
+    width: 550px;
+    height: 560px;
+    background-image: url("../img/user-setting/setDataletter.png");
+    background-size: 100% 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 70;
+    h4 {
+      text-align: center;
+    }
+    .closeRegister {
+      position: absolute;
+      top: 3%;
+      right: 4%;
+      cursor: pointer;
+    }
+    .formRegisterData {
+      width: 100%;
+      p{
+        margin-bottom: 0;
+      }
+      @include marginAuto;
+      .registerLogo {
+        width: 50%;
+        display: block;
+        @include marginAuto;
       }
       input {
         width: 100%;
@@ -637,7 +708,6 @@
         background: #82afd9;
         background-size: 10px 10px;
         color: aliceblue;
-        // margin-top: 10px;
       }
     }
   }
@@ -654,35 +724,99 @@
     @extend.envelopedown;
   }
 }
-
+//忘記密碼
+.forgetBg{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(68, 68, 68, 0.99);
+  background-size: 10px 10px;
+  position: fixed;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  .forgetBgData {
+    padding: 20px;
+    width: 550px;
+    height: 560px;
+    background-image: url("../img/user-setting/setDataletter.png");
+    background-size: 100% 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 70;
+    h4 {
+      text-align: center;
+    }
+    .closeForget {
+      position: absolute;
+      top: 3%;
+      right: 4%;
+      cursor: pointer;
+    }
+    .formForgetData {
+      width: 100%;
+      @include marginAuto;
+      p{
+        margin-bottom: 0;
+      }
+      .forgetLogo {
+        width: 50%;
+        display: block;
+        @include marginAuto;
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px;
+        font-size: 16px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        margin-bottom: 5px;
+        @include border;
+      }
+      button {
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        background: #82afd9;
+        background-size: 10px 10px;
+        color: aliceblue;
+      }
+    }
+  }
+}
 
 @include respond(mediumSize){
-  .signInBg{
-    .signInData{
+  .signInBg,.registerBg,.forgetBg{
+    .signInData,.registerData,.forgetBgData{
         padding: 20px;
         width: 60%;
+      }
     }
   }
-}
+
 @include respond(small){
-  .signInBg{
-    .signInData{
+  .signInBg,.registerBg,.forgetBg{
+    .signInData,.registerData,.forgetBgData{
         padding: 20px;
         width: 70%;
+      }
     }
-  }
 }
 @include respond(note){
-  .signInBg{
-    .signInData{
+  .signInBg,.registerBg,.forgetBg{
+    .signInData,.registerData,.forgetBgData{
         padding: 20px;
         width: 80%;
     }
   }
 }
 @include respond(iphone){
-  .signInBg{
-    .signInData{
+  .signInBg,.registerBg,.forgetBg{
+    .signInData,.registerData,.forgetBgData{
         padding: 20px;
         width: 100%;
     }
