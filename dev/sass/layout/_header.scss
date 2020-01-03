@@ -4,7 +4,7 @@ header{
     font-size: 0;
     
     .white-space-bg{
-        height: 20vw;
+        height: auto;
         background: linear-gradient(180deg, rgba(255, 255, 255, 1)60%, rgba(235, 255, 255, 0)100%);
         position: relative;
         z-index: 99;
@@ -20,12 +20,32 @@ header{
                 height: 15vw;
                 // animation: shad-anim 10s linear infinite;
                 .clip-left{
-                    top: -65%;
-                    left: 18%;
+                    top: -23%;
+                    left: 15%;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        width: 2.5%;
+                        height: 15vw;
+                        background: linear-gradient(#e5e5e500 10%, #212121 60%, #212121);
+                        top: -7.3vw;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
                 };
                 .clip-right{
-                    top: -65%;
+                    top: -23%;
                     right: 18%;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        width: 2.5%;
+                        height: 15vw;
+                        background: linear-gradient(#e5e5e500 10%, #212121 60%, #212121);
+                        top: -7.3vw;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
                 }
                 .top-left-bg{
                     position: relative;

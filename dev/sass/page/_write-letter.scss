@@ -6,7 +6,6 @@
     main {
         margin-top: 10vw;
         font-family: 'Noto Sans TC', sans-serif;
-        overflow: hidden;
         .goto-shop-btn {
             // border: 1px solid blue;
             height: 65%;
@@ -85,7 +84,7 @@
 
             .select-category {
                 height: 35vw;
-
+                z-index: 9;
                 .blue-tape {
                     width: 12vw;
                     position: absolute;
@@ -560,7 +559,7 @@
                             padding: 2%;
                             width: 80%;
                             height: 80%;
-
+                            outline: none;
                             border-radius: $main-borderRadius;
                             // @include share_extMark();
                         }
@@ -662,8 +661,9 @@
                             transform: translate(-50%, -50%);
                             background-repeat: no-repeat;
                             background-position: center;
-                            background-size: contain;
+                            background-size: cover;
                             clip-path: polygon(12% 10%, 86% 3%, 62.5% 96.5%, 42% 61%, 27% 75%, 27% 37%);
+                            opacity: .8;
                         }
                     }
 
@@ -717,6 +717,7 @@
                     p {
                         margin: 0;
                         letter-spacing: .6rem;
+                        color: $main-black;
                     }
                 }
             }
@@ -791,6 +792,7 @@
                             clip-path: polygon(65% 9%, 52% 8%, 41% 21%, 29% 26%, 11% 41%, 0 59%, 3% 85%, 20% 90%, 30% 85%, 35% 97%, 51% 95%, 68% 76%, 83% 70%, 100% 50%, 100% 37%);
                             background-repeat: no-repeat;
                             background-position: center;
+                            background-size: cover;
                             position: absolute;
                             top: 43%;
                             left: 53%;
@@ -837,8 +839,8 @@
                         }
 
                         &:hover .printScraper {
-                            top: -50%;
-                            left: 105%;
+                            top: -20%;
+                            left: 90%;
                             background-image: url(../img/write-letter/print-scraper-yellow.svg);
                         }
 
@@ -874,8 +876,8 @@
                                         top: 15%;
                                         left: 13%;
                                         opacity: 1;
-                                        background-image: url(../img/pattern/plan-pattern-1.svg);
                                         background-size: cover;
+                                        background-repeat: no-repeat;
                                     }
                                 }
                             }
@@ -898,7 +900,7 @@
                 width: 71.25vw;
                 height: 35vw;
                 margin: 0 20% 0 10%;
-
+                position: unset;
                 .discription {
                     display: flex;
                     flex-direction: row;
@@ -921,13 +923,14 @@
                         margin: 0;
                         padding: 0 15%;
                         letter-spacing: .6rem;
+                        color: $main-black;
                     }
                 }
 
                 .rightshopBtn {
                     position: absolute;
                     top: -13%;
-                    right: -25.5%;
+                    right: 0%;
                     transform: scaleX(-1);
 
                     .paper-cloud {
@@ -943,7 +946,7 @@
                 // animation: shad-anim 10s linear infinite;
                 .clip-left {
                     top: -7%;
-                    left: 6%;
+                    left: 15%;
                     height: auto;
                     background-image: url(../img/share/clip.svg);
 
