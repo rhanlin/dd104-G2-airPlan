@@ -400,10 +400,36 @@
                     .cav-commHead {
                       margin-bottom: 5px;
 
+                      
+                        
+                        
+                        >img{
+                          width: 25px;
+                          animation: popCoin 2s infinite;
+                        }
+                        @keyframes popCoin{
+                          0%{
+                            
+                          }
+                          50%{
+
+                          }
+                          100%{
+
+                          }
+                        }
+                      
                       .cav-commId {
                         font-weight: bold;
                         font-size: 14px;
                         margin-right: 5px;
+                        position: relative;
+                      }
+                      &::after{
+                        content: '';
+                        background-image: url(../img/cave/coin1.png);
+                        position: absolute;
+                        
                       }
 
                       .cav-commTime {
