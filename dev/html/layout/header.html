@@ -1,4 +1,3 @@
-<!-- <link href="./css/main.css" rel="stylesheet" type="text/css"> -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script src="./js/kloud.min.js"></script>
 
@@ -13,7 +12,7 @@
                 <span class="share-clip clip-left"></span>
                 <span class="share-clip clip-right"></span>
                 <div class="box-white top-left-bg">
-                    <div class="box-white top-left-bg" id='headerVue'>
+                    <div class="box-white top-left-bg" id='headerVue' style="position: relative;">
                         <!-- 這裡會自動判斷頁面產生 -->
                     </div>
                 </div>
@@ -49,15 +48,21 @@
         const writeLetter = {
             template: `
             <h1 class="headpg-name threed-text-blue">
-                <div style="border: 1px solid red;">
+                <div 
+                    style="padding:1vw 0; width:20%; 
+                    text-align:center;">
                 寫
                 </div>
                 <br>
-                <div style="display:flex;flex-direction:column;justify-content:center;border: 1px solid red;">
-                    <img src="./img/share/line-paperPlane.svg" style="width:30%;">
-                    <span>
-                    一封信
-                    </span>
+                <img src="./img/share/Paint-bucket.svg" style="width:40%; position:absolute; bottom:-90%; left:8%; z-index:99">
+                <img src="./img/share/shiny.svg" style="width:6%; position:absolute; bottom:13%; left:33%; z-index:99">
+                <img src="./img/share/shiny.svg" style="width:4%; position:absolute; bottom:30%; left:40%; z-index:99">
+                <img src="./img/share/yellow-paint-line.svg" style="width:15%; position:absolute; top:30%; left:18%; z-index:99">
+                <div 
+                    style="width:50%; display:flex; flex-direction:column; justify-content:center; 
+                    text-align:center; padding:1vw 0;">
+                    <img src="./img/share/line-paperPlane.svg" style="width:40%;">
+                    &nbsp一封信
                 </div>
             </h1>
             `
@@ -65,41 +70,67 @@
         const catchLetter = {
             template: `
             <h1 class="headpg-name threed-text-blue">
-                <div style="border: 1px solid red;">
-                撈
+                <div 
+                    style="width:45%; text-align:center; display:flex;
+                    flex-direction:column; align-items:center; justify-content:space-evenly;">
+                <span style="font-size:inherit; ">查看</span>
+                <span style="font-size:inherit; ">&nbsp撈信</span>
                 </div>
                 <br>
-                <div style="display:flex;flex-direction:column;justify-content:center;border: 1px solid red;">
-                    <img src="./img/share/line-paperPlane.svg" style="width:30%;">
-                    <span>
-                    信
-                    </span>
-                </div>
+                <img src="./img/share/butterfly-net.svg" style="width:40%; position:absolute; bottom:-50%; right:2%; z-index:99">
+                <img src="./img/share/shiny.svg" style="width:6%; position:absolute; top:13%; right:33%; z-index:99">
+                <img src="./img/share/shiny.svg" style="width:4%; position:absolute; top:36%; right:28%; z-index:99">
+                <img src="./img/share/yellow-paint-line.svg" style="width:15%; position:absolute; bottom:4%; left:38%; z-index:99">
+                <img src="./img/share/line-paperPlane.svg" style="width:20%; position:absolute; top:18%; right:38%;">
             </h1>
             `
         }
         const chatroom = {
             template: `
             <h1 class="headpg-name threed-text-blue">
-                聊天室
+                <div 
+                    style="width:45%; text-align:center; display:flex;
+                    flex-direction:column; align-items:center; justify-content:space-evenly;">
+                <span style="font-size:inherit;">聊天室</span>
+                </div>
+                <br>
+                <img src="./img/share/butterfly-net.svg" style="width:40%; position:absolute; bottom:-50%; right:2%; z-index:99">
+                <img src="./img/share/shiny.svg" style="width:6%; position:absolute; top:13%; right:33%; z-index:99">
+                <img src="./img/share/shiny.svg" style="width:4%; position:absolute; top:36%; right:28%; z-index:99">
+                <img src="./img/share/yellow-paint-line.svg" style="width:15%; position:absolute; bottom:4%; left:38%; z-index:99">
+                <img src="./img/share/line-paperPlane.svg" style="width:20%; position:absolute; top:18%; right:38%;">
             </h1>
             `
         }
         const cave = {
             template: `
             <h1 class="headpg-name threed-text-blue">
-                    我的倉庫
-                <div>
-                    <img style="height:100px; width:100px; position:absolute; right: 0;bottom: 0;"
-                        src="./img/cave/cavheaderImg.png">
+                <div 
+                    style="width:55%; text-align:center; display:flex;
+                    flex-direction:column; align-items:center; justify-content:space-evenly;">
+                <span style="font-size:inherit;">我的倉庫</span>
                 </div>
+                <br>
+                <img src="./img/cave/cavheaderImg.png"
+                style="width:15%; position:absolute; right: 2%;bottom: 5%; z-index:99;">
+                <img src="./img/share/cave-pattern.svg" style="width:30%; position:absolute; bottom:-10%; right:10%;">
             </h1>
             `
         }
         const shop = {
             template: `
             <h1 class="headpg-name threed-text-blue">
-                客製化商城
+                <div 
+                    style="width:80%; text-align:center; display:flex;
+                    flex-direction:column; align-items:center; justify-content:space-evenly;">
+                <span style="font-size:inherit;">客製化商城</span>
+                </div>
+                <br>
+                <img src="./img/share/shop-pattern2.svg" style="width:30%; position:absolute; top:0%; right:0%; z-index:99">
+                <img src="./img/share/shop-pattern.svg" style="width:30%; position:absolute; bottom:-70%; right:-12%; z-index:99">
+                
+                <img src="./img/share/yellow-paint-line.svg" 
+                style="width: 15%; position:absolute; bottom:27%; right:15%; z-index:9;">
             </h1>
             `
         }
@@ -107,16 +138,15 @@
             template: `
             <h1 class="headpg-name threed-text-blue">
                 <div style="display:flex;flex-direction:column;justify-content:center;">
-                    用戶
-                <img src="./img/userSetting/wrench.svg" style="width:8%; transform: rotate(110deg); position:absolute; left: 10%; top: -25%;">
+                用戶設定
+                        <img src="./img/user-setting/wrench.svg" style="width:8%; transform: rotate(90deg); position:absolute; left: 10%; top: 40%;">
                 </div>
                 <br>
-                <img src="./img/userSetting/gear.svg" alt="gear" style="width: 18%; text-align: center;">
+                <img src="./img/user-setting/gear.svg" alt="gear" style="width: 18%; position:absolute; bottom:5%; right: 20%">
                 <div style="display:flex;flex-direction:column;justify-content:center;">
-                    <img src="./img/userSetting/hammer.svg" style="width: 10%; transform: rotate(-45deg); position:absolute; right: 1%; top: 0;">
-                    設定
+                <img src="./img/user-setting/hammer.svg" style="width: 10%; transform: rotate(-45deg); position:absolute; right: 10%; top: 1%;">
                 </div>
-                </h1>
+            </h1>
             `
         }
         const classic = {
