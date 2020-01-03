@@ -238,10 +238,6 @@
                   background-position: 40% 55%;
                   background-size: 36px;
                   background-repeat: no-repeat;
-
-                  // + .nav-pageName {
-                  //   color: $main-dark-red;
-                  // }
                 }
               }
 
@@ -272,10 +268,7 @@
 
             .nav-logo {
               display: inline-block;
-              width: 13%;
-              // min-width: 20%;
-              // height: 15%;
-              // border: 1px solid lawngreen;
+              width: 150px;
               object-fit: cover;
 
               img {
@@ -285,29 +278,30 @@
             }
 
             li {
-              width: 15%;
-              // min-width: 300px;
+              width: 150px;
               text-align: center;
               a {
                 width: 100%;
-                display: block;
                 height: 100%;
+                display: flex;
 
                 p {
-                  display: inline-block;
                   margin: 0;
+                  text-align: left;
                   line-height: 60px;
                   font-size: 1.2rem;
                   color: $main-white;
+                  order: 2;
                   &:hover {
                     color: $main-red;
                   }
                 }
                 %nav-circle {
-                  display: flex;
-                  float: left;
+                  // width: 50%;
+                  order: 1;
+                  // float: left;
                   vertical-align: middle;
-                  margin-left: 20%;
+                  // margin-left: 20%;
                 }
               }
             }
@@ -392,8 +386,6 @@
 }
 .nav-navBgWrap.-on {
   position: fixed;
-  // top: 0;
-  // left: 0;
   animation: 0.2 all;
   top: -150%;
 }
@@ -437,7 +429,7 @@
       width: 100%;
 
       .nav-hamburgerWrap {
-        display: block;
+        display: inline-block;
       }
     }
   }
@@ -463,21 +455,25 @@
 
   .nav-navWrap {
     top: -200px !important;
-    // display: none;
   }
   .open {
     display: block;
   }
 }
 @include respond(small) {
+  }
   .nav-body {
     width: 100%;
     .nav-hamPosition {
       width: 100%;
+
+      .nav-hamburgerWrap {
+        display: inline-block;
+      }
     }
-  }
 
   .nav-navBgWrap {
+    display: inline-block;
     .nav-navBg {
       > img {
         display: none;
@@ -788,95 +784,21 @@
 }
 
 @include respond(mediumSize){
-<<<<<<< HEAD
-  .nav-body {
-    #navHead {
-      .nav-navBg {
-        img {}
-        .nav-navWrap {
-          .nav-navPageWrap {
-            .nav-list {
-              .nav-logo {}
-              li {
-                width: 20%;
-                a {
-
-                }
-              }
-            }
-          }
-        }
-        .nav-littleNav {
-          a {}
-        }
-        .nav-pc {
-          .cav-paper {}
-          .cav-coin {}
-        }
-      }
-    }
-    .nav-hamPosition {
-      .nav-hamburgerWrap {
-        .hambuger {}
-      }
-    }
-    .signInBg {
-      .signInData {
-=======
   .signInBg,.registerBg,.forgetBg{
     .signInData,.registerData,.forgetBgData{
->>>>>>> 75a868c61cb59dcd61933136565adf2ceaf74d91
         padding: 20px;
         width: 60%;
       }
     }
   }
 
-}
 @include respond(small){
-<<<<<<< HEAD
-  .nav-body {
-    #navHead {
-      .nav-navBg {
-        img {}
-        .nav-navWrap {
-          .nav-navPageWrap {
-            .nav-list {
-              .nav-logo {}
-              li {
-                // width: 22%;
-                a {
-
-                }
-              }
-            }
-          }
-        }
-        .nav-littleNav {
-          a {}
-        }
-        .nav-pc {
-          .cav-paper {}
-          .cav-coin {}
-        }
-      }
-    }
-    .nav-hamPosition {
-      .nav-hamburgerWrap {
-        .hambuger {}
-      }
-    }
-    .signInBg {
-      .signInData {
-=======
   .signInBg,.registerBg,.forgetBg{
     .signInData,.registerData,.forgetBgData{
->>>>>>> 75a868c61cb59dcd61933136565adf2ceaf74d91
         padding: 20px;
         width: 70%;
       }
     }
-  }
 }
 @include respond(note){
   .signInBg,.registerBg,.forgetBg{
