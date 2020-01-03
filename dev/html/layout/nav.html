@@ -41,7 +41,7 @@
                 </div>
             </nav>
             <div class="nav-littleNav">
-                <a onclick="showSigin()" href="#"><i class="fas fa-user-circle"></i></a>
+                <a id="showSigin" href="#"><i class="fas fa-user-circle"></i></a>
                 <!-- <a href="./user-setting.html"><i class="fas fa-cog"></i></a> -->
             </div>
             <div class="nav-pc">
@@ -60,36 +60,77 @@
             </div>
         </div>
     </div>
+    <!-- 登入 -->
     <div class="signInBg" id="signInBg">
         <div class="signInData">
             <h4>Sign In</h4>
-            <p class="signInClose" onclick="closeSigin()">X</p>
+            <p id="closeSigin" class="closeSignin">X</p>
             <form class="formsignInData">
                 <img class="signInLogo" src="./img/share/LOGO.png" alt="Logo">
 
                 <label for="signInEmail">
                     <P>Email:</P>
                 </label>
-                <input class="signInEmail" input type="email" id="signInEmail" placeholder="請輸入Email" required
-                    autofocus>
+                <input class="signInEmail" input type="email" id="signInEmail" placeholder="Email" required autofocus>
 
                 <label for="signInPassword">
                     <P>Password:</P>
                 </label>
-                <input class="signInPassword" type="password" id="signInPassword" placeholder="請輸入密碼" required>
+                <input class="signInPassword" type="password" id="signInPassword" placeholder="password" required>
 
-                <a class="forger" href="">
-                    <p>忘記密碼</p>
-                </a>
-                <a class="" href="">
-                    <p>註冊</p>
-                </a>
+                <p class="showForget" id="showForget">忘記密碼</p>
+                <p class="showRegister" id="showRegister">註冊</p>
                 <br>
                 <button class="signInBtn" type="submit"><p>Sign in</p></button>
             </form>
         </div>
         <!-- <img class="envelopeup" src="./img/user-setting/envelopeup.png" alt="">
     <img class="envelopedown" src="./img/user-setting/envelopedown.png" alt=""> -->
+    </div>
+    <!-- 註冊 -->
+    <div class="registerBg" id="registerBg">
+        <div class="registerData">
+            <h4>Register</h4>
+            <p class="closeRegister" id="closeRegister">X</p>
+            <form class="formRegisterData" action="./js/register.php" method="post">
+                <img class="registerLogo" src="./img/share/LOGO.png" alt="Logo">
+
+                <label for="registerEmail">
+                    <P>Email:</P>
+                </label>
+                <input class="registerEmail" input type="email" id="registerEmail" placeholder="Email" name="memEmail" required autofocus>
+
+                <label for="registerPassword">
+                    <P>Password:</P>
+                </label>
+                <input class="registerPassword" type="password" id="registerPassword" placeholder="password" name="memPsw" required>
+
+                <label for="registerPasswordCheck">
+                    <P>Password again:</P>
+                </label>
+                <input class="registerPasswordCheck" type="password" id="registerPasswordCheck" placeholder="password again" name="memPswAgain" required>
+
+                <br>
+                <button class="registerBtn" type="submit"><p>Register</p></button>
+            </form>
+        </div>
+    </div>
+    <!-- 忘記密碼 -->
+    <div class="forgetBg" id="forgetBg">
+        <div class="forgetBgData">
+            <h4>Get new password</h4>
+            <p class="closeForget" id="closeForget">X</p>
+            <form class="formForgetData">
+                <img class="forgetLogo" src="./img/share/LOGO.png" alt="Logo">
+
+                <label for="forgetEmail">
+                    <P>Email:</P>
+                </label>
+                <input class="forgetEmail" input type="email" id="forgetEmail" placeholder="Email" required autofocus>
+                <br>
+                <button class="forgetBtn" type="submit"><p>Get</p></button>
+            </form>
+        </div>
     </div>
 </div>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
@@ -154,13 +195,29 @@
 
         // })
     </script>
-    <!-- 會員登入燈箱 -->
+    <!-- 會員登入/註冊/忘記密碼燈箱 -->
     <script>
-        var signInBg = document.querySelector(".signInBg");
-        function showSigin() {
-            signInBg.style.display = "block";
-        };
-        function closeSigin() {
-            signInBg.style.display = "none";
-        };
+        var signInBg = document.getElementById("signInBg");
+        var showSigin = document.getElementById("showSigin");
+        var closeSigin = document.getElementById("closeSigin");
+        var registerBg = document.getElementById("registerBg");
+        var showRegister = document.getElementById("showRegister");
+        var closeRegister = document.getElementById("closeRegister");
+        var forgetBg = document.getElementById("forgetBg");
+        var showForget = document.getElementById("showForget");
+        var closeForget = document.getElementById("closeForget");
+        showSigin.onclick = function(){
+            signInBg.style.display = "block";};
+        closeSigin.onclick = function(){
+            signInBg.style.display = "none";};
+        showRegister.onclick = function(){
+            registerBg.style.display = "block";
+            signInBg.style.display = "none";};
+        closeRegister.onclick = function(){
+            registerBg.style.display = "none";};
+        showForget.onclick = function(){
+            forgetBg.style.display = "block";
+            signInBg.style.display = "none";};
+        closeForget.onclick = function(){
+            forgetBg.style.display = "none";};
     </script>

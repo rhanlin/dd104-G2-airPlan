@@ -19,8 +19,8 @@
 <body class="catchletter-body">
   @@include("./layout/nav.html")
   @@include("./layout/paper-plane-world.html")
-  <!-- @@include("./layout/header.html") -->
-  <main id="catchLetter" style="display: none;">
+  @@include("./layout/header.html")
+  <main id="catchLetterMain" style="display: none;">
     <div id="viewMore">
       <section class="catch-step-1">
         <div class="box-white catch-letter">
@@ -60,7 +60,10 @@
                       <!-- btn -->
                       <div class="comment-btn">
                         <!-- 檢舉 -->
-                        <div class="circle" id="threed">
+                        <div class="circle circleBtn like">
+                          <button class="circle button"></button>
+                        </div>
+                        <div class="circle circleBtn report">
                           <button class="circle button"></button>
                         </div>
                         
@@ -87,7 +90,7 @@
                             <span class="arrow-white"></span>
                             <div class="stamp-type">
                                 <template v-for="item in 3">
-                                    <div class="type"></div>
+                                    <div class="type"><span></span></div>
                                 </template>
                             </div>
                             <span class="arrow-white reverse"></span>
@@ -104,28 +107,11 @@
     <!-- @@include("./layout/footer.html") -->
 
   <script src="./js/catchLetter.js"></script>
-  <!-- <script src="./js/foldThePlane.js"></script> -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
   
   <script>
-    const foldThePlane = {
-            template: `
-            <div id="imgWrap">
-              <span id="pointer" class="pointerAll" draggable="true"></span>
-              <div id="img"></div>
-              <div id="imgLeftTriangle"></div>
-              <div id="imgLeftTriangle2"></div>
-              <div id="imgRightTriangle"></div>
-              <div id="imgRightTriangle2"></div>
-              <div id="imgFinalStep"></div>
-              <div id="planeBody"></div>
-              <div id="planeWing"></div>
-            </div>
-            `
-        }
-
     new Vue({
-      el:'#catchLetter',
+      el:'#catchLetterMain',
       data:{
         // threeOpen: true,
         viewMoreOpen:true,
