@@ -110,21 +110,21 @@
               <div class="cardFilter">
                 <!-- <img src="./img/product/decorate/line_top.png" alt="" class="line_top">
                 <img src="./img/product/decorate/line_bottom.png" alt="" class="line_bottom"> -->
-               
+
                 <!-- v-if="change(index)" -->
-                <div class="itemCard"  v-for="item in filteredItems" :style="{backgroundImage:`url(${item.url})`}"
+                <div class="itemCard" v-for="item in filteredItems" :style="{backgroundImage:`url(${item.url})`}"
                   :id=item.id :class=item.class>
                   <img src="./img/product/decorate/clip-04.svg" alt="">
                 </div>
               </div>
               <div id="emptyBtn">
-                <div @click="page = 1" class="switchBtnBox">
+                <div @click=changePage1 class="switchBtnBox">
                   <div class="switchBtn">page1</div>
                 </div>
-                <div @click="page = 2" class="switchBtnBox">
+                <div @click=change(2) class="switchBtnBox">
                   <div class="switchBtn">page2</div>
                 </div>
-                <div @click="page = 3" class="switchBtnBox">
+                <div @click=change(3) class="switchBtnBox">
                   <div class="switchBtn">page</div>
                 </div>
               </div>
@@ -215,33 +215,33 @@
             <div class="controlToolTop">
               <div id="mode" class="controlBox1">
                 <div class="controlBox1_button clicked">
-                  <div class="controlBtn1 clicked"><img src="./img/product/tool/banWrite.png" alt="" id="modeImg">
+                  <div class="controlBtn1 clicked"><img src="./img/product/toolcontrolbar/cannotWrite.png" alt="" id="modeImg">
                   </div>
                 </div>
               </div>
               <div id="clear" class="controlBox2">
                 <div class="controlBox2_button">
-                  <div class="controlBtn2 "><img src="./img/product/tool/reset.svg" alt=""></div>
+                  <div class="controlBtn2 "><img src="./img/product/toolcontrolbar/control_reset.svg" alt=""></div>
                 </div>
               </div>
               <div id="eraser" class="controlBox3">
                 <div class="controlBox3_button">
-                  <div class="controlBtn3 "><img src="./img/product/tool/control_eraser.svg" alt=""></div>
+                  <div class="controlBtn3 "><img src="./img/product/toolcontrolbar/control_eraser.svg" alt=""></div>
                 </div>
               </div>
               <div id="group" class="controlBox4">
                 <div class="controlBox4_button">
-                  <div class="controlBtn4"><img src="./img/product/tool/merged.svg" alt=""></div>
+                  <div class="controlBtn4"><img src="./img/product/toolcontrolbar/merged.svg" alt=""></div>
                 </div>
               </div>
               <div id="ungroup" class="controlBox5">
                 <div class="controlBox5_button">
-                  <div class="controlBtn5"><img src="./img/product/tool/split.svg" alt=""></div>
+                  <div class="controlBtn5"><img src="./img/product/toolcontrolbar/split.svg" alt=""></div>
                 </div>
               </div>
               <div id="text" class="controlBox6">
                 <div class="controlBox6_button clicked">
-                  <div class="controlBtn6 clicked"><img src="./img/product/tool/text-symbol.svg" alt=""></div>
+                  <div class="controlBtn6 clicked"><img src="./img/product/toolcontrolbar/text-symbol.svg" alt=""></div>
                 </div>
               </div>
               <!-- <div id="filter_Sepia" class="controlBox7">
@@ -251,18 +251,18 @@
             </div> -->
               <div id="filter_Grayscale" class="controlBox8">
                 <div class="controlBox8_button">
-                  <div class="controlBtn8"><img src="./img/product/tool/change.svg" alt=""></div>
+                  <div class="controlBtn8"><img src="./img/product/toolcontrolbar/filter.svg" alt=""></div>
                 </div>
               </div>
               <div class="controlBox9">
                 <button id="imageUploader" class="controlBox9_button clicked">
                   <input type="file" id="file">
-                  <div class="controlBtn9 clicked"><img src="./img/product/tool/photo.svg" alt=""></div>
+                  <div class="controlBtn9 clicked"><img src="./img/product/toolcontrolbar/photo.svg" alt=""></div>
                 </button>
               </div>
               <div id="outputPngBtn" class="controlBox10">
                 <div class="controlBox10_button clicked">
-                  <div class="controlBtn10 clicked"><img src="./img/product/tool/control_download.svg" alt=""></div>
+                  <div class="controlBtn10 clicked"><img src="./img/product/toolcontrolbar/control_download.svg" alt=""></div>
                 </div>
               </div>
             </div>
@@ -395,53 +395,50 @@
                 <div class="orderBtnBottom"></div>
               </div>
             </div>
+            <input type="text" name="patternName" id="patternName">
           </div>
         </div>
       </div>
     </section>
     <section id="section3">
-      <div class="owl-carousel owl-theme owl-loaded">
-        <div class="owl-nav">
-          <div class="owl-prev"></div>
-          <div class="owl-next"></div>
-        </div>
+      <div class="owl-carousel owl-theme owl-loaded owl-drag">
         <div class="owl-stage-outer">
           <div class="owl-stage">
             <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/postmark/postmark_1.png" alt="" class="figure"></div>
+              <div class="owl_img"><img src="./img/product/figure/figure_animal_1.svg" alt="" class="figure"></div>
             </div>
             <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/postmark/postmark_2.png" alt="" class="figure"></div>
+              <div class="owl_img"><img src="./img/product/postmark/postmark_countries_1.svg" alt="" class="figure"></div>
             </div>
             <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/postmark/postmark_3.png" alt="" class="figure"></div>
+              <div class="owl_img"><img src="./img/product/postmark/postmark_countries_10.svg" alt="" class="figure"></div>
             </div>
             <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/postmark/postmark_4.png" alt="" class="figure"></div>
+              <div class="owl_img"><img src="./img/product/DIY/DIYtool_2.svg" alt="" class="figure"></div>
             </div>
             <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/postmark/postmark_5.png" alt="" class="figure"></div>
+              <div class="owl_img"><img src="./img/product/figure/figure_vector_8.svg" alt="" class="figure"></div>
             </div>
             <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/postmark/postmark_6.png" alt="" class="figure"></div>
+              <div class="owl_img"><img src="" alt="" class="figure"></div>
             </div>
             <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/figure/figure_1.png" alt="" class="figure"></div>
+              <div class="owl_img"><img src="" alt="" class="figure"></div>
             </div>
             <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/postmark/postmark_7.png" alt="" class="figure"></div>
+              <div class="owl_img"><img src="" alt="" class="figure"></div>
             </div>
             <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/postmark/postmark_8.png" alt="" class="figure"></div>
+              <div class="owl_img"><img src="" alt="" class="figure"></div>
             </div>
             <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/postmark/postmark_1.png" alt="" class="figure"></div>
+              <div class="owl_img"><img src="" alt="" class="figure"></div>
             </div>
             <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/postmark/postmark_2.png" alt="" class="figure"></div>
+              <div class="owl_img"><img src="" alt="" class="figure"></div>
             </div>
             <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/figure/figure_1.png" alt="" class="figure"></div>
+              <div class="owl_img"><img src="" alt="" class="figure"></div>
             </div>
           </div>
         </div>
@@ -449,15 +446,13 @@
     </section>
   </main>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
-  <!-- <script src="https://isotope.metafizzy.co/v1/jquery.isotope.min.js"></script> -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
     integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
   </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
   </script>
-  <script src="../node_modules/owl.carousel/src/js/owl.carousel.js"></script>
-  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.12/fabric.js'></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.4.0/fabric.js"></script>
   <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
@@ -474,137 +469,133 @@
     //  ================這是商品Filter用=========================
 
     new Vue({
-          el: '#app',
-          data: {
-            visibility: 'all',
-            items: [{
-                style: 'postmark',
-                id: 'itemCard1',
-                url: './img/product/postmark/postmark_3.png'
-              },
-              {
-                style: 'pattern',
-                id: 'itemCard2',
-                url: './img/product/postmark/postmark_1.png'
-              },
-              {
-                style: 'postmark',
-                id: 'itemCard3',
-                url: './img/product/postmark/postmark_2.png'
-              },
-              {
-                style: 'tool',
-                id: 'itemCard4',
-                url: './img/product/postmark/postmark_2.png'
-              },
-              {
-                style: 'tool',
-                id: 'itemCard5',
-                url: './img/product/postmark/postmark_3.png'
-              },
-              {
-                style: 'postmark',
-                id: 'itemCard6',
-                url: './img/product/postmark/postmark_3.png'
-              },
-              {
-                style: 'tool',
-                id: 'itemCard7',
-                url: './img/product/postmark/postmark_2.png'
-              },
-              {
-                style: 'tool',
-                id: 'itemCard8',
-                url: './img/product/postmark/postmark_1.png'
-              },
-              {
-                style: 'tool',
-                id: 'itemCard9',
-                url: './img/product/postmark/postmark_3.png'
-              },
-              {
-                style: 'pattern',
-                id: 'itemCard10',
-                url: './img/product/postmark/postmark_1.png'
-              },
-              {
-                style: 'tool',
-                id: 'itemCard11',
-                url: './img/product/postmark/postmark_1.png'
-              },
-              {
-                style: 'pattern',
-                id: 'itemCard12',
-                url: './img/product/postmark/postmark_3.png'
-              },
-              {
-                style: 'pattern',
-                id: 'itemCard13',
-                url: './img/product/postmark/postmark_3.png'
-              },
-              {
-                style: 'tool',
-                id: 'itemCard14',
-                url: './img/product/postmark/postmark_2.png'
-              },
-              {
-                style: 'postmark',
-                id: 'itemCard15',
-                url: './img/product/postmark/postmark_2.png'
-              },
-            ],
-            
+      el: '#app',
+      data: {
+        visibility: 'all',
+        items: [{
+            style: 'postmark',
+            id: 'itemCard1',
+            url: './img/product/postmark/postmark_3.png'
           },
-          page:1,
-          computed: {
-            // filteredItems() {
+          {
+            style: 'pattern',
+            id: 'itemCard2',
+            url: './img/product/postmark/postmark_1.png'
+          },
+          {
+            style: 'postmark',
+            id: 'itemCard3',
+            url: './img/product/postmark/postmark_2.png'
+          },
+          {
+            style: 'tool',
+            id: 'itemCard4',
+            url: './img/product/postmark/postmark_2.png'
+          },
+          {
+            style: 'tool',
+            id: 'itemCard5',
+            url: './img/product/postmark/postmark_3.png'
+          },
+          {
+            style: 'postmark',
+            id: 'itemCard6',
+            url: './img/product/postmark/postmark_3.png'
+          },
+          {
+            style: 'tool',
+            id: 'itemCard7',
+            url: './img/product/postmark/postmark_2.png'
+          },
+          {
+            style: 'tool',
+            id: 'itemCard8',
+            url: './img/product/postmark/postmark_1.png'
+          },
+          {
+            style: 'tool',
+            id: 'itemCard9',
+            url: './img/product/postmark/postmark_3.png'
+          },
+          {
+            style: 'pattern',
+            id: 'itemCard10',
+            url: './img/product/postmark/postmark_1.png'
+          },
+          {
+            style: 'tool',
+            id: 'itemCard11',
+            url: './img/product/postmark/postmark_1.png'
+          },
+          {
+            style: 'pattern',
+            id: 'itemCard12',
+            url: './img/product/postmark/postmark_3.png'
+          },
+          {
+            style: 'pattern',
+            id: 'itemCard13',
+            url: './img/product/postmark/postmark_3.png'
+          },
+          {
+            style: 'tool',
+            id: 'itemCard14',
+            url: './img/product/postmark/postmark_2.png'
+          },
+          {
+            style: 'postmark',
+            id: 'itemCard15',
+            url: './img/product/postmark/postmark_2.png'
+          },
+        ],
 
-            //   const vm = this;
-            //   if (vm.visibility == 'all') {
-            //     return vm.items
-            //   } else {
-            //     return vm.items.filter(
+      },
+      page: 1,
+      computed: {
+        // filteredItems() {
+        //   const vm = this;
+        //   if (vm.visibility == 'all') {
+        //     return vm.items
+        //   } else {
+        //     return vm.items.filter(
+        //       item => item.style == vm.visibility
+        //     );
+        //   }
+        // },
 
-            //       item => item.style == vm.visibility
-           
-            //     );
-
-            //   }
-            // },
-
-            filteredItems() {
-              var newitems = [];
-              const vm = this;
-              if (vm.visibility == 'all') {
-                return vm.items
-              } else {
-                vm.items.filter(function (item) {
-                  if (vm.visibility == item.style) {
-                    newitems.push(item)
-                  }
-                })
-                return newitems
+        filteredItems() {
+          var newitems = [];
+          const vm = this;
+          if (vm.visibility == 'all') {
+            return vm.items
+          } else {
+            vm.items.filter(function (item) {
+              if (vm.visibility == item.style) {
+                newitems.push(item)
               }
-            }
-            },
-            methods: {
-              // change(index) {
-              //   if (this.page == 1) {
-              //     if ([index] <3) return true;
-              //   } else if (this.page == 2) {
-              //     if ([index] < 8 && [index] >= 4) return true;
-              //   } else if (this.page == 3) {
-              //     if ([index]< 15 && [index] >= 8) return true;
-              //   }
-              // }
-            },
-            watch: {
-              // page() {
-              //   this.change();
-              // }
-            },
+            })
+            console.log(newitems)
+            return newitems
+          }
+        },
 
-          })
+      },
+      methods: {
+        // changePage1() {
+
+        //     if (newitems[index] < 5 && newitems[index] >= 0)
+        //       return newitems
+
+        //   }
+        // }
+      },
+      watch: {
+        // page() {
+        //   this.change();
+        // }
+      },
+
+    })
   </script>
 
   <script>
