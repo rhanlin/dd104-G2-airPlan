@@ -60,15 +60,6 @@ $('.orderBtn').mouseup(function () {
 
 
 //單一信件跳窗
-// let cavLet = document.getElementsByClassName("cav-letters")[0];
-// let cavBoxFrontRight = document.querySelector('.cav-boxFrontRight');
-// $('.cav-letClose').click(()=>{
-//   cavBoxFrontRight.classList.remove('active');
-// })
-// cavLet.addEventListener("click", ()=>{
-//   cavBoxFrontRight.classList.add('active');
-// });
-
 $(function () {
   let cavBoxRight = document.querySelector('.cav-boxFrontRight');
   $(".cav-letters").on("click", function (e) {

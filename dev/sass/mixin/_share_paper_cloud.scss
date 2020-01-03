@@ -6,11 +6,11 @@
 //備註：   需要調整其他屬性請新增class名稱，並在自己的.sass檔案中複寫掉
 //        不要改掉這支mixin
 //author: Rhan0
-@mixin paper_cloud($width:30vw) {
+@mixin paper_cloud($width:22vw) {
   .paper-cloud {
     width: $width;
     background-image: url(../img/share/paper-cloud.png);
-    height: 18vw;
+    height: 15vw;
     max-width: 440px;
     max-height: 325px;
     background-repeat: no-repeat;
