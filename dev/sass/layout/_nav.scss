@@ -461,7 +461,6 @@
   }
 }
 @include respond(small) {
-  
   .nav-body {
     width: 100%;
     .nav-hamPosition {
@@ -472,34 +471,34 @@
       }
     }
 
-  .nav-navBgWrap {
-    display: inline-block;
-    .nav-navBg {
-      > img {
-        display: none;
-      }
-      .nav-logoWrap {
-        img {
+    .nav-navBgWrap {
+      display: inline-block;
+      .nav-navBg {
+        > img {
+          display: none;
+        }
+        .nav-logoWrap {
+          img {
+            display: none;
+          }
+        }
+        .nav-pc {
+          display: none;
+        }
+        .nav-road {
           display: none;
         }
       }
-      .nav-pc {
-        display: none;
-      }
-      .nav-road {
-        display: none;
-      }
     }
-  }
 
-  .nav-navWrap {
+    .nav-navWrap {
     top: -200px !important;
     // display: none;
-  }
-  .open {
+    }
+    .open {
     display: block;
+    }
   }
-}
 }
 @include respond(note) {
   .nav-body {
