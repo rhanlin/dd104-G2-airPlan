@@ -657,18 +657,83 @@
 
 
 @include respond(mediumSize){
-  .signInBg{
-    .signInData{
+  .nav-body {
+    #navHead {
+      .nav-navBg {
+        img {}
+        .nav-navWrap {
+          .nav-navPageWrap {
+            .nav-list {
+              .nav-logo {}
+              li {
+                width: 20%;
+                a {
+
+                }
+              }
+            }
+          }
+        }
+        .nav-littleNav {
+          a {}
+        }
+        .nav-pc {
+          .cav-paper {}
+          .cav-coin {}
+        }
+      }
+    }
+    .nav-hamPosition {
+      .nav-hamburgerWrap {
+        .hambuger {}
+      }
+    }
+    .signInBg {
+      .signInData {
         padding: 20px;
         width: 60%;
+      }
     }
   }
+
 }
 @include respond(small){
-  .signInBg{
-    .signInData{
+  .nav-body {
+    #navHead {
+      .nav-navBg {
+        img {}
+        .nav-navWrap {
+          .nav-navPageWrap {
+            .nav-list {
+              .nav-logo {}
+              li {
+                // width: 22%;
+                a {
+
+                }
+              }
+            }
+          }
+        }
+        .nav-littleNav {
+          a {}
+        }
+        .nav-pc {
+          .cav-paper {}
+          .cav-coin {}
+        }
+      }
+    }
+    .nav-hamPosition {
+      .nav-hamburgerWrap {
+        .hambuger {}
+      }
+    }
+    .signInBg {
+      .signInData {
         padding: 20px;
         width: 70%;
+      }
     }
   }
 }
