@@ -461,7 +461,7 @@
   }
 }
 @include respond(small) {
-  }
+  
   .nav-body {
     width: 100%;
     .nav-hamPosition {
@@ -500,11 +500,15 @@
     display: block;
   }
 }
+}
 @include respond(note) {
   .nav-body {
     width: 100%;
     .nav-hamPosition {
       width: 100%;
+      .nav-hamburgerWrap {
+        display: inline-block;
+      }
     }
   }
 
@@ -541,6 +545,9 @@
     width: 100%;
     .nav-hamPosition {
       width: 100%;
+      .nav-hamburgerWrap {
+        display: inline-block;
+      }
     }
   }
 
