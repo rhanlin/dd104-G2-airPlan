@@ -1,14 +1,36 @@
+
+
 @mixin foldthePlane() {
   .planeBox {
     width: auto;
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: #444;
+    background-color: #ddd;
     box-sizing: border-box;
     display: none;
+    position: relative;
+    
   }
-
+  
+  #iceLand{
+    width: 100vw;
+    padding-bottom: 100vw;
+    border-radius: 50%;
+    // background-color: #151823;
+    background-image: url(../img/share/iceland.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+    position: absolute;
+    bottom: -100%;
+    left: 0%;
+    transform: translateX(-50%);
+    animation: iceLand 3s linear infinite;
+    
+  }
   #imgWrap {
     width: 55.6vw;
     max-width: 495px;
@@ -20,6 +42,93 @@
     animation-duration: .5s;
     animation-fill-mode: forwards;
     margin: 0 auto;
+    position: relative;
+    filter: drop-shadow(0px 0px 15px #bbb);
+    z-index: 9;
+    #planeShadow {
+      width: 5%;
+      height: 75%;
+      background: linear-gradient(40deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .1) 47%, rgba(0, 0, 0, 0) 100%);
+      border-radius: 40%;
+      filter: blur(6px);
+      position: absolute;
+      bottom: 0%;
+      left: 0;
+      transform: translateX(-50%);
+      opacity: 0;
+      animation-name: opacityShow;
+      animation-delay: .5s;
+      animation-duration: .5s;
+      animation-fill-mode: forwards;
+    }
+
+    #windSpeedWrap {
+      position: absolute;
+      width: 80%;
+      height: 50%;
+      left: 30%;
+      top: 0;
+      z-index: 99;
+      transform: translateY(100%) rotate(85deg);
+      opacity: 0;
+      animation-name: opacityShow;
+      animation-delay: .5s;
+      animation-duration: .5s;
+      animation-fill-mode: forwards;
+
+      span {
+        background: linear-gradient(90deg, #e3e1ea00 30%, #3c384d 90%);
+        border-radius: 50px;
+        display: block;
+        position: absolute;
+        height: 10px;
+        animation: speed ease;
+        animation-iteration-count: infinite;
+
+        &:nth-child(1) {
+          width: 100%;
+          left: 0%;
+          top: 0%;
+          animation-delay: 250ms;
+          animation-duration: 600ms;
+        }
+
+        &:nth-child(2) {
+          width: 50%;
+          left: 50%;
+          top: 38%;
+          animation-delay: 50ms;
+          animation-duration: 500ms;
+        }
+
+        &:nth-child(3) {
+          width: 30%;
+          left: 0;
+          top: 60%;
+          animation-duration: 250ms;
+        }
+
+        &:nth-child(4) {
+          width: 60%;
+          left: 5%;
+          top: 20%;
+          animation-delay: 250ms;
+          animation-duration: 900ms;
+        }
+      }
+    }
+  }
+
+  @keyframes speed {
+    0% {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateX(200%);
+      opacity: 0;
+    }
   }
 
   @keyframes showImgWrap {
@@ -33,7 +142,6 @@
       opacity: 1;
     }
   }
-
   @keyframes rotatePlane {
     from {
       transform: rotate(0);
@@ -43,6 +151,19 @@
     to {
       transform: rotate(-85deg);
       opacity: 1;
+    }
+  }
+  @keyframes hoverPlane {
+    0% {      
+      transform: rotate(-85deg) translate(15%, 20%);
+      opacity: .5;
+    }
+    50%{
+      opacity: 1;
+    }
+    to {
+      transform: rotate(-85deg) translate(-15%, -30%);
+      opacity: .5;
     }
   }
 
@@ -60,12 +181,10 @@
     /* 1 */
     clip-path: polygon(50% 0%, 100% 0, 100% 40%, 100% 100%, 0 100%, 0 40%, 0 0);
     z-index: 99;
-    /* 2 */
-    /* clip-path: polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0 100%, 0 34.5%, 0% 0%);
-      z-index: 9; */
   }
 
   .pointerAll {
+    --scale-value: 1;
     width: 3vw;
     height: 3vw;
     border-radius: 50%;
@@ -75,17 +194,29 @@
     z-index: 99999;
     animation-duration: .5s;
     animation-name: pointerName;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 8;
     animation-direction: alternate;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+    transform: translateY(-50%) scale3d(var(--scale-value), var(--scale-value), 1);
+    transition: transform cubic-bezier(0.175, 0.885, 0.32, 1.275) .2s;
+
+    &:active {
+      border-color: $main-yellow;
+      background-color: $main-white;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   #pointer {
     top: 0%;
     right: -1.8vw;
+    transform: translateY(-50%);
   }
 
   #pointer2 {
@@ -165,9 +296,6 @@
     /* 1 */
     clip-path: polygon(100% 0, 0 0, 100% 100%);
     z-index: 1;
-    /* 2 */
-    /* clip-path: polygon(0 300%, 0 0, 100% 100%);
-      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25); */
   }
 
   #imgRightTriangle2 {
@@ -254,4 +382,92 @@
   animation-duration: 0.5s; */
   }
 }
-  
+
+@keyframes opacityShow {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@keyframes shakePlane {
+  0% {
+    transform: rotate(-85deg) scale(0.95,1.05);
+  }
+  10% {
+    transform: rotate(-82deg) scale(0.9,1.1);
+  }
+  20% {
+    transform: rotate(-85deg) scale(0.95,1.05);
+  }
+  30% {
+    transform: rotate(-82deg) scale(0.9,1.1);
+  }
+  40% {
+    transform: rotate(-85deg) scale(0.95,1.05);
+  }
+  50% {
+    transform: rotate(-82deg) scale(0.9,1.1);
+  }
+  60% {
+    transform: rotate(-85deg) scale(0.95,1.05);
+  }
+  70% {
+    transform: rotate(-82deg) scale(0.9,1.1);
+  }
+  80% {
+    transform: rotate(-85deg) scale(0.95,1.05);
+  }
+  90% {
+    transform: rotate(-82deg) scale(0.9,1.1);
+  }
+  100% {
+    transform: rotate(-85deg) scale(0.95,1.05);
+  }
+}
+@keyframes shootPlane {
+  from{
+    transform: rotate(-85deg) translateY(-0%);
+    opacity: 1;
+  }
+  to{
+    transform: rotate(-85deg) translateY(-200%);
+    opacity: 0;
+  }
+}
+
+@keyframes shootPlaneSecond {
+  from{
+    opacity: 0;
+    transform: rotate(-85deg) translateY(200%);
+  }
+  to{
+    opacity: 1;
+    transform: rotate(-85deg) translateY(0%);
+  }
+}
+
+@keyframes iceLand {
+  from{
+    transform: rotate(0deg);
+    bottom: -98%;
+  }
+  to{
+    transform: rotate(360deg);
+    bottom: -100%;
+  }
+}
+
+@keyframes arocket {
+	0% {
+		transform: rotate(-85deg) translate(0,0);
+	}
+	50% {
+		transform: rotate(-85deg) translate(-5px,5px);
+	}
+	100% {
+		transform: rotate(-85deg) translate(0,0);
+	}
+}

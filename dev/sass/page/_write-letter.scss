@@ -912,7 +912,7 @@
                     flex-direction: row;
                     align-items: center;
                     // justify-content: center;
-                    width: 4vw;
+                    width: 5vw;
                     height: 20vw;
                     background-image: url('../img/share/message-frame-lg.svg');
                     background-repeat: no-repeat;
@@ -927,7 +927,7 @@
                         -webkit-writing-mode: vertical-lr;
                         writing-mode: vertical-lr;
                         margin: 0;
-                        padding: 0 15%;
+                        padding: 0 20%;
                         letter-spacing: .6rem;
                         color: $main-black;
                     }
@@ -935,7 +935,7 @@
 
                 .rightshopBtn {
                     position: absolute;
-                    top: -13%;
+                    top: -20%;
                     right: 0%;
                     transform: scaleX(-1);
 

@@ -52,7 +52,10 @@ function foldThePlane(){
 
   // console.log(pointerAll.id);
   document.querySelector('footer').style.display= "none";
+  
+
   pointerAll.addEventListener('dragstart',(e)=>{//touchmove
+    // pointerSetting();
     e.preventDefault();
     let pointerId = e.target.id
     if(pointerId === 'pointer'){
@@ -136,6 +139,9 @@ function foldThePlane(){
           imgWrap.style.opacity = "1";
           imgWrap.style.animationName = "rotatePlane";
           setTimeout(() => {
+            setPlaneShadow();
+            imgWrap.style.filter = 'unset';
+            imgWrap.style.cursor= 'pointer'; //讓飛機上的滑鼠變成pointer的狀態
             planeBody.style.display = "block";
             shootPlane();
           }, 500);
@@ -145,10 +151,140 @@ function foldThePlane(){
     }
   })
 }
+function setPlaneShadow(){
+  let planeShadow = document.createElement("div");
+  imgWrap.appendChild(planeShadow);
+  planeShadow.setAttribute('id','planeShadow');
+}
+
 
 function shootPlane(){
+  // 飛機hover
+  planeWing.addEventListener('mouseover',()=>{
+    // imgWrap.style.animation = "hoverPlane";
+    // imgWrap.style.animationDuration = "1s";
+    // imgWrap.style.animationFillMode = "none";
+    // imgWrap.style.animationIterationCount = "infinite";
+
+    // imgWrap.style.animation = "shell ease 600ms";
+    // imgWrap.style.animationDirection = "alternate";
+    // imgWrap.style.animationFillMode = "none";
+    // imgWrap.style.animationIterationCount = "infinite";
+    // imgWrap.style.transform = "rotate(-85deg)";
+  })
+  //射出飛機
   planeWing.addEventListener('click',()=>{
-    console.log('click');
-    
+    // console.log('click');
+
+    imgWrap.style.transform = "rotate(-85deg)";
+    //飛機飛起來動畫
+    let windSpeedWrap = document.createElement("div");
+    imgWrap.appendChild(windSpeedWrap);
+    windSpeedWrap.setAttribute('id','windSpeedWrap');
+    windSpeedWrap.innerHTML = `<span></span><span></span><span></span><span></span>`;
+
+    imgWrap.style.animation = "shakePlane ease 600ms";
+    imgWrap.style.animationDirection = "alternate";
+    imgWrap.style.animationFillMode = "forwards";
+    // imgWrap.style.animationFillMode = "forwards";
+    imgWrap.style.animationIterationCount = "infinite";
+    // imgWrap.style.width = "50vw";
+    // imgWrap.style.height = "45vw";
+    setTimeout(()=>{
+      imgWrap.style.animation = "shootPlane ease 600ms";
+      imgWrap.style.animationFillMode = "forwards";
+      setTimeout(()=>{
+        imgWrap.style.opacity = "0";
+        imgWrap.style.animation = "shootPlaneSecond ease 600ms";
+        imgWrap.style.animationFillMode = "forwards";
+        addScene();
+        setTimeout(()=>{
+          console.log('work!!');
+          document.getElementById('imgWrap').style = "display: block; opacity: 1; transform: rotate(-85deg); animation: arocket .2s linear infinite; filter: unset;";
+          // document.getElementById('imgWrap').style.opacity = "1";
+          // document.getElementById('imgWrap').style.animation = "arocket .2s linear infinite;";
+          // document.getElementById('imgWrap').style.animationFillMode = "forwards";
+        },800)
+      },800)
+    },1500)
   })
 }
+function addScene(){
+  let div = document.createElement("div");
+  let skyWorld = document.querySelector('.planeBox');
+  div.setAttribute('id','iceLand');
+  skyWorld.appendChild(div);
+}
+
+
+function pointerSetting(){
+ // The item (or items) to press and hold on
+    var item = document.querySelector("#pointer");
+ 
+    var timerID;
+    var counter = 0;
+ 
+    var pressHoldEvent = new CustomEvent("pressHold");
+ 
+    // Increase or decreae value to adjust how long
+    // one should keep pressing down before the pressHold
+    // event fires
+    var pressHoldDuration = 50;
+ 
+    // Listening for the mouse and touch events    
+    item.addEventListener("mousedown", pressingDown, false);
+    item.addEventListener("mouseup", notPressingDown, false);
+    item.addEventListener("mouseleave", notPressingDown, false);
+ 
+    item.addEventListener("touchstart", pressingDown, false);
+    item.addEventListener("touchend", notPressingDown, false);
+ 
+    // Listening for our custom pressHold event
+    item.addEventListener("pressHold", doSomething, false);
+ 
+    function pressingDown(e) {
+      // Start the timer
+      requestAnimationFrame(timer);
+ 
+      e.preventDefault();
+ 
+      console.log("Pressing!");
+    }
+ 
+    function notPressingDown(e) {
+      // Stop the timer
+      cancelAnimationFrame(timerID);
+      counter = 0;
+ 
+      item.style.setProperty("--scale-value", 1);
+      var scale = 1 + counter / 50;
+      item.style.transform = `translateY(-50%) scale3d(${scale},${scale}, 1)`;
+      console.log("Not pressing!");
+    }
+ 
+    //
+    // Runs at 60fps when you are pressing down
+    //
+    function timer() {
+      console.log("Timer tick!");
+ 
+      if (counter < pressHoldDuration) {
+        timerID = requestAnimationFrame(timer);
+        counter++;
+ 
+        item.style.setProperty("--scale-value", 1 + counter / 50);
+ 
+      } else {
+        console.log("Press threshold reached!");
+        item.dispatchEvent(pressHoldEvent);
+      }
+    }
+ 
+    function doSomething(e) {
+  console.log("pressHold event fired!");
+      var scale = 1 + counter / 50;
+      item.style.transform = `translateY(-50%) scale3d(${scale},${scale}, 1)`;
+    }
+ 
+}
+   
