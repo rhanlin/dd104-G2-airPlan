@@ -1,17 +1,13 @@
-<!-- 註冊 -->
+<!-- 修改會員資料 -->
 <?php 
 try {
-	// $dsn = "mysql:host=localhost;port=3306;dbname=dd104g2;charset=utf8";
-	// $user = "howard";
-	// $password = "h0322";
-	// $options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-	// $pdo = new PDO( $dsn, $user, $password, $options);
-	require_once "connectBook_userSetting.php";
+    require_once "connectBook_userSetting.php";
 	$sql2 = "select * from `member` where memEmail='{$_POST["memEmail"]}'";
 	$memPsw = $_POST['memPsw'];
 	$memPswAgain = $_POST['memPswAgain'];
-	$result=$pdo->query($sql2);
-	if($row_result=$result->fetch(PDO::FETCH_ASSOC)){
+    $result=$pdo->query($sql2);
+    $row_result=$result->fetch(PDO::FETCH_ASSOC)
+	if($row_result){
 		echo "<script>alert(`此Email已註冊過`); location.href = '../home.html';</script>";
 	}
 	else{
