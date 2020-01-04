@@ -883,6 +883,12 @@
                             }
                         }
                     }
+
+                    & input {
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        appearance: none;
+                    }
                 }
             }
         }
@@ -1034,7 +1040,8 @@
                             background-repeat: no-repeat;
                             background-position: center;
                             cursor: pointer;
-
+                            outline: none;
+                            border: none;
                             &:hover {
                                 height: 150%;
                                 background-image: url(../img/write-letter/stamp-btn-red.svg);
@@ -1070,4 +1077,6 @@
 
 
     }
+    @include foldthePlane();
+
 }

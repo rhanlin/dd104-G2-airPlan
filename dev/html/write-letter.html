@@ -17,7 +17,7 @@
 <body class="wrletter-body">
     @@include("./layout/nav.html")
     @@include("./layout/header.html")
-    <main>
+    <main id="writeLetterMain">
         <section class="writ-step-1" id="writStep1">
             <img class="dress-up" src="./img/share/blue-paint-bigline.svg"></img>
             <div class="box-white select-category">
@@ -156,12 +156,13 @@
                 <span class="arrow-white"></span>
                 <div id="painteType" class="painte-type">
                     <template v-for="(item, index) in 3">
-                        <div class="type" :class="{active: index === openIndex}" @click="clickPattern(index)">
+                        <label class="type" :class="{active: index === openIndex}" @click="clickPattern(index)">
+                            <input type="radio" name="userPattern">
                             <span class="box-white preview-paper" :class="{active: index === openIndex}" :style="{backgroundImage: userPattern[index]}"></span>
                             <span class="print-type-pattern" ref='bg' :style="{backgroundImage: userPattern[index]}">
                             </span>
                             <span class="printScraper" :class="{active: index === openIndex}"></span>
-                        </div>
+                        </label>
                     </template>
                 </div>
                 <span class="arrow-white reverse"></span>
@@ -194,7 +195,7 @@
                                 <span class="arrow-white"></span>
                                 <div class="stamp-type">
                                     <template v-for="item in 3">
-                                        <div class="type"><span></span></div>
+                                        <button class="type"><span></span></button>
                                     </template>
                                 </div>
                                 <span class="arrow-white reverse"></span>
@@ -204,7 +205,7 @@
                 </div>
             </div>
         </section>
-        @@include("./layout/foldthePlane.html")
+        
         <!-- <div class="btn-big-test" id="bigBtn">
             <div class="back side-way"></div>
             <div class="left side-way"></div>
@@ -219,6 +220,7 @@
             <a href="#" class="btn3d btn-basic-yellow">Click</a>
         </div> -->
     </main>
+    @@include("./layout/foldthePlane.html")
     @@include("./layout/footer.html")
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
     <script>
@@ -325,7 +327,6 @@
         let vm4 = new Vue({
             el: '#writStep4',
             data: {},
-
         });
     </script>
     <script>
@@ -345,7 +346,7 @@
             }, speed);
         }  
         
-        var speed = 200;
+        var speed = 220;
         var disciptionText = document.querySelectorAll('.discription');
         // var shopBtnText = document.querySelectorAll('.shop-title');
         // var delay = disciptionText[0].innerHTML.length * speed + speed;
@@ -354,7 +355,7 @@
         setInterval(() => {
             typeEffect(disciptionText[0].firstChild, speed);
             typeEffect(disciptionText[1].firstChild, speed);
-        }, 2000);
+        }, 2800);
 
         //對話視窗文字
         // setTimeout(function(){
@@ -363,6 +364,8 @@
         // }, delay);
     </script>
     <script src="./js/writeLetter.js"></script>
+    <script src="./js/foldThePlane.js"></script>
+
 </body>
 
 </html>
