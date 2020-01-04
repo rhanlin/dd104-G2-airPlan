@@ -8,6 +8,8 @@ canvas.setHeight(500);
 
 
 
+
+
 //=================剪裁飛機或郵戳畫板==========================
 canvas.controlsAboveOverlay = true;
 var clipPath = new fabric.Group([
@@ -403,7 +405,7 @@ outputPngBtn.addEventListener('click', () => output('png'))
 function output(formatType) {
 
   var patternName = $('#patternName').val();
-  console.log(patternName)
+  // console.log(patternName)
   let dataURL = canvas.toDataURL({
     format: `image/${formatType}`,
     top: 0,
@@ -635,6 +637,11 @@ canvas.on('drop', dropImg)
 
 
 
+let pngCanvas = new fabric.Canvas('pngCanvas', {
+  backgroundColor: "white"
+}); //創建fabric環境
+pngCanvas.setWidth(200);
+pngCanvas.setHeight(200);
 
 
 
@@ -642,16 +649,16 @@ canvas.on('drop', dropImg)
 // =======START RESPONSIVE CANVAS=======================
 canvas.on('after:render', function () {
   this.calcOffset();
-  console.log(this.calcOffset()); //每次渲染後抓到canvas的寬
+  // console.log(this.calcOffset()); //每次渲染後抓到canvas的寬
 });
 widthscrencan = (window.innerWidth > 0) ? window.innerWidth : screen.width; // capture width screen onload
 canvasScale = 1; //global 1倍大  
 
 var ocw = canvas.width;
-console.log('ocw: ', ocw);
+// console.log('ocw: ', ocw);
 var canvasBox = document.getElementById('canvasBox');
 canvasBox.width = ocw;
-console.log('canvasBox.width: ', canvasBox.width);
+// console.log('canvasBox.width: ', canvasBox.width);
 
 
 window.addEventListener('resize', resizeCanvas, false);
@@ -676,7 +683,7 @@ function resizeCanvas() {
   }
   canvas.setWidth(canvasBox.width)
 
-  console.log('window.innerWidth: ', window.innerWidth);
+  // console.log('window.innerWidth: ', window.innerWidth);
   canvas.renderAll();
 }
 resizeCanvas();
