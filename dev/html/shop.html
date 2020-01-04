@@ -111,22 +111,27 @@
                 <!-- <img src="./img/product/decorate/line_top.png" alt="" class="line_top">
                 <img src="./img/product/decorate/line_bottom.png" alt="" class="line_bottom"> -->
 
-                <!-- v-if="change(index)" -->
-                <div class="itemCard" v-for="item in filteredItems" :style="{backgroundImage:`url(${item.url})`}"
+                <!-- v-if="change(index)"                   filteredItems-->
+                <div class="itemCard" v-for="item in pagedListdata" :style="{backgroundImage:`url(${item.url})`}"
                   :id=item.id :class=item.class>
                   <img src="./img/product/decorate/clip-04.svg" alt="">
                 </div>
               </div>
               <div id="emptyBtn">
-                <div @click=changePage1 class="switchBtnBox">
+                <paginate :page-count="pageCount" :page-range=1 :init-page=1 :margin-pages=4 :page-class="'page-item'"
+                  :page-link-class="'page-link-item'" :container-class="'pagination pagination-sm'"
+                  :prev-class="'prev-item'" :prev-link-class="'prev-link-item'" :next-class="'next-item'"
+                  :next-link-class="'next-link-item'" :click-handler="pageCallback">
+                </paginate>
+                <!-- <div class="switchBtnBox">
                   <div class="switchBtn">page1</div>
                 </div>
-                <div @click=change(2) class="switchBtnBox">
+                <div class="switchBtnBox">
                   <div class="switchBtn">page2</div>
                 </div>
-                <div @click=change(3) class="switchBtnBox">
+                <div class="switchBtnBox">
                   <div class="switchBtn">page</div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -215,7 +220,8 @@
             <div class="controlToolTop">
               <div id="mode" class="controlBox1">
                 <div class="controlBox1_button clicked">
-                  <div class="controlBtn1 clicked"><img src="./img/product/toolcontrolbar/cannotWrite.png" alt="" id="modeImg">
+                  <div class="controlBtn1 clicked"><img src="./img/product/toolcontrolbar/cannotWrite.png" alt=""
+                      id="modeImg">
                   </div>
                 </div>
               </div>
@@ -262,7 +268,8 @@
               </div>
               <div id="outputPngBtn" class="controlBox10">
                 <div class="controlBox10_button clicked">
-                  <div class="controlBtn10 clicked"><img src="./img/product/toolcontrolbar/control_download.svg" alt=""></div>
+                  <div class="controlBtn10 clicked"><img src="./img/product/toolcontrolbar/control_download.svg" alt="">
+                  </div>
                 </div>
               </div>
             </div>
@@ -396,6 +403,10 @@
               </div>
             </div>
             <input type="text" name="patternName" id="patternName">
+            <div>
+              <canvas id="pngCanvas">
+              </canvas>
+            </div>
           </div>
         </div>
       </div>
@@ -408,10 +419,12 @@
               <div class="owl_img"><img src="./img/product/figure/figure_animal_1.svg" alt="" class="figure"></div>
             </div>
             <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/postmark/postmark_countries_1.svg" alt="" class="figure"></div>
+              <div class="owl_img"><img src="./img/product/postmark/postmark_countries_1.svg" alt="" class="figure">
+              </div>
             </div>
             <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/postmark/postmark_countries_10.svg" alt="" class="figure"></div>
+              <div class="owl_img"><img src="./img/product/postmark/postmark_countries_10.svg" alt="" class="figure">
+              </div>
             </div>
             <div class="owl-item">
               <div class="owl_img"><img src="./img/product/DIY/DIYtool_2.svg" alt="" class="figure"></div>
@@ -446,6 +459,10 @@
     </section>
   </main>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+
+  <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/vuejs-paginate@latest"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
     integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
@@ -454,8 +471,7 @@
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.4.0/fabric.js"></script>
-  <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script> -->
   <script src="./js/fastclick.js"></script>
   <script src="./js/jquery.nice-select.min.js"></script>
   <script src="./js/shop_carousel.js"></script>
@@ -467,143 +483,299 @@
   </script>
   <script>
     //  ================這是商品Filter用=========================
+    Vue.component('paginate', VuejsPaginate);
 
+    const PAGE_SIZE = 10;
+    const fOO_DATA = [{
+        style: 'postmark',
+        id: 'itemCard1',
+        url: ''
+      },
+      {
+        style: 'postmark',
+        id: 'itemCard2',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard3',
+        url: ''
+      },
+      {
+        style: 'pattern',
+        id: 'itemCard4',
+        url: ''
+      },
+      {
+        style: 'pattern',
+        id: 'itemCard5',
+        url: ''
+      },
+      {
+        style: 'postmark',
+        id: 'itemCard6',
+        url: ''
+      },
+      {
+        style: 'pattern',
+        id: 'itemCard7',
+        url: ''
+      },
+      {
+        style: 'postmark',
+        id: 'itemCard8',
+        url: ''
+      },
+      {
+        style: 'pattern',
+        id: 'itemCard9',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard10',
+        url: ''
+      },
+      {
+        style: 'pattern',
+        id: 'itemCard11',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard12',
+        url: ''
+      },
+      {
+        style: 'pattern',
+        id: 'itemCard13',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard14',
+        url: ''
+      },
+      {
+        style: 'pattern',
+        id: 'itemCard15',
+        url: ''
+      },
+      {
+        style: 'postmark',
+        id: 'itemCard16',
+        url: ''
+      },
+      {
+        style: 'postmark',
+        id: 'itemCard17',
+        url: ''
+      },
+      {
+        style: 'postmark',
+        id: 'itemCard18',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard19',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard20',
+        url: ''
+      },
+      {
+        style: 'postmark',
+        id: 'itemCard21',
+        url: ''
+      },
+      {
+        style: 'pattern',
+        id: 'itemCard22',
+        url: ''
+      },
+      {
+        style: 'pattern',
+        id: 'itemCard23',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard24',
+        url: ''
+      },
+      {
+        style: 'pattern',
+        id: 'itemCard25',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard26',
+        url: ''
+      },
+      {
+        style: 'pattern',
+        id: 'itemCard27',
+        url: ''
+      },
+      {
+        style: 'pattern',
+        id: 'itemCard28',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard29',
+        url: ''
+      },
+      {
+        style: 'postmark',
+        id: 'itemCard30',
+        url: ''
+      },
+    ]
     new Vue({
       el: '#app',
       data: {
         visibility: 'all',
-        items: [{
-            style: 'postmark',
-            id: 'itemCard1',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            style: 'pattern',
-            id: 'itemCard2',
-            url: './img/product/postmark/postmark_1.png'
-          },
-          {
-            style: 'postmark',
-            id: 'itemCard3',
-            url: './img/product/postmark/postmark_2.png'
-          },
-          {
-            style: 'tool',
-            id: 'itemCard4',
-            url: './img/product/postmark/postmark_2.png'
-          },
-          {
-            style: 'tool',
-            id: 'itemCard5',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            style: 'postmark',
-            id: 'itemCard6',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            style: 'tool',
-            id: 'itemCard7',
-            url: './img/product/postmark/postmark_2.png'
-          },
-          {
-            style: 'tool',
-            id: 'itemCard8',
-            url: './img/product/postmark/postmark_1.png'
-          },
-          {
-            style: 'tool',
-            id: 'itemCard9',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            style: 'pattern',
-            id: 'itemCard10',
-            url: './img/product/postmark/postmark_1.png'
-          },
-          {
-            style: 'tool',
-            id: 'itemCard11',
-            url: './img/product/postmark/postmark_1.png'
-          },
-          {
-            style: 'pattern',
-            id: 'itemCard12',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            style: 'pattern',
-            id: 'itemCard13',
-            url: './img/product/postmark/postmark_3.png'
-          },
-          {
-            style: 'tool',
-            id: 'itemCard14',
-            url: './img/product/postmark/postmark_2.png'
-          },
-          {
-            style: 'postmark',
-            id: 'itemCard15',
-            url: './img/product/postmark/postmark_2.png'
-          },
-        ],
-
+        items: [],
+        currentPage: 1,
+        pageCount: 1,
       },
-      page: 1,
+
       computed: {
+        pagedListdata: function () {
+          var vm = this;
+          // return vm.items
+          //   .filter(function (item) {
+          //     return item => item.style == vm.visibility;
+          //   })
+          //   .filter(function (item) {
+          //     return item.page === vm.currentPage
+          //   })
+
+
+
+          return vm.items.filter(
+              item => item.style == vm.visibility
+            );
+          if (vm.items && vm.items.length > 0) {
+            return vm.items.filter(function (x) {
+              return x.page === vm.currentPage
+            })
+          } else {
+            return [];
+          }
+
+        },
         // filteredItems() {
+        //   // var newitems = [];
+        //   var vm = this;
+        //   if (vm.visibility == 'all') {
+        //     return vm.items
+        //   } else {
+        //     vm.items.filter(function (item) {
+        //       return vm.visibility === item.style
+        //     })
+        //     console.log(item.style)
+        //     // return newitems
+        //     return [];
+        //   }
+        // },
+
+        // filteredItems() {
+
         //   const vm = this;
         //   if (vm.visibility == 'all') {
         //     return vm.items
         //   } else {
         //     return vm.items.filter(
+
         //       item => item.style == vm.visibility
+
         //     );
+
         //   }
         // },
 
-        filteredItems() {
-          var newitems = [];
-          const vm = this;
-          if (vm.visibility == 'all') {
-            return vm.items
-          } else {
-            vm.items.filter(function (item) {
-              if (vm.visibility == item.style) {
-                newitems.push(item)
-              }
-            })
-            console.log(newitems)
-            return newitems
-          }
-        },
-
-      },
-      methods: {
-        // changePage1() {
-
-        //     if (newitems[index] < 5 && newitems[index] >= 0)
-        //       return newitems
-
-        //   }
-        // }
       },
       watch: {
-        // page() {
-        //   this.change();
-        // }
+        items: function (val) {
+          this._setPage2Model();
+        }
       },
+      methods: {
+        _setPage2Model: function () {
+          var vm = this;
+          if (!vm.items && vm.items.length <= 0) {
+            vm.pageCount = 1;
+          } else {
+            vm.pageCount = parseInt(vm.items.length / PAGE_SIZE) + (vm.items.length / PAGE_SIZE > 0 ? 1 : 0)
+            for (var i = 0; i < vm.items.length; i++) {
+              vm.$set(vm.items[i], "page", parseInt(i / PAGE_SIZE) + 1)
+            }
+          }
+        },
+        pageCallback: function (page) {
+          var vm = this;
+          this.$set(vm, 'currentPage', page);
+        }
+      },
+      created() {
+        var vm = this;
+        vm.items = fOO_DATA;
+      },
+      mounted() {
+        axios
+          .get('./js/axios_post.php')
+          .then((res) => {
+            
+            var arr = res.data;
+            for (var i = 0; i < arr.length; i++) {
+              this.items[i].url = arr[i].prodUrl
+            }
+
+
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      }
+
+      // $.ajax({
+      //           type: 'POST',
+      //           url: './js/axios_post.php',
+      //           success: function (data) {
+      //            var arr = data;
+      //            console.log(arr)
+      //           }
+      //         });
+
 
     })
   </script>
 
   <script>
     //  ================這是3D按鈕用=========================
-    $('.switchBtn').mousedown(function () {
+    $('.prev-item').mousedown(function () {
       $(this).addClass('clicked');
     });
-    $('.switchBtn').mouseup(function () {
+    $('.prev-item').mouseup(function () {
+      $(this).removeClass('clicked');
+    });
+    $('.next-item').mousedown(function () {
+      $(this).addClass('clicked');
+    });
+    $('.next-item').mouseup(function () {
+      $(this).removeClass('clicked');
+    });
+    $('.page-link-item').mousedown(function () {
+      $(this).addClass('clicked');
+    });
+    $('.page-link-item').mouseup(function () {
       $(this).removeClass('clicked');
     });
 
