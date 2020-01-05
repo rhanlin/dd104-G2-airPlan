@@ -1,12 +1,12 @@
 <?php
-try{
+try {
     $dsn = "mysql:host=localhost;post=3306;dbname=dd104g2;charset=utf8";
     $user = "dd104g2";
     $password = "dd104g2";
-    $options = array(PDO::ATTR_CASE => PDO::CASE_NATURAL,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,PDO::ATTR_ORACLE_NULLS => PDO::NULL_NATURAL);
-    $pdo = new PDO($dsn,$user,$password,$options);
+    $options = array(PDO::ATTR_CASE => PDO::CASE_NATURAL, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_ORACLE_NULLS => PDO::NULL_NATURAL);
+    $pdo = new PDO($dsn, $user, $password, $options);
     $type = $_POST["type"];
-    switch($type){
+    switch ($type) {
         case "chat":
             $memNo1 = $_POST["memNo1"];
             $memNo2 = $_POST["memNo2"];
@@ -20,11 +20,20 @@ try{
             $chat = $content->fetchAll(PDO::FETCH_ASSOC);
             echo json_decode($chat);
             break;
+
+        case "mark":
+            $memNo1 = $_POST["memNo1"];
+            $sql = "select * from chat where memNo1 = :memNo1";
+            $content = $pdo->prepare($sql);
+            $content->bindValue(":memNo1", $memNo1);
+            $content->execute();
+            $chat = $content->fetchAll(PDO::FETCH_ASSOC);
+            echo json_decode($mark);
+            break;
     }
-}catch(PDOException $e){
-    echo "例外行號 : ", $e->getLine(),"<br>";
-	echo "例外原因 : ", $e->getMessage(),"<br>";
+} catch (PDOException $e) {
+    echo "例外行號 : ", $e->getLine(), "<br>";
+    echo "例外原因 : ", $e->getMessage(), "<br>";
 }
 
 // if(){}
-?>

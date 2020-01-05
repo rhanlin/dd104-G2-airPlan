@@ -300,8 +300,7 @@
 
         }) 
         // get_chat("chat")
-        function get_chat(test)
-        {
+        function get_chat(test){
             $.ajax({
                     url: './js/chatroom.php',  //網址或檔案
                     type: 'POST', //GET或POST
@@ -314,7 +313,8 @@
                     },
                     success: function(data){
                         console.log(data);
-                    },error: function (data){
+                    },
+                    error: function (data){
                         console.log(data);
                     }
                 });

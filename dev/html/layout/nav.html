@@ -17,7 +17,7 @@
                             </a> </li>
                         <li><a href="./catch-letter.html">
                                 <p class="nav-pageName">撈信</p> <span class="nav-circle-2"></span>
-                             </a> </li>
+                            </a> </li>
                         <li><a href="./shop.html">
                                 <p class="nav-pageName">商城</p> <span class="nav-circle-3"></span>
                             </a> </li>
@@ -65,23 +65,27 @@
         <div class="signInData">
             <h4>Sign In</h4>
             <p id="closeSigin" class="closeSignin">X</p>
-            <form class="formsignInData">
+            <form class="formsignInData" action="./js/login.php" method="post">
                 <img class="signInLogo" src="./img/share/LOGO.png" alt="Logo">
 
                 <label for="signInEmail">
                     <P>Email:</P>
                 </label>
-                <input class="signInEmail" input type="email" id="signInEmail" placeholder="Email" required autofocus>
+                <input class="signInEmail" input type="email" id="signInEmail" placeholder="Email" name="memEmail"
+                    required autofocus>
 
                 <label for="signInPassword">
                     <P>Password:</P>
                 </label>
-                <input class="signInPassword" type="password" id="signInPassword" placeholder="password" required>
+                <input class="signInPassword" type="password" id="signInPassword" placeholder="password" name="memPsw"
+                    required>
 
                 <p class="showForget" id="showForget">忘記密碼</p>
                 <p class="showRegister" id="showRegister">註冊</p>
                 <br>
-                <button class="signInBtn" type="submit"><p>Sign in</p></button>
+                <button class="signInBtn" type="submit">
+                    <p>Sign in</p>
+                </button>
             </form>
         </div>
         <!-- <img class="envelopeup" src="./img/user-setting/envelopeup.png" alt="">
@@ -98,20 +102,25 @@
                 <label for="registerEmail">
                     <P>Email:</P>
                 </label>
-                <input class="registerEmail" input type="email" id="registerEmail" placeholder="Email" name="memEmail" required autofocus>
+                <input class="registerEmail" input type="email" id="registerEmail" placeholder="Email" name="memEmail"
+                    required autofocus>
 
                 <label for="registerPassword">
                     <P>Password:</P>
                 </label>
-                <input class="registerPassword" type="password" id="registerPassword" placeholder="password" name="memPsw" required>
+                <input class="registerPassword" type="password" id="registerPassword" placeholder="password"
+                    name="memPsw" required>
 
                 <label for="registerPasswordCheck">
                     <P>Password again:</P>
                 </label>
-                <input class="registerPasswordCheck" type="password" id="registerPasswordCheck" placeholder="password again" name="memPswAgain" required>
+                <input class="registerPasswordCheck" type="password" id="registerPasswordCheck"
+                    placeholder="password again" name="memPswAgain" required>
 
                 <br>
-                <button class="registerBtn" type="submit"><p>Register</p></button>
+                <button class="registerBtn" type="submit">
+                    <p>Register</p>
+                </button>
             </form>
         </div>
     </div>
@@ -128,51 +137,53 @@
                 </label>
                 <input class="forgetEmail" input type="email" id="forgetEmail" placeholder="Email" required autofocus>
                 <br>
-                <button class="forgetBtn" type="submit"><p>Get</p></button>
+                <button class="forgetBtn" type="submit">
+                    <p>Get</p>
+                </button>
             </form>
         </div>
     </div>
 </div>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- 控制navbar上移 -->
-    <script>
-        var navBar_active = function () {
-            var scroll_top = $(window).scrollTop();
+<!-- 控制navbar上移 -->
+<script>
+    var navBar_active = function () {
+        var scroll_top = $(window).scrollTop();
 
-            $("posision").html(scroll_top);
+        $("posision").html(scroll_top);
 
-            if (scroll_top >= 560) {
-                $("div.nav-navBgWrap").addClass("-on");
-            } else {
-                $("div.nav-navBgWrap").removeClass("-on");
-            }
-        };
+        if (scroll_top >= 560) {
+            $("div.nav-navBgWrap").addClass("-on");
+        } else {
+            $("div.nav-navBgWrap").removeClass("-on");
+        }
+    };
 
-        $(function () {
-            $(window).scroll(function () {
-                navBar_active();
-            });
-
+    $(function () {
+        $(window).scroll(function () {
+            navBar_active();
         });
-    </script>
-    <script>
-        const hambuger = document.querySelector('.hambuger');
 
-        hambuger.addEventListener('click', () => {
-            hambuger.classList.toggle('change');
-        })
-    </script>
-    <script>
-        // hamburger icon 的切換
-        $(function () {
+    });
+</script>
+<script>
+    const hambuger = document.querySelector('.hambuger');
 
-            $("div.hambuger").on("click", function () {
-                $('#list').toggleClass('open');
-            });
+    hambuger.addEventListener('click', () => {
+        hambuger.classList.toggle('change');
+    })
+</script>
+<script>
+    // hamburger icon 的切換
+    $(function () {
 
+        $("div.hambuger").on("click", function () {
+            $('#list').toggleClass('open');
         });
+
+    });
         // let navStatus = document.getElementsByClassName(".nav-navPageWrap")[0];
         // if ("navStatus.style.display = none") {
         //     $(".nav-navPageWrap").toggle();
@@ -194,30 +205,36 @@
 
 
         // })
-    </script>
-    <!-- 會員登入/註冊/忘記密碼燈箱 -->
-    <script>
-        var signInBg = document.getElementById("signInBg");
-        var showSigin = document.getElementById("showSigin");
-        var closeSigin = document.getElementById("closeSigin");
-        var registerBg = document.getElementById("registerBg");
-        var showRegister = document.getElementById("showRegister");
-        var closeRegister = document.getElementById("closeRegister");
-        var forgetBg = document.getElementById("forgetBg");
-        var showForget = document.getElementById("showForget");
-        var closeForget = document.getElementById("closeForget");
-        showSigin.onclick = function(){
-            signInBg.style.display = "block";};
-        closeSigin.onclick = function(){
-            signInBg.style.display = "none";};
-        showRegister.onclick = function(){
-            registerBg.style.display = "block";
-            signInBg.style.display = "none";};
-        closeRegister.onclick = function(){
-            registerBg.style.display = "none";};
-        showForget.onclick = function(){
-            forgetBg.style.display = "block";
-            signInBg.style.display = "none";};
-        closeForget.onclick = function(){
-            forgetBg.style.display = "none";};
-    </script>
+</script>
+<!-- 會員登入/註冊/忘記密碼燈箱 -->
+<script>
+    var signInBg = document.getElementById("signInBg");
+    var showSigin = document.getElementById("showSigin");
+    var closeSigin = document.getElementById("closeSigin");
+    var registerBg = document.getElementById("registerBg");
+    var showRegister = document.getElementById("showRegister");
+    var closeRegister = document.getElementById("closeRegister");
+    var forgetBg = document.getElementById("forgetBg");
+    var showForget = document.getElementById("showForget");
+    var closeForget = document.getElementById("closeForget");
+    showSigin.onclick = function () {
+        signInBg.style.display = "block";
+    };
+    closeSigin.onclick = function () {
+        signInBg.style.display = "none";
+    };
+    showRegister.onclick = function () {
+        registerBg.style.display = "block";
+        signInBg.style.display = "none";
+    };
+    closeRegister.onclick = function () {
+        registerBg.style.display = "none";
+    };
+    showForget.onclick = function () {
+        forgetBg.style.display = "block";
+        signInBg.style.display = "none";
+    };
+    closeForget.onclick = function () {
+        forgetBg.style.display = "none";
+    };
+</script>

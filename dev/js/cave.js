@@ -6,9 +6,11 @@ $(function () {
     $(this).closest("ul").find("a.tab1").removeClass("-on");
     $(this).addClass("-on");
 
-
     $("div.tab1").removeClass("-on");
     $("div.tab1." + $(this).attr("data-target")).addClass("-on");
+
+    $(".cav-preview-plan").removeClass("-on");
+    $(".cav-preview-plan." + $(this).attr("data-target")).addClass("-on");
   });
 });
 //bookMarkR
@@ -18,7 +20,6 @@ $(function () {
 
     $(this).closest("ul").find("a.tab2").removeClass("-on");
     $(this).addClass("-on");
-
 
     $("div.tab2").removeClass("-on");
     $("div.tab2." + $(this).attr("data-target")).addClass("-on");
@@ -81,22 +82,42 @@ $(function () {
 
 });
 
-//打賞跳金幣
-$(function(){
-  $(".like").on("click",function(){
+//打賞跳金幣,並只能打賞一次
+$(function () {
+  $(".like").on("click", function () {
     $(this).parents(".cav-letComment").find(".cav-commId").addClass("active");
     console.log("coin");
     setTimeout(() => {
       $(".cav-commId").removeClass('active');
-  }, 1000)
+    }, 1000)
+    $(this).attr("disabled", true);
+  });
+});
+
+//檢舉跳窗
+$(function () {
+  $(".report").on("click", function () {
+    $(".cav-reportList").toggle();
+  });
+  $(".closeTag").on("click", function () {
+    $(".cav-reportList").toggle();
+  });
+  $(".cav-sendReport").on("click", function (e) {
+    if ($("#cav-reportSelector").val() == null) {
+      alert("請選擇原因");
+      e.preventDefault();
+    } else {
+      $(".cav-reportList").toggle();
+      alert("檢舉已送出，我們將盡速審核");
+      // $("#cav-reportForm").submit();
+    }
   });
 });
 
 
 //選取所要套用的圖案
 $(function () {
-  $("div.cav-prodI").on("click", function (e) {
-
+  $("div.cav-prodI").on("click", function () {
     $("div.cav-prodI").removeClass("wearing");
     $(this).addClass("wearing");
   });
@@ -104,10 +125,26 @@ $(function () {
 
 //選取所要套用的郵戳
 $(function () {
-  $("div.cav-prodU").on("click", function (e) {
-
+  $("div.cav-prodU").on("click", function () {
     $("div.cav-prodU").removeClass("wearing");
     $(this).addClass("wearing");
   });
 });
 
+//預覽要套用的圖案
+$(function(){
+  $(".cav-prodI").find("img").on("click",function(){
+    let ii = $(this).attr("src");
+    // console.log(ii);
+    $(".cav-mask-1").css("background-image", `url(${ii})`);
+  });
+});
+
+//預覽要套用的郵戳
+$(function(){
+  $(".cav-prodU").find("img").on("click",function(){
+    let uu = $(this).attr("src");
+    // console.log(uu);
+    $(".cav-mask-2").css("background-image", `url(${uu})`);
+  });
+});
