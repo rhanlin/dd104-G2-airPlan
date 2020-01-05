@@ -13,7 +13,7 @@ header {
             width: 70vw;
             height: auto;
             margin: 0 auto;
-            border: 1px solid red;
+            // border: 1px solid red;
             text-align: center;
 
             .bottom-bg {
@@ -106,40 +106,57 @@ header {
 
     header {
         .white-space-bg {
-            margin-top: 5vw;
-
+            margin-top: 15%;
+            background: unset;
             .head-box {
+                width: 85vw;
+                margin: 0 5% 0 10%;
+
                 .bottom-bg {
                     width: 100%;
-                    height: 35vw;
+                    height: 50vw;
 
                     .clip-left {
                         top: -23%;
                         left: 15%;
+                        width: 12vw;
 
-                        &:before {}
+                        &:before {
+                            width: 3.5%;
+                            height: 15vw;
+                            top: -0.3vw;
+                        }
                     }
 
                     .clip-right {
                         top: -23%;
                         right: 18%;
+                        width: 12vw;
 
-                        &:before {}
+                        &:before { 
+                            width: 3.5%;
+                            height: 15vw;
+                            top: -0.3vw;
+                        }
                     }
 
                     .top-left-bg {
                         width: 100%;
-                        height: 35vw;
+                        height: 100%;
                         left: -3vw;
-                        top: -3vw;
+                        top: 3vw;
 
-                        .headpg-name {}
+                        .headpg-name {
+                            font-size: 3.5rem;
+                            div{
+                                width: 100%;
+                            }
+                        }
                     }
                 }
             }
         }
     }
-
 }
 
 @include respond(iphone) {
@@ -154,6 +171,7 @@ header {
     header {
         .white-space-bg {
             margin-top: 15%;
+            background: unset;
 
             .head-box {
                 width: 85vw;

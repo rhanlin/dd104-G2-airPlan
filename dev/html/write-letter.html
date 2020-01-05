@@ -12,6 +12,12 @@
             box-sizing: border-box;
         }
     </style>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+    <script>
+        window.onload = function() {
+            FastClick.attach(document.body);     
+        }
+    </script> -->
 </head>
 
 <body class="wrletter-body">
@@ -156,7 +162,7 @@
                 <span class="arrow-white"></span>
                 <div id="painteType" class="painte-type">
                     <template v-for="(item, index) in 3">
-                        <label class="type" :class="{active: index === openIndex}" @click="clickPattern(index)">
+                        <label class="type" :class="{active: index === openIndex}" @click="clickPattern(index)" @touchstart="clickPattern(index)">
                             <input type="radio" name="userPattern">
                             <span class="box-white preview-paper" :class="{active: index === openIndex}" :style="{backgroundImage: userPattern[index]}"></span>
                             <span class="print-type-pattern" ref='bg' :style="{backgroundImage: userPattern[index]}">
@@ -223,6 +229,7 @@
     @@include("./layout/foldthePlane.html")
     @@include("./layout/footer.html")
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+    
     <script>
         const newsCat = {
             template: `

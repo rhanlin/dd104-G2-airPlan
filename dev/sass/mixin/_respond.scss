@@ -18,7 +18,11 @@
       @content;
     }
   }
-
+  @else if $breakpoint=="smallMedium" {
+    @media all and (max-width:$ipad-laptop-max)and(min-width:$ipad-laptop-min) {
+      @content;
+    }
+  }
   @else if $breakpoint=="mediumSize" {
     @media all and (max-width:$laptop-max)and(min-width:$laptop-min) {
       @content;
