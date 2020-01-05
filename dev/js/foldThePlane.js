@@ -51,9 +51,9 @@ function foldThePlane(){
   let planeWing = document.getElementById('planeWing');
 
   // console.log(pointerAll.id);
-  document.querySelector('footer').style.display= "none";
-  
-
+  document.querySelector('footer').style.display= "none";//footer消失
+  document.querySelector('.nav-hamPosition').style.display = "none";//選單消失
+  //桌機觸發條件
   pointerAll.addEventListener('dragstart',(e)=>{//touchmove
     // pointerSetting();
     e.preventDefault();
@@ -62,8 +62,10 @@ function foldThePlane(){
       //折右邊 第一次
       let pointer = document.getElementById('pointer');
       pointer.style.visibility = "hidden";
+      imgRightTriangle.style.webkitClipPath = "polygon(-300% 300%, 0 0, 100% 100%)";
       imgRightTriangle.style.clipPath = "polygon(-300% 300%, 0 0, 100% 100%)";
       imgRightTriangle.style.boxShadow = "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25)";
+      img.style.webkitClipPath = "polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0 100%, 0 34.5%, 0% 0%)";
       img.style.clipPath = "polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0 100%, 0 34.5%, 0% 0%)";
       img.style.zIndex='1';
       imgLeftTriangle.style.display = 'none';
@@ -78,8 +80,10 @@ function foldThePlane(){
       pointer2.style.visibility = "hidden";
       imgLeftTriangle.style.display = 'block';
 
+      imgLeftTriangle.style.webkitClipPath = "polygon(0 100%, 100% 300%, 100% 0)";
       imgLeftTriangle.style.clipPath = "polygon(0 100%, 100% 300%, 100% 0)";
       imgLeftTriangle.style.boxShadow = "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25)";
+      img.style.webkitClipPath = "polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0 100%, 0 34.5%, 50% 34.5%)";
       img.style.clipPath = "polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0 100%, 0 34.5%, 50% 34.5%)";
       img.style.zIndex='1';
       
@@ -95,6 +99,7 @@ function foldThePlane(){
       imgRightTriangle.style.display = 'none';
       pointer3.style.visibility = "hidden";
       imgRightTriangle2.style.boxShadow = "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25)";
+      img.style.webkitClipPath = "polygon(50% 0%, 50% 45%, 100% 85%, 100% 100%, 0px 100%, 0% 85%, 0% 34.5%)";
       img.style.clipPath = "polygon(50% 0%, 50% 45%, 100% 85%, 100% 100%, 0px 100%, 0% 85%, 0% 34.5%)";
       img.style.zIndex='1';
       //把id改成pointer4
@@ -108,6 +113,7 @@ function foldThePlane(){
       imgLeftTriangle.style.display = 'none';
       pointer4.style.visibility = "hidden";
       imgLeftTriangle2.style.boxShadow = "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25)";
+      img.style.webkitClipPath = "polygon(50% 0%, 50% 45%, 100% 85%, 100% 100%, 0% 100%, 0% 85%, 50% 45%)";
       img.style.clipPath = "polygon(50% 0%, 50% 45%, 100% 85%, 100% 100%, 0% 100%, 0% 85%, 50% 45%)";
       img.style.zIndex='1';
 
@@ -129,6 +135,7 @@ function foldThePlane(){
 
       let foldAnimate = false;
       setTimeout(() => {
+        imgFinalStep.style.webkitClipPath = "polygon(50% 0%, 100% 85%, 100% 100%, 100% 100%, 50% 100%)";
         imgFinalStep.style.clipPath = "polygon(50% 0%, 100% 85%, 100% 100%, 100% 100%, 50% 100%)";
         setTimeout(() => {
           planeWing.style.display = "block";
@@ -150,7 +157,130 @@ function foldThePlane(){
       
     }
   })
+  //手機觸發條件
+  pointerAll.addEventListener('touchend',(e)=>{//touchmove
+    // pointerSetting();
+    e.preventDefault();
+    let pointerId = e.target.id
+    if(pointerId === 'pointer'){
+      //折右邊 第一次
+      let pointer = document.getElementById('pointer');
+      pointer.style.visibility = "hidden";
+      imgRightTriangle.style.webkitClipPath = "polygon(-300% 300%, 0 0, 100% 100%)";
+      imgRightTriangle.style.clipPath = "polygon(-300% 300%, 0 0, 100% 100%)";
+      imgRightTriangle.style.boxShadow = "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25)";
+      img.style.webkitClipPath = "polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0 100%, 0 34.5%, 0% 0%)";
+      img.style.clipPath = "polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0 100%, 0 34.5%, 0% 0%)";
+      img.style.zIndex='1';
+      imgLeftTriangle.style.display = 'none';
+      //把id改成pointer2
+      pointer.setAttribute('id','pointer2');
+      document.getElementById('pointer2').style.visibility = "";
+      console.log('nowID = ',pointerAll.id);
+
+    }else if(pointerId === 'pointer2'){
+      //折左邊 第一次
+      let pointer2 = document.getElementById('pointer2');
+      pointer2.style.visibility = "hidden";
+      imgLeftTriangle.style.display = 'block';
+
+      imgLeftTriangle.style.webkitClipPath = "polygon(0 100%, 100% 300%, 100% 0)";
+      imgLeftTriangle.style.clipPath = "polygon(0 100%, 100% 300%, 100% 0)";
+      imgLeftTriangle.style.boxShadow = "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25)";
+      img.style.webkitClipPath = "polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0 100%, 0 34.5%, 50% 34.5%)";
+      img.style.clipPath = "polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0 100%, 0 34.5%, 50% 34.5%)";
+      img.style.zIndex='1';
+      
+      //把id改成pointer3
+      pointer2.setAttribute('id','pointer3');
+      document.getElementById('pointer3').style.visibility = "";
+      console.log('nowID = ',pointerAll.id);
+
+    }else if(pointerId === 'pointer3'){
+      //折右邊 第二次
+      let pointer3 = document.getElementById('pointer3');
+      imgRightTriangle2.style.display = 'block';
+      imgRightTriangle.style.display = 'none';
+      pointer3.style.visibility = "hidden";
+      imgRightTriangle2.style.boxShadow = "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25)";
+      img.style.webkitClipPath = "polygon(50% 0%, 50% 45%, 100% 85%, 100% 100%, 0px 100%, 0% 85%, 0% 34.5%)";
+      img.style.clipPath = "polygon(50% 0%, 50% 45%, 100% 85%, 100% 100%, 0px 100%, 0% 85%, 0% 34.5%)";
+      img.style.zIndex='1';
+      //把id改成pointer4
+      pointer3.setAttribute('id','pointer4');
+      document.getElementById('pointer4').style.visibility = "";
+      console.log('nowID = ',pointerAll.id);
+    }else if(pointerId === 'pointer4'){
+      //折左邊 第二次
+      let pointer4 = document.getElementById('pointer4');
+      imgLeftTriangle2.style.display = 'block';
+      imgLeftTriangle.style.display = 'none';
+      pointer4.style.visibility = "hidden";
+      imgLeftTriangle2.style.boxShadow = "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25)";
+      img.style.webkitClipPath = "polygon(50% 0%, 50% 45%, 100% 85%, 100% 100%, 0% 100%, 0% 85%, 50% 45%)";
+      img.style.clipPath = "polygon(50% 0%, 50% 45%, 100% 85%, 100% 100%, 0% 100%, 0% 85%, 50% 45%)";
+      img.style.zIndex='1';
+
+      //把id改成pointer5
+      pointer4.setAttribute('id','pointer5');
+      document.getElementById('pointer5').style.visibility = "";
+      console.log('nowID = ',pointerAll.id);
+    }else if(pointerId === 'pointer5'){
+      //折右邊 最後一次
+      let pointer5 = document.getElementById('pointer5');
+      imgFinalStep.style.display = 'block';
+      imgRightTriangle2.style.display = 'none';
+      pointer5.style.visibility = "hidden";
+      imgLeftTriangle2.style.display = "none"
+      // imgFinalStep.style.boxShadow = "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25)";
+      // img.style.clipPath = "polygon(50% 0%, 0 85%, 0 100%, 0 100%, 50% 100%);";
+      img.style.display = 'none';
+      // img.style.zIndex='1';
+
+      let foldAnimate = false;
+      setTimeout(() => {
+        imgFinalStep.style.webkitClipPath = "polygon(50% 0%, 100% 85%, 100% 100%, 100% 100%, 50% 100%)";
+        imgFinalStep.style.clipPath = "polygon(50% 0%, 100% 85%, 100% 100%, 100% 100%, 50% 100%)";
+        setTimeout(() => {
+          planeWing.style.display = "block";
+          
+          // 執行自動動畫
+          // imgFinalStep.style.background = "#aaa";
+          planeWing.style.animationName = "foldAnimationStep2";
+          let imgWrap = document.getElementById('imgWrap');
+          imgWrap.style.opacity = "1";
+          imgWrap.style.animationName = "rotatePlane";
+          setTimeout(() => {
+            deviceSet();
+            console.log(window.orientation);
+            
+            setPlaneShadow();
+            imgWrap.style.filter = 'unset';
+            imgWrap.style.cursor= 'pointer'; //讓飛機上的滑鼠變成pointer的狀態
+            planeBody.style.display = "block";
+            shootPlane();
+          }, 500);
+        }, 500);
+      }, 500);
+      
+    }
+  })
 }
+function deviceSet(){
+  //判斷手機方向：
+  // window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
+  //   if (window.orientation === 180 || window.orientation === 0) {
+  //       alert('目前您的螢幕為縱向！');
+  //       window.orientation = 90;
+  //   }
+  //   if (window.orientation === 90 || window.orientation === -90 ){
+  //       alert('目前您的螢幕為橫向！');
+  //   }
+  // }, false);
+
+  //判斷瀏覽器
+}
+
 function setPlaneShadow(){
   let planeShadow = document.createElement("div");
   imgWrap.appendChild(planeShadow);
@@ -182,7 +312,11 @@ function shootPlane(){
     imgWrap.appendChild(windSpeedWrap);
     windSpeedWrap.setAttribute('id','windSpeedWrap');
     windSpeedWrap.innerHTML = `<span></span><span></span><span></span><span></span>`;
-
+    //判斷是否為手機版
+    if(screen.width<=414){
+      imgWrap.style.width = '55vw';
+      imgWrap.style.height = '80vw';
+    }
     imgWrap.style.animation = "shakePlane ease 600ms";
     imgWrap.style.animationDirection = "alternate";
     imgWrap.style.animationFillMode = "forwards";
@@ -200,8 +334,14 @@ function shootPlane(){
         addScene();
         setTimeout(()=>{
           console.log('work!!');
-          document.getElementById('imgWrap').style = "display: block; opacity: 1; transform: rotate(-85deg); animation: arocket .2s linear infinite; filter: unset;";
-          // document.getElementById('cloudDiv').style.animation ="ascene 5s linear infinite;";//...??
+
+          //判斷是否為手機版
+          if(screen.width<=414){
+            document.getElementById('imgWrap').style = "display: block; opacity: 1; transform: rotate(-85deg); animation: arocket .2s linear infinite; filter: unset;width:55vw;height:80vw";
+          }else{
+            document.getElementById('imgWrap').style = "display: block; opacity: 1; transform: rotate(-85deg); animation: arocket .2s linear infinite; filter: unset;";
+            // document.getElementById('cloudDiv').style.animation ="ascene 5s linear infinite;";//...??
+          }
         },800)
       },800)
     },1500)

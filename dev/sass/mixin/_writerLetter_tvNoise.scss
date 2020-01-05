@@ -28,7 +28,7 @@
       background-image: url(../img/write-letter/screen1.png);
       /* url('https://image.ibb.co/iMHMNv/tv.png'), */
       background-size: cover;
-      background-position: center;
+      background-position: 0 10%;
 
     }
 
@@ -65,14 +65,14 @@
       }
 
       .title {
-        font-size: .15vw;
         position: relative;
         top: -6%;
         line-height: 1rem;
-        font-family: "C64 User Mono";
+        
         padding: 0 .5vw;
         p{
-          font-size: .8vw;
+          font-family: "C64 User Mono";
+          font-size: 1rem;
         }
       }
 
