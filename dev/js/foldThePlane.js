@@ -201,9 +201,7 @@ function shootPlane(){
         setTimeout(()=>{
           console.log('work!!');
           document.getElementById('imgWrap').style = "display: block; opacity: 1; transform: rotate(-85deg); animation: arocket .2s linear infinite; filter: unset;";
-          // document.getElementById('imgWrap').style.opacity = "1";
-          // document.getElementById('imgWrap').style.animation = "arocket .2s linear infinite;";
-          // document.getElementById('imgWrap').style.animationFillMode = "forwards";
+          // document.getElementById('cloudDiv').style.animation ="ascene 5s linear infinite;";//...??
         },800)
       },800)
     },1500)
@@ -214,6 +212,16 @@ function addScene(){
   let skyWorld = document.querySelector('.planeBox');
   div.setAttribute('id','iceLand');
   skyWorld.appendChild(div);
+
+  let cloudDiv = document.createElement("div");
+  cloudDiv.setAttribute('id','cloudDiv');
+  skyWorld.appendChild(cloudDiv);
+  document.getElementById('cloudDiv').innerHTML = `
+  <span class="cloud cloud1"><i class="fa fa-cloud" aria-hidden="true"></i></span>
+  <span class="cloud cloud2"><i class="fa fa-cloud" aria-hidden="true"></i></span>
+  <span class="cloud cloud3"><i class="fa fa-cloud" aria-hidden="true"></i></span>
+  `;
+  // document.getElementById('cloudDiv').style.animation = "showScene 500ms ease;";//...??
 }
 
 

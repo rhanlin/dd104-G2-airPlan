@@ -10,15 +10,49 @@
     box-sizing: border-box;
     display: none;
     position: relative;
-    
+    overflow: hidden;
   }
-  
+  #cloudDiv{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: #3b93ff;
+    overflow: hidden;
+    box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+    animation: ascene 5s linear infinite;
+    .cloud {
+      position: absolute;
+      color: #ccc;
+      animation:  acloud 1.8s linear infinite;
+    }
+    .cloud1 {
+      left: 10%;
+      top:30%;
+      font-size: 6em;
+    }
+    .cloud2 {
+      left: 45%;
+      top:10%;
+      font-size: 3em;
+      z-index: -1;
+      animation-delay: -0.8s;
+    }
+    .cloud3 {
+      right: 20%;
+      top:18%;
+      font-size: 3em;
+      animation-delay: -0.4s;
+    }
+  }
   #iceLand{
     width: 100vw;
     padding-bottom: 100vw;
     border-radius: 50%;
     // background-color: #151823;
-    background-image: url(../img/share/iceland.png);
+    // background-image: url(../img/share/iceland.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -470,4 +504,37 @@
 	100% {
 		transform: rotate(-85deg) translate(0,0);
 	}
+}
+
+@keyframes ascene {
+	0% {
+		background: #b339ff
+	}
+	30% {
+		background: #3b93ff
+	}
+	70% {
+		background: #3b93ff
+	}
+	100% {
+		background: #b339ff
+	}
+}
+@keyframes acloud {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(1000%);
+	}
+}
+@keyframes showScene {
+  from{
+    opacity: .5;
+    transform: translate(-200%,-50%)
+  }
+  to{
+    opacity: 1;
+    transform: translate(-50%,-50%)
+  }
 }
