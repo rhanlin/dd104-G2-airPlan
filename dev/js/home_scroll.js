@@ -1,6 +1,68 @@
 var controller = new ScrollMagic.Controller();
 
-// 吊紙中間消失
+//第一屏動畫
+
+//---飛機帶頭衝衝衝---
+let firstPlanePara = new TimelineMax({});
+
+firstPlanePara.to('.firstPlane', 3, {
+    x: "760%",
+    ease: Power0.easeNone,
+}).to('.firstPlane', 2, {
+    x: "750%",
+    y: "-20%",
+    repeat: -1,
+    yoyo: true,
+    ease: Power0.easeNone,
+});
+
+let sceneFirstPlane = new ScrollMagic.Scene({
+    triggerElement: '.home_first',
+    daration: '100%'
+}).setTween(firstPlanePara).addIndicators().addTo(controller);
+
+//---白雲飄進---
+let cloudWhitePara = new TimelineMax({});
+
+cloudWhitePara.to('.cloudWhite', 3, {
+    x: "48.5%",
+    ease: Power0.easeNone,
+}).to('.cloudWhite', 2, {
+    // opacity: 0.5,
+    scale: 1.1,
+    repeat: -1,
+    yoyo: true,
+    ease: Power0.easeNone,
+});
+
+let sceneCloudWhite = new ScrollMagic.Scene({
+    triggerElement: '.home_first',
+    daration: '100%'
+}).setTween(cloudWhitePara).addIndicators().addTo(controller);
+
+//---藍雲飄進---
+let cloudBluePara = new TimelineMax({});
+
+cloudBluePara.to('.cloudBlue', 3, {
+    delay: 0.2,
+    x: "45%",
+    ease: Power0.easeNone,
+}).to('.cloudBlue', 2, {
+    // opacity: 0.5,
+    scale: 1.1,
+    repeat: -1,
+    yoyo: true,
+    ease: Power0.easeNone,
+});
+
+let sceneCloudBlue = new ScrollMagic.Scene({
+    triggerElement: '.home_first',
+    daration: '200%'
+}).setTween(cloudBluePara).addIndicators().addTo(controller);
+
+
+//山之間的動畫
+//---吊紙中間消失---
 let hang3 = TweenMax.to('.hang3', 1, {
     opacity: 0,
 });
@@ -12,7 +74,7 @@ let sceneHang = new ScrollMagic.Scene({
 }).setTween(hang3).addIndicators().addTo(controller);
 
 
-// 飄紙1 出現
+//---飄紙1 出現---
 let floatShow1 = TweenMax.to('.floatPaper1', 1, {
     opacity: 1,
 });
@@ -24,7 +86,7 @@ let sceneFloat_show1 = new ScrollMagic.Scene({
 }).setTween(floatShow1).addIndicators().addTo(controller);
 
 
-// 飄紙1 飄飄飄
+//---飄紙1 飄飄飄---
 let floatGo1 = TweenMax.to('.floatPaper1', 1, {
     x: -650,
     y: 500,
@@ -39,7 +101,7 @@ let sceneFloat_go1 = new ScrollMagic.Scene({
 }).setTween(floatGo1).addIndicators().addTo(controller);
 
 
-// 飄紙1 消失
+//---飄紙1 消失---
 let floatHide1 = TweenMax.to('.floatPaper1', 1, {
     opacity: 0,
 });
@@ -51,7 +113,7 @@ let sceneFloat_hide1 = new ScrollMagic.Scene({
 }).setTween(floatHide1).addIndicators().addTo(controller);
 
 
-// 飄紙2 出現
+//---飄紙2 出現---
 let floatShow2 = TweenMax.to('.floatPaper2', 1, {
     opacity: 1,
 });
@@ -63,7 +125,7 @@ let sceneFloat_show2 = new ScrollMagic.Scene({
 }).setTween(floatShow2).addIndicators().addTo(controller);
 
 
-// 飄紙2 飄飄飄
+//---飄紙2 飄飄飄---
 let floatGo2 = TweenMax.to('.floatPaper2', 1, {
     x: 850,
     y: 300,
@@ -78,7 +140,7 @@ let sceneFloat_go2 = new ScrollMagic.Scene({
 }).setTween(floatGo2).addIndicators().addTo(controller);
 
 
-// 飄紙2 消失
+//---飄紙2 消失---
 let floatHide2 = TweenMax.to('.floatPaper2', 1, {
     opacity: 0,
 });
@@ -90,7 +152,7 @@ let sceneFloat_hide2 = new ScrollMagic.Scene({
 }).setTween(floatHide2).addIndicators().addTo(controller);
 
 
-// 飄紙3 出現
+//---飄紙3 出現---
 let floatShow3 = TweenMax.to('.floatPaper3', 1, {
     opacity: 1,
 });
@@ -102,7 +164,7 @@ let sceneFloat_show3 = new ScrollMagic.Scene({
 }).setTween(floatShow3).addIndicators().addTo(controller);
 
 
-// 飄紙3 飄飄飄
+//---飄紙3 飄飄飄---
 let floatGo3 = TweenMax.to('.floatPaper3', 1, {
     bezier: {
         curviness: 1.25,
@@ -654,7 +716,6 @@ printPara.to('.print', 1, {
 
 let sceneQuake = new ScrollMagic.Scene({
     triggerElement: '.print',
-    // offset: 100,
     daration: '100%'
 }).setTween(printPara).addIndicators().addTo(controller);
 
@@ -732,14 +793,14 @@ beltPin.add(TweenMax.to('.beltRedPlane', 2, {
     opacity: 0.25,
     ease: Power1.easeInOut
 }));
-beltPin.add(TweenMax.to('.beltRedPlane', 2, {
-    opacity: 0.75,
-    ease: Power1.easeInOut
-}));
-beltPin.add(TweenMax.to('.beltRedPlane', 2, {
-    opacity: 0.5,
-    ease: Power1.easeInOut
-}));
+// beltPin.add(TweenMax.to('.beltRedPlane', 2, {
+//     opacity: 0.75,
+//     ease: Power1.easeInOut
+// }));
+// beltPin.add(TweenMax.to('.beltRedPlane', 2, {
+//     opacity: 0.5,
+//     ease: Power1.easeInOut
+// }));
 beltPin.add(TweenMax.to('.beltRedPlane', 2, {
     opacity: 1,
     ease: Power1.easeInOut
@@ -782,7 +843,6 @@ let sceneBeltPlane_Out = new ScrollMagic.Scene({
 }).setTween(beltPlaneOut).addIndicators().addTo(controller);
 
 
-
 //---紙飛機商品進入---
 let storePlaneIn = TweenMax.to('.fall_plane', 1, {
     y: "130%",
@@ -799,7 +859,7 @@ let sceneStorePlane_In = new ScrollMagic.Scene({
 
 //商城的動畫
 let storePin = new TimelineMax();
-//---被蓋的紙飛機消失，上方紙飛機出現---
+//---被蓋的紙飛機消失，上方紙飛機出現，出現前往購買---
 let fallPlane_Hide = TweenMax.to('.fall_plane', 1, {
     visibility: "hidden",
     ease: Power0.easeNone
@@ -809,14 +869,14 @@ let windowPlane_Show = TweenMax.to('.paintPlane', 1, {
     ease: Power0.easeNone
 });
 let price_Show = TweenMax.to('.price', 1, {
-    opacity:1,
-    y:"130%",
+    opacity: 1,
+    y: "130%",
     ease: Bounce.easeOut
 });
 
-storePin.add([fallPlane_Hide, windowPlane_Show,price_Show]);
+storePin.add([fallPlane_Hide, windowPlane_Show, price_Show]);
 
-
+//---玻璃窗打開---
 storePin.add(TweenMax.to('.glass', 1, {
     x: "-100%",
 }));
