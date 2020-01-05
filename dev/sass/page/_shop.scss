@@ -187,7 +187,7 @@ $arrow_color: $gray !default;
             padding-top: 15%;
             padding-left: 5%;
 
-            @include itemCardRow1(15);
+            @include itemCardRow1(30);
 
             .cardFilter {
               width: 100%;
@@ -210,8 +210,8 @@ $arrow_color: $gray !default;
               }
 
               #itemCard1,
-              #itemCard9 {
-                width: 100px;
+              #itemCard11,
+              #itemCard21 {
                 transform: translate(0, -0%) rotate(15deg);
 
                 img {
@@ -221,7 +221,8 @@ $arrow_color: $gray !default;
               }
 
               #itemCard2,
-              #itemCard10 {
+              #itemCard12,
+              #itemCard22 {
                 transform: translate(0, -30%) rotate(355deg);
 
                 img {
@@ -231,7 +232,8 @@ $arrow_color: $gray !default;
               }
 
               #itemCard3,
-              #itemCard11 {
+              #itemCard13,
+              #itemCard23 {
                 font-size: 0;
                 transform: translate(0, -10%) rotate(360deg);
 
@@ -243,7 +245,8 @@ $arrow_color: $gray !default;
               }
 
               #itemCard4,
-              #itemCard12 {
+              #itemCard14,
+              #itemCard24 {
                 transform: translate(0, 0%) rotate(350deg);
 
                 img {
@@ -254,7 +257,8 @@ $arrow_color: $gray !default;
 
 
               #itemCard5,
-              #itemCard13 {
+              #itemCard15,
+              #itemCard25 {
                 transform: translate(0, -10%) rotate(360deg);
 
                 img {
@@ -266,7 +270,8 @@ $arrow_color: $gray !default;
 
 
               #itemCard6,
-              #itemCard14 {
+              #itemCard16,
+              #itemCard26 {
                 transform: translate(0%, 0%) rotate(350deg);
 
 
@@ -277,7 +282,8 @@ $arrow_color: $gray !default;
               }
 
               #itemCard7,
-              #itemCard15 {
+              #itemCard17,
+              #itemCard27 {
                 transform: translate(0%, 0%) rotate(15deg);
 
 
@@ -287,7 +293,31 @@ $arrow_color: $gray !default;
                 }
               }
 
-              #itemCard8 {
+              #itemCard8,
+              #itemCard18,
+              #itemCard28 {
+                transform: translate(-0%, -0%) rotate(0deg);
+
+                img {
+                  width: 2.5vw;
+                  transform: translate(15%, -70%) rotate(330deg);
+                }
+              }
+
+              #itemCard9,
+              #itemCard19,
+              #itemCard29 {
+                transform: translate(-0%, -0%) rotate(0deg);
+
+                img {
+                  width: 2.5vw;
+                  transform: translate(15%, -70%) rotate(330deg);
+                }
+              }
+
+              #itemCard10,
+              #itemCard20,
+              #itemCard30 {
                 transform: translate(-0%, -0%) rotate(0deg);
 
                 img {
@@ -300,14 +330,16 @@ $arrow_color: $gray !default;
 
             #emptyBtn {
               margin: 0 auto;
-              width: 60%;
-              display: flex;
+              width: 90%;
 
-              .switchBtnBox {
-                width: 33.3%;
 
-                .switchBtn {
-                  // margin-top: 30%;
+              .pagination {
+                width: 100%;
+                display: flex;
+
+
+                .prev-item {
+                  margin-right:20px;
                   font-family: $font;
                   font-size: 1vw;
                   letter-spacing: 0.2em;
@@ -371,6 +403,149 @@ $arrow_color: $gray !default;
                     }
                   }
                 }
+
+                .next-item {
+                  margin-left:20px;
+                  font-family: $font;
+                  font-size: 1vw;
+                  letter-spacing: 0.2em;
+                  position: relative;
+                  width: 6vw;
+                  height: 2vw;
+                  background-color: #FFD139;
+                  border: 0.15vw solid black;
+                  text-align: center;
+                  line-height: 30px;
+                  cursor: pointer;
+                  color: white;
+                  text-shadow: 2px 2px 1px #000, -2px -2px 1px #000, 2px -2px 1px #000, -2px 2px 1px #000;
+
+                  &:before {
+                    content: '';
+                    position: absolute;
+                    width: 2vw;
+                    height: 1vw;
+                    left: -1.6vw;
+                    bottom: -0.2vw;
+                    border: 0.15vw solid black;
+                    transform: rotate(90deg) skew(45deg);
+                    background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                    background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                    background-size: 7px 7px;
+                  }
+
+                  &:after {
+                    content: '';
+                    position: absolute;
+                    width: 5.9vw;
+                    height: 1.1vw;
+                    bottom: -1.2vw;
+                    left: -0.6vw;
+                    border: 0.15vw solid black;
+                    transform: skew(-45deg) rotate(0deg);
+                    background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                    background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                    background-size: 7px 7px;
+                  }
+
+
+                  &.clicked {
+                    border: 0.15vw solid black;
+                    left: -0.8vw;
+                    bottom: -0.4vw;
+
+                    &:before {
+                      border: 0.15vw solid black;
+                      height: 0.7vw;
+                      left: -1.5vw;
+                      bottom: 0.1vw;
+                    }
+
+                    &:after {
+                      border: 0.15vw solid black;
+                      height: 0.7vw;
+                      bottom: -0.8vw;
+                      left: -0.5vw;
+                    }
+                  }
+
+                }
+
+                .page-link-item {
+                  margin: 0 20px;
+                  display: inline-block;
+                  // margin-top: 30%;
+                  font-family: $font;
+                  font-size: 1vw;
+                  letter-spacing: 0.2em;
+                  position: relative;
+                  width: 6vw;
+                  height: 2vw;
+                  background-color: #FFD139;
+                  border: 0.15vw solid black;
+                  text-align: center;
+                  line-height: 30px;
+                  cursor: pointer;
+                  color: white;
+                  text-shadow: 2px 2px 1px #000, -2px -2px 1px #000, 2px -2px 1px #000, -2px 2px 1px #000;
+
+                  &:before {
+                    content: '';
+                    position: absolute;
+                    width: 2vw;
+                    height: 1vw;
+                    left: -1.6vw;
+                    bottom: -0.2vw;
+                    border: 0.15vw solid black;
+                    transform: rotate(90deg) skew(45deg);
+                    background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                    background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                    background-size: 7px 7px;
+                  }
+
+                  &:after {
+                    content: '';
+                    position: absolute;
+                    width: 5.9vw;
+                    height: 1.1vw;
+                    bottom: -1.2vw;
+                    left: -0.6vw;
+                    border: 0.15vw solid black;
+                    transform: skew(-45deg) rotate(0deg);
+                    background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                    background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                    background-size: 7px 7px;
+                  }
+
+
+                  &.clicked {
+                    border: 0.15vw solid black;
+                    left: -0.8vw;
+                    bottom: -0.4vw;
+
+                    &:before {
+                      border: 0.15vw solid black;
+                      height: 0.7vw;
+                      left: -1.5vw;
+                      bottom: 0.1vw;
+                    }
+
+                    &:after {
+                      border: 0.15vw solid black;
+                      height: 0.7vw;
+                      bottom: -0.8vw;
+                      left: -0.5vw;
+                    }
+                  }
+
+                  .page-link-item {}
+                }
+              }
+
+              .switchBtnBox {
+                width: 33.3%;
+
+                .switchBtn {}
               }
             }
           }
@@ -1372,19 +1547,16 @@ $arrow_color: $gray !default;
               //   border: $border;
               //   background-color: #fff;
               //   z-index: 37;
-
               //   .controlBox7_button {
               //     position: relative;
               //     width: 100%;
               //     top: -35%;
               //     left: 30%;
-
               //     &.clicked {
               //       width: 100%;
               //       top: -15%;
               //       left: 15%;
               //     }
-
               //     .controlBtn7 {
               //       outline: none;
               //       width: 100%;
@@ -1392,12 +1564,10 @@ $arrow_color: $gray !default;
               //       border: $border;
               //       text-align: center;
               //       cursor: pointer;
-
               //       img {
               //         padding: 20%;
               //         width: 100%;
               //       }
-
               //       &:before {
               //         content: '';
               //         position: absolute;
@@ -1411,7 +1581,6 @@ $arrow_color: $gray !default;
               //         background-size: 7px 7px; 
               //         transform: rotate(90deg) skew(45deg);
               //       }
-
               //       &:after {
               //         content: '';
               //         position: absolute;
@@ -1425,13 +1594,8 @@ $arrow_color: $gray !default;
               //         background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
               //         background-size: 7px 7px;
               //       }
-
               //       &.clicked {
               //         background-color:$main-blue2;
-
-
-
-
               //         &:before {
               //           width: 100%;
               //           height: 17%;
@@ -1443,7 +1607,6 @@ $arrow_color: $gray !default;
               // background: linear-gradient(40deg, $main-blue2 45%, #000 45%, #000 55%, $main-blue2 55%);
               // background-size: 7px 7px;
               //         }
-
               //         &:after {
               //           width: 100%;
               //           height: 20%;
@@ -2144,17 +2307,22 @@ $arrow_color: $gray !default;
     }
 
     #section3 {
-      // background-color: #00b9d6;
-      // background-image: url(".data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444.99-1 .99-.552 0-1-.45-1-.99V8.99z' fill='%23242424' fill-opacity='0.61' fill-rule='evenodd'/%3E%3C/svg%3E");
-      background-image: url('../img/product/postmark/123.png');
+      // background-image: url('../img/product/postmark/123.png');
       padding-top: 5%;
       width: 100%;
       border: 5px solid black;
 
-      // .disabled {
-      //   display: block;
-      // }
+      .disabled {
+        display: block;
+      }
+
       .owl-carousel {
+        .owl-nav [class*='owl-'] {
+          margin: 0;
+          padding: 0;
+          background: none;
+        }
+
         width: 100%;
         z-index: 99;
 
@@ -2180,50 +2348,59 @@ $arrow_color: $gray !default;
           }
         }
 
-        .owl-nav [class*='owl-'] {
+        .disabled {
+          display: none;
+        }
+
+        .owl-nav {
           display: flex;
           justify-content: space-around;
-          width: 100%;
+          width: 50%;
           height: 4vw;
           margin: 0 auto;
           position: relative;
-
-
-          .owl-prev {
-            background-image: url('../img/product/decorate/arrow_pre-04.svg');
-            width: 15px;
-            height: 100px;
-            position: absolute;
-            top: 40%;
-            margin-left: -20px;
-            border: 0px solid black;
-          }
-
-          .owl-next {
-            background-image: url('../img/product/decorate/arrow_next-04.svg');
-            width: 15px;
-            height: 100px;
-            position: absolute;
-            top: 40%;
-            right: -25px;
-            border: 0px solid black;
-          }
 
           &:before {
             font-weight: 900;
             content: "切換素材";
             position: absolute;
             top: 50%;
-            left: 25%;
-            margin: 0 2%;
-            transform: translate(10%, -50%);
+            left: 30%;
+            margin: 0;
+            transform: translate(-50%, -50%);
             font-size: 2vw;
             letter-spacing: 1em;
             color: rgb(255, 255, 255);
             text-shadow: 2px 2px 1px #000, -2px -2px 1px #000, 2px -2px 1px #000, -2px 2px 1px #000;
           }
 
+
+          .owl-prev {
+            background-image: url('../img/product/decorate/arrow_pre-04.svg');
+            width: 100%;
+            margin: 0 auto;
+            border: 0px solid black;
+            background-repeat: no-repeat;
+
+            span {
+              font-size: 0;
+            }
+          }
+
+          .owl-next {
+            background-image: url('../img/product/decorate/arrow_next-04.svg');
+            width: 100%;
+            border: 0px solid black;
+            background-repeat: no-repeat;
+
+            span {
+              font-size: 0;
+            }
+          }
+
+
         }
+
 
         .owl-dots {
           .owl-dot {
@@ -2336,7 +2513,7 @@ $arrow_color: $gray !default;
                 }
 
 
-                @include itemCardRow1_lg(15);
+                @include itemCardRow1_lg(30);
 
                 #itemCard1 {
                   transform: translate(0, -100%) rotate(15deg);
@@ -2533,7 +2710,7 @@ $arrow_color: $gray !default;
                   transform: translate(5%, -10%);
                 }
 
-                @include itemCardRow1_md(15);
+                @include itemCardRow1_md(30);
 
                 #itemCard1 {
                   transform: translate(0, -50%) rotate(15deg);
@@ -3265,7 +3442,7 @@ $arrow_color: $gray !default;
                   transform: translate(25%, -80%);
                 }
 
-                @include itemCardRow1_sm(15);
+                @include itemCardRow1_sm(30);
 
                 #itemCard1 {
                   transform: translate(50%, -50%) rotate(15deg);
@@ -3539,7 +3716,7 @@ $arrow_color: $gray !default;
                   transform: translate(25%, -10%);
                 }
 
-                @include itemCardRow1_sm(15);
+                @include itemCardRow1_sm(30);
 
                 #itemCard1 {
                   transform: translate(50%, -50%) rotate(15deg);

@@ -46,25 +46,28 @@
                     <div class="setData">
                         <h4>會員資料修改</h4>
                         <p class="setDataClose" id="closeForm">X</p>
-                        <form class="formSetData">
+                        <form class="formSetData" action="./js/userUpdate.php" method="post">
                             <img class="setMempic" src="./img/chatroom/mark_1.png" alt="會員圖片">
                             <label for="memNo">
                                 <P>會員帳號:</P>
                             </label>
                             <input class="memNo" input type="text" disabled="disabled" id="memNo"
-                                placeholder="後台撈出的value" required autofocus>
+                                placeholder="後台撈出的value" name="memNo" required>
                             <label for="setEmail">
                                 <P>Email:</P>
                             </label>
-                            <input class="setEmail" type="email" id="setEmail" placeholder="後台撈出的value" required>
+                            <input class="setEmail" type="email" id="setEmail" placeholder="後台撈出的value" name="memEmail"
+                                required autofocus>
                             <label for="setPassword">
                                 <P>Password:</P>
                             </label>
-                            <input class="setPassword" type="password" id="setPassword" placeholder="後台撈出的value" required>
+                            <input class="setPassword" type="password" id="setPassword" placeholder="後台撈出的value"
+                                name="memPsw" required>
                             <label for="setPasswordCheck">
                                 <P>Password again:</P>
                             </label>
-                            <input class="setPasswordCheck" type="password" id="setPasswordCheck" placeholder="password again" required>
+                            <input class="setPasswordCheck" type="password" id="setPasswordCheck"
+                                placeholder="password again" name="memPswAgain" required>
                             <br>
                             <button class="setDataBtn" type="submit">
                                 <p>確定</p>

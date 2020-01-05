@@ -2,7 +2,7 @@
     width: 100%;
     font-size: 0;
     font-family: $font;
-    background: radial-gradient($main-blue 30%, rgb(255, 255, 255) 20%);
+    // background: radial-gradient($main-blue 30%, rgb(255, 255, 255) 20%);
     background-size: 8px 8px;
     .userSettingBanner{
         height: 880px; 
@@ -250,37 +250,6 @@
                     position: absolute;
                     z-index: 7;
                     animation: box 10s ease-in-out infinite;
-                    @keyframes box {
-                        0% {
-                            bottom: 20%;
-                            left: 26%;
-                            transform: rotate(0deg);
-                        }
-                        10% {
-                            bottom: 16%;
-                            left: 26%;
-                        }
-                        60%{
-                            bottom: 16%;
-                            left: 75%;
-                            transform: rotate(0deg);
-                        }
-                        70%{
-                            bottom: -5%;
-                            left: 86%;
-                            transform: rotate(90deg);
-                        }
-                        78% {                        
-                            bottom: -30%;
-                            left: 86%;
-                            transform: rotate(90deg);
-                        }
-                        100% {                        
-                            bottom: -100%;
-                            left: 86%;
-                            transform: rotate(90deg);
-                        }
-                    }
                 }
                 .space_B1{                   
                     right: 0;
@@ -371,33 +340,6 @@
                     position: absolute;
                     z-index: 7;
                     animation: paper 7s ease-in-out infinite;
-                    @keyframes paper {
-                        0% {
-                            bottom: 19%;
-                            right: 22%;
-                            transform: rotate(0deg);
-                        }
-                        60%{
-                            bottom: 19%;
-                            right: 75%;
-                            transform: rotate(0deg);
-                        }
-                        70%{
-                            bottom: 10%;
-                            right: 78%;
-                            transform: rotate(-90deg);
-                        }
-                        78% {                        
-                            bottom: -40%;
-                            right: 83%;
-                            transform: rotate(-90deg);
-                        }
-                        100% {                        
-                            bottom: -93%;
-                            right: 83%;
-                            transform: rotate(-90deg);
-                        }
-                    }
                 }
                 .space_B2{
                     left: 0;

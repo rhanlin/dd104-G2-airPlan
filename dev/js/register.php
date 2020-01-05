@@ -1,11 +1,12 @@
 <!-- 註冊 -->
 <?php 
 try {
-	$dsn = "mysql:host=localhost;port=3306;dbname=dd104g2;charset=utf8";
-	$user = "howard";
-	$password = "h0322";
-	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-	$pdo = new PDO( $dsn, $user, $password, $options);
+	// $dsn = "mysql:host=localhost;port=3306;dbname=dd104g2;charset=utf8";
+	// $user = "howard";
+	// $password = "h0322";
+	// $options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
+	// $pdo = new PDO( $dsn, $user, $password, $options);
+	require_once "connectBook_userSetting.php";
 	$sql2 = "select * from `member` where memEmail='{$_POST["memEmail"]}'";
 	$memPsw = $_POST['memPsw'];
 	$memPswAgain = $_POST['memPswAgain'];

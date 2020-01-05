@@ -399,11 +399,37 @@
 
                     .cav-commHead {
                       margin-bottom: 5px;
+                      position: relative;
 
                       .cav-commId {
                         font-weight: bold;
                         font-size: 14px;
                         margin-right: 5px;
+                      }
+                      .active::before {
+                        content: "";
+                        background-image: url(../img/cave/coin1.png);
+                        background-size: cover;
+                        position: absolute;
+                        width: 25px;
+                        height: 25px;
+                        top: -25px;
+                        left: 10px;
+                        animation: popCoin 1s infinite;
+                      }
+                      @keyframes popCoin {
+                        0% {
+                          transform: translateY(0) rotateY(0);
+                          opacity: 1;
+                        }
+                        50% {
+                          transform: translateY(-100%) rotateY(90deg);
+                          opacity: 1;
+                        }
+                        100% {
+                          transform: translateY(-25%);
+                          opacity: 0;
+                        }
                       }
 
                       .cav-commTime {
@@ -462,6 +488,13 @@
                         .button:active {
                           box-shadow: 0 1px 1px 1px #8c0606;
                           top: 10%;
+                          outline: none;
+                        }
+
+                        .button:disabled {
+                          background: #bbb;
+                          box-shadow: 0 1px 1px 1px #999;
+                          top: -7%;
                           outline: none;
                         }
                       }
@@ -525,6 +558,50 @@
               }
             }
           }
+          .cav-reportList {
+            border: $border;
+            width: 35vw;
+            height: 20vw;
+            min-width: 250px;
+            min-height: 200px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 80;
+            background-color: #fff;
+            padding: 1%;
+            display: none;
+            .closeTag {
+              position: absolute;
+              top: 1%;
+              right: 2%;
+              cursor: pointer;
+
+              &:hover {
+                color: $main-dark-red;
+              }
+            }
+            h4 {
+              text-align: center;
+              font-weight: 600;
+              margin-bottom: 8%;
+            }
+            h5 {
+              text-align: center;
+              margin-bottom: 3%;
+            }
+            select {
+              width: 80%;
+              margin-left: 50%;
+              transform: translateX(-50%);
+              margin-bottom: 10%;
+            }
+            button {
+              margin-left: 50%;
+              transform: translateX(-50%);
+            }
+          }
         }
       }
     }
@@ -546,15 +623,60 @@
     width: 41%;
 
     .cav-topBlock {
-      // border-bottom: 5px solid $main-black;
       display: inline-block;
       width: 100%;
       height: 30%;
+      min-height: 150px;
       overflow: hidden;
+      background-color: #bbb;
 
-      > img {
+      .cav-preview-plan.-on {
+        display: inline-block;
+        position: relative;
         width: 100%;
         height: 100%;
+        min-height: 150px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .cav-preview-plan{
+        display: none;
+      }
+      .cav-preview-plan.cav-leftBlock-1 {
+        background-image: url(../img/write-letter/print-paperPlane.png);
+        > span {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          clip-path: polygon(12% 11%, 86% 4%, 62.5% 95.5%, 42% 61%, 25.5% 75%, 27% 36%);
+          opacity: 0.8;
+        }
+      }
+      .cav-preview-plan.cav-leftBlock-2 {
+        background-image: url(../img/cave/stampBg.svg);
+        > span {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          clip-path: circle(29% at 49.25% 49.25%);
+          background-color: goldenrod;
+          opacity: 0.8;
+        }
       }
     }
 
@@ -563,7 +685,6 @@
       width: 100%;
 
       .cav-leftBlockBM {
-        // border: 1px solid rebeccapurple;
         list-style: none;
         margin: 0;
         display: flex;
@@ -991,11 +1112,33 @@
       margin: 2.1%;
     }
   }
+  .cav-myItem {
+    .cav-leftWrap {
+      .cav-topBlock {  
+        .cav-preview-plan.cav-leftBlock-1 {
+          > span {
+            clip-path: polygon(12% 18%, 86% 12%, 62.5% 88.5%, 42% 60%, 25.5% 71%, 27% 39%);
+          }
+        }
+        .cav-preview-plan.cav-leftBlock-2 {
+          > span {
+            clip-path: circle(29% at 49.25% 49.25%);
+          }
+        }
+      }
+    }
+  }
 }
-
 @include respond(mediumSize) {
   .cav-myItem {
     .cav-leftWrap {
+      .cav-topBlock {
+        .cav-preview-plan {
+          > span {
+            clip-path: polygon(11% 23%, 87% 17%, 62.5% 81.5%, 42% 58%, 26% 67%, 27% 40%);
+          }
+        }
+      }
       .cav-tabWrap {
         min-height: 400px;
         max-height: 76%;
@@ -1151,14 +1294,13 @@
         }
       }
     }
-    .cav-rightWrap{
-      .cav-tabWrap{
+    .cav-rightWrap {
+      .cav-tabWrap {
         top: 8.3%;
       }
     }
   }
 }
-
 @include respond(small) {
   .cav-main {
     width: 100%;
@@ -1429,8 +1571,17 @@
     width: 100%;
 
     .cav-leftWrap {
+      .cav-topBlock {
+        .cav-preview-plan {
+          > span {
+            clip-path: polygon(17% 11%, 81% 4%, 60.5% 96.5%, 43% 61%, 28% 76%, 30% 37%);
+          }
+        }
+      }
       .cav-tabWrap {
         top: 10.4%;
+        min-height: 350px;
+        height: 350px;
         padding: 10px;
         overflow-y: scroll;
       }
@@ -1875,8 +2026,17 @@
     width: 100%;
 
     .cav-leftWrap {
+      .cav-topBlock {
+        .cav-preview-plan {
+          > span {
+            clip-path: polygon(13% 11%, 85% 4%, 62.5% 96.5%, 42% 61%, 26% 76%, 28% 37%);
+          }
+        }
+      }
       .cav-tabWrap {
         padding: 10px;
+        min-height: 350px;
+        height: 350px;
         overflow-y: scroll;
       }
       .cav-botBlock {

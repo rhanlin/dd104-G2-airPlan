@@ -119,10 +119,9 @@
                                         </div>
                                         <div class="cav-letNavbar">
                                             <div class="circle threed">
-                                                <button class="circle button">
+                                                <button class="circle button like">
                                                     <img src="./img/cave/coin.png" alt=""></i></button>
                                             </div>
-
                                         </div>
                                         <h4 class="cav-h3">留言</h4>
                                         <div class="cav-letComment">
@@ -136,13 +135,13 @@
                                             <div class="cav-commOption">
                                                 <div class="cav-commLike">
                                                     <div class="circle threed">
-                                                        <button class="circle button">
+                                                        <button class="circle button like">
                                                             <img src="./img/cave/coin.png" alt=""></i></button>
                                                     </div>
                                                 </div>
                                                 <div class="cav-commReport">
                                                     <div class="circle threed ">
-                                                        <button class="circle button">
+                                                        <button class="circle button report">
                                                             <img src="./img/cave/exclamation-button.png"
                                                                 alt=""></button>
                                                     </div>
@@ -160,14 +159,14 @@
                                             <div class="cav-commOption">
                                                 <div class="cav-commLike">
                                                     <div class="circle threed">
-                                                        <button class="circle button">
+                                                        <button class="circle button like">
                                                             <img src="./img/cave/coin.png" alt=""></i></button>
                                                     </div>
                                                 </div>
 
                                                 <div class="cav-commReport">
                                                     <div class="circle threed ">
-                                                        <button class="circle button">
+                                                        <button class="circle button report">
                                                             <img src="./img/cave/exclamation-button.png"
                                                                 alt=""></button>
                                                     </div>
@@ -185,13 +184,13 @@
                                             <div class="cav-commOption">
                                                 <div class="cav-commLike">
                                                     <div class="circle threed">
-                                                        <button class="circle button">
+                                                        <button class="circle button like">
                                                             <img src="./img/cave/coin.png" alt=""></i></button>
                                                     </div>
                                                 </div>
                                                 <div class="cav-commReport">
                                                     <div class="circle threed ">
-                                                        <button class="circle button">
+                                                        <button class="circle button report">
                                                             <img src="./img/cave/exclamation-button.png"
                                                                 alt=""></button>
                                                     </div>
@@ -201,6 +200,21 @@
                                     </div>
                                 </div>
                             </div>
+                            <form id="cav-reportForm" action="" method="get">
+                                <div class="cav-reportList">
+                                    <span class="closeTag">x</span>
+                                    <h4>檢舉留言</h4>
+                                    <h5>檢舉原因</h5>
+                                    <select name="report" id="cav-reportSelector">
+                                        <option value="reason" selected disabled>請選擇檢舉原因</option>
+                                        <option value="badWord">不雅文字</option>
+                                        <option value="abuse">謾罵、挑釁</option>
+                                        <option value="hatred">引發仇恨</option>
+                                        <option value="ad">廣告訊息</option>
+                                    </select><br>
+                                    <button class="cav-sendReport" type="submit">送出檢舉</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -212,7 +226,14 @@
         </div>
         <section class="cav-myItem">
             <div class="cav-leftWrap">
-                <div class="cav-topBlock"><img src="./img/share/paper-plane.png"></div>
+                <div class="cav-topBlock">
+                    <div class="cav-preview-plan cav-leftBlock-1 -on">
+                        <span class="cav-mask-1"></span>
+                    </div>
+                    <div class="cav-preview-plan cav-leftBlock-2">
+                        <span class="cav-mask-2"></span>
+                    </div>
+                </div>
                 <div class="cav-leftBMWrap">
                     <ul class="cav-leftBlockBM">
                         <li><a data-target="cav-leftBlock-1" class="tab1 -on">圖案</a></li>
@@ -221,19 +242,19 @@
                     <div class="cav-tabWrap">
                         <div class="tab1 cav-leftBlock-1 -on">
                             <div class="cav-prodWrap">
-                                <div class="cav-prod cav-prodI wearing"><img src="./img/product/decorate/clip-04.svg">
+                                <div class="cav-prod cav-prodI wearing"><img src="./img/pattern/plan-pattern-1.svg">
                                 </div>
-                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
-                                <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/pattern/plan-pattern-2.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/pattern/plan-pattern-3.png"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/pattern/plan-pattern-1.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/pattern/plan-pattern-2.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/pattern/plan-pattern-3.png"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/pattern/plan-pattern-1.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/pattern/plan-pattern-2.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/pattern/plan-pattern-3.png"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/pattern/plan-pattern-1.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/pattern/plan-pattern-2.svg"></div>
+                                <div class="cav-prod cav-prodI"><img src="./img/pattern/plan-pattern-3.png"></div>
                                 <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
                                 <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
                                 <div class="cav-prod cav-prodI"><img src="./img/product/decorate/clip-04.svg"></div>
@@ -243,10 +264,10 @@
                         </div>
                         <div class="tab1 cav-leftBlock-2">
                             <div class="cav-prodWrap">
-                                <div class="cav-prod cav-prodU wearing"><img src="https://via.placeholder.com/150">
+                                <div class="cav-prod cav-prodU wearing"><img src="./img/catch-letter/user-stamp/user-stamp_1.png">
                                 </div>
-                                <div class="cav-prod cav-prodU"><img src="https://via.placeholder.com/150"></div>
-                                <div class="cav-prod cav-prodU"><img src="https://via.placeholder.com/150"></div>
+                                <div class="cav-prod cav-prodU"><img src="./img/catch-letter/user-stamp/user-stamp_2.png"></div>
+                                <div class="cav-prod cav-prodU"><img src="./img/catch-letter/user-stamp/user-stamp_3.png"></div>
                             </div>
                         </div>
                     </div>
@@ -264,9 +285,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="cav-botBlock">
-                        <div class="btn">更換</div>
-                    </div> -->
                 </div>
 
             </div>
