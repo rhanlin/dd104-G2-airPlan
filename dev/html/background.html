@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,37 +9,134 @@
     <link href="./css/main.css" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
+
 <body class="bg-body">
     <header class="bg-header">
         <img class="bgLogo" src="./img/share/Logo.png" alt="Logo.png">
+        <div class="login">
+            <p>登入</p>
+        </div>
     </header>
     <main class="bg-main">
-        <div class="mainSiderbar">
-            <nav class="siderbarNav">
-                <ul class="navUl">
-                    <li class="ulLi">
-                        <h5>會員管理</h5>
-                        <h6>查詢會員資料</h6>
-                        <h6>黑名單</h6>
-                        <h6>查詢消費紀錄</h6>
-                        <h6>查詢寫信紀錄</h6>
-                        <h6>查詢回覆紀錄</h6>
-                        <h6>查詢打賞紀錄</h6>
-                        <h6>權限管理</h6>
-                    </li>
-                    <li class="ulLi">
-                        <h5>商品管理</h5>
-                    </li>
-                    <li class="ulLi">
-                        <h5>不當內容檢舉管理</h5>
-                    </li>
-                    <li class="ulLi">
-                        <h5>遊戲參數管理</h5>
-                    </li>
-                </ul>
-            </nav>
+        <nav class="mainNav">
+            <ul class="navUl">
+                <li class="ulLi">
+                    <h5>會員管理</h5>
+                    <h6>查詢會員資料</h6>
+                    <h6 class="liOpen">黑名單</h6>
+                    <div class="liTag">
+                        <span>停權</span>
+                        <span>解除停權</span>
+                    </div>
+                    <h6>查詢消費紀錄</h6>
+                    <h6>查詢寫信紀錄</h6>
+                    <h6>查詢回覆紀錄</h6>
+                    <h6>查詢打賞紀錄</h6>
+                    <h6 class="liOpen">權限管理</h6>
+                    <div class="liTag">
+                        <span>非會員管理</span>
+                        <span>會員管理</span>
+                    </div>
+                </li>
+                <li class="ulLi">
+                    <h5>商品管理</h5>
+                    <h6>查詢商品</h6>
+                    <h6>修改商品</h6>
+                    <h6>新增商品</h6>
+                    <h6>上架商品</h6>
+                    <h6>下架商品</h6>
+                </li>
+                <li class="ulLi">
+                    <h5>不當內容檢舉管理</h5>
+                    <h6>明信片文章</h6>
+                    <h6>明信片留言</h6>
+                </li>
+                <li class="ulLi">
+                    <h5>遊戲參數管理</h5>
+                    <h6>設定風速</h6>
+                    <h6>設定飛機數量</h6>
+                </li>
+            </ul>
+        </nav>
+        <div class="lookmem conten">
+            <h4>查詢會員資料</h4>
+        </div>
+        <div class="blacklist conten">
+            <h4>黑名單</h4>
+        </div>
+        <div class="consumption conten">
+            <h4>查詢消費紀錄</h4>
+        </div>
+        <div class="writeLetter conten">
+            <h4>查詢寫信紀錄</h4>
+        </div>
+        <div class="response conten">
+            <h4>查詢回覆紀錄</h4>
+        </div>
+        <div class="get-like conten">
+            <h4>查詢打賞紀錄</h4>
+        </div>
+        <div class="if-mem conten">
+            <h4>權限管理</h4>
+        </div>
+        <div class="p-look conten">
+            <h4>查詢商品</h4>
+        </div>
+        <div class="p-modify conten">
+            <h4>修改商品</h4>
+        </div>
+        <div class="p-add conten">
+            <h4>新增商品</h4>
+        </div>
+        <div class="p-up conten">
+            <h4>上架商品</h4>
+        </div>
+
+        <div class="p-down conten">
+            <h4>下架商品</h4>
+        </div>
+        <div class="let-report conten">
+            <h4>明信片文章</h4>
+        </div>
+
+        <div class="msg-report conten">
+            <h4>明信片留言</h4>
+        </div>
+        <div class="wind conten">
+            <h4>設定風速</h4>
+        </div>
+        <div class="plan-math conten">
+            <h4>設定飛機數量</h4>
         </div>
     </main>
-    <footer class="bg-footer"></footer>
+    @@include("./layout/footer.html")
 </body>
+
 </html>
+<script>
+    let liTag = document.querySelectorAll('.liTag');
+    let liOpen = document.querySelectorAll('.liOpen');
+    for (let i = 0; i < liOpen.length; i++) {
+        liOpen[i].addEventListener('click', function (e) {
+            for (let j = 0; j < liOpen.length; j++) {
+                liTag[j].style.display = "none";
+            }
+            e.currentTarget.style.display = "inline-block";
+            console.log(e.currentTarget);
+        })
+    };
+
+    let conten = document.querySelectorAll('.conten');
+        for (let i = 0; i < conten.length; i++) {
+            conten[i].addEventListener('click',function(e){
+                for(let j =0;j< conten.length; j++){
+                    Mark[j].classList.remove("MarkRed");
+                    document.querySelectorAll('.pageContent')[j].style.display="none";
+                }
+                e.currentTarget.classList.add("MarkRed");
+                document.querySelectorAll('.conten')[i].style.display="inline-block";
+                console.log(document.querySelectorAll('.pageContent')[i]);
+                document.getElementsByClassName('sendText')[0].value = "";
+            })
+        };
+</script>
