@@ -299,7 +299,7 @@
             document.querySelectorAll('.pageContent')[0].style.display="inline-block";
 
         }) 
-        // get_chat("chat")
+        get_chat("chat")
         function get_chat(test){
             $.ajax({
                     url: './js/chatroom.php',  //網址或檔案
@@ -313,16 +313,16 @@
                     },
                     success: function(data){
                         console.log(data);
+                        JSON.parse(data);
                     },
                     error: function (data){
-                        console.log(data);
+                        console.log(XMLHttpRequest.responseText);
                     }
                 });
         }
-        function comm(array){
+        // function comm(array){
 
-        }
-        // let test = comm(array("type"=> type, "memNo1"=>memNo1));
+        // }
         // get_chat(test);
     </script>
 </body>
