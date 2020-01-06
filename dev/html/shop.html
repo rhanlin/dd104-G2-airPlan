@@ -32,74 +32,63 @@
           </div>
         </div>
 
-
-
-
         <div id="app">
           <div class="col-12 col-sm-12  col-md-12 col-lg-12 itemCardBox ">
             <div class="itemCardAside">
               <div class="itemCardAsideBox">
-                <div class="itemCardAsideh3 .threed-text-black-endWhite">
-                  <h3>商品項目</h3>
-                </div>
-                <div>
-                  <h3 class="itemCardAsideh4" @click="visibility='all'">全部</h3>
-                </div>
-                <div class="itemCardAsideh4">
-                  <h4>信紙</h4>
-                </div>
-                <div class="itemCardAsideh4">
-                  <h4></h4>
+                <div class="threed_text_box">
+                  <h5 class="threed-text-red-endWhite" style="font-size: 2.5vw;letter-spacing:1vw;">選購商品</h5>
                 </div>
                 <div class="accordion" id="accordionExample">
                   <div class="card">
-                    <div @click="visibility='pattern'" class="card-header" id="headingOne">
+                    <div class="card-header" id="headingOne">
                       <h2 class="mb-0">
                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
                           aria-expanded="true" aria-controls="collapseOne">
-                          <h4>圖案</h4>
+                          <h3>郵戳</h3>
                         </button>
                       </h2>
                     </div>
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                       data-parent="#accordionExample">
                       <div class="card-body">
-                        <h5>向量素材</h5>
-                        <h5>壁紙素材</h5>
-                        <h5>動物素材</h5>
+                        <h5 @click="visibility='countries'">地球村</h5>
+                        <h5 @click="visibility='frame'">外框</h5>
+                        <h5 @click="visibility='simple'">線條</h5>
                       </div>
                     </div>
                   </div>
                   <div class="card">
-                    <div @click="visibility='postmark'" class="card-header" id="headingTwo">
+                    <div class="card-header" id="headingTwo">
                       <h2 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                           data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          <h4>郵戳</h4>
+                          <h3>圖案</h3>
                         </button>
                       </h2>
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                       <div class="card-body">
-                        <h5>外框素材</h5>
-                        <h5>內容圖案</h5>
+                        <h5 @click="visibility='animal'">動物</h5>
+                        <h5 @click="visibility='handpattern'">手繪</h5>
+                        <h5 @click="visibility='vector'">向量</h5>
                       </div>
                     </div>
                   </div>
                   <div class="card">
-                    <div @click="visibility='tool'" class="card-header" id="headingThree">
+                    <div class="card-header" id="headingThree">
                       <h2 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                           data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                          <h4>DIY工具</h4>
+                          <h3>工具</h3>
                         </button>
                       </h2>
                     </div>
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                       data-parent="#accordionExample">
                       <div class="card-body">
-                        <h5>繪畫相關</h5>
-                        <h5>其他</h5>
+                        <h5 @click="visibility='tool'">DIY工具</h5>
+                        <h5 @click="visibility='tool'">信紙</h5>
                       </div>
                     </div>
                   </div>
@@ -108,52 +97,62 @@
             </div>
             <div class=" itemCardContainer">
               <div class="cardFilter">
-                <!-- <img src="./img/product/decorate/line_top.png" alt="" class="line_top">
-                <img src="./img/product/decorate/line_bottom.png" alt="" class="line_bottom"> -->
-
-                <!-- v-if="change(index)"                   filteredItems-->
-                <div class="itemCard" v-for="item in pagedListdata" :style="{backgroundImage:`url(${item.url})`}"
-                  :id=item.id :class=item.class>
+                <img src="./img/product/decorate/lineTop.png" alt="" class="line_top">
+                <img src="./img/product/decorate/lineButtom.png" alt="" class="line_bottom">
+                <div class="itemCard" v-for="(item,index) in pagedListdata" v-if="change(index)"
+                  :style="{backgroundImage:`url(${item.url})`}" :id=item.id :class=item.class>
                   <img src="./img/product/decorate/clip-04.svg" alt="">
                 </div>
               </div>
               <div id="emptyBtn">
-                <paginate :page-count="pageCount" :page-range=1 :init-page=1 :margin-pages=4 :page-class="'page-item'"
-                  :page-link-class="'page-link-item'" :container-class="'pagination pagination-sm'"
-                  :prev-class="'prev-item'" :prev-link-class="'prev-link-item'" :next-class="'next-item'"
-                  :next-link-class="'next-link-item'" :click-handler="pageCallback">
-                </paginate>
-                <!-- <div class="switchBtnBox">
-                  <div class="switchBtn">page1</div>
+                <div class="switchBtnBox" @click="page = 1">
+                  <div class="switchBtn clicked">page1</div>
                 </div>
-                <div class="switchBtnBox">
-                  <div class="switchBtn">page2</div>
+                <div class="switchBtnBox" @click="page = 2">
+                  <div class="switchBtn clicked">page2</div>
                 </div>
-                <div class="switchBtnBox">
-                  <div class="switchBtn">page</div>
-                </div> -->
+                <div class="switchBtnBox" @click="page = 3">
+                  <div class="switchBtn clicked">page3</div>
+                </div>
               </div>
             </div>
           </div>
           <div class="filter_forSamll">
             <div class="filter_forSamllBox">
-              <div class="filter_forSamllh3">
-                <h3>商品項目</h3>
+              <div class="threed_text_box">
+                <h5 class="threed-text-red-endWhite" style="font-size: 2.5vw;letter-spacing:1vw;">選購商品</h5>
               </div>
-              <div class="filter_forSamllh4">
-                <h5>信紙</h5>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  郵戳
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <div class="dropdown-item" @click="visibility='countries'">地球村</div>
+                  <div class="dropdown-item" @click="visibility='frame'">外框</div>
+                  <div class="dropdown-item" @click="visibility='simple'">線條</div>
+                </div>
               </div>
-              <div class="filter_forSamllh4">
-                <h5>DIY工具</h5>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  圖案
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <div class="dropdown-item" @click="visibility='animal'">動物</div>
+                  <div class="dropdown-item" @click="visibility='handpattern'">手繪</div>
+                  <div class="dropdown-item" @click="visibility='vector'">向量</div>
+                </div>
               </div>
-              <div class="filter_forSamllh4">
-                <h5>郵戳</h5>
-              </div>
-              <div class="filter_forSamllh4">
-                <h5>圖案</h5>
-              </div>
-              <div class="filter_forSamllh4">
-                <h5>費用</h5>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  工具
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <div class="dropdown-item" @click="visibility='tool'">DIY工具</div>
+                  <div class="dropdown-item" @click="visibility='tool'">信紙</div>
+                </div>
               </div>
             </div>
           </div>
@@ -201,7 +200,8 @@
     <div class="container">
       <div class="row customize">
         <div class="customizeTitle">
-          <div class="customizeTitleText">NEXT</div>
+          <div class="threed-text-red-endWhite"
+            style="font-size: 2.5vw;letter-spacing:1vw;text-align: left;line-height:4vw ;">NEXT <br>客製圖樣</div>
         </div>
         <div class="manual">
           <div class="manualTitle">
@@ -250,11 +250,6 @@
                   <div class="controlBtn6 clicked"><img src="./img/product/toolcontrolbar/text-symbol.svg" alt=""></div>
                 </div>
               </div>
-              <!-- <div id="filter_Sepia" class="controlBox7">
-              <div class="controlBox7_button clicked">
-                <div class="controlBtn7 clicked"><img src="./img/product/tool/archives.svg" alt=""></div>
-              </div>
-            </div> -->
               <div id="filter_Grayscale" class="controlBox8">
                 <div class="controlBox8_button">
                   <div class="controlBtn8"><img src="./img/product/toolcontrolbar/filter.svg" alt=""></div>
@@ -402,11 +397,14 @@
                 <div class="orderBtnBottom"></div>
               </div>
             </div>
+            <div class="patNameInput">
+            <label class="patternName" for="patternName"><h5>為您製作的圖案取個名字吧</h5></label>
             <input type="text" name="patternName" id="patternName">
-            <div>
+          </div>
+            <!-- <div>
               <canvas id="pngCanvas">
               </canvas>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -462,7 +460,6 @@
 
   <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="https://unpkg.com/vuejs-paginate@latest"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
     integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
@@ -478,281 +475,454 @@
   <script src="./js/shop_draw.js"></script>
   <script>
     $('#myCollapsible').on('hidden.bs.collapse', function () {
-      // do something…
+      // bootstrap手風琴用
     })
   </script>
   <script>
     //  ================這是商品Filter用=========================
-    Vue.component('paginate', VuejsPaginate);
-
     const PAGE_SIZE = 10;
     const fOO_DATA = [{
-        style: 'postmark',
+        style: 'countries',
         id: 'itemCard1',
         url: ''
       },
       {
-        style: 'postmark',
+        style: 'countries',
         id: 'itemCard2',
         url: ''
       },
       {
-        style: 'tool',
+        style: 'countries',
         id: 'itemCard3',
         url: ''
       },
       {
-        style: 'pattern',
+        style: 'countries',
         id: 'itemCard4',
         url: ''
       },
       {
-        style: 'pattern',
+        style: 'countries',
         id: 'itemCard5',
         url: ''
       },
       {
-        style: 'postmark',
+        style: 'countries',
         id: 'itemCard6',
         url: ''
       },
       {
-        style: 'pattern',
+        style: 'countries',
         id: 'itemCard7',
         url: ''
       },
       {
-        style: 'postmark',
+        style: 'countries',
         id: 'itemCard8',
         url: ''
       },
       {
-        style: 'pattern',
+        style: 'countries',
         id: 'itemCard9',
         url: ''
       },
       {
-        style: 'tool',
+        style: 'countries',
         id: 'itemCard10',
         url: ''
       },
       {
-        style: 'pattern',
+        style: 'countries',
         id: 'itemCard11',
         url: ''
       },
       {
-        style: 'tool',
+        style: 'countries',
         id: 'itemCard12',
         url: ''
       },
       {
-        style: 'pattern',
+        style: 'countries',
         id: 'itemCard13',
         url: ''
       },
       {
-        style: 'tool',
+        style: 'countries',
         id: 'itemCard14',
         url: ''
       },
       {
-        style: 'pattern',
+        style: 'countries',
         id: 'itemCard15',
         url: ''
       },
       {
-        style: 'postmark',
+        style: 'frame',
         id: 'itemCard16',
         url: ''
       },
       {
-        style: 'postmark',
+        style: 'frame',
         id: 'itemCard17',
         url: ''
       },
       {
-        style: 'postmark',
+        style: 'frame',
         id: 'itemCard18',
         url: ''
       },
       {
-        style: 'tool',
+        style: 'frame',
         id: 'itemCard19',
         url: ''
       },
       {
-        style: 'tool',
+        style: 'frame',
         id: 'itemCard20',
         url: ''
       },
       {
-        style: 'postmark',
+        style: 'frame',
         id: 'itemCard21',
         url: ''
       },
       {
-        style: 'pattern',
+        style: 'frame',
         id: 'itemCard22',
         url: ''
       },
       {
-        style: 'pattern',
+        style: 'frame',
         id: 'itemCard23',
         url: ''
       },
       {
-        style: 'tool',
+        style: 'frame',
         id: 'itemCard24',
         url: ''
       },
       {
-        style: 'pattern',
+        style: 'simple',
         id: 'itemCard25',
         url: ''
       },
       {
-        style: 'tool',
+        style: 'simple',
         id: 'itemCard26',
         url: ''
       },
       {
-        style: 'pattern',
+        style: 'simple',
         id: 'itemCard27',
         url: ''
       },
       {
-        style: 'pattern',
+        style: 'simple',
         id: 'itemCard28',
         url: ''
       },
       {
-        style: 'tool',
+        style: 'simple',
         id: 'itemCard29',
         url: ''
       },
       {
-        style: 'postmark',
+        style: 'simple',
         id: 'itemCard30',
         url: ''
       },
+      {
+        style: 'simple',
+        id: 'itemCard31',
+        url: ''
+      },
+      {
+        style: 'animal',
+        id: 'itemCard32',
+        url: ''
+      },
+      {
+        style: 'animal',
+        id: 'itemCard33',
+        url: ''
+      },
+      {
+        style: 'animal',
+        id: 'itemCard34',
+        url: ''
+      },
+      {
+        style: 'animal',
+        id: 'itemCard35',
+        url: ''
+      },
+      {
+        style: 'animal',
+        id: 'itemCard36',
+        url: ''
+      },
+      {
+        style: 'animal',
+        id: 'itemCard37',
+        url: ''
+      },
+      {
+        style: 'animal',
+        id: 'itemCard38',
+        url: ''
+      },
+      {
+        style: 'animal',
+        id: 'itemCard39',
+        url: ''
+      },
+      {
+        style: 'handpattern',
+        id: 'itemCard40',
+        url: ''
+      },
+      {
+        style: 'handpattern',
+        id: 'itemCard41',
+        url: ''
+      },
+      {
+        style: 'handpattern',
+        id: 'itemCard42',
+        url: ''
+      },
+      {
+        style: 'handpattern',
+        id: 'itemCard43',
+        url: ''
+      },
+      {
+        style: 'handpattern',
+        id: 'itemCard44',
+        url: ''
+      },
+      {
+        style: 'handpattern',
+        id: 'itemCard45',
+        url: ''
+      },
+      {
+        style: 'handpattern',
+        id: 'itemCard46',
+        url: ''
+      },
+      {
+        style: 'vector',
+        id: 'itemCard47',
+        url: ''
+      },
+      {
+        style: 'vector',
+        id: 'itemCard48',
+        url: ''
+      },
+      {
+        style: 'vector',
+        id: 'itemCard49',
+        url: ''
+      },
+      {
+        style: 'vector',
+        id: 'itemCard50',
+        url: ''
+      },
+      {
+        style: 'vector',
+        id: 'itemCard51',
+        url: ''
+      },
+      {
+        style: 'vector',
+        id: 'itemCard52',
+        url: ''
+      },
+      {
+        style: 'vector',
+        id: 'itemCard53',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard54',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard55',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard56',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard57',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard58',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard59',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard60',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard61',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard62',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard63',
+        url: ''
+      },
+      {
+        style: 'tool',
+        id: 'itemCard64',
+        url: ''
+      },
+
     ]
     new Vue({
       el: '#app',
       data: {
         visibility: 'all',
         items: [],
-        currentPage: 1,
-        pageCount: 1,
+        page: 1,
+        windowWidth: 0
       },
-
       computed: {
         pagedListdata: function () {
           var vm = this;
-          // return vm.items
-          //   .filter(function (item) {
-          //     return item => item.style == vm.visibility;
-          //   })
-          //   .filter(function (item) {
-          //     return item.page === vm.currentPage
-          //   })
-
-
-
-          return vm.items.filter(
-              item => item.style == vm.visibility
-            );
-          if (vm.items && vm.items.length > 0) {
-            return vm.items.filter(function (x) {
-              return x.page === vm.currentPage
-            })
-          } else {
-            return [];
+          if (vm.visibility == 'all') {
+            return vm.items
           }
-
-        },
-        // filteredItems() {
-        //   // var newitems = [];
-        //   var vm = this;
-        //   if (vm.visibility == 'all') {
-        //     return vm.items
-        //   } else {
-        //     vm.items.filter(function (item) {
-        //       return vm.visibility === item.style
-        //     })
-        //     console.log(item.style)
-        //     // return newitems
-        //     return [];
-        //   }
-        // },
-
-        // filteredItems() {
-
-        //   const vm = this;
-        //   if (vm.visibility == 'all') {
-        //     return vm.items
-        //   } else {
-        //     return vm.items.filter(
-
-        //       item => item.style == vm.visibility
-
-        //     );
-
-        //   }
-        // },
+          return vm.items.filter(
+            item => item.style == vm.visibility
+          );
+        }
 
       },
+      // filteredItems() {
+      //   // var newitems = [];
+      //   var vm = this;
+      //   if (vm.visibility == 'all') {
+      //     return vm.items
+      //   } else {
+      //     vm.items.filter(function (item) {
+      //       return vm.visibility === item.style
+      //     })
+      //     console.log(item.style)
+      //     // return newitems
+      //     return [];
+      //   }
+      // },
+
+      // filteredItems() {
+
+      //   const vm = this;
+      //   if (vm.visibility == 'all') {
+      //     return vm.items
+      //   } else {
+      //     return vm.items.filter(
+
+      //       item => item.style == vm.visibility
+
+      //     );
+
+      //   }
+      // },
       watch: {
-        items: function (val) {
-          this._setPage2Model();
+        page() {
+          this.change();
         }
       },
       methods: {
-        _setPage2Model: function () {
-          var vm = this;
-          if (!vm.items && vm.items.length <= 0) {
-            vm.pageCount = 1;
-          } else {
-            vm.pageCount = parseInt(vm.items.length / PAGE_SIZE) + (vm.items.length / PAGE_SIZE > 0 ? 1 : 0)
-            for (var i = 0; i < vm.items.length; i++) {
-              vm.$set(vm.items[i], "page", parseInt(i / PAGE_SIZE) + 1)
-            }
-          }
+
+        getWindowWidth(event) {
+          this.windowWidth = document.documentElement.clientWidth;
+          console.log(this.windowWidth)
+
         },
-        pageCallback: function (page) {
-          var vm = this;
-          this.$set(vm, 'currentPage', page);
-        }
+
+        change(index) {
+
+
+          if (this.windowWidth < 576) {
+            if (this.page == 1) {
+              if (index < 6) return true;
+            } else if (this.page == 2) {
+              if (index < 12 && index >= 6) return true;
+            } else if (this.page == 3) {
+              if (index < 18 && index >= 12) return true;
+            }
+          } else if (this.windowWidth < 767) {
+            if (this.page == 1) {
+              if (index < 8) return true;
+            } else if (this.page == 2) {
+              if (index < 17 && index >= 8) return true;
+            } else if (this.page == 3) {
+              if (index < 25 && index >= 17) return true;
+            }
+          } else if (this.page == 1) {
+            if (index < 10) return true;
+          } else if (this.page == 2) {
+            if (index < 20 && index >= 10) return true;
+          } else if (this.page == 3) {
+            if (index < 30 && index >= 20) return true;
+          }
+
+        },
+
       },
+
       created() {
         var vm = this;
         vm.items = fOO_DATA;
       },
+
       mounted() {
+        this.$nextTick(function () {
+          window.addEventListener('resize', this.getWindowWidth);
+          this.getWindowWidth()
+
+        })
+
         axios
           .get('./js/axios_post.php')
           .then((res) => {
-            
             var arr = res.data;
             for (var i = 0; i < arr.length; i++) {
               this.items[i].url = arr[i].prodUrl
             }
-
-
           })
           .catch((error) => {
             console.log(error)
           })
-      }
-
-      // $.ajax({
-      //           type: 'POST',
-      //           url: './js/axios_post.php',
-      //           success: function (data) {
-      //            var arr = data;
-      //            console.log(arr)
-      //           }
-      //         });
+      },
+      beforeDestroy() {
+        window.removeEventListener('resize', this.getWindowWidth);
+      },
 
 
     })
@@ -760,25 +930,12 @@
 
   <script>
     //  ================這是3D按鈕用=========================
-    $('.prev-item').mousedown(function () {
+    $('.switchBtn').mousedown(function () {
       $(this).addClass('clicked');
     });
-    $('.prev-item').mouseup(function () {
+    $('.switchBtn').mouseup(function () {
       $(this).removeClass('clicked');
     });
-    $('.next-item').mousedown(function () {
-      $(this).addClass('clicked');
-    });
-    $('.next-item').mouseup(function () {
-      $(this).removeClass('clicked');
-    });
-    $('.page-link-item').mousedown(function () {
-      $(this).addClass('clicked');
-    });
-    $('.page-link-item').mouseup(function () {
-      $(this).removeClass('clicked');
-    });
-
     $('.orderBtn').mousedown(function () {
       $(this).addClass('clicked');
     });
