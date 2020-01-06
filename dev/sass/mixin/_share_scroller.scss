@@ -11,6 +11,7 @@ $scrollbar-shadow: $main-yellow !default;
 
 // Sizes
 $scrollbar-width: .7vw !default;
+
 $scrollbar-border-radius: 0 !default;
 
 // Settings
@@ -29,7 +30,16 @@ $scrollbar-ie-fallback: false !default;
   ::-webkit-scrollbar {
     width: $scrollbar-width;
   }
-
+  @include respond(note){
+    ::-webkit-scrollbar {
+      width: 2vw;
+    }
+  }
+  @include respond(iphone){
+    ::-webkit-scrollbar {
+      width: 2vw;
+    }
+  }
   ::-webkit-scrollbar-thumb {
     background-color: rgba($scrollbar-background, 1);
 
