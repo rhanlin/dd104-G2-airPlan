@@ -1,14 +1,70 @@
+
+
 @mixin foldthePlane() {
   .planeBox {
     width: auto;
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: #444;
+    background-color: #ddd;
     box-sizing: border-box;
     display: none;
+    position: relative;
+    overflow: hidden;
   }
-
+  #cloudDiv{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: #3b93ff;
+    overflow: hidden;
+    box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+    animation: ascene 5s linear infinite;
+    .cloud {
+      position: absolute;
+      color: #ccc;
+      animation:  acloud 1.8s linear infinite;
+    }
+    .cloud1 {
+      left: 10%;
+      top:30%;
+      font-size: 6em;
+    }
+    .cloud2 {
+      left: 45%;
+      top:10%;
+      font-size: 3em;
+      z-index: -1;
+      animation-delay: -0.8s;
+    }
+    .cloud3 {
+      right: 20%;
+      top:18%;
+      font-size: 3em;
+      animation-delay: -0.4s;
+    }
+  }
+  #iceLand{
+    width: 100vw;
+    padding-bottom: 100vw;
+    border-radius: 50%;
+    // background-color: #151823;
+    // background-image: url(../img/share/iceland.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+    position: absolute;
+    bottom: -100%;
+    left: 0%;
+    transform: translateX(-50%);
+    animation: iceLand 3s linear infinite;
+    
+  }
   #imgWrap {
     width: 55.6vw;
     max-width: 495px;
@@ -20,32 +76,82 @@
     animation-duration: .5s;
     animation-fill-mode: forwards;
     margin: 0 auto;
-  }
-
-  @keyframes showImgWrap {
-    from {
-      transform: translateY(100%);
+    position: relative;
+    filter: drop-shadow(0px 0px 15px #bbb);
+    z-index: 9;
+    #planeShadow {
+      width: 5%;
+      height: 75%;
+      background: linear-gradient(40deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .1) 47%, rgba(0, 0, 0, 0) 100%);
+      border-radius: 40%;
+      filter: blur(6px);
+      position: absolute;
+      bottom: 0%;
+      left: 0;
+      transform: translateX(-50%);
       opacity: 0;
+      animation-name: opacityShow;
+      animation-delay: .5s;
+      animation-duration: .5s;
+      animation-fill-mode: forwards;
     }
 
-    to {
-      transform: translateY(0%);
-      opacity: 1;
+    #windSpeedWrap {
+      position: absolute;
+      width: 80%;
+      height: 50%;
+      left: 30%;
+      top: 0;
+      z-index: 99;
+      transform: translateY(100%) rotate(85deg);
+      opacity: 0;
+      animation-name: opacityShow;
+      animation-delay: .5s;
+      animation-duration: .5s;
+      animation-fill-mode: forwards;
+
+      span {
+        background: linear-gradient(90deg, #e3e1ea00 30%, #3c384d 90%);
+        border-radius: 50px;
+        display: block;
+        position: absolute;
+        height: 10px;
+        animation: speed ease;
+        animation-iteration-count: infinite;
+
+        &:nth-child(1) {
+          width: 100%;
+          left: 0%;
+          top: 0%;
+          animation-delay: 250ms;
+          animation-duration: 600ms;
+        }
+
+        &:nth-child(2) {
+          width: 50%;
+          left: 50%;
+          top: 38%;
+          animation-delay: 50ms;
+          animation-duration: 500ms;
+        }
+
+        &:nth-child(3) {
+          width: 30%;
+          left: 0;
+          top: 60%;
+          animation-duration: 250ms;
+        }
+
+        &:nth-child(4) {
+          width: 60%;
+          left: 5%;
+          top: 20%;
+          animation-delay: 250ms;
+          animation-duration: 900ms;
+        }
+      }
     }
   }
-
-  @keyframes rotatePlane {
-    from {
-      transform: rotate(0);
-      opacity: 1;
-    }
-
-    to {
-      transform: rotate(-85deg);
-      opacity: 1;
-    }
-  }
-
   #img {
     width: 100%;
     height: 100%;
@@ -58,14 +164,13 @@
     display: flex;
     position: absolute;
     /* 1 */
+    -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 40%, 100% 100%, 0 100%, 0 40%, 0 0);
     clip-path: polygon(50% 0%, 100% 0, 100% 40%, 100% 100%, 0 100%, 0 40%, 0 0);
     z-index: 99;
-    /* 2 */
-    /* clip-path: polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0 100%, 0 34.5%, 0% 0%);
-      z-index: 9; */
   }
 
   .pointerAll {
+    --scale-value: 1;
     width: 3vw;
     height: 3vw;
     border-radius: 50%;
@@ -75,17 +180,29 @@
     z-index: 99999;
     animation-duration: .5s;
     animation-name: pointerName;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 8;
     animation-direction: alternate;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+    transform: translateY(-50%) scale3d(var(--scale-value), var(--scale-value), 1);
+    transition: transform cubic-bezier(0.175, 0.885, 0.32, 1.275) .2s;
+
+    &:active {
+      border-color: $main-yellow;
+      background-color: $main-white;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   #pointer {
     top: 0%;
     right: -1.8vw;
+    transform: translateY(-50%);
   }
 
   #pointer2 {
@@ -111,16 +228,6 @@
     animation-name: pointerName;
   }
 
-  @keyframes pointerName {
-    from {
-      transform: translateY(-50%) scale(1);
-    }
-
-    to {
-      transform: translateY(-50%) scale(.5);
-    }
-  }
-
   #imgLeftTriangle {
     width: 27.8vw;
     max-width: 247.5px;
@@ -132,11 +239,9 @@
     background-color: #FFFFFF;
     /* border: 1px solid #fff; */
     /* 1 */
+    -webkit-clip-path: polygon(0 0, 0% 100%, 100% 0);
     clip-path: polygon(0 0, 0% 100%, 100% 0);
     z-index: 1;
-    /* 2 */
-    /* clip-path: polygon(0 100%, 100% 300%, 100% 0);
-      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25); */
   }
 
   #imgLeftTriangle2 {
@@ -147,6 +252,7 @@
     left: 0;
     background-color: #fff;
     z-index: 1;
+    -webkit-clip-path: polygon(100% 0, 100% 55%, 0 100%);
     clip-path: polygon(100% 0, 100% 55%, 0 100%);
 
     display: none;
@@ -163,11 +269,9 @@
     background-color: #FFFFFF;
     /* border: 1px solid #fff; */
     /* 1 */
+    -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);
     clip-path: polygon(100% 0, 0 0, 100% 100%);
     z-index: 1;
-    /* 2 */
-    /* clip-path: polygon(0 300%, 0 0, 100% 100%);
-      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25); */
   }
 
   #imgRightTriangle2 {
@@ -178,6 +282,7 @@
     right: 0;
     background-color: #fff;
     z-index: 99;
+    -webkit-clip-path: polygon(0% 0%, 0% 55%, 100% 100%);
     clip-path: polygon(0% 0%, 0% 55%, 100% 100%);
     display: none;
   }
@@ -190,25 +295,12 @@
     left: 0;
     background-color: #fff;
     z-index: 99;
+    -webkit-clip-path: polygon(50% 0%, 0 85%, 0 100%, 0 100%, 50% 100%);
     clip-path: polygon(50% 0%, 0 85%, 0 100%, 0 100%, 50% 100%);
     display: none;
     animation-name: foldAnimation;
     animation-delay: .3s;
     animation-duration: 0.5s;
-  }
-
-  /* .foldAnimation{
-  
-} */
-
-  @keyframes foldAnimation {
-    from {
-      clip-path: polygon(50% 0%, 0 85%, 0 100%, 0 100%, 50% 100%);
-    }
-
-    to {
-      clip-path: polygon(50% 0%, 100% 85%, 100% 100%, 100% 100%, 50% 100%);
-    }
   }
 
   #planeWing {
@@ -218,6 +310,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    -webkit-clip-path: polygon(9% 0%, 100% 81%, 100% 95.3%, 50% 95.3%);
     clip-path: polygon(9% 0%, 100% 81%, 100% 95.3%, 50% 95.3%);
     z-index: 99;
     display: none;
@@ -225,16 +318,6 @@
     animation-delay: .5s;
     animation-duration: .5s;
     animation-fill-mode: forwards;
-  }
-
-  @keyframes foldAnimationStep2 {
-    from {
-      clip-path: polygon(9% 0%, 100% 81%, 100% 95.3%, 50% 95.3%);
-    }
-
-    to {
-      clip-path: polygon(9% 0%, 0% 80%, 50% 100%, 80% 100%);
-    }
   }
 
   #planeBody {
@@ -247,11 +330,313 @@
     /* background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c); */
     background: linear-gradient(70deg, #000, #fff 0%, #ddd);
     z-index: 99;
+    -webkit-clip-path: polygon(50% 0%, 100% 100%, 100% 100%, 100% 100%, 50% 100%);
     clip-path: polygon(50% 0%, 100% 100%, 100% 100%, 100% 100%, 50% 100%);
+
     display: none;
     /* animation-name: foldAnimation;
   animation-delay: .5s;
   animation-duration: 0.5s; */
   }
-}
+  @include respond(note){
+    .planeBox {
+      
+    }
+    #cloudDiv{
+      .cloud {
+      }
+      .cloud1 {
+      }
+      .cloud2 {
+      }
+      .cloud3 {
+      }
+    }
+    #iceLand{
+      
+    }
+    #imgWrap {
+      width: 82.6vw;
+      height: 120vw;
+      max-width: unset;
+      max-height: unset;
+      #planeShadow {
+      }
   
+      #windSpeedWrap {
+  
+        span {
+  
+          &:nth-child(1) {
+          }
+  
+          &:nth-child(2) {
+          }
+  
+          &:nth-child(3) {
+          }
+  
+          &:nth-child(4) {
+          }
+        }
+      }
+    }
+    #img {
+    }
+  
+    .pointerAll {
+      width: 10vw;
+      height: 10vw;
+    }
+  
+    #pointer {
+      right: -4.8vw;
+    }
+  
+    #pointer2 {
+      left: -4.8vw;
+    }
+  
+    #pointer3 {
+      right: -4.8vw;
+    }
+  
+    #pointer4 {
+      left: -4.8vw;
+    }
+  
+    #pointer5 {
+      right: -4.8vw;
+    }
+  
+    #imgLeftTriangle {
+      width: 41.3vw;
+      height: 41.5vw;
+    }
+  
+    #imgLeftTriangle2 {
+    }
+  
+    #imgRightTriangle {
+      width: 41.3vw;
+      height: 41.5vw;
+    }
+  
+    #imgRightTriangle2 {
+    }
+  
+    #imgFinalStep {
+    }
+  
+    #planeWing {
+    }
+  
+    #planeBody {
+    }
+  }
+}
+
+
+@keyframes foldAnimationStep2 {
+  from {
+    -webkit-clip-path: polygon(9% 0%, 100% 81%, 100% 95.3%, 50% 95.3%);
+    clip-path: polygon(9% 0%, 100% 81%, 100% 95.3%, 50% 95.3%);
+  }
+
+  to {
+    -webkit-clip-path: polygon(9% 0%, 0% 80%, 50% 100%, 80% 100%);
+    clip-path: polygon(9% 0%, 0% 80%, 50% 100%, 80% 100%);
+  }
+}
+@keyframes foldAnimation {
+  from {
+    -webkit-clip-path: polygon(50% 0%, 0 85%, 0 100%, 0 100%, 50% 100%);
+    clip-path: polygon(50% 0%, 0 85%, 0 100%, 0 100%, 50% 100%);
+  }
+
+  to {
+    -webkit-clip-path: polygon(50% 0%, 100% 85%, 100% 100%, 100% 100%, 50% 100%);
+    clip-path: polygon(50% 0%, 100% 85%, 100% 100%, 100% 100%, 50% 100%);
+  }
+}
+@keyframes pointerName {
+  from {
+    transform: translateY(-50%) scale(1);
+  }
+
+  to {
+    transform: translateY(-50%) scale(.5);
+  }
+}
+@keyframes speed {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+}
+
+@keyframes showImgWrap {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes rotatePlane {
+  from {
+    transform: rotate(0);
+    opacity: 1;
+    width: 82.6vw;
+    height: 120vw;
+  }
+
+  to {
+    transform: rotate(-85deg);
+    opacity: 1;
+    width: 55vw;
+    height: 80vw;
+  }
+}
+@keyframes hoverPlane {
+  0% {      
+    transform: rotate(-85deg) translate(15%, 20%);
+    opacity: .5;
+  }
+  50%{
+    opacity: 1;
+  }
+  to {
+    transform: rotate(-85deg) translate(-15%, -30%);
+    opacity: .5;
+  }
+}
+@keyframes opacityShow {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@keyframes shakePlane {
+  0% {
+    transform: rotate(-85deg) scale(0.95,1.05);
+  }
+  10% {
+    transform: rotate(-82deg) scale(0.9,1.1);
+  }
+  20% {
+    transform: rotate(-85deg) scale(0.95,1.05);
+  }
+  30% {
+    transform: rotate(-82deg) scale(0.9,1.1);
+  }
+  40% {
+    transform: rotate(-85deg) scale(0.95,1.05);
+  }
+  50% {
+    transform: rotate(-82deg) scale(0.9,1.1);
+  }
+  60% {
+    transform: rotate(-85deg) scale(0.95,1.05);
+  }
+  70% {
+    transform: rotate(-82deg) scale(0.9,1.1);
+  }
+  80% {
+    transform: rotate(-85deg) scale(0.95,1.05);
+  }
+  90% {
+    transform: rotate(-82deg) scale(0.9,1.1);
+  }
+  100% {
+    transform: rotate(-85deg) scale(0.95,1.05);
+  }
+}
+@keyframes shootPlane {
+  from{
+    transform: rotate(-85deg) translateY(-0%);
+    opacity: 1;
+  }
+  to{
+    transform: rotate(-85deg) translateY(-200%);
+    opacity: 0;
+  }
+}
+
+@keyframes shootPlaneSecond {
+  from{
+    opacity: 0;
+    transform: rotate(-85deg) translateY(200%);
+  }
+  to{
+    opacity: 1;
+    transform: rotate(-85deg) translateY(0%);
+  }
+}
+
+@keyframes iceLand {
+  from{
+    transform: rotate(0deg);
+    bottom: -98%;
+  }
+  to{
+    transform: rotate(360deg);
+    bottom: -100%;
+  }
+}
+
+@keyframes arocket {
+	0% {
+		transform: rotate(-85deg) translate(0,0);
+	}
+	50% {
+		transform: rotate(-85deg) translate(-5px,5px);
+	}
+	100% {
+		transform: rotate(-85deg) translate(0,0);
+	}
+}
+
+@keyframes ascene {
+	0% {
+		background: #b339ff
+	}
+	30% {
+		background: #3b93ff
+	}
+	70% {
+		background: #3b93ff
+	}
+	100% {
+		background: #b339ff
+	}
+}
+@keyframes acloud {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(1000%);
+	}
+}
+@keyframes showScene {
+  from{
+    opacity: .5;
+    transform: translate(-200%,-50%)
+  }
+  to{
+    opacity: 1;
+    transform: translate(-50%,-50%)
+  }
+}
