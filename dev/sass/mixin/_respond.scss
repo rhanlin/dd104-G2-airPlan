@@ -13,6 +13,12 @@
     }
   }
 
+  @else if $breakpoint=="note_max" {
+    @media all and (max-width:$note-max) {
+      @content;
+    }
+  }
+
   @else if $breakpoint=="small" {
     @media all and (max-width:$ipad-max)and(min-width:$ipad-min) {
       @content;
@@ -23,6 +29,13 @@
       @content;
     }
   }
+
+  @else if $breakpoint=="small_max" {
+    @media all and (max-width:$ipad-max) {
+      @content;
+    }
+  }
+
   @else if $breakpoint=="mediumSize" {
     @media all and (max-width:$laptop-max)and(min-width:$laptop-min) {
       @content;
@@ -40,7 +53,7 @@
       @content;
     }
   }
- 
+
 
   @else if $breakpoint=="desktopXl" {
     @media all and (max-width:$desktopXl-max) {

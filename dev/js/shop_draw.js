@@ -433,7 +433,7 @@ function output(formatType) {
   // .always(function (respond) {
   //   console.log("always");
   // })
-  
+
   const a = document.createElement('a');
 
   a.href = dataURL
@@ -682,7 +682,6 @@ function resizeCanvas() {
 
   }
   canvas.setWidth(canvasBox.width)
-
   // console.log('window.innerWidth: ', window.innerWidth);
   canvas.renderAll();
 }

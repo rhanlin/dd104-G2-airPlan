@@ -163,10 +163,10 @@
                 }
 
                 .cav-landLetter {
-                  border: 1px solid firebrick;
+                  // border: 1px solid firebrick;
                   position: absolute;
                   top: 55%;
-                  left: 00%;
+                  left: 0%;
                   width: 70px;
                   z-index: 20;
                   background-color: #fff;
@@ -214,8 +214,6 @@
             overflow-y: scroll;
 
             &::-webkit-scrollbar {
-              // border:1px solid firebrick;
-              // width: 9px;
               width: 0;
               background-color: #ccc;
               border-radius: 2px;
@@ -640,7 +638,7 @@
         background-repeat: no-repeat;
         background-position: center;
       }
-      .cav-preview-plan{
+      .cav-preview-plan {
         display: none;
       }
       .cav-preview-plan.cav-leftBlock-1 {
@@ -674,7 +672,7 @@
           background-position: center;
           background-size: contain;
           clip-path: circle(29% at 49.25% 49.25%);
-          background-color: goldenrod;
+          // background-color: goldenrod;
           opacity: 0.8;
         }
       }
@@ -725,8 +723,6 @@
       overflow-y: scroll;
 
       &::-webkit-scrollbar {
-        // border:1px solid firebrick;
-        // width: 9px;
         width: 0;
         background-color: #ccc;
         border-radius: 2px;
@@ -1114,7 +1110,7 @@
   }
   .cav-myItem {
     .cav-leftWrap {
-      .cav-topBlock {  
+      .cav-topBlock {
         .cav-preview-plan.cav-leftBlock-1 {
           > span {
             clip-path: polygon(12% 18%, 86% 12%, 62.5% 88.5%, 42% 60%, 25.5% 71%, 27% 39%);
@@ -1122,7 +1118,7 @@
         }
         .cav-preview-plan.cav-leftBlock-2 {
           > span {
-            clip-path: circle(29% at 49.25% 49.25%);
+            clip-path: circle(33% at 49.25% 49.25%);
           }
         }
       }
@@ -1133,9 +1129,14 @@
   .cav-myItem {
     .cav-leftWrap {
       .cav-topBlock {
-        .cav-preview-plan {
+        .cav-preview-plan.cav-leftBlock-1 {
           > span {
             clip-path: polygon(11% 23%, 87% 17%, 62.5% 81.5%, 42% 58%, 26% 67%, 27% 40%);
+          }
+        }
+        .cav-preview-plan.cav-leftBlock-2 {
+          > span {
+            clip-path: circle(37% at 49.25% 49.25%);
           }
         }
       }
@@ -1302,220 +1303,87 @@
   }
 }
 @include respond(small) {
-  .cav-main {
-    width: 100%;
-    .btn {
-      padding: -1.2vw 2vw;
-      top: 20%;
-      left: 10%;
-    }
-    .cav-leftWrap {
-      .cav-tabWrap {
-        min-height: 400px;
-        max-height: 80%;
-        // height: 44vw;
-        padding: 10px;
-        overflow-y: scroll;
+  .cav-readLetterWrap {
+    .cav-boxImg {
+      margin: 150px auto 0;
+      min-width: 650px;
+
+      .cav-horiImg {
+        display: none;
+      }
+      .cav-vertImg {
+        width: 530px;
+        margin: 0 auto;
+        display: block;
+        position: relative;
       }
 
-      .cav-boxImg {
-        width: 100%;
-        position: relative;
-        margin: 150px auto 0;
-        min-width: 650px;
+      .cav-boxFront {
+        width: 66%;
+        height: 93%;
+        min-height: 610px;
+        position: absolute;
+        top: 27px;
+        left: 17%;
 
-        .cav-horiImg {
-          display: none;
-        }
-        .cav-vertImg {
-          width: 530px;
-          margin: 0 auto;
-          display: block;
-          position: relative;
-        }
-
-        .cav-boxFront {
-          width: 62%;
-          height: 93%;
-          min-height: 610px;
-          position: absolute;
-          top: 27px;
-          left: 19%;
-
-          .cav-boxFrontLeft {
-            border: 1px solid green;
-            display: inline-block;
-            width: 100%;
-            height: 100%;
-            padding: 10px;
-
-            .cav-whoLetter {
-              border: 1px solid fuchsia;
-              display: flex;
-              justify-content: space-around;
-            }
-
-            .cav-histLetter1 {
-              border: $border;
-              background-color: #ddd;
-              padding: 5px;
-              height: 87.7%;
-
-              .cav-histLetter2 {
-                border: $border;
-                background-color: rgb(74, 117, 112);
-                padding: 10px;
-                height: 100%;
-                overflow-y: scroll;
-
-                &::-webkit-scrollbar {
-                  width: 0;
-                  background-color: #ccc;
-                  border-radius: 2px;
-                }
-
-                &::-webkit-scrollbar-thumb {
-                  width: 5px;
-                  background-color: slategrey;
-                  border-radius: 10px;
-                }
-
-                > .cav-letters {
-                  border: $border;
-                  height: 100px;
-                  margin: 0 auto 10px;
-                  padding: 3%;
-                  border-radius: 20px;
-                  background-color: $main-yellow;
-                  overflow: hidden;
-                  display: flex;
-                  cursor: pointer;
-
-                  &.cav-looking {
-                    background-color: $main-red;
-                  }
-
-                  .cav-letWord {
-                    // border: 1px solid blue;
-                    width: 80%;
-
-                    .cav-letTitle {
-                      margin: 0;
-                    }
-
-                    .cav-letTime {
-                      margin: 0;
-                    }
-                  }
-
-                  .cav-letSetting {
-                    // border: 1px solid blueviolet;
-                    width: 20%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    > div {
-                      margin: 0 auto;
-                      height: 50%;
-
-                      i {
-                        font-size: 30px;
-
-                        &:hover {
-                          color: $main-dark-red;
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
+        .cav-boxFrontLeft {
+          width: 100%;
+          .cav-histLetter1 {
+            height: 88.4%;
           }
+        }
 
-          .cav-boxFrontRight {
-            display: none;
-
+        .cav-boxFrontRight {
+          position: absolute;
+          top: 0;
+          right: -200%;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.5s;
+          &.active {
+            right: 0;
+            opacity: 1;
+            visibility: visible;
             .cav-showLetterBack {
               .cav-showLetter {
-                &::-webkit-scrollbar {
-                  width: 0;
-                  background-color: #ccc;
-                  border-radius: 2px;
-                }
-
-                &::-webkit-scrollbar-thumb {
-                  width: 5px;
-                  background-color: slategrey;
-                  border-radius: 10px;
-                }
-
                 .letter-wrap {
-                  border: 50px solid transparent;
-                  border-image: url("../img/cave/cav-postCard_b.svg") 50 50 round;
-                  background-color: #fff;
-                  width: 82.5%;
-                  margin: 20px auto;
-                  position: relative;
+                  opacity: 1;
+                  visibility: visible;
+                }
+              }
+            }
+          }
+          .cav-showLetterBack {
+            .cav-showLetter {
+              .letter-wrap {
+                width: 94.5%;
 
-                  hr {
-                    border: 1px solid #ccc;
-                    margin: 15px auto;
+                hr {
+                  border: 1px solid #ccc;
+                  margin: 15px auto;
+                }
+
+                .cav-letNavbar {
+                  .cav-letNavOption {
+                    // border: 1px solid tomato;
+                    width: 35px;
+                    height: 35px;
+                    margin-left: 5px;
+                    vertical-align: middle;
                   }
+                }
 
-                  .cav-letNavbar {
-                    display: flex;
-                    justify-content: flex-end;
-                    // border: 1px solid #ccc;
+                .cav-h3 {
+                  margin: 15px 0;
+                  padding-bottom: 5px;
+                  border-bottom: 1px solid #ccc;
+                }
 
-                    .cav-letNavOption {
-                      // border: 1px solid tomato;
-                      width: 35px;
-                      height: 35px;
-                      margin-left: 5px;
-                      vertical-align: middle;
-                    }
-                  }
-
-                  .cav-h3 {
-                    margin: 15px 0;
-                    padding-bottom: 5px;
-                    border-bottom: 1px solid #ccc;
-                  }
-
-                  .cav-letComment {
-                    // border: 1px solid rosybrown;
-                    border-bottom: 1px solid #ccc;
-                    display: flex;
-
-                    .cav-commMain {
-                      // border-bottom: 1px solid #ccc;
-                      width: 80%;
-
-                      .cav-commHead {
-                        // display: flex;
-                        margin-bottom: 5px;
-
-                        .cav-commId {
-                          font-weight: bold;
-                          font-size: 14px;
-                          margin-right: 5px;
-                        }
-
-                        .cav-commTime {
-                          color: #777;
-                          font-size: 10px;
-                          text-align: initial;
-                        }
-                      }
-                    }
-
-                    .cav-commOption {
-                      display: flex;
-                      flex-direction: column;
-                      justify-content: space-around;
-                      margin: 0 auto;
-                    }
+                .cav-letComment {
+                  .cav-commOption {
+                    justify-content: space-around;
                   }
                 }
               }
@@ -1523,43 +1391,69 @@
           }
         }
       }
-
-      .cav-prod {
-        width: 18vw;
-        height: 18vw;
-        margin: 1.3%;
-      }
-
-      .cav-myItem {
-        display: inline-block;
-        height: auto;
-
-        .cav-leftWrap {
-          width: 70%;
-          margin: 0 auto;
+    }
+  }
+  .btn {
+    padding: -1.2vw 2vw;
+    top: 20%;
+    left: 10%;
+  }
+  .cav-leftWrap {
+    .cav-topBlock {
+      .cav-preview-plan.cav-leftBlock-1 {
+        > span {
+          clip-path: polygon(11% 23%, 87% 17%, 62.5% 81.5%, 42% 58%, 26% 67%, 27% 40%);
         }
       }
+      .cav-preview-plan.cav-leftBlock-2 {
+        > span {
+          clip-path: circle(37% at 49.25% 49.25%);
+        }
+      }
+    }
+    .cav-tabWrap {
+      min-height: 400px;
+      max-height: 80%;
+      // height: 44vw;
+      padding: 10px;
+      overflow-y: scroll;
+    }
 
-      .cav-rightWrap {
-        display: inline-block;
+    .cav-prod {
+      width: 18vw;
+      height: 18vw;
+      margin: 1.3%;
+    }
+
+    .cav-myItem {
+      display: inline-block;
+      height: auto;
+
+      .cav-leftWrap {
         width: 70%;
-        margin-top: 100px;
-        margin-left: 15%;
+        margin: 0 auto;
+      }
+    }
 
-        .cav-tabWrap {
-          top: 55px;
+    .cav-rightWrap {
+      display: inline-block;
+      width: 70%;
+      margin-top: 100px;
+      margin-left: 15%;
 
-          .cav-prod {
-            width: 18vw;
-            height: 18vw;
-            margin: 2%;
-          }
+      .cav-tabWrap {
+        top: 55px;
 
-          .cav-addProd {
-            width: 18vw;
-            height: 18vw;
-            margin: 2%;
-          }
+        .cav-prod {
+          width: 18vw;
+          height: 18vw;
+          margin: 2%;
+        }
+
+        .cav-addProd {
+          width: 18vw;
+          height: 18vw;
+          margin: 2%;
         }
       }
     }
@@ -1572,9 +1466,14 @@
 
     .cav-leftWrap {
       .cav-topBlock {
-        .cav-preview-plan {
+        .cav-preview-plan.cav-leftBlock-1 {
           > span {
             clip-path: polygon(17% 11%, 81% 4%, 60.5% 96.5%, 43% 61%, 28% 76%, 30% 37%);
+          }
+        }
+        .cav-preview-plan.cav-leftBlock-2 {
+          > span {
+            clip-path: circle(26% at 49.25% 49.25%);
           }
         }
       }
@@ -1768,18 +1667,9 @@
           }
 
           .cav-histLetter1 {
-            border: $border;
-            background-color: #ddd;
-            padding: 5px;
             height: 85.7%;
 
             .cav-histLetter2 {
-              border: $border;
-              background-color: rgb(74, 117, 112);
-              padding: 10px;
-              height: 100%;
-              overflow-y: scroll;
-
               &::-webkit-scrollbar {
                 width: 0;
                 background-color: #ccc;
@@ -1808,7 +1698,6 @@
                 }
 
                 .cav-letWord {
-                  border: 1px solid blue;
                   width: 80%;
 
                   .cav-letTitle {
@@ -1821,7 +1710,6 @@
                 }
 
                 .cav-letSetting {
-                  border: 1px solid blueviolet;
                   width: 20%;
                   display: flex;
                   justify-content: center;
@@ -1888,11 +1776,7 @@
               }
 
               .letter-wrap {
-                border: 50px solid transparent;
-                border-image: url("../img/cave/cav-postCard_b.svg") 50 50 round;
-                background-color: #fff;
                 width: 82.5%;
-                margin: 20px auto;
 
                 .cav-letClose {
                   right: -20%;
@@ -1911,10 +1795,6 @@
                   }
 
                   .cav-letNavbar {
-                    display: flex;
-                    justify-content: flex-end;
-                    // border: 1px solid #ccc;
-
                     .cav-letNavOption {
                       // border: 1px solid tomato;
                       width: 35px;
@@ -1936,34 +1816,9 @@
                   }
 
                   .cav-letComment {
-                    border-bottom: 1px solid #ccc;
-                    display: flex;
-
-                    .cav-commMain {
-                      width: 80%;
-
-                      .cav-commHead {
-                        margin-bottom: 5px;
-
-                        .cav-commId {
-                          font-weight: bold;
-                          font-size: 14px;
-                          margin-right: 5px;
-                        }
-
-                        .cav-commTime {
-                          color: #777;
-                          font-size: 10px;
-                          text-align: initial;
-                        }
-                      }
-                    }
-
                     .cav-commOption {
-                      display: flex;
-                      flex-direction: column;
                       justify-content: space-around;
-                      margin: 0 auto;
+
                       .cav-commLike {
                         margin-top: -51%;
                       }
@@ -2024,12 +1879,16 @@
 @include respond(iphone) {
   .cav-main {
     width: 100%;
-
     .cav-leftWrap {
       .cav-topBlock {
-        .cav-preview-plan {
+        .cav-preview-plan.cav-leftBlock-1 {
           > span {
             clip-path: polygon(13% 11%, 85% 4%, 62.5% 96.5%, 42% 61%, 26% 76%, 28% 37%);
+          }
+        }
+        .cav-preview-plan.cav-leftBlock-2 {
+          > span {
+            clip-path: circle(28% at 49.25% 49.25%);
           }
         }
       }
@@ -2159,8 +2018,6 @@
       }
     }
     .cav-boxImg {
-      width: 100%;
-      position: relative;
       margin: 150px auto 0;
       overflow-x: scroll;
       .cav-horiImg {
@@ -2174,30 +2031,18 @@
       }
 
       .cav-boxFront {
-        width: 80%;
+        width: 84%;
         height: 93%;
         position: absolute;
         top: 3.5%;
-        left: 10%;
-        border: 2px solid fuchsia;
+        left: 8%;
         overflow: hidden;
 
         .cav-boxFrontLeft {
-          border: 1px solid green;
-          display: inline-block;
           width: 100%;
-          height: 100%;
-          padding: 10px;
 
           .cav-whoLetter {
-            border: 1px solid fuchsia;
-            display: flex;
-            justify-content: space-around;
-
             .cav-myLetter {
-              border: 1px solid sandybrown;
-              position: relative;
-              width: 50%;
               .btn {
                 padding: -0.2vw 1vw;
                 top: 30%;
@@ -2206,8 +2051,6 @@
             }
 
             .cav-otherLetter {
-              border: 1px solid sandybrown;
-              width: 50%;
               .btn {
                 padding: -1.2vw 1vw;
                 top: 30%;
@@ -2217,63 +2060,13 @@
           }
 
           .cav-histLetter1 {
-            border: $border;
-            background-color: #ddd;
-            padding: 5px;
             height: 84.7%;
 
             .cav-histLetter2 {
-              border: $border;
-              background-color: rgb(74, 117, 112);
-              padding: 10px;
-              height: 100%;
-              overflow-y: scroll;
-
-              &::-webkit-scrollbar {
-                width: 0;
-                background-color: #ccc;
-                border-radius: 2px;
-              }
-
-              &::-webkit-scrollbar-thumb {
-                width: 5px;
-                background-color: slategrey;
-                border-radius: 10px;
-              }
-
               > .cav-letters {
-                border: $border;
-                height: 100px;
-                margin: 0 auto 10px;
-                padding: 3%;
-                border-radius: 20px;
-                background-color: $main-yellow;
                 overflow: hidden;
-                display: flex;
-                cursor: pointer;
-
-                &.cav-looking {
-                  background-color: $main-red;
-                }
 
                 .cav-letSetting {
-                  width: 20%;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-
-                  > div {
-                    margin: 0 auto;
-                    height: 50%;
-
-                    i {
-                      font-size: 30px;
-
-                      &:hover {
-                        color: $main-dark-red;
-                      }
-                    }
-                  }
                   .cav-landLetter {
                     left: -40%;
                   }
@@ -2310,22 +2103,7 @@
             .cav-showLetter {
               left: -20%;
 
-              &::-webkit-scrollbar {
-                width: 0;
-                background-color: #ccc;
-                border-radius: 2px;
-              }
-
-              &::-webkit-scrollbar-thumb {
-                width: 5px;
-                background-color: slategrey;
-                border-radius: 10px;
-              }
-
               .letter-wrap {
-                border: 50px solid transparent;
-                border-image: url("../img/cave/cav-postCard_b.svg") 50 50 round;
-                background-color: #fff;
                 width: 100%;
                 margin: 0 auto;
                 .cav-letClose {
@@ -2339,64 +2117,10 @@
                 .letter-contant {
                   width: 130%;
                   margin: -15% -15% 0 -15%;
-                }
-                hr {
-                  border: 1px solid #ccc;
-                  margin: 15px auto;
-                }
 
-                .cav-letNavbar {
-                  display: flex;
-                  justify-content: flex-end;
-
-                  .cav-letNavOption {
-                    width: 35px;
-                    height: 35px;
-                    margin-left: 5px;
-                    vertical-align: middle;
-
-                    img {
-                      width: 100%;
-                      cursor: pointer;
-                    }
-                  }
-                }
-
-                .cav-h3 {
-                  margin: 15px 0;
-                  padding-bottom: 5px;
-                  border-bottom: 1px solid #ccc;
-                }
-                .letter-contant {
                   .cav-letComment {
-                    border-bottom: 1px solid #ccc;
-                    display: flex;
-
-                    .cav-commMain {
-                      width: 80%;
-
-                      .cav-commHead {
-                        margin-bottom: 5px;
-
-                        .cav-commId {
-                          font-weight: bold;
-                          font-size: 14px;
-                          margin-right: 5px;
-                        }
-
-                        .cav-commTime {
-                          color: #777;
-                          font-size: 10px;
-                          text-align: initial;
-                        }
-                      }
-                    }
-
                     .cav-commOption {
-                      display: flex;
-                      flex-direction: column;
                       justify-content: space-around;
-                      margin: 0 auto;
 
                       .cav-commLike {
                         margin-top: -51%;
@@ -2431,13 +2155,12 @@
     }
 
     .cav-rightWrap {
-      display: inline-block;
       width: 80%;
       margin-top: 100px;
       margin-left: 10%;
 
       .cav-tabWrap {
-        top: 10.4%;
+        top: 9.4%;
 
         .cav-prodWrap {
           padding: 2%;
