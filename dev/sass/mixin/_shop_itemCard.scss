@@ -4,8 +4,8 @@
     //從1跑到5
     #itemCard#{$i} {
       width: 8vw;
-      height: 10vw;
-      margin: 0 2%;
+      height: 8vw;
+      margin: 0 2% 10% 2%;
       border: $border;
       background-size: contain;
       background-position: center;
@@ -17,33 +17,18 @@
 
 
 
-
-@mixin itemCardRow1_lg($sum) {
-  @for $i from 1 through $sum {
-
-    //從1跑到5
-    #itemCard#{$i} {
-      width: 12vw;
-      height: 8vw;
-      margin: 0 3%;
-      border: $border;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-  }
-}
-
-
 @mixin itemCardRow1_md($sum) {
   @for $i from 1 through $sum {
 
     //從1跑到5
     #itemCard#{$i} {
-      width: 14vw;
+      width: 10vw;
       height: 10vw;
-      margin: 0 3%;
+      margin: 0 2% 10% 2%;
       border: $border;
       background-size: contain;
+      background-position: center;
+      background-color: #fff;
       background-repeat: no-repeat;
     }
   }
@@ -56,11 +41,41 @@
 
     //從1跑到3
     #itemCard#{$i} {
-      width: 26vw;
-      height: 14vw;
-      margin: 0 10%;
+      transform: translate(0, 0) rotate(0deg);
+      width: 15vw;
+      height: 15vw;
+      margin: 2%;
       border: $border;
+      background-size: contain;
+      background-position: center;
       background-color: #fff;
+      background-repeat: no-repeat;
+
+      img {
+        display: none;
+      }
+    }
+  }
+}
+
+@mixin itemCardRow1_note($sum) {
+  @for $i from 1 through $sum {
+
+    //從1跑到3
+    #itemCard#{$i} {
+      transform: translate(0, 0) rotate(0deg);
+      width: 20vw;
+      height: 20vw;
+      margin: 2%;
+      border: $border;
+      background-size: contain;
+      background-position: center;
+      background-color: #fff;
+      background-repeat: no-repeat;
+
+      img {
+        display: none;
+      }
     }
   }
 }
