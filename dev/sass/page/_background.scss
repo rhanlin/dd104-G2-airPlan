@@ -2,15 +2,25 @@
     margin: 0;
     font-family: $font;
 
+    h4 {
+        display: inline-block;
+    }
+
     h5 {
-        font-size: 1.5rem;
+        font-size: 22px;
         padding: 7% 3%;
     }
 
     h6 {
-        font-size: 1.3rem;
+        font-size: 20px;
         font-weight: 300;
         padding: 5px;
+    }
+
+    span {
+        font-size: 18px;
+        font-weight: 300;
+        display: block;
     }
 
     p {
@@ -25,64 +35,122 @@
         .bgLogo {
             width: 150px;
             padding: 10px;
-            border: 1px solid lightpink;
+            // border: 1px solid lightpink;
+        }
+
+        .login {
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            margin-top: 1%;
         }
     }
 
     .bg-main {
-        .mainSiderbar {
-            .siderbarNav {
-                .navUl {
-                    width: 15%;
-                    height: 100vh;
-                    text-align: center;
-                    background-color: $main-blue;
+        .mainNav {
+            display: inline-block;
+            width: 15%;
+            min-width: 150px;
+            box-sizing: border-box;
+            .navUl {
+                height: 100vh;
+                text-align: center;
+                background-color: $main-blue;
+                display: inline-block;
 
-                    .ulLi {
+                .ulLi {
+                    height: 5%;
+                    // height: auto;
+                    min-height: 50px;
+                    vertical-align: middle;
+                    overflow: hidden;
+                    // border: 1px solid orangered;
+                    transition: height 10s;
+
+                    &:hover {  //.ulLi:hover
+                        height: auto;
+                    }
+
+                    &:nth-child(3) {  //.ulLi:nth-child(3)
                         height: 8%;
-                        // padding-top: 5%;
-                        vertical-align: middle;
-                        overflow: hidden;
-                        border: 1px solid orangered;
-                        transition: height 10s;
+                        min-height: 80px;
+                        // background-color: lightblue;
 
-                        &:hover {
+                        &:hover {  //.ulLi:hover
                             height: auto;
                         }
+    
+                    }
 
-                        h5:before {
-                            content: "";
-                            position: absolute;
-                            width: 100%;
-                            height: 3px;
-                            bottom: 0;
-                            left: 0;
-                            background: #9CF5A6;
-                            // visibility: hidden;
-                            border-radius: 5px;
-                            transform: scaleX(0);
-                            transition: .25s linear;
-                        }
+                    h5 {
+                        position: relative;
+                        // border: 1px solid lawngreen;
+                    }
 
-                        h5:hover {
-                            visibility: visible;
-                            transform: scaleX(1);
-                        }
+                    h5::before {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 2px;
+                        bottom: 0;
+                        left: 0;
+                        background: $main-yellow;
+                        transform: scaleX(0);
+                        transition: .25s linear;
+                    }
 
-                        @keyframes h5 {
-                            0% {}
+                    h5:hover::before {
+                        visibility: visible;
+                        transform: scaleX(0.8);
+                    }
 
-                            50% {}
+                    h6 {
+                        // border: 1px solid lightcoral;
+                        display: block;
+                    }
 
-                            100% {}
+                    h6:hover {
+                        font-size: 22px;
+                    }
+
+                    .liTag {
+                        background-color: lightcoral;
+                        position: absolute;
+                        width: 10%;
+                        min-width: 120px;
+                        padding: 1%;
+                        display: none;
+
+                        span:hover {
+                            font-size: 20px;
                         }
                     }
+
+
+                    .liTag:nth-of-type(1) {
+                        top: 23%;
+                        left: 15%;
+                        // border: 10px solid lightcyan;
+                    }
+
+                    .liTag:nth-of-type(2) {
+                        top: 45%;
+                        left: 15%;
+                        // border: 10px solid lightcyan;
+                    }
+
                 }
             }
         }
-    }
 
-    .bg-footer {
-        border: 1px solid lightsteelblue;
+
+        .conten {
+            // background-color: lightgreen;
+            display: inline-block;
+            width: 84%;
+            min-width: 200px;
+            height: 100vh;
+            vertical-align: top;
+        }
     }
 }
