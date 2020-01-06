@@ -13,7 +13,7 @@
                     <ul class="nav-list" id="list">
                         <a class="nav-logo" href="./home.html"><img src="./img/share/LOGO.png"></a>
                         <li><a href="./write-letter.html">
-                                <p class="nav-pageName">寫信</p> <span class="nav-circle-1 nav-now"></span>
+                                <p class="nav-pageName nav-now">寫信</p> <span class="nav-circle-1 "></span>
                             </a> </li>
                         <li><a href="./catch-letter.html">
                                 <p class="nav-pageName">撈信</p> <span class="nav-circle-2"></span>
@@ -151,27 +151,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<!-- 控制navbar上移 -->
-<!-- <script>
-    var navBar_active = function () {
-        var scroll_top = $(window).scrollTop();
-
-        $("posision").html(scroll_top);
-
-        if (scroll_top >= 560) {
-            $("div.nav-navBgWrap").addClass("-on");
-        } else {
-            $("div.nav-navBgWrap").removeClass("-on");
-        }
-    };
-
-    $(function () {
-        $(window).scroll(function () {
-            navBar_active();
-        });
-
-    });
-</script> -->
+<!-- 控制navbar上下移 -->
 <script>
     let a;
   $(function () {

@@ -239,15 +239,18 @@
               }
 
               .nav-now {
-                background-color: $main-yellow;
-                background-image: url(../img/share/nav-paper-plane.png);
-                background-position: 40% 55%;
-                background-size: 36px;
-                background-repeat: no-repeat;
+                color: $main-dark-red;
+                + %nav-circle {
+                  background-color: $main-yellow;
+                  background-image: url(../img/share/nav-paper-plane.png);
+                  background-position: 40% 55%;
+                  background-size: 36px;
+                  background-repeat: no-repeat;
+                }
               }
             }
           }
-          .hbg-littleNav{
+          .hbg-littleNav {
             display: none;
           }
           .hbg-pc {
@@ -302,10 +305,10 @@
                 }
               }
             }
-            .hbg-botWrap{
+            .hbg-botWrap {
               display: inline-block;
 
-              .hbg-littleNav{
+              .hbg-littleNav {
                 display: inline-block;
                 > a {
                   display: inline-block;
@@ -316,7 +319,7 @@
                     font-size: 48px;
                     color: #aaa;
                     cursor: pointer;
-          
+
                     &:hover {
                       color: $main-dark-red;
                     }
@@ -327,7 +330,6 @@
                 display: inline-block;
                 color: $main-white;
               }
-
             }
 
             + .nav-road {
@@ -459,7 +461,7 @@
       .nav-road {
         display: none;
       }
-      .nav-littleNav{
+      .nav-littleNav {
         display: none;
       }
     }
@@ -500,18 +502,18 @@
         .nav-road {
           display: none;
         }
-        .nav-littleNav{
+        .nav-littleNav {
           display: none;
         }
       }
     }
 
     .nav-navWrap {
-    top: -200px !important;
-    // display: none;
+      top: -200px !important;
+      // display: none;
     }
     .open {
-    display: block;
+      display: block;
     }
   }
 }
@@ -542,7 +544,7 @@
       .nav-road {
         display: none;
       }
-      .nav-littleNav{
+      .nav-littleNav {
         display: none;
       }
     }
@@ -584,7 +586,7 @@
       .nav-road {
         display: none;
       }
-      .nav-littleNav{
+      .nav-littleNav {
         display: none;
       }
     }
@@ -600,7 +602,7 @@
 }
 
 //登入頁
-.signInBg{
+.signInBg {
   width: 100%;
   height: 100%;
   background-color: rgba(68, 68, 68, 0.99);
@@ -634,7 +636,7 @@
     .formsignInData {
       width: 100%;
       @include marginAuto;
-      p{
+      p {
         margin-bottom: 0;
       }
       .signInLogo {
@@ -652,9 +654,10 @@
         margin-bottom: 5px;
         @include border;
       }
-      .showForget,.showRegister{
+      .showForget,
+      .showRegister {
         // display: inline-block;
-        
+
         cursor: pointer;
       }
       button {
@@ -670,7 +673,7 @@
 }
 
 //註冊
-.registerBg{
+.registerBg {
   width: 100%;
   height: 100%;
   background-color: rgba(68, 68, 68, 0.99);
@@ -703,7 +706,7 @@
     }
     .formRegisterData {
       width: 100%;
-      p{
+      p {
         margin-bottom: 0;
       }
       @include marginAuto;
@@ -746,7 +749,7 @@
   }
 }
 //忘記密碼
-.forgetBg{
+.forgetBg {
   width: 100%;
   height: 100%;
   background-color: rgba(68, 68, 68, 0.99);
@@ -780,7 +783,7 @@
     .formForgetData {
       width: 100%;
       @include marginAuto;
-      p{
+      p {
         margin-bottom: 0;
       }
       .forgetLogo {
@@ -810,36 +813,52 @@
   }
 }
 
-@include respond(mediumSize){
-  .signInBg,.registerBg,.forgetBg{
-    .signInData,.registerData,.forgetBgData{
-        padding: 20px;
-        width: 60%;
-      }
+@include respond(mediumSize) {
+  .signInBg,
+  .registerBg,
+  .forgetBg {
+    .signInData,
+    .registerData,
+    .forgetBgData {
+      padding: 20px;
+      width: 60%;
     }
   }
+}
 
-@include respond(small){
-  .signInBg,.registerBg,.forgetBg{
-    .signInData,.registerData,.forgetBgData{
-        padding: 20px;
-        width: 70%;
-      }
-    }
-}
-@include respond(note){
-  .signInBg,.registerBg,.forgetBg{
-    .signInData,.registerData,.forgetBgData{
-        padding: 20px;
-        width: 80%;
+@include respond(small) {
+  .signInBg,
+  .registerBg,
+  .forgetBg {
+    .signInData,
+    .registerData,
+    .forgetBgData {
+      padding: 20px;
+      width: 70%;
     }
   }
 }
-@include respond(iphone){
-  .signInBg,.registerBg,.forgetBg{
-    .signInData,.registerData,.forgetBgData{
-        padding: 20px;
-        width: 100%;
+@include respond(note) {
+  .signInBg,
+  .registerBg,
+  .forgetBg {
+    .signInData,
+    .registerData,
+    .forgetBgData {
+      padding: 20px;
+      width: 80%;
+    }
+  }
+}
+@include respond(iphone) {
+  .signInBg,
+  .registerBg,
+  .forgetBg {
+    .signInData,
+    .registerData,
+    .forgetBgData {
+      padding: 20px;
+      width: 100%;
     }
   }
 }
