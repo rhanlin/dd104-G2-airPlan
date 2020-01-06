@@ -24,15 +24,15 @@ $arrow_color: $gray !default;
   background-size: 20px 20px;
   animation: sky 140s infinite linear;
 
-  @keyframes sky {
-    0% {
-      background-position: 0 0;
-    }
+  // @keyframes sky {
+  //   0% {
+  //     background-position: 0 0;
+  //   }
 
-    100% {
-      background-position: 100% -100%;
-    }
-  }
+  //   100% {
+  //     background-position: 100% -100%;
+  //   }
+  // }
 
   .shop-main {
     overflow: hidden;
@@ -81,14 +81,14 @@ $arrow_color: $gray !default;
           .itemPage1 {
             width: 90%;
             height: 100%;
-            background-color: #ffffff;
+            background-color: #ffe5cc;
             border: $border;
 
             .itemPage2 {
               margin-top: 3%;
               margin-left: 3%;
               width: 100%;
-              background-color: #ffffff;
+              background-color: #ffe3b5;
               border: $border;
               height: 100%;
 
@@ -117,42 +117,42 @@ $arrow_color: $gray !default;
             width: 20%;
 
             .itemCardAsideBox {
-              width: 65%;
-              margin: 30% 10% 0 30%;
+              width: 100%;
+              margin: 0;
 
-              .itemCardAsideh3 {
-                @include threed-text-white($threed-text);
-
-                span {
-
-                  font-weight: 900;
-                }
+              .threed_text_box {
+                position: relative;
+                left: 20%;
+                top: -20%;
+                width: 100%;
+                padding: 20% 3% 20% 3%;
+                border: $border;
+                background-color: #fff;
               }
 
-              .itemCardAsideh4 {
-
-                margin: 40px 0;
-
-                span {
-                  letter-spacing: 0.3rem;
-                  font-weight: 900;
-                }
-              }
+              // @include threed-text-white($threed-text);
 
               .accordion {
+                margin-top: 20%;
+                margin-left: 30%;
+
                 .card {
                   border: 0;
+                  background-color: transparent;
 
                   .card-header {
                     padding: 0;
                     border-bottom: 0;
                     margin-bottom: 0;
+                    background-color: transparent;
 
                     .mb-0 {
                       .btn-link {
-                        color: #333;
+                        color: rgb(7, 7, 7);
                         font-weight: 0;
                         padding: 0;
+                        text-shadow: 2px 2px 3px rgb(161, 161, 161);
+                        letter-spacing: 1rem;
 
                         &:focus {
                           text-decoration: none;
@@ -169,11 +169,11 @@ $arrow_color: $gray !default;
                     padding: 0;
 
                     .card-body {
-                      // padding: 0;
 
-                      h5 {
-                        // margin:20px;
-                      }
+                      // padding: 0;
+                      // color: rgb(0, 57, 82);
+                      // text-shadow: 2px 2px 3px rgb(161, 161, 161);
+                      h5 {}
                     }
                   }
                 }
@@ -186,33 +186,42 @@ $arrow_color: $gray !default;
             width: 80%;
             padding-top: 15%;
             padding-left: 5%;
-
-            @include itemCardRow1(30);
+            position: relative;
+            @include itemCardRow1(64);
 
             .cardFilter {
               width: 100%;
-              height: 500px;
               display: flex;
               flex-wrap: wrap;
-
+              height: 25vw;
 
 
               .line_top {
-                position: relative;
-                width: 70%;
-                transform: translate(5%, -10%);
+                transform: translate(15%, 60%);
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 75%;
+
               }
 
               .line_bottom {
-                position: relative;
-                width: 70%;
-                transform: translate(10%, 30%);
+                transform: translate(0%, 230%);
+                top: 0%;
+                position: absolute;
+                width: 75%;
               }
 
               #itemCard1,
               #itemCard11,
-              #itemCard21 {
-                transform: translate(0, -0%) rotate(15deg);
+              #itemCard16,
+              #itemCard25,
+              #itemCard32,
+              #itemCard40,
+              #itemCard47,
+              #itemCard54,
+              #itemCard64 {
+                transform: translate(25%, -30%) rotate(15deg);
 
                 img {
                   width: 2.5vw;
@@ -222,8 +231,11 @@ $arrow_color: $gray !default;
 
               #itemCard2,
               #itemCard12,
-              #itemCard22 {
-                transform: translate(0, -30%) rotate(355deg);
+              #itemCard33,
+              #itemCard41,
+              #itemCard52,
+              #itemCard62 {
+                transform: translate(15%, -10%) rotate(355deg);
 
                 img {
                   width: 2.5vw;
@@ -233,9 +245,13 @@ $arrow_color: $gray !default;
 
               #itemCard3,
               #itemCard13,
-              #itemCard23 {
-                font-size: 0;
-                transform: translate(0, -10%) rotate(360deg);
+              #itemCard18,
+              #itemCard27,
+              #itemCard42,
+              #itemCard43,
+              #itemCard49,
+              #itemCard63 {
+                transform: translate(0, 5%) rotate(360deg);
 
                 img {
                   width: 2.5vw;
@@ -246,8 +262,12 @@ $arrow_color: $gray !default;
 
               #itemCard4,
               #itemCard14,
-              #itemCard24 {
-                transform: translate(0, 0%) rotate(350deg);
+              #itemCard19,
+              #itemCard28,
+              #itemCard34,
+              #itemCard50,
+              #itemCard44 {
+                transform: translate(0, 10%) rotate(350deg);
 
                 img {
                   width: 2.5vw;
@@ -258,8 +278,13 @@ $arrow_color: $gray !default;
 
               #itemCard5,
               #itemCard15,
-              #itemCard25 {
-                transform: translate(0, -10%) rotate(360deg);
+              #itemCard29,
+              #itemCard35,
+              #itemCard45,
+              #itemCard51,
+              #itemCard55,
+              #itemCard58 {
+                transform: translate(0, 5%) rotate(15deg);
 
                 img {
                   width: 2.5vw;
@@ -270,10 +295,12 @@ $arrow_color: $gray !default;
 
 
               #itemCard6,
-              #itemCard16,
-              #itemCard26 {
+              #itemCard21,
+              #itemCard26,
+              #itemCard36,
+              #itemCard46,
+              #itemCard56 {
                 transform: translate(0%, 0%) rotate(350deg);
-
 
                 img {
                   width: 2.5vw;
@@ -283,9 +310,12 @@ $arrow_color: $gray !default;
 
               #itemCard7,
               #itemCard17,
-              #itemCard27 {
+              #itemCard22,
+              #itemCard31,
+              #itemCard37,
+              #itemCard53,
+              #itemCard57 {
                 transform: translate(0%, 0%) rotate(15deg);
-
 
                 img {
                   width: 2.5vw;
@@ -294,9 +324,11 @@ $arrow_color: $gray !default;
               }
 
               #itemCard8,
-              #itemCard18,
-              #itemCard28 {
-                transform: translate(-0%, -0%) rotate(0deg);
+              #itemCard23,
+              #itemCard38,
+              #itemCard48,
+              #itemCard61 {
+                transform: translate(-0%, -10%) rotate(0deg);
 
                 img {
                   width: 2.5vw;
@@ -305,19 +337,21 @@ $arrow_color: $gray !default;
               }
 
               #itemCard9,
-              #itemCard19,
-              #itemCard29 {
-                transform: translate(-0%, -0%) rotate(0deg);
+              #itemCard24,
+              #itemCard39,
+              #itemCard59 {
+                transform: translate(-0%, -10%) rotate(10deg);
 
                 img {
                   width: 2.5vw;
-                  transform: translate(15%, -70%) rotate(330deg);
+                  transform: translate(15%, -70%) rotate(15deg);
                 }
               }
 
               #itemCard10,
               #itemCard20,
-              #itemCard30 {
+              #itemCard30,
+              #itemCard60 {
                 transform: translate(-0%, -0%) rotate(0deg);
 
                 img {
@@ -330,237 +364,86 @@ $arrow_color: $gray !default;
 
             #emptyBtn {
               margin: 0 auto;
-              width: 90%;
-
-
-              .pagination {
-                width: 100%;
-                display: flex;
-
-
-                .prev-item {
-                  margin-right:20px;
-                  font-family: $font;
-                  font-size: 1vw;
-                  letter-spacing: 0.2em;
-                  position: relative;
-                  width: 6vw;
-                  height: 2vw;
-                  background-color: #FFD139;
-                  border: 0.15vw solid black;
-                  text-align: center;
-                  line-height: 30px;
-                  cursor: pointer;
-                  color: white;
-                  text-shadow: 2px 2px 1px #000, -2px -2px 1px #000, 2px -2px 1px #000, -2px 2px 1px #000;
-
-                  &:before {
-                    content: '';
-                    position: absolute;
-                    width: 2vw;
-                    height: 1vw;
-                    left: -1.6vw;
-                    bottom: -0.2vw;
-                    border: 0.15vw solid black;
-                    transform: rotate(90deg) skew(45deg);
-                    background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background-size: 7px 7px;
-                  }
-
-                  &:after {
-                    content: '';
-                    position: absolute;
-                    width: 5.9vw;
-                    height: 1.1vw;
-                    bottom: -1.2vw;
-                    left: -0.6vw;
-                    border: 0.15vw solid black;
-                    transform: skew(-45deg) rotate(0deg);
-                    background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background-size: 7px 7px;
-                  }
-
-
-                  &.clicked {
-                    border: 0.15vw solid black;
-                    left: -0.8vw;
-                    bottom: -0.4vw;
-
-                    &:before {
-                      border: 0.15vw solid black;
-                      height: 0.7vw;
-                      left: -1.5vw;
-                      bottom: 0.1vw;
-                    }
-
-                    &:after {
-                      border: 0.15vw solid black;
-                      height: 0.7vw;
-                      bottom: -0.8vw;
-                      left: -0.5vw;
-                    }
-                  }
-                }
-
-                .next-item {
-                  margin-left:20px;
-                  font-family: $font;
-                  font-size: 1vw;
-                  letter-spacing: 0.2em;
-                  position: relative;
-                  width: 6vw;
-                  height: 2vw;
-                  background-color: #FFD139;
-                  border: 0.15vw solid black;
-                  text-align: center;
-                  line-height: 30px;
-                  cursor: pointer;
-                  color: white;
-                  text-shadow: 2px 2px 1px #000, -2px -2px 1px #000, 2px -2px 1px #000, -2px 2px 1px #000;
-
-                  &:before {
-                    content: '';
-                    position: absolute;
-                    width: 2vw;
-                    height: 1vw;
-                    left: -1.6vw;
-                    bottom: -0.2vw;
-                    border: 0.15vw solid black;
-                    transform: rotate(90deg) skew(45deg);
-                    background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background-size: 7px 7px;
-                  }
-
-                  &:after {
-                    content: '';
-                    position: absolute;
-                    width: 5.9vw;
-                    height: 1.1vw;
-                    bottom: -1.2vw;
-                    left: -0.6vw;
-                    border: 0.15vw solid black;
-                    transform: skew(-45deg) rotate(0deg);
-                    background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background-size: 7px 7px;
-                  }
-
-
-                  &.clicked {
-                    border: 0.15vw solid black;
-                    left: -0.8vw;
-                    bottom: -0.4vw;
-
-                    &:before {
-                      border: 0.15vw solid black;
-                      height: 0.7vw;
-                      left: -1.5vw;
-                      bottom: 0.1vw;
-                    }
-
-                    &:after {
-                      border: 0.15vw solid black;
-                      height: 0.7vw;
-                      bottom: -0.8vw;
-                      left: -0.5vw;
-                    }
-                  }
-
-                }
-
-                .page-link-item {
-                  margin: 0 20px;
-                  display: inline-block;
-                  // margin-top: 30%;
-                  font-family: $font;
-                  font-size: 1vw;
-                  letter-spacing: 0.2em;
-                  position: relative;
-                  width: 6vw;
-                  height: 2vw;
-                  background-color: #FFD139;
-                  border: 0.15vw solid black;
-                  text-align: center;
-                  line-height: 30px;
-                  cursor: pointer;
-                  color: white;
-                  text-shadow: 2px 2px 1px #000, -2px -2px 1px #000, 2px -2px 1px #000, -2px 2px 1px #000;
-
-                  &:before {
-                    content: '';
-                    position: absolute;
-                    width: 2vw;
-                    height: 1vw;
-                    left: -1.6vw;
-                    bottom: -0.2vw;
-                    border: 0.15vw solid black;
-                    transform: rotate(90deg) skew(45deg);
-                    background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background-size: 7px 7px;
-                  }
-
-                  &:after {
-                    content: '';
-                    position: absolute;
-                    width: 5.9vw;
-                    height: 1.1vw;
-                    bottom: -1.2vw;
-                    left: -0.6vw;
-                    border: 0.15vw solid black;
-                    transform: skew(-45deg) rotate(0deg);
-                    background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                    background-size: 7px 7px;
-                  }
-
-
-                  &.clicked {
-                    border: 0.15vw solid black;
-                    left: -0.8vw;
-                    bottom: -0.4vw;
-
-                    &:before {
-                      border: 0.15vw solid black;
-                      height: 0.7vw;
-                      left: -1.5vw;
-                      bottom: 0.1vw;
-                    }
-
-                    &:after {
-                      border: 0.15vw solid black;
-                      height: 0.7vw;
-                      bottom: -0.8vw;
-                      left: -0.5vw;
-                    }
-                  }
-
-                  .page-link-item {}
-                }
-              }
+              width: 50%;
+              display: flex;
 
               .switchBtnBox {
-                width: 33.3%;
+                width: 30%;
 
-                .switchBtn {}
+                .switchBtn {
+                  font-family: $font;
+                  font-size: 1vw;
+                  letter-spacing: 0.2em;
+                  position: relative;
+                  width: 6vw;
+                  height: 3vw;
+                  background-color: #FFD139;
+                  border: 0.15vw solid black;
+                  text-align: center;
+                  line-height: 30px;
+                  cursor: pointer;
+                  color: white;
+                  text-shadow: 2px 2px 1px #000, -2px -2px 1px #000, 2px -2px 1px #000, -2px 2px 1px #000;
+
+                  &:before {
+                    content: '';
+                    position: absolute;
+                    width: 3.2vw;
+                    height: 1vw;
+                    left: -2.2vw;
+                    bottom: 0.35vw;
+                    border: 0.15vw solid black;
+                    transform: rotate(90deg) skew(45deg);
+                    background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                    background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                    background-size: 7px 7px;
+                  }
+
+                  &:after {
+                    content: '';
+                    position: absolute;
+                    width: 5.9vw;
+                    height: 1.1vw;
+                    bottom: -1.25vw;
+                    left: -0.6vw;
+                    border: 0.15vw solid black;
+                    transform: skew(-45deg) rotate(0deg);
+                    background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                    background: linear-gradient(-40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                    background-size: 7px 7px;
+                  }
+
+
+                  &.clicked {
+                    border: 0.15vw solid black;
+                    left: -0.8vw;
+                    bottom: -0.4vw;
+
+                    &:before {
+                      border: 0.15vw solid black;
+                      height: 0.55vw;
+                      left: -2.0vw;
+                      bottom: 0.7vw;
+                    }
+
+                    &:after {
+                      border: 0.15vw solid black;
+                      height: 0.7vw;
+                      bottom: -0.87vw;
+                      left: -0.5vw;
+                    }
+                  }
+                }
               }
             }
           }
-
         }
-
 
         .filter_forSamll {
           display: none;
-
         }
       }
-
     }
-
 
     #outshadow {
       position: fixed;
@@ -885,7 +768,7 @@ $arrow_color: $gray !default;
 
     .container {
       .customize {
-        padding-top: 40%;
+        padding: 40% 0 10% 0;
         width: 100%;
         display: flex;
 
@@ -893,44 +776,16 @@ $arrow_color: $gray !default;
         .customizeTitle {
           // margin-left: 5%;
 
-          width: 50%;
-          height: 10vw;
+          width: 40%;
           border: $border;
           background: #fff;
-          margin-bottom: 5%;
-
-          .customizeTitleText {
-
-            // padding-top: 5%;
-            // transform: translate(0, 80%);
-            width: 100vw;
-            margin-left: 10%;
-            position: relative;
-            font-weight: 900;
-            letter-spacing: 1rem;
-            font-size: 8vw;
-            color: #dbcd00;
-            @include stroke(2, #0f0f0f);
-            z-index: 20;
-
-            &::before {
-              content: 'NEXT';
-              text-align: center;
-              position: absolute;
-              left: -1%;
-              letter-spacing: 1rem;
-              font-weight: 900;
-              font-size: 8vw;
-              color: #83afd9;
-              @include stroke(2, #0f0f0f);
-            }
-          }
+          padding: 3%;
         }
 
         .manual {
-          transform: translate(0, 50%);
+          transform: translate(15%, 70%);
           width: 50%;
-          height: 200px;
+          padding-bottom: 1%;
           background-image: url("../img/product/decorate/textBox-04.svg");
           background-repeat: no-repeat;
           background-size: contain;
@@ -1541,88 +1396,6 @@ $arrow_color: $gray !default;
                 }
               }
 
-              // .controlBox7 {
-              //   text-align: center;
-              //   width: 33.3%;
-              //   border: $border;
-              //   background-color: #fff;
-              //   z-index: 37;
-              //   .controlBox7_button {
-              //     position: relative;
-              //     width: 100%;
-              //     top: -35%;
-              //     left: 30%;
-              //     &.clicked {
-              //       width: 100%;
-              //       top: -15%;
-              //       left: 15%;
-              //     }
-              //     .controlBtn7 {
-              //       outline: none;
-              //       width: 100%;
-              //       background-color: #FFD139;
-              //       border: $border;
-              //       text-align: center;
-              //       cursor: pointer;
-              //       img {
-              //         padding: 20%;
-              //         width: 100%;
-              //       }
-              //       &:before {
-              //         content: '';
-              //         position: absolute;
-              //         width: 97%;
-              //         height: 35%;
-              //         left: -65%;
-              //         bottom: 14%;
-              //         border: $border;
-              //         background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-              //         background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-              //         background-size: 7px 7px; 
-              //         transform: rotate(90deg) skew(45deg);
-              //       }
-              //       &:after {
-              //         content: '';
-              //         position: absolute;
-              //         width: 100%;
-              //         height: 35%;
-              //         bottom: -35%;
-              //         left: -17%;
-              //         border: $border;
-              //         transform: skew(-45deg) rotate(0deg);
-              //         background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-              //         background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-              //         background-size: 7px 7px;
-              //       }
-              //       &.clicked {
-              //         background-color:$main-blue2;
-              //         &:before {
-              //           width: 100%;
-              //           height: 17%;
-              //           left: -57%;
-              //           bottom: 31%;
-              //           border: $border;
-              //           transform: rotate(90deg) skew(45deg);
-              // background: -webkit-linear-gradient(40deg, $main-blue2 45%, #000 45%, #000 55%, $main-blue2 55%);
-              // background: linear-gradient(40deg, $main-blue2 45%, #000 45%, #000 55%, $main-blue2 55%);
-              // background-size: 7px 7px;
-              //         }
-              //         &:after {
-              //           width: 100%;
-              //           height: 20%;
-              //           bottom: -18%;
-              //           left: -9%;
-              //           border: $border;
-              //           transform: skew(-45deg) rotate(0deg);
-              // background: -webkit-linear-gradient(40deg, $main-blue2 45%, #000 45%, #000 55%, $main-blue2 55%);
-              //           background: linear-gradient(-40deg, $main-blue2 45%, #000 45%, #000 55%, $main-blue2 55%);
-              //           background-size: 7px 7px;      
-              //         }
-              //       }
-              //     }
-              //   }
-              // }
-
               .controlBox8 {
                 text-align: center;
                 width: 33.3%;
@@ -2116,7 +1889,6 @@ $arrow_color: $gray !default;
               }
             }
 
-
             .lineWidth {
               margin-top: 10%;
 
@@ -2189,7 +1961,7 @@ $arrow_color: $gray !default;
 
             .orderBtnBoxGroup {
               width: 20%;
-              margin: 2% 2% 2% 0;
+              margin: 3%;
 
               .orderBtnBox {
                 position: relative;
@@ -2226,15 +1998,12 @@ $arrow_color: $gray !default;
                   &:before {
                     content: '';
                     position: absolute;
-                    width: 38%;
+                    width: 45%;
                     height: 40%;
-                    left: -25%;
+                    left: -30%;
                     bottom: -5%;
                     border-radius: 0.3em;
                     border: $border;
-                    // background-color: #FFD139;
-                    // background-image: url("../img/product/decorate/materail-04.svg");
-                    // background-size: cover;
                     transform: rotate(90deg) skew(60deg);
                     background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
                     background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -2246,16 +2015,12 @@ $arrow_color: $gray !default;
                   &:after {
                     content: '';
                     position: absolute;
-                    position: absolute;
-                    width: 38%;
+                    width: 45%;
                     height: 40%;
-                    left: 87%;
+                    left: 85%;
                     bottom: -5%;
                     border-radius: 0.3em;
                     border: $border;
-                    // background-color: #FFD139;
-                    // background-image: url("../img/product/decorate/materail-04.svg");
-                    // background-size: cover;
                     transform: rotate(90deg) skew(300deg);
                     background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
                     background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -2300,15 +2065,31 @@ $arrow_color: $gray !default;
                 }
               }
             }
+
+            .patNameInput {
+              background-color: rgb(255, 236, 224);
+              border: $border;
+              width: 70%;
+              margin-left: 10%;
+              padding: 5%;
+              border-radius: 1em;
+
+              .patternName {
+                width: 80%;
+              }
+
+              #patternName {
+                width: 90%;
+              }
+            }
+
           }
         }
       }
-
     }
 
     #section3 {
-      // background-image: url('../img/product/postmark/123.png');
-      padding-top: 5%;
+      background-color: cornsilk;
       width: 100%;
       border: 5px solid black;
 
@@ -2327,7 +2108,6 @@ $arrow_color: $gray !default;
         z-index: 99;
 
         .owl-stage-outer {
-          border: 2px solid red;
           width: 100%;
 
           .owl-stage {
@@ -2335,6 +2115,7 @@ $arrow_color: $gray !default;
               border: $border;
               transform: skew(350deg);
               background-color: #fff;
+              height: 12vw;
 
               .owl_img {
                 margin: 25% auto;
@@ -2353,10 +2134,11 @@ $arrow_color: $gray !default;
         }
 
         .owl-nav {
+          transform: translate(15%,-550%);
           display: flex;
           justify-content: space-around;
-          width: 50%;
-          height: 4vw;
+          width: 40%;
+          height: 3vw;
           margin: 0 auto;
           position: relative;
 
@@ -2397,11 +2179,7 @@ $arrow_color: $gray !default;
               font-size: 0;
             }
           }
-
-
         }
-
-
         .owl-dots {
           .owl-dot {
             span {
@@ -2432,27 +2210,27 @@ $arrow_color: $gray !default;
 
         .owl-carousel {
           .owl-nav {
-            top: -45%;
-            left: 55%;
-            transform: translate(-50%, 0);
+            // top: -45%;
+            // left: 55%;
+            // transform: translate(-50%, 0);
 
-            .owl-prev {
-              width: 40%;
+            // .owl-prev {
+            //   width: 40%;
 
-            }
+            // }
 
-            &:before {
-              top: 50%;
-              left: 17%;
-              margin: 0 2%;
-              transform: translate(0%, -50%);
-              letter-spacing: 1em;
-            }
+            // &:before {
+            //   top: 50%;
+            //   left: 17%;
+            //   margin: 0 2%;
+            //   transform: translate(0%, -50%);
+            //   letter-spacing: 1em;
+            // }
 
-            .owl-next {
-              width: 40%;
+            // .owl-next {
+            //   width: 40%;
 
-            }
+            // }
           }
         }
       }
@@ -2497,63 +2275,41 @@ $arrow_color: $gray !default;
               width: 30%;
 
               .itemCardAsideBox {
-                margin: 20% 10% 0 10%;
+                .threed_text_box {}
+
+                .accordion {
+                  margin-top: 5%;
+                  margin-left: 15%;
+
+                  .card {
+                    .card-header {
+                      .mb-0 {
+                        .btn-link h3 {
+                          font-size: 3vw;
+                        }
+                      }
+                    }
+
+                    .collapse {
+                      .card-body h5 {}
+                    }
+                  }
+                }
               }
             }
 
             .itemCardContainer {
               width: 70%;
+              padding-top: 17%;
 
               .cardFilter {
 
-
                 .line_top {
-                  width: 90%;
-                  transform: translate(0, -30%);
+                  transform: translate(15%, 90%);
                 }
-
-
-                @include itemCardRow1_lg(30);
-
-                #itemCard1 {
-                  transform: translate(0, -100%) rotate(15deg);
-                }
-
-                #itemCard2 {
-                  transform: translate(0, -50%) rotate(355deg);
-                }
-
-                #itemCard3 {
-                  transform: translate(0, -30%) rotate(360deg);
-                }
-
-                #itemCard4 {
-                  transform: translate(0, -50%) rotate(355deg);
-                }
-
-                #itemCard5 {
-                  display: none;
-                }
-
 
                 .line_bottom {
-                  width: 70%;
-                  transform: translate(0%, -10%);
-                }
-
-
-                #itemCard6 {
-                  transform: translate(0%, 0%) rotate(350deg);
-                  margin-top: 0px;
-                }
-
-                #itemCard7 {
-                  transform: translate(-30%, 0%) rotate(15deg);
-                  margin-top: 0px;
-                }
-
-                #itemCard8 {
-                  transform: translate(-70%, -40%) rotate(0deg);
+                  transform: translate(0%, 270%);
                 }
               }
             }
@@ -2588,9 +2344,6 @@ $arrow_color: $gray !default;
           }
         }
 
-
-
-
         .pile {
           margin-left: 0%;
           width: 100vw;
@@ -2621,31 +2374,70 @@ $arrow_color: $gray !default;
 
       #section2 {
         .customizeArea {
+          .drawingBoardBox {
+            #btns {
+              margin: 0 auto;
+              width: 95%;
 
-          margin: 0 auto;
-          width: 95%;
+              .orderBtnBoxGroup {
+                .orderBtnBox {
+                  .orderText {}
 
+                  &:before {
+                    width: 35%;
+                    height: 35%;
+                    left: -30%;
+                    bottom: -5%;
+                    border-radius: 0.2em;
+                  }
+
+                  &:after {
+                    width: 35%;
+                    height: 35%;
+                    left: 85%;
+                    bottom: -5%;
+                    border-radius: 0.2em;
+                  }
+
+                  &.clicked {
+                    &:before {
+                      width: 38%;
+                      height: 40%;
+                      left: -26%;
+                      bottom: 13%;
+                    }
+
+                    &:after {
+                      width: 39%;
+                      height: 40%;
+                      left: 87%;
+                      bottom: 12%;
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
 
       #section3 {
-        padding-top: 7%;
 
         .owl-carousel {
           .owl-nav {
-            top: -35%;
-            left: 60%;
-            transform: translate(-50%, 0);
-            width: 55vw;
-            height: 5vw;
+            // top: -35%;
+            // left: 60%;
+            // transform: translate(-50%, 0);
+            // width: 55vw;
+            // height: 5vw;
 
-            &:before {
-              top: 50%;
-              left: 20%;
-              margin: 0 2%;
-              transform: translate(0%, -50%);
-              letter-spacing: 1em;
-            }
+            // &:before {
+            //   top: 50%;
+            //   left: 20%;
+            //   margin: 0 2%;
+            //   transform: translate(0%, -50%);
+            //   letter-spacing: 1em;
+            // }
           }
         }
       }
@@ -2680,7 +2472,7 @@ $arrow_color: $gray !default;
         #shopOutsideBox {
           .shopItemContainer {
             width: 85vw;
-            height: 55vw;
+            height: 60vw;
 
             .itemPage1 {
               .itemPage2 {
@@ -2699,57 +2491,21 @@ $arrow_color: $gray !default;
 
             .itemCardContainer {
               width: 100%;
-              padding-top: 70px;
-              padding-left: 70px;
+              padding-left: 15%;
 
               .cardFilter {
-
+                height: 32vw;
 
                 .line_top {
-                  width: 90%;
-                  transform: translate(5%, -10%);
+                  transform: translate(25%, 30%);
                 }
-
-                @include itemCardRow1_md(30);
-
-                #itemCard1 {
-                  transform: translate(0, -50%) rotate(15deg);
-                }
-
-                #itemCard3 {
-                  transform: translate(0, -10%) rotate(360deg);
-                }
-
-                #itemCard4 {
-                  transform: translate(0, -20%) rotate(360deg);
-                }
-
-                #itemCard5 {
-                  display: none;
-                }
-
 
                 .line_bottom {
-                  width: 70%;
-                  transform: translate(10%, 10%);
+                  transform: translate(0%, 200%);
                 }
 
+                @include itemCardRow1_md(64);
 
-                #itemCard6 {
-                  margin-top: 0px;
-                  transform: translate(30%, 0%) rotate(350deg);
-                }
-
-                #itemCard7 {
-
-                  margin-top: 0px;
-                }
-
-                #itemCard8 {
-                  transform: translate(-10%, -40%) rotate(350deg);
-                  margin-top: 0px;
-
-                }
               }
             }
           }
@@ -2763,20 +2519,57 @@ $arrow_color: $gray !default;
             z-index: 1;
 
             .filter_forSamllBox {
-
+              display: flex;
               width: 100%;
-              margin: 5%;
+              margin: 1%;
 
-              .filter_forSamllh3 {
-                font-weight: 900;
-
+              .threed_text_box {
+                width: 40%;
+                position: relative;
+                left: 0;
+                top: 0;
+                padding: 1% 0 0 0;
+                background-color: transparent;
               }
 
-              .filter_forSamllh4 {
-                letter-spacing: 0.2rem;
-                font-weight: 900;
-                margin: 20px 0;
+              // @include threed-text-white($threed-text);
+
+              .dropdown {
+                width: 15%;
+
+                &.show {
+                  .btn-secondary.dropdown-toggle {
+                    color: black;
+                    background-color: transparent;
+                    border-color: transparent;
+
+                    &.focus {
+                      box-shadow: none;
+                    }
+                  }
+                }
+
+                .btn {
+                  border: none;
+                }
+
+                .btn-secondary {
+                  color: black;
+                  background-color: transparent;
+                  border-color: transparent;
+                  font-size: 2.5vw;
+
+                  &.focus {
+                    box-shadow: none;
+                  }
+                }
+
+                .dropdown-menu {
+                  font-size: 2vw;
+                  min-width: 4rem;
+                }
               }
+
             }
           }
         }
@@ -2987,6 +2780,30 @@ $arrow_color: $gray !default;
           .perpul {
             left: 75%;
             top: 27%;
+          }
+        }
+      }
+
+      .container {
+        .customize {
+
+
+          .manual {
+            transform: translate(10%, 50%);
+            width: 60%;
+            padding-top: 1%;
+
+            .manualTitle {
+              h3 {
+                font-size: 3vw;
+              }
+            }
+
+            .manualinnerText {
+              width: 90%;
+              margin: 0 auto;
+              padding-bottom: 1%;
+            }
           }
         }
       }
@@ -3344,45 +3161,79 @@ $arrow_color: $gray !default;
             width: 100%;
 
             #btns {
-              width: 85%;
-              padding-bottom: 10%;
+              margin: 0 auto;
+              width: 95%;
 
+              .orderBtnBoxGroup {
+                .orderBtnBox {
+                  .orderText {}
 
+                  &:before {
+                    width: 35%;
+                    height: 35%;
+                    left: -30%;
+                    bottom: -5%;
+                    border-radius: 0.2em;
+                  }
+
+                  &:after {
+                    width: 20%;
+                    height: 35%;
+                    left: 85%;
+                    bottom: -5%;
+                    border-radius: 0.2em;
+                  }
+
+                  &.clicked {
+                    &:before {
+                      width: 38%;
+                      height: 40%;
+                      left: -26%;
+                      bottom: 13%;
+                    }
+
+                    &:after {
+                      width: 39%;
+                      height: 40%;
+                      left: 87%;
+                      bottom: 12%;
+                    }
+                  }
+                }
+              }
             }
           }
         }
       }
 
       #section3 {
-        padding-top: 10%;
-
         .owl-carousel {
           .owl-nav {
-            top: -45%;
-            left: 65%;
-            transform: translate(-50%, 0);
-            width: 80vw;
-            height: 7vw;
+            // top: -45%;
+            // left: 65%;
+            // transform: translate(-50%, 0);
+            // width: 80vw;
+            // height: 7vw;
 
-            .owl-prev {
-              width: 80%;
+            // .owl-prev {
+            //   width: 80%;
 
-            }
+            // }
 
-            &:before {
-              font-size: 2.5vw;
-              top: 50%;
-              left: 15%;
-              margin: 0 2%;
-              font-size: 3vw;
-              transform: translate(0%, -50%);
-              letter-spacing: 1em;
-            }
+            // &:before {
+            //   font-size: 2.5vw;
+            //   top: 50%;
+            //   left: 15%;
+            //   margin: 0 2%;
+            //   font-size: 3vw;
+            //   transform: translate(0%, -50%);
+            //   letter-spacing: 1em;
+            // }
 
-            .owl-next {
-              width: 80%;
+            // .owl-next {
+            //   width: 80%;
 
-            }
+            // }
           }
         }
       }
@@ -3391,9 +3242,9 @@ $arrow_color: $gray !default;
   }
 }
 
-@include respond(small) {
+@include respond(small_max) {
 
-  //576px--767px
+  //767px以下
   .shop-body {
     .shop-main {
       #section1 {
@@ -3424,6 +3275,7 @@ $arrow_color: $gray !default;
           }
 
           .itemCardBox {
+            width: 100%;
 
             .itemCardAside {
               display: none;
@@ -3431,85 +3283,34 @@ $arrow_color: $gray !default;
 
             .itemCardContainer {
               width: 100%;
-              padding-left: 0px;
-              padding-top: 100px;
+              padding-left: 10%;
+              padding-top: 10%;
 
               .cardFilter {
-
+                height: 50vw;
+                width: 100%;
 
                 .line_top {
-                  width: 70%;
-                  transform: translate(25%, -80%);
-                }
-
-                @include itemCardRow1_sm(30);
-
-                #itemCard1 {
-                  transform: translate(50%, -50%) rotate(15deg);
-
-                  img {
-                    width: 5vw;
-                  }
-                }
-
-                #itemCard2 {
-                  img {
-                    width: 5vw;
-                  }
-                }
-
-                #itemCard3 {
                   display: none;
                 }
-
-                #itemCard4 {
-                  display: none;
-                }
-
-                #itemCard5 {
-                  display: none;
-                }
-
 
                 .line_bottom {
-                  transform: translate(25%, -10%);
+                  display: none;
                 }
 
+                @include itemCardRow1_sm(64);
 
-                #itemCard6 {
-                  margin-top: 0px;
-
-                  img {
-                    width: 5vw;
-                  }
-
-                }
-
-                #itemCard7 {
-                  margin-top: 0px;
-
-                  img {
-                    width: 5vw;
-                  }
-                }
-
-                #itemCard8 {
-                  margin-top: 0px;
-
-                  img {
-                    width: 5vw;
-                  }
-
-                }
               }
 
               #emptyBtn {
 
                 .switchBtnBox {
                   .switchBtn {
-                    font-size: 1vw;
+                    font-size: 0.5vw;
                     width: 9vw;
                     height: 3vw;
+                    text-shadow: none;
+                    color: black;
 
                     &:before {
                       width: 3vw;
@@ -3530,13 +3331,13 @@ $arrow_color: $gray !default;
                       bottom: -0.375vw;
 
                       &:before {
-                        height: 1.05vw;
-                        left: -2.25vw;
-                        bottom: 0.15vw;
+                        height: 1vw;
+                        left: -2vw;
+                        bottom: 0.35vw;
                       }
 
                       &:after {
-                        height: 1vw;
+                        height: 1.1vw;
                         bottom: -1.2vw;
                         left: -0.75vw;
                       }
@@ -3544,6 +3345,31 @@ $arrow_color: $gray !default;
                   }
                 }
               }
+            }
+          }
+        }
+      }
+
+      .container {
+        .customize {
+          .manual {
+            transform: translate(0%, 0%);
+            width: 110%;
+            padding-bottom: 5%;
+            background-size: cover;
+
+            .manualTitle {
+              padding-top: 5%;
+
+              h3 {
+                font-size: 3vw;
+              }
+            }
+
+            .manualinnerText {
+              width: 90%;
+              margin: 0 auto;
+              padding-bottom: 1%;
             }
           }
         }
@@ -3571,90 +3397,55 @@ $arrow_color: $gray !default;
 
           .drawingBoardBox {
             #btns {
-              width: 100%;
-
 
               .orderBtnBoxGroup {
-                width: 20%;
-                margin-left: 5%;
-
+                margin: 5%;
               }
 
-              // #emptyBtn {
-              //   .switchBtnBox {
-              //     .switchBtn {
-              //       font-size: 1vw;
-              //       width: 13.5vw;
-              //       height: 4.5vw;
+              .patNameInput {
+                width: 60%;
+                margin-left: 5%;
+                padding: 5%;
+                border-radius: 1em;
 
-              //       &:before {
-              //         width: 4.5vw;
-              //         height: 2.5vw;
-              //         left: -3.6vw;
-              //         bottom: -0.45vw;
-              //       }
+                .patternName h5 {
+                  font-size: 3vw;
+                }
 
-              //       &:after {
-              //         width: 13.5vw;
-              //         height: 2.5vw;
-              //         bottom: -2.475vw;
-              //         left: -1.575vw;
-              //       }
-
-              //       &.clicked {
-              //         left: -1.5vw;
-              //         bottom: -0.5625vw;
-
-              //         &:before {
-              //           height: 2.1vw;
-              //           left: -3.375vw;
-              //           bottom: 0.225vw;
-              //         }
-
-              //         &:after {
-              //           height: 2vw;
-              //           bottom: -1.8vw;
-              //           left: -1.125vw;
-              //         }
-              //       }
-              //     }
-              //   }
-              // }
+              }
             }
           }
         }
       }
 
       #section3 {
-        padding-top: 10%;
-
         .owl-carousel {
           .owl-nav {
-            top: -45%;
-            left: 65%;
-            transform: translate(-50%, 0);
-            width: 80vw;
-            height: 7vw;
+            // top: -45%;
+            // left: 65%;
+            // transform: translate(-50%, 0);
+            // width: 80vw;
+            // height: 7vw;
 
-            .owl-prev {
-              width: 80%;
+            // .owl-prev {
+            //   width: 80%;
 
-            }
+            // }
 
-            &:before {
-              font-size: 2.5vw;
-              top: 50%;
-              left: 15%;
-              margin: 0 2%;
-              font-size: 3vw;
-              transform: translate(0%, -50%);
-              letter-spacing: 1em;
-            }
+            // &:before {
+            //   font-size: 2.5vw;
+            //   top: 50%;
+            //   left: 15%;
+            //   margin: 0 2%;
+            //   font-size: 3vw;
+            //   transform: translate(0%, -50%);
+            //   letter-spacing: 1em;
+            // }
 
-            .owl-next {
-              width: 80%;
+            // .owl-next {
+            //   width: 80%;
 
-            }
+            // }
           }
         }
       }
@@ -3663,9 +3454,9 @@ $arrow_color: $gray !default;
   }
 }
 
-@include respond(note) {
+@include respond(note_max) {
 
-  //376px------576px;
+  //576px以下;
   .shop-body {
     .shop-main {
       #section1 {
@@ -3685,11 +3476,10 @@ $arrow_color: $gray !default;
           }
         }
 
-
         #shopOutsideBox {
           .shopItemContainer {
-            width: 95vw;
-            height: 90vw;
+            width: 90vw;
+            height: 100vw;
           }
 
           .itemCardBox {
@@ -3700,72 +3490,13 @@ $arrow_color: $gray !default;
 
             .itemCardContainer {
               width: 100%;
-              padding-left: 0px;
-              padding-top: 100px;
+              padding-left: 10%;
+              padding-top: 10%;
 
               .cardFilter {
+                height: 60vw;
+                @include itemCardRow1_note(64);
 
-
-
-                .line_top {
-                  width: 70%;
-                  transform: translate(25%, -80%);
-                }
-
-                .line_bottom {
-                  transform: translate(25%, -10%);
-                }
-
-                @include itemCardRow1_sm(30);
-
-                #itemCard1 {
-                  transform: translate(50%, -50%) rotate(15deg);
-
-                  img {
-                    width: 5vw;
-                  }
-                }
-
-                #itemCard2 {
-                  img {
-                    width: 5vw;
-                  }
-                }
-
-                #itemCard3 {
-                  display: none;
-                }
-
-                #itemCard4 {
-                  display: none;
-                }
-
-                #itemCard5 {
-                  display: none;
-                }
-
-
-                #itemCard6 {
-                  margin-top: 0px;
-
-                  img {
-                    width: 5vw;
-                  }
-
-                }
-
-                #itemCard7 {
-                  margin-top: 0px;
-
-                  img {
-                    width: 5vw;
-                  }
-                }
-
-                #itemCard8 {
-                  display: none;
-
-                }
               }
             }
           }
@@ -3909,53 +3640,43 @@ $arrow_color: $gray !default;
 
           .drawingBoardBox {
             #btns {
-              .orderBtnBoxGroup {
-                width: 25%;
-                margin: 0% 0% 0% 0%;
-              }
+              .orderBtnBoxGroup {}
             }
           }
         }
       }
 
       #section3 {
-        padding-top: 10%;
-
         .owl-carousel {
           .owl-nav {
-            top: -32%;
-            left: 72%;
-            transform: translate(-50%, 0);
-            width: 100vw;
-            height: 7vw;
+            // top: -32%;
+            // left: 72%;
+            // transform: translate(-50%, 0);
+            // width: 100vw;
+            // height: 7vw;
 
-            .owl-prev {
-              width: 90%;
+            // .owl-prev {
+            //   width: 90%;
 
-            }
+            // }
 
-            &:before {
-              font-size: 2.5vw;
-              top: 50%;
-              left: 12%;
-              margin: 0 2%;
-              font-size: 4vw;
-              transform: translate(0%, -50%);
-              letter-spacing: 1em;
-            }
+            // &:before {
+            //   font-size: 2.5vw;
+            //   top: 50%;
+            //   left: 12%;
+            //   margin: 0 2%;
+            //   font-size: 4vw;
+            //   transform: translate(0%, -50%);
+            //   letter-spacing: 1em;
+            // }
 
-            .owl-next {
-              width: 90%;
+            // .owl-next {
+            //   width: 90%;
 
-            }
+            // }
           }
         }
       }
     }
   }
-}
-
-@include respond(iphone) {
-
-  //375px;
 }
