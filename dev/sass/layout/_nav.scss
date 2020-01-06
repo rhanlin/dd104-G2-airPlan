@@ -136,8 +136,7 @@
   height: 144px;
   z-index: 998;
   max-width: 960px;
-
-  transition: top 2s;
+  transition: top 1s;
 
   .nav-navBg {
     position: relative;
@@ -196,8 +195,6 @@
               width: 75%;
               text-align: center;
               font-weight: bolder;
-
-              // writing-mode: vertical-lr;
               > p {
                 white-space: nowrap;
                 font-size: 1.1rem;
@@ -250,6 +247,9 @@
               }
             }
           }
+          .hbg-littleNav{
+            display: none;
+          }
           .hbg-pc {
             display: none;
           }
@@ -297,18 +297,37 @@
                   }
                 }
                 %nav-circle {
-                  // width: 50%;
                   order: 1;
-                  // float: left;
                   vertical-align: middle;
-                  // margin-left: 20%;
                 }
               }
             }
-
-            .hbg-pc {
+            .hbg-botWrap{
               display: inline-block;
-              color: $main-white;
+
+              .hbg-littleNav{
+                display: inline-block;
+                > a {
+                  display: inline-block;
+                  height: 48px;
+                  width: 48px;
+
+                  > i {
+                    font-size: 48px;
+                    color: #aaa;
+                    cursor: pointer;
+          
+                    &:hover {
+                      color: $main-dark-red;
+                    }
+                  }
+                }
+              }
+              .hbg-pc {
+                display: inline-block;
+                color: $main-white;
+              }
+
             }
 
             + .nav-road {
@@ -350,7 +369,7 @@
       position: absolute;
       top: 36%;
       right: 2.5%;
-      z-index: 999;
+      z-index: 998;
       > a {
         display: inline-block;
         height: 24px;
@@ -363,15 +382,7 @@
           &:hover {
             color: $main-dark-red;
           }
-          // &::after {
-          //   content: "|";
-          //   vertical-align: top;
-          //   color: #ccc;
-          // }
         }
-      }
-      .fa-cog::after {
-        content: "";
       }
     }
     .nav-pc {
@@ -380,14 +391,14 @@
       right: 5%;
       font-size: 14px;
       font-weight: 600;
-      // border: 1px solid lightseagreen;
     }
   }
 }
 .nav-navBgWrap.-on {
   position: fixed;
-  animation: 0.2 all;
-  top: -150%;
+  // animation: 0.2 all;
+  top: -200%;
+  transition: all 2s;
 }
 
 @include respond(desktop) {
@@ -400,7 +411,6 @@
   .open {
     li {
       width: 30%;
-      // min-width: 300px;
       text-align: center;
       a {
         width: 100%;
@@ -409,7 +419,6 @@
 
         p {
           display: inline-block;
-          // height: 100%;
           margin: 0;
           line-height: 60px;
           font-size: 1.2rem;
@@ -450,6 +459,9 @@
       .nav-road {
         display: none;
       }
+      .nav-littleNav{
+        display: none;
+      }
     }
   }
 
@@ -486,6 +498,9 @@
           display: none;
         }
         .nav-road {
+          display: none;
+        }
+        .nav-littleNav{
           display: none;
         }
       }
@@ -527,6 +542,9 @@
       .nav-road {
         display: none;
       }
+      .nav-littleNav{
+        display: none;
+      }
     }
   }
 
@@ -564,6 +582,9 @@
         display: none;
       }
       .nav-road {
+        display: none;
+      }
+      .nav-littleNav{
         display: none;
       }
     }

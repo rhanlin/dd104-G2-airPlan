@@ -30,9 +30,14 @@
                         <li><a href="./user-setting.html">
                                 <p class="nav-pageName">用戶設定</p> <span class="nav-circle-6"></span>
                             </a> </li>
-                        <div class="hbg-pc">
-                            <div class="cav-paper">信紙:999</div>
-                            <div class="cav-coin">Air幣:777</div>
+                        <div class="hbg-botWrap">
+                            <div class="hbg-littleNav">
+                                <a id="showSigin" href="#"><i class="fas fa-user-circle"></i></a>
+                            </div>
+                            <div class="hbg-pc">
+                                <div class="cav-paper">信紙:999</div>
+                                <div class="cav-coin">Air幣:777</div>
+                            </div>
                         </div>
                     </ul>
                     <div class="nav-road">
@@ -42,7 +47,6 @@
             </nav>
             <div class="nav-littleNav">
                 <a id="showSigin" href="#"><i class="fas fa-user-circle"></i></a>
-                <!-- <a href="./user-setting.html"><i class="fas fa-cog"></i></a> -->
             </div>
             <div class="nav-pc">
                 <div class="cav-paper">信紙:999</div>
@@ -148,7 +152,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <!-- 控制navbar上移 -->
-<script>
+<!-- <script>
     var navBar_active = function () {
         var scroll_top = $(window).scrollTop();
 
@@ -167,6 +171,23 @@
         });
 
     });
+</script> -->
+<script>
+    let a;
+  $(function () {
+  $(window).scroll(function (e) {
+      let scrollValue= $(this).scrollTop()
+    if(scrollValue>200){
+        $("div.nav-navBgWrap").addClass("-on");
+        if($(this).scrollTop() - a < 0){
+            $("div.nav-navBgWrap").removeClass("-on");
+        }
+        a = $(this).scrollTop()
+    }else{
+        $("div.nav-navBgWrap").removeClass("-on");
+    }
+  });
+});
 </script>
 <script>
     const hambuger = document.querySelector('.hambuger');
@@ -184,27 +205,6 @@
         });
 
     });
-        // let navStatus = document.getElementsByClassName(".nav-navPageWrap")[0];
-        // if ("navStatus.style.display = none") {
-        //     $(".nav-navPageWrap").toggle();
-        // };
-
-        // hamburger.addEventListener('click', function () {
-        //     list.classList.toggle('open');
-        //     console.log($(".nav-navPageWrap").css("display"));
-
-        //     if ($(".hambuger").attr("class") == "hambuger change") {
-        //         $(".nav-navPageWrap").css("display", "block");
-        //         console.log("666");
-        //     } else if ($(window).width() > 991) {
-        //         $(".nav-navPageWrap").css("display", "block");
-        //         console.log("991");
-        //     } else {
-        //         $(".nav-navPageWrap").css("display", "none");
-        //     };
-
-
-        // })
 </script>
 <!-- 會員登入/註冊/忘記密碼燈箱 -->
 <script>
