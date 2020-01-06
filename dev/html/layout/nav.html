@@ -154,20 +154,20 @@
 <!-- 控制navbar上下移 -->
 <script>
     let a;
-  $(function () {
-  $(window).scroll(function (e) {
-      let scrollValue= $(this).scrollTop()
-    if(scrollValue>200){
-        $("div.nav-navBgWrap").addClass("-on");
-        if($(this).scrollTop() - a < 0){
-            $("div.nav-navBgWrap").removeClass("-on");
-        }
-        a = $(this).scrollTop()
-    }else{
-        $("div.nav-navBgWrap").removeClass("-on");
-    }
-  });
-});
+    $(function () {
+        $(window).scroll(function (e) {
+            let scrollValue = $(this).scrollTop()
+            if (scrollValue > 200) {
+                $("div.nav-navBgWrap").addClass("-on");
+                if ($(this).scrollTop() - a < 0) {
+                    $("div.nav-navBgWrap").removeClass("-on");
+                }
+                a = $(this).scrollTop()
+            } else {
+                $("div.nav-navBgWrap").removeClass("-on");
+            }
+        });
+    });
 </script>
 <script>
     const hambuger = document.querySelector('.hambuger');
@@ -176,8 +176,8 @@
         hambuger.classList.toggle('change');
     })
 </script>
+<!--     hamburger icon 的切換  -->
 <script>
-    // hamburger icon 的切換
     $(function () {
 
         $("div.hambuger").on("click", function () {
@@ -186,6 +186,26 @@
 
     });
 </script>
+<!-- 顯示所在頁面提示 -->
+<script>
+    $(function () {
+        var nav = $(".nav-navWrap .nav-list a");
+        var url = window.location.href;
+        var host = window.location.host;
+        for (var i = 0; i < nav.length; i++) {
+            var astr = nav.eq(i).attr('href');
+            if (url.indexOf(astr) != -1) {
+                nav.eq(i).addClass('nav-now').siblings().removeClass('nav-now');
+            } else if (url == ('http://' + host + '/')) {
+                nav.eq(0).addClass('nav-now').siblings().removeClass('nav-now');
+            }
+
+        }
+
+    })
+
+</script>
+
 <!-- 會員登入/註冊/忘記密碼燈箱 -->
 <script>
     var signInBg = document.getElementById("signInBg");
