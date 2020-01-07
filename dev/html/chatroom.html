@@ -283,47 +283,73 @@
     <script>
         let Mark = document.querySelectorAll('.sectionMark1');
         for (let i = 0; i < Mark.length; i++) {
-            Mark[i].addEventListener('click',function(e){
-                for(let j =0;j< Mark.length; j++){
+            Mark[i].addEventListener('click', function (e) {
+                for (let j = 0; j < Mark.length; j++) {
                     Mark[j].classList.remove("MarkRed");
-                    document.querySelectorAll('.pageContent')[j].style.display="none";
+                    document.querySelectorAll('.pageContent')[j].style.display = "none";
                 }
                 e.currentTarget.classList.add("MarkRed");
-                document.querySelectorAll('.pageContent')[i].style.display="inline-block";
+                document.querySelectorAll('.pageContent')[i].style.display = "inline-block";
                 console.log(document.querySelectorAll('.pageContent')[i]);
                 document.getElementsByClassName('sendText')[0].value = "";
             })
         };
 
-        window.addEventListener("load",function(){
-            document.querySelectorAll('.pageContent')[0].style.display="inline-block";
+        window.addEventListener("load", function () {
+            document.querySelectorAll('.pageContent')[0].style.display = "inline-block";
 
-        }) 
+        })
         // get_chat("chat")
-        function get_chat(test){
-            $.ajax({
-                    url: './js/chatroom.php',  //網址或檔案
-                    type: 'POST', //GET或POST
-                    dataType: 'json',
-                    data: {
-                        "type": type,
-                        "memNo1": memNo1,
-                        "memNo2": memNo2,
-                        "chatNo": chatNo
-                    },
-                    success: function(data){
-                        console.log(data);
-                    },
-                    error: function (data){
-                        console.log(data);
-                    }
-                });
+        // function get_chat(test){
+        //     $.ajax({
+        //             url: './js/chatroom.php',  //網址或檔案
+        //             type: 'POST', //GET或POST
+        //             dataType: 'json',
+        //             data: {
+        //                 "type": type,
+        //                 "memNo1": memNo1,
+        //                 "memNo2": memNo2,
+        //                 "chatNo": chatNo
+        //             },
+        //             success: function(data){
+        //                 console.log(data);
+        //                 JSON.parse(data);
+        //             },
+        //             error: function (data){
+        //                 console.log(XMLHttpRequest.responseText);
+        //             }
+        //         });
+        // }
+        // function comm(array){
+
+        // }
+        // get_chat(test);
+
+        function mark () {
+            
         }
-        function comm(array){
+
+        function get_chat () {
+            let xhr = new XMLHttpRequest();
+            let member = document.getElementsByClassName('.')[0];
+            let data_info = 'memNo1=member';
+            xhr.onload = function () {
+                let response = JSON.parse(response);
+                mark();
+                chat();
+            }
+            xhr.open('post','chatroom.php',flase);
+            xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
+            xhr.send(data_info);
 
         }
-        // let test = comm(array("type"=> type, "memNo1"=>memNo1));
-        // get_chat(test);
+
+        function init() {
+            // var markList = document.getElementsByClassName('sectionMark1')[0];
+            get_chat();
+
+
+        }
     </script>
 </body>
 
