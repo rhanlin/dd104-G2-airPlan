@@ -25,7 +25,7 @@ try {
 
         case "mark":
             $memNo1 = $_POST["memNo1"];
-            $sql = "select * from chat where memNo1 = :memNo1";
+            $sql = "select * from chat where memNo1 = :memNo1 ";
             $content = $pdo->prepare($sql);
             $content->bindValue(":memNo1", $memNo1);
             $content->execute();
