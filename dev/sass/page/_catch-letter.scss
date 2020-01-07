@@ -567,7 +567,9 @@
             background-repeat: no-repeat;
             background-position: center;
             cursor: pointer;
-
+            outline: none;
+            border: none;
+            background-color: unset;
             &:hover {
               height: 150%;
               background-image: url(../img/write-letter/stamp-btn-red.svg);

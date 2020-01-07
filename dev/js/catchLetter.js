@@ -96,7 +96,7 @@
       stampEffectDiv.setAttribute('id','stampEffect');
       stampEffectDiv.style.top = `${e.offsetY}px`;
       stampEffectDiv.style.left = `${e.offsetX}px`;
-      stampEffectDiv.style.backgroundImage = `url(./img/catch-letter/user-stamp/user-stamp_${Math.floor(Math.random() * 9) + 1}.png)`;
+      stampEffectDiv.style.backgroundImage = `url(./img/userStamp/user-stamp_${Math.floor(Math.random() * 9) + 1}.png)`;
       stampshot.appendChild(stampEffectDiv);
       console.log(e.pageX, e.pageY);
       setTimeout(()=>{
