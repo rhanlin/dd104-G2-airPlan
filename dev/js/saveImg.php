@@ -16,6 +16,7 @@ try {
     $products->bindValue(":memNo", "5");
     $products->bindValue(":matName", $_POST["matName"]);
     $products->bindValue(":matURL", $_POST["image"]);
+    $products->bindValue(":matLSort", $_POST["matLSort"]);
     // $products->bindValue(":matData", $dataUrl);
     $products->execute();
 

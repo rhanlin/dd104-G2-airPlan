@@ -23,8 +23,12 @@
     @@include("./layout/nav.html")
 
     <section class="home_first">
-        <div class="firstLetter"></div>
         <div class="cloudBlue"></div>
+        <div class="firstLetter">
+            <h1 class="air_words">Plan</h1>
+            <h1 class="air_shadow">Air</h1>
+            <h5 class="air_text">拋開所有的束縛，<br>將所有情緒摺成紙飛機，<br>發送到世界的每個角落。</h5>
+        </div>
         <div class="cloudWhite"></div>
         <img class="firstPlane" src="./img/home/first/firstPlane.svg" alt="">
     </section>
@@ -260,6 +264,12 @@
             </div>
         </div>
     </section>
+    <script>
+        function animate() {
+            document.querySelector('.firstLetter').classList.toggle('animate');
+        };
+        setTimeout(animate, 5000);
+    </script>
     <script src="./js/home_scroll.js"></script>
 </body>
 
