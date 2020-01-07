@@ -1,5 +1,23 @@
+let vmUserStamp = new Vue({
+  el: '#vmUserStamp',
+  data: {
+    userStamp:[//存 使用者"擁有"的郵戳的編號(matPattNo2)對應的URL
+      "url(./img/userStamp/user-stamp_1.png)",
+      "url(./img/userStamp/user-stamp_2.png)",
+      "url(./img/userStamp/user-stamp_3.png)",
+    ],
+    letterStamp: 0,//存 使用者"擁有"的郵戳的編號(matPattNo2)的值
+  },
+  methods: {
+    clickStamp(e) {
+      this.letterStamp = parseInt(e.target.value)+1; //取 使用者使用郵戳的編號(matPattNo2)的值
+      console.log(this.letterStamp);
+    },
+  },
+});
 function confirmSubmit(){
-  if(confirm("Press a button!")){
+  
+  if(confirm("確定送出嗎？")){
     console.log('NextStep!');
     // console.log(location.href.split('/').reverse()[0].split('.')[0]);
     let pageUrlTitle = location.href.split('/').reverse()[0].split('.')[0];
@@ -8,11 +26,15 @@ function confirmSubmit(){
     document.querySelector('header').style.display = "none"; //將header消失
 
     if( pageUrlTitle == "write-letter"){
+      //將資料送去php程式
+      submitToLetterTable();//writerLetter.js
       document.getElementById('writeLetterMain').style.animationName = "elementDisappear";
       document.getElementById('writeLetterMain').style.animationDelay = ".5s";
       document.getElementById('writeLetterMain').style.animationDuration = ".8s";
       document.getElementById('writeLetterMain').style.animationFillMode = "forwards";
     }else if( pageUrlTitle == "catch-letter" ){
+      //將資料送去php程式
+      //function(){} ...
       document.getElementById('catchLetterMain').style.animationName = "elementDisappear";
       document.getElementById('catchLetterMain').style.animationDelay = ".5s";
       document.getElementById('catchLetterMain').style.animationDuration = ".8s";
@@ -266,6 +288,7 @@ function foldThePlane(){
     }
   })
 }
+
 function deviceSet(){
   //判斷手機方向：
   // window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
@@ -286,7 +309,6 @@ function setPlaneShadow(){
   imgWrap.appendChild(planeShadow);
   planeShadow.setAttribute('id','planeShadow');
 }
-
 
 function shootPlane(){
   // 飛機hover
@@ -347,6 +369,7 @@ function shootPlane(){
     },1500)
   })
 }
+
 function addScene(){
   let div = document.createElement("div");
   let skyWorld = document.querySelector('.planeBox');
@@ -363,7 +386,6 @@ function addScene(){
   `;
   // document.getElementById('cloudDiv').style.animation = "showScene 500ms ease;";//...??
 }
-
 
 function pointerSetting(){
  // The item (or items) to press and hold on

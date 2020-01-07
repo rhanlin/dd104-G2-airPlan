@@ -16,7 +16,7 @@
     main {
         margin-top: 10vw;
         font-family: 'Noto Sans TC', sans-serif;
-
+        form{
         .goto-shop-btn {
             // border: 1px solid blue;
             height: 65%;
@@ -813,6 +813,7 @@
                             left: 53%;
                             transform: translate(-50%, -50%);
                             background-color: #fff;
+                            pointer-events: none;
                         }
 
                         .printScraper {
@@ -826,7 +827,7 @@
                             top: 20%;
                             left: 72%;
                             transform: translate(-50%, -50%);
-
+                            pointer-events: none;
 
                             &.active {
                                 animation: active 1.5s ease;
@@ -857,6 +858,7 @@
                             top: -20%;
                             left: 90%;
                             background-image: url(../img/write-letter/print-scraper-yellow.svg);
+                            pointer-events: none;
                         }
 
                         .preview-paper {
@@ -1070,13 +1072,14 @@
                                 width: 64%;
                                 height: 69%;
                                 // background-color: #fff;
-                                background-image: url(../img/catch-letter/user-stamp/user-stamp_3.png);
+                                // background-image: url(../img/catch-letter/user-stamp/user-stamp_3.png);
                                 background-position: center;
                                 background-size: contain;
                                 background-repeat: no-repeat;
                                 position: absolute;
                                 top: 17%;
                                 left: 20%;
+                                pointer-events: none;
                             }
 
                             &:hover span {
@@ -1084,6 +1087,7 @@
                                 height: 75%;
                                 top: 14%;
                                 left: 18%;
+                                pointer-events: none;
                             }
                         }
                     }
@@ -1093,7 +1097,7 @@
             ;
         }
 
-
+        }
     }
 
     @include foldthePlane();
@@ -1110,7 +1114,7 @@
 
         main {
             margin-top: 30%;
-
+            form{
             .goto-shop-btn {
                 display: none;
             }
@@ -1610,6 +1614,7 @@
                     }
                 }
             }
+            }
         }
     }
 }
@@ -1622,7 +1627,7 @@
 
         main {
             margin-top: 20vw;
-
+            form{
             .goto-shop-btn {
                 display: none;
             }
@@ -2132,6 +2137,7 @@
                     }
                 }
             }
+            }
         }
     }
 }
@@ -2144,7 +2150,7 @@
 
         main {
             margin-top: 20vw;
-
+            form{
             .goto-shop-btn {
                 display: none;
             }
@@ -2652,6 +2658,7 @@
                         }
                     }
                 }
+            }
             }
         }
     }

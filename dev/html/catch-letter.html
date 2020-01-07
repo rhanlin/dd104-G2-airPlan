@@ -89,9 +89,11 @@
                         <div class="select-stamp">
                             <span class="arrow-white"></span>
                             <div class="stamp-type">
-                                <template v-for="item in 3">
-                                    <div class="type"><span></span></div>
-                                </template>
+                              <template v-for="(item,index) in 3">
+                                <button class="type" name="userStamp" :value="index" @click.prevent="clickStamp" @touchstart.prevent="clickStamp">
+                                    <span :style="{backgroundImage: userStamp[index]}"></span>
+                                </button>
+                              </template>
                             </div>
                             <span class="arrow-white reverse"></span>
                         </div>
@@ -106,16 +108,28 @@
     @@include("./layout/foldthePlane.html")
     @@include("./layout/footer.html")
 
-  <script src="./js/catchLetter.js"></script>
-  <script src="./js/foldThePlane.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+    <script src="./js/foldThePlane.js"></script>
+    <script src="./js/catchLetter.js"></script>
   
   <script>
-    new Vue({
+    let vmCatchLet= new Vue({
       el:'#catchLetterMain',
       data:{
         // threeOpen: true,
         viewMoreOpen:true,
+        userStamp:[//存使用者 擁有 的郵戳
+          "url(./img/userStamp/user-stamp_1.png)",
+          "url(./img/userStamp/user-stamp_2.png)",
+          "url(./img/userStamp/user-stamp_3.png)",
+        ],
+        letterStamp: '',
+      },
+      methods: {
+        clickStamp(e) {
+          this.letterStamp = e.target.style.backgroundImage;
+          // console.log(this.letterStamp);
+        },
       },
     });
   </script>
