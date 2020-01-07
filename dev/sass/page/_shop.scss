@@ -443,7 +443,7 @@ $arrow_color: $gray !default;
           display: none;
         }
       }
-    }
+    
 
     #outshadow {
       position: fixed;
@@ -508,16 +508,21 @@ $arrow_color: $gray !default;
         width: 65%;
         margin: 12% 15% 5% 15%;
 
-        .textBox {
-          font-size: 35px;
+        .titleBox {
+          letter-spacing: 0.2rem;
           font-weight: 700;
-          line-height: 60px;
+          line-height: 3vw;
         }
 
         .textBox {
-          font-size: 24px;
           letter-spacing: 0.2rem;
           line-height: 2.5rem;
+
+        }
+
+        .chance_priceBox {
+          letter-spacing: 0.2rem;
+          line-height: 2.5vw;
         }
       }
 
@@ -686,7 +691,7 @@ $arrow_color: $gray !default;
       }
 
     }
-
+}
     #pile {
       max-width: 80%;
       height: 30vw;
@@ -2134,7 +2139,7 @@ $arrow_color: $gray !default;
         }
 
         .owl-nav {
-          transform: translate(15%,-550%);
+          transform: translate(15%, -550%);
           display: flex;
           justify-content: space-around;
           width: 40%;
@@ -2180,6 +2185,7 @@ $arrow_color: $gray !default;
             }
           }
         }
+
         .owl-dots {
           .owl-dot {
             span {
@@ -2573,7 +2579,7 @@ $arrow_color: $gray !default;
             }
           }
         }
-      }
+      
 
       #medal {
         width: 350px;
@@ -2738,7 +2744,7 @@ $arrow_color: $gray !default;
         }
 
       }
-
+}
       #pile {
         max-width: 90%;
         height: 40vw;
