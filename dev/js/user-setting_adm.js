@@ -31,41 +31,18 @@ Vue.component('airCoin', {
     template: `
         <div class="userSetting_airCoin">
             <table class="userSetting_airCoinTable">
-                <thead>
+                <thead >
                     <th><h4>時間</h4></th>
                     <th><h4>信件</h4></th>
                     <th><h4>打賞者</h4></th>
                 </thead>
-                <tr>
-                    <td>2019/12/18 12:00</td>
-                    <td>被遺忘的外套</td>
-                    <td>不怕冷的小樺</td>
-                </tr>
-                <tr>
-                    <td>2019/12/15 18:35</td>
-                    <td>百岳烏拉拉</td>
-                    <td>亂爬阿祥</td>
-                </tr>
-                <tr>
-                    <td>2019/12/14 05:45</td>
-                    <td>大零食家</td>
-                    <td>洋芋片咬輝哥</td>
-                </tr>
-                <tr>
-                    <td>2019/12/10 05:46</td>
-                    <td>青鳥傳情</td>
-                    <td>香菇姑姑咕咕咕</td>
-                </tr>
-                <tr>
-                    <td>2019/12/09 05:46</td>
-                    <td>&on旅社</td>
-                    <td>咖啡翰</td>
-                </tr>
-                <tr>
-                    <td>2019/12/07 08:46</td>
-                    <td>睡眠很重要</td>
-                    <td>早起的邱哥</td>
-                </tr>
+                <tbody id="aa">
+                    <tr>
+                        <td id="td1"></td>
+                        <td id="td2"></td>
+                        <td id="td3"></td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     `,
@@ -88,7 +65,49 @@ new Vue({
     data: {
         content: 'memData',
     },
+    methods:{
+    changeName(){
+        axios
+        .post('http://localhost/dev/js/letLike.php')
+        .then((res) => {
+            var arr = res.data;
+            console.log(arr[0].letLikeTime);
+            console.log(arr[0].letTitle);
+            console.log(arr[0].likeMemNo);
+            var text9=arr[0].letLikeTime;
+            var text8=arr[0].letTitle;
+            var text7=arr[0].likeMemNo;
+            var td1=document.getElementById('td1');
+            var td2=document.getElementById('td2');
+            var td3=document.getElementById('td3');
+            td1.innerHTML=text9;
+            td2.innerHTML=text8;
+            td3.innerHTML=text7;
+            // td=document.createElement('td')
+            // span=document.createElement('span')
+            // span.innerHTML=arr[0].letLikeTime
+            // td.appendChild(span)
+            // console.log(span)
+            // tr.appendChild(td)
+            console.log(td1);
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    }
+    },
+    mounted(){
+        this.changeName();
+    }
 });
+
+// new Vue({
+//     el: '#userSetting_airCoin',
+//     data: {
+//         howard:'測試',
+//     },
+
+// })
 
 //系統資訊
 Vue.component('manu', {
@@ -245,6 +264,18 @@ new Vue({
     }
 });
 
+//    <?php 
+//     $letterlikeRow = $letterlike -> fetch_assoc()){
+//     echo json_encode( $memRow);
+//     ?>
+//                 <tr>
+//                     <td ><?=$letterlikeRow["letLikeTime"]?></td>
+//                     <td><?=$letterlikeRow["letTitle"]?></td>
+//                     <td><?=$letterlikeRow["likeMemNo"]?></td>
+//                 </tr>
+//                 <?php	
+//                 }
+//                 ?>
 
 //JS
 //會員資訊_外觀設定

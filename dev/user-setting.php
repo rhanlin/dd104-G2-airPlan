@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 
@@ -40,6 +41,7 @@
                         <keep-alive>
                             <component :is="content"></component>
                         </keep-alive>
+                        
                     </div>
                 </div>
                 <div class="setDataBg" id="setDataBg">
@@ -143,19 +145,4 @@
 </body>
 
 </html>
-<div class="userSetting_airCoin">
-    <table class="userSetting_airCoinTable">
-        <thead >
-            <th><h4>時間</h4></th>
-            <th><h4>信件</h4></th>
-            <th><h4>打賞者</h4></th>
-        </thead>
-        <tbody id="aa">
-            <tr>
-                <td id="td1"></td>
-                <td id="td2"></td>
-                <td id="td3"></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+
