@@ -48,20 +48,14 @@
         const writeLetter = {
             template: `
             <h1 class="headpg-name threed-text-blue">
-                <div 
-                    style="padding:1vw 0; width:20%; 
-                    text-align:center;">
-                寫
-                </div>
+                <div class="headerText-1">寫</div>
                 <br>
-                <img src="./img/share/Paint-bucket.svg" style="width:40%; position:absolute; bottom:-90%; left:8%; z-index:99">
-                <img src="./img/share/shiny.svg" style="width:6%; position:absolute; bottom:13%; left:33%; z-index:99">
-                <img src="./img/share/shiny.svg" style="width:4%; position:absolute; bottom:30%; left:40%; z-index:99">
-                <img src="./img/share/yellow-paint-line.svg" style="width:15%; position:absolute; top:30%; left:18%; z-index:99">
-                <div 
-                    style="width:50%; display:flex; flex-direction:column; justify-content:center; 
-                    text-align:center; padding:1vw 0;">
-                    <img src="./img/share/line-paperPlane.svg" style="width:40%;">
+                <img src="./img/share/Paint-bucket.svg" class="paint-bucket">
+                <img src="./img/share/shiny.svg" class="shiny-big">
+                <img src="./img/share/shiny.svg" class="shiny-small">
+                <img src="./img/share/yellow-paint-line.svg" class="yellow-paint-line">
+                <div class="headerText-2">
+                    <img src="./img/share/line-paperPlane.svg" class="line-paperPlane">
                     &nbsp一封信
                 </div>
             </h1>
@@ -70,18 +64,16 @@
         const catchLetter = {
             template: `
             <h1 class="headpg-name threed-text-blue">
-                <div 
-                    style="width:45%; text-align:center; display:flex;
-                    flex-direction:column; align-items:center; justify-content:space-evenly;">
+                <div class="catch-headerText">
                 <span style="font-size:inherit; ">查看</span>
                 <span style="font-size:inherit; ">&nbsp撈信</span>
                 </div>
                 <br>
-                <img src="./img/share/butterfly-net.svg" style="width:40%; position:absolute; bottom:-50%; right:2%; z-index:99">
-                <img src="./img/share/shiny.svg" style="width:6%; position:absolute; top:13%; right:33%; z-index:99">
-                <img src="./img/share/shiny.svg" style="width:4%; position:absolute; top:36%; right:28%; z-index:99">
-                <img src="./img/share/yellow-paint-line.svg" style="width:15%; position:absolute; bottom:4%; left:38%; z-index:99">
-                <img src="./img/share/line-paperPlane.svg" style="width:20%; position:absolute; top:18%; right:38%;">
+                <img src="./img/share/butterfly-net.svg" class="catch-net">
+                <img src="./img/share/shiny.svg" class="catch-shinyBig">
+                <img src="./img/share/shiny.svg" class="catch-shinySmall">
+                <img src="./img/share/yellow-paint-line.svg" class="catch-yellowPaintLine">
+                <img src="./img/share/line-paperPlane.svg" class="catch-linePaperPlane">
             </h1>
             `
         }
@@ -105,15 +97,12 @@
         const cave = {
             template: `
             <h1 class="headpg-name threed-text-blue">
-                <div 
-                    style="width:55%; text-align:center; display:flex;
-                    flex-direction:column; align-items:center; justify-content:space-evenly;">
+                <div class="cave-headerText">
                 <span style="font-size:inherit;">我的倉庫</span>
                 </div>
                 <br>
-                <img src="./img/cave/cavheaderImg.png"
-                style="width:15%; position:absolute; right: 2%;bottom: 5%; z-index:99;">
-                <img src="./img/share/cave-pattern.svg" style="width:30%; position:absolute; bottom:-10%; right:10%;">
+                <img src="./img/cave/cavheaderImg.png" class="cave-cavheaderImg">
+                <img src="./img/share/cave-pattern.svg" class="cave-pattern">
             </h1>
             `
         }
@@ -123,14 +112,13 @@
                 <div 
                     style="width:80%; text-align:center; display:flex;
                     flex-direction:column; align-items:center; justify-content:space-evenly;">
-                <span style="font-size:inherit;">客製化商城</span>
+                <span class="shop-headerText">客製化商城</span>
                 </div>
                 <br>
-                <img src="./img/share/shop-pattern2.svg" style="width:30%; position:absolute; top:0%; right:0%; z-index:99">
-                <img src="./img/share/shop-pattern.svg" style="width:30%; position:absolute; bottom:-70%; right:-12%; z-index:99">
+                <img src="./img/share/shop-pattern2.svg" class="shop-pattern2">
+                <img src="./img/share/shop-pattern.svg" class="shop-pattern">
                 
-                <img src="./img/share/yellow-paint-line.svg" 
-                style="width: 15%; position:absolute; bottom:27%; right:15%; z-index:9;">
+                <img src="./img/share/yellow-paint-line.svg" class="shop-yellowPaintLine">
             </h1>
             `
         }
@@ -139,24 +127,17 @@
             <h1 class="headpg-name threed-text-blue">
                 <div style="display:flex;flex-direction:column;justify-content:center;">
                     用戶設定
-                <img src="./img/user-setting/wrench.svg" style="width:8%; transform: rotate(90deg); position:absolute; left: 10%; top: 40%;">
+                <img src="./img/user-setting/wrench.svg" class="userSet-wrench">
                 </div>
                 <br>
-                <img src="./img/user-setting/gear.svg" alt="gear" style="width: 18%; position:absolute; bottom:5%; right: 20%">
+                <img src="./img/user-setting/gear.svg" alt="gear" class="userSet-gear">
                 <div style="display:flex;flex-direction:column;justify-content:center;">
-                    <img src="./img/user-setting/hammer.svg" style="width: 10%; transform: rotate(-45deg); position:absolute; right: 10%; top: 1%;">
-                    
+                    <img src="./img/user-setting/hammer.svg" class="userSet-hammer">
                 </div>
             </h1>
             `
         }
-        const classic = {
-            template: `
-            <h1 class="headpg-name threed-text-blue">
-                精華區
-            </h1>
-            `
-        }
+        
         new Vue({
             el: '#headerVue',
             template: `
@@ -171,7 +152,6 @@
                 cave,
                 shop,
                 userSetting,
-                classic,
             },
             data: {
                 pageTitle: null
