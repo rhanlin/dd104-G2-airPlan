@@ -74,6 +74,7 @@ let hang3 = TweenMax.to('.hang3', 1, {
 let sceneHang = new ScrollMagic.Scene({
     triggerElement: '.mountain_box',
     offset: 150,
+    // offset: "150%",
     duration: '15%',
 }).setTween(hang3).addIndicators().addTo(controller);
 

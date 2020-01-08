@@ -16,6 +16,32 @@
             background-size: 15px 15px;
             display: inline-block;
         }
+        @include respond(note){
+            .dot-box-#{$title}{
+                border: 2px solid #212121;
+                width: $width;
+                height: $height;
+                margin: 0 auto;
+                z-index: 99;
+                position: relative;
+                background: radial-gradient(#000000 15%, $color 15%);
+                background-size: 12px 12px;
+                display: inline-block;
+            }
+        }
+        @include respond(iphone){
+            .dot-box-#{$title}{
+                border: 2px solid #212121;
+                width: $width;
+                height: $height;
+                margin: 0 auto;
+                z-index: 99;
+                position: relative;
+                background: radial-gradient(#000000 15%, $color 15%);
+                background-size: 12px 12px;
+                display: inline-block;
+            }
+        }
     }
 }
 /*
@@ -35,6 +61,32 @@
             position: relative;
             background-size: 15px 15px;
             display: inline-block;
+        }
+        @include respond(note){
+            .box-#{$title}{
+                border: 2px solid #212121;
+                background-color: $color;
+                width: $width;
+                height: $height;
+                margin: 0 auto;
+                z-index: 99;
+                position: relative;
+                background-size: 12px 12px;
+                display: inline-block;
+            }
+        }
+        @include respond(iphone){
+            .box-#{$title}{
+                border: 2px solid #212121;
+                background-color: $color;
+                width: $width;
+                height: $height;
+                margin: 0 auto;
+                z-index: 99;
+                position: relative;
+                background-size: 12px 12px;
+                display: inline-block;
+            }
         }
     }
 }
