@@ -1,11 +1,18 @@
 <?php
 try {
-  
+  /*ALTER TABLE `letter`
+  ADD CONSTRAINT letter_ibfk_1 FOREIGN KEY (`memNo`) REFERENCES `member` (`memNo`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT letter_ibfk_2 FOREIGN KEY (`matPattNo1`) REFERENCES `member` (`matNo`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT letter_ibfk_3 FOREIGN KEY (`matPattNo2`) REFERENCES `member` (`matNo`) ON DELETE CASCADE ON UPDATE CASCADE;
+  COMMIT;
+*/
+
   //檢查是否還有信紙 
   //...
   require_once("connectBook_root.php");
-  $sql = "insert into `letter`( memNo, letPower, matPattNo1, matPattNo2, letTime, letTitle, letContent, imgUrl, mesCount, letSort, letStatus, letImgUrl) VALUES ( 10, 1, :matPattNo1, :matPattNo2, '2020-01-07 21:00:00', :letTitle, :letContent, :imgUrl, 0, :letSort, 0, null);";
-  
+  $sql = "insert into `letter`( memNo, letPower, matPattNo1, matPattNo2, letTime, letTitle, letContent, imgUrl, mesCount, letSort, letStatus, letImgUrl) VALUES ( 3, 1, :matPattNo1, :matPattNo2, '2020-01-07 21:00:00', :letTitle, :letContent, :imgUrl, 0, :letSort, 0, null);";
+
+
   $letInsert = $pdo->prepare($sql);
   $letInsert->bindValue(':matPattNo1',$_POST['userPattern']);
   $letInsert->bindValue(':matPattNo2',$_POST['userStamp']);

@@ -211,7 +211,8 @@ function submitToLetterTable() {
   //--- 用post要自己寫編碼方式如下:
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-  let data_info = `memNo=10&letPower=1&matPattNo1=${letterPattern}&matPattNo2=${userStamp}&letTime=2020-01-07 21:00:00&letTitle=${letterTitle}&letContent=${letterContant}&imgUrl=${letterImg}&mesCount=0&letSort=${lettrtCat}&letStatus=0&letImgUrl=null`;
+  let data_info = `memNo=3&letPower=1&matPattNo1=${letterPattern}&matPattNo2=${userStamp}&letTime=2020-01-07 21:00:00&letTitle=${letterTitle}&letContent=${letterContant}&imgUrl=${letterImg}&mesCount=0&letSort=${lettrtCat}&letStatus=0&letImgUrl=null`;
+
   // letterPattern -> 應該要是那張圖片素材的 matNo 然後再v-for裡面 v-for="(item, index) in 該用戶的素材.length(有幾張圖就跑幾次回圈)"
   // 判斷用戶checked到的素材 matNo是多少存回資料庫中 
   // userStamp同理
