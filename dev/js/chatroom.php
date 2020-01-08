@@ -28,8 +28,8 @@ try {
             $memNo1 = 1;
             // $mname = $_POST["ename"];
             $sql = "select a.memNo,b.memNo,b.memName,matPosUrl,mugStatus
-                    from `chat` join`member` a on(chat.memNo1=a.memNo)join `member`b on(chat.memNo2 = b.memNo) join `matpostmark` on (a.memNo = matpostmark.memNo)
-                    where a.memNo = 1 and mugStatus = 1
+                    from `chat` join`member` a on(chat.memNo1=a.memNo)join `member`b on(chat.memNo2 = b.memNo) join `matpostmark` on (b.memNo = matpostmark.memNo)
+                    where a.memNo = :memNo1 and mugStatus = 1
                     order by a.memNo;";
             $content = $pdo->prepare($sql);
             $content->bindValue(":memNo1", $memNo1);
