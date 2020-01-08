@@ -5,20 +5,165 @@
     font-size: 0;
 
     .home_first {
+        // border: 1px solid darkorange;
         width: 100%;
         height: 1200px;
+        background: -webkit-radial-gradient(rgb(200, 200, 200) 10%, rgb(33, 44, 65) 10%);
+        background: radial-gradient(rgb(200, 200, 200) 10%, rgb(33, 44, 65) 10%);
+        background-size: 40px 40px;
+        -webkit-animation: bscale 60s infinite linear;
+        animation: bscale 60s infinite linear;
         overflow: hidden;
         position: relative;
 
+        @-webkit-keyframes bscale {
+            0% {
+                background-position: 100% 0%;
+            }
+
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+
+        @keyframes bscale {
+            0% {
+                background-position: 100% 0%;
+            }
+
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+
+        @function shadow($color, $depth) {
+            $val: 0 0 $color;
+
+            @for $i from 1 through $depth {
+                $hue: adjust-hue($color, $i * 0.1);
+                $val: #{$val},
+                #{$i}px -#{$i * 0.5}px $hue;
+            }
+
+            // $extra1: #{", 0 -1px "$color};
+            // $extra2: #{", 1px 0 "$color};
+            // $extra3: #{", 1px 1px "$color};
+            // @return $val+$extra1+$extra2+$extra3;
+            @return $val;
+        }
+
         .firstLetter {
-            width: 70%;
-            height: 40vw;
-            margin: 5% 0 0 5%;
-            background-image: url(../img/share/postCard.svg);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
+            width: 60%;
+            height: 34.5vw;
+            // margin: 5% 0 0 5%;
+            background-color: $main-white;
+            // background-image: url(../img/share/postCard.svg);
+            // background-repeat: no-repeat;
+            // background-position: center;
+            // background-size: cover;
             border: $border;
+            position: absolute;
+            top: 16%;
+            right: -50%;
+            overflow: hidden;
+            // display: flex;
+            // align-content: center;
+            // justify-content: center;
+
+            // font: italic 900 60px/1 $font, $font;
+            // color: rgb(245,186,201);
+            // margin: auto;
+            // text-shadow: shadow(rgb(82, 82, 255), 1000);
+
+            h1 {
+                display: block;
+                font-size: 20vw;
+                line-height: 0px;
+                font-weight: bold;
+                // transform: translate3d(-50vw, 30vw, 0);
+                transform: translate3d(50vw, -30vw, 0);
+                opacity: 0;
+                transition: all 1s cubic-bezier(.65, .02, .23, 1);
+                color: rgb(245, 186, 201);
+                text-shadow: shadow(rgb(29, 29, 138), 1000);
+
+                @for $i from 1 through 2 {
+                    &:nth-child(#{$i}) {
+                        transition-delay: .1s * $i;
+                        // z-index: $i;
+                    }
+                }
+            }
+
+            .air_shadow {
+                position: absolute;
+                top: 28%;
+                left: -8%;
+            }
+
+            .air_words {
+                position: absolute;
+                top: 79%;
+                left: 2%;
+                // right: -32%;
+            }
+
+            &.animate {
+                &:before {
+                    display: none;
+                }
+
+                h1 {
+                    opacity: 1;
+                    position: relative;
+
+                    @for $i from 1 through 2 {
+                        &:nth-child(#{$i}) {
+                            transform: translate3d(20px * $i, 0, 0);
+                            transition-delay: .1s * (7 - $i);
+                        }
+                    }
+                }
+            }
+
+            .air_text1 {
+                font-family: $font;
+                font-weight: 100;
+                display: inline-block;
+                position: absolute;
+                top: 18%;
+                left: 48%;
+                // right: 22%;
+                color: $main-white;
+                border-bottom: 1px solid $main-white;
+                line-height: 45px;
+            }
+
+            .air_text2 {
+                font-family: $font;
+                font-weight: 100;
+                display: inline-block;
+                position: absolute;
+                top: 30%;
+                left: 52.5%;
+                // right: 22%;
+                color: $main-white;
+                border-bottom: 1px solid $main-white;
+                line-height: 45px;
+            }
+
+            .air_text3 {
+                font-family: $font;
+                font-weight: 100;
+                display: inline-block;
+                position: absolute;
+                top: 40%;
+                left:  52.5%;
+                // right: 22%;
+                color: $main-white;
+                border-bottom: 1px solid $main-white;
+                line-height: 45px;
+            }
         }
 
         .cloudBlue {
@@ -55,34 +200,37 @@
     }
 
     .home_skyPoint {
+        // border: 1px solid red;
         width: 100%;
-        background: -webkit-radial-gradient(rgb(62, 125, 184) 30%, rgb(195, 215, 233) 20%);
-        background: radial-gradient(rgb(62, 125, 184) 30%, rgb(195, 215, 233) 20%);
+        margin-top: -18%;
+        // background-color: $main-white;
+        // background: -webkit-radial-gradient(rgb(62, 125, 184) 30%, rgb(195, 215, 233) 20%);
+        // background: radial-gradient(rgb(62, 125, 184) 30%, rgb(195, 215, 233) 20%);
         background-size: 10px 10px;
-        -webkit-animation: bscale 100s infinite linear;
-        animation: bscale 100s infinite linear;
+        // -webkit-animation: bscale 100s infinite linear;
+        // animation: bscale 100s infinite linear;
         overflow: hidden;
         position: relative;
 
-        @-webkit-keyframes bscale {
-            0% {
-                background-position: 0px 0px;
-            }
+        // @-webkit-keyframes bscale {
+        //     0% {
+        //         background-position: 0px 0px;
+        //     }
 
-            100% {
-                background-position: 100% 100%;
-            }
-        }
+        //     100% {
+        //         background-position: 100% 100%;
+        //     }
+        // }
 
-        @keyframes bscale {
-            0% {
-                background-position: 0px 0px;
-            }
+        // @keyframes bscale {
+        //     0% {
+        //         background-position: 0px 0px;
+        //     }
 
-            100% {
-                background-position: 100% 100%;
-            }
-        }
+        //     100% {
+        //         background-position: 100% 100%;
+        //     }
+        // }
 
         .hang2 {
             // padding-top: 20px;
@@ -99,12 +247,13 @@
 
         .mountain_box {
             width: 100%;
-            height: 1800px;
+            // height: 1800px;
+            height: 93.8vw;
             background-image: url(../img/home/write/mountain.png);
             background-repeat: no-repeat;
             background-size: cover;
             position: relative;
-            margin-top: 100px;
+            margin-top: 150px;
             z-index: 5;
 
             .floatPaper1 {
@@ -649,7 +798,8 @@
 
             .machineBox {
                 width: 48%;
-                height: 35%;
+                // height: 35%;
+                height: 28.6vw;
                 // border: 1px solid red;
                 position: absolute;
                 top: 0;
@@ -1354,8 +1504,9 @@
                     width: 97%;
                     height: 90%;
                     // background: -webkit-radial-gradient($main-black 30%, $main-blue 20%);
-                    background: radial-gradient($main-black 20%, $main-blue 20%);
-                    background-size: 12px 12px;
+                    // background: radial-gradient($main-black 20%, $main-blue 20%);
+                    // background-size: 12px 12px;
+                    background-image: url(../img/chatroom/bg_book.png);
                     border-radius: 0 7% 7% 0;
                     border: $border;
                     display: flex;

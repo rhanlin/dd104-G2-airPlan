@@ -13,7 +13,7 @@
                     <ul class="nav-list" id="list">
                         <a class="nav-logo" href="./home.html"><img src="./img/share/LOGO.png"></a>
                         <li><a href="./write-letter.html">
-                                <p class="nav-pageName nav-now">寫信</p> <span class="nav-circle-1 "></span>
+                                <p class="nav-pageName">寫信</p> <span class="nav-circle-1 "></span>
                             </a> </li>
                         <li><a href="./catch-letter.html">
                                 <p class="nav-pageName">撈信</p> <span class="nav-circle-2"></span>
@@ -32,7 +32,7 @@
                             </a> </li>
                         <div class="hbg-botWrap">
                             <div class="hbg-littleNav">
-                                <a id="showSigin" href="#"><i class="fas fa-user-circle"></i></a>
+                                <a class="showSigin" href="#"><i class="fas fa-user-circle"></i></a>
                             </div>
                             <div class="hbg-pc">
                                 <div class="cav-paper">信紙:999</div>
@@ -46,7 +46,7 @@
                 </div>
             </nav>
             <div class="nav-littleNav">
-                <a id="showSigin" href="#"><i class="fas fa-user-circle"></i></a>
+                <a id="showSigin" class="showSigin" href="#"><i class="fas fa-user-circle"></i></a>
             </div>
             <div class="nav-pc">
                 <div class="cav-paper">信紙:999</div>
@@ -190,16 +190,21 @@
 <script>
     $(function () {
         var nav = $(".nav-navWrap .nav-list a");
+        // console.log(nav);
         var url = window.location.href;
+        // console.log(url);
+        // console.log(url.split("/")[url.split("/").length - 1]);
+        var page = "./" + url.split("/")[url.split("/").length - 1];
+        console.log(page);
         var host = window.location.host;
+        // console.log(host);
         for (var i = 0; i < nav.length; i++) {
-            var astr = nav.eq(i).attr('href');
-            if (url.indexOf(astr) != -1) {
-                nav.eq(i).addClass('nav-now').siblings().removeClass('nav-now');
-            } else if (url == ('http://' + host + '/')) {
-                nav.eq(0).addClass('nav-now').siblings().removeClass('nav-now');
+            var astr = nav.eq(i).attr("href");
+            while (page == astr) {
+                nav.eq(i).find(".nav-pageName").addClass('nav-now').siblings().removeClass('nav-now');
+                console.log(i);
+                break;
             }
-
         }
 
     })
@@ -209,7 +214,7 @@
 <!-- 會員登入/註冊/忘記密碼燈箱 -->
 <script>
     var signInBg = document.getElementById("signInBg");
-    var showSigin = document.getElementById("showSigin");
+    var showSigin = document.querySelectorAll(".showSigin");
     var closeSigin = document.getElementById("closeSigin");
     var registerBg = document.getElementById("registerBg");
     var showRegister = document.getElementById("showRegister");
@@ -217,9 +222,13 @@
     var forgetBg = document.getElementById("forgetBg");
     var showForget = document.getElementById("showForget");
     var closeForget = document.getElementById("closeForget");
-    showSigin.onclick = function () {
-        signInBg.style.display = "block";
-    };
+    showSigin.forEach(item => {
+        item.addEventListener('click', () => {
+            console.log(6);
+            signInBg.style.display = "block";
+        })
+    })
+
     closeSigin.onclick = function () {
         signInBg.style.display = "none";
     };

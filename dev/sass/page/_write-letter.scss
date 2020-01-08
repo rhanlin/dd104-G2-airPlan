@@ -16,7 +16,7 @@
     main {
         margin-top: 10vw;
         font-family: 'Noto Sans TC', sans-serif;
-
+        form{
         .goto-shop-btn {
             // border: 1px solid blue;
             height: 65%;
@@ -813,6 +813,7 @@
                             left: 53%;
                             transform: translate(-50%, -50%);
                             background-color: #fff;
+                            pointer-events: none;
                         }
 
                         .printScraper {
@@ -826,7 +827,7 @@
                             top: 20%;
                             left: 72%;
                             transform: translate(-50%, -50%);
-
+                            pointer-events: none;
 
                             &.active {
                                 animation: active 1.5s ease;
@@ -857,6 +858,7 @@
                             top: -20%;
                             left: 90%;
                             background-image: url(../img/write-letter/print-scraper-yellow.svg);
+                            pointer-events: none;
                         }
 
                         .preview-paper {
@@ -1070,13 +1072,14 @@
                                 width: 64%;
                                 height: 69%;
                                 // background-color: #fff;
-                                background-image: url(../img/catch-letter/user-stamp/user-stamp_3.png);
+                                // background-image: url(../img/catch-letter/user-stamp/user-stamp_3.png);
                                 background-position: center;
                                 background-size: contain;
                                 background-repeat: no-repeat;
                                 position: absolute;
                                 top: 17%;
                                 left: 20%;
+                                pointer-events: none;
                             }
 
                             &:hover span {
@@ -1084,6 +1087,7 @@
                                 height: 75%;
                                 top: 14%;
                                 left: 18%;
+                                pointer-events: none;
                             }
                         }
                     }
@@ -1093,7 +1097,7 @@
             ;
         }
 
-
+        }
     }
 
     @include foldthePlane();
@@ -1110,7 +1114,7 @@
 
         main {
             margin-top: 30%;
-
+            form{
             .goto-shop-btn {
                 display: none;
             }
@@ -1610,6 +1614,7 @@
                     }
                 }
             }
+            }
         }
     }
 }
@@ -1622,7 +1627,7 @@
 
         main {
             margin-top: 20vw;
-
+            form{
             .goto-shop-btn {
                 display: none;
             }
@@ -2068,27 +2073,28 @@
                     .top-right {}
 
                     .num-four {
-                        width: 90%;
+                        width: 100%;
                         height: auto;
-                        margin: 8vw auto 0 auto;
+                        margin: 0 auto;
+                        margin-top: 13%;
                         display: flex;
-                        justify-content: flex-end;
-                        background-size: 50%;
+                        justify-content: center;
+                        background-image: unset;
 
                         h2 {
                             font-size: 2rem;
-                            width: 70%;
+                            width: 90%;
                             margin: unset;
                             text-align: left;
                         }
                     }
 
                     .select-stamp {
-                        height: 50vw;
+                        height: 34vw;
                         position: relative;
+                        margin-top: 12.5%;
 
                         .arrow-white {
-
                             position: absolute;
                             top: 50%;
                             left: 5%;
@@ -2111,15 +2117,26 @@
                             .type {
                                 width: 100%;
 
-                                &:hover {}
+                                &:hover {
+                                    height: 100%;
+                                }
 
-                                span {}
+                                span {
+                                    width: 64%;
+                                    height: 54%;
+                                    top: 24%;
+                                }
 
-                                &:hover span {}
+                                &:hover span {
+                                    width: 64%;
+                                    height: 54%;
+                                    top: 24%;
+                                }
                             }
                         }
                     }
                 }
+            }
             }
         }
     }
@@ -2133,7 +2150,7 @@
 
         main {
             margin-top: 20vw;
-
+            form{
             .goto-shop-btn {
                 display: none;
             }
@@ -2622,15 +2639,26 @@
                             .type {
                                 width: 100%;
 
-                                &:hover {}
+                                &:hover {
+                                    width: 100%;
+                                }
 
-                                span {}
+                                span {
+                                    width: 64%;
+                                    height: 54%;
+                                    top: 24%;
+                                }
 
-                                &:hover span {}
+                                &:hover span {
+                                    width: 64%;
+                                    height: 54%;
+                                    top: 24%;
+                                }
                             }
                         }
                     }
                 }
+            }
             }
         }
     }

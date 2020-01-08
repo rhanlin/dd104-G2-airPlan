@@ -11,6 +11,7 @@ firstPlanePara.to('.firstPlane', 3, {
 }).to('.firstPlane', 2, {
     x: "750%",
     y: "-20%",
+    delay:2,
     repeat: -1,
     yoyo: true,
     ease: Power0.easeNone,
@@ -26,6 +27,9 @@ let cloudWhitePara = new TimelineMax({});
 
 cloudWhitePara.to('.cloudWhite', 3, {
     x: "48.5%",
+    ease: Power0.easeNone,
+}).to('.firstLetter', 2, {
+    x:"-120%",    
     ease: Power0.easeNone,
 }).to('.cloudWhite', 2, {
     // opacity: 0.5,
@@ -70,6 +74,7 @@ let hang3 = TweenMax.to('.hang3', 1, {
 let sceneHang = new ScrollMagic.Scene({
     triggerElement: '.mountain_box',
     offset: 150,
+    // offset: "150%",
     duration: '15%',
 }).setTween(hang3).addIndicators().addTo(controller);
 
