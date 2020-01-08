@@ -6,7 +6,7 @@ try {
 	// $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 	// $pdo = new PDO($dsn, $user, $password, $options);
 	require_once "connectBook_userSetting.php";
-	$sql = "select letLikeTime,letTitle,likeMemNo from `letterlike` natural join `letter` where memNo=2 order by letLikeTime asc";
+	$sql = "select letLikeTime,letTitle,letLikeNo from `letterlike` natural join `letter` where memNo=2 order by letLikeTime asc";
 	$letterlike = $pdo -> query($sql);//會取得result set 傳回的資料列
 
 } catch (PDOException $e) {

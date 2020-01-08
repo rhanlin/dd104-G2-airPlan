@@ -26,8 +26,7 @@
                 <!-- <h1 class="memtitle">會員資訊</h1> -->
                 <h1 class="threed-text-yellow-endWhite">會員資訊</h1>
                 <div class="memKanban" id="memKanban">
-                    <div class="memKanbanIn">
-                        <!--會員資訊頁籤-->
+                    <!-- <div class="memKanbanIn">
                         <div class="memData" id="btnMemData" @click="content='memData'">
                             <h3>會員資料</h3>
                         </div>
@@ -40,13 +39,77 @@
                         <keep-alive>
                             <component :is="content"></component>
                         </keep-alive>
+                    </div> -->
+                    <div class="memKanbanIn">
+                        <div class="memData" id="btnMemData" @click="content='memData'">
+                            <h3>會員資料</h3>
+                        </div>
+                        <div class="airCoin" id="btnAirCoin" @click="content='airCoin'">
+                            <h3>打賞紀錄</h3>
+                        </div>
+                        <div class="memcolor" id="btnMemcolor" @click="content='memcolor'">
+                            <h3>外觀設定</h3>
+                        </div>
+                        <div id="userSetting_memData" class="userSetting_memData">
+                            <table class="userSetting_memDataTable">
+                                <tr>
+                                    <td colspan="6"><img class="mempic" src="./img/chatroom/mark_1.png" alt="mempic"></td>
+                                </tr>
+                                <tr>
+                                    <td id="memNo">會員帳號:</td>
+                                    <td colspan="5">波音777-1</td>
+                                </tr>
+                                <tr>
+                                    <td>Email:</td>
+                                    <td colspan="5">aaa@gmail.com<img id="showForm" class="emailSet" src="./img/user-setting/gear.svg" alt="robotB3"></td>
+                                </tr>
+                                <tr>
+                                    <td>Air幣:</td>
+                                    <td colspan="5">50</td>
+                                </tr>
+                                <tr>
+                                    <td>信紙:</td>
+                                    <td colspan="5">5</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="userSetting_airCoin" class="userSetting_airCoin">
+                            <table class="userSetting_airCoinTable">
+                                <thead >
+                                    <th><h4>時間</h4></th>
+                                    <th><h4>信件</h4></th>
+                                    <th><h4>打賞者</h4></th>
+                                </thead>
+                                <tbody id="aa">
+                                    <tr>
+                                        <td id="td1"></td>
+                                        <td id="td2"></td>
+                                        <td id="td3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="td4"></td>
+                                        <td id="td5"></td>
+                                        <td id="td6"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="userSetting_memcolor" class="userSetting_memcolor">
+                            <div class="memcolorBig">
+                                <img id="memcolorBigLarge" src="img/share/blue-paint-bigline.svg" alt="blackB">
+                            </div>
+                            <div class="memcolorSmall">
+                                <img src="img/share/blue-paint-bigline.svg" alt="blackB">
+                                <img src="img/share/yellow-paint-bigline.svg" alt="white">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="setDataBg" id="setDataBg">
                     <div class="setData">
                         <h4>會員資料修改</h4>
                         <p class="setDataClose" id="closeForm">X</p>
-                        <form class="formSetData" action="./js/userUpdate.php" method="post">
+                        <form class="formSetData" action="./phps/userUpdate.php" method="post">
                             <img class="setMempic" src="./img/chatroom/mark_1.png" alt="會員圖片">
                             <label for="memNo">
                                 <P>會員帳號:</P>
@@ -143,7 +206,7 @@
 </body>
 
 </html>
-<div class="userSetting_airCoin">
+<!-- <div class="userSetting_airCoin">
     <table class="userSetting_airCoinTable">
         <thead >
             <th><h4>時間</h4></th>
@@ -158,4 +221,4 @@
             </tr>
         </tbody>
     </table>
-</div>
+</div> -->
