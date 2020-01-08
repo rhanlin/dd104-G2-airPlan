@@ -5,7 +5,7 @@
     font-size: 0;
 
     .home_first {
-        border: 1px solid darkorange;
+        // border: 1px solid darkorange;
         width: 100%;
         height: 1200px;
         background: -webkit-radial-gradient(rgb(200, 200, 200) 10%, rgb(33, 44, 65) 10%);
@@ -126,12 +126,43 @@
                 }
             }
 
-            .air_text{
+            .air_text1 {
                 font-family: $font;
+                font-weight: 100;
+                display: inline-block;
                 position: absolute;
-                top: 43%;
-                right: 22%;
+                top: 18%;
+                left: 48%;
+                // right: 22%;
                 color: $main-white;
+                border-bottom: 1px solid $main-white;
+                line-height: 45px;
+            }
+
+            .air_text2 {
+                font-family: $font;
+                font-weight: 100;
+                display: inline-block;
+                position: absolute;
+                top: 30%;
+                left: 52.5%;
+                // right: 22%;
+                color: $main-white;
+                border-bottom: 1px solid $main-white;
+                line-height: 45px;
+            }
+
+            .air_text3 {
+                font-family: $font;
+                font-weight: 100;
+                display: inline-block;
+                position: absolute;
+                top: 40%;
+                left:  52.5%;
+                // right: 22%;
+                color: $main-white;
+                border-bottom: 1px solid $main-white;
+                line-height: 45px;
             }
         }
 
@@ -216,7 +247,8 @@
 
         .mountain_box {
             width: 100%;
-            height: 1800px;
+            // height: 1800px;
+            height: 93.8vw;
             background-image: url(../img/home/write/mountain.png);
             background-repeat: no-repeat;
             background-size: cover;
@@ -766,7 +798,8 @@
 
             .machineBox {
                 width: 48%;
-                height: 35%;
+                // height: 35%;
+                height: 28.6vw;
                 // border: 1px solid red;
                 position: absolute;
                 top: 0;
@@ -1471,8 +1504,9 @@
                     width: 97%;
                     height: 90%;
                     // background: -webkit-radial-gradient($main-black 30%, $main-blue 20%);
-                    background: radial-gradient($main-black 20%, $main-blue 20%);
-                    background-size: 12px 12px;
+                    // background: radial-gradient($main-black 20%, $main-blue 20%);
+                    // background-size: 12px 12px;
+                    background-image: url(../img/chatroom/bg_book.png);
                     border-radius: 0 7% 7% 0;
                     border: $border;
                     display: flex;

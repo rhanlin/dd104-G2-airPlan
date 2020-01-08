@@ -99,20 +99,20 @@
               <div class="cardFilter">
                 <img src="./img/product/decorate/lineTop.png" alt="" class="line_top">
                 <img src="./img/product/decorate/lineButtom.png" alt="" class="line_bottom">
-                <div class="itemCard" v-for="(item,index) in pagedListdata" v-if="change(index)"
+                <div @click="changeIndex($event)" v-for="(item,index) in pagedListdata" v-if="change(index)"
                   :style="{backgroundImage:`url(${item.url})`}" :id=item.id :class=item.class>
                   <img src="./img/product/decorate/clip-04.svg" alt="">
                 </div>
               </div>
               <div id="emptyBtn">
                 <div class="switchBtnBox" @click="page = 1">
-                  <div class="switchBtn clicked">page1</div>
+                  <div class="switchBtn">page1</div>
                 </div>
                 <div class="switchBtnBox" @click="page = 2">
-                  <div class="switchBtn clicked">page2</div>
+                  <div class="switchBtn">page2</div>
                 </div>
                 <div class="switchBtnBox" @click="page = 3">
-                  <div class="switchBtn clicked">page3</div>
+                  <div class="switchBtn">page3</div>
                 </div>
               </div>
             </div>
@@ -156,37 +156,39 @@
               </div>
             </div>
           </div>
-        </div>
-    </section>
-    <div id="outshadow"></div>
-    <div id="medal">
-      <div class="cross"></div>
-      <div id="textBox">
-        <div class="textBox">
-          <h2>商品名稱:飛往巴黎</h2>
-        </div>
-        <div class="textBox">
-          <h>跟著紙飛機一起來場浪漫的旅行吧</h6>
-        </div>
-        <div class="textBox">
-          <h5>信件被撈機率加乘 : 2%</h5>
-          <h5>商品價格 : 50air幣</h5>
-        </div>
-      </div>
-      <div class="product_display">
-        <div class="model_material"><img src="./img/product/decorate/model_material.png" alt=""></div>
-        <div class="model_arrow"><img src="./img/product/decorate/model_arrow-04.svg" alt=""></div>
-        <div class="model_product"><img src="./img/product/decorate/model_product_1.png" alt=""></div>
-      </div>
-      <div class="orderBtnBoxGroup">
-        <div class="orderBtnBox">
-          <div class="orderBtn">
-            <div class="orderText">購買</div>
-            <span></span>
+          <div id="outshadow"></div>
+          <div id="medal">
+            <div class="cross"></div>
+            <div id="textBox">
+              <div class="titleBox">
+                <h4 id="titleInner"></h4>
+              </div>
+              <div class="textBox">
+                <h6 id="infoInner"></h6>
+              </div>
+              <div class="chance_priceBox">
+                <h5>信件被撈機率加乘 : <span id="chanceInner"></span>
+                </h5>
+                <h5>商品價格 :<span id="priceInner">50</span>
+                </h5>
+              </div>
+            </div>
+            <div class="product_display">
+              <div class="model_material"><img src="./img/product/decorate/model_material.png" alt=""></div>
+              <div class="model_arrow"><img src="./img/product/decorate/model_arrow-04.svg" alt=""></div>
+              <div class="model_product"><img src="./img/product/decorate/model_product_1.png" alt=""></div>
+            </div>
+            <div class="orderBtnBoxGroup">
+              <div @click="customerOrder($event)" class="orderBtnBox">
+                <div class="orderBtn">
+                  <!-- <div class="orderText">購買</div> -->
+                  <span></span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+    </section>
     <div id="pile">
       <div class="pilePaper"><span>xxxxxxxx xxxxxxx xxxxxx</span>
         <div class="innerBox"></div>
@@ -398,9 +400,11 @@
               </div>
             </div>
             <div class="patNameInput">
-            <label class="patternName" for="patternName"><h5>為您製作的圖案取個名字吧</h5></label>
-            <input type="text" name="patternName" id="patternName">
-          </div>
+              <label class="patternName" for="patternName">
+                <h5>為您製作的圖案取個名字吧</h5>
+              </label>
+              <input type="text" name="patternName" id="patternName">
+            </div>
             <!-- <div>
               <canvas id="pngCanvas">
               </canvas>
@@ -414,21 +418,19 @@
         <div class="owl-stage-outer">
           <div class="owl-stage">
             <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/figure/figure_animal_1.svg" alt="" class="figure"></div>
+              <div class="owl_img"><img src="" alt="" class="figure"></div>
             </div>
             <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/postmark/postmark_countries_1.svg" alt="" class="figure">
-              </div>
+              <div class="owl_img"><img src="" alt="" class="figure"></div>
             </div>
             <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/postmark/postmark_countries_10.svg" alt="" class="figure">
-              </div>
+              <div class="owl_img"><img src="" alt="" class="figure"></div>
             </div>
             <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/DIY/DIYtool_2.svg" alt="" class="figure"></div>
+              <div class="owl_img"><img src="" alt="" class="figure"></div>
             </div>
             <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/figure/figure_vector_8.svg" alt="" class="figure"></div>
+              <div class="owl_img"><img src="" alt="" class="figure"></div>
             </div>
             <div class="owl-item">
               <div class="owl_img"><img src="" alt="" class="figure"></div>
@@ -480,338 +482,404 @@
   </script>
   <script>
     //  ================這是商品Filter用=========================
-    const PAGE_SIZE = 10;
-    const fOO_DATA = [{
-        style: 'countries',
-        id: 'itemCard1',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard2',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard3',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard4',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard5',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard6',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard7',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard8',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard9',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard10',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard11',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard12',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard13',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard14',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard15',
-        url: ''
-      },
-      {
-        style: 'frame',
-        id: 'itemCard16',
-        url: ''
-      },
-      {
-        style: 'frame',
-        id: 'itemCard17',
-        url: ''
-      },
-      {
-        style: 'frame',
-        id: 'itemCard18',
-        url: ''
-      },
-      {
-        style: 'frame',
-        id: 'itemCard19',
-        url: ''
-      },
-      {
-        style: 'frame',
-        id: 'itemCard20',
-        url: ''
-      },
-      {
-        style: 'frame',
-        id: 'itemCard21',
-        url: ''
-      },
-      {
-        style: 'frame',
-        id: 'itemCard22',
-        url: ''
-      },
-      {
-        style: 'frame',
-        id: 'itemCard23',
-        url: ''
-      },
-      {
-        style: 'frame',
-        id: 'itemCard24',
-        url: ''
-      },
-      {
-        style: 'simple',
-        id: 'itemCard25',
-        url: ''
-      },
-      {
-        style: 'simple',
-        id: 'itemCard26',
-        url: ''
-      },
-      {
-        style: 'simple',
-        id: 'itemCard27',
-        url: ''
-      },
-      {
-        style: 'simple',
-        id: 'itemCard28',
-        url: ''
-      },
-      {
-        style: 'simple',
-        id: 'itemCard29',
-        url: ''
-      },
-      {
-        style: 'simple',
-        id: 'itemCard30',
-        url: ''
-      },
-      {
-        style: 'simple',
-        id: 'itemCard31',
-        url: ''
-      },
-      {
-        style: 'animal',
-        id: 'itemCard32',
-        url: ''
-      },
-      {
-        style: 'animal',
-        id: 'itemCard33',
-        url: ''
-      },
-      {
-        style: 'animal',
-        id: 'itemCard34',
-        url: ''
-      },
-      {
-        style: 'animal',
-        id: 'itemCard35',
-        url: ''
-      },
-      {
-        style: 'animal',
-        id: 'itemCard36',
-        url: ''
-      },
-      {
-        style: 'animal',
-        id: 'itemCard37',
-        url: ''
-      },
-      {
-        style: 'animal',
-        id: 'itemCard38',
-        url: ''
-      },
-      {
-        style: 'animal',
-        id: 'itemCard39',
-        url: ''
-      },
-      {
-        style: 'handpattern',
-        id: 'itemCard40',
-        url: ''
-      },
-      {
-        style: 'handpattern',
-        id: 'itemCard41',
-        url: ''
-      },
-      {
-        style: 'handpattern',
-        id: 'itemCard42',
-        url: ''
-      },
-      {
-        style: 'handpattern',
-        id: 'itemCard43',
-        url: ''
-      },
-      {
-        style: 'handpattern',
-        id: 'itemCard44',
-        url: ''
-      },
-      {
-        style: 'handpattern',
-        id: 'itemCard45',
-        url: ''
-      },
-      {
-        style: 'handpattern',
-        id: 'itemCard46',
-        url: ''
-      },
-      {
-        style: 'vector',
-        id: 'itemCard47',
-        url: ''
-      },
-      {
-        style: 'vector',
-        id: 'itemCard48',
-        url: ''
-      },
-      {
-        style: 'vector',
-        id: 'itemCard49',
-        url: ''
-      },
-      {
-        style: 'vector',
-        id: 'itemCard50',
-        url: ''
-      },
-      {
-        style: 'vector',
-        id: 'itemCard51',
-        url: ''
-      },
-      {
-        style: 'vector',
-        id: 'itemCard52',
-        url: ''
-      },
-      {
-        style: 'vector',
-        id: 'itemCard53',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard54',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard55',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard56',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard57',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard58',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard59',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard60',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard61',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard62',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard63',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard64',
-        url: ''
-      },
-
-    ]
+    // const PAGE_SIZE = 10;
     new Vue({
       el: '#app',
       data: {
         visibility: 'all',
-        items: [],
+        items: [{
+            style: 'countries',
+            id: 'itemCard1',
+            url: '',
+            class: "1"
+          },
+          {
+            style: 'countries',
+            id: 'itemCard2',
+            url: '',
+            class: "2"
+          },
+          {
+            style: 'countries',
+            id: 'itemCard3',
+            url: '',
+            class: "3"
+          },
+          {
+            style: 'countries',
+            id: 'itemCard4',
+            url: '',
+            class: "4"
+          },
+          {
+            style: 'countries',
+            id: 'itemCard5',
+            url: '',
+            class: "5"
+          },
+          {
+            style: 'countries',
+            id: 'itemCard6',
+            url: '',
+            class: "6"
+          },
+          {
+            style: 'countries',
+            id: 'itemCard7',
+            url: '',
+            class: "7"
+          },
+          {
+            style: 'countries',
+            id: 'itemCard8',
+            url: '',
+            class: "8"
+          },
+          {
+            style: 'countries',
+            id: 'itemCard9',
+            url: '',
+            class: "9"
+          },
+          {
+            style: 'countries',
+            id: 'itemCard10',
+            url: '',
+            class: "10"
+          },
+          {
+            style: 'countries',
+            id: 'itemCard11',
+            url: '',
+            class: "11"
+          },
+          {
+            style: 'countries',
+            id: 'itemCard12',
+            url: '',
+            class: "12"
+          },
+          {
+            style: 'countries',
+            id: 'itemCard13',
+            url: '',
+            class: "13"
+          },
+          {
+            style: 'countries',
+            id: 'itemCard14',
+            url: '',
+            class: "14"
+          },
+          {
+            style: 'countries',
+            id: 'itemCard15',
+            url: '',
+            class: "15"
+          },
+          {
+            style: 'frame',
+            id: 'itemCard16',
+            url: '',
+            class: "16"
+          },
+          {
+            style: 'frame',
+            id: 'itemCard17',
+            url: '',
+            class: "17"
+          },
+          {
+            style: 'frame',
+            id: 'itemCard18',
+            url: '',
+            class: "18"
+          },
+          {
+            style: 'frame',
+            id: 'itemCard19',
+            url: '',
+            class: "19"
+          },
+          {
+            style: 'frame',
+            id: 'itemCard20',
+            url: '',
+            class: "20"
+          },
+          {
+            style: 'frame',
+            id: 'itemCard21',
+            url: '',
+            class: "21"
+          },
+          {
+            style: 'frame',
+            id: 'itemCard22',
+            url: '',
+            class: "22"
+          },
+          {
+            style: 'frame',
+            id: 'itemCard23',
+            url: '',
+            class: "23"
+          },
+          {
+            style: 'frame',
+            id: 'itemCard24',
+            url: '',
+            class: "24"
+          },
+          {
+            style: 'simple',
+            id: 'itemCard25',
+            url: '',
+            class: "25"
+          },
+          {
+            style: 'simple',
+            id: 'itemCard26',
+            url: '',
+            class: "26"
+          },
+          {
+            style: 'simple',
+            id: 'itemCard27',
+            url: '',
+            class: "27"
+          },
+          {
+            style: 'simple',
+            id: 'itemCard28',
+            url: '',
+            class: "28"
+          },
+          {
+            style: 'simple',
+            id: 'itemCard29',
+            url: '',
+            class: "29"
+          },
+          {
+            style: 'simple',
+            id: 'itemCard30',
+            url: '',
+            class: "30"
+          },
+          {
+            style: 'simple',
+            id: 'itemCard31',
+            url: '',
+            class: "31"
+          },
+          {
+            style: 'animal',
+            id: 'itemCard32',
+            url: '',
+            class: "32"
+          },
+          {
+            style: 'animal',
+            id: 'itemCard33',
+            url: '',
+            class: "33"
+          },
+          {
+            style: 'animal',
+            id: 'itemCard34',
+            url: '',
+            class: "34"
+          },
+          {
+            style: 'animal',
+            id: 'itemCard35',
+            url: '',
+            class: "35"
+          },
+          {
+            style: 'animal',
+            id: 'itemCard36',
+            url: '',
+            class: "36"
+          },
+          {
+            style: 'animal',
+            id: 'itemCard37',
+            url: '',
+            class: "37"
+          },
+          {
+            style: 'animal',
+            id: 'itemCard38',
+            url: '',
+            class: "38"
+          },
+          {
+            style: 'animal',
+            id: 'itemCard39',
+            url: '',
+            class: "39"
+          },
+          {
+            style: 'handpattern',
+            id: 'itemCard40',
+            url: '',
+            class: "40"
+          },
+          {
+            style: 'handpattern',
+            id: 'itemCard41',
+            url: '',
+            class: "41"
+          },
+          {
+            style: 'handpattern',
+            id: 'itemCard42',
+            url: '',
+            class: "42"
+          },
+          {
+            style: 'handpattern',
+            id: 'itemCard43',
+            url: '',
+            class: "43"
+          },
+          {
+            style: 'handpattern',
+            id: 'itemCard44',
+            url: '',
+            class: "44"
+          },
+          {
+            style: 'handpattern',
+            id: 'itemCard45',
+            url: '',
+            class: "45"
+          },
+          {
+            style: 'handpattern',
+            id: 'itemCard46',
+            url: '',
+            class: "46"
+          },
+          {
+            style: 'vector',
+            id: 'itemCard47',
+            url: '',
+            class: "47"
+          },
+          {
+            style: 'vector',
+            id: 'itemCard48',
+            url: '',
+            class: "48"
+          },
+          {
+            style: 'vector',
+            id: 'itemCard49',
+            url: '',
+            class: "49"
+          },
+          {
+            style: 'vector',
+            id: 'itemCard50',
+            url: '',
+            class: "50"
+          },
+          {
+            style: 'vector',
+            id: 'itemCard51',
+            url: '',
+            class: "51"
+          },
+          {
+            style: 'vector',
+            id: 'itemCard52',
+            url: '',
+            class: "52"
+          },
+          {
+            style: 'vector',
+            id: 'itemCard53',
+            url: '',
+            class: "53"
+          },
+          {
+            style: 'tool',
+            id: 'itemCard54',
+            url: '',
+            class: "54"
+          },
+          {
+            style: 'tool',
+            id: 'itemCard55',
+            url: '',
+            class: "55"
+          },
+          {
+            style: 'tool',
+            id: 'itemCard56',
+            url: '',
+            class: "56"
+          },
+          {
+            style: 'tool',
+            id: 'itemCard57',
+            url: '',
+            class: "57"
+          },
+          {
+            style: 'tool',
+            id: 'itemCard58',
+            url: '',
+            class: "58"
+          },
+          {
+            style: 'tool',
+            id: 'itemCard59',
+            url: '',
+            class: "59"
+          },
+          {
+            style: 'tool',
+            id: 'itemCard60',
+            url: '',
+            class: "60"
+          },
+          {
+            style: 'tool',
+            id: 'itemCard61',
+            url: '',
+            class: "61"
+          },
+          {
+            style: 'tool',
+            id: 'itemCard62',
+            url: '',
+            class: "62"
+          },
+          {
+            style: 'tool',
+            id: 'itemCard63',
+            url: '',
+            class: "63"
+          },
+          {
+            style: 'tool',
+            id: 'itemCard64',
+            url: '',
+            class: "64"
+          },
+
+        ],
         page: 1,
-        windowWidth: 0
+        windowWidth: 0,
+        theIndex: 0,
+        item: {},
       },
       computed: {
+        //==================ES6寫法==============================
         pagedListdata: function () {
           var vm = this;
           if (vm.visibility == 'all') {
@@ -821,8 +889,8 @@
             item => item.style == vm.visibility
           );
         }
-
       },
+      //==================陣列寫法==============================
       // filteredItems() {
       //   // var newitems = [];
       //   var vm = this;
@@ -838,26 +906,68 @@
       //   }
       // },
 
-      // filteredItems() {
-
-      //   const vm = this;
-      //   if (vm.visibility == 'all') {
-      //     return vm.items
-      //   } else {
-      //     return vm.items.filter(
-
-      //       item => item.style == vm.visibility
-
-      //     );
-
-      //   }
-      // },
       watch: {
         page() {
           this.change();
-        }
+        },
       },
       methods: {
+        // changeIndex() {
+        //   arr = [];
+        //   for (i = 0; i < this.items.length; i++) {
+        //     theIndex = this.items[i].id;
+        //     arr.push(theIndex)
+        //   }
+        //   console.log(arr);
+        customerOrder(e) {
+          e.stopPropagation;
+          ownMatName = e.target.parentNode.parentNode.parentNode.children[1].children[0].children[0].innerHTML;
+          console.log(theIndex);
+          ownMatURL = this.items[theIndex - 1].url;
+          $.ajax({
+            type: "POST",
+            url: "http://localhost/dev/js/saveImg.php",
+            data: {
+              matName: ownMatName,
+              image: ownMatURL,
+              matLSort: "素材",
+            }
+          })
+
+        },
+
+        changeIndex(e) {
+          theIndex = e.target.className;
+          // console.log(theIndex);
+          var xhr = new XMLHttpRequest();
+          xhr.onload = function () {
+            if (xhr.status == 200) {
+              // showProduct();
+              let product = JSON.parse(xhr.responseText);
+              // console.log(product) 
+              i = theIndex - 1;
+              // console.log(i);
+              $('#titleInner').html(product[i].matNameCH);
+              $('#infoInner').html(product[i].matInfo);
+              $('#chanceInner').html(product[i].matChance);
+              $('#priceInner').html(product[i].prodPrice);
+              // console.log(xhr.responseText)
+            } else {
+              alert(xhr.status);
+            }
+          }
+
+          var url = "http://localhost/dd104g2_test/js/modelGetInfo.php?";
+          xhr.open("Get", url, true);
+          xhr.send(null);
+
+          $('#outshadow').css('opacity', '0.7');
+          $('#outshadow').css('visibility', 'visible');
+          $('#outshadow').css('zIndex', '99');
+          $('#medal').css('display', 'block');
+          $('#medal').css('zIndex', '100');
+
+        },
 
         getWindowWidth(event) {
           this.windowWidth = document.documentElement.clientWidth;
@@ -866,7 +976,6 @@
         },
 
         change(index) {
-
 
           if (this.windowWidth < 576) {
             if (this.page == 1) {
@@ -885,23 +994,23 @@
               if (index < 25 && index >= 17) return true;
             }
           } else if (this.page == 1) {
+            document.getElementsByClassName("line_top")[0].style.display = "block";
+            document.getElementsByClassName("line_bottom")[0].style.display = "block";
             if (index < 10) return true;
           } else if (this.page == 2) {
+            document.getElementsByClassName("line_top")[0].style.display = "block";
+            document.getElementsByClassName("line_bottom")[0].style.display = "none";
             if (index < 20 && index >= 10) return true;
           } else if (this.page == 3) {
+            document.getElementsByClassName("line_bottom")[0].style.display = "none";
+            document.getElementsByClassName("line_top")[0].style.display = "none";
             if (index < 30 && index >= 20) return true;
           }
-
         },
-
-      },
-
-      created() {
-        var vm = this;
-        vm.items = fOO_DATA;
       },
 
       mounted() {
+
         this.$nextTick(function () {
           window.addEventListener('resize', this.getWindowWidth);
           this.getWindowWidth()
@@ -924,10 +1033,8 @@
         window.removeEventListener('resize', this.getWindowWidth);
       },
 
-
     })
   </script>
-
   <script>
     //  ================這是3D按鈕用=========================
     $('.switchBtn').mousedown(function () {
@@ -943,18 +1050,44 @@
       $(this).removeClass('clicked');
     });
 
-    //  ================這是跳窗用=========================
+    //  ================這是跳窗用 單純JQ版=========================
 
-    $('.itemCard').click(function () {
-      $('#outshadow').css('opacity', '0.7');
-      $('#outshadow').css('visibility', 'visible');
-      $('#outshadow').css('zIndex', '99');
-      $('#medal').css('display', 'block');
-      $('#medal').css('zIndex', '100');
-      e ? e.stopPropagation() : event.cancelBubble = true;
-    })
+    // $('.itemCard').click(function (e) {
+    // theIndex = $(this).index();
+    // var xhr = new XMLHttpRequest();
+    // xhr.onload = function () {
+    //   if (xhr.status == 200) {
+    //     //modify here
+    //     // showProduct();
+    //     let product = JSON.parse(xhr.responseText);
+    //     // console.log(product) 
 
-    $('.cross').click(function () {
+    //     i = theIndex - 2;
+    //     $('#titleInner').html(product[i].matNameCH);
+    //     $('#infoInner').html(product[i].matInfo);
+    //     $('#chanceInner').html(product[i].matChance);
+    //     $('#priceInner').html(product[i].prodPrice);
+
+    //     // console.log(xhr.responseText)
+    //   } else {
+    //     alert(xhr.status);
+    //   }
+    // }
+
+    // var url = "http://localhost/dd104g2_test/js/modelGetInfo.php?";
+    // xhr.open("Get", url, true);
+    // xhr.send(null);
+
+
+
+    // $('#outshadow').css('opacity', '0.7');
+    // $('#outshadow').css('visibility', 'visible');
+    // $('#outshadow').css('zIndex', '99');
+    // $('#medal').css('display', 'block');
+    // $('#medal').css('zIndex', '100');
+    // e ? e.stopPropagation() : event.cancelBubble = true;
+    // })
+    $('.cross').click(function (e) {
       $('#outshadow').css('visibility', 'hidden');
       $('#outshadow').css('zIndex', '-99');
       $('#medal').css('display', 'none');
@@ -968,6 +1101,43 @@
       $('select:not(.ignore)').niceSelect();
       FastClick.attach(document.body);
     });
+  </script>
+
+  <script>
+    // =====================這是輪播圖片(資料庫抓入已購買素材)=======================
+    function showMaterial(jsonStr) {
+
+      let material = JSON.parse(jsonStr);
+      console.log(material)
+      let html;
+      if (material.matName) {
+        for (i = 0; i < material.length; i++) {
+          if ($('.owl_img img').attr('src') !== "") {
+            $('.owl_img img').next().attr('src', `${material[i].matURL}`)
+          }
+        }
+      } else {
+        alert("無任何素材");
+      }
+    }
+
+
+
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+      if (xhr.status == 200) {
+        //modify here
+        showMaterial(xhr.responseText);
+        console.log(xhr.responseText)
+      } else {
+        alert(xhr.status);
+      }
+    }
+
+    xhr.open("post", "http://localhost/dd104g2_test/js/getImg.php", true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    let data_info = `memNo=5`;
+    xhr.send(data_info);
   </script>
 </body>
 

@@ -414,14 +414,46 @@ function output(formatType) {
     height: 500,
     multiplier: 1,
     quality: 0.1
-  })
+  });
+  dataURL = dataURL.substring([22]);
+
+  const b64toBlob = (b64Data, contentType = '', sliceSize = 512) => {
+    const byteCharacters = atob(b64Data);
+    const byteArrays = [];
+
+    for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+      const slice = byteCharacters.slice(offset, offset + sliceSize);
+
+      const byteNumbers = new Array(slice.length);
+      for (let i = 0; i < slice.length; i++) {
+        byteNumbers[i] = slice.charCodeAt(i);
+      }
+
+      const byteArray = new Uint8Array(byteNumbers);
+      byteArrays.push(byteArray);
+    }
+
+    const blob = new Blob(byteArrays, {
+      type: contentType
+    });
+    return blob;
+  }
+
+  const contentType = 'image/png';
+  const b64Data = dataURL;
+
+  const blob = b64toBlob(b64Data, contentType);
+
+  const blobUrl = URL.createObjectURL(blob);
+  console.log(blobUrl)
 
   $.ajax({
     type: "POST",
     url: "http://localhost/dev/js/saveImg.php",
     data: {
-      image: dataURL,
+      image: blobUrl,
       matName: patternName,
+      matLSort: "圖案",
     }
   })
   // .done(function (respond) {
