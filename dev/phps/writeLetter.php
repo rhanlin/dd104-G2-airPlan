@@ -21,7 +21,7 @@ try {
   //...
   //把寫信內容新增進資料庫 
   require_once("connectBook_root.php");
-  $sql = "insert into `letter`( memNo, letPower, matPatNo, matPosNo, letTime, letTitle, letContent, imgUrl,mesCount, letSort, letStatus) VALUES ( 3, 1, :matPatNo, :matPosNo, :letTime, :letTitle, :letContent, :imgUrl, 0, :letSort, 0)";
+  $sql = "insert into `letter`( memNo, letPower, matPatNo, matPosNo, letTime, letTitle, letContent, imgUrl,mesCount, letSort, letStatus) VALUES ( 10, 1, :matPatNo, :matPosNo, :letTime, :letTitle, :letContent, :imgUrl, 0, :letSort, 0)";
 
   date_default_timezone_set("Asia/Taipei");  //設定時區
   $letTime=date("Y-n-j G:i:s");  //將時間格式化

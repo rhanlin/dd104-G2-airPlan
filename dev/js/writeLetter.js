@@ -88,28 +88,34 @@ let vm3 = new Vue({
   el: '#writStep3',
   data: {
     openIndex: null,
-    userPattern: [//存 使用者"擁有"的飛機彩繪對應的URL
-      "url(./img/pattern/plan-pattern-1.svg)",
-      "url(./img/pattern/plan-pattern-2.svg)",
-      "url(./img/pattern/plan-pattern-3.png)",
-    ],
+    userPattern: [],//存 使用者"擁有"的飛機彩繪對應的URL
     previewPattern: null,
-    letterPattern: 0, //存 使用者飛機彩繪的編號(matNo) 得值
+    patternValue:[], //input radio 的value值
+    letterPattern: 0, //存 使用者"選到"的飛機彩繪編號(matPatNo) 得值
   },
   methods: {
     clickPattern(e,index) {
       this.openIndex = index;
       this.previewPattern = this.$refs.bg[index].style.backgroundImage;
-      this.letterPattern = parseInt(e.target.firstChild.value)+1; //取 使用者飛機彩繪的編號(matNo) 得值
+      this.letterPattern = e.target.firstChild.value;
       e.target.firstChild.checked = true;
-      // console.log(this.letterPattern);
-      
     },
   },
-  components: {
-
-  },
-  computed: {
+  mounted() {
+    fetch('./phps/fetchAllUserMat.php',{
+      method:'POST',
+      body: new URLSearchParams(`memNo=10`) //10要改成${變數} 此變數從session撈出目前登入的用戶number
+    })
+      .then(res=>res.json()).then(json=>{
+        //拆出 pattern
+        for(let i=0 ; i<json.data.length ; i++){
+          if(json.data[i].patternNo){
+            this.userPattern.push(`url(${json.data[i].patternUrl})`);
+            this.patternValue.push(json.data[i].patternNo);//取 使用者"擁有"飛機彩繪的編號(matPatNo) 得值
+          }
+        }
+        // console.log(this.patternValue);
+      })
   },
 });
 
@@ -212,11 +218,9 @@ function submitToLetterTable() {
   //--- 送出資料
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-  let data_info = `memNo=3&letPower=1&matPatNo=${letterPattern}&matPosNo=${userStamp}&letTitle=${letterTitle}&letContent=${letterContant}&imgUrl=${letterImg}&mesCount=0&letSort=${lettrtCat}&letStatus=0&letImgUrl=null`;
-
-  // letterPattern -> 應該要是那張圖片素材的 matNo 然後再v-for裡面 v-for="(item, index) in 該用戶的素材.length(有幾張圖就跑幾次回圈)"
-  // 判斷用戶checked到的素材 matNo是多少存回資料庫中 
-  // userStamp同理
+  let data_info = `memNo=10&letPower=1&matPatNo=${letterPattern}&matPosNo=${userStamp}&letTitle=${letterTitle}&letContent=${letterContant}&imgUrl=${letterImg}&mesCount=0&letSort=${lettrtCat}&letStatus=0&letImgUrl=null`;
+  //memNo=10 10要改成${變數} 此變數從session撈出目前登入的用戶number
+  
   xhr.send(data_info);
 
 }
