@@ -277,8 +277,9 @@
             // if(jsonStr == "mark"){
             if (mark != "") {
                 for (var i in mark) {
-                    $('.sectionOver').append(`<div class='sectionMark1'><img src='${mark[i].matPosUrl}'><p>${mark[i].memName}</p></div>`,
-                    "<div class='pageContent'></div>");
+                    $('.sectionOver').append(`<div class='sectionMark1'><div class='overImg'><img src='${mark[i].matPosUrl}'></div><p>${mark[i].memName}</p></div>`,
+                    );
+                    // "<div class='pageContent'></div>"
                 }
             } else {
                 alert('錯誤');
@@ -309,7 +310,7 @@
                     alert(xhr.status);
                 }
             }
-            xhr.open('post', './js/chatroom.php', false);
+            xhr.open('post', './phps/chatroom.php', false);
             xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
             xhr.send(data_info);
 
