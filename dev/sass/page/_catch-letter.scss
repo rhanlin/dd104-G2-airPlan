@@ -26,7 +26,27 @@
     background: linear-gradient(-45deg, #85CAE0, #9EA5E2, #B0D8FC, #C7B2E7);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
-    cursor: none;
+    // cursor: none;
+
+    .chooseBtn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+
+      .choosw {
+        padding: 8% 10%;
+        background-color: green;
+        margin: 0 2%;
+        font-size: 2rem;
+        width: 30vw;
+        border-radius: $main-borderRadius;
+        border: 2px solid $main-black;
+        cursor: pointer;
+      }
+    }
 
     #planeLetter {
       cursor: pointer;
@@ -570,6 +590,7 @@
             outline: none;
             border: none;
             background-color: unset;
+
             &:hover {
               height: 150%;
               background-image: url(../img/write-letter/stamp-btn-red.svg);

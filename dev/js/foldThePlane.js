@@ -1,18 +1,30 @@
 let vmUserStamp = new Vue({
   el: '#vmUserStamp',
   data: {
-    userStamp:[//存 使用者"擁有"的郵戳的編號(matPattNo2)對應的URL
-      "url(./img/userStamp/user-stamp_1.png)",
-      "url(./img/userStamp/user-stamp_2.png)",
-      "url(./img/userStamp/user-stamp_3.png)",
-    ],
-    letterStamp: 0,//存 使用者"擁有"的郵戳的編號(matPattNo2)的值
+    userStamp:[],//存 使用者"擁有"的郵戳的編號對應的URL(matPosUrl)
+    stampValue:[],//input radio 的value值
+    letterStamp: 0,//存 使用者"選到"的郵戳的編號的值(matPosNo)
   },
   methods: {
     clickStamp(e) {
-      this.letterStamp = parseInt(e.target.value)+1; //取 使用者使用郵戳的編號(matPattNo2)的值
-      console.log(this.letterStamp);
+      this.letterStamp = e.target.value;
     },
+  },
+  mounted() {
+    fetch('./phps/fetchAllUserMat.php',{
+      method:'POST',
+      body: new URLSearchParams(`memNo=10`) //10要改成${變數} 此變數從session撈出目前登入的用戶number
+    })
+      .then(res=>res.json()).then(json=>{
+        //拆出 pattern
+        for(let i=0 ; i<json.data.length ; i++){
+          if(json.data[i].stampNo){
+            this.userStamp.push(`url(${json.data[i].stampUrl})`);
+            this.stampValue.push(json.data[i].stampNo);//取 使用者飛機彩繪的編號得值(matPosNo)
+          }
+        }
+        console.log(this.userStamp);
+      })
   },
 });
 function confirmSubmit(){

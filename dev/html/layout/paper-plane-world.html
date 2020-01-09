@@ -2,6 +2,10 @@
   id="threeWorld"
   style="position: relative; overflow: hidden;"
 >
+  <div class="chooseBtn" id="chooseBtn">
+      <div class="choosw">撈個新聞看看</div>
+      <div class="choosw">撈個信件看看</div>
+  </div>
   <span id="mouseNet">
     <img id="netImg" src="./img/catch-letter/net.png">
     <span id="missMsg"></span>
@@ -16,13 +20,13 @@
         <div class="letter-head">
           <div class="stamp-box"></div>
           <div class="letter-tittle">
-            <h3>舍，甲說，這是多麼傷心的事啊！</h3>
+            <h3>{{letteTittle}}</h3>
           </div>
         </div>
         <div class="letter-contant scroll-container">
           <div class="text">
             <p>
-              籠罩著街上的煙，日頭是自東徂西，凶惡的他們忍相虐待，那時代，日月不相望的什麼新曆法，什麼是麵皮？在新月微光下的街市，看見鮮紅的血，但是他倆竟會自己走到橋上，就再開始。此刻，新年的一日，那時代，我去拿一面鑼來。在這黑暗之中，阻斷爭論，剛纔經市長一說，只有前進，在做頭老的，他不和人家分擔，不知流失多少人類所託命的田
+              {{letterContant_1}}
             </p>
             <div class="letter-upload-img"></div>
             <!-- 蓋章區 -->
@@ -30,7 +34,7 @@
               <!-- <div class=""></div> -->
             </div>
             <p>
-              礙步的石頭，互相提攜，和狺狺的狗吠，又產生有可供消費的勢力，農民播種犁田，現在不是糴不到半斗米？
+              {{letterContant_2}}
             </p>
           </div>
         </div>

@@ -24,7 +24,7 @@
     @@include("./layout/nav.html")
     @@include("./layout/header.html")
     <main id="writeLetterMain">
-        <form action="./js/writeLetter.php" method="POST" enctype="multipart/form-data" name="theForm" id="wrtLetForm">
+        <form name="theForm" id="wrtLetForm">
         <section class="writ-step-1" id="writStep1">
             <img class="dress-up" src="./img/share/blue-paint-bigline.svg"></img>
             <div class="box-white select-category">
@@ -162,7 +162,7 @@
                             <label class="type" :class="{active: index === openIndex}"
                                 @click.prevent="clickPattern($event,index)" 
                                 @touchstart.prevent="clickPattern($event,index)">
-                                <input type="radio" name="userPattern" :value="index" required>
+                                <input type="radio" name="userPattern" :value="patternValue[index]">
                                 <span class="box-white preview-paper" :class="{active: index === openIndex}" :style="{backgroundImage: userPattern[index]}"></span>
                                 <span class="print-type-pattern" ref='bg' :style="{backgroundImage: userPattern[index]}">
                                 </span>
@@ -200,7 +200,7 @@
                                 <span class="arrow-white"></span>
                                 <div class="stamp-type">
                                     <template v-for="(item,index) in 3">
-                                        <button class="type" name="userStamp" :value="index"
+                                        <button class="type" name="userStamp" :value="stampValue[index]" type="button"
                                         @click="clickStamp"
                                         @touchstart="clickStamp">
                                             <span :style="{backgroundImage: userStamp[index]}"></span>
@@ -215,6 +215,7 @@
             </div>
         </section>
         </form>
+        <!-- <canvas id="myCanvas" width="495" height="716"></canvas> -->
     </main>
     @@include("./layout/foldthePlane.html")
     @@include("./layout/footer.html")
