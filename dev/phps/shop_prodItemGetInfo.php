@@ -1,5 +1,6 @@
 <?php
 
+//=============把商城的商品清單從資料庫撈出 放上各自跳窗頁面=============================================
 try {
     require_once "connectBook_shop.php";
     $sql = "select `matNameCH`,`matInfo`,`matChance`,`prodPrice`  from `product`";
@@ -10,8 +11,6 @@ try {
     } else { //找得到
         //取回一筆資料
         $productRow = $product->fetchAll(PDO::FETCH_ASSOC);
-        //$memberRow=$member->fetch({PDO::FATCH_NUM})
-        // $memberRow=$member->fetchObject();
         //送出json字串
         // print_r($productRow) ;
         echo json_encode($productRow);
