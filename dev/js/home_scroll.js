@@ -11,7 +11,7 @@ firstPlanePara.to('.firstPlane', 3, {
 }).to('.firstPlane', 2, {
     x: "750%",
     y: "-20%",
-    delay:2,
+    delay: 2,
     repeat: -1,
     yoyo: true,
     ease: Power0.easeNone,
@@ -29,7 +29,7 @@ cloudWhitePara.to('.cloudWhite', 3, {
     x: "48.5%",
     ease: Power0.easeNone,
 }).to('.firstLetter', 2, {
-    x:"-120%",    
+    x: "-120%",
     ease: Power0.easeNone,
 }).to('.cloudWhite', 2, {
     // opacity: 0.5,
@@ -74,7 +74,6 @@ let hang3 = TweenMax.to('.hang3', 1, {
 let sceneHang = new ScrollMagic.Scene({
     triggerElement: '.mountain_box',
     offset: 150,
-    // offset: "150%",
     duration: '15%',
 }).setTween(hang3).addIndicators().addTo(controller);
 
@@ -93,8 +92,10 @@ let sceneFloat_show1 = new ScrollMagic.Scene({
 
 //---飄紙1 飄飄飄---
 let floatGo1 = TweenMax.to('.floatPaper1', 1, {
-    x: -650,
-    y: 500,
+    // x: -650,
+    x: "-155%",
+    // y: 500,
+    y: "290%",
     scale: 1.2,
 });
 
@@ -132,8 +133,10 @@ let sceneFloat_show2 = new ScrollMagic.Scene({
 
 //---飄紙2 飄飄飄---
 let floatGo2 = TweenMax.to('.floatPaper2', 1, {
-    x: 850,
-    y: 300,
+    // x: 850,
+    x: "185%",
+    // y: 300,
+    y: "128%",
     scale: 1.1,
 });
 
@@ -184,7 +187,6 @@ let floatGo3 = TweenMax.to('.floatPaper3', 1, {
             x: -1800,
             y: 400,
         }],
-
     },
     ease: Power1.easeOut,
 });
@@ -202,7 +204,9 @@ let bottlePin = new TimelineMax();
 // ---墨水倒---
 bottlePin.add(TweenMax.to('.bottle', 1, {
     x: 5,
-    y: 5,
+    // x: "4%",
+    // y: 5,
+    y: "3%",
     rotation: 125,
     transformOrigin: 'bottom',
 }));
@@ -638,7 +642,7 @@ let sceneTubeLetter = new ScrollMagic.Scene({
 
 //---信紙進入印表機---
 let printLetterIn = TweenMax.to('.print_letterIn', 1, {
-    y: "100%",
+    y: "101%",
     ease: Power0.easeNone,
 });
 
@@ -891,3 +895,35 @@ let sceneStore = new ScrollMagic.Scene({
     duration: '200%',
     triggerHook: 0
 }).setPin('.home_store').setTween(storePin).addIndicators().addTo(controller);
+
+
+
+// function destroyScrollMagic() {
+//     var controller = null;
+//     if (controller) {
+//         controller = controller.destroy(true);
+
+//         // Remove any pin-spacers
+//         $('.scrollmagic-pin-spacer').contents().unwrap();
+
+//         //clear all extra inline styles
+//         $('.page-section__bg').each(function () {
+//             var $this = $(this);
+//             var background = $this.css('background-image');
+
+//             $this
+//                 .removeAttr('style')
+//                 .css('background-image', background);
+//         });
+//         console.log('destroy done!');
+//     }
+
+// } // END destroyScrollMagic
+
+// var nwidth = $(window).width();
+// console.log(nwidth);
+// if (nwidth < 576) {
+//     // var originScript = document.getElementById('scriptTw');
+//     // originScript.remove();
+//     destroyScrollMagic();
+// }

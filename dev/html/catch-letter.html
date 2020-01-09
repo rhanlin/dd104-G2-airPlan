@@ -15,11 +15,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
   <script src="./js/boid.js"></script>
   <script src="./js/butterfly.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
 </head>
 <body class="catchletter-body">
   @@include("./layout/nav.html")
-  @@include("./layout/paper-plane-world.html")
   @@include("./layout/header.html")
+  @@include("./layout/paper-plane-world.html")
   <main id="catchLetterMain" style="display: none;">
     <div id="viewMore">
       <section class="catch-step-1">
@@ -29,16 +30,17 @@
             <div class="letter-head">
               <div class="stamp-box"></div>
               <div class="letter-tittle">
-                <h3>舍，甲說，這是多麼傷心的事啊！</h3>
+                <h3>{{letteTittle}}</h3>
               </div>
             </div>
             <div class="letter-contant scroll-container">
               <div class="text">
-                <p>籠罩著街上的煙，日頭是自東徂西，凶惡的他們忍相虐待，那時代，日月不相望的什麼新曆法，什麼是麵皮？在新月微光下的街市，看見鮮紅的血，但是他倆竟會自己走到橋上，就再開始。此刻，新年的一日，那時代，我去拿一面鑼來。在這黑暗之中，阻斷爭論，剛纔經市長一說，只有前進，在做頭老的，他不和人家分擔，不知流失多少人類所託命的田
+                <p>
+                  {{letterContant_1}}
                 </p> 
                 <div class="letter-upload-img"></div>
                 <p>
-                  礙步的石頭，互相提攜，和狺狺的狗吠，又產生有可供消費的勢力，農民播種犁田，現在不是糴不到半斗米？
+                  {{letterContant_2}}
                 </p> 
               </div>
             </div>
@@ -108,9 +110,9 @@
     @@include("./layout/foldthePlane.html")
     @@include("./layout/footer.html")
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
     <script src="./js/foldThePlane.js"></script>
     <script src="./js/catchLetter.js"></script>
+    <script src="./js/catchNews.js"></script>
   
   <script>
     let vmCatchLet= new Vue({
@@ -124,6 +126,11 @@
           "url(./img/userStamp/user-stamp_3.png)",
         ],
         letterStamp: '',
+        //串接信件內容
+        letteTittle: vmCatchLetter.letteTittle,
+        letterContant_1: vmCatchLetter.letterContant_1,
+        letterContant_2: vmCatchLetter.letterContant_2,
+        letterUploadImg: "",
       },
       methods: {
         clickStamp(e) {
