@@ -11,7 +11,7 @@ let vmUserStamp = new Vue({
   methods: {
     clickStamp(e) {
       this.letterStamp = parseInt(e.target.value)+1; //取 使用者使用郵戳的編號(matPattNo2)的值
-      console.log(this.letterStamp);
+      // console.log(this.letterStamp);
     },
   },
 });
