@@ -30,13 +30,17 @@
                         <li><a href="./user-setting.html">
                                 <p class="nav-pageName">用戶設定</p> <span class="nav-circle-6"></span>
                             </a> </li>
-                        <div class="hbg-botWrap">
+                        <div class="hbg-botWrap"><!--漢堡登入者資訊-->
                             <div class="hbg-littleNav">
                                 <a class="showSigin" href="#"><i class="fas fa-user-circle"></i></a>
                             </div>
                             <div class="hbg-pc">
-                                <div class="cav-paper">信紙:999</div>
-                                <div class="cav-coin">Air幣:777</div>
+                                <div class="cav-member"></div>
+                                <div class="cav-paper"></div>
+                                <div class="cav-coin"></div>
+                                <!-- <div class="cav-member">會員:666</div> -->
+                                <!-- <div class="cav-paper">信紙:999</div> -->
+                                <!-- <div class="cav-coin">Air幣:777</div> -->
                             </div>
                         </div>
                     </ul>
@@ -48,9 +52,13 @@
             <div class="nav-littleNav">
                 <a id="showSigin" class="showSigin" href="#"><i class="fas fa-user-circle"></i></a>
             </div>
-            <div class="nav-pc">
-                <div class="cav-paper">信紙:999</div>
-                <div class="cav-coin">Air幣:777</div>
+            <div class="nav-pc"><!--nav登入者資訊-->
+                <div class="cav-member"></div>
+                <div class="cav-paper"></div>
+                <div class="cav-coin"></div>
+                <!-- <div class="cav-member">會員:666</div> -->
+                <!-- <div class="cav-paper">信紙:999</div> -->
+                <!-- <div class="cav-coin">Air幣:777</div> -->
             </div>
         </div>
     </div>
@@ -69,26 +77,29 @@
         <div class="signInData">
             <h4>Sign In</h4>
             <p id="closeSigin" class="closeSignin">X</p>
-            <form class="formsignInData" action="./phps/login.php" method="post">
+            <form class="formsignInData">
                 <img class="signInLogo" src="./img/share/LOGO.png" alt="Logo">
 
                 <label for="signInEmail">
                     <P>Email:</P>
                 </label>
-                <input class="signInEmail" input type="email" id="signInEmail" placeholder="Email" name="memEmail"
-                    required autofocus>
+                <input class="signInEmail" input type="email" id="signInEmail" placeholder="Email" name="memEmail" required autofocus>
 
                 <label for="signInPassword">
                     <P>Password:</P>
                 </label>
-                <input class="signInPassword" type="password" id="signInPassword" placeholder="password" name="memPsw"
-                    required>
+                <input class="signInPassword" type="password" id="signInPassword" placeholder="password" name="memPsw" required>
 
                 <p class="showForget" id="showForget">忘記密碼</p>
                 <p class="showRegister" id="showRegister">註冊</p>
+
                 <br>
-                <button class="signInBtn" type="submit">
+                <button id="signInBtn" class="signInBtn" type="submit" value="登入">
                     <p>Sign in</p>
+                </button>
+
+                <button id="signInCancelBtn" class="signInCancelBtn" type="button" value="取消">
+                    <p>Cancel</p>
                 </button>
             </form>
         </div>
@@ -100,29 +111,26 @@
         <div class="registerData">
             <h4>Register</h4>
             <p class="closeRegister" id="closeRegister">X</p>
-            <form class="formRegisterData" action="./phps/register.php" method="post">
+            <form class="formRegisterData">
                 <img class="registerLogo" src="./img/share/LOGO.png" alt="Logo">
 
                 <label for="registerEmail">
                     <P>Email:</P>
                 </label>
-                <input class="registerEmail" input type="email" id="registerEmail" placeholder="Email" name="memEmail"
-                    required autofocus>
+                <input class="registerEmail" input type="email" id="registerEmail" placeholder="Email" name="memEmail" required autofocus>
 
                 <label for="registerPassword">
                     <P>Password:</P>
                 </label>
-                <input class="registerPassword" type="password" id="registerPassword" placeholder="password"
-                    name="memPsw" required>
+                <input class="registerPassword" type="password" id="registerPassword" placeholder="password" name="memPsw" required>
 
                 <label for="registerPasswordCheck">
                     <P>Password again:</P>
                 </label>
-                <input class="registerPasswordCheck" type="password" id="registerPasswordCheck"
-                    placeholder="password again" name="memPswAgain" required>
+                <input class="registerPasswordCheck" type="password" id="registerPasswordCheck" placeholder="password again" name="memPswAgain" required>
 
                 <br>
-                <button class="registerBtn" type="submit">
+                <button id="registerBtn" class="registerBtn" type="submit" value="註冊">
                     <p>Register</p>
                 </button>
             </form>
@@ -133,15 +141,16 @@
         <div class="forgetBgData">
             <h4>Get new password</h4>
             <p class="closeForget" id="closeForget">X</p>
-            <form class="formForgetData"  action="./phps/forget.php" method="post">
+            <form class="formForgetData">
                 <img class="forgetLogo" src="./img/share/LOGO.png" alt="Logo">
 
                 <label for="forgetEmail">
                     <P>Email:</P>
                 </label>
                 <input class="forgetEmail" input type="email" id="forgetEmail" placeholder="Email" required autofocus>
+                
                 <br>
-                <button class="forgetBtn" type="submit">
+                <button id="forgetBtn" class="forgetBtn" type="submit" value="忘記密碼">
                     <p>Get</p>
                 </button>
             </form>
@@ -246,4 +255,69 @@
     closeForget.onclick = function () {
         forgetBg.style.display = "none";
     };
+</script>
+
+
+<script>
+    function sendSignInForm(){//登入表單發送
+        var signInmemEmail = $id("signInEmail").value;
+        var signInmemPsw = $id("signInPassword").value;
+        //-------------使用ajax方法到Server端資料
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function(){
+            console.log(xhr.responseText);
+            showMemInfo(xhr.responseText); //顯示登入者資訊
+        }
+        xhr.open("post","login.php", true);
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+        let data_info = `memEmail=${signInmemEmail}&memPsw=${signInmemPsw}`;
+        xhr.send(data_info);
+    }
+
+    function cancelSignIn(){//清除登入表單內容
+        //將登入表單上的資料清空，並將燈箱隱藏起來
+        $id("signInEmail").value="";
+        $id("signInPassword").value="";
+        $id("signInBg").style.display = "none";
+    }
+
+    function sendRegisterForm(){//註冊表單發送
+        var registermemEmail = $id("registerEmail").value;
+        var registermemPsw = $id("registerPassword").value;
+        var registermemPswCheck = $id("registerPasswordCheck").value;
+        //-------------使用ajax方法到Server端資料
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function(){
+            console.log(xhr.responseText);
+            showMemInfo(xhr.responseText); //顯示登入者資訊
+        }
+        xhr.open("post","register.php", true);
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+        let data_info = `memEmail=${registermemEmail}&memPsw=${registermemPsw}`;
+        xhr.send(data_info);
+    }
+
+    function sendForgetForm(){//忘記密碼表單發送
+        var forgetmemEmail = $id("forgetEmail").value;
+        //-------------使用ajax方法到Server端資料
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function(){
+            console.log(xhr.responseText);
+            showMemInfo(xhr.responseText); //顯示登入者資訊
+        }
+        xhr.open("post","forget.php", true);
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+        let data_info = `memEmail=${forgetmemEmail}`;
+        xhr.send(data_info);
+    }
+
+    window.addEventListener("load", function(){
+    //-------------------------檢查是否已登入
+        getLoginInfo();
+        
+        $id("signInBtn").onclick = sendSignInForm;//點擊登入按鈕呼叫發送表單function
+        $id("signInCancelBtn").onclick = cancelSignIn; //點擊取消按鈕呼叫清除表單function
+        $id("registerBtn").onclick = sendRegisterForm;//點擊註冊按鈕呼叫發送表單function
+        $id("forgetBtn").onclick = sendForgetForm;//點擊忘記密碼按鈕呼叫發送表單function
+    });
 </script>
