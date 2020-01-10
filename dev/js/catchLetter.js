@@ -1,4 +1,21 @@
+let vmCatchLetter = new Vue({
+  el: "#catchLetterShow",
+  data: {
+    letteTittle: "舍，甲說，這是多麼傷心的事啊！",
+    letterContant_1: "籠罩著街上的煙，日頭是自東徂西，凶惡的他們忍相虐待，那時代，日月不相望的什麼新曆法，什麼是麵皮？在新月微光下的街市，看見鮮紅的血，但是他倆竟會自己走到橋上，就再開始。此刻，新年的一日，那時代，我去拿一面鑼來。在這黑暗之中，阻斷爭論，剛纔經市長一說，只有前進，在做頭老的，他不和人家分擔，不知流失多少人類所託命的田",
+    letterContant_2: "礙步的石頭，互相提攜，和狺狺的狗吠，又產生有可供消費的勢力，農民播種犁田，現在不是糴不到半斗米？",
+    letterUploadImg: "",
+  },
+  components: {
+    
+  },
+  methods: {
+
+  },
+});
+  
   let threeWorld = document.getElementById('threeWorld');
+  let chooseBtn = document.getElementById('chooseBtn').children;
   let planeLetter = document.getElementById('planeLetter');
   let openMotion = document.getElementById('openMotion');
   let catchLetterShow = document.getElementById('catchLetterShow');
@@ -9,14 +26,33 @@
   let catchLetterMain = document.getElementById('catchLetterMain');
   document.querySelector('header').style.display = "none"; //將header隱藏
   document.querySelector('footer').style.display= "none";//將footer隱藏
+  net.style.display="none";
+  for(let i=0 ; i<chooseBtn.length ; i++){
+    chooseBtn[i].addEventListener('click',(e)=>{
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      
+      net.style.display="block";
+      threeWorld.style.cursor = "none"; //滑鼠消失
+      chooseBtn[0].parentElement.style.display = "none";//關閉選擇按鈕
+      if(e.target.innerText == "撈個新聞看看"){
+        console.log(`撈到新聞`);
+        catchNews();//撈新聞Fn
+        threeWorld.addEventListener('mousedown', mouseDownFn);//監聽撈信事件
+      }else{
+        console.log(`撈到一封信`);
+        //catchALetter(); //撈一封信Fn
+        threeWorld.addEventListener('mousedown', mouseDownFn);//監聽撈信事件
+      }
+    })
+  }
+  
   planeLetter.style = "";
   //mouseMove
   threeWorld.addEventListener('mousemove', function (e) {
     net.style.left = e.pageX + 'px';
     net.style.top = e.pageY + 'px';
   })
-
-  threeWorld.addEventListener('mousedown', mouseDownFn);
   
   function mouseDownFn() {
     net.style.transform = 'rotate(-45deg)';
@@ -70,7 +106,7 @@
           openMotion.style.display = "none";
           net.style.display = "none";
           catchLetterShow.style.display = "block";
-          console.log(catchLetterShow);
+          // console.log(catchLetterShow);
         }, 400)
       } else {
         openMotion.style.backgroundImage = `url(./img/catch-letter/letter-fold-${time+1}.png)`
@@ -106,6 +142,7 @@
       if(stampshot.style.display === "block"){
         nextStepArrow.style.display="block";
       }
+      //下一步的箭頭被點擊->查看信件
       nextStepArrow.addEventListener('click',()=>{
         threeWorld.style.animationName = "elementDisappear";
         threeWorld.style.animationDelay = ".5s";
@@ -134,140 +171,3 @@
       })
     })
   }
-
-  
-// function confirmSubmit(){
-//   if(confirm("Press a button!")){
-//     console.log('NextStep!');
-//     document.getElementById('navHead').style.display = "none";//選單消失
-//     document.querySelector('header').style.display = "none"; //將header消失
-
-//     document.getElementById('catchLetterMain').style.animationName = "elementDisappear";
-//     document.getElementById('catchLetterMain').style.animationDelay = ".5s";
-//     document.getElementById('catchLetterMain').style.animationDuration = ".8s";
-//     document.getElementById('catchLetterMain').style.animationFillMode = "forwards";
-//   //摺紙開始
-//   setTimeout(()=>{
-//     document.querySelector('.catchletter-body').style.background = "#aaa";//改背景色
-//     document.querySelector('.planeBox').style.display = "flex";
-//     document.getElementById('catchLetterMain').style.display = "none";
-//     document.getElementById('imgWrap').style.display = "block";
-//     document.getElementById('imgWrap').style.animationName = "showImgWrap";
-//     foldThePlane();
-//   },500);
-//   } else {
-//     console.log('rollback!');
-//   }
-// }
-
-
-// function foldThePlane(){
-//   //進入摺紙階段
-//   if(document.getElementById('catchLetterMain').style.display === "block"){
-//     console.log('begin');
-//   }
-//   const pointerAll = document.querySelector('.pointerAll');
-//   let img = document.getElementById('img');
-//   let imgLeftTriangle = document.getElementById('imgLeftTriangle');
-//   let imgRightTriangle = document.getElementById('imgRightTriangle');
-//   let imgLeftTriangle2 = document.getElementById('imgLeftTriangle2');
-//   let imgRightTriangle2 = document.getElementById('imgRightTriangle2');
-//   let imgFinalStep = document.getElementById('imgFinalStep');
-//   let planeWing = document.getElementById('planeWing');
-
-//   // console.log(pointerAll.id);
-  
-//   pointerAll.addEventListener('dragstart',(e)=>{//touchmove
-//     e.preventDefault();
-//     let pointerId = e.target.id
-//     if(pointerId === 'pointer'){
-//       //折右邊 第一次
-//       let pointer = document.getElementById('pointer');
-//       pointer.style.visibility = "hidden";
-//       imgRightTriangle.style.clipPath = "polygon(-300% 300%, 0 0, 100% 100%)";
-//       imgRightTriangle.style.boxShadow = "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25)";
-//       img.style.clipPath = "polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0 100%, 0 34.5%, 0% 0%)";
-//       img.style.zIndex='1';
-//       imgLeftTriangle.style.display = 'none';
-//       //把id改成pointer2
-//       pointer.setAttribute('id','pointer2');
-//       document.getElementById('pointer2').style.visibility = "";
-//       console.log('nowID = ',pointerAll.id);
-
-//     }else if(pointerId === 'pointer2'){
-//       //折左邊 第一次
-//       let pointer2 = document.getElementById('pointer2');
-//       pointer2.style.visibility = "hidden";
-//       imgLeftTriangle.style.display = 'block';
-
-//       imgLeftTriangle.style.clipPath = "polygon(0 100%, 100% 300%, 100% 0)";
-//       imgLeftTriangle.style.boxShadow = "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25)";
-//       img.style.clipPath = "polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0 100%, 0 34.5%, 50% 34.5%)";
-//       img.style.zIndex='1';
-      
-//       //把id改成pointer3
-//       pointer2.setAttribute('id','pointer3');
-//       document.getElementById('pointer3').style.visibility = "";
-//       console.log('nowID = ',pointerAll.id);
-
-//     }else if(pointerId === 'pointer3'){
-//       //折右邊 第二次
-//       let pointer3 = document.getElementById('pointer3');
-//       imgRightTriangle2.style.display = 'block';
-//       imgRightTriangle.style.display = 'none';
-//       pointer3.style.visibility = "hidden";
-//       imgRightTriangle2.style.boxShadow = "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25)";
-//       img.style.clipPath = "polygon(50% 0%, 50% 45%, 100% 85%, 100% 100%, 0px 100%, 0% 85%, 0% 34.5%)";
-//       img.style.zIndex='1';
-//       //把id改成pointer4
-//       pointer3.setAttribute('id','pointer4');
-//       document.getElementById('pointer4').style.visibility = "";
-//       console.log('nowID = ',pointerAll.id);
-//     }else if(pointerId === 'pointer4'){
-//       //折左邊 第二次
-//       let pointer4 = document.getElementById('pointer4');
-//       imgLeftTriangle2.style.display = 'block';
-//       imgLeftTriangle.style.display = 'none';
-//       pointer4.style.visibility = "hidden";
-//       imgLeftTriangle2.style.boxShadow = "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25)";
-//       img.style.clipPath = "polygon(50% 0%, 50% 45%, 100% 85%, 100% 100%, 0% 100%, 0% 85%, 50% 45%)";
-//       img.style.zIndex='1';
-
-//       //把id改成pointer5
-//       pointer4.setAttribute('id','pointer5');
-//       document.getElementById('pointer5').style.visibility = "";
-//       console.log('nowID = ',pointerAll.id);
-//     }else if(pointerId === 'pointer5'){
-//       //折右邊 最後一次
-//       let pointer5 = document.getElementById('pointer5');
-//       imgFinalStep.style.display = 'block';
-//       imgRightTriangle2.style.display = 'none';
-//       pointer5.style.visibility = "hidden";
-//       imgLeftTriangle2.style.display = "none"
-//       // imgFinalStep.style.boxShadow = "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25)";
-//       // img.style.clipPath = "polygon(50% 0%, 0 85%, 0 100%, 0 100%, 50% 100%);";
-//       img.style.display = 'none';
-//       // img.style.zIndex='1';
-
-//       let foldAnimate = false;
-//       setTimeout(() => {
-//         imgFinalStep.style.clipPath = "polygon(50% 0%, 100% 85%, 100% 100%, 100% 100%, 50% 100%)";
-//         setTimeout(() => {
-//           planeWing.style.display = "block";
-//           // 執行自動動畫
-//           // imgFinalStep.style.background = "#aaa";
-//           planeWing.style.animationName = "foldAnimationStep2";
-//           let imgWrap = document.getElementById('imgWrap');
-//           imgWrap.style.opacity = "1";
-//           imgWrap.style.animationName = "rotatePlane";
-//           setTimeout(() => {
-//             planeBody.style.display = "block";
-            
-//           }, 500);
-//         }, 500);
-//       }, 500);
-      
-//     }
-//   })
-// }
-  

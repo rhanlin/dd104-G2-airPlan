@@ -4,6 +4,7 @@
     background: radial-gradient(#ccc 30%, #fff 20%);
     background-size: 10px 10px;
 }
+
 .chatroom-main {
     width: 100%;
     max-width: 1260px;
@@ -49,39 +50,22 @@
             // margin-left: 52px;
             background-color: $main-green;
             text-align: center;
+            font-size: 18px;
+
+            .overImg {
+                width: 70px;
+                margin: 0 auto;
+    
+                img {
+                    width: 100%;
+                }
+    
+            }
         }
 
         .MarkRed {
             background-color: $main-red;
         }
-
-        .sectionMark1 img,
-        .sectionMark2 img,
-        .sectionMark3 img,
-        .sectionMark4 img,
-        .sectionMark5 img,
-        .sectionMark6 img,
-        .sectionMark7 img,
-        .sectionMark8 img,
-        .sectionMark9 img {
-            width: 80px;
-            border-radius: 50px;
-            background-color: #fff;
-        }
-
-        .sectionMark1 p,
-        .sectionMark2 p,
-        .sectionMark3 p,
-        .sectionMark4 p,
-        .sectionMark5 p,
-        .sectionMark6 p,
-        .sectionMark7 p,
-        .sectionMark8 p,
-        .sectionMark9 p {
-            font-size: 18px;
-        }
-
-
     }
 
     .mainBook {
@@ -171,7 +155,23 @@
 
                                 .pageContent {
                                     width: 100%;
+                                    height: 540px;
+                                    overflow-y: scroll;
                                     display: none;
+                                    // border: 1px solid  lawngreen;
+
+                                    &::-webkit-scrollbar {
+                                        // border:1px solid firebrick;
+                                        width: 0;
+                                        border-radius: 10px;
+                                        background: $main-yellow;
+                                    }
+
+                                    &::-webkit-scrollbar-thumb {
+                                        width: 5px;
+                                        background-color: $main-blue;
+                                        border-radius: 10px;
+                                    }
 
                                     .contentYour,
                                     .contentYour_1,
@@ -288,6 +288,7 @@
                             .dashPage4 {
                                 .dashPage5 {
                                     .pageContent {
+                                        overflow-y: scroll;
                                         .contentYour,
                                         .contentYour_1,
                                         .contentYour_2 {
@@ -331,7 +332,7 @@
     .chatroom-main {
         .mainSection {
             width: 167px;
-            margin-top: 52px;
+            margin-top: 48px;
             padding-left: 25px;
             max-height: 691px;
         }
@@ -350,7 +351,7 @@
                     .dashPage2 {
                         padding-right: 0;
                         border-right: none;
-                        margin-bottom: -5px;
+                        margin-bottom: 5px;
 
                         .dashPage3 {
                             padding-right: 0;
@@ -376,7 +377,7 @@
                                     }
 
                                     .pageContent {
-
+                                        overflow-y: scroll;
                                         .contentYour,
                                         .contentYour_1,
                                         .contentYour_2 {
@@ -395,7 +396,7 @@
                                     .contentSend {
                                         width: 83%;
                                         right: 9%;
-                                        
+
                                         .sendText {
                                             width: calc(100% - 55px);
                                         }
@@ -425,7 +426,7 @@
     .chatroom-main {
         .mainSection {
             width: 167px;
-            margin-top: 52px;
+            margin-top: 48px;
             padding-left: 25px;
         }
 
@@ -439,31 +440,39 @@
                     padding-right: 0;
                     border-right: none;
                     margin-bottom: -5px;
+
                     .dashPage2 {
                         padding-right: 0;
                         border-right: none;
-                        margin-bottom: -5px;
+                        margin-bottom: 5px;
+
                         .dashPage3 {
                             padding-right: 0;
                             border-right: none;
                             margin-bottom: -5px;
+
                             .dashPage4 {
                                 padding-right: 0;
                                 border-right: none;
                                 margin-bottom: -5px;
+
                                 .dashPage5 {
                                     width: 100%;
                                     padding-right: 50px;
                                     padding-bottom: 15%;
                                     margin-bottom: -5px;
                                     overflow: hidden;
+
                                     .pageImg {
                                         position: absolute;
                                         margin-left: 0;
                                         right: -50px;
-                                        top: -30px;
+                                        top: -25px;
                                     }
+
                                     .pageContent {
+                                        overflow-y: scroll;
+
                                         .contentYour,
                                         .contentYour_1,
                                         .contentYour_2 {
@@ -479,13 +488,15 @@
                                             }
                                         }
 
-                                    
+
                                     }
+
                                     .contentSend {
                                         width: 75%;
                                         height: 50px;
                                         right: 15%;
                                         bottom: 10px;
+
                                         .sendText {
                                             width: calc(100% - 55px);
                                         }
@@ -496,7 +507,7 @@
                                         }
                                     }
                                 }
-                
+
                             }
                         }
                     }
@@ -512,6 +523,7 @@
     //575px------376px;
     .chatroom-main {
         overflow: hidden;
+
         .mainSection {
             width: calc(100% - 30px - 20px - 10px);
             height: 100%;
@@ -526,14 +538,15 @@
             &::-webkit-scrollbar {
                 height: 10px;
             }
-    
+
             &::-webkit-scrollbar-thumb {
                 height: 10px;
                 border-radius: 5px;
             }
-            
+
             .sectionOver {
                 white-space: nowrap;
+
                 .sectionMark1 {
                     width: 117px;
                     height: 117px;
@@ -542,6 +555,7 @@
                     display: inline-block;
                     vertical-align: top;
                     border-top: .4vw solid $main-black;
+
                     img {
                         width: 60px;
                         border-radius: 50px;
@@ -550,11 +564,14 @@
                 }
             }
         }
+
         .mainBook {
             margin-left: 0px;
             padding: 10px;
+
             .bookDashed {
                 padding: 15px 15px;
+
                 .dashPage1 {
                     padding: 0;
                     border-right: none;
@@ -581,7 +598,8 @@
                                 margin-bottom: -5px;
 
                                 .dashPage5 {
-                                    width: 100%;                                  width: 100%;
+                                    width: 100%;
+                                    width: 100%;
                                     height: 500px;
                                     padding: 2% 0 0 2%;
                                     margin-bottom: 0px;
@@ -599,6 +617,7 @@
                                         overflow-y: scroll;
                                         padding: 0;
                                         padding-right: 10%;
+
                                         .contentYour {
                                             margin-bottom: 15px;
                                             margin-left: 0px;
@@ -660,6 +679,7 @@
                                         height: 50px;
                                         right: 17%;
                                         bottom: 10px;
+
                                         .sendText {
                                             width: calc(100% - 45px);
                                         }
@@ -685,11 +705,13 @@
         }
     }
 }
+
 @include respond(iphone) {
 
     //375px;
     .chatroom-main {
         overflow: hidden;
+
         .mainSection {
             width: calc(100% - 27px);
             height: 100%;
@@ -704,13 +726,15 @@
             &::-webkit-scrollbar {
                 height: 10px;
             }
-    
+
             &::-webkit-scrollbar-thumb {
                 height: 10px;
                 border-radius: 5px;
             }
+
             .sectionOver {
                 white-space: nowrap;
+
                 .sectionMark1 {
                     width: 100px;
                     height: 100px;
@@ -719,6 +743,7 @@
                     display: inline-block;
                     vertical-align: top;
                     border-top: .4vw solid $main-black;
+
                     img {
                         width: 60px;
                         border-radius: 50px;
@@ -727,12 +752,15 @@
                 }
             }
         }
+
         .mainBook {
             width: 110%;
             margin-left: -5%;
             padding: 10px;
+
             .bookDashed {
                 padding: 15px 15px;
+
                 .dashPage1 {
                     height: 100%;
                     padding: 0;
@@ -774,6 +802,7 @@
                                         overflow-y: scroll;
                                         padding: 0;
                                         padding-right: 15%;
+
                                         .contentYour {
                                             margin-bottom: 15px;
                                             margin-left: 0px;
@@ -835,6 +864,7 @@
                                         height: 50px;
                                         right: 15%;
                                         bottom: 2%;
+
                                         .sendText {
                                             width: calc(100% - 45px);
                                         }

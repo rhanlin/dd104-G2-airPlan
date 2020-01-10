@@ -1,94 +1,5 @@
 //Vue
-//會員資訊
-Vue.component('memData', {
-    template: `
-        <div class="userSetting_memData">
-            <table class="userSetting_memDataTable">
-                <tr>
-                    <td colspan="6"><img class="mempic" src="./img/chatroom/mark_1.png" alt="mempic"></td>
-                </tr>
-                <tr>
-                    <td id="memNo">會員帳號:</td>
-                    <td colspan="5">波音777-1</td>
-                </tr>
-                <tr>
-                    <td>Email:</td>
-                    <td colspan="5">aaa@gmail.com<img id="showForm" class="emailSet" src="./img/user-setting/gear.svg" alt="robotB3"></td>
-                </tr>
-                <tr>
-                    <td>Air幣:</td>
-                    <td colspan="5">50</td>
-                </tr>
-                <tr>
-                    <td>信紙:</td>
-                    <td colspan="5">5</td>
-                </tr>
-            </table>
-        </div>
-    `,
-});
-Vue.component('airCoin', {
-    template: `
-        <div class="userSetting_airCoin">
-            <table class="userSetting_airCoinTable">
-                <thead>
-                    <th><h4>時間</h4></th>
-                    <th><h4>信件</h4></th>
-                    <th><h4>打賞者</h4></th>
-                </thead>
-                <tr>
-                    <td>2019/12/18 12:00</td>
-                    <td>被遺忘的外套</td>
-                    <td>不怕冷的小樺</td>
-                </tr>
-                <tr>
-                    <td>2019/12/15 18:35</td>
-                    <td>百岳烏拉拉</td>
-                    <td>亂爬阿祥</td>
-                </tr>
-                <tr>
-                    <td>2019/12/14 05:45</td>
-                    <td>大零食家</td>
-                    <td>洋芋片咬輝哥</td>
-                </tr>
-                <tr>
-                    <td>2019/12/10 05:46</td>
-                    <td>青鳥傳情</td>
-                    <td>香菇姑姑咕咕咕</td>
-                </tr>
-                <tr>
-                    <td>2019/12/09 05:46</td>
-                    <td>&on旅社</td>
-                    <td>咖啡翰</td>
-                </tr>
-                <tr>
-                    <td>2019/12/07 08:46</td>
-                    <td>睡眠很重要</td>
-                    <td>早起的邱哥</td>
-                </tr>
-            </table>
-        </div>
-    `,
-});
-Vue.component('memcolor', {
-    template: `
-        <div class="userSetting_memcolor">
-            <div class="memcolorBig">
-                <img id="memcolorBigLarge" src="img/share/blue-paint-bigline.svg" alt="blackB">
-            </div>
-            <div class="memcolorSmall">
-                <img src="img/share/blue-paint-bigline.svg" alt="blackB">
-                <img src="img/share/yellow-paint-bigline.svg" alt="white">
-            </div>
-        </div>
-    `,
-});
-new Vue({
-    el: '#memKanban',
-    data: {
-        content: 'memData',
-    },
-});
+
 
 //系統資訊
 Vue.component('manu', {
@@ -245,6 +156,18 @@ new Vue({
     }
 });
 
+//    <?php 
+//     $letterlikeRow = $letterlike -> fetch_assoc()){
+//     echo json_encode( $memRow);
+//     ?>
+//                 <tr>
+//                     <td ><?=$letterlikeRow["letLikeTime"]?></td>
+//                     <td><?=$letterlikeRow["letTitle"]?></td>
+//                     <td><?=$letterlikeRow["likeMemNo"]?></td>
+//                 </tr>
+//                 <?php	
+//                 }
+//                 ?>
 
 //JS
 //會員資訊_外觀設定
@@ -276,6 +199,9 @@ closeForm.onclick = function(){
 var btnMemData = document.getElementById("btnMemData");
 var btnAirCoin = document.getElementById("btnAirCoin");
 var btnMemcolor = document.getElementById("btnMemcolor");
+var userSetting_memData = document.getElementById('userSetting_memData');
+var userSetting_airCoin = document.getElementById('userSetting_airCoin');
+var userSetting_memcolor = document.getElementById('userSetting_memcolor');
 btnMemData.onclick = function(){
     btnMemData.style.backgroundImage = 'url("./img/share/red-note.svg")';
     btnAirCoin.style.backgroundImage = 'url("./img/share/blue-note.svg")';
@@ -283,6 +209,9 @@ btnMemData.onclick = function(){
     btnMemData.style.color = 'white';
     btnAirCoin.style.color = 'black';
     btnMemcolor.style.color = 'black';
+    userSetting_memData.style.display = 'block' ;
+    userSetting_airCoin.style.display = 'none';
+    userSetting_memcolor.style.display = 'none';
 };
 btnAirCoin.onclick = function(){
     btnMemData.style.backgroundImage = "url(./img/share/blue-note.svg)";
@@ -291,6 +220,9 @@ btnAirCoin.onclick = function(){
     btnMemData.style.color = 'black';
     btnAirCoin.style.color = 'white';
     btnMemcolor.style.color = 'black';
+    userSetting_memData.style.display = 'none' ;
+    userSetting_airCoin.style.display = 'block';
+    userSetting_memcolor.style.display = 'none';
 };
 btnMemcolor.onclick = function(){
     btnMemData.style.backgroundImage = "url(./img/share/blue-note.svg)";
@@ -299,6 +231,9 @@ btnMemcolor.onclick = function(){
     btnMemData.style.color = 'black';
     btnAirCoin.style.color = 'black';
     btnMemcolor.style.color = 'white';
+    userSetting_memData.style.display = 'none' ;
+    userSetting_airCoin.style.display = 'none';
+    userSetting_memcolor.style.display = 'block';
 };
 
 //系統資訊_頁籤樣式切換
@@ -316,3 +251,46 @@ btnVar.onclick = function(){
     btnManu.style.color = 'black';
     btnVar.style.color = 'white';
 };
+
+
+
+
+function changeName(){
+    axios
+    .get('phps/letLike.php')
+    .then((res) => {
+        var arr = res.data;
+        console.log(arr[0].letLikeTime);
+        console.log(arr[0].letTitle);
+        console.log(arr[0].letLikeNo);
+        var text9=arr[0].letLikeTime;
+        var text8=arr[0].letTitle;
+        var text7=arr[0].letLikeNo;
+        var td1=document.getElementById('td1');
+        var td2=document.getElementById('td2');
+        var td3=document.getElementById('td3');
+        td1.innerHTML=text9;
+        td2.innerHTML=text8;
+        td3.innerHTML=text7;
+        var text6=arr[1].letLikeTime;
+        var text5=arr[1].letTitle;
+        var text4=arr[1].letLikeNo;
+        var td4=document.getElementById('td4');
+        var td5=document.getElementById('td5');
+        var td6=document.getElementById('td6');
+        td4.innerHTML=text6;
+        td5.innerHTML=text5;
+        td6.innerHTML=text4;
+        // td=document.createElement('td')
+        // span=document.createElement('span')
+        // span.innerHTML=arr[0].letLikeTime
+        // td.appendChild(span)
+        // console.log(span)
+        // tr.appendChild(td)
+        console.log(td1);
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+}
+this.changeName();

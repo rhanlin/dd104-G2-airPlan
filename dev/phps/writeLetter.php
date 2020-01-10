@@ -1,29 +1,42 @@
 <?php
-try {
-  /*ALTER TABLE `letter`
-  ADD CONSTRAINT letter_ibfk_1 FOREIGN KEY (`memNo`) REFERENCES `member` (`memNo`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT letter_ibfk_2 FOREIGN KEY (`matPattNo1`) REFERENCES `member` (`matNo`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT letter_ibfk_3 FOREIGN KEY (`matPattNo2`) REFERENCES `member` (`matNo`) ON DELETE CASCADE ON UPDATE CASCADE;
-  COMMIT;
-*/
+  $upload_dir = "userUploadImg//";  //檢查資料夾存不存在
+  if( ! file_exists($upload_dir )){
+    mkdir($upload_dir);
+  }
 
+  //處理base64檔案
+  $imgData = $_POST['imgUrl'];//接收ajax送來的資料
+
+  $imgData = str_replace('data:image/png;base64,', '', $imgData);//將檔案格式的資訊拿掉
+  $data = base64_decode($imgData);
+
+  $imgName =date("Ymd-Gis");
+  $userUploadImg = $upload_dir . $imgName . ".jpg";
+  $success = file_put_contents( $userUploadImg, $data )
+?>
+
+<?php
+try {
   //檢查是否還有信紙 
   //...
+  //把寫信內容新增進資料庫 
   require_once("connectBook_root.php");
-  $sql = "insert into `letter`( memNo, letPower, matPattNo1, matPattNo2, letTime, letTitle, letContent, imgUrl, mesCount, letSort, letStatus, letImgUrl) VALUES ( 3, 1, :matPattNo1, :matPattNo2, '2020-01-07 21:00:00', :letTitle, :letContent, :imgUrl, 0, :letSort, 0, null);";
+  $sql = "insert into `letter`( memNo, letPower, matPatNo, matPosNo, letTime, letTitle, letContent, imgUrl,mesCount, letSort, letStatus) VALUES ( 10, 1, :matPatNo, :matPosNo, :letTime, :letTitle, :letContent, :imgUrl, 0, :letSort, 0)";
 
+  date_default_timezone_set("Asia/Taipei");  //設定時區
+  $letTime=date("Y-n-j G:i:s");  //將時間格式化
 
   $letInsert = $pdo->prepare($sql);
-  $letInsert->bindValue(':matPattNo1',$_POST['userPattern']);
-  $letInsert->bindValue(':matPattNo2',$_POST['userStamp']);
-  $letInsert->bindValue(':letTitle',$_POST['letterTitle']);
-  $letInsert->bindValue(':letContent',$_POST['letterContant']);
-  $letInsert->bindValue(':imgUrl',$_FILES['userUploadImage']['name']);
+  $letInsert->bindValue(':matPatNo',$_POST['matPatNo']);
+  $letInsert->bindValue(':matPosNo',$_POST['matPosNo']);
+  $letInsert->bindValue(':letTime',$letTime);
+  $letInsert->bindValue(':letTitle',$_POST['letTitle']);
+  $letInsert->bindValue(':letContent',$_POST['letContent']);
+  $letInsert->bindValue(':imgUrl',$userUploadImg);
   $letInsert->bindValue(':letSort',$_POST['letSort']);
   $letInsert->execute();
 
-  $affected_rows = $letInsert->rowCount();
-  echo $affected_rows;
+  echo 'success';
 
   // switch ($_FILES['image']['error']) {
   //   case UPLOAD_ERR_OK:

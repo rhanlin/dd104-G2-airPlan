@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #material {
+      width: 100px;
+    }
+
+    #material img {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <script>
+    function showMaterial(jsonStr) {
+      let material = JSON.parse(jsonStr);
+      console.log(material)
+      let html;
+      if (material[0].matName) {
+        for (var i = 0; i < material.length; i++) {
+          span = document.createElement('span')
+          img = document.createElement('img');
+          div = document.createElement('div');
+          div.setAttribute("id", "material")
+          img.src = `.${material[i].matURL}`;
+          span.innerHTML = material[i].matName
+          div.appendChild(img);
+          div.appendChild(span)
+          document.querySelector("body").appendChild(div);
+        }
+      } else {
+        html = "無任何素材"
+      }
+    }
+
+
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+      if (xhr.status == 200) {
+        //modify here
+        showMaterial(xhr.responseText);
+        console.log(xhr.responseText)
+      } else {
+        alert(xhr.status);
+      }
+    }
+
+    var url = "shop_getmaterial.php";
+    xhr.open("Get", url, true);
+    xhr.send(null);
+  </script>
+</body>
+
+</html>
