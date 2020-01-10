@@ -1,3 +1,12 @@
+// var nwidth = $(window).width();
+// console.log(nwidth)
+// if (nwidth > 576) { //不同螢幕寬度隱藏JS檔
+//   shop_draw()
+// } 
+// function shop_draw() {
+
+
+
 //=================素材點按進畫板==============================
 
 
@@ -97,36 +106,44 @@ var clipPath2 = new fabric.Circle({
   // fill: 'bisque'
 })
 
+//切換畫板以便設定轉存圖檔的分類(郵戳或圖案)
+var boardType = "plane";
 $('#boardSwitchBtn').click(function () {
   if (canvas.clipPath != clipPath2) {
     canvas.clipPath = clipPath2;
+    boardType = "circle";
+    console.log(boardType)
     canvas.renderAll();
   } else {
     canvas.clipPath = clipPath;
+    boardType = "plane";
+    console.log(boardType)
     canvas.renderAll();
   }
 
 })
 
 
+
 drawingOptionArea = document.getElementById('drawingOptionArea');
 
 $('.figure').click(function () {
   var itemImage = this.getAttribute('src'); //獲取點取物件的src路徑
-  // console.log(itemImage); //確認有沒有取到正確的圖片路徑
-  let drawingPanel = document.getElementsByClassName('drawingPanel')[0]; //創建一個畫板空間
-  // let canvas=document.getElementById('canvas');
-  let divImage = document.createElement('div'); //創造div元素
-  // divImage.style.width = '50px'; //決定div大小
-  let image = document.createElement('img'); //創造img元素
-  // image.style.width = '50px'; //決定img大小
-  image.src = itemImage; //寫入img路徑
-  divImage.appendChild(image); //img插入div
-  console.log(divImage)
-  console.log(image)
-  drawingPanel.appendChild(divImage); //div插入畫板空間
-  // canvas.appendChild(drawingPanel);
-
+  console.log(itemImage); //確認有沒有取到正確的圖片路徑
+  // // let drawingPanel = document.getElementsByClassName('drawingPanel')[0]; //創建一個畫板空間
+  // let canvas = document.getElementById('canvas');
+  // // let divImage = document.createElement('div'); //創造div元素
+  // // divImage.style.width = '50px'; //決定div大小
+  // // divImage.style.height = '50px';
+  // // let image = document.createElement('img'); //創造img元素
+  // // image.style.width = '100%'; //決定img大小
+  // // image.style.height = '100%';
+  // // image.src = itemImage; //寫入img路徑
+  // // divImage.appendChild(image); //img插入div
+  // // console.log(divImage)
+  // // console.log(image)
+  // // drawingPanel.appendChild(divImage); //div插入畫板空間
+  // // canvas.appendChild(drawingPanel);
 
 
 
@@ -137,33 +154,27 @@ $('.figure').click(function () {
     //   canvasWidth = this.width;
     //   canvasHeight = this.height;
     //   console.log(canvasHeight);
-    //   img.scale(0.5).set({
-    //     left: canvasWidth / 2,
-    //     top: canvasHeight / 2,
-    //     selectable: true,
-    //     originX: 'left',
-    //     originY: 'top'
-    //   });
     // });
     img.scale(0.5).set({
       left: 200,
       top: 200,
-      selectable: true,
-      originX: 'left',
-      originY: 'top'
+      width: 550,
+      height: 550
+      // selectable: true,
+      // originX: 'left',
+      // originY: 'top'
     });
-    canvas.renderAll();
-    canvas.add(img).setActiveObject(img);;
 
-    // img.scaleToHeight(100); //指定img寬
-    // img.scaleToWidth(100); //指定img高
+    img.scaleToHeight(350); //指定img寬
+    img.scaleToWidth(350); //指定img高
+    console.log(img.width)
     // img.center();
     // img.setCoords();
     // canvas.renderAll(); //選染畫布
     // canvas.add(img); //畫布加入新的圖片
 
     canvas.renderAll();
-    canvas.add(img).setActiveObject(img);;
+    canvas.add(img).setActiveObject(img);
   })
 });
 
@@ -326,9 +337,90 @@ $('#mode').click(function () {
 
 
 //清除畫面
-$('#clear').click(function () {
+document.getElementById('clear').onclick = clearCanvas;
+
+function clearCanvas() {
   canvas.clear();
-})
+
+  canvas.controlsAboveOverlay = true;
+  var clipPath = new fabric.Group([
+    new fabric.Polyline([{
+        x: 10,
+        y: 250
+      },
+      {
+        x: 700,
+        y: 10
+      },
+      {
+        x: 670,
+        y: 200
+      },
+      {
+        x: 40,
+        y: 250
+      },
+      {
+        x: 670,
+        y: 300
+      },
+      {
+        x: 700,
+        y: 490
+      },
+      {
+        x: 10,
+        y: 250
+      },
+
+    ], {
+      stroke: 'red',
+      color: 'red',
+      left: 10,
+      top: 10,
+      fill: 'red'
+    }),
+    new fabric.Polyline([{
+        x: 120,
+        y: 248
+      },
+
+      {
+        x: 670,
+        y: 205
+      },
+      {
+        x: 650,
+        y: 248
+      },
+      {
+        x: 120,
+        y: 248
+      },
+    ]),
+    new fabric.Polyline([{
+        x: 120,
+        y: 253
+      },
+
+      {
+        x: 650,
+        y: 253
+      },
+      {
+        x: 670,
+        y: 295
+      },
+      {
+        x: 120,
+        y: 253
+      },
+    ]),
+  ]);
+  canvas.clipPath = clipPath;
+  canvas.backgroundColor = "white";
+  canvas.renderAll();
+}
 
 
 
@@ -401,7 +493,6 @@ outputPngBtn = document.getElementById("outputPngBtn")
 outputPngBtn.addEventListener('click', () => output('png'))
 
 
-
 function output(formatType) {
 
   var patternName = $('#patternName').val();
@@ -414,35 +505,92 @@ function output(formatType) {
     height: 500,
     multiplier: 1,
     quality: 0.1
-  })
+  });
+  dataURL = dataURL.substring([22]);
 
-  $.ajax({
-    type: "POST",
-    url: "http://localhost/dev/js/saveImg.php",
-    data: {
-      image: dataURL,
-      matName: patternName,
+  const b64toBlob = (b64Data, contentType = '', sliceSize = 512) => {
+    const byteCharacters = atob(b64Data);
+    const byteArrays = [];
+
+    for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+      const slice = byteCharacters.slice(offset, offset + sliceSize);
+
+      const byteNumbers = new Array(slice.length);
+      for (let i = 0; i < slice.length; i++) {
+        byteNumbers[i] = slice.charCodeAt(i);
+      }
+
+      const byteArray = new Uint8Array(byteNumbers);
+      byteArrays.push(byteArray);
     }
-  })
-  // .done(function (respond) {
-  //   console.log("done:" + respond);
-  // })
-  // .fail(function (respond) {
-  //   console.log("fail");
-  // })
-  // .always(function (respond) {
-  //   console.log("always");
-  // })
 
-  const a = document.createElement('a');
+    const blob = new Blob(byteArrays, {
+      type: contentType
+    });
+    return blob;
+  }
 
-  a.href = dataURL
-  console.log(dataURL);
-  a.download = `output.${formatType}`
-  document.body.appendChild(a);
-  a.click()
-  document.body.removeChild(a)
+  const contentType = 'image/png';
+  const b64Data = dataURL;
+
+  const blob = b64toBlob(b64Data, contentType);
+
+  const blobUrl = URL.createObjectURL(blob);
+  console.log(blobUrl)
+  console.log(boardType)
+  circleMatSort = "postmark";
+  planeMatSort = "figure";
+  if (patternName != "") {
+
+    if (boardType == "circle") {
+      $.ajax({
+        type: "POST",
+        url: "http://localhost/dd104g2_test/js/shop_saveImg.php",
+        data: {
+          image: blobUrl,
+          matName: patternName,
+          matLSort: circleMatSort,
+        }
+      })
+    } else if (boardType == "plane") {
+      $.ajax({
+        type: "POST",
+        url: "http://localhost/dd104g2_test/js/shop_saveImg.php",
+        data: {
+          image: blobUrl,
+          matName: patternName,
+          matLSort: planeMatSort,
+        }
+      })
+    }
+    // .done(function (respond) {
+    //   console.log("done:" + respond);
+    // })
+    // .fail(function (respond) {
+    //   console.log("fail");
+    // })
+    // .always(function (respond) {
+    //   console.log("always");
+    // })
+
+    const a = document.createElement('a');
+    a.href = blobUrl
+    console.log(blobUrl);
+    a.download = `ouput.${formatType}`
+    console.log(a);
+    document.body.appendChild(a);
+    a.click()
+    document.body.removeChild(a)
+    alert("圖檔已存入我的包包~~請到我的包包確認")
+    clearCanvas();
+
+  } else {
+    alert("請填寫欲儲存的圖檔名稱~~感謝您");
+  }
+
 }
+
+
 
 
 //轉存成JPG
@@ -544,18 +692,18 @@ const imageUploader = document.getElementById("imageUploader");
 const file = document.getElementById("file");
 const imgset = document.getElementsByClassName("drawingPanel")[0];
 
-$('.figure').mousedown(function (e) {
-  console.log(e);
-  if (e.target.tagName.toLowerCase() === 'img') {
-    imgDragOffset.offsetX = e.clientX - e.target.offsetLeft
-    imgDragOffset.offsetY = e.clientY - e.target.offsetTop
-    movingImage = e.target
-    console.log(imgDragOffset)
-    console.log(canvas)
-    console.log(movingImage)
-  }
+// $('.figure').mousedown(function (e) {
+//   console.log(e);
+//   if (e.target.tagName.toLowerCase() === 'img') {
+//     imgDragOffset.offsetX = e.clientX - e.target.offsetLeft
+//     imgDragOffset.offsetY = e.clientY - e.target.offsetTop
+//     movingImage = e.target
+//     console.log(imgDragOffset)
+//     console.log(canvas)
+//     console.log(movingImage)
+//   }
 
-})
+// })
 
 
 
@@ -579,8 +727,8 @@ function handleFile() {
 
     fabric.Image.fromURL(dataURL, function (img) { //使用fabric.Image方法
 
-      // img.scaleToHeight(100); //指定img寬
-      // img.scaleToWidth(100); //指定img高
+      img.scaleToHeight(100); //指定img寬
+      img.scaleToWidth(100); //指定img高
       // img.center();
       // img.setCoords();
       // canvas.renderAll(); //選染畫布
@@ -599,37 +747,37 @@ function handleFile() {
   };
 }
 
-let imgDragOffset = {
-  offsetX: 0,
-  offsetY: 0
-}
+// let imgDragOffset = {
+//   offsetX: 0,
+//   offsetY: 0
+// }
 
-function dropImg(e) {
-  e.preventDefault();
-  console.log(123);
-  const {
-    offsetX,
-    offsetY
-  } = e.e
-  const image = new fabric.Image(movingImage, {
-    width: movingImage.naturalWidth,
-    height: movingImage.naturalHeight,
-    scaleX: 100 / movingImage.naturalWidth,
-    scaleY: 100 / movingImage.naturalHeight,
-    top: offsetY - imgDragOffset.offsetY,
-    left: offsetX - imgDragOffset.offsetX
+// function dropImg(e) {
+//   e.preventDefault();
+//   console.log(123);
+//   const {
+//     offsetX,
+//     offsetY
+//   } = e.e
+//   const image = new fabric.Image(movingImage, {
+//     width: movingImage.naturalWidth,
+//     height: movingImage.naturalHeight,
+//     scaleX: 100 / movingImage.naturalWidth,
+//     scaleY: 100 / movingImage.naturalHeight,
+//     top: offsetY - imgDragOffset.offsetY,
+//     left: offsetX - imgDragOffset.offsetX
 
-  })
-  canvas.renderAll();
-  canvas.add(image)
-}
+//   })
+//   canvas.renderAll();
+//   canvas.add(image)
+// }
 
 
 imageUploader.addEventListener('click', uploadFile, true);
 file.addEventListener('change', handleFile);
 
 
-canvas.on('drop', dropImg)
+// canvas.on('drop', dropImg)
 
 
 
@@ -642,8 +790,6 @@ let pngCanvas = new fabric.Canvas('pngCanvas', {
 }); //創建fabric環境
 pngCanvas.setWidth(200);
 pngCanvas.setHeight(200);
-
-
 
 
 // =======START RESPONSIVE CANVAS=======================
@@ -686,3 +832,5 @@ function resizeCanvas() {
   canvas.renderAll();
 }
 resizeCanvas();
+
+// }

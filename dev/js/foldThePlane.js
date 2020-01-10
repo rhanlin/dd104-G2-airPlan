@@ -1,5 +1,35 @@
+let vmUserStamp = new Vue({
+  el: '#vmUserStamp',
+  data: {
+    userStamp:[],//存 使用者"擁有"的郵戳的編號對應的URL(matPosUrl)
+    stampValue:[],//input radio 的value值
+    letterStamp: 0,//存 使用者"選到"的郵戳的編號的值(matPosNo)
+  },
+  methods: {
+    clickStamp(e) {
+      this.letterStamp = e.target.value;
+    },
+  },
+  mounted() {
+    fetch('./phps/fetchAllUserMat.php',{
+      method:'POST',
+      body: new URLSearchParams(`memNo=10`) //10要改成${變數} 此變數從session撈出目前登入的用戶number
+    })
+      .then(res=>res.json()).then(json=>{
+        //拆出 pattern
+        for(let i=0 ; i<json.data.length ; i++){
+          if(json.data[i].stampNo){
+            this.userStamp.push(`url(${json.data[i].stampUrl})`);
+            this.stampValue.push(json.data[i].stampNo);//取 使用者飛機彩繪的編號得值(matPosNo)
+          }
+        }
+        console.log(this.userStamp);
+      })
+  },
+});
 function confirmSubmit(){
-  if(confirm("Press a button!")){
+  
+  if(confirm("確定送出嗎？")){
     console.log('NextStep!');
     // console.log(location.href.split('/').reverse()[0].split('.')[0]);
     let pageUrlTitle = location.href.split('/').reverse()[0].split('.')[0];
@@ -8,11 +38,15 @@ function confirmSubmit(){
     document.querySelector('header').style.display = "none"; //將header消失
 
     if( pageUrlTitle == "write-letter"){
+      //將資料送去php程式
+      submitToLetterTable();//writerLetter.js
       document.getElementById('writeLetterMain').style.animationName = "elementDisappear";
       document.getElementById('writeLetterMain').style.animationDelay = ".5s";
       document.getElementById('writeLetterMain').style.animationDuration = ".8s";
       document.getElementById('writeLetterMain').style.animationFillMode = "forwards";
     }else if( pageUrlTitle == "catch-letter" ){
+      //將資料送去php程式
+      //function(){} ...
       document.getElementById('catchLetterMain').style.animationName = "elementDisappear";
       document.getElementById('catchLetterMain').style.animationDelay = ".5s";
       document.getElementById('catchLetterMain').style.animationDuration = ".8s";
@@ -266,6 +300,7 @@ function foldThePlane(){
     }
   })
 }
+
 function deviceSet(){
   //判斷手機方向：
   // window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
@@ -286,7 +321,6 @@ function setPlaneShadow(){
   imgWrap.appendChild(planeShadow);
   planeShadow.setAttribute('id','planeShadow');
 }
-
 
 function shootPlane(){
   // 飛機hover
@@ -347,6 +381,7 @@ function shootPlane(){
     },1500)
   })
 }
+
 function addScene(){
   let div = document.createElement("div");
   let skyWorld = document.querySelector('.planeBox');
@@ -363,7 +398,6 @@ function addScene(){
   `;
   // document.getElementById('cloudDiv').style.animation = "showScene 500ms ease;";//...??
 }
-
 
 function pointerSetting(){
  // The item (or items) to press and hold on

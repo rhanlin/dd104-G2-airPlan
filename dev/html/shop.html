@@ -14,6 +14,9 @@
   @@include("./layout/nav.html")
   @@include("./layout/header.html")
   <main class="shop-main">
+    <div id="coinBox">
+      <h5>你目前有 <span id="coin"></span> air幣</h5>
+    </div>
     <section id="section1">
       <div class="container">
         <div class="row">
@@ -99,20 +102,20 @@
               <div class="cardFilter">
                 <img src="./img/product/decorate/lineTop.png" alt="" class="line_top">
                 <img src="./img/product/decorate/lineButtom.png" alt="" class="line_bottom">
-                <div class="itemCard" v-for="(item,index) in pagedListdata" v-if="change(index)"
+                <div @click="changeIndex($event)" v-for="(item,index) in pagedListdata" v-if="change(index)"
                   :style="{backgroundImage:`url(${item.url})`}" :id=item.id :class=item.class>
                   <img src="./img/product/decorate/clip-04.svg" alt="">
                 </div>
               </div>
               <div id="emptyBtn">
                 <div class="switchBtnBox" @click="page = 1">
-                  <div class="switchBtn clicked">page1</div>
+                  <div class="switchBtn">page1</div>
                 </div>
                 <div class="switchBtnBox" @click="page = 2">
-                  <div class="switchBtn clicked">page2</div>
+                  <div class="switchBtn">page2</div>
                 </div>
                 <div class="switchBtnBox" @click="page = 3">
-                  <div class="switchBtn clicked">page3</div>
+                  <div class="switchBtn">page3</div>
                 </div>
               </div>
             </div>
@@ -156,37 +159,39 @@
               </div>
             </div>
           </div>
-        </div>
-    </section>
-    <div id="outshadow"></div>
-    <div id="medal">
-      <div class="cross"></div>
-      <div id="textBox">
-        <div class="textBox">
-          <h2>商品名稱:飛往巴黎</h2>
-        </div>
-        <div class="textBox">
-          <h>跟著紙飛機一起來場浪漫的旅行吧</h6>
-        </div>
-        <div class="textBox">
-          <h5>信件被撈機率加乘 : 2%</h5>
-          <h5>商品價格 : 50air幣</h5>
-        </div>
-      </div>
-      <div class="product_display">
-        <div class="model_material"><img src="./img/product/decorate/model_material.png" alt=""></div>
-        <div class="model_arrow"><img src="./img/product/decorate/model_arrow-04.svg" alt=""></div>
-        <div class="model_product"><img src="./img/product/decorate/model_product_1.png" alt=""></div>
-      </div>
-      <div class="orderBtnBoxGroup">
-        <div class="orderBtnBox">
-          <div class="orderBtn">
-            <div class="orderText">購買</div>
-            <span></span>
+          <div id="outshadow"></div>
+          <div id="medal">
+            <div class="cross"></div>
+            <div id="textBox">
+              <div class="titleBox">
+                <h4 id="titleInner"></h4>
+              </div>
+              <div class="textBox">
+                <h6 id="infoInner"></h6>
+              </div>
+              <div class="chance_priceBox">
+                <h5>信件被撈機率加乘 : <span id="chanceInner"></span>
+                </h5>
+                <h5>商品價格 :<span id="priceInner">50</span>
+                </h5>
+              </div>
+            </div>
+            <div class="product_display">
+              <div class="model_material"><img src="./img/product/decorate/model_material.png" alt=""></div>
+              <div class="model_arrow"><img src="./img/product/decorate/model_arrow-04.svg" alt=""></div>
+              <div class="model_product"><img src="./img/product/decorate/model_product_1.png" alt=""></div>
+            </div>
+            <div class="orderBtnBoxGroup">
+              <div class="orderBtnBox">
+                <div class="orderBtn">
+                  <div @click="customerOrder($event)" class="orderText">購買</div>
+                  <span></span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+    </section>
     <div id="pile">
       <div class="pilePaper"><span>xxxxxxxx xxxxxxx xxxxxx</span>
         <div class="innerBox"></div>
@@ -219,9 +224,8 @@
           <div class="controlToolTopFlex">
             <div class="controlToolTop">
               <div id="mode" class="controlBox1">
-                <div class="controlBox1_button clicked">
-                  <div class="controlBtn1 clicked"><img src="./img/product/toolcontrolbar/cannotWrite.png" alt=""
-                      id="modeImg">
+                <div class="controlBox1_button">
+                  <div class="controlBtn1"><img src="./img/product/toolcontrolbar/cannotWrite.png" alt="" id="modeImg">
                   </div>
                 </div>
               </div>
@@ -246,8 +250,8 @@
                 </div>
               </div>
               <div id="text" class="controlBox6">
-                <div class="controlBox6_button clicked">
-                  <div class="controlBtn6 clicked"><img src="./img/product/toolcontrolbar/text-symbol.svg" alt=""></div>
+                <div class="controlBox6_button">
+                  <div class="controlBtn6"><img src="./img/product/toolcontrolbar/text-symbol.svg" alt=""></div>
                 </div>
               </div>
               <div id="filter_Grayscale" class="controlBox8">
@@ -256,9 +260,9 @@
                 </div>
               </div>
               <div class="controlBox9">
-                <button id="imageUploader" class="controlBox9_button clicked">
+                <button id="imageUploader" class="controlBox9_button">
                   <input type="file" id="file">
-                  <div class="controlBtn9 clicked"><img src="./img/product/toolcontrolbar/photo.svg" alt=""></div>
+                  <div class="controlBtn9"><img src="./img/product/toolcontrolbar/photo.svg" alt=""></div>
                 </button>
               </div>
               <div id="outputPngBtn" class="controlBox10">
@@ -398,9 +402,11 @@
               </div>
             </div>
             <div class="patNameInput">
-            <label class="patternName" for="patternName"><h5>為您製作的圖案取個名字吧</h5></label>
-            <input type="text" name="patternName" id="patternName">
-          </div>
+              <label class="patternName" for="patternName">
+                <h5>為您製作的圖案取個名字吧</h5>
+              </label>
+              <input type="text" name="patternName" id="patternName">
+            </div>
             <!-- <div>
               <canvas id="pngCanvas">
               </canvas>
@@ -413,47 +419,20 @@
       <div class="owl-carousel owl-theme owl-loaded owl-drag">
         <div class="owl-stage-outer">
           <div class="owl-stage">
-            <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/figure/figure_animal_1.svg" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/postmark/postmark_countries_1.svg" alt="" class="figure">
-              </div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/postmark/postmark_countries_10.svg" alt="" class="figure">
-              </div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/DIY/DIYtool_2.svg" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="./img/product/figure/figure_vector_8.svg" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="" alt="" class="figure"></div>
-            </div>
+            <div class="owl-item figure1"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure2"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure3"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure4"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure5"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure6"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure7"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure8"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure9"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure10"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure11"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure12"><img src="" alt="" class="figure"></div>
           </div>
         </div>
-      </div>
     </section>
   </main>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
@@ -478,395 +457,576 @@
       // bootstrap手風琴用
     })
   </script>
-  <script>
-    //  ================這是商品Filter用=========================
-    const PAGE_SIZE = 10;
-    const fOO_DATA = [{
-        style: 'countries',
-        id: 'itemCard1',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard2',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard3',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard4',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard5',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard6',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard7',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard8',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard9',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard10',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard11',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard12',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard13',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard14',
-        url: ''
-      },
-      {
-        style: 'countries',
-        id: 'itemCard15',
-        url: ''
-      },
-      {
-        style: 'frame',
-        id: 'itemCard16',
-        url: ''
-      },
-      {
-        style: 'frame',
-        id: 'itemCard17',
-        url: ''
-      },
-      {
-        style: 'frame',
-        id: 'itemCard18',
-        url: ''
-      },
-      {
-        style: 'frame',
-        id: 'itemCard19',
-        url: ''
-      },
-      {
-        style: 'frame',
-        id: 'itemCard20',
-        url: ''
-      },
-      {
-        style: 'frame',
-        id: 'itemCard21',
-        url: ''
-      },
-      {
-        style: 'frame',
-        id: 'itemCard22',
-        url: ''
-      },
-      {
-        style: 'frame',
-        id: 'itemCard23',
-        url: ''
-      },
-      {
-        style: 'frame',
-        id: 'itemCard24',
-        url: ''
-      },
-      {
-        style: 'simple',
-        id: 'itemCard25',
-        url: ''
-      },
-      {
-        style: 'simple',
-        id: 'itemCard26',
-        url: ''
-      },
-      {
-        style: 'simple',
-        id: 'itemCard27',
-        url: ''
-      },
-      {
-        style: 'simple',
-        id: 'itemCard28',
-        url: ''
-      },
-      {
-        style: 'simple',
-        id: 'itemCard29',
-        url: ''
-      },
-      {
-        style: 'simple',
-        id: 'itemCard30',
-        url: ''
-      },
-      {
-        style: 'simple',
-        id: 'itemCard31',
-        url: ''
-      },
-      {
-        style: 'animal',
-        id: 'itemCard32',
-        url: ''
-      },
-      {
-        style: 'animal',
-        id: 'itemCard33',
-        url: ''
-      },
-      {
-        style: 'animal',
-        id: 'itemCard34',
-        url: ''
-      },
-      {
-        style: 'animal',
-        id: 'itemCard35',
-        url: ''
-      },
-      {
-        style: 'animal',
-        id: 'itemCard36',
-        url: ''
-      },
-      {
-        style: 'animal',
-        id: 'itemCard37',
-        url: ''
-      },
-      {
-        style: 'animal',
-        id: 'itemCard38',
-        url: ''
-      },
-      {
-        style: 'animal',
-        id: 'itemCard39',
-        url: ''
-      },
-      {
-        style: 'handpattern',
-        id: 'itemCard40',
-        url: ''
-      },
-      {
-        style: 'handpattern',
-        id: 'itemCard41',
-        url: ''
-      },
-      {
-        style: 'handpattern',
-        id: 'itemCard42',
-        url: ''
-      },
-      {
-        style: 'handpattern',
-        id: 'itemCard43',
-        url: ''
-      },
-      {
-        style: 'handpattern',
-        id: 'itemCard44',
-        url: ''
-      },
-      {
-        style: 'handpattern',
-        id: 'itemCard45',
-        url: ''
-      },
-      {
-        style: 'handpattern',
-        id: 'itemCard46',
-        url: ''
-      },
-      {
-        style: 'vector',
-        id: 'itemCard47',
-        url: ''
-      },
-      {
-        style: 'vector',
-        id: 'itemCard48',
-        url: ''
-      },
-      {
-        style: 'vector',
-        id: 'itemCard49',
-        url: ''
-      },
-      {
-        style: 'vector',
-        id: 'itemCard50',
-        url: ''
-      },
-      {
-        style: 'vector',
-        id: 'itemCard51',
-        url: ''
-      },
-      {
-        style: 'vector',
-        id: 'itemCard52',
-        url: ''
-      },
-      {
-        style: 'vector',
-        id: 'itemCard53',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard54',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard55',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard56',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard57',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard58',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard59',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard60',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard61',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard62',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard63',
-        url: ''
-      },
-      {
-        style: 'tool',
-        id: 'itemCard64',
-        url: ''
-      },
 
-    ]
+  <script>
+    //  ================Vue  這是商城區======================================================
     new Vue({
       el: '#app',
       data: {
-        visibility: 'all',
-        items: [],
+        visibility: 'countries',
+        items: [{
+            style: 'countries',
+            id: 'itemCard1',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'countries',
+            id: 'itemCard2',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'countries',
+            id: 'itemCard3',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'countries',
+            id: 'itemCard4',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'countries',
+            id: 'itemCard5',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'countries',
+            id: 'itemCard6',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'countries',
+            id: 'itemCard7',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'countries',
+            id: 'itemCard8',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'countries',
+            id: 'itemCard9',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'countries',
+            id: 'itemCard10',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'countries',
+            id: 'itemCard11',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'countries',
+            id: 'itemCard12',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'countries',
+            id: 'itemCard13',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'countries',
+            id: 'itemCard14',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'countries',
+            id: 'itemCard15',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'frame',
+            id: 'itemCard16',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'frame',
+            id: 'itemCard17',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'frame',
+            id: 'itemCard18',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'frame',
+            id: 'itemCard19',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'frame',
+            id: 'itemCard20',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'frame',
+            id: 'itemCard21',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'frame',
+            id: 'itemCard22',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'frame',
+            id: 'itemCard23',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'frame',
+            id: 'itemCard24',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'simple',
+            id: 'itemCard25',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'simple',
+            id: 'itemCard26',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'simple',
+            id: 'itemCard27',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'simple',
+            id: 'itemCard28',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'simple',
+            id: 'itemCard29',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'simple',
+            id: 'itemCard30',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'simple',
+            id: 'itemCard31',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'animal',
+            id: 'itemCard32',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'animal',
+            id: 'itemCard33',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'animal',
+            id: 'itemCard34',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'animal',
+            id: 'itemCard35',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'animal',
+            id: 'itemCard36',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'animal',
+            id: 'itemCard37',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'animal',
+            id: 'itemCard38',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'animal',
+            id: 'itemCard39',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'handpattern',
+            id: 'itemCard40',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'handpattern',
+            id: 'itemCard41',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'handpattern',
+            id: 'itemCard42',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'handpattern',
+            id: 'itemCard43',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'handpattern',
+            id: 'itemCard44',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'handpattern',
+            id: 'itemCard45',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'handpattern',
+            id: 'itemCard46',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'vector',
+            id: 'itemCard47',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'vector',
+            id: 'itemCard48',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'vector',
+            id: 'itemCard49',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'vector',
+            id: 'itemCard50',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'vector',
+            id: 'itemCard51',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'vector',
+            id: 'itemCard52',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'vector',
+            id: 'itemCard53',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'tool',
+            id: 'itemCard54',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'tool',
+            id: 'itemCard55',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'tool',
+            id: 'itemCard56',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'tool',
+            id: 'itemCard57',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'tool',
+            id: 'itemCard58',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'tool',
+            id: 'itemCard59',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'tool',
+            id: 'itemCard60',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'tool',
+            id: 'itemCard61',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'tool',
+            id: 'itemCard62',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'tool',
+            id: 'itemCard63',
+            url: '',
+            class: ""
+          },
+          {
+            style: 'tool',
+            id: 'itemCard64',
+            url: '',
+            class: ""
+          },
+
+        ],
         page: 1,
-        windowWidth: 0
+        windowWidth: 0,
+        theIndex: 0,
+        item: {},
       },
       computed: {
+        //==================filter ES6寫法============================================================
         pagedListdata: function () {
           var vm = this;
-          if (vm.visibility == 'all') {
-            return vm.items
-          }
+          // if (vm.visibility == 'all') {
+          //   return vm.items
+          // }
           return vm.items.filter(
             item => item.style == vm.visibility
           );
-        }
-
-      },
-      // filteredItems() {
-      //   // var newitems = [];
-      //   var vm = this;
-      //   if (vm.visibility == 'all') {
-      //     return vm.items
-      //   } else {
-      //     vm.items.filter(function (item) {
-      //       return vm.visibility === item.style
-      //     })
-      //     console.log(item.style)
-      //     // return newitems
-      //     return [];
-      //   }
-      // },
-
-      // filteredItems() {
-
-      //   const vm = this;
-      //   if (vm.visibility == 'all') {
-      //     return vm.items
-      //   } else {
-      //     return vm.items.filter(
-
-      //       item => item.style == vm.visibility
-
-      //     );
-
-      //   }
-      // },
-      watch: {
-        page() {
-          this.change();
-        }
-      },
-      methods: {
-
-        getWindowWidth(event) {
-          this.windowWidth = document.documentElement.clientWidth;
-          console.log(this.windowWidth)
 
         },
 
-        change(index) {
+        //==================filter陣列寫法=======================================================
+        // filteredItems() {
+        //   // var newitems = [];
+        //   var vm = this;
+        //   if (vm.visibility == 'all') {
+        //     return vm.items
+        //   } else {
+        //     vm.items.filter(function (item) {
+        //       return vm.visibility === item.style
+        //     })
+        //     console.log(item.style)
+        //     // return newitems
+        //     return [];
+        //   }
+        // },
+      },
+      watch: {
+        page() {
+          this.change();
+        },
+      },
+      methods: {
+        //==============跳窗的購買btn點按後將已購素材傳回資料庫的material表格 目前會員編號寫死======================================
 
+        customerOrder(e) {
+          e.stopPropagation()
+          // console.log(e.target);
+          ownMatName = e.target.parentNode.parentNode.parentNode.parentNode.children[1].children[0].children[0]
+            .innerHTML;
+          ownMatPrice = e.target.parentNode.parentNode.parentNode.parentNode.children[1].children[2].children[1]
+            .children[0].innerHTML;
+          // console.log(ownMatPrice);
+          materialMatSort = "material";
+          toolMatSort = "tool";
+
+          var msg = `您確定要購買【 ${ownMatName} 】這項商品嗎，它須花費【 ${ownMatPrice} 】元!!\n確定要購買請按『確定』，否則請按『取消』返回。`;
+
+          if (confirm(msg) == true) {
+
+            ownMatURL = this.items[theIndex - 1].url;
+            itemIndex = this.items[theIndex - 1].id.substring(8);
+            //==============如果跳窗抓到的URL值不是soldOut才可以購買(否則是重複購買)目前會員編號寫死======================================
+            if (ownMatURL != "./img/product/decorate/sold.png") {
+              if (0 < itemIndex && itemIndex < 54) {
+                $.ajax({
+                  type: "POST",
+                  url: "http://localhost/dd104g2_test/js/shop_saveImg.php",
+                  data: {
+                    matName: ownMatName,
+                    image: ownMatURL,
+                    matLSort: materialMatSort,
+                  },
+                })
+              } else if (54 <= itemIndex && itemIndex < 65) {
+                $.ajax({
+                  type: "POST",
+                  url: "http://localhost/dd104g2_test/js/shop_saveImg.php",
+                  data: {
+                    matName: ownMatName,
+                    image: ownMatURL,
+                    matLSort: toolMatSort,
+                  },
+                })
+              }
+
+              coin = document.getElementById('coin');
+              ownMatPriceNum = parseInt(ownMatPrice);
+
+
+              var xhr2 = new XMLHttpRequest();
+              xhr2.onload = function () {
+                if (xhr2.status == 200) {
+                  let nowCoin = JSON.parse(xhr2.responseText);
+
+                  uesrCoinNum = parseInt(nowCoin[0].airCoin);
+                  if (uesrCoinNum >= ownMatPriceNum) {
+                    remainCoin = uesrCoinNum - ownMatPriceNum;
+                    // console.log(remainCoin)
+                    $.ajax({
+                      type: "POST",
+                      url: "http://localhost/dd104g2_test/js/shop_saveCoin.php",
+                      data: {
+                        remainCoin: remainCoin,
+                      },
+                    });
+                    location.reload();
+                  } else {
+
+                    alert("抱歉你的剩餘air幣不足無法購買此商品!!!")
+                  }
+                } else {
+                  alert(xhr.status);
+                }
+              }
+
+              var url = "http://localhost/dd104g2_test/js/shop_getMemberCoin.php?";
+              xhr2.open("Get", url, true);
+              xhr2.send(null);
+
+            } else {
+              alert("你已經買過此商品囉")
+            }
+
+          } else {
+            return false;
+          }
+
+
+
+
+        },
+        //====================資料庫data寫入跳窗內資料==========================================
+        // changeIndex() {
+        //   arr = [];
+        //   for (i = 0; i < this.items.length; i++) {
+        //     theIndex = this.items[i].id;
+        //     arr.push(theIndex)
+        //   }
+        //   console.log(arr);
+        changeIndex(e) {
+          theIndex = e.target.id.substring(8);
+          // console.log(theIndex);
+          var xhr = new XMLHttpRequest();
+          xhr.onload = function () {
+            if (xhr.status == 200) {
+              // showProduct();
+              let product = JSON.parse(xhr.responseText);
+              // console.log(product) 
+              i = theIndex - 1;
+              // console.log(i);
+              $('#titleInner').html(product[i].matNameCH);
+              $('#infoInner').html(product[i].matInfo);
+              $('#chanceInner').html(product[i].matChance);
+              $('#priceInner').html(product[i].prodPrice);
+              // console.log(xhr.responseText)
+            } else {
+              // alert(xhr.status);
+            }
+          }
+
+          var url = "http://localhost/dd104g2_test/js/shop_prodItemGetInfo.php?";
+          xhr.open("Get", url, true);
+          xhr.send(null);
+
+          $('#outshadow').css('opacity', '0.7');
+          $('#outshadow').css('visibility', 'visible');
+          $('#outshadow').css('zIndex', '99');
+          $('#medal').css('display', 'block');
+          $('#medal').css('zIndex', '100');
+
+        },
+        //====================Vue響應式========================================================
+        getWindowWidth(event) {
+          this.windowWidth = document.documentElement.clientWidth;
+          // console.log(this.windowWidth)
+
+        },
+        //====================分頁按鈕==========================================================
+        change(index) {
 
           if (this.windowWidth < 576) {
             if (this.page == 1) {
@@ -885,35 +1045,58 @@
               if (index < 25 && index >= 17) return true;
             }
           } else if (this.page == 1) {
+            document.getElementsByClassName("line_top")[0].style.display = "block";
+            document.getElementsByClassName("line_bottom")[0].style.display = "block";
             if (index < 10) return true;
           } else if (this.page == 2) {
+            document.getElementsByClassName("line_top")[0].style.display = "block";
+            document.getElementsByClassName("line_bottom")[0].style.display = "none";
             if (index < 20 && index >= 10) return true;
           } else if (this.page == 3) {
+            document.getElementsByClassName("line_bottom")[0].style.display = "none";
+            document.getElementsByClassName("line_top")[0].style.display = "none";
             if (index < 30 && index >= 20) return true;
           }
-
         },
-
-      },
-
-      created() {
-        var vm = this;
-        vm.items = fOO_DATA;
       },
 
       mounted() {
+
+
+        //====================Vue響應式=========================================================
         this.$nextTick(function () {
           window.addEventListener('resize', this.getWindowWidth);
           this.getWindowWidth()
 
-        })
-
+        });
+        //====================頁面onload後直接抓回64筆商城卡片資料給vue data=>items======================================
         axios
-          .get('./js/axios_post.php')
+          .get('./js/shop_axios_post.php')
           .then((res) => {
             var arr = res.data;
             for (var i = 0; i < arr.length; i++) {
               this.items[i].url = arr[i].prodUrl
+            }
+          })
+          .catch((error) => {
+            console.log(error)
+          });
+        // ===========這是從資料庫抓已購素材中的url來對比並把卡片改成soldOut ================================================
+
+        axios
+          .get('http://localhost/dd104g2_test/js/shop_getmaterial.php')
+          .then((res) => {
+            var itemArr = res.data;
+            var vm = this;
+            for (var i = 0; i < vm.items.length; i++) {
+              // console.log(vm.items[i].url)
+              // console.log(itemArr[0].matURL);
+              for (var j = 0; j < itemArr.length; j++) {
+                if (vm.items[i].url == itemArr[j].matURL) {
+                  vm.items[i].url = "./img/product/decorate/sold.png";
+                  vm.items[i].class = "bought"
+                }
+              }
             }
           })
           .catch((error) => {
@@ -924,12 +1107,10 @@
         window.removeEventListener('resize', this.getWindowWidth);
       },
 
-
     })
   </script>
-
   <script>
-    //  ================這是3D按鈕用=========================
+    //  ================這是3D按鈕用=============================================================
     $('.switchBtn').mousedown(function () {
       $(this).addClass('clicked');
     });
@@ -943,18 +1124,38 @@
       $(this).removeClass('clicked');
     });
 
-    //  ================這是跳窗用=========================
+    //  ================這是跳窗用 單純JQ版=====================================================
 
-    $('.itemCard').click(function () {
-      $('#outshadow').css('opacity', '0.7');
-      $('#outshadow').css('visibility', 'visible');
-      $('#outshadow').css('zIndex', '99');
-      $('#medal').css('display', 'block');
-      $('#medal').css('zIndex', '100');
-      e ? e.stopPropagation() : event.cancelBubble = true;
-    })
+    // $('.itemCard').click(function (e) {
+    // theIndex = $(this).index();
+    // var xhr = new XMLHttpRequest();
+    // xhr.onload = function () {
+    //   if (xhr.status == 200) {
+    //     //modify here
+    //     // showProduct();
+    //     let product = JSON.parse(xhr.responseText);
+    //     // console.log(product) 
 
-    $('.cross').click(function () {
+    //     i = theIndex - 2;
+    //     $('#titleInner').html(product[i].matNameCH);
+    //     $('#infoInner').html(product[i].matInfo);
+    //     $('#chanceInner').html(product[i].matChance);
+    //     $('#priceInner').html(product[i].prodPrice);
+
+    //     // console.log(xhr.responseText)
+    //   } else {
+    //     alert(xhr.status);
+    //   }
+    // }
+
+    // var url = "http://localhost/dd104g2_test/js/shop_prodItemGetInfo.php?";
+    // xhr.open("Get", url, true);
+    // xhr.send(null);
+    // })
+
+
+    //  ================這是關閉跳窗用===========================================================
+    $('.cross').click(function (e) {
       $('#outshadow').css('visibility', 'hidden');
       $('#outshadow').css('zIndex', '-99');
       $('#medal').css('display', 'none');
@@ -963,12 +1164,106 @@
   </script>
 
   <script>
-    // =====================這是美化下拉式選單=======================
+    // =====================這是美化下拉式選單===================================================
     $(document).ready(function () {
       $('select:not(.ignore)').niceSelect();
       FastClick.attach(document.body);
     });
   </script>
+
+  <script>
+    // =====================這是輪播圖片(資料庫抓入已購買素材)  會員編號暫寫死=======================
+    function showMaterial(jsonStr) {
+
+      let material = JSON.parse(jsonStr);
+      console.log(material)
+
+      if (material[0].matURL) {
+        for (var i = 0; i < material.length; i++) {
+          owl_item = document.querySelectorAll('.owl-item')[i].firstChild;
+          // console.log(owl_item)
+          if (owl_item.src == "http://localhost/dd104g2_test/shop.html") {
+            // alert("")
+            // console.log(material[0].matURL)
+            owl_item = material[i].matURL
+            // console.log(owl_item)
+          }
+
+          owl_imgcloned = document.querySelectorAll('.cloned')[i].firstChild;
+          // console.log(owl_imgcloned)
+          if (owl_imgcloned.src == "http://localhost/dd104g2_test/shop.html") {
+            // alert(11)
+            // console.log(material[0].matURL)
+            owl_imgcloned.src = material[i].matURL
+            // console.log(owl_imgcloned.src)
+          }
+
+          owl_imgactive = document.querySelectorAll('.active')[i].firstChild;
+          // console.log(owl_imgcloned)
+          if (owl_imgactive.src == "http://localhost/dd104g2_test/shop.html") {
+            // alert(11)
+            // console.log(material[0].matURL)
+            owl_imgactive.src = material[i].matURL
+            // console.log(owl_imgactive.src)
+          }
+        }
+      } else {
+        alert("無任何素材");
+      }
+    }
+
+
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+      if (xhr.status == 200) {
+        showMaterial(xhr.responseText);
+        // console.log(xhr.responseText)
+      } else {
+        // alert(xhr.status);
+      }
+    }
+
+    xhr.open("post", "http://localhost/dd104g2_test/js/shop_getOnlyMaterial.php", true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    let data_info = `memNo=5`;
+    xhr.send(data_info);
+  </script>
+
+  <script>
+    // ===================這是現有air幣從資料庫抓數字到網頁  會員編號暫寫死=======================
+    function showMemberInfo(jsonStr) {
+
+      coin = document.getElementById('coin');
+      let MemberInfo = JSON.parse(jsonStr);
+      // console.log(MemberInfo[0].airCoin)
+      // console.log(coin)
+      if (MemberInfo[0].memName) {
+        coin.innerHTML = MemberInfo[0].airCoin;
+      }
+    }
+
+    function getMemberInfo() {
+
+
+      var xhr3 = new XMLHttpRequest();
+      xhr3.onload = function () {
+        if (xhr3.status == 200) {
+          //modify here
+          showMemberInfo(xhr3.responseText);
+          // console.log(xhr.responseText)
+        } else {
+          // alert(xhr.status);
+        }
+      }
+
+      var url = "http://localhost/dd104g2_test/js/shop_getMemberCoin.php?";
+      xhr3.open("Get", url, true);
+      xhr3.send(null);
+    }
+    window.onload = getMemberInfo;
+  </script>
+
+
 </body>
 
 </html>

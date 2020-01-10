@@ -87,8 +87,93 @@ header {
 
         ;
     }
-
-    ;
+    //writer-letter
+    .headerText-1{
+        padding:1vw 0;
+        width:20%; 
+        text-align:center;
+    }   
+    .headerText-2{
+        width:50%;
+        display:flex;
+        flex-direction:column;
+        justify-content:center; 
+        text-align:center;
+        padding:1vw 0;
+    }
+    .paint-bucket{
+        width:40%;
+        position:absolute;
+        bottom:-90%;
+        left:8%;
+        z-index:99;
+    }
+    .shiny-big{
+        width:6%; position:absolute; bottom:13%; left:33%; z-index:99;
+    }
+    .shiny-small{
+        width:4%; position:absolute; bottom:30%; left:40%; z-index:99;
+    }
+    .yellow-paint-line{
+        width:15%; position:absolute; top:30%; left:18%; z-index:99;
+    }
+    .line-paperPlane{
+        width:40%;
+    }
+    //catch-letter
+    .catch-headerText{
+        width:45%; text-align:center; display:flex;
+        flex-direction:column; align-items:center; justify-content:space-evenly;
+    }
+    .catch-linePaperPlane{
+        width:20%; position:absolute; top:18%; right:38%;
+    }
+    .catch-yellowPaintLine{
+        width:15%; position:absolute; bottom:4%; left:38%; z-index:99;
+    }
+    .catch-shinyBig{
+        width:6%; position:absolute; top:13%; right:33%; z-index:99;
+    }
+    .catch-shinySmall{
+        width:4%; position:absolute; top:36%; right:28%; z-index:99;
+    }
+    .catch-net{
+        width:40%; position:absolute; bottom:-50%; right:2%; z-index:99;
+    }
+    //shop
+    .shop-headerText{
+        font-size:inherit;
+    }
+    .shop-pattern2{
+        width:30%; position:absolute; top:0%; right:0%; z-index:99;
+    }
+    .shop-pattern{
+        width:30%; position:absolute; bottom:-70%; right:-12%; z-index:99;
+    }
+    .shop-yellowPaintLine{
+        width: 15%; position:absolute; bottom:27%; right:15%; z-index:9;
+    }
+    //cave
+    .cave-headerText{
+        width:55%; text-align:center; display:flex;
+        flex-direction:column; align-items:center; justify-content:space-evenly;
+    }
+    .cave-pattern{
+        width:30%; position:absolute; bottom:-10%; right:10%;
+    }
+    .cave-cavheaderImg{
+        width:15%; position:absolute; right: 2%;bottom: 5%; z-index:99;
+    }
+    //user-setting
+    .userSet-hammer{
+        width: 10%; transform: rotate(-45deg); position:absolute; right: 10%; top: 1%;
+    }
+    .userSet-gear{
+        width: 18%; position:absolute; bottom:5%; right: 20%;
+    }
+    .userSet-wrench{
+        width:8%; transform: rotate(90deg); position:absolute; left: 10%; top: 40%;
+    }
 }
 
 @include respond(mediumSize) {}
@@ -106,7 +191,7 @@ header {
 
     header {
         .white-space-bg {
-            margin-top: 15%;
+            padding-top: 15%;
             background: unset;
             .head-box {
                 width: 85vw;
@@ -148,13 +233,98 @@ header {
 
                         .headpg-name {
                             font-size: 3.5rem;
-                            div{
-                                width: 100%;
-                            }
+                            
                         }
                     }
                 }
             }
+        }
+        //writer-letter
+        .headerText-1{
+            width: 25%;
+            padding: 4vw 0;
+        }   
+        .headerText-2{
+            width: 70%;
+        }
+        .paint-bucket{
+            width:50%;
+            position:absolute;
+            bottom:-46%;
+            left:4%;
+            z-index:99;
+        }
+        .shiny-big{
+            width:8%; position:absolute; bottom:30%; left:28%; z-index:99;
+        }
+        .shiny-small{
+            width:6%; position:absolute; bottom:42%; left:20%; z-index:99;
+        }
+        .yellow-paint-line{
+            width:28%; top:28%; left:23%;
+        }
+        .line-paperPlane{
+            width:50%;
+            margin-left: 42%;
+            margin-bottom: 5%;
+        }
+        //catch-letter
+        .catch-headerText{
+            width:50%;
+            justify-content: center;
+            span{
+                margin-bottom: 10%;
+            }
+        }
+        .catch-linePaperPlane{
+            width:25%;top:30%; right:23%;
+        }
+        .catch-yellowPaintLine{
+            width:28%; bottom:0; left:22%;
+        }
+        .catch-shinyBig{
+            width:8%;
+        }
+        .catch-shinySmall{
+            width:6%; top:5%;
+        }
+        .catch-net{
+            width:60%;bottom:-29%; right:-10%;
+        }
+        //shop
+        .shop-headerText{
+            font-size:inherit;
+            text-align: left;
+            width: 90%;
+        }
+        .shop-pattern2{
+            width:45%;
+        }
+        .shop-pattern{
+            width:45%;bottom:-40%; right:-9%;
+        }
+        .shop-yellowPaintLine{
+            width:28%;bottom:16%; right:26%;
+        }
+        //cave
+        .cave-headerText{
+            width:100%;
+        }
+        .cave-pattern{
+            width:50%;bottom:-55%; right:0;
+        }
+        .cave-cavheaderImg{
+            width:16%; right: 2%;bottom: 2%;
+        }
+        //user-setting
+        .userSet-hammer{
+            width: 15%;right: 6%; top: 6%;
+        }
+        .userSet-gear{
+            bottom:4%; right: 3%;
+        }
+        .userSet-wrench{
+            width:10%;left: 15%; top: 58%;
         }
     }
 }
@@ -170,7 +340,7 @@ header {
 
     header {
         .white-space-bg {
-            margin-top: 15%;
+            padding-top: 15%;
             background: unset;
 
             .head-box {
@@ -212,14 +382,98 @@ header {
                         top: 3vw;
 
                         .headpg-name {
-                            font-size: 3.5rem;
-                            div{
-                                width: 100%;
-                            }
+                            font-size: 3rem;
                         }
                     }
                 }
             }
+        }
+        //writer-letter
+        .headerText-1{
+            width: 25%;
+            padding: 4vw 0;
+        }   
+        .headerText-2{
+            width: 70%;
+        }
+        .paint-bucket{
+            width:50%;
+            position:absolute;
+            bottom:-46%;
+            left:4%;
+            z-index:99;
+        }
+        .shiny-big{
+            width:8%; position:absolute; bottom:30%; left:28%; z-index:99;
+        }
+        .shiny-small{
+            width:6%; position:absolute; bottom:42%; left:20%; z-index:99;
+        }
+        .yellow-paint-line{
+            width:28%; top:28%; left:23%;
+        }
+        .line-paperPlane{
+            width:50%;
+            margin-left: 42%;
+            margin-bottom: 5%;
+        }
+        //catch-letter
+        .catch-headerText{
+            width:50%;
+            justify-content: center;
+            span{
+                margin-bottom: 10%;
+            }
+        }
+        .catch-linePaperPlane{
+            width:25%;top:30%; right:23%;
+        }
+        .catch-yellowPaintLine{
+            width:28%; bottom:0; left:22%;
+        }
+        .catch-shinyBig{
+            width:8%;
+        }
+        .catch-shinySmall{
+            width:6%; top:5%;
+        }
+        .catch-net{
+            width:60%;bottom:-29%; right:-10%;
+        }
+        //shop
+        .shop-headerText{
+            font-size:inherit;
+            text-align: left;
+            width: 90%;
+        }
+        .shop-pattern2{
+            width:45%;
+        }
+        .shop-pattern{
+            width:45%;bottom:-40%; right:-9%;
+        }
+        .shop-yellowPaintLine{
+            width:28%;bottom:16%; right:26%;
+        }
+        //cave
+        .cave-headerText{
+            width:100%;
+        }
+        .cave-pattern{
+            width:50%;bottom:-55%; right:0;
+        }
+        .cave-cavheaderImg{
+            width:16%; right: 2%;bottom: 2%;
+        }
+        //user-setting
+        .userSet-hammer{
+            width: 15%;right: 6%; top: 6%;
+        }
+        .userSet-gear{
+            bottom:4%; right: 3%;
+        }
+        .userSet-wrench{
+            width:10%;left: 15%; top: 58%;
         }
     }
 }
