@@ -1098,6 +1098,16 @@
         }
 
         }
+        #myCanvas{
+            margin: 0 auto;
+            display: block;
+            background-color: #fff;
+            // background-image: url(../img/share/postCard-vertical.svg);
+            // background-position: center;
+            // background-size: cover;
+            // display: flex;
+            position: relative;
+        }
     }
 
     @include foldthePlane();

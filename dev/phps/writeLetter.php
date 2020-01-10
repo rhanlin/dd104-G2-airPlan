@@ -1,18 +1,36 @@
 <?php
-  $upload_dir = "userUploadImg//";  //檢查資料夾存不存在
+  $upload_dir = "userUploadImg//";  
+  $upload_canvas = "userLetterCanvas//";
+  //檢查資料夾存不存在
   if( ! file_exists($upload_dir )){
     mkdir($upload_dir);
   }
+  if(! file_exists($upload_canvas )){
+    mkdir($upload_canvas);
+  }
 
   //處理base64檔案
-  $imgData = $_POST['imgUrl'];//接收ajax送來的資料
+  $imgData = $_POST['imgUrl'];//接收使用者上傳的圖片
+  $letImgUrl = $_POST['hidden_data'];//接收使用者的信件canvas截圖
+  
+  $imgData = str_replace('data:image/png;base64,', '', $imgData);//將檔案格式的資訊拿掉:png
+  $imgData = str_replace('data:image/jpeg;base64,', '', $imgData);//將檔案格式的資訊拿掉:jpeg
+  $imgData = str_replace('data:image/gif;base64,', '', $imgData);//將檔案格式的資訊拿掉:gif
 
-  $imgData = str_replace('data:image/png;base64,', '', $imgData);//將檔案格式的資訊拿掉
+  $letImgUrl = str_replace('data:image/png;base64,', '', $letImgUrl);//將檔案格式的資訊拿掉
+
+  // echo $imgData;
+  // exit();
   $data = base64_decode($imgData);
+  $letImgUrl_Data = base64_decode($letImgUrl);
 
-  $imgName =date("Ymd-Gis");
+  $imgName =date("Ymd_Gis");
   $userUploadImg = $upload_dir . $imgName . ".jpg";
-  $success = file_put_contents( $userUploadImg, $data )
+  $userLetterCanvas = $upload_canvas . "letImg_" .$imgName . ".png";
+
+  $success = file_put_contents( $userUploadImg, $data );
+  $letSuccess = file_put_contents( $userLetterCanvas, $letImgUrl_Data );
+
 ?>
 
 <?php
@@ -21,10 +39,10 @@ try {
   //...
   //把寫信內容新增進資料庫 
   require_once("connectBook_root.php");
-  $sql = "insert into `letter`( memNo, letPower, matPatNo, matPosNo, letTime, letTitle, letContent, imgUrl,mesCount, letSort, letStatus) VALUES ( 10, 1, :matPatNo, :matPosNo, :letTime, :letTitle, :letContent, :imgUrl, 0, :letSort, 0)";
+  $sql = "insert into `letter`( memNo, letPower, matPatNo, matPosNo, letTime, letTitle, letContent, imgUrl,mesCount, letSort, letStatus, letImgUrl) VALUES ( 10, 1, :matPatNo, :matPosNo, :letTime, :letTitle, :letContent, :imgUrl, 0, :letSort, 0, :letImgUrl)";
 
   date_default_timezone_set("Asia/Taipei");  //設定時區
-  $letTime=date("Y-n-j G:i:s");  //將時間格式化
+  $letTime=date("Y-n-j H:i:s");  //將時間格式化
 
   $letInsert = $pdo->prepare($sql);
   $letInsert->bindValue(':matPatNo',$_POST['matPatNo']);
@@ -34,54 +52,25 @@ try {
   $letInsert->bindValue(':letContent',$_POST['letContent']);
   $letInsert->bindValue(':imgUrl',$userUploadImg);
   $letInsert->bindValue(':letSort',$_POST['letSort']);
+  $letInsert->bindValue(':letImgUrl',$userLetterCanvas);
   $letInsert->execute();
 
-  echo 'success';
 
-  // switch ($_FILES['image']['error']) {
-  //   case UPLOAD_ERR_OK:
-  //     # 新增一個資料夾
-  //     $dir = "userLetUploadImg";
-  //     if( file_exists($dir) == false ) mkdir($dir);
-  //     # 複製搬移圖片
-  //     $from = $_FILES['userUploadImage']['tmp_name'];
-  //     $to = "$dir/".$_FILES['userUploadImage']['name'];
-  //     if( copy($from,$to) ){
-  //       //新增信件內容
-  //       require_once("connectBook_root.php");
-  //       $sql = "insert into `letter`( memNo, letPower, matPattNo1, matPattNo2, letTime, letTitle, letContent, imgUrl, mesCount, letSort, letStatus, letImgUrl) VALUES ( 10, 1, :matPattNo1, :matPattNo2, '2020-01-07 21:00:00', :letTitle, :letContent, :imgUrl, 0, :letSort, 0, null);";
-        
-  //       $letInsert = $pdo->prepare($sql);
-  //       $letInsert->bindValue(':matPattNo1',$_POST['userPattern']);
-  //       $letInsert->bindValue(':matPattNo2',$_POST['userStamp']);
-  //       $letInsert->bindValue(':letTitle',$_POST['letterTitle']);
-  //       $letInsert->bindValue(':letContent',$_POST['letterContant']);
-  //       $letInsert->bindValue(':imgUrl',$_FILES['userUploadImage']['name']);
-  //       $letInsert->bindValue(':letSort',$_POST['letSort']);
-  //       $letInsert->execute();
-  //       echo "完成寫信！";
+  $letNo = $pdo->lastInsertId();
+  $imgSql = "select letImgUrl from `letter` where letNo= $letNo";
+  $letImg = $pdo->query($imgSql);
+  $letImgRow = $letImg->fetch(PDO::FETCH_ASSOC);
+  // $letImgRow = $letImg->fetchAll(PDO::FETCH_ASSOC);
 
-  //     }else{
-  //       echo "上傳失敗!";
-  //     }
-  //   break;
-  
-  //   case UPLOAD_ERR_INI_SIZE:
-  //     echo "圖片檔案過大";
-  //   break;
-  
-  //   case UPLOAD_ERR_PARTIAL:
-  //     echo "圖片異常，請重新再試";
-  //   break;
-  
-  //   case UPLOAD_ERR_NO_FILE:
-  //     echo "請上傳圖片";
-  //   break;
-  
-  //   default:
-  //     echo "['error']: ", $_FILES['image']['errot'] , "<br>";
-  //     break;
+  // foreach($letImgRow as $url){
+  //   $info[] = [
+  //     'url'=>$url['letImgUrl'],
+  //   ];
   // }
+  // echo print_r($info);
+  // echo json_encode([ 'status'=>'success', 'data'=>$info]);
+  $letImgRow = str_replace('userLetterCanvas//', './phps/userLetterCanvas/', $letImgRow);//把前端要用的url做好
+  echo json_encode(['data'=>$letImgRow]);
 
 } catch (PDOException $e) {
   echo "例外行號 : ", $e->getLine(),"<br>";

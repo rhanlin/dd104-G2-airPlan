@@ -27,6 +27,14 @@ let vmUserStamp = new Vue({
       })
   },
 });
+
+
+let vmImgWrap = new Vue({
+  el: '#imgWrap',
+  data: {
+    letUrl: '',
+  },
+});
 function confirmSubmit(){
   
   if(confirm("確定送出嗎？")){

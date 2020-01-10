@@ -78,7 +78,7 @@ let vm2 = new Vue({
       this.showUploadImg = `url('${e.target.result}')`;
       this.letterUploadImg = e.target.result;
       document.getElementById('hookimg').style.animationName = "hookimgRise";
-      console.log(this.letterUploadImg);
+      // console.log(this.letterUploadImg);
       
     },
   },
@@ -157,7 +157,8 @@ for (let i = 0; i < submitStamp.length; i++) {
     e.stopImmediatePropagation();
     // let letterStamp = parseInt(e.target.firstChild.value)+1;
     // console.log(e.target);
-    writeLetterExm();
+    saveImage();//先存好canvas
+    // writeLetterExm();
   })
 }
 
@@ -167,7 +168,7 @@ function writeLetterExm() {
   let letterContant = document.getElementById('letterContant');
   let lettrtCat = document.getElementsByName('letSort');
   // console.log(lettrtCat[0].checked);
-
+  
   //判斷 信件分類
   let checkflag = 0;
   for (var i = 0; i < lettrtCat.length; i++) {
@@ -182,12 +183,120 @@ function writeLetterExm() {
   } else if (letterContant.value == "") {
     alert("請輸入信件內容");
   } else {
-    //判斷必要欄位皆有填值，前往下一步->摺紙
-    confirmSubmit();
+    //判斷必要欄位皆有填值
+    
+    confirmSubmit();//前往下一步->摺紙
   }
 }
 
+//把信件存成圖片
+var counter = 0;
+let canvas = document.getElementById('myCanvas');
+let context = canvas.getContext("2d");
+// let imgCtx = canvas.getContext("2d");
+//按實際渲染倍率來縮放canvas
+let getPixelRatio = function (context) {
+  let backingStore = context.backingStorePixelRatio ||
+      context.webkitBackingStorePixelRatio ||
+      context.mozBackingStorePixelRatio ||
+      context.msBackingStorePixelRatio ||
+      context.oBackingStorePixelRatio ||
+      context.backingStorePixelRatio || 1;
+  return (window.devicePixelRatio || 1) / backingStore;
+}
+let ratio = getPixelRatio(context);
+canvas.style.width = canvas.width + 'px';
+canvas.style.height = canvas.height + 'px';
+ 
+canvas.width = canvas.width * ratio;
+canvas.height = canvas.height * ratio;
 
+context.scale(ratio, ratio);
+// context.textBaseline = 'top';
+context.fillStyle = "#212121";
+
+function b(arr, target, context) {
+  let low = 0
+  let high = arr.length - 1
+  let mid = low + Math.floor((high - low) / 2)
+  let i = 0
+  if(high < low) return -1;
+  while(high > low) {
+    var s = arr.slice(0, mid + 1).join('')
+    var len = context.measureText(s).width
+    if (len < target) {
+      low = mid
+    } else {
+      high = mid - 1
+    }
+    mid = low + Math.floor((high - low + 1) / 2)
+    counter++;
+  }
+  return mid
+}
+
+CanvasRenderingContext2D.prototype.wrapText = function (text, x, y, maxWidth, lineHeight , fontSize) {
+	if (typeof text != 'string' || typeof x != 'number' || typeof y != 'number') {
+		return;
+	}
+	
+	var context = this;
+	context.font=`${fontSize}px Noto-Sans-TC`;
+	// 字符分隔
+	var arrText = text.split('');
+	var line = '';
+     
+    var start = 0;
+    var end = 0
+    var lineArr = []
+    var line = ''
+    var isEnd = false
+  
+    while(end !== -1) {
+      end = b(arrText, maxWidth, context)
+      // console.log('start: ' + start, 'end: ' + end)
+      lineArr = arrText.splice(start, end + 1)
+      line = lineArr.join('')
+      context.fillText(line, x, y);
+      y += lineHeight;
+    }
+}
+
+function saveImage(){
+  console.log('執行到！');
+  
+  let textTittle = document.getElementById('letterTitle');
+  let letterContant = document.getElementById('letterContant');
+  let img = new Image();
+  let letFrameImg = new Image();
+  let canvasWidth = parseInt(document.getElementById('myCanvas').style.width);
+  let canvasHeight = parseInt(document.getElementById('myCanvas').style.height);
+
+  letFrameImg.src = "./img/share/postCard-vertical.svg";//信件邊框的裝飾圖
+  img.src = vm2.letterUploadImg;//user上傳的圖片
+
+  //信件內容
+  img.addEventListener('load',()=>{
+    context.clearRect(0, 0, canvas.width, canvas.height);//清空畫布
+    
+    let widthScale =  img.width/160;//換算user上傳圖片要縮小的比例
+    img.width = img.width/widthScale;
+    img.height = img.height/widthScale;
+    
+    context.drawImage(img, 40, 50,img.width,img.height);
+    
+	  context.wrapText(textTittle.value, 220, 70, 230, 40, 30);
+    context.wrapText(letterContant.value, 40, 240, 415, 28, 18);
+    //文字長度參考: https://news.ltn.com.tw/news/world/breakingnews/3035551 要在限制標題跟內文字數
+    //信件邊框
+    letFrameImg.addEventListener('load',()=>{
+      context.drawImage(letFrameImg, 0, 0, canvasWidth, canvasHeight);
+      writeLetterExm();//檢查表單內容格式是否正確 !!螢幕寬度縮小會執行不到!!!!
+    })
+  })
+}
+
+//AJAX送資料到後端
 function submitToLetterTable() {
   // let formData = new FormData(document.getElementById('wrtLetForm'))
   // console.log(formData);
@@ -200,25 +309,35 @@ function submitToLetterTable() {
   letterImg = letterImg.replace(/\+/g,"%2B");
   let letterPattern = vm3.letterPattern;
   let userStamp = vmUserStamp.letterStamp;
-  // let letTime = new Date().;
+  let canvas = document.getElementById('myCanvas');
+  let hidden_data = canvas.toDataURL("image/png");
+  hidden_data = hidden_data.replace(/\&/g,"%26");
+  hidden_data = hidden_data.replace(/\+/g,"%2B");
+  // document.getElementById('hidden_data').value = letImgUrl;
+  // console.log(hidden_data);
+  
   //--- 產生XMLHttpRequest物件
   let xhr = new XMLHttpRequest();
+  //--- 設定好所要連結的程式
+  let url = "./phps/writeLetter.php";
   //註冊callback function 來判斷是否新增資料完成
   xhr.onload = function(){
     if(xhr.status == 200){
-      console.log(xhr.responseText);
+      // let json = xhr.responseText;
+      let json = JSON.parse(xhr.responseText);
+      vmImgWrap.letUrl = `url('${json.data.letImgUrl}')`;//把圖片路徑塞去摺紙的畫面上
+      console.log(vmImgWrap.letUrl);
     }else{
       console.log('上傳失敗');
 
     }
   }
-  //--- 設定好所要連結的程式
-  let url = "./phps/writeLetter.php";
+  
   xhr.open("POST", url, true);
   //--- 送出資料
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-  let data_info = `memNo=10&letPower=1&matPatNo=${letterPattern}&matPosNo=${userStamp}&letTitle=${letterTitle}&letContent=${letterContant}&imgUrl=${letterImg}&mesCount=0&letSort=${lettrtCat}&letStatus=0&letImgUrl=null`;
+  let data_info = `memNo=10&letPower=1&matPatNo=${letterPattern}&matPosNo=${userStamp}&letTitle=${letterTitle}&letContent=${letterContant}&imgUrl=${letterImg}&mesCount=0&letSort=${lettrtCat}&letStatus=0&hidden_data=${hidden_data}`;
   //memNo=10 10要改成${變數} 此變數從session撈出目前登入的用戶number
   
   xhr.send(data_info);
