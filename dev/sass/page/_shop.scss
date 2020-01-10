@@ -38,6 +38,16 @@ $arrow_color: $gray !default;
     overflow: hidden;
     width: 100%;
 
+    #coinBox {
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 10%;
+      border: 2px solid black;
+      background-color: blanchedalmond;
+      z-index: 500;
+    }
+
     #section1 {
       width: 90%;
       margin: 0 auto;
@@ -223,6 +233,10 @@ $arrow_color: $gray !default;
               #itemCard64 {
                 transform: translate(25%, -30%) rotate(15deg);
 
+                &.bought {
+                  background-color: rgba(0, 0, 0, 0.8);
+                }
+
                 img {
                   width: 2.5vw;
                   transform: translate(0%, -70%) rotate(330deg);
@@ -236,6 +250,10 @@ $arrow_color: $gray !default;
               #itemCard52,
               #itemCard62 {
                 transform: translate(15%, -10%) rotate(355deg);
+
+                &.bought {
+                  background-color: rgba(0, 0, 0, 0.8);
+                }
 
                 img {
                   width: 2.5vw;
@@ -253,6 +271,10 @@ $arrow_color: $gray !default;
               #itemCard63 {
                 transform: translate(0, 5%) rotate(360deg);
 
+                &.bought {
+                  background-color: rgba(0, 0, 0, 0.8);
+                }
+
                 img {
                   width: 2.5vw;
                   transform: translate(70%, -70%) rotate(360deg);
@@ -268,6 +290,10 @@ $arrow_color: $gray !default;
               #itemCard50,
               #itemCard44 {
                 transform: translate(0, 10%) rotate(350deg);
+
+                &.bought {
+                  background-color: rgba(0, 0, 0, 0.8);
+                }
 
                 img {
                   width: 2.5vw;
@@ -286,6 +312,10 @@ $arrow_color: $gray !default;
               #itemCard58 {
                 transform: translate(0, 5%) rotate(15deg);
 
+                &.bought {
+                  background-color: rgba(0, 0, 0, 0.8);
+                }
+
                 img {
                   width: 2.5vw;
                   transform: translate(0%, -80%) rotate(350deg);
@@ -302,6 +332,10 @@ $arrow_color: $gray !default;
               #itemCard56 {
                 transform: translate(0%, 0%) rotate(350deg);
 
+                &.bought {
+                  background-color: rgba(0, 0, 0, 0.8);
+                }
+
                 img {
                   width: 2.5vw;
                   transform: translate(100%, -80%) rotate(360deg);
@@ -317,6 +351,10 @@ $arrow_color: $gray !default;
               #itemCard57 {
                 transform: translate(0%, 0%) rotate(15deg);
 
+                &.bought {
+                  background-color: rgba(0, 0, 0, 0.8);
+                }
+
                 img {
                   width: 2.5vw;
                   transform: translate(0%, -70%) rotate(340deg);
@@ -330,6 +368,10 @@ $arrow_color: $gray !default;
               #itemCard61 {
                 transform: translate(-0%, -10%) rotate(0deg);
 
+                &.bought {
+                  background-color: rgba(0, 0, 0, 0.8);
+                }
+
                 img {
                   width: 2.5vw;
                   transform: translate(15%, -70%) rotate(330deg);
@@ -342,6 +384,10 @@ $arrow_color: $gray !default;
               #itemCard59 {
                 transform: translate(-0%, -10%) rotate(10deg);
 
+                &.bought {
+                  background-color: rgba(0, 0, 0, 0.8);
+                }
+
                 img {
                   width: 2.5vw;
                   transform: translate(15%, -70%) rotate(15deg);
@@ -353,6 +399,10 @@ $arrow_color: $gray !default;
               #itemCard30,
               #itemCard60 {
                 transform: translate(-0%, -0%) rotate(0deg);
+
+                &.bought {
+                  background-color: rgba(0, 0, 0, 0.8);
+                }
 
                 img {
                   width: 2.5vw;
@@ -443,255 +493,257 @@ $arrow_color: $gray !default;
           display: none;
         }
       }
-    
 
-    #outshadow {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 1);
-      /* 預設：完全透明；設定 z-index: -1 會在整個頁面的後方，看不到，才不會擋到頁面元素。 */
-      z-index: -99;
-      visibility: hidden;
-    }
 
-    #medal {
-      width: 450px;
-      height: 600px;
-      background-image: url('../img/product/decorate/model.jpg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      z-index: 99;
-      transform: translate(-50%, -50%);
-      position: fixed;
-      top: 50%;
-      left: 70%;
-      transition: all 1s;
-      display: none;
-
-      .cross {
-        position: absolute;
-        right: 7%;
-        width: 7%;
-        height: 10%;
-
-        &:hover {
-          cursor: pointer;
-        }
-
-        &:before {
-          content: '';
-          position: absolute;
-          top: 0%;
-          left: 0%;
-          width: 3px;
-          height: 50%;
-          background-color: black;
-          transform: rotate(45deg);
-        }
-
-        &:after {
-          content: '';
-          position: absolute;
-          top: 0%;
-          left: 0%;
-          width: 3px;
-          height: 50%;
-          background-color: black;
-          transform: rotate(315deg);
-        }
+      #outshadow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 1);
+        /* 預設：完全透明；設定 z-index: -1 會在整個頁面的後方，看不到，才不會擋到頁面元素。 */
+        z-index: -99;
+        visibility: hidden;
       }
 
-      #textBox {
-        width: 65%;
-        margin: 12% 15% 5% 15%;
+      #medal {
+        width: 450px;
+        height: 600px;
+        background-image: url('../img/product/decorate/model.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 99;
+        transform: translate(-50%, -50%);
+        position: fixed;
+        top: 50%;
+        left: 70%;
+        transition: all 1s;
+        display: none;
 
-        .titleBox {
-          letter-spacing: 0.2rem;
-          font-weight: 700;
-          line-height: 3vw;
-        }
+        .cross {
+          position: absolute;
+          right: 7%;
+          width: 7%;
+          height: 10%;
 
-        .textBox {
-          letter-spacing: 0.2rem;
-          line-height: 2.5rem;
+          &:hover {
+            cursor: pointer;
+          }
 
-        }
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 3px;
+            height: 50%;
+            background-color: black;
+            transform: rotate(45deg);
+          }
 
-        .chance_priceBox {
-          letter-spacing: 0.2rem;
-          line-height: 2.5vw;
-        }
-      }
-
-      .product_display {
-        margin: 10% 10% 5% 10%;
-        width: 70%;
-        display: flex;
-        align-items: center;
-
-        .model_material {
-          width: 40%;
-
-          img {
-            width: 100%;
+          &:after {
+            content: '';
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 3px;
+            height: 50%;
+            background-color: black;
+            transform: rotate(315deg);
           }
         }
 
-        .model_arrow {
-          width: 20%;
+        #textBox {
+          width: 65%;
+          margin: 12% 15% 5% 15%;
 
-          img {
-            width: 70%;
+          .titleBox {
+            letter-spacing: 0.2rem;
+            font-weight: 700;
+            line-height: 3vw;
+          }
+
+          .textBox {
+            letter-spacing: 0.2rem;
+            line-height: 2.5rem;
+
+          }
+
+          .chance_priceBox {
+            letter-spacing: 0.2rem;
+            line-height: 2.5vw;
           }
         }
 
-        .model_product {
+        .product_display {
+          margin: 10% 10% 5% 10%;
+          width: 70%;
+          display: flex;
+          align-items: center;
 
-          width: 40%;
+          .model_material {
+            width: 40%;
 
-          img {
-            width: 95%;
+            img {
+              width: 100%;
+            }
+          }
+
+          .model_arrow {
+            width: 20%;
+
+            img {
+              width: 70%;
+            }
+          }
+
+          .model_product {
+
+            width: 40%;
+
+            img {
+              width: 95%;
+            }
           }
         }
-      }
 
-      .orderBtnBoxGroup {
-        position: relative;
-        width: 35%;
-        margin: 0% 25% 0% 27%;
+        .orderBtnBoxGroup {
+          position: relative;
+          width: 35%;
+          margin: 0% 25% 0% 27%;
 
-        .orderBtnBox {
-          position: absolute;
-          width: 100%;
-
-          .orderBtn {
-
-            font-size: 20px;
-            letter-spacing: 0.2em;
+          .orderBtnBox {
             position: absolute;
             width: 100%;
-            height: 50px;
-            background-color: #FFD139;
-            border: $border;
-            text-align: center;
-            line-height: 40px;
-            border-radius: 0.3em;
-            cursor: pointer;
-            color: white;
-            text-shadow: 1px 1px 1px black;
 
-            .orderText {
-              font-weight: 900;
-              font-size: 40px;
-              color: #06a4ff;
-              @include stroke(2, #0f0f0f);
-              font-weight: 500;
+            .orderBtn {
+              font-size: 20px;
+              letter-spacing: 0.2em;
+              position: absolute;
+              width: 100%;
+              height: 50px;
+              background-color: #FFD139;
+              border: $border;
+              text-align: center;
+              line-height: 40px;
+              border-radius: 0.3em;
+              cursor: pointer;
+              color: white;
+              text-shadow: 1px 1px 1px black;
 
-              &::before {
-                content: '購買';
-                position: absolute;
-                left: 17%;
+              .orderText {
+                padding: 3% 10%;
                 font-weight: 900;
                 font-size: 40px;
-                color: #fff;
+                color: #06a4ff;
                 @include stroke(2, #0f0f0f);
                 font-weight: 500;
+
+                &::before {
+                  content: '購買';
+                  position: absolute;
+                  left: 17%;
+                  font-weight: 900;
+                  font-size: 40px;
+                  color: #fff;
+                  @include stroke(2, #0f0f0f);
+                  font-weight: 500;
+
+                }
               }
-            }
-
-            &:before {
-              content: '';
-              position: absolute;
-              width: 30%;
-              height: 50%;
-              left: -22%;
-              bottom: -5%;
-              border-radius: 0.3em;
-              border: $border;
-              // background-color: #FFD139;
-              // background-image: url("../img/product/decorate/materail-04.svg");
-              // background-size: cover;
-              transform: rotate(90deg) skew(60deg);
-              background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-              background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-              background-size: 7px 7px;
-            }
-
-            &:after {
-              content: '';
-              position: absolute;
-              position: absolute;
-              width: 30%;
-              height: 50%;
-              left: 92%;
-              bottom: -5%;
-              border-radius: 0.3em;
-              border: $border;
-              // background-color: #FFD139;
-              // background-image: url("../img/product/decorate/materail-04.svg");
-              // background-size: cover;
-              transform: rotate(90deg) skew(300deg);
-              background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-              background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-              background-size: 7px 7px;
-            }
-
-            span {
-              position: absolute;
-              width: 126%;
-              height: 45px;
-              left: -13%;
-              top: 65%;
-              border: $border;
-              background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-              background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-              background-size: 7px 7px;
-              border-radius: 0.1em;
-              z-index: -1;
-
-            }
-
-
-            &.clicked {
-              top: 20px;
-
 
               &:before {
-                width: 28%;
-                height: 35%;
-                left: -20%;
-                bottom: 20%;
-                border-radius: 0.1em;
-                transform: rotate(90deg) skew(45deg);
-                background-size: 6px 6px;
+                content: '';
+                position: absolute;
+                width: 30%;
+                height: 50%;
+                left: -22%;
+                bottom: -5%;
+                border-radius: 0.3em;
+                border: $border;
+                // background-color: #FFD139;
+                // background-image: url("../img/product/decorate/materail-04.svg");
+                // background-size: cover;
+                transform: rotate(90deg) skew(60deg);
+                background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                background-size: 7px 7px;
               }
 
               &:after {
-                width: 28%;
-                height: 35%;
-                left: 91%;
-                bottom: 20%;
-                border-radius: 0.1em;
-                transform: rotate(90deg) skew(310deg);
-                background-size: 5px 5px;
+                content: '';
+                position: absolute;
+                position: absolute;
+                width: 30%;
+                height: 50%;
+                left: 92%;
+                bottom: -5%;
+                border-radius: 0.3em;
+                border: $border;
+                // background-color: #FFD139;
+                // background-image: url("../img/product/decorate/materail-04.svg");
+                // background-size: cover;
+                transform: rotate(90deg) skew(300deg);
+                background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                background-size: 7px 7px;
               }
 
               span {
-                top: 45%;
-                height: 35px;
-                left: -10%;
-                width: 120%;
+                position: absolute;
+                width: 126%;
+                height: 45px;
+                left: -13%;
+                top: 65%;
+                border: $border;
+                background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                background-size: 7px 7px;
+                border-radius: 0.1em;
+                z-index: -1;
+
+              }
+
+
+              &.clicked {
+                top: 20px;
+
+
+                &:before {
+                  width: 28%;
+                  height: 35%;
+                  left: -20%;
+                  bottom: 20%;
+                  border-radius: 0.1em;
+                  transform: rotate(90deg) skew(45deg);
+                  background-size: 6px 6px;
+                }
+
+                &:after {
+                  width: 28%;
+                  height: 35%;
+                  left: 91%;
+                  bottom: 20%;
+                  border-radius: 0.1em;
+                  transform: rotate(90deg) skew(310deg);
+                  background-size: 5px 5px;
+                }
+
+                span {
+                  top: 45%;
+                  height: 35px;
+                  left: -10%;
+                  width: 120%;
+                }
               }
             }
           }
         }
-      }
 
+      }
     }
-}
+
     #pile {
       max-width: 80%;
       height: 30vw;
@@ -1401,14 +1453,14 @@ $arrow_color: $gray !default;
                 }
               }
 
-              .controlBox8 {
+              .controlBox7 {
                 text-align: center;
                 width: 33.3%;
                 border: $border;
                 background-color: #fff;
                 z-index: 39;
 
-                .controlBox8_button {
+                .controlBox7_button {
                   position: relative;
                   width: 100%;
                   top: -35%;
@@ -1420,7 +1472,7 @@ $arrow_color: $gray !default;
                     left: 15%;
                   }
 
-                  .controlBtn8 {
+                  .controlBtn7 {
                     outline: none;
                     width: 100%;
                     background-color: #FFD139;
@@ -1500,7 +1552,7 @@ $arrow_color: $gray !default;
                 }
               }
 
-              .controlBox9 {
+              .controlBox8 {
                 text-align: center;
                 width: 33.3%;
                 border: $border;
@@ -1508,7 +1560,7 @@ $arrow_color: $gray !default;
                 z-index: 38;
 
 
-                .controlBox9_button {
+                .controlBox8_button {
                   position: relative;
                   transform: translateY(-5%);
                   width: 100%;
@@ -1527,7 +1579,7 @@ $arrow_color: $gray !default;
                     display: none;
                   }
 
-                  .controlBtn9 {
+                  .controlBtn8 {
                     outline: none;
                     width: 135%;
                     background-color: #FFD139;
@@ -1603,14 +1655,14 @@ $arrow_color: $gray !default;
               }
 
 
-              .controlBox10 {
+              .controlBox9 {
                 text-align: center;
                 width: 33.3%;
                 border: $border;
                 background-color: #fff;
                 z-index: 37;
 
-                .controlBox10_button {
+                .controlBox9_button {
                   position: relative;
                   width: 100%;
                   top: -35%;
@@ -1622,7 +1674,7 @@ $arrow_color: $gray !default;
                     left: 15%;
                   }
 
-                  .controlBtn10 {
+                  .controlBtn9 {
                     outline: none;
                     width: 100%;
                     background-color: #FFD139;
@@ -2121,15 +2173,12 @@ $arrow_color: $gray !default;
               transform: skew(350deg);
               background-color: #fff;
               height: 12vw;
+              width: 70%;
 
-              .owl_img {
-                margin: 25% auto;
-                width: 70%;
-
-                img {
-                  width: 100%
-                }
+              img {
+                width: 100%;
               }
+
             }
           }
         }
@@ -2579,172 +2628,173 @@ $arrow_color: $gray !default;
             }
           }
         }
-      
 
-      #medal {
-        width: 350px;
-        left: 50%;
 
-        .cross {
-          right: 0%;
-          width: 7%;
+        #medal {
+          width: 350px;
+          left: 50%;
 
-          &:before {
-            left: 30%;
+          .cross {
+            right: 0%;
+            width: 7%;
+
+            &:before {
+              left: 30%;
+            }
+
+            &:after {
+              left: 30%;
+            }
           }
 
-          &:after {
-            left: 30%;
+          #textBox {
+            width: 70%;
+            margin: 10% auto 3%;
+
+            .textBox {
+              font-size: 25px;
+              font-weight: 700;
+              line-height: 60px;
+            }
+
+            .textBox {
+              font-size: 18px;
+              letter-spacing: 0.1rem;
+              line-height: 2rem;
+            }
           }
-        }
-
-        #textBox {
-          width: 70%;
-          margin: 10% auto 3%;
-
-          .textBox {
-            font-size: 25px;
-            font-weight: 700;
-            line-height: 60px;
-          }
-
-          .textBox {
-            font-size: 18px;
-            letter-spacing: 0.1rem;
-            line-height: 2rem;
-          }
-        }
 
 
-        .orderBtnBoxGroup {
-          position: relative;
-          width: 35%;
-          margin: 5% auto;
+          .orderBtnBoxGroup {
+            position: relative;
+            width: 35%;
+            margin: 5% auto;
 
-          .orderBtnBox {
-            position: absolute;
-            width: 100%;
-
-            .orderBtn {
-
-              font-size: 20px;
-              letter-spacing: 0.2em;
+            .orderBtnBox {
               position: absolute;
               width: 100%;
-              height: 50px;
-              background-color: #FFD139;
-              border: $border;
-              text-align: center;
-              line-height: 40px;
-              border-radius: 0.3em;
-              cursor: pointer;
-              color: white;
-              text-shadow: 1px 1px 1px black;
 
-              .orderText {
-                font-weight: 900;
-                font-size: 40px;
-                color: #06a4ff;
-                @include stroke(2, #0f0f0f);
-                font-weight: 500;
+              .orderBtn {
 
-                &::before {
-                  content: '購買';
-                  position: absolute;
-                  left: 17%;
+                font-size: 20px;
+                letter-spacing: 0.2em;
+                position: absolute;
+                width: 100%;
+                height: 50px;
+                background-color: #FFD139;
+                border: $border;
+                text-align: center;
+                line-height: 40px;
+                border-radius: 0.3em;
+                cursor: pointer;
+                color: white;
+                text-shadow: 1px 1px 1px black;
+
+                .orderText {
                   font-weight: 900;
                   font-size: 40px;
-                  color: #fff;
+                  color: #06a4ff;
                   @include stroke(2, #0f0f0f);
                   font-weight: 500;
+
+                  &::before {
+                    content: '購買';
+                    position: absolute;
+                    left: 17%;
+                    font-weight: 900;
+                    font-size: 40px;
+                    color: #fff;
+                    @include stroke(2, #0f0f0f);
+                    font-weight: 500;
+                  }
                 }
-              }
-
-              &:before {
-                content: '';
-                position: absolute;
-                width: 40%;
-                height: 50%;
-                left: -30%;
-                bottom: -10%;
-                border-radius: 0.3em;
-                border: $border;
-                transform: rotate(90deg) skew(60deg);
-                background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                background-size: 7px 7px;
-              }
-
-              &:after {
-                content: '';
-                position: absolute;
-                position: absolute;
-                width: 40%;
-                height: 50%;
-                left: 90%;
-                bottom: -10%;
-                border-radius: 0.3em;
-                border: $border;
-                transform: rotate(90deg) skew(300deg);
-                background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                background-size: 7px 7px;
-              }
-
-              span {
-                position: absolute;
-                width: 138%;
-                height: 38px;
-                left: -20%;
-                top: 92%;
-                border: 3px solid black;
-                background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
-                background-size: 7px 7px;
-                border-radius: 0.1em;
-                z-index: -1;
-
-              }
-
-
-              &.clicked {
-                top: 20px;
-
 
                 &:before {
+                  content: '';
+                  position: absolute;
                   width: 40%;
-                  height: 35%;
-                  left: -25%;
-                  bottom: 15%;
-                  border-radius: 0.1em;
-                  transform: rotate(90deg) skew(50deg);
-                  background-size: 6px 6px;
+                  height: 50%;
+                  left: -30%;
+                  bottom: -10%;
+                  border-radius: 0.3em;
+                  border: $border;
+                  transform: rotate(90deg) skew(60deg);
+                  background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background-size: 7px 7px;
                 }
 
                 &:after {
+                  content: '';
+                  position: absolute;
+                  position: absolute;
                   width: 40%;
-                  ;
-                  height: 35%;
-                  left: 85%;
-                  bottom: 15%;
-                  border-radius: 0.1em;
-                  transform: rotate(90deg) skew(305deg);
-                  background-size: 5px 5px;
+                  height: 50%;
+                  left: 90%;
+                  bottom: -10%;
+                  border-radius: 0.3em;
+                  border: $border;
+                  transform: rotate(90deg) skew(300deg);
+                  background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background-size: 7px 7px;
                 }
 
                 span {
-                  top: 65%;
-                  height: 35px;
-                  left: -11%;
-                  width: 123%;
+                  position: absolute;
+                  width: 138%;
+                  height: 38px;
+                  left: -20%;
+                  top: 92%;
+                  border: 3px solid black;
+                  background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background-size: 7px 7px;
+                  border-radius: 0.1em;
+                  z-index: -1;
+
+                }
+
+
+                &.clicked {
+                  top: 20px;
+
+
+                  &:before {
+                    width: 40%;
+                    height: 35%;
+                    left: -25%;
+                    bottom: 15%;
+                    border-radius: 0.1em;
+                    transform: rotate(90deg) skew(50deg);
+                    background-size: 6px 6px;
+                  }
+
+                  &:after {
+                    width: 40%;
+                    ;
+                    height: 35%;
+                    left: 85%;
+                    bottom: 15%;
+                    border-radius: 0.1em;
+                    transform: rotate(90deg) skew(305deg);
+                    background-size: 5px 5px;
+                  }
+
+                  span {
+                    top: 65%;
+                    height: 35px;
+                    left: -11%;
+                    width: 123%;
+                  }
                 }
               }
             }
           }
-        }
 
+        }
       }
-}
+
       #pile {
         max-width: 90%;
         height: 40vw;
@@ -2904,13 +2954,7 @@ $arrow_color: $gray !default;
                   z-index: 20;
                 }
 
-                .controlBox10 {
-                  text-align: center;
-                  width: 10%;
-                  border: $border;
-                  background-color: #fff;
-                  z-index: 19;
-                }
+  
               }
 
               .colorTool {
@@ -3570,10 +3614,6 @@ $arrow_color: $gray !default;
                   z-index: 30;
                 }
 
-                .controlBox10 {
-                  width: 20%;
-                  z-index: 29;
-                }
               }
             }
           }

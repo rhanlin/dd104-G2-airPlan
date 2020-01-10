@@ -4,8 +4,8 @@ $(document).ready(function () {
     loop: true,
     nav: true,
     responsiveClass: true,
-    mouseDrag: true,
-    touchDrag: true,
+    mouseDrag: false,
+    touchDrag: false,
     responsive: {
       499: {
         items: 4,
@@ -28,10 +28,10 @@ $(document).ready(function () {
   $('.owl-carousel').on('mousewheel', function (e) {
 
     if (e.originalEvent.deltaY > 0) {
-      console.log(e.deltaY)
+      // console.log(e.originalEvent.deltaY)
       owl.trigger('next.owl');
     } else {
-      console.log(e.deltaY)
+      // console.log(e.originalEvent.deltaY)
       owl.trigger('prev.owl');
     }
     e.preventDefault();

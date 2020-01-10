@@ -27,9 +27,9 @@
         <div class="firstLetter">
             <h1 class="air_words">Plan</h1>
             <h1 class="air_shadow">Air</h1>
-            <h5 class="air_text1">拋開所有的束縛，</h5>
-            <h5 class="air_text2">將所有情緒摺成紙飛機，</h5>
-            <h5 class="air_text3">發送到世界的每個角落。</h5>
+            <h5 class="air_text1">拋開所有的束縛</h5>
+            <h5 class="air_text2">將所有情緒摺成紙飛機</h5>
+            <h5 class="air_text3">發送到世界的每個角落</h5>
         </div>
         <div class="cloudWhite"></div>
         <img class="firstPlane" src="./img/home/first/firstPlane.svg" alt="">
@@ -136,7 +136,7 @@
         </div>
         <div class="print_letterBoxOut">
             <div class="print_letterOut">
-                <img class="print_mark" src="./img/catch-letter/user-stamp/user-stamp_3.png" alt="">
+                <img class="print_mark" src="./img/userStamp/user-stamp_3.png" alt="">
             </div>
         </div>
     </section>
@@ -150,7 +150,7 @@
         </div>
         <div class="belt"></div>
         <div class="belt_letter">
-            <img src="./img/catch-letter/user-stamp/user-stamp_3.png" alt="">
+            <img src="./img/userStamp/user-stamp_3.png" alt="">
         </div>
         <img class="foldStamp1" src="./img/home/store/foldStamp.svg" alt="">
         <img class="foldStamp2" src="./img/home/store/foldStamp2.svg" alt="">
@@ -270,40 +270,15 @@
         function animate() {
             document.querySelector('.firstLetter').classList.toggle('animate');
         };
-        setTimeout(animate, 5000);
+        // setTimeout(animate, 5000);
+
+        if ($(window).width() > 576) {
+            setTimeout(animate, 5000);
+        } else {
+            setTimeout(animate, 100);
+        };
     </script>
-    <script>
-        // function destroyScrollMagic() {
-        //     var controller = null;
-        //     if (controller) {
-        //         controller = controller.destroy(true);
 
-        //         // Remove any pin-spacers
-        //         $('.scrollmagic-pin-spacer').contents().unwrap();
-
-        //         //clear all extra inline styles
-        //         $('.page-section__bg').each(function () {
-        //             var $this = $(this);
-        //             var background = $this.css('background-image');
-
-        //             $this
-        //                 .removeAttr('style')
-        //                 .css('background-image', background);
-        //         });
-        //         console.log('destroy done!');
-        //     }
-
-        // } // END destroyScrollMagic
-
-        var nwidth = $(window).width();
-        console.log(nwidth);
-        if (nwidth < 576) {
-            // var originScript = document.getElementById('scollJS');
-            $('.scollJS').attr("src", "");
-            console.log($('.scollJS'))
-            // destroyScrollMagic();
-        }
-    </script>
     <script id="scollJS" src="./js/home_scroll.js"></script>
 </body>
 

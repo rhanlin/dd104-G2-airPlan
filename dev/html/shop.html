@@ -14,6 +14,9 @@
   @@include("./layout/nav.html")
   @@include("./layout/header.html")
   <main class="shop-main">
+    <div id="coinBox">
+      <h5>你目前有 <span id="coin"></span> air幣</h5>
+    </div>
     <section id="section1">
       <div class="container">
         <div class="row">
@@ -179,9 +182,9 @@
               <div class="model_product"><img src="./img/product/decorate/model_product_1.png" alt=""></div>
             </div>
             <div class="orderBtnBoxGroup">
-              <div @click="customerOrder($event)" class="orderBtnBox">
+              <div class="orderBtnBox">
                 <div class="orderBtn">
-                  <!-- <div class="orderText">購買</div> -->
+                  <div @click="customerOrder($event)" class="orderText">購買</div>
                   <span></span>
                 </div>
               </div>
@@ -221,51 +224,53 @@
           <div class="controlToolTopFlex">
             <div class="controlToolTop">
               <div id="mode" class="controlBox1">
-                <div class="controlBox1_button clicked">
-                  <div class="controlBtn1 clicked"><img src="./img/product/toolcontrolbar/cannotWrite.png" alt=""
+                <div id="controlBox1" class="controlBox1_button clicked">
+                  <div class="controlBtn1 clicked 1"><img src="./img/product/toolcontrolbar/cannotWrite.png" alt=""
                       id="modeImg">
                   </div>
                 </div>
               </div>
               <div id="clear" class="controlBox2">
-                <div class="controlBox2_button">
-                  <div class="controlBtn2 "><img src="./img/product/toolcontrolbar/control_reset.svg" alt=""></div>
+                <div id="controlBox2" class="controlBox2_button clicked">
+                  <div class="controlBtn2 clicked "><img src="./img/product/toolcontrolbar/control_reset.svg" alt="">
+                  </div>
                 </div>
               </div>
               <div id="eraser" class="controlBox3">
-                <div class="controlBox3_button">
-                  <div class="controlBtn3 "><img src="./img/product/toolcontrolbar/control_eraser.svg" alt=""></div>
+                <div id="controlBox3" class="controlBox3_button clicked">
+                  <div class="controlBtn3 clicked"><img src="./img/product/toolcontrolbar/control_eraser.svg" alt="">
+                  </div>
                 </div>
               </div>
               <div id="group" class="controlBox4">
-                <div class="controlBox4_button">
-                  <div class="controlBtn4"><img src="./img/product/toolcontrolbar/merged.svg" alt=""></div>
+                <div id="controlBox4" class="controlBox4_button clicked">
+                  <div class="controlBtn4 clicked"><img src="./img/product/toolcontrolbar/merged.svg" alt=""></div>
                 </div>
               </div>
               <div id="ungroup" class="controlBox5">
-                <div class="controlBox5_button">
-                  <div class="controlBtn5"><img src="./img/product/toolcontrolbar/split.svg" alt=""></div>
+                <div id="controlBox5" class="controlBox5_button clicked">
+                  <div class="controlBtn5 clicked"><img src="./img/product/toolcontrolbar/split.svg" alt=""></div>
                 </div>
               </div>
               <div id="text" class="controlBox6">
-                <div class="controlBox6_button clicked">
+                <div id="controlBox6" class="controlBox6_button clicked">
                   <div class="controlBtn6 clicked"><img src="./img/product/toolcontrolbar/text-symbol.svg" alt=""></div>
                 </div>
               </div>
-              <div id="filter_Grayscale" class="controlBox8">
-                <div class="controlBox8_button">
-                  <div class="controlBtn8"><img src="./img/product/toolcontrolbar/filter.svg" alt=""></div>
+              <div id="filter_Grayscale" class="controlBox7">
+                <div id="controlBox7" class="controlBox7_button clicked">
+                  <div class="controlBtn7 clicked"><img src="./img/product/toolcontrolbar/filter.svg" alt=""></div>
                 </div>
               </div>
-              <div class="controlBox9">
-                <button id="imageUploader" class="controlBox9_button clicked">
+              <div class="controlBox8">
+                <button id="controlBox8" class="controlBox8_button  clicked">
                   <input type="file" id="file">
-                  <div class="controlBtn9 clicked"><img src="./img/product/toolcontrolbar/photo.svg" alt=""></div>
+                  <div class="controlBtn8 clicked"><img src="./img/product/toolcontrolbar/photo.svg" alt=""></div>
                 </button>
               </div>
-              <div id="outputPngBtn" class="controlBox10">
-                <div class="controlBox10_button clicked">
-                  <div class="controlBtn10 clicked"><img src="./img/product/toolcontrolbar/control_download.svg" alt="">
+              <div id="outputPngBtn" class="controlBox9">
+                <div class="controlBox9_button">
+                  <div class="controlBtn9"><img src="./img/product/toolcontrolbar/control_download.svg" alt="">
                   </div>
                 </div>
               </div>
@@ -417,45 +422,20 @@
       <div class="owl-carousel owl-theme owl-loaded owl-drag">
         <div class="owl-stage-outer">
           <div class="owl-stage">
-            <div class="owl-item">
-              <div class="owl_img"><img src="" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="" alt="" class="figure"></div>
-            </div>
-            <div class="owl-item">
-              <div class="owl_img"><img src="" alt="" class="figure"></div>
-            </div>
+            <div class="owl-item figure1"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure2"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure3"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure4"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure5"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure6"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure7"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure8"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure9"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure10"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure11"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure12"><img src="" alt="" class="figure"></div>
           </div>
         </div>
-      </div>
     </section>
   </main>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
@@ -480,396 +460,396 @@
       // bootstrap手風琴用
     })
   </script>
+
   <script>
-    //  ================這是商品Filter用=========================
-    // const PAGE_SIZE = 10;
+    //  ================Vue  這是商城區======================================================
     new Vue({
       el: '#app',
       data: {
-        visibility: 'all',
+        visibility: 'countries',
         items: [{
             style: 'countries',
             id: 'itemCard1',
             url: '',
-            class: "1"
+            class: ""
           },
           {
             style: 'countries',
             id: 'itemCard2',
             url: '',
-            class: "2"
+            class: ""
           },
           {
             style: 'countries',
             id: 'itemCard3',
             url: '',
-            class: "3"
+            class: ""
           },
           {
             style: 'countries',
             id: 'itemCard4',
             url: '',
-            class: "4"
+            class: ""
           },
           {
             style: 'countries',
             id: 'itemCard5',
             url: '',
-            class: "5"
+            class: ""
           },
           {
             style: 'countries',
             id: 'itemCard6',
             url: '',
-            class: "6"
+            class: ""
           },
           {
             style: 'countries',
             id: 'itemCard7',
             url: '',
-            class: "7"
+            class: ""
           },
           {
             style: 'countries',
             id: 'itemCard8',
             url: '',
-            class: "8"
+            class: ""
           },
           {
             style: 'countries',
             id: 'itemCard9',
             url: '',
-            class: "9"
+            class: ""
           },
           {
             style: 'countries',
             id: 'itemCard10',
             url: '',
-            class: "10"
+            class: ""
           },
           {
             style: 'countries',
             id: 'itemCard11',
             url: '',
-            class: "11"
+            class: ""
           },
           {
             style: 'countries',
             id: 'itemCard12',
             url: '',
-            class: "12"
+            class: ""
           },
           {
             style: 'countries',
             id: 'itemCard13',
             url: '',
-            class: "13"
+            class: ""
           },
           {
             style: 'countries',
             id: 'itemCard14',
             url: '',
-            class: "14"
+            class: ""
           },
           {
             style: 'countries',
             id: 'itemCard15',
             url: '',
-            class: "15"
+            class: ""
           },
           {
             style: 'frame',
             id: 'itemCard16',
             url: '',
-            class: "16"
+            class: ""
           },
           {
             style: 'frame',
             id: 'itemCard17',
             url: '',
-            class: "17"
+            class: ""
           },
           {
             style: 'frame',
             id: 'itemCard18',
             url: '',
-            class: "18"
+            class: ""
           },
           {
             style: 'frame',
             id: 'itemCard19',
             url: '',
-            class: "19"
+            class: ""
           },
           {
             style: 'frame',
             id: 'itemCard20',
             url: '',
-            class: "20"
+            class: ""
           },
           {
             style: 'frame',
             id: 'itemCard21',
             url: '',
-            class: "21"
+            class: ""
           },
           {
             style: 'frame',
             id: 'itemCard22',
             url: '',
-            class: "22"
+            class: ""
           },
           {
             style: 'frame',
             id: 'itemCard23',
             url: '',
-            class: "23"
+            class: ""
           },
           {
             style: 'frame',
             id: 'itemCard24',
             url: '',
-            class: "24"
+            class: ""
           },
           {
             style: 'simple',
             id: 'itemCard25',
             url: '',
-            class: "25"
+            class: ""
           },
           {
             style: 'simple',
             id: 'itemCard26',
             url: '',
-            class: "26"
+            class: ""
           },
           {
             style: 'simple',
             id: 'itemCard27',
             url: '',
-            class: "27"
+            class: ""
           },
           {
             style: 'simple',
             id: 'itemCard28',
             url: '',
-            class: "28"
+            class: ""
           },
           {
             style: 'simple',
             id: 'itemCard29',
             url: '',
-            class: "29"
+            class: ""
           },
           {
             style: 'simple',
             id: 'itemCard30',
             url: '',
-            class: "30"
+            class: ""
           },
           {
             style: 'simple',
             id: 'itemCard31',
             url: '',
-            class: "31"
+            class: ""
           },
           {
             style: 'animal',
             id: 'itemCard32',
             url: '',
-            class: "32"
+            class: ""
           },
           {
             style: 'animal',
             id: 'itemCard33',
             url: '',
-            class: "33"
+            class: ""
           },
           {
             style: 'animal',
             id: 'itemCard34',
             url: '',
-            class: "34"
+            class: ""
           },
           {
             style: 'animal',
             id: 'itemCard35',
             url: '',
-            class: "35"
+            class: ""
           },
           {
             style: 'animal',
             id: 'itemCard36',
             url: '',
-            class: "36"
+            class: ""
           },
           {
             style: 'animal',
             id: 'itemCard37',
             url: '',
-            class: "37"
+            class: ""
           },
           {
             style: 'animal',
             id: 'itemCard38',
             url: '',
-            class: "38"
+            class: ""
           },
           {
             style: 'animal',
             id: 'itemCard39',
             url: '',
-            class: "39"
+            class: ""
           },
           {
             style: 'handpattern',
             id: 'itemCard40',
             url: '',
-            class: "40"
+            class: ""
           },
           {
             style: 'handpattern',
             id: 'itemCard41',
             url: '',
-            class: "41"
+            class: ""
           },
           {
             style: 'handpattern',
             id: 'itemCard42',
             url: '',
-            class: "42"
+            class: ""
           },
           {
             style: 'handpattern',
             id: 'itemCard43',
             url: '',
-            class: "43"
+            class: ""
           },
           {
             style: 'handpattern',
             id: 'itemCard44',
             url: '',
-            class: "44"
+            class: ""
           },
           {
             style: 'handpattern',
             id: 'itemCard45',
             url: '',
-            class: "45"
+            class: ""
           },
           {
             style: 'handpattern',
             id: 'itemCard46',
             url: '',
-            class: "46"
+            class: ""
           },
           {
             style: 'vector',
             id: 'itemCard47',
             url: '',
-            class: "47"
+            class: ""
           },
           {
             style: 'vector',
             id: 'itemCard48',
             url: '',
-            class: "48"
+            class: ""
           },
           {
             style: 'vector',
             id: 'itemCard49',
             url: '',
-            class: "49"
+            class: ""
           },
           {
             style: 'vector',
             id: 'itemCard50',
             url: '',
-            class: "50"
+            class: ""
           },
           {
             style: 'vector',
             id: 'itemCard51',
             url: '',
-            class: "51"
+            class: ""
           },
           {
             style: 'vector',
             id: 'itemCard52',
             url: '',
-            class: "52"
+            class: ""
           },
           {
             style: 'vector',
             id: 'itemCard53',
             url: '',
-            class: "53"
+            class: ""
           },
           {
             style: 'tool',
             id: 'itemCard54',
             url: '',
-            class: "54"
+            class: ""
           },
           {
             style: 'tool',
             id: 'itemCard55',
             url: '',
-            class: "55"
+            class: ""
           },
           {
             style: 'tool',
             id: 'itemCard56',
             url: '',
-            class: "56"
+            class: ""
           },
           {
             style: 'tool',
             id: 'itemCard57',
             url: '',
-            class: "57"
+            class: ""
           },
           {
             style: 'tool',
             id: 'itemCard58',
             url: '',
-            class: "58"
+            class: ""
           },
           {
             style: 'tool',
             id: 'itemCard59',
             url: '',
-            class: "59"
+            class: ""
           },
           {
             style: 'tool',
             id: 'itemCard60',
             url: '',
-            class: "60"
+            class: ""
           },
           {
             style: 'tool',
             id: 'itemCard61',
             url: '',
-            class: "61"
+            class: ""
           },
           {
             style: 'tool',
             id: 'itemCard62',
             url: '',
-            class: "62"
+            class: ""
           },
           {
             style: 'tool',
             id: 'itemCard63',
             url: '',
-            class: "63"
+            class: ""
           },
           {
             style: 'tool',
             id: 'itemCard64',
             url: '',
-            class: "64"
+            class: ""
           },
 
         ],
@@ -879,39 +859,130 @@
         item: {},
       },
       computed: {
-        //==================ES6寫法==============================
+        //==================filter ES6寫法============================================================
         pagedListdata: function () {
           var vm = this;
-          if (vm.visibility == 'all') {
-            return vm.items
-          }
+          // if (vm.visibility == 'all') {
+          //   return vm.items
+          // }
           return vm.items.filter(
             item => item.style == vm.visibility
           );
-        }
-      },
-      //==================陣列寫法==============================
-      // filteredItems() {
-      //   // var newitems = [];
-      //   var vm = this;
-      //   if (vm.visibility == 'all') {
-      //     return vm.items
-      //   } else {
-      //     vm.items.filter(function (item) {
-      //       return vm.visibility === item.style
-      //     })
-      //     console.log(item.style)
-      //     // return newitems
-      //     return [];
-      //   }
-      // },
 
+        },
+
+        //==================filter陣列寫法=======================================================
+        // filteredItems() {
+        //   // var newitems = [];
+        //   var vm = this;
+        //   if (vm.visibility == 'all') {
+        //     return vm.items
+        //   } else {
+        //     vm.items.filter(function (item) {
+        //       return vm.visibility === item.style
+        //     })
+        //     console.log(item.style)
+        //     // return newitems
+        //     return [];
+        //   }
+        // },
+      },
       watch: {
         page() {
           this.change();
         },
       },
       methods: {
+        //==============跳窗的購買btn點按後將已購素材傳回資料庫的material表格 目前會員編號寫死======================================
+
+        customerOrder(e) {
+          e.stopPropagation()
+          // console.log(e.target);
+          ownMatName = e.target.parentNode.parentNode.parentNode.parentNode.children[1].children[0].children[0]
+            .innerHTML;
+          ownMatPrice = e.target.parentNode.parentNode.parentNode.parentNode.children[1].children[2].children[1]
+            .children[0].innerHTML;
+          // console.log(ownMatPrice);
+          materialMatSort = "material";
+          toolMatSort = "tool";
+
+          var msg = `您確定要購買【 ${ownMatName} 】這項商品嗎，它須花費【 ${ownMatPrice} 】元!!\n確定要購買請按『確定』，否則請按『取消』返回。`;
+
+          if (confirm(msg) == true) {
+
+            ownMatURL = this.items[theIndex - 1].url;
+            itemIndex = this.items[theIndex - 1].id.substring(8);
+            //==============如果跳窗抓到的URL值不是soldOut才可以購買(否則是重複購買)目前會員編號寫死======================================
+            if (ownMatURL != "./img/product/decorate/sold.png") {
+              if (0 < itemIndex && itemIndex < 54) {
+                $.ajax({
+                  type: "POST",
+                  url: "http://localhost/dev/phps/shop_saveImg.php",
+                  data: {
+                    matName: ownMatName,
+                    image: ownMatURL,
+                    matLSort: materialMatSort,
+                  },
+                })
+              } else if (54 <= itemIndex && itemIndex < 65) {
+                $.ajax({
+                  type: "POST",
+                  url: "http://localhost/dev/phps/shop_saveImg.php",
+                  data: {
+                    matName: ownMatName,
+                    image: ownMatURL,
+                    matLSort: toolMatSort,
+                  },
+                })
+              }
+
+              coin = document.getElementById('coin');
+              ownMatPriceNum = parseInt(ownMatPrice);
+
+
+              var xhr2 = new XMLHttpRequest();
+              xhr2.onload = function () {
+                if (xhr2.status == 200) {
+                  let nowCoin = JSON.parse(xhr2.responseText);
+
+                  uesrCoinNum = parseInt(nowCoin[0].airCoin);
+                  if (uesrCoinNum >= ownMatPriceNum) {
+                    remainCoin = uesrCoinNum - ownMatPriceNum;
+                    // console.log(remainCoin)
+                    $.ajax({
+                      type: "POST",
+                      url: "http://localhost/dev/phps/shop_saveCoin.php",
+                      data: {
+                        remainCoin: remainCoin,
+                      },
+                    });
+                    location.reload();
+                  } else {
+
+                    alert("抱歉你的剩餘air幣不足無法購買此商品!!!")
+                  }
+                } else {
+                  alert(xhr.status);
+                }
+              }
+
+              var url = "http://localhost/dev/phps/shop_getMemberCoin.php?";
+              xhr2.open("Get", url, true);
+              xhr2.send(null);
+
+            } else {
+              alert("你已經買過此商品囉")
+            }
+
+          } else {
+            return false;
+          }
+
+
+
+
+        },
+        //====================資料庫data寫入跳窗內資料==========================================
         // changeIndex() {
         //   arr = [];
         //   for (i = 0; i < this.items.length; i++) {
@@ -919,25 +990,8 @@
         //     arr.push(theIndex)
         //   }
         //   console.log(arr);
-        customerOrder(e) {
-          e.stopPropagation;
-          ownMatName = e.target.parentNode.parentNode.parentNode.children[1].children[0].children[0].innerHTML;
-          console.log(theIndex);
-          ownMatURL = this.items[theIndex - 1].url;
-          $.ajax({
-            type: "POST",
-            url: "http://localhost/dev/js/saveImg.php",
-            data: {
-              matName: ownMatName,
-              image: ownMatURL,
-              matLSort: "素材",
-            }
-          })
-
-        },
-
         changeIndex(e) {
-          theIndex = e.target.className;
+          theIndex = e.target.id.substring(8);
           // console.log(theIndex);
           var xhr = new XMLHttpRequest();
           xhr.onload = function () {
@@ -953,11 +1007,11 @@
               $('#priceInner').html(product[i].prodPrice);
               // console.log(xhr.responseText)
             } else {
-              alert(xhr.status);
+              // alert(xhr.status);
             }
           }
 
-          var url = "http://localhost/dd104g2_test/js/modelGetInfo.php?";
+          var url = "http://localhost/dev/phps/shop_prodItemGetInfo.php?";
           xhr.open("Get", url, true);
           xhr.send(null);
 
@@ -968,13 +1022,13 @@
           $('#medal').css('zIndex', '100');
 
         },
-
+        //====================Vue響應式========================================================
         getWindowWidth(event) {
           this.windowWidth = document.documentElement.clientWidth;
-          console.log(this.windowWidth)
+          // console.log(this.windowWidth)
 
         },
-
+        //====================分頁按鈕==========================================================
         change(index) {
 
           if (this.windowWidth < 576) {
@@ -1011,18 +1065,41 @@
 
       mounted() {
 
+
+        //====================Vue響應式=========================================================
         this.$nextTick(function () {
           window.addEventListener('resize', this.getWindowWidth);
           this.getWindowWidth()
 
-        })
-
+        });
+        //====================頁面onload後直接抓回64筆商城卡片資料給vue data=>items======================================
         axios
-          .get('./js/axios_post.php')
+          .get('http://localhost/dev/phps/shop_axios_post.php')
           .then((res) => {
             var arr = res.data;
             for (var i = 0; i < arr.length; i++) {
               this.items[i].url = arr[i].prodUrl
+            }
+          })
+          .catch((error) => {
+            console.log(error)
+          });
+        // ===========這是從資料庫抓已購素材中的url來對比並把卡片改成soldOut ================================================
+
+        axios
+          .get('http://localhost/dev/phps/shop_getmaterial.php')
+          .then((res) => {
+            var itemArr = res.data;
+            var vm = this;
+            for (var i = 0; i < vm.items.length; i++) {
+              // console.log(vm.items[i].url)
+              // console.log(itemArr[0].matURL);
+              for (var j = 0; j < itemArr.length; j++) {
+                if (vm.items[i].url == itemArr[j].matURL) {
+                  vm.items[i].url = "./img/product/decorate/sold.png";
+                  vm.items[i].class = "bought"
+                }
+              }
             }
           })
           .catch((error) => {
@@ -1036,7 +1113,7 @@
     })
   </script>
   <script>
-    //  ================這是3D按鈕用=========================
+    //  ================這是3D按鈕用=============================================================
     $('.switchBtn').mousedown(function () {
       $(this).addClass('clicked');
     });
@@ -1050,7 +1127,7 @@
       $(this).removeClass('clicked');
     });
 
-    //  ================這是跳窗用 單純JQ版=========================
+    //  ================這是跳窗用 單純JQ版=====================================================
 
     // $('.itemCard').click(function (e) {
     // theIndex = $(this).index();
@@ -1074,19 +1151,13 @@
     //   }
     // }
 
-    // var url = "http://localhost/dd104g2_test/js/modelGetInfo.php?";
+    // var url = "http://localhost/dev/phps/shop_prodItemGetInfo.php?";
     // xhr.open("Get", url, true);
     // xhr.send(null);
-
-
-
-    // $('#outshadow').css('opacity', '0.7');
-    // $('#outshadow').css('visibility', 'visible');
-    // $('#outshadow').css('zIndex', '99');
-    // $('#medal').css('display', 'block');
-    // $('#medal').css('zIndex', '100');
-    // e ? e.stopPropagation() : event.cancelBubble = true;
     // })
+
+
+    //  ================這是關閉跳窗用===========================================================
     $('.cross').click(function (e) {
       $('#outshadow').css('visibility', 'hidden');
       $('#outshadow').css('zIndex', '-99');
@@ -1096,7 +1167,7 @@
   </script>
 
   <script>
-    // =====================這是美化下拉式選單=======================
+    // =====================這是美化下拉式選單===================================================
     $(document).ready(function () {
       $('select:not(.ignore)').niceSelect();
       FastClick.attach(document.body);
@@ -1104,17 +1175,30 @@
   </script>
 
   <script>
-    // =====================這是輪播圖片(資料庫抓入已購買素材)=======================
+    // =====================這是輪播圖片(資料庫抓入已購買素材)  會員編號暫寫死=======================
     function showMaterial(jsonStr) {
 
       let material = JSON.parse(jsonStr);
       console.log(material)
-      let html;
-      if (material.matName) {
-        for (i = 0; i < material.length; i++) {
-          if ($('.owl_img img').attr('src') !== "") {
-            $('.owl_img img').next().attr('src', `${material[i].matURL}`)
+      // console.log(owl_item)
+
+      if (material[0].matURL) {
+        for (var i = 0; i < material.length; i++) {
+          owl_item = document.getElementsByClassName('owl-item')[i].firstChild;
+          owl_imgcloned = document.getElementsByClassName('cloned')[i].firstChild;
+          owl_imgactive = document.getElementsByClassName('active')[i].firstChild;
+          if (owl_item.src == "http://localhost/dd104g2_test/shop.html") {
+            alert("")
+            owl_item.src = material[i].matURL
+            owl_imgcloned.src = material[i].matURL
+            owl_imgactive.src = material[i].matURL
+            // console.log(owl_item)
+            // console.log(owl_imgcloned)
           }
+          if (owl_imgactive.src == "http://localhost/dd104g2_test/shop.html") {
+            owl_imgactive.src = material[i].matURL
+          }
+          // console.log(owl_imgactive)
         }
       } else {
         alert("無任何素材");
@@ -1122,23 +1206,114 @@
     }
 
 
-
     var xhr = new XMLHttpRequest();
     xhr.onload = function () {
       if (xhr.status == 200) {
-        //modify here
         showMaterial(xhr.responseText);
         console.log(xhr.responseText)
       } else {
-        alert(xhr.status);
+        // alert(xhr.status);
       }
     }
 
-    xhr.open("post", "http://localhost/dd104g2_test/js/getImg.php", true);
+    xhr.open("post", "http://localhost/dev/phps/shop_getOnlyMaterial.php", true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
     let data_info = `memNo=5`;
     xhr.send(data_info);
   </script>
+
+  <script>
+    // ===================這是現有air幣從資料庫抓數字到網頁  會員編號暫寫死=======================
+    function showMemberInfo(jsonStr) {
+
+      coin = document.getElementById('coin');
+      let MemberInfo = JSON.parse(jsonStr);
+      // console.log(MemberInfo[0].airCoin)
+      // console.log(coin)
+      if (MemberInfo[0].memName) {
+        coin.innerHTML = MemberInfo[0].airCoin;
+      }
+    }
+
+    function getMemberInfo() {
+
+
+      var xhr3 = new XMLHttpRequest();
+      xhr3.onload = function () {
+        if (xhr3.status == 200) {
+          //modify here
+          showMemberInfo(xhr3.responseText);
+          // console.log(xhr.responseText)
+        } else {
+          // alert(xhr.status);
+        }
+      }
+
+      var url = "http://localhost/dev/phps/shop_getMemberCoin.php?";
+      xhr3.open("Get", url, true);
+      xhr3.send(null);
+    }
+  </script>
+
+
+  <script>
+    // ===================這是左邊功能頁(資料庫抓入已購買工具)  會員編號暫寫死=======================
+    function showToolInfo(jsonStr) {
+
+      let toolInfo = JSON.parse(jsonStr);
+      console.log(toolInfo)
+      arr1 = ['controlBox1', 'controlBox2', 'controlBox3', 'controlBox4', 'controlBox5', 'controlBox6',
+        'controlBox7',
+        'controlBox8', 'controlBox9'
+      ]
+      arr2 = ['controlBtn1', 'controlBtn2', 'controlBtn3', 'controlBtn4', 'controlBtn5', 'controlBtn6',
+        'controlBtn7',
+        'controlBtn8', 'controlBtn9'
+      ]
+      for (i = 0; i < toolInfo.length; i++) {
+
+
+        if (toolInfo[i].matURL) {
+          
+          indexStr = toolInfo[i].matURL.toString();
+          index = indexStr.substring(26, indexStr.length - 4) - 1;
+          console.log(index)
+
+          for (j = 0; j < arr1.length; j++) {
+            if (index == j) {
+              document.getElementById(arr1[j]).classList.remove('clicked');
+              document.getElementsByClassName(arr2[j])[0].classList.remove('clicked');
+            }
+          }
+
+        }
+      }
+    }
+
+    function getToolInfo() {
+
+      var xhr5 = new XMLHttpRequest();
+      xhr5.onload = function () {
+        if (xhr5.status == 200) {
+          //modify here
+          showToolInfo(xhr5.responseText);
+          // console.log(xhr5.responseText)
+        } else {
+          // alert(xhr.status);
+        }
+      }
+
+      var url = "http://localhost/dev/phps/shop_getonlyTool.php?";
+      xhr5.open("Get", url, true);
+      xhr5.send(null);
+    }
+
+
+    window.addEventListener('load', getToolInfo, false);
+    window.addEventListener('load', getMemberInfo, false);
+  </script>
+
+
 </body>
 
 </html>
