@@ -30,14 +30,23 @@
                         <li><a href="./user-setting.html">
                                 <p class="nav-pageName">用戶設定</p> <span class="nav-circle-6"></span>
                             </a> </li>
-                        <div class="hbg-botWrap"><!--漢堡登入者資訊-->
+                        <div class="hbg-botWrap">
+                            <!--漢堡登入者資訊-->
                             <div class="hbg-littleNav">
-                                <a class="showSigin" href="#"><i class="fas fa-user-circle"></i></a>
+                                <a class="showSigin" href="#"><i id="signInStatusIconH"
+                                        class="fas fa-user-circle"></i></a>
+                                <span id="signInStatusH">登入</span>
                             </div>
                             <div class="hbg-pc">
-                                <div class="cav-member"></div>
-                                <div class="cav-paper"></div>
-                                <div class="cav-coin"></div>
+                                <div class="cav-member">
+                                    <div id="cavMemberH"></div>
+                                </div>
+                                <div class="cav-paper">
+                                    <div id="cavPaperH"></div>
+                                </div>
+                                <div class="cav-coin">
+                                    <div id="cavCoinH"></div>
+                                </div>
                                 <!-- <div class="cav-member">會員:666</div> -->
                                 <!-- <div class="cav-paper">信紙:999</div> -->
                                 <!-- <div class="cav-coin">Air幣:777</div> -->
@@ -50,12 +59,21 @@
                 </div>
             </nav>
             <div class="nav-littleNav">
-                <a id="showSigin" class="showSigin" href="#"><i class="fas fa-user-circle"></i></a>
+                <a id="showSigin" class="showSigin" href="#"><i id="signInStatusIconN"
+                        class="fas fa-user-circle"></i></a>
+                <span id="signInStatusN">登入</span>
             </div>
-            <div class="nav-pc"><!--nav登入者資訊-->
-                <div class="cav-member"></div>
-                <div class="cav-paper"></div>
-                <div class="cav-coin"></div>
+            <div class="nav-pc">
+                <!--nav登入者資訊-->
+                <div class="cav-member">
+                    <div id="cavMemberN"></div>
+                </div>
+                <div class="cav-paper">
+                    <div id="cavPaperN"></div>
+                </div>
+                <div class="cav-coin">
+                    <div id="cavCoinN"></div>
+                </div>
                 <!-- <div class="cav-member">會員:666</div> -->
                 <!-- <div class="cav-paper">信紙:999</div> -->
                 <!-- <div class="cav-coin">Air幣:777</div> -->
@@ -83,18 +101,20 @@
                 <label for="signInEmail">
                     <P>Email:</P>
                 </label>
-                <input class="signInEmail" input type="email" id="signInEmail" placeholder="Email" name="memEmail" required autofocus>
+                <input class="signInEmail" input type="email" id="signInEmail" placeholder="Email" name="memEmail"
+                    required autofocus>
 
                 <label for="signInPassword">
                     <P>Password:</P>
                 </label>
-                <input class="signInPassword" type="password" id="signInPassword" placeholder="password" name="memPsw" required>
+                <input class="signInPassword" type="password" id="signInPassword" placeholder="password" name="memPsw"
+                    required>
 
                 <p class="showForget" id="showForget">忘記密碼</p>
                 <p class="showRegister" id="showRegister">註冊</p>
 
                 <br>
-                <button id="signInBtn" class="signInBtn" type="submit" value="登入">
+                <button id="signInBtn" class="signInBtn" type="button" value="登入">
                     <p>Sign in</p>
                 </button>
 
@@ -117,17 +137,20 @@
                 <label for="registerEmail">
                     <P>Email:</P>
                 </label>
-                <input class="registerEmail" input type="email" id="registerEmail" placeholder="Email" name="memEmail" required autofocus>
+                <input class="registerEmail" input type="email" id="registerEmail" placeholder="Email" name="memEmail"
+                    required autofocus>
 
                 <label for="registerPassword">
                     <P>Password:</P>
                 </label>
-                <input class="registerPassword" type="password" id="registerPassword" placeholder="password" name="memPsw" required>
+                <input class="registerPassword" type="password" id="registerPassword" placeholder="password"
+                    name="memPsw" required>
 
                 <label for="registerPasswordCheck">
                     <P>Password again:</P>
                 </label>
-                <input class="registerPasswordCheck" type="password" id="registerPasswordCheck" placeholder="password again" name="memPswAgain" required>
+                <input class="registerPasswordCheck" type="password" id="registerPasswordCheck"
+                    placeholder="password again" name="memPswAgain" required>
 
                 <br>
                 <button id="registerBtn" class="registerBtn" type="submit" value="註冊">
@@ -148,7 +171,7 @@
                     <P>Email:</P>
                 </label>
                 <input class="forgetEmail" input type="email" id="forgetEmail" placeholder="Email" required autofocus>
-                
+
                 <br>
                 <button id="forgetBtn" class="forgetBtn" type="submit" value="忘記密碼">
                     <p>Get</p>
@@ -159,6 +182,7 @@
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="./js/nav.js"></script>
 
 <!-- 控制navbar上下移 -->
 <script>
@@ -220,104 +244,166 @@
 
 </script>
 
-<!-- 會員登入/註冊/忘記密碼燈箱 -->
+
+
+<!-- 登入系統 -->
 <script>
-    var signInBg = document.getElementById("signInBg");
-    var showSigin = document.querySelectorAll(".showSigin");
-    var closeSigin = document.getElementById("closeSigin");
-    var registerBg = document.getElementById("registerBg");
-    var showRegister = document.getElementById("showRegister");
-    var closeRegister = document.getElementById("closeRegister");
-    var forgetBg = document.getElementById("forgetBg");
-    var showForget = document.getElementById("showForget");
-    var closeForget = document.getElementById("closeForget");
-    showSigin.forEach(item => {
-        item.addEventListener('click', () => {
-            console.log(6);
-            signInBg.style.display = "block";
-        })
-    })
-
-    closeSigin.onclick = function () {
-        signInBg.style.display = "none";
-    };
-    showRegister.onclick = function () {
-        registerBg.style.display = "block";
-        signInBg.style.display = "none";
-    };
-    closeRegister.onclick = function () {
-        registerBg.style.display = "none";
-    };
-    showForget.onclick = function () {
-        forgetBg.style.display = "block";
-        signInBg.style.display = "none";
-    };
-    closeForget.onclick = function () {
-        forgetBg.style.display = "none";
-    };
-</script>
-
-
-<script>
-    function sendSignInForm(){//登入表單發送
-        var signInmemEmail = $id("signInEmail").value;
-        var signInmemPsw = $id("signInPassword").value;
-        //-------------使用ajax方法到Server端資料
+    function logout() {//登出
         let xhr = new XMLHttpRequest();
-        xhr.onload = function(){
-            console.log(xhr.responseText);
-            showMemInfo(xhr.responseText); //顯示登入者資訊
+        xhr.onload = function () {
+            document.getElementById("cavMemberN").innerText = "";
+            document.getElementById("cavMemberH").innerText = "";
+            document.getElementById("cavPaperN").innerText = "";
+            document.getElementById("cavPaperH").innerText = "";
+            document.getElementById("cavCoinN").innerText = "";
+            document.getElementById("cavCoinH").innerText = "";
+            document.getElementById("signInStatusIconN").style.color = '#aaa';
+            document.getElementById("signInStatusIconH").style.color = '#aaa';
+            document.getElementById("signInStatusN").innerHTML = "登入";
+            document.getElementById("signInStatusH").innerHTML = "登入";
         }
-        xhr.open("post","login.php", true);
+        xhr.open("get", "./phps/logout.php", true);
+        xhr.send(null)
+    }
+
+    function showMemInfo(jsonStr) {//顯示登入者資訊
+        let member = JSON.parse(jsonStr);
+        if (member.memNo) {
+            document.getElementById("cavMemberN").innerText = '會員:' + member.memNo;
+            document.getElementById("cavMemberH").innerText = '會員:' + member.memNo;
+            document.getElementById("cavPaperN").innerText = '信紙:' + member.letCount;
+            document.getElementById("cavPaperH").innerText = '信紙:' + member.letCount;
+            document.getElementById("cavCoinN").innerText = 'Air幣:' + member.airCoin;
+            document.getElementById("cavCoinH").innerText = 'Air幣:' + member.airCoin;
+            document.getElementById("signInStatusIconN").style.color = 'green';
+            document.getElementById("signInStatusIconH").style.color = 'green';
+            document.getElementById("signInStatusN").innerHTML = "登出";
+            document.getElementById("signInStatusH").innerHTML = "登出";
+            document.getElementById("signInBg").style.display = "none";
+        } else {
+            alert("帳密錯誤");
+        }
+    }
+
+    function sendSignInForm() {//登入表單發送
+        const signInmemEmail = document.getElementById("signInEmail").value;
+        const signInmemPsw = document.getElementById("signInPassword").value;
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {//使用ajax方法到Server端資料
+            showMemInfo(xhr.responseText);
+        }
+        xhr.open("post", "./phps/login.php", true);
         xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         let data_info = `memEmail=${signInmemEmail}&memPsw=${signInmemPsw}`;
         xhr.send(data_info);
     }
 
-    function cancelSignIn(){//清除登入表單內容
-        //將登入表單上的資料清空，並將燈箱隱藏起來
-        $id("signInEmail").value="";
-        $id("signInPassword").value="";
-        $id("signInBg").style.display = "none";
+    function cancelSignIn() {//清除登入表單內容
+        const signInmemEmailD = document.getElementById("signInEmail");
+        const signInmemPasswordD = document.getElementById("signInPassword");
+        const signInBg = document.getElementById("signInBg");
+        signInmemEmailD.value = "";
+        signInmemPasswordD.value = "";
+        signInBg.style.display = "none";
     }
 
-    function sendRegisterForm(){//註冊表單發送
-        var registermemEmail = $id("registerEmail").value;
-        var registermemPsw = $id("registerPassword").value;
-        var registermemPswCheck = $id("registerPasswordCheck").value;
-        //-------------使用ajax方法到Server端資料
+    // function sendRegisterForm() {//註冊表單發送
+    //     const registermemEmail = document.getElementById("registerEmail").value;
+    //     const registermemPsw = document.getElementById("registerPassword").value;
+    //     const registermemPswCheck = document.getElementById("registerPasswordCheck").value;
+    //     //-------------使用ajax方法到Server端資料
+    //     let xhr = new XMLHttpRequest();
+    //     // xhr.onload = function () {
+    //     //     console.log(xhr.responseText);
+    //     //     showMemInfo(xhr.responseText); //顯示登入者資訊
+    //     // }
+    //     xhr.open("post", "./phps/register.php", true);
+    //     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    //     let data_info = `memEmail=${registermemEmail}&memPsw=${registermemPsw}`;
+    //     xhr.send(data_info);
+    // }
+
+    // function sendForgetForm() {//忘記密碼表單發送
+    //     const forgetmemEmail = document.getElementById("forgetEmail").value;
+    //     //-------------使用ajax方法到Server端資料
+    //     let xhr = new XMLHttpRequest();
+    //     xhr.onload = function () {
+    //         console.log(xhr.responseText);
+    //         showMemInfo(xhr.responseText); //顯示登入者資訊
+    //     }
+    //     xhr.open("post", "./phps/forget.php", true);
+    //     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    //     let data_info = `memEmail=${forgetmemEmail}`;
+    //     xhr.send(data_info);
+    // }
+
+    function getSignInInfo() {//取得登入資訊 依登入狀況呈現登入資訊
         let xhr = new XMLHttpRequest();
-        xhr.onload = function(){
-            console.log(xhr.responseText);
-            showMemInfo(xhr.responseText); //顯示登入者資訊
+        xhr.onload = function () {
+            let member = JSON.parse(xhr.responseText);
+            if (member.memNo) {
+                document.getElementById("cavMemberN").innerText = '會員:' + member.memNo;
+                document.getElementById("cavMemberH").innerText = '會員:' + member.memNo;
+                document.getElementById("cavPaperN").innerText = '信紙:' + member.letCount;
+                document.getElementById("cavPaperH").innerText = '信紙:' + member.letCount;
+                document.getElementById("cavCoinN").innerText = 'Air幣:' + member.airCoin;
+                document.getElementById("cavCoinH").innerText = 'Air幣:' + member.airCoin;
+                document.getElementById("signInStatusIconN").style.color = 'green';
+                document.getElementById("signInStatusIconH").style.color = 'green';
+                document.getElementById("signInStatusN").innerHTML = "登出";
+                document.getElementById("signInStatusH").innerHTML = "登出";
+            }
         }
-        xhr.open("post","register.php", true);
-        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-        let data_info = `memEmail=${registermemEmail}&memPsw=${registermemPsw}`;
-        xhr.send(data_info);
+        xhr.open("get", "./phps/getSignInInfo.php", true);
+        xhr.send(null);
     }
 
-    function sendForgetForm(){//忘記密碼表單發送
-        var forgetmemEmail = $id("forgetEmail").value;
-        //-------------使用ajax方法到Server端資料
-        let xhr = new XMLHttpRequest();
-        xhr.onload = function(){
-            console.log(xhr.responseText);
-            showMemInfo(xhr.responseText); //顯示登入者資訊
-        }
-        xhr.open("post","forget.php", true);
-        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-        let data_info = `memEmail=${forgetmemEmail}`;
-        xhr.send(data_info);
-    }
-
-    window.addEventListener("load", function(){
-    //-------------------------檢查是否已登入
-        getLoginInfo();
-        
-        $id("signInBtn").onclick = sendSignInForm;//點擊登入按鈕呼叫發送表單function
-        $id("signInCancelBtn").onclick = cancelSignIn; //點擊取消按鈕呼叫清除表單function
-        $id("registerBtn").onclick = sendRegisterForm;//點擊註冊按鈕呼叫發送表單function
-        $id("forgetBtn").onclick = sendForgetForm;//點擊忘記密碼按鈕呼叫發送表單function
+    window.addEventListener("load", function () {
+        getSignInInfo();//檢查登入狀態
+        const signInBtn = document.getElementById("signInBtn");
+        const signInCancelBtn = document.getElementById("signInCancelBtn");
+        signInBtn.onclick = sendSignInForm;//點擊登入按鈕呼叫發送表單function
+        signInCancelBtn.onclick = cancelSignIn;//點擊取消按鈕呼叫清除表單function
     });
+</script>
+
+
+<!-- 會員登入/註冊/忘記密碼燈箱 -->
+<script>
+    const signInBg = document.getElementById("signInBg");
+    const showSigin = document.querySelectorAll(".showSigin");
+    const closeSigin = document.getElementById("closeSigin");
+    const registerBg = document.getElementById("registerBg");
+    const showRegister = document.getElementById("showRegister");
+    const closeRegister = document.getElementById("closeRegister");
+    const forgetBg = document.getElementById("forgetBg");
+    const showForget = document.getElementById("showForget");
+    const closeForget = document.getElementById("closeForget");
+    const signInStatusL = document.getElementById("signInStatusN")
+    showSigin.forEach(item => {//開啟登入燈箱
+        item.addEventListener('click', () => {
+            if (signInStatusL.innerHTML == "登入") {
+                signInBg.style.display = "block";
+            } else {//是登出
+                logout();
+            }
+        })
+    })
+    closeSigin.onclick = function () {//x關閉登入燈箱
+        signInBg.style.display = "none";
+    };
+    showRegister.onclick = function () {//開啟註冊燈箱
+        registerBg.style.display = "block";
+        signInBg.style.display = "none";
+    };
+    closeRegister.onclick = function () {//關閉註冊燈箱
+        registerBg.style.display = "none";
+    };
+    showForget.onclick = function () {//開啟忘記密碼燈箱
+        forgetBg.style.display = "block";
+        signInBg.style.display = "none";
+    };
+    closeForget.onclick = function () {//關閉忘記密碼燈箱
+        forgetBg.style.display = "none";
+    };
 </script>
