@@ -539,13 +539,13 @@ function scrollJS() {
     grassPin.add([catchFold, catchPaper]);
 
     grassPin.add(TweenMax.to('.catch_letter', 5, {
-        y: "32%",
+        y: "31%",
         ease: Power0.easeNone,
     }));
 
     let sceneGrass = new ScrollMagic.Scene({
         triggerElement: ".home_catch",
-        duration: '400%',
+        duration: '450%',
         triggerHook: 0
     }).setPin('.home_catch').setTween(grassPin).addIndicators().addTo(controller);
 
