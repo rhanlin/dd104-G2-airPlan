@@ -7,11 +7,11 @@ try {
     $pdo = new PDO($dsn, $user, $password, $options);
 
     //會員資料
-    if ($_SESSION["memNo1"]) {
-        $memNo1 = $_SESSION["memNo1"];
-    } else {
-        echo"未登入";
-    }
+    // if ($_SESSION["memNo1"]) {
+    //     $memNo1 = $_SESSION["memNo1"];
+    // } else {
+    //     echo"未登入";
+    // }
 
     //聊天室內容
     $memNo1 = 1;
