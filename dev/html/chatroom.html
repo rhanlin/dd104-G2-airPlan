@@ -11,8 +11,428 @@
 </head>
 
 <body class="chat-body">
-    @@include("./layout/nav.html")
-    @@include("./layout/header.html")
+    <div class="nav-body">
+    <div id="navHead" class="nav-navBgWrap">
+        <div class="nav-navBg">
+            <img src="./img/share/nav_lightBox.svg" alt="">
+            <nav class="nav-navWrap">
+                <!-- <div class="nav-topBlock">
+                登入和設定 
+            </div> -->
+                <div class="nav-logoWrap">
+                    <a href="./home.html"><img src="./img/share/LOGO.png"></a>
+                </div>
+                <div class="nav-navPageWrap hbg">
+                    <ul class="nav-list" id="list">
+                        <a class="nav-logo" href="./home.html"><img src="./img/share/LOGO.png"></a>
+                        <li><a href="./write-letter.html">
+                                <p class="nav-pageName">寫信</p> <span class="nav-circle-1 "></span>
+                            </a> </li>
+                        <li><a href="./catch-letter.html">
+                                <p class="nav-pageName">撈信</p> <span class="nav-circle-2"></span>
+                            </a> </li>
+                        <li><a href="./shop.html">
+                                <p class="nav-pageName">商城</p> <span class="nav-circle-3"></span>
+                            </a> </li>
+                        <li><a href="./cave.html">
+                                <p class="nav-pageName">我的倉庫</p> <span class="nav-circle-4"></span>
+                            </a> </li>
+                        <li><a href="./chatroom.html">
+                                <p class="nav-pageName">聊天室</p> <span class="nav-circle-5"></span>
+                            </a> </li>
+                        <li><a href="./user-setting.html">
+                                <p class="nav-pageName">用戶設定</p> <span class="nav-circle-6"></span>
+                            </a> </li>
+                        <div class="hbg-botWrap">
+                            <div class="hbg-littleNav">
+                                <a class="showSigin" href="#"><i class="fas fa-user-circle"></i></a>
+                            </div>
+                            <div class="hbg-pc">
+                                <div class="cav-paper">信紙:999</div>
+                                <div class="cav-coin">Air幣:777</div>
+                            </div>
+                        </div>
+                    </ul>
+                    <div class="nav-road">
+                        <div></div>
+                    </div>
+                </div>
+            </nav>
+            <div class="nav-littleNav">
+                <a id="showSigin" class="showSigin" href="#"><i class="fas fa-user-circle"></i></a>
+            </div>
+            <div class="nav-pc">
+                <div class="cav-paper">信紙:999</div>
+                <div class="cav-coin">Air幣:777</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-hamPosition">
+        <div class="nav-hamburgerWrap">
+            <div class="hambuger" id="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 登入 -->
+    <div class="signInBg" id="signInBg">
+        <div class="signInData">
+            <h4>Sign In</h4>
+            <p id="closeSigin" class="closeSignin">X</p>
+            <form class="formsignInData" action="./phps/login.php" method="post">
+                <img class="signInLogo" src="./img/share/LOGO.png" alt="Logo">
+
+                <label for="signInEmail">
+                    <P>Email:</P>
+                </label>
+                <input class="signInEmail" input type="email" id="signInEmail" placeholder="Email" name="memEmail"
+                    required autofocus>
+
+                <label for="signInPassword">
+                    <P>Password:</P>
+                </label>
+                <input class="signInPassword" type="password" id="signInPassword" placeholder="password" name="memPsw"
+                    required>
+
+                <p class="showForget" id="showForget">忘記密碼</p>
+                <p class="showRegister" id="showRegister">註冊</p>
+                <br>
+                <button class="signInBtn" type="submit">
+                    <p>Sign in</p>
+                </button>
+            </form>
+        </div>
+        <!-- <img class="envelopeup" src="./img/user-setting/envelopeup.png" alt="">
+    <img class="envelopedown" src="./img/user-setting/envelopedown.png" alt=""> -->
+    </div>
+    <!-- 註冊 -->
+    <div class="registerBg" id="registerBg">
+        <div class="registerData">
+            <h4>Register</h4>
+            <p class="closeRegister" id="closeRegister">X</p>
+            <form class="formRegisterData" action="./phps/register.php" method="post">
+                <img class="registerLogo" src="./img/share/LOGO.png" alt="Logo">
+
+                <label for="registerEmail">
+                    <P>Email:</P>
+                </label>
+                <input class="registerEmail" input type="email" id="registerEmail" placeholder="Email" name="memEmail"
+                    required autofocus>
+
+                <label for="registerPassword">
+                    <P>Password:</P>
+                </label>
+                <input class="registerPassword" type="password" id="registerPassword" placeholder="password"
+                    name="memPsw" required>
+
+                <label for="registerPasswordCheck">
+                    <P>Password again:</P>
+                </label>
+                <input class="registerPasswordCheck" type="password" id="registerPasswordCheck"
+                    placeholder="password again" name="memPswAgain" required>
+
+                <br>
+                <button class="registerBtn" type="submit">
+                    <p>Register</p>
+                </button>
+            </form>
+        </div>
+    </div>
+    <!-- 忘記密碼 -->
+    <div class="forgetBg" id="forgetBg">
+        <div class="forgetBgData">
+            <h4>Get new password</h4>
+            <p class="closeForget" id="closeForget">X</p>
+            <form class="formForgetData"  action="./phps/forget.php" method="post">
+                <img class="forgetLogo" src="./img/share/LOGO.png" alt="Logo">
+
+                <label for="forgetEmail">
+                    <P>Email:</P>
+                </label>
+                <input class="forgetEmail" input type="email" id="forgetEmail" placeholder="Email" required autofocus>
+                <br>
+                <button class="forgetBtn" type="submit">
+                    <p>Get</p>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- 控制navbar上下移 -->
+<script>
+    let a;
+    $(function () {
+        $(window).scroll(function (e) {
+            let scrollValue = $(this).scrollTop()
+            if (scrollValue > 200) {
+                $("div.nav-navBgWrap").addClass("-on");
+                if ($(this).scrollTop() - a < 0) {
+                    $("div.nav-navBgWrap").removeClass("-on");
+                }
+                a = $(this).scrollTop()
+            } else {
+                $("div.nav-navBgWrap").removeClass("-on");
+            }
+        });
+    });
+</script>
+<script>
+    const hambuger = document.querySelector('.hambuger');
+
+    hambuger.addEventListener('click', () => {
+        hambuger.classList.toggle('change');
+    })
+</script>
+<!--     hamburger icon 的切換  -->
+<script>
+    $(function () {
+
+        $("div.hambuger").on("click", function () {
+            $('#list').toggleClass('open');
+        });
+
+    });
+</script>
+<!-- 顯示所在頁面提示 -->
+<script>
+    $(function () {
+        var nav = $(".nav-navWrap .nav-list a");
+        // console.log(nav);
+        var url = window.location.href;
+        // console.log(url);
+        // console.log(url.split("/")[url.split("/").length - 1]);
+        var page = "./" + url.split("/")[url.split("/").length - 1];
+        console.log(page);
+        var host = window.location.host;
+        // console.log(host);
+        for (var i = 0; i < nav.length; i++) {
+            var astr = nav.eq(i).attr("href");
+            while (page == astr) {
+                nav.eq(i).find(".nav-pageName").addClass('nav-now').siblings().removeClass('nav-now');
+                console.log(i);
+                break;
+            }
+        }
+
+    })
+
+</script>
+
+<!-- 會員登入/註冊/忘記密碼燈箱 -->
+<script>
+    var signInBg = document.getElementById("signInBg");
+    var showSigin = document.querySelectorAll(".showSigin");
+    var closeSigin = document.getElementById("closeSigin");
+    var registerBg = document.getElementById("registerBg");
+    var showRegister = document.getElementById("showRegister");
+    var closeRegister = document.getElementById("closeRegister");
+    var forgetBg = document.getElementById("forgetBg");
+    var showForget = document.getElementById("showForget");
+    var closeForget = document.getElementById("closeForget");
+    showSigin.forEach(item => {
+        item.addEventListener('click', () => {
+            console.log(6);
+            signInBg.style.display = "block";
+        })
+    })
+
+    closeSigin.onclick = function () {
+        signInBg.style.display = "none";
+    };
+    showRegister.onclick = function () {
+        registerBg.style.display = "block";
+        signInBg.style.display = "none";
+    };
+    closeRegister.onclick = function () {
+        registerBg.style.display = "none";
+    };
+    showForget.onclick = function () {
+        forgetBg.style.display = "block";
+        signInBg.style.display = "none";
+    };
+    closeForget.onclick = function () {
+        forgetBg.style.display = "none";
+    };
+</script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script src="./js/kloud.min.js"></script>
+
+<header>
+    <div id="headerClouds" style="width: 100%; height: 18vw;">
+        <canvas id="myClouds" style="width: 100%; height: 40%;"></canvas>
+    </div>
+    <!-- 漂浮的雲 -->
+    <div class="white-space-bg">
+        <div class="head-box">
+            <div class="dot-box-blue bottom-bg">
+                <span class="share-clip clip-left"></span>
+                <span class="share-clip clip-right"></span>
+                <div class="box-white top-left-bg">
+                    <div class="box-white top-left-bg" id='headerVue' style="position: relative;">
+                        <!-- 這裡會自動判斷頁面產生 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="clouds" id="clouds">
+            <div class="cloud_1"></div>
+            <template  v-for="(cloud, index) in 15">
+                <div :class=`cloud_${index}` :style="{left: `${Math.random() * innerWidth}px`}"></div>
+            </template>
+            
+        </div>
+    </div>
+
+
+    
+    <script>
+        $('#myClouds').Klouds({
+            speed: 1,
+            layerCount: 4,
+            cloudColor1: '#82afd9',
+            cloudColor2: '#F7FAFD',
+            // bgColor1: '#82afd9',
+            bgColor: '#ffffff',
+        })
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+    <script>
+        /*
+         * header Contant Change
+         */
+        const writeLetter = {
+            template: `
+            <h1 class="headpg-name threed-text-blue">
+                <div class="headerText-1">寫</div>
+                <br>
+                <img src="./img/share/Paint-bucket.svg" class="paint-bucket">
+                <img src="./img/share/shiny.svg" class="shiny-big">
+                <img src="./img/share/shiny.svg" class="shiny-small">
+                <img src="./img/share/yellow-paint-line.svg" class="yellow-paint-line">
+                <div class="headerText-2">
+                    <img src="./img/share/line-paperPlane.svg" class="line-paperPlane">
+                    &nbsp一封信
+                </div>
+            </h1>
+            `
+        }
+        const catchLetter = {
+            template: `
+            <h1 class="headpg-name threed-text-blue">
+                <div class="catch-headerText">
+                <span style="font-size:inherit; ">查看</span>
+                <span style="font-size:inherit; ">&nbsp撈信</span>
+                </div>
+                <br>
+                <img src="./img/share/butterfly-net.svg" class="catch-net">
+                <img src="./img/share/shiny.svg" class="catch-shinyBig">
+                <img src="./img/share/shiny.svg" class="catch-shinySmall">
+                <img src="./img/share/yellow-paint-line.svg" class="catch-yellowPaintLine">
+                <img src="./img/share/line-paperPlane.svg" class="catch-linePaperPlane">
+            </h1>
+            `
+        }
+        const chatroom = {
+            template: `
+            <h1 class="headpg-name threed-text-blue">
+                <div 
+                    style="width:45%; text-align:center; display:flex;
+                    flex-direction:column; align-items:center; justify-content:space-evenly;">
+                <span style="font-size:inherit;">聊天室</span>
+                </div>
+                <br>
+                <img src="./img/share/butterfly-net.svg" style="width:40%; position:absolute; bottom:-50%; right:2%; z-index:99">
+                <img src="./img/share/shiny.svg" style="width:6%; position:absolute; top:13%; right:33%; z-index:99">
+                <img src="./img/share/shiny.svg" style="width:4%; position:absolute; top:36%; right:28%; z-index:99">
+                <img src="./img/share/yellow-paint-line.svg" style="width:15%; position:absolute; bottom:4%; left:38%; z-index:99">
+                <img src="./img/share/line-paperPlane.svg" style="width:20%; position:absolute; top:18%; right:38%;">
+            </h1>
+            `
+        }
+        const cave = {
+            template: `
+            <h1 class="headpg-name threed-text-blue">
+                <div class="cave-headerText">
+                <span style="font-size:inherit;">我的倉庫</span>
+                </div>
+                <br>
+                <img src="./img/cave/cavheaderImg.png" class="cave-cavheaderImg">
+                <img src="./img/share/cave-pattern.svg" class="cave-pattern">
+            </h1>
+            `
+        }
+        const shop = {
+            template: `
+            <h1 class="headpg-name threed-text-blue">
+                <div 
+                    style="width:80%; text-align:center; display:flex;
+                    flex-direction:column; align-items:center; justify-content:space-evenly;">
+                <span class="shop-headerText">客製化商城</span>
+                </div>
+                <br>
+                <img src="./img/share/shop-pattern2.svg" class="shop-pattern2">
+                <img src="./img/share/shop-pattern.svg" class="shop-pattern">
+                
+                <img src="./img/share/yellow-paint-line.svg" class="shop-yellowPaintLine">
+            </h1>
+            `
+        }
+        const userSetting = {
+            template: `
+            <h1 class="headpg-name threed-text-blue">
+                <div style="display:flex;flex-direction:column;justify-content:center;">
+                    用戶設定
+                <img src="./img/user-setting/wrench.svg" class="userSet-wrench">
+                </div>
+                <br>
+                <img src="./img/user-setting/gear.svg" alt="gear" class="userSet-gear">
+                <div style="display:flex;flex-direction:column;justify-content:center;">
+                    <img src="./img/user-setting/hammer.svg" class="userSet-hammer">
+                </div>
+            </h1>
+            `
+        }
+        
+        new Vue({
+            el: '#headerVue',
+            template: `
+                <div class="box-white top-left-bg">
+                    <component :is='pageTitle'/>
+                </div>
+            `,
+            components: {
+                writeLetter,
+                catchLetter,
+                chatroom,
+                cave,
+                shop,
+                userSetting,
+            },
+            data: {
+                pageTitle: null
+            },
+            mounted(){
+                console.log(location.href.split('/').reverse()[0].split('.')[0]);
+                this.pageTitle = location.href.split('/').reverse()[0].split('.')[0];
+                
+            }
+        })
+        
+        /*
+         * header Clouds
+         */
+        let vm = new Vue({
+            el:'#clouds',
+        });
+    </script>
+</header>
     <main class="chatroom-main">
         <section class="mainSection">
             <div class="sectionOver">
@@ -243,7 +663,8 @@
 
         <div class="mainClearfix"></div>
     </main>
-    @@include("./layout/footer.html")
+    <footer class="footer-bottom"><p> Copyright © Air Plan All rights reserved.</p></footer>
+
 
     <script>
         let data=[];
@@ -251,7 +672,7 @@
             get_chat();
             let Mark = document.querySelectorAll('.sectionMark1');
             
-            console.log(Mark.length);
+            // console.log(Mark.length);
             for (let i = 0; i < Mark.length; i++) {
                 Mark[i].addEventListener('click', function (e) {
                     showChat(data);
@@ -260,6 +681,7 @@
                     }
                     e.currentTarget.classList.add("MarkRed");
                     document.getElementsByClassName('sendText')[0].value = "";
+                    let memNo2 = e.currentTarget.getElementsByTagName("p").innerText;
                 })
             };
 
@@ -279,10 +701,6 @@
                         );
                     }
                 }
-
-                //抓聊天內容的資料
-
-
             } else {
                 alert('錯誤');
             }
@@ -293,16 +711,18 @@
             
             for (var i in data['chat']) {
                 if (data['chat'][i].memNo1 == '1') {
+                    $('.pageContent').text("");
                     $(`.pageContent`).append(
                         `<div class='contentMe'><p>${data['chat'][i].chatContent}</p></div>`);
-                    console.log(data['chat'][i].chatContent);
+                    // console.log(data['chat'][i].chatContent);
                 } else {
-                    for (var i in data['chat']) {
-                        console.log()
-                        $('.pageContent').append(
-                            `<div class='contentYour'><img src='${data['chat'][i].matPosUrl}'><p>${data['chat'][i].chatContent}</p></div>`
-                            );
-                    }
+                    // for (var i in data['chat']) {
+                    //     console.log(data['chat'][i].matPosUrl)
+                    //     $('.pageContent').text("");
+                    //     $('.pageContent').append(
+                    //         `<div class='contentYour'><img src='${data['chat'][i].matPosUrl}'><p>${data['chat'][i].chatContent}</p></div>`
+                    //         );
+                    // }
                 }
             }
         }
@@ -310,10 +730,10 @@
         function get_chat() {
             let xhr = new XMLHttpRequest();
             // let data_info = "memNo1=" + document.getElementsByClassName('.')[0];
-            let data_info = "memNo1=" + 1;
+            let data_info = "memNo1=" + 1 + "memNo2=" + $memNo2;
             xhr.onload = function () {
                 if (xhr.status == 200) {
-                    console.log(xhr.responseText);
+                    // console.log(xhr.responseText);
                     data=xhr.responseText;
                     showData(data);
                     showChat(data);

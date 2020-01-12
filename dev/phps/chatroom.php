@@ -6,6 +6,13 @@ try {
     $options = array(PDO::ATTR_CASE => PDO::CASE_NATURAL, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_ORACLE_NULLS => PDO::NULL_NATURAL);
     $pdo = new PDO($dsn, $user, $password, $options);
 
+    //會員資料
+    if ($_SESSION["memNo1"]) {
+        $memNo1 = $_SESSION["memNo1"];
+    } else {
+        echo"未登入";
+    }
+
     //聊天室內容
     $memNo1 = 1;
     $memNo2 = 2;
