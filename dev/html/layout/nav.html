@@ -269,6 +269,7 @@
     function showMemInfo(jsonStr) {//顯示登入者資訊
         let member = JSON.parse(jsonStr);
         if (member.memNo) {
+            console.log(member.memNo);
             document.getElementById("cavMemberN").innerText = '會員:' + member.memNo;
             document.getElementById("cavMemberH").innerText = '會員:' + member.memNo;
             document.getElementById("cavPaperN").innerText = '信紙:' + member.letCount;
