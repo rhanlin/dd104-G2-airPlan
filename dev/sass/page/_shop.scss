@@ -1453,14 +1453,14 @@ $arrow_color: $gray !default;
                 }
               }
 
-              .controlBox8 {
+              .controlBox7 {
                 text-align: center;
                 width: 33.3%;
                 border: $border;
                 background-color: #fff;
                 z-index: 39;
 
-                .controlBox8_button {
+                .controlBox7_button {
                   position: relative;
                   width: 100%;
                   top: -35%;
@@ -1472,7 +1472,7 @@ $arrow_color: $gray !default;
                     left: 15%;
                   }
 
-                  .controlBtn8 {
+                  .controlBtn7 {
                     outline: none;
                     width: 100%;
                     background-color: #FFD139;
@@ -1552,7 +1552,7 @@ $arrow_color: $gray !default;
                 }
               }
 
-              .controlBox9 {
+              .controlBox8 {
                 text-align: center;
                 width: 33.3%;
                 border: $border;
@@ -1560,7 +1560,7 @@ $arrow_color: $gray !default;
                 z-index: 38;
 
 
-                .controlBox9_button {
+                .controlBox8_button {
                   position: relative;
                   transform: translateY(-5%);
                   width: 100%;
@@ -1579,7 +1579,7 @@ $arrow_color: $gray !default;
                     display: none;
                   }
 
-                  .controlBtn9 {
+                  .controlBtn8 {
                     outline: none;
                     width: 135%;
                     background-color: #FFD139;
@@ -1655,14 +1655,14 @@ $arrow_color: $gray !default;
               }
 
 
-              .controlBox10 {
+              .controlBox9 {
                 text-align: center;
                 width: 33.3%;
                 border: $border;
                 background-color: #fff;
                 z-index: 37;
 
-                .controlBox10_button {
+                .controlBox9_button {
                   position: relative;
                   width: 100%;
                   top: -35%;
@@ -1674,7 +1674,7 @@ $arrow_color: $gray !default;
                     left: 15%;
                   }
 
-                  .controlBtn10 {
+                  .controlBtn9 {
                     outline: none;
                     width: 100%;
                     background-color: #FFD139;
@@ -2954,13 +2954,7 @@ $arrow_color: $gray !default;
                   z-index: 20;
                 }
 
-                .controlBox10 {
-                  text-align: center;
-                  width: 10%;
-                  border: $border;
-                  background-color: #fff;
-                  z-index: 19;
-                }
+  
               }
 
               .colorTool {
@@ -3620,10 +3614,6 @@ $arrow_color: $gray !default;
                   z-index: 30;
                 }
 
-                .controlBox10 {
-                  width: 20%;
-                  z-index: 29;
-                }
               }
             }
           }

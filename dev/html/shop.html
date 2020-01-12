@@ -224,50 +224,53 @@
           <div class="controlToolTopFlex">
             <div class="controlToolTop">
               <div id="mode" class="controlBox1">
-                <div class="controlBox1_button">
-                  <div class="controlBtn1"><img src="./img/product/toolcontrolbar/cannotWrite.png" alt="" id="modeImg">
+                <div id="controlBox1" class="controlBox1_button clicked">
+                  <div class="controlBtn1 clicked 1"><img src="./img/product/toolcontrolbar/cannotWrite.png" alt=""
+                      id="modeImg">
                   </div>
                 </div>
               </div>
               <div id="clear" class="controlBox2">
-                <div class="controlBox2_button">
-                  <div class="controlBtn2 "><img src="./img/product/toolcontrolbar/control_reset.svg" alt=""></div>
+                <div id="controlBox2" class="controlBox2_button clicked">
+                  <div class="controlBtn2 clicked "><img src="./img/product/toolcontrolbar/control_reset.svg" alt="">
+                  </div>
                 </div>
               </div>
               <div id="eraser" class="controlBox3">
-                <div class="controlBox3_button">
-                  <div class="controlBtn3 "><img src="./img/product/toolcontrolbar/control_eraser.svg" alt=""></div>
+                <div id="controlBox3" class="controlBox3_button clicked">
+                  <div class="controlBtn3 clicked"><img src="./img/product/toolcontrolbar/control_eraser.svg" alt="">
+                  </div>
                 </div>
               </div>
               <div id="group" class="controlBox4">
-                <div class="controlBox4_button">
-                  <div class="controlBtn4"><img src="./img/product/toolcontrolbar/merged.svg" alt=""></div>
+                <div id="controlBox4" class="controlBox4_button clicked">
+                  <div class="controlBtn4 clicked"><img src="./img/product/toolcontrolbar/merged.svg" alt=""></div>
                 </div>
               </div>
               <div id="ungroup" class="controlBox5">
-                <div class="controlBox5_button">
-                  <div class="controlBtn5"><img src="./img/product/toolcontrolbar/split.svg" alt=""></div>
+                <div id="controlBox5" class="controlBox5_button clicked">
+                  <div class="controlBtn5 clicked"><img src="./img/product/toolcontrolbar/split.svg" alt=""></div>
                 </div>
               </div>
               <div id="text" class="controlBox6">
-                <div class="controlBox6_button">
-                  <div class="controlBtn6"><img src="./img/product/toolcontrolbar/text-symbol.svg" alt=""></div>
+                <div id="controlBox6" class="controlBox6_button clicked">
+                  <div class="controlBtn6 clicked"><img src="./img/product/toolcontrolbar/text-symbol.svg" alt=""></div>
                 </div>
               </div>
-              <div id="filter_Grayscale" class="controlBox8">
-                <div class="controlBox8_button">
-                  <div class="controlBtn8"><img src="./img/product/toolcontrolbar/filter.svg" alt=""></div>
+              <div id="filter_Grayscale" class="controlBox7">
+                <div id="controlBox7" class="controlBox7_button clicked">
+                  <div class="controlBtn7 clicked"><img src="./img/product/toolcontrolbar/filter.svg" alt=""></div>
                 </div>
               </div>
-              <div class="controlBox9">
-                <button id="imageUploader" class="controlBox9_button">
+              <div class="controlBox8">
+                <button id="controlBox8" class="controlBox8_button  clicked">
                   <input type="file" id="file">
-                  <div class="controlBtn9"><img src="./img/product/toolcontrolbar/photo.svg" alt=""></div>
+                  <div class="controlBtn8 clicked"><img src="./img/product/toolcontrolbar/photo.svg" alt=""></div>
                 </button>
               </div>
-              <div id="outputPngBtn" class="controlBox10">
-                <div class="controlBox10_button clicked">
-                  <div class="controlBtn10 clicked"><img src="./img/product/toolcontrolbar/control_download.svg" alt="">
+              <div id="outputPngBtn" class="controlBox9">
+                <div class="controlBox9_button">
+                  <div class="controlBtn9"><img src="./img/product/toolcontrolbar/control_download.svg" alt="">
                   </div>
                 </div>
               </div>
@@ -914,7 +917,7 @@
               if (0 < itemIndex && itemIndex < 54) {
                 $.ajax({
                   type: "POST",
-                  url: "http://localhost/dd104g2_test/js/shop_saveImg.php",
+                  url: "http://localhost/dev/phps/shop_saveImg.php",
                   data: {
                     matName: ownMatName,
                     image: ownMatURL,
@@ -924,7 +927,7 @@
               } else if (54 <= itemIndex && itemIndex < 65) {
                 $.ajax({
                   type: "POST",
-                  url: "http://localhost/dd104g2_test/js/shop_saveImg.php",
+                  url: "http://localhost/dev/phps/shop_saveImg.php",
                   data: {
                     matName: ownMatName,
                     image: ownMatURL,
@@ -948,7 +951,7 @@
                     // console.log(remainCoin)
                     $.ajax({
                       type: "POST",
-                      url: "http://localhost/dd104g2_test/js/shop_saveCoin.php",
+                      url: "http://localhost/dev/phps/shop_saveCoin.php",
                       data: {
                         remainCoin: remainCoin,
                       },
@@ -963,7 +966,7 @@
                 }
               }
 
-              var url = "http://localhost/dd104g2_test/js/shop_getMemberCoin.php?";
+              var url = "http://localhost/dev/phps/shop_getMemberCoin.php?";
               xhr2.open("Get", url, true);
               xhr2.send(null);
 
@@ -1008,7 +1011,7 @@
             }
           }
 
-          var url = "http://localhost/dd104g2_test/js/shop_prodItemGetInfo.php?";
+          var url = "http://localhost/dev/phps/shop_prodItemGetInfo.php?";
           xhr.open("Get", url, true);
           xhr.send(null);
 
@@ -1071,7 +1074,7 @@
         });
         //====================頁面onload後直接抓回64筆商城卡片資料給vue data=>items======================================
         axios
-          .get('./js/shop_axios_post.php')
+          .get('http://localhost/dev/phps/shop_axios_post.php')
           .then((res) => {
             var arr = res.data;
             for (var i = 0; i < arr.length; i++) {
@@ -1084,7 +1087,7 @@
         // ===========這是從資料庫抓已購素材中的url來對比並把卡片改成soldOut ================================================
 
         axios
-          .get('http://localhost/dd104g2_test/js/shop_getmaterial.php')
+          .get('http://localhost/dev/phps/shop_getmaterial.php')
           .then((res) => {
             var itemArr = res.data;
             var vm = this;
@@ -1148,7 +1151,7 @@
     //   }
     // }
 
-    // var url = "http://localhost/dd104g2_test/js/shop_prodItemGetInfo.php?";
+    // var url = "http://localhost/dev/phps/shop_prodItemGetInfo.php?";
     // xhr.open("Get", url, true);
     // xhr.send(null);
     // })
@@ -1177,35 +1180,25 @@
 
       let material = JSON.parse(jsonStr);
       console.log(material)
+      // console.log(owl_item)
 
       if (material[0].matURL) {
         for (var i = 0; i < material.length; i++) {
-          owl_item = document.querySelectorAll('.owl-item')[i].firstChild;
-          // console.log(owl_item)
+          owl_item = document.getElementsByClassName('owl-item')[i].firstChild;
+          owl_imgcloned = document.getElementsByClassName('cloned')[i].firstChild;
+          owl_imgactive = document.getElementsByClassName('active')[i].firstChild;
           if (owl_item.src == "http://localhost/dd104g2_test/shop.html") {
-            // alert("")
-            // console.log(material[0].matURL)
-            owl_item = material[i].matURL
-            // console.log(owl_item)
-          }
-
-          owl_imgcloned = document.querySelectorAll('.cloned')[i].firstChild;
-          // console.log(owl_imgcloned)
-          if (owl_imgcloned.src == "http://localhost/dd104g2_test/shop.html") {
-            // alert(11)
-            // console.log(material[0].matURL)
+            alert("")
+            owl_item.src = material[i].matURL
             owl_imgcloned.src = material[i].matURL
-            // console.log(owl_imgcloned.src)
-          }
-
-          owl_imgactive = document.querySelectorAll('.active')[i].firstChild;
-          // console.log(owl_imgcloned)
-          if (owl_imgactive.src == "http://localhost/dd104g2_test/shop.html") {
-            // alert(11)
-            // console.log(material[0].matURL)
             owl_imgactive.src = material[i].matURL
-            // console.log(owl_imgactive.src)
+            // console.log(owl_item)
+            // console.log(owl_imgcloned)
           }
+          if (owl_imgactive.src == "http://localhost/dd104g2_test/shop.html") {
+            owl_imgactive.src = material[i].matURL
+          }
+          // console.log(owl_imgactive)
         }
       } else {
         alert("無任何素材");
@@ -1217,13 +1210,13 @@
     xhr.onload = function () {
       if (xhr.status == 200) {
         showMaterial(xhr.responseText);
-        // console.log(xhr.responseText)
+        console.log(xhr.responseText)
       } else {
         // alert(xhr.status);
       }
     }
 
-    xhr.open("post", "http://localhost/dd104g2_test/js/shop_getOnlyMaterial.php", true);
+    xhr.open("post", "http://localhost/dev/phps/shop_getOnlyMaterial.php", true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
     let data_info = `memNo=5`;
     xhr.send(data_info);
@@ -1256,11 +1249,68 @@
         }
       }
 
-      var url = "http://localhost/dd104g2_test/js/shop_getMemberCoin.php?";
+      var url = "http://localhost/dev/phps/shop_getMemberCoin.php?";
       xhr3.open("Get", url, true);
       xhr3.send(null);
     }
-    window.onload = getMemberInfo;
+  </script>
+
+
+  <script>
+    // ===================這是左邊功能頁(資料庫抓入已購買工具)  會員編號暫寫死=======================
+    function showToolInfo(jsonStr) {
+
+      let toolInfo = JSON.parse(jsonStr);
+      console.log(toolInfo)
+      arr1 = ['controlBox1', 'controlBox2', 'controlBox3', 'controlBox4', 'controlBox5', 'controlBox6',
+        'controlBox7',
+        'controlBox8', 'controlBox9'
+      ]
+      arr2 = ['controlBtn1', 'controlBtn2', 'controlBtn3', 'controlBtn4', 'controlBtn5', 'controlBtn6',
+        'controlBtn7',
+        'controlBtn8', 'controlBtn9'
+      ]
+      for (i = 0; i < toolInfo.length; i++) {
+
+
+        if (toolInfo[i].matURL) {
+          
+          indexStr = toolInfo[i].matURL.toString();
+          index = indexStr.substring(26, indexStr.length - 4) - 1;
+          console.log(index)
+
+          for (j = 0; j < arr1.length; j++) {
+            if (index == j) {
+              document.getElementById(arr1[j]).classList.remove('clicked');
+              document.getElementsByClassName(arr2[j])[0].classList.remove('clicked');
+            }
+          }
+
+        }
+      }
+    }
+
+    function getToolInfo() {
+
+      var xhr5 = new XMLHttpRequest();
+      xhr5.onload = function () {
+        if (xhr5.status == 200) {
+          //modify here
+          showToolInfo(xhr5.responseText);
+          // console.log(xhr5.responseText)
+        } else {
+          // alert(xhr.status);
+        }
+      }
+
+      var url = "http://localhost/dev/phps/shop_getonlyTool.php?";
+      xhr5.open("Get", url, true);
+      xhr5.send(null);
+    }
+
+
+    window.addEventListener('load', getToolInfo, false);
+    window.addEventListener('load', getMemberInfo, false);
   </script>
 
 

@@ -694,7 +694,7 @@
         .catchTitle {
             width: 35%;
             height: 45vw;
-            border: 1px solid blue;
+            // border: 1px solid blue;
             background-image: url(../img/home/catch/stick.png);
             background-repeat: no-repeat;
             background-size: contain;
@@ -706,7 +706,7 @@
             .boardTop {
                 width: 90%;
                 height: 16.7vw;
-                border: 1px solid palevioletred;
+                // border: 1px solid palevioletred;
                 background-image: url(../img/home/catch/boardTop.svg);
                 background-repeat: no-repeat;
                 margin: 13% auto 0 auto;
@@ -722,7 +722,7 @@
             .boardBot {
                 width: 67%;
                 height: 16vw;
-                border: 1px solid slateblue;
+                // border: 1px solid slateblue;
                 background-image: url(../img/home/catch/boardBot.svg);
                 background-repeat: no-repeat;
                 margin: 5% auto 0 20%;
@@ -1917,6 +1917,7 @@
                 height: auto;
                 margin-top: 0;
                 padding-top: 3vw;
+                padding-bottom: 3vw;
                 background-size: cover;
                 justify-content: center;
 
@@ -2011,6 +2012,14 @@
                 height: 120vw;
                 margin-top: -45vw;
 
+                .LB_box {
+                    left: 10%;
+                }
+
+                .RB_box {
+                    right: 3%;
+                }
+
                 .catch_main {
                     right: auto;
                     left: 50%;
@@ -2058,6 +2067,34 @@
                     h2 {
                         font-size: 1.4rem;
                         margin: 0;
+                    }
+                }
+            }
+        }
+
+        .home_custom {
+            display: none;
+        }
+
+        .home_belt {
+            display: none;
+        }
+
+        .home_store {
+            height: 100vw;
+
+            .shed {
+                height: 20vw;
+            }
+
+            .cuboid {
+                width: 25vw;
+                height: 38vw;
+                top: 23%;
+
+                .storeTitle {
+                    h1 {
+                        font-size: 13vw;
                     }
                 }
             }
