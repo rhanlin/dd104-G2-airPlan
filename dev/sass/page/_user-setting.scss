@@ -1,6 +1,6 @@
 .userSetting_body{
     width: 100%;
-    font-size: 0;
+    // font-size: 0;
     font-family: $font;
     // background: radial-gradient($main-blue 30%, rgb(255, 255, 255) 20%);
     background-size: 8px 8px;
@@ -51,6 +51,7 @@
         max-width: 1920px;
         background-color: $main-blue;
         border-bottom: 80px solid $main-blue;
+        font-size: 0;
         @include marginAuto;
         .floor{
             width: 100%;

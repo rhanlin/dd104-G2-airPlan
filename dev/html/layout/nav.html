@@ -176,8 +176,11 @@
                 <input class="forgetEmail" input type="email" id="forgetEmail" placeholder="Email" required autofocus>
 
                 <br>
-                <button id="forgetBtn" class="forgetBtn" type="submit" value="忘記密碼">
+                <button id="forgetBtn" class="forgetBtn" type="button" value="忘記密碼">
                     <p>Get</p>
+                </button>
+                <button id="forgetCancelBtn" class="forgetCancelBtn" type="button" value="忘記密碼">
+                    <p>Cancel</p>
                 </button>
             </form>
         </div>
@@ -281,6 +284,9 @@
             document.getElementById("signInStatusN").innerHTML = "登出";
             document.getElementById("signInStatusH").innerHTML = "登出";
             document.getElementById("signInBg").style.display = "none";
+            
+            location.reload();//登入資訊抓取方式2:從整頁面
+            //changeName();//登入資訊抓取方式1:登入後再次執行show資料的function
         } else {
             alert("帳密錯誤");
         }
@@ -380,6 +386,28 @@
         signInBg.style.display = "block";
     }
 
+
+    function sendForgetForm() {//忘記密碼表單發送
+        const forgetmemEmail = document.getElementById("forgetEmail").value;
+        //-------------使用ajax方法到Server端資料
+        let xhr = new XMLHttpRequest();
+        xhr.open("post", "./phps/airPlanMailer/forget.php", true);
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+        let data_info = `memEmail=${forgetmemEmail}`;
+        xhr.send(data_info);
+        alert('新密碼已寄出至信箱中');
+    }
+
+    function cancelForgetForm() {//清除忘記密碼表單內容
+        const registermemEmailD = document.getElementById("forgetEmail");
+        const registerBg = document.getElementById("forgetBg");
+        const signInBg = document.getElementById("signInBg");//登入燈箱
+        registermemEmailD.value = "";
+        forgetBg.style.display = "none";
+        signInBg.style.display = "block";
+    }
+
+
     window.addEventListener("load", function () {
         getSignInInfo();//檢查登入狀態
         const signInBtn = document.getElementById("signInBtn");
@@ -390,8 +418,12 @@
         const registerBtn = document.getElementById("registerBtn");
         const registerCancelBtn = document.getElementById("registerCancelBtn");
         registerBtn.onclick = sendRegisterForm;//點擊註冊按鈕呼叫發送表單function
-        registerCancelBtn.onclick = cancelRegisterForm;//點擊取消按鈕呼叫清除表單function
+        registerCancelBtn.onclick = cancelRegisterForm;//點擊註冊取消按鈕呼叫清除表單function
 
+        const forgetBtn = document.getElementById("forgetBtn");
+        const forgetCancelBtn = document.getElementById("forgetCancelBtn");
+        forgetBtn.onclick = sendForgetForm;//點擊忘記密碼按鈕呼叫發送表單function
+        forgetCancelBtn.onclick = cancelForgetForm;//點擊忘記密碼取消按鈕呼叫清除表單function
     });
 </script>
 

@@ -256,6 +256,7 @@ btnVar.onclick = function(){
 
 
 function changeName(){
+    
     axios
     .get('phps/letLike.php')
     .then((res) => {
@@ -288,9 +289,16 @@ function changeName(){
         // console.log(span)
         // tr.appendChild(td)
         console.log(td1);
+        const usedata = document.getElementById('cavMemberN').innerText;
+        // console.log(usedata.split(":").length-1);
+        console.log(usedata);
+        // alert('ddd');
     })
     .catch((error) => {
         console.log(error)
     })
 }
-this.changeName();
+window.addEventListener("load", function () {
+changeName();
+
+});
