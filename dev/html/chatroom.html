@@ -668,8 +668,9 @@
 
     <script>
         let data=[];
+        let memNo2;
         window.addEventListener("load", function () {
-            get_chat();
+            // get_chat();
             let Mark = document.querySelectorAll('.sectionMark1');
             
             // console.log(Mark.length);
@@ -681,7 +682,7 @@
                     }
                     e.currentTarget.classList.add("MarkRed");
                     document.getElementsByClassName('sendText')[0].value = "";
-                    let memNo2 = e.currentTarget.getElementsByTagName("p").innerText;
+                    memNo2 = e.currentTarget.getElementsByTagName("p").innerText;
                 })
             };
 
@@ -730,7 +731,7 @@
         function get_chat() {
             let xhr = new XMLHttpRequest();
             // let data_info = "memNo1=" + document.getElementsByClassName('.')[0];
-            let data_info = "memNo1=" + 1 + "memNo2=" + $memNo2;
+            let data_info = "memNo1=" + 1 + "memNo2=" + memNo2;
             xhr.onload = function () {
                 if (xhr.status == 200) {
                     // console.log(xhr.responseText);
