@@ -1,7 +1,7 @@
 <?php
 try {
     require_once("connectBook_cave.php");
-    $sql = "select * from `letter` where memNo=2 order by letTime asc ";
+    $sql = "select * from `letter` where memNo=${memNo} order by letTime asc ";
     $member = $pdo->query($sql);
     
 } catch (PDOException $e) {
