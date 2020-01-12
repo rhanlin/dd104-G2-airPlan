@@ -5,8 +5,6 @@
 // } 
 // function shop_draw() {
 
-
-
 //=================素材點按進畫板==============================
 
 
@@ -14,10 +12,6 @@ let canvas = new fabric.Canvas('canvas', {
   backgroundColor: "white"
 }); //創建fabric環境
 canvas.setHeight(500);
-
-
-
-
 
 //=================剪裁飛機或郵戳畫板==========================
 canvas.controlsAboveOverlay = true;
@@ -52,11 +46,11 @@ var clipPath = new fabric.Group([
     },
 
   ], {
-    stroke: 'red',
-    color: 'red',
-    left: 10,
-    top: 10,
-    fill: 'red'
+    // stroke: 'red',
+    // color: 'red',
+    // left: 10,
+    // top: 10,
+    // fill: 'red'
   }),
   new fabric.Polyline([{
       x: 120,
@@ -103,7 +97,7 @@ var clipPath2 = new fabric.Circle({
   radius: 250,
   top: 0,
   left: 100,
-  // fill: 'bisque'
+  // fill: ''
 })
 
 //切換畫板以便設定轉存圖檔的分類(郵戳或圖案)
@@ -112,24 +106,50 @@ $('#boardSwitchBtn').click(function () {
   if (canvas.clipPath != clipPath2) {
     canvas.clipPath = clipPath2;
     boardType = "circle";
-    console.log(boardType)
+    // console.log(boardType)
     canvas.renderAll();
   } else {
     canvas.clipPath = clipPath;
     boardType = "plane";
-    console.log(boardType)
+    // console.log(boardType)
     canvas.renderAll();
   }
 
 })
 
+//==================拖曳slide到畫板===============================
+
+$('.figure').mousedown(function (e) {
+  // alert(e);
+  if (e.target.tagName.toLowerCase() === 'img') {
+    movingImage = e.target
+    console.log(movingImage)
+  }
+})
+
+function dropImg() {
+  var image = new fabric.Image(movingImage, {
+
+    width: movingImage.naturalWidth * 4,
+    height: movingImage.naturalHeight * 4,
+    scaleX: 80 / movingImage.naturalWidth,
+    scaleY: 80 / movingImage.naturalHeight,
+    top: 200,
+    left: 200
+
+  })
+  canvas.renderAll();
+  canvas.add(image)
+}
+canvas.on('drop', dropImg)
 
 
-drawingOptionArea = document.getElementById('drawingOptionArea');
+//==================點按slide到畫板===============================
+// drawingOptionArea = document.getElementById('drawingOptionArea');
 
 $('.figure').click(function () {
   var itemImage = this.getAttribute('src'); //獲取點取物件的src路徑
-  console.log(itemImage); //確認有沒有取到正確的圖片路徑
+  // console.log(itemImage); //確認有沒有取到正確的圖片路徑
   // // let drawingPanel = document.getElementsByClassName('drawingPanel')[0]; //創建一個畫板空間
   // let canvas = document.getElementById('canvas');
   // // let divImage = document.createElement('div'); //創造div元素
@@ -145,8 +165,6 @@ $('.figure').click(function () {
   // // drawingPanel.appendChild(divImage); //div插入畫板空間
   // // canvas.appendChild(drawingPanel);
 
-
-
   fabric.Image.fromURL(itemImage, function (img) { //使用fabric.Image方法
     // canvas.on('after:render', function () {
     //   this.calcOffset();
@@ -155,19 +173,19 @@ $('.figure').click(function () {
     //   canvasHeight = this.height;
     //   console.log(canvasHeight);
     // });
-    img.scale(0.5).set({
+    img.scale(1).set({
       left: 200,
       top: 200,
-      width: 550,
-      height: 550
+      width: 450,
+      height: 400
       // selectable: true,
       // originX: 'left',
       // originY: 'top'
     });
 
-    img.scaleToHeight(350); //指定img寬
-    img.scaleToWidth(350); //指定img高
-    console.log(img.width)
+    img.scaleToHeight(300); //指定img寬
+    img.scaleToWidth(300); //指定img高
+    // console.log(img.width)
     // img.center();
     // img.setCoords();
     // canvas.renderAll(); //選染畫布
@@ -178,10 +196,7 @@ $('.figure').click(function () {
   })
 });
 
-
-
-
-//===========title==========================
+//=========================title==========================================
 
 $('#group').attr('title', '合併群組')
 $('#ungroup').attr('title', '解散群組')
@@ -193,7 +208,7 @@ $('#copy').attr('title', '複製圖形')
 $('#filter_Grayscale').attr('title', '復古濾鏡')
 $('.controlBox9').attr('title', '載入圖檔')
 
-//======================提示框變換============
+//=========================提示框變換======================================
 
 $('#mode').mouseover(function () {
   $('.manualTitle').html('<h3>繪畫板</h3>');
@@ -277,11 +292,11 @@ $('#filter_Grayscale').mouseout(function () {
   $('.manualinnerText').html(' <h6>滑鼠移入會提示您工具的使用方法喔</h6>')
 })
 
-$('#imageUploader').mouseover(function () {
+$('#controlBox8').mouseover(function () {
   $('.manualTitle').html('<h3>上傳圖檔</h3>');
   $('.manualinnerText').html('<h6>點擊就可任意上傳你自己的圖檔來進行編輯喔</h6>')
 })
-$('#imageUploader').mouseout(function () {
+$('#controlBox8').mouseout(function () {
   $('.manualTitle').html('<h3>工具使用提示框</h3>');
   $('.manualinnerText').html(' <h6>滑鼠移入會提示您工具的使用方法喔</h6>')
 })
@@ -299,7 +314,7 @@ $('#outputPngBtn').mouseout(function () {
 
 
 
-//=======================畫筆區===============
+//=======================畫筆區=====================================================
 //群組
 $('#group').click(function () {
   canvas.getActiveObject().toGroup()
@@ -311,7 +326,7 @@ $('#ungroup').click(function () {
 
 //畫筆顏色
 $(".lineColorInput").change(function () {
-  console.log(this.value)
+  // console.log(this.value)
   canvas.freeDrawingBrush.color = this.value
 
 })
@@ -374,11 +389,11 @@ function clearCanvas() {
       },
 
     ], {
-      stroke: 'red',
-      color: 'red',
-      left: 10,
-      top: 10,
-      fill: 'red'
+      // stroke: 'red',
+      // color: 'red',
+      // left: 10,
+      // top: 10,
+      // fill: 'red'
     }),
     new fabric.Polyline([{
         x: 120,
@@ -468,7 +483,7 @@ $(".shadowColorInput").change(function () {
 $(".shadowBlurInput").change(function () {
 
   myShadow.blur = this.value
-  console.log(this.value);
+  // console.log(this.value);
   canvas.freeDrawingBrush.setShadow(myShadow)
   $(".shadowBlurValue").html(this.value);
 })
@@ -506,38 +521,38 @@ function output(formatType) {
     multiplier: 1,
     quality: 0.1
   });
-  dataURL = dataURL.substring([22]);
+  // dataURL = dataURL.substring([22]);
 
-  const b64toBlob = (b64Data, contentType = '', sliceSize = 512) => {
-    const byteCharacters = atob(b64Data);
-    const byteArrays = [];
+  // const b64toBlob = (b64Data, contentType = '', sliceSize = 512) => {
+  //   const byteCharacters = atob(b64Data);
+  //   const byteArrays = [];
 
-    for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
-      const slice = byteCharacters.slice(offset, offset + sliceSize);
+  //   for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+  //     const slice = byteCharacters.slice(offset, offset + sliceSize);
 
-      const byteNumbers = new Array(slice.length);
-      for (let i = 0; i < slice.length; i++) {
-        byteNumbers[i] = slice.charCodeAt(i);
-      }
+  //     const byteNumbers = new Array(slice.length);
+  //     for (let i = 0; i < slice.length; i++) {
+  //       byteNumbers[i] = slice.charCodeAt(i);
+  //     }
 
-      const byteArray = new Uint8Array(byteNumbers);
-      byteArrays.push(byteArray);
-    }
+  //     const byteArray = new Uint8Array(byteNumbers);
+  //     byteArrays.push(byteArray);
+  //   }
 
-    const blob = new Blob(byteArrays, {
-      type: contentType
-    });
-    return blob;
-  }
+  //   const blob = new Blob(byteArrays, {
+  //     type: contentType
+  //   });
+  //   return blob;
+  // }
 
-  const contentType = 'image/png';
-  const b64Data = dataURL;
+  // const contentType = 'image/png';
+  // const b64Data = dataURL;
 
-  const blob = b64toBlob(b64Data, contentType);
+  // const blob = b64toBlob(b64Data, contentType);
 
-  const blobUrl = URL.createObjectURL(blob);
-  console.log(blobUrl)
-  console.log(boardType)
+  // const blobUrl = URL.createObjectURL(blob);
+  console.log(dataURL)
+  // console.log(boardType)
   circleMatSort = "postmark";
   planeMatSort = "figure";
   if (patternName != "") {
@@ -545,9 +560,9 @@ function output(formatType) {
     if (boardType == "circle") {
       $.ajax({
         type: "POST",
-        url: "http://localhost/dd104g2_test/js/shop_saveImg.php",
+        url: "http://localhost/dev/phps/shop_saveStamp.php",
         data: {
-          image: blobUrl,
+          image: dataURL,
           matName: patternName,
           matLSort: circleMatSort,
         }
@@ -555,9 +570,9 @@ function output(formatType) {
     } else if (boardType == "plane") {
       $.ajax({
         type: "POST",
-        url: "http://localhost/dd104g2_test/js/shop_saveImg.php",
+        url: "http://localhost/dev/phps/shop_savePattern.php",
         data: {
-          image: blobUrl,
+          image: dataURL,
           matName: patternName,
           matLSort: planeMatSort,
         }
@@ -574,10 +589,10 @@ function output(formatType) {
     // })
 
     const a = document.createElement('a');
-    a.href = blobUrl
-    console.log(blobUrl);
+    a.href = dataURL
+    // console.log(blobUrl);
     a.download = `ouput.${formatType}`
-    console.log(a);
+    // console.log(a);
     document.body.appendChild(a);
     a.click()
     document.body.removeChild(a)
@@ -684,27 +699,9 @@ $('#text').on("click", function () {
 
 
 //===========上傳圖檔========================
-
-
-
-
-const imageUploader = document.getElementById("imageUploader");
+const imageUploader = document.getElementsByClassName("controlBox8_button")[0];
 const file = document.getElementById("file");
 const imgset = document.getElementsByClassName("drawingPanel")[0];
-
-// $('.figure').mousedown(function (e) {
-//   console.log(e);
-//   if (e.target.tagName.toLowerCase() === 'img') {
-//     imgDragOffset.offsetX = e.clientX - e.target.offsetLeft
-//     imgDragOffset.offsetY = e.clientY - e.target.offsetTop
-//     movingImage = e.target
-//     console.log(imgDragOffset)
-//     console.log(canvas)
-//     console.log(movingImage)
-//   }
-
-// })
-
 
 
 function uploadFile(e) {
@@ -747,41 +744,9 @@ function handleFile() {
   };
 }
 
-// let imgDragOffset = {
-//   offsetX: 0,
-//   offsetY: 0
-// }
-
-// function dropImg(e) {
-//   e.preventDefault();
-//   console.log(123);
-//   const {
-//     offsetX,
-//     offsetY
-//   } = e.e
-//   const image = new fabric.Image(movingImage, {
-//     width: movingImage.naturalWidth,
-//     height: movingImage.naturalHeight,
-//     scaleX: 100 / movingImage.naturalWidth,
-//     scaleY: 100 / movingImage.naturalHeight,
-//     top: offsetY - imgDragOffset.offsetY,
-//     left: offsetX - imgDragOffset.offsetX
-
-//   })
-//   canvas.renderAll();
-//   canvas.add(image)
-// }
-
 
 imageUploader.addEventListener('click', uploadFile, true);
 file.addEventListener('change', handleFile);
-
-
-// canvas.on('drop', dropImg)
-
-
-
-
 
 
 
