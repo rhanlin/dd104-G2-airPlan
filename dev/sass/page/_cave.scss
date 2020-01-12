@@ -277,14 +277,16 @@
                 }
 
                 .letter-upload-img {
-                  margin: 0 1rem;
-                  float: right;
-                  width: 50%;
-                  height: 9.5vw;
-                  background-image: url(../img/catch-letter/tenor.gif);
-                  background-size: 180%;
-                  background-position: 40% 50%;
-                  background-repeat: no-repeat;
+                  display: inline-block;
+                  margin: 1rem 0;
+                  width: 100%;
+                  overflow: hidden;
+
+                  > img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                  }
                 }
 
                 #stampshot {

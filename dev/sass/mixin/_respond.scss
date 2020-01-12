@@ -24,6 +24,7 @@
       @content;
     }
   }
+
   @else if $breakpoint=="smallMedium" {
     @media all and (max-width:$ipad-laptop-max)and(min-width:$ipad-laptop-min) {
       @content;
@@ -54,9 +55,20 @@
     }
   }
 
+  @else if $breakpoint=="desktop_12-15" {
+    @media all and (max-width:$desktopXl-max)and(min-width:$desktopXl-min) {
+      @content;
+    }
+  }
 
   @else if $breakpoint=="desktopXl" {
     @media all and (max-width:$desktopXl-max) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint=="desktop_15-17" {
+    @media all and (max-width:$desktop_17-max)and(min-width:$desktop_15-min) {
       @content;
     }
   }
