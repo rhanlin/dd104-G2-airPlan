@@ -15,7 +15,17 @@
   @@include("./layout/header.html")
   <main class="shop-main">
     <div id="coinBox">
-      <h5>你目前有 <span id="coin"></span> air幣</h5>
+      <div id="coinArea">
+        <div class="coinBox">
+          <span class="airCoinTxt">-</span>
+          <span id="coinInnerCount"></span>
+          <div class="airCoinSingle"><img src="./img/product/decorate/airCoinSingle.png" alt=""></div>
+          <div class="airCoin"><img src="./img/product/decorate/airCoin.png" alt=""></div>
+
+        </div>
+        <h6 id="coinTextArea">你目前持有 <span id="coin"></span> air幣</h6>
+      </div>
+
     </div>
     <section id="section1">
       <div class="container">
@@ -161,7 +171,7 @@
           </div>
           <div id="outshadow"></div>
           <div id="medal">
-            <div class="cross"></div>
+            <div @click="closeModel" class="cross"></div>
             <div id="textBox">
               <div class="titleBox">
                 <h4 id="titleInner"></h4>
@@ -263,7 +273,7 @@
                 </div>
               </div>
               <div class="controlBox8">
-                <button id="controlBox8" class="controlBox8_button  clicked">
+                <button id="controlBox8" class="controlBox8_button clicked">
                   <input type="file" id="file">
                   <div class="controlBtn8 clicked"><img src="./img/product/toolcontrolbar/photo.svg" alt=""></div>
                 </button>
@@ -442,6 +452,7 @@
 
   <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.0/TweenMax.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
     integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
@@ -455,6 +466,7 @@
   <script src="./js/jquery.nice-select.min.js"></script>
   <script src="./js/shop_carousel.js"></script>
   <script src="./js/shop_draw.js"></script>
+  <script src="./js/animate.js"></script>
   <script>
     $('#myCollapsible').on('hidden.bs.collapse', function () {
       // bootstrap手風琴用
@@ -910,76 +922,99 @@
 
           if (confirm(msg) == true) {
 
-            ownMatURL = this.items[theIndex - 1].url;
-            itemIndex = this.items[theIndex - 1].id.substring(8);
+
             //==============如果跳窗抓到的URL值不是soldOut才可以購買(否則是重複購買)目前會員編號寫死======================================
-            if (ownMatURL != "./img/product/decorate/sold.png") {
-              if (0 < itemIndex && itemIndex < 54) {
-                $.ajax({
-                  type: "POST",
-                  url: "http://localhost/dev/phps/shop_saveImg.php",
-                  data: {
-                    matName: ownMatName,
-                    image: ownMatURL,
-                    matLSort: materialMatSort,
-                  },
-                })
-              } else if (54 <= itemIndex && itemIndex < 65) {
-                $.ajax({
-                  type: "POST",
-                  url: "http://localhost/dev/phps/shop_saveImg.php",
-                  data: {
-                    matName: ownMatName,
-                    image: ownMatURL,
-                    matLSort: toolMatSort,
-                  },
-                })
-              }
 
-              coin = document.getElementById('coin');
-              ownMatPriceNum = parseInt(ownMatPrice);
+            axios
+              .get('./phps/shop_getmaterial.php')
+              .then((res) => {
+                var matObject = res.data;
+                // console.log(matObject)
+                arr = [];
+                for (var j = 0; j < matObject.length; j++) {
+                  arr.push(matObject[j].matName)
+                }
+                // console.log(arr)
+                // console.log(arr.indexOf(ownMatName))
+                if (arr.indexOf(ownMatName) != -1) {
 
-
-              var xhr2 = new XMLHttpRequest();
-              xhr2.onload = function () {
-                if (xhr2.status == 200) {
-                  let nowCoin = JSON.parse(xhr2.responseText);
-
-                  uesrCoinNum = parseInt(nowCoin[0].airCoin);
-                  if (uesrCoinNum >= ownMatPriceNum) {
-                    remainCoin = uesrCoinNum - ownMatPriceNum;
-                    // console.log(remainCoin)
+                  alert("你已經買過此商品囉");
+                  // break;
+                } else {
+                  // alert("aa")
+                  ownMatURL = this.items[theIndex - 1].url;
+                  itemIndex = this.items[theIndex - 1].id.substring(8);
+                  if (0 < itemIndex && itemIndex < 54) {
                     $.ajax({
                       type: "POST",
-                      url: "http://localhost/dev/phps/shop_saveCoin.php",
+                      url: "./phps/shop_saveImg.php",
                       data: {
-                        remainCoin: remainCoin,
+                        matName: ownMatName,
+                        image: ownMatURL,
+                        matLSort: materialMatSort,
                       },
-                    });
-                    location.reload();
-                  } else {
-
-                    alert("抱歉你的剩餘air幣不足無法購買此商品!!!")
+                    })
+                  } else if (54 <= itemIndex && itemIndex < 65) {
+                    $.ajax({
+                      type: "POST",
+                      url: "./phps/shop_saveImg.php",
+                      data: {
+                        matName: ownMatName,
+                        image: ownMatURL,
+                        matLSort: toolMatSort,
+                      },
+                    })
                   }
-                } else {
-                  alert(xhr.status);
+
+                  coin = document.getElementById('coin');
+                  ownMatPriceNum = parseInt(ownMatPrice);
+                  coinInnerCount = document.getElementById('coinInnerCount');
+                  coinInnerCount.innerHTML = ownMatPriceNum;
+                  console.log(coinInnerCount)
+                  var xhr2 = new XMLHttpRequest();
+                  xhr2.onload = function () {
+                    if (xhr2.status == 200) {
+                      let nowCoin = JSON.parse(xhr2.responseText);
+
+                      uesrCoinNum = parseInt(nowCoin[0].airCoin);
+                      if (uesrCoinNum >= ownMatPriceNum) {
+                        boughtProd();
+                        remainCoin = uesrCoinNum - ownMatPriceNum;
+                        remainCoinInnerCount = document.getElementById('coin');
+                        remainCoinInnerCount.innerHTML = remainCoin;
+                        // console.log(remainCoin) 
+
+
+                        $.ajax({
+                          type: "POST",
+                          url: "./phps/shop_saveCoin.php",
+                          data: {
+                            remainCoin: remainCoin,
+                          },
+                        });
+                      } else {
+
+                        alert("抱歉你的剩餘air幣不足無法購買此商品!!!")
+                      }
+                      // location.reload();
+                    } else {
+                      alert(xhr2.status);
+                    }
+
+                  }
+                  var url = "./phps/shop_getMemberCoin.php";
+                  xhr2.open("Get", url, true);
+                  xhr2.send(null);
                 }
-              }
 
-              var url = "http://localhost/dev/phps/shop_getMemberCoin.php?";
-              xhr2.open("Get", url, true);
-              xhr2.send(null);
-
-            } else {
-              alert("你已經買過此商品囉")
-            }
+              })
+              .catch((error) => {
+                console.log(error)
+              })
 
           } else {
             return false;
           }
-
-
-
 
         },
         //====================資料庫data寫入跳窗內資料==========================================
@@ -990,36 +1025,83 @@
         //     arr.push(theIndex)
         //   }
         //   console.log(arr);
+        carddark() {
+          // var vm = this;
+          axios
+            .get('./phps/shop_getmaterial.php')
+            .then((res) => {
+              var itemArr = res.data;
+              console.log(this.items)
+              console.log(itemArr)
+              for (var i = 0; i < this.items.length; i++) {
+                // console.log(vm.items[i].url)
+                // console.log(itemArr[0].matURL);
+                for (var j = 0; j < itemArr.length; j++) {
+                  if (this.items[i].url == itemArr[j].matURL) {
+                    this.items[i].url = "./img/product/decorate/sold.png";
+                    this.items[i].class = "bought"
+                  }
+                }
+              }
+            })
+            .catch((error) => {
+              console.log(error)
+            })
+        },
+
+
+        //  ================這是關閉跳窗用===========================================================
+        closeModel() {
+          this.showToolInfo();
+          this.showMaterial();
+          this.carddark()
+          $('#outshadow').css('visibility', 'hidden');
+          $('#outshadow').css('zIndex', '-99');
+          $('#medal').css('display', 'none');
+
+          // e ? e.stopPropagation() : event.cancelBubble = true;
+
+        },
+
         changeIndex(e) {
-          theIndex = e.target.id.substring(8);
-          // console.log(theIndex);
-          var xhr = new XMLHttpRequest();
-          xhr.onload = function () {
-            if (xhr.status == 200) {
-              // showProduct();
-              let product = JSON.parse(xhr.responseText);
-              // console.log(product) 
-              i = theIndex - 1;
-              // console.log(i);
-              $('#titleInner').html(product[i].matNameCH);
-              $('#infoInner').html(product[i].matInfo);
-              $('#chanceInner').html(product[i].matChance);
-              $('#priceInner').html(product[i].prodPrice);
-              // console.log(xhr.responseText)
-            } else {
-              // alert(xhr.status);
+          console.log(e.target.style.backgroundImage)
+          var text = 'url("./img/product/decorate/sold.png")';
+          text = text.toString();
+          console.log(text);
+          if (`${e.target.style.backgroundImage}` != text) {
+            theIndex = e.target.id.substring(8);
+            // console.log(theIndex);
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+              if (xhr.status == 200) {
+                // showProduct();
+                let product = JSON.parse(xhr.responseText);
+                // console.log(product) 
+                i = theIndex - 1;
+                // console.log(i);
+                $('#titleInner').html(product[i].matNameCH);
+                $('#infoInner').html(product[i].matInfo);
+                $('#chanceInner').html(product[i].matChance);
+                $('#priceInner').html(product[i].prodPrice);
+                // console.log(xhr.responseText)
+              } else {
+                // alert(xhr.status);
+              }
             }
+
+            var url = "./phps/shop_prodItemGetInfo.php";
+            xhr.open("Get", url, true);
+            xhr.send(null);
+
+            $('#outshadow').css('opacity', '0.7');
+            $('#outshadow').css('visibility', 'visible');
+            $('#outshadow').css('zIndex', '99');
+            $('#medal').css('display', 'block');
+            $('#medal').css('zIndex', '100');
+
+          } else {
+            alert("你已經買過此商品囉")
           }
-
-          var url = "http://localhost/dev/phps/shop_prodItemGetInfo.php?";
-          xhr.open("Get", url, true);
-          xhr.send(null);
-
-          $('#outshadow').css('opacity', '0.7');
-          $('#outshadow').css('visibility', 'visible');
-          $('#outshadow').css('zIndex', '99');
-          $('#medal').css('display', 'block');
-          $('#medal').css('zIndex', '100');
 
         },
         //====================Vue響應式========================================================
@@ -1061,11 +1143,87 @@
             if (index < 30 && index >= 20) return true;
           }
         },
+
+        showToolInfo() {
+          // ===================這是左邊功能頁(資料庫抓入已購買工具)  會員編號暫寫死=======================
+
+          axios
+            .get('./phps/shop_getonlyTool.php')
+            .then((res) => {
+              var toolInfo = res.data;
+              console.log(toolInfo)
+              arr1 = ['controlBox1', 'controlBox2', 'controlBox3', 'controlBox4', 'controlBox5', 'controlBox6',
+                'controlBox7',
+                'controlBox8', 'controlBox9'
+              ]
+              arr2 = ['controlBtn1', 'controlBtn2', 'controlBtn3', 'controlBtn4', 'controlBtn5', 'controlBtn6',
+                'controlBtn7',
+                'controlBtn8', 'controlBtn9'
+              ]
+              for (i = 0; i < toolInfo.length; i++) {
+
+
+                if (toolInfo[i].matURL) {
+
+                  indexStr = toolInfo[i].matURL.toString();
+                  index = indexStr.substring(26, indexStr.length - 4) - 1;
+                  console.log(index)
+
+                  for (j = 0; j < arr1.length; j++) {
+                    if (index == j) {
+                      document.getElementById(arr1[j]).classList.remove('clicked');
+                      document.getElementsByClassName(arr2[j])[0].classList.remove('clicked');
+                    }
+                  }
+
+                }
+              }
+            })
+            .catch((error) => {
+              console.log(error)
+            })
+
+
+        },
+
+        showMaterial() {
+
+          axios
+            .get('./phps/shop_getOnlyMaterial.php')
+            .then((res) => {
+              var material = res.data;
+              if (material[0].matURL) {
+                for (var i = 0; i < material.length; i++) {
+                  owl_item = document.getElementsByClassName('owl-item')[i].firstChild;
+                  owl_imgcloned = document.getElementsByClassName('cloned')[i].firstChild;
+                  owl_imgactive = document.querySelectorAll('.owl-stage .active')[i].firstChild;
+                  if (owl_item.src == "./phps/shop.html") {
+                    // alert("")
+                    owl_item.src = material[i].matURL
+                    owl_imgcloned.src = material[i].matURL
+                    owl_imgactive.src = material[i].matURL
+                    // console.log(owl_item)
+                    // console.log(owl_imgcloned)
+                  }
+                  if (owl_imgactive.src == "./phps/shop.html") {
+                    owl_imgactive.src = material[i].matURL
+                  }
+                  // console.log(owl_imgactive)
+                }
+              } else {
+                alert("無任何素材");
+              }
+            })
+            .catch((error) => {
+              console.log(error)
+            })
+        },
       },
 
       mounted() {
-
-
+        window.addEventListener('load', this.carddark);
+        window.addEventListener('load', this.showToolInfo);
+        window.addEventListener('load', this.showMaterial);
         //====================Vue響應式=========================================================
         this.$nextTick(function () {
           window.addEventListener('resize', this.getWindowWidth);
@@ -1074,7 +1232,7 @@
         });
         //====================頁面onload後直接抓回64筆商城卡片資料給vue data=>items======================================
         axios
-          .get('http://localhost/dev/phps/shop_axios_post.php')
+          .get('./js/shop_axios_post.php')
           .then((res) => {
             var arr = res.data;
             for (var i = 0; i < arr.length; i++) {
@@ -1086,25 +1244,7 @@
           });
         // ===========這是從資料庫抓已購素材中的url來對比並把卡片改成soldOut ================================================
 
-        axios
-          .get('http://localhost/dev/phps/shop_getmaterial.php')
-          .then((res) => {
-            var itemArr = res.data;
-            var vm = this;
-            for (var i = 0; i < vm.items.length; i++) {
-              // console.log(vm.items[i].url)
-              // console.log(itemArr[0].matURL);
-              for (var j = 0; j < itemArr.length; j++) {
-                if (vm.items[i].url == itemArr[j].matURL) {
-                  vm.items[i].url = "./img/product/decorate/sold.png";
-                  vm.items[i].class = "bought"
-                }
-              }
-            }
-          })
-          .catch((error) => {
-            console.log(error)
-          })
+
       },
       beforeDestroy() {
         window.removeEventListener('resize', this.getWindowWidth);
@@ -1151,19 +1291,10 @@
     //   }
     // }
 
-    // var url = "http://localhost/dev/phps/shop_prodItemGetInfo.php?";
+    // var url = "./phps/shop_prodItemGetInfo.php";
     // xhr.open("Get", url, true);
     // xhr.send(null);
     // })
-
-
-    //  ================這是關閉跳窗用===========================================================
-    $('.cross').click(function (e) {
-      $('#outshadow').css('visibility', 'hidden');
-      $('#outshadow').css('zIndex', '-99');
-      $('#medal').css('display', 'none');
-      e ? e.stopPropagation() : event.cancelBubble = true;
-    })
   </script>
 
   <script>
@@ -1175,51 +1306,51 @@
   </script>
 
   <script>
-    // =====================這是輪播圖片(資料庫抓入已購買素材)  會員編號暫寫死=======================
-    function showMaterial(jsonStr) {
+    // =====================這是輪播圖片(資料庫抓入已購買素材)  會員編號暫寫死   原生xhr版=======================
+    // function showMaterial(jsonStr) {
 
-      let material = JSON.parse(jsonStr);
-      console.log(material)
-      // console.log(owl_item)
+    //   let material = JSON.parse(jsonStr);
+    //   console.log(material)
+    //   // console.log(owl_item)
 
-      if (material[0].matURL) {
-        for (var i = 0; i < material.length; i++) {
-          owl_item = document.getElementsByClassName('owl-item')[i].firstChild;
-          owl_imgcloned = document.getElementsByClassName('cloned')[i].firstChild;
-          owl_imgactive = document.getElementsByClassName('active')[i].firstChild;
-          if (owl_item.src == "http://localhost/dd104g2_test/shop.html") {
-            alert("")
-            owl_item.src = material[i].matURL
-            owl_imgcloned.src = material[i].matURL
-            owl_imgactive.src = material[i].matURL
-            // console.log(owl_item)
-            // console.log(owl_imgcloned)
-          }
-          if (owl_imgactive.src == "http://localhost/dd104g2_test/shop.html") {
-            owl_imgactive.src = material[i].matURL
-          }
-          // console.log(owl_imgactive)
-        }
-      } else {
-        alert("無任何素材");
-      }
-    }
+    //   if (material[0].matURL) {
+    //     for (var i = 0; i < material.length; i++) {
+    //       owl_item = document.getElementsByClassName('owl-item')[i].firstChild;
+    //       owl_imgcloned = document.getElementsByClassName('cloned')[i].firstChild;
+    //       owl_imgactive = document.querySelectorAll('.owl-stage .active')[i].firstChild;
+    //       if (owl_item.src == "./phps/shop.html") {
+    //         // alert("")
+    //         owl_item.src = material[i].matURL
+    //         owl_imgcloned.src = material[i].matURL
+    //         owl_imgactive.src = material[i].matURL
+    //         // console.log(owl_item)
+    //         // console.log(owl_imgcloned)
+    //       }
+    //       if (owl_imgactive.src == "./phps/shop.html") {
+    //         owl_imgactive.src = material[i].matURL
+    //       }
+    //       // console.log(owl_imgactive)
+    //     }
+    //   } else {
+    //     alert("無任何素材");
+    //   }
+    // }
 
 
-    var xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-      if (xhr.status == 200) {
-        showMaterial(xhr.responseText);
-        console.log(xhr.responseText)
-      } else {
-        // alert(xhr.status);
-      }
-    }
+    // var xhr = new XMLHttpRequest();
+    // xhr.onload = function () {
+    //   if (xhr.status == 200) {
+    //     showMaterial(xhr.responseText);
+    //     // console.log(xhr.responseText)
+    //   } else {
+    //     // alert(xhr.status);
+    //   }
+    // }
 
-    xhr.open("post", "http://localhost/dev/phps/shop_getOnlyMaterial.php", true);
-    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-    let data_info = `memNo=5`;
-    xhr.send(data_info);
+    // xhr.open("post", "./phps/shop_getOnlyMaterial.php", true);
+    // xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    // let data_info = `memNo=5`;
+    // xhr.send(data_info);
   </script>
 
   <script>
@@ -1249,7 +1380,7 @@
         }
       }
 
-      var url = "http://localhost/dev/phps/shop_getMemberCoin.php?";
+      var url = "./phps/shop_getMemberCoin.php";
       xhr3.open("Get", url, true);
       xhr3.send(null);
     }
@@ -1257,63 +1388,44 @@
 
 
   <script>
-    // ===================這是左邊功能頁(資料庫抓入已購買工具)  會員編號暫寫死=======================
-    function showToolInfo(jsonStr) {
 
-      let toolInfo = JSON.parse(jsonStr);
-      console.log(toolInfo)
-      arr1 = ['controlBox1', 'controlBox2', 'controlBox3', 'controlBox4', 'controlBox5', 'controlBox6',
-        'controlBox7',
-        'controlBox8', 'controlBox9'
-      ]
-      arr2 = ['controlBtn1', 'controlBtn2', 'controlBtn3', 'controlBtn4', 'controlBtn5', 'controlBtn6',
-        'controlBtn7',
-        'controlBtn8', 'controlBtn9'
-      ]
-      for (i = 0; i < toolInfo.length; i++) {
+  </script>
+  <script>
+    function boughtProd() {
 
+      TweenMax.fromTo('.airCoinSingle', 8, {
+        y: 0,
+        opacity: 1,
 
-        if (toolInfo[i].matURL) {
-          
-          indexStr = toolInfo[i].matURL.toString();
-          index = indexStr.substring(26, indexStr.length - 4) - 1;
-          console.log(index)
+      }, {
+        y: -200,
+        opacity: 0,
+      })
 
-          for (j = 0; j < arr1.length; j++) {
-            if (index == j) {
-              document.getElementById(arr1[j]).classList.remove('clicked');
-              document.getElementsByClassName(arr2[j])[0].classList.remove('clicked');
-            }
-          }
+      TweenMax.fromTo('.airCoinTxt', 8, {
+        y: 0,
+        opacity: 1,
 
-        }
-      }
+      }, {
+        y: -200,
+        opacity: 0,
+      })
+      TweenMax.fromTo('#coinInnerCount', 8, {
+        y: 0,
+        opacity: 1,
+
+      }, {
+        y: -200,
+        opacity: 0,
+      });
+
     }
-
-    function getToolInfo() {
-
-      var xhr5 = new XMLHttpRequest();
-      xhr5.onload = function () {
-        if (xhr5.status == 200) {
-          //modify here
-          showToolInfo(xhr5.responseText);
-          // console.log(xhr5.responseText)
-        } else {
-          // alert(xhr.status);
-        }
-      }
-
-      var url = "http://localhost/dev/phps/shop_getonlyTool.php?";
-      xhr5.open("Get", url, true);
-      xhr5.send(null);
-    }
-
-
-    window.addEventListener('load', getToolInfo, false);
+  </script>
+  <script>
+    // window.addEventListener('load', showMaterial, false);
+    // window.addEventListener('load', getToolInfo, false);
     window.addEventListener('load', getMemberInfo, false);
   </script>
-
-
 </body>
 
 </html>
