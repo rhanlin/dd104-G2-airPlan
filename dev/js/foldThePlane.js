@@ -333,6 +333,7 @@ function setPlaneShadow(){
 function shootPlane(){
   // 飛機hover
   planeWing.addEventListener('mouseover',()=>{
+
     // imgWrap.style.animation = "hoverPlane";
     // imgWrap.style.animationDuration = "1s";
     // imgWrap.style.animationFillMode = "none";

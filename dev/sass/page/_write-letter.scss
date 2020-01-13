@@ -16,6 +16,8 @@
     main {
         margin-top: 10vw;
         font-family: 'Noto Sans TC', sans-serif;
+        position: relative;
+        overflow-x: hidden;
         form{
         .goto-shop-btn {
             // border: 1px solid blue;
@@ -1102,11 +1104,10 @@
             margin: 0 auto;
             display: block;
             background-color: #fff;
-            // background-image: url(../img/share/postCard-vertical.svg);
-            // background-position: center;
-            // background-size: cover;
-            // display: flex;
-            position: relative;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
         }
     }
 
