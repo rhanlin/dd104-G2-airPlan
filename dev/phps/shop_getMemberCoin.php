@@ -4,8 +4,10 @@
 require_once "connectBook_shop.php";
 try {
 
-    $sql = "select * from `member` where memNo='5'";
-    $member = $pdo->query($sql);
+    $sql = "select * from `member` where memNo=:memNo";
+    $member = $pdo->prepare($sql);
+    $member->bindValue(":memNo", $_GET["memNo"]);
+    $member->execute();
     if ($member->rowCount() == 0) {
         echo "{}";
     } else {
