@@ -22,7 +22,7 @@ function scrollJS() {
     let sceneFirstPlane = new ScrollMagic.Scene({
         triggerElement: '.home_first',
         daration: '100%'
-    }).setTween(firstPlanePara).addIndicators().addTo(controller);
+    }).setTween(firstPlanePara).addTo(controller);
 
     //---白雲飄進---
     let cloudWhitePara = new TimelineMax({});
@@ -44,7 +44,7 @@ function scrollJS() {
     let sceneCloudWhite = new ScrollMagic.Scene({
         triggerElement: '.home_first',
         daration: '100%'
-    }).setTween(cloudWhitePara).addIndicators().addTo(controller);
+    }).setTween(cloudWhitePara).addTo(controller);
 
     //---藍雲飄進---
     let cloudBluePara = new TimelineMax({});
@@ -64,7 +64,7 @@ function scrollJS() {
     let sceneCloudBlue = new ScrollMagic.Scene({
         triggerElement: '.home_first',
         daration: '200%'
-    }).setTween(cloudBluePara).addIndicators().addTo(controller);
+    }).setTween(cloudBluePara).addTo(controller);
 
 
     //山之間的動畫
@@ -77,7 +77,7 @@ function scrollJS() {
         triggerElement: '.mountain_box',
         offset: 150,
         duration: '15%',
-    }).setTween(hang3).addIndicators().addTo(controller);
+    }).setTween(hang3).addTo(controller);
 
 
     //---飄紙1 出現---
@@ -89,7 +89,7 @@ function scrollJS() {
         triggerElement: '.mountain_box',
         offset: 200,
         duration: '15%',
-    }).setTween(floatShow1).addIndicators().addTo(controller);
+    }).setTween(floatShow1).addTo(controller);
 
 
     //---飄紙1 飄飄飄---
@@ -106,7 +106,7 @@ function scrollJS() {
         offset: 350,
         duration: '50%',
         ease: Power1.easeIn,
-    }).setTween(floatGo1).addIndicators().addTo(controller);
+    }).setTween(floatGo1).addTo(controller);
 
 
     //---飄紙1 消失---
@@ -118,7 +118,7 @@ function scrollJS() {
         triggerElement: '.mountain_box',
         offset: 800,
         duration: '20%',
-    }).setTween(floatHide1).addIndicators().addTo(controller);
+    }).setTween(floatHide1).addTo(controller);
 
 
     //---飄紙2 出現---
@@ -130,7 +130,7 @@ function scrollJS() {
         triggerElement: '.mountain_box',
         offset: 900,
         duration: '10%',
-    }).setTween(floatShow2).addIndicators().addTo(controller);
+    }).setTween(floatShow2).addTo(controller);
 
 
     //---飄紙2 飄飄飄---
@@ -147,7 +147,7 @@ function scrollJS() {
         offset: 900,
         duration: '35%',
         ease: Power1.easeIn,
-    }).setTween(floatGo2).addIndicators().addTo(controller);
+    }).setTween(floatGo2).addTo(controller);
 
 
     //---飄紙2 消失---
@@ -159,7 +159,7 @@ function scrollJS() {
         triggerElement: '.mountain_box',
         offset: 1200,
         duration: '10%',
-    }).setTween(floatHide2).addIndicators().addTo(controller);
+    }).setTween(floatHide2).addTo(controller);
 
 
     //---飄紙3 出現---
@@ -171,7 +171,7 @@ function scrollJS() {
         triggerElement: '.mountain_box',
         offset: 1200,
         duration: '10%',
-    }).setTween(floatShow3).addIndicators().addTo(controller);
+    }).setTween(floatShow3).addTo(controller);
 
 
     //---飄紙3 飄飄飄---
@@ -198,7 +198,7 @@ function scrollJS() {
         offset: 1300,
         duration: '150%',
         ease: Power1.easeIn,
-    }).setTween(floatGo3).addIndicators().addTo(controller);
+    }).setTween(floatGo3).addTo(controller);
 
 
     // 在桌上的動畫
@@ -314,8 +314,12 @@ function scrollJS() {
         y: "-50%",
         ease: Power0.easeNone,
     });
+    let writePaper1_None = TweenMax.to('.write_paper', 0.5, {
+        display: "none",
+        ease: Power0.easeNone,
+    });
 
-    bottlePin.add([writeHandL2, writeHandR2]);
+    bottlePin.add([writeHandL2, writeHandR2, writePaper1_None]);
 
 
     //---摺紙第二次變化---
@@ -410,7 +414,7 @@ function scrollJS() {
         triggerElement: ".write",
         duration: '470%',
         triggerHook: 0
-    }).setPin('.write').setTween(bottlePin).addIndicators().addTo(controller);
+    }).setPin('.write').setTween(bottlePin).addTo(controller);
 
 
 
@@ -547,7 +551,7 @@ function scrollJS() {
         triggerElement: ".home_catch",
         duration: '450%',
         triggerHook: 0
-    }).setPin('.home_catch').setTween(grassPin).addIndicators().addTo(controller);
+    }).setPin('.home_catch').setTween(grassPin).addTo(controller);
 
 
 
@@ -585,7 +589,7 @@ function scrollJS() {
     let sceneSmoke = new ScrollMagic.Scene({
         triggerElement: '.home_custom',
         daration: '100%'
-    }).setTween(smokePara).addIndicators().addTo(controller);
+    }).setTween(smokePara).addTo(controller);
 
 
     //---輪子旋轉---
@@ -598,7 +602,7 @@ function scrollJS() {
         // offset: 350,
         duration: '150%',
         ease: Power0.easeNone,
-    }).setTween(wheel).addIndicators().addTo(controller);
+    }).setTween(wheel).addTo(controller);
 
 
     //---網子中信紙消失---
@@ -611,7 +615,7 @@ function scrollJS() {
         offset: -300,
         duration: '80%',
         ease: Power0.easeNone,
-    }).setTween(netLetter).addIndicators().addTo(controller);
+    }).setTween(netLetter).addTo(controller);
 
 
     //---機械手臂旋轉---
@@ -624,7 +628,7 @@ function scrollJS() {
         triggerElement: '.home_custom',
         duration: '100%',
         ease: Power0.easeNone,
-    }).setTween(machineHand).addIndicators().addTo(controller);
+    }).setTween(machineHand).addTo(controller);
 
 
     //---水管背景的信 出現並移動---
@@ -639,7 +643,7 @@ function scrollJS() {
         duration: '100%',
         offset: 250,
         ease: Power0.easeNone,
-    }).setTween(tubeLetter).addIndicators().addTo(controller);
+    }).setTween(tubeLetter).addTo(controller);
 
 
     //---信紙進入印表機---
@@ -653,7 +657,7 @@ function scrollJS() {
         duration: '50%',
         offset: -100,
         ease: Power0.easeNone,
-    }).setTween(printLetterIn).addIndicators().addTo(controller);
+    }).setTween(printLetterIn).addTo(controller);
 
 
     //---信紙從印表機出來---
@@ -667,7 +671,7 @@ function scrollJS() {
         duration: '70%',
         offset: 150,
         ease: Power0.easeNone,
-    }).setTween(printLetterOut).addIndicators().addTo(controller);
+    }).setTween(printLetterOut).addTo(controller);
 
 
     //---印出來的信紙消失---
@@ -681,7 +685,7 @@ function scrollJS() {
         duration: '53%',
         offset: 1050,
         ease: Power0.easeNone,
-    }).setTween(printLetterNone).addIndicators().addTo(controller);
+    }).setTween(printLetterNone).addTo(controller);
 
 
     //---輸送帶上的第一章信紙(重疊處)出現---
@@ -695,7 +699,7 @@ function scrollJS() {
         duration: '10%',
         offset: 900,
         ease: Power0.easeNone,
-    }).setTween(beltLetterShow).addIndicators().addTo(controller);
+    }).setTween(beltLetterShow).addTo(controller);
 
 
     //---印表機震動---
@@ -728,7 +732,7 @@ function scrollJS() {
     let sceneQuake = new ScrollMagic.Scene({
         triggerElement: '.print',
         daration: '100%'
-    }).setTween(printPara).addIndicators().addTo(controller);
+    }).setTween(printPara).addTo(controller);
 
 
     //輸送帶section的動畫
@@ -836,7 +840,7 @@ function scrollJS() {
         triggerElement: ".home_belt",
         duration: '400%',
         triggerHook: 0
-    }).setPin('.home_belt').setTween(beltPin).addIndicators().addTo(controller);
+    }).setPin('.home_belt').setTween(beltPin).addTo(controller);
 
 
     //---上色紙飛機向下移動縮小---
@@ -851,7 +855,7 @@ function scrollJS() {
         duration: '80%',
         offset: -400,
         ease: Power0.easeNone,
-    }).setTween(beltPlaneOut).addIndicators().addTo(controller);
+    }).setTween(beltPlaneOut).addTo(controller);
 
 
     //---紙飛機商品進入---
@@ -865,7 +869,7 @@ function scrollJS() {
         duration: '35%',
         offset: 138,
         ease: Power0.easeNone,
-    }).setTween(storePlaneIn).addIndicators().addTo(controller);
+    }).setTween(storePlaneIn).addTo(controller);
 
 
     //商城的動畫
@@ -896,7 +900,7 @@ function scrollJS() {
         triggerElement: ".home_store",
         duration: '200%',
         triggerHook: 0
-    }).setPin('.home_store').setTween(storePin).addIndicators().addTo(controller);
+    }).setPin('.home_store').setTween(storePin).addTo(controller);
 
 
 }
@@ -904,6 +908,6 @@ function scrollJS() {
 
 var nwidth = $(window).width();
 console.log(nwidth);
-if (nwidth > 576) {
+if (nwidth > 1182) {
     scrollJS();
 };
