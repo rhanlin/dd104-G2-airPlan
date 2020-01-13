@@ -334,6 +334,7 @@
                 document.getElementById("signInStatusIconH").style.color = 'green';
                 document.getElementById("signInStatusN").innerHTML = "登出";
                 document.getElementById("signInStatusH").innerHTML = "登出";
+                console.log( "========1",member.memNo);
             }
         }
         xhr.open("get", "./phps/getSignInInfo.php", true);

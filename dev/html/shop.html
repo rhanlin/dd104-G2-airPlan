@@ -934,7 +934,7 @@
 
           if (confirm(msg) == true) {
             cavMemberH = document.getElementById('cavMemberH');
-            cavMemberH.innerHTML = 5;
+            // cavMemberH.innerHTML = 5;
 
             //==============如果跳窗抓到的URL值不是soldOut才可以購買(否則是重複購買)目前會員編號寫死======================================
 
@@ -960,7 +960,7 @@
                   itemIndex = this.items[theIndex - 1].id.substring(8);
                   if (0 < itemIndex && itemIndex < 54) {
                     cavMemberH = document.getElementById('cavMemberH');
-                    cavMemberH.innerHTML = 5;
+                    // cavMemberH.innerHTML = 5;
                     $.ajax({
                       type: "POST",
                       url: "./phps/shop_saveImg.php",
@@ -994,7 +994,7 @@
                     if (xhr2.status == 200) {
 
                       cavMemberH = document.getElementById('cavMemberH');
-                      cavMemberH.innerHTML = 5;
+                      // cavMemberH.innerHTML = 5;
                       let nowCoin = JSON.parse(xhr2.responseText);
 
                       uesrCoinNum = parseInt(nowCoin[0].airCoin);
@@ -1049,7 +1049,7 @@
         //   console.log(arr);
         carddark() {
           cavMemberH = document.getElementById('cavMemberH');
-          cavMemberH.innerHTML = 5;
+          // cavMemberH.innerHTML = 5;
           // var vm = this;
           axios
             .get('./phps/shop_getmaterial.php?memNo=' + cavMemberH.innerHTML)
@@ -1170,7 +1170,7 @@
 
         showToolInfo() {
           cavMemberH = document.getElementById('cavMemberH');
-          cavMemberH.innerHTML = 5;
+          // cavMemberH.innerHTML = 5;
           // ===================這是左邊功能頁(資料庫抓入已購買工具)  會員編號暫寫死=======================
 
           axios
@@ -1214,7 +1214,7 @@
 
         showMaterial() {
           cavMemberH = document.getElementById('cavMemberH');
-          cavMemberH.innerHTML = 5;
+          // cavMemberH.innerHTML = 5;
           // =====================這是輪播圖片(資料庫抓入已購買素材)  會員編號暫寫死  =======================
           axios
             .get('./phps/shop_getOnlyMaterial.php?memNo=' + cavMemberH.innerHTML)
@@ -1229,7 +1229,7 @@
                   console.log(owl_item.src)
                   owl_imgcloned = document.getElementsByClassName('cloned')[i].firstChild;
                   owl_imgactive = document.querySelectorAll('.owl-stage .active')[i].firstChild;
-                  if (owl_item.src == "http://localhost/dd104-G2-airPlan/lastest/dev/shop.html") {
+                  if (owl_item.src == location.href) {
                     // alert("")
                     owl_item.src = gotMaterial[i].matURL
                     owl_imgcloned.src = gotMaterial[i].matURL
@@ -1237,7 +1237,7 @@
                     // console.log(owl_item)
                     // console.log(owl_imgcloned)
                   }
-                  if (owl_imgactive.src == "http://localhost/dd104-G2-airPlan/lastest/dev/shop.html") {
+                  if (owl_imgactive.src == location.href) {
                     owl_imgactive.src = gotMaterial[i].matURL
                   }
                   // console.log(owl_imgactive)
@@ -1411,9 +1411,11 @@
           // alert(xhr.status);
         }
       }
-      cavMemberH = document.getElementById('cavMemberH');
-      cavMemberH.innerHTML = 5;
-      var url = "./phps/shop_getMemberCoin.php?memNo=" + cavMemberH.innerHTML;
+      cavMemberH = document.getElementById('cavMemberH').innerHTML;
+      cavMemberH = cavMemberH.toString().substring(3);
+      console.log("========2",cavMemberH)
+      // cavMemberH.innerHTML = 5;
+      var url = "./phps/shop_getMemberCoin.php?memNo=" + cavMemberH;
       xhr3.open("Get", url, true);
       xhr3.send(null);
     }
@@ -1455,7 +1457,9 @@
     }
   </script>
   <script>
-    window.addEventListener('load', getMemberInfo, false);
+    window.addEventListener('load', function () {
+      setTimeout(getMemberInfo, 500);
+    }, false);
   </script>
 </body>
 
