@@ -35,7 +35,7 @@
                             <div class="hbg-littleNav">
                                 <a class="showSigin" href="#"><i id="signInStatusIconH"
                                         class="fas fa-user-circle"></i></a>
-                                <span id="signInStatusH">登入</span>
+                                <span id="signInStatusH" class="showSigin">登入</span>
                             </div>
                             <div class="hbg-pc">
                                 <div class="cav-member">
@@ -61,7 +61,7 @@
             <div class="nav-littleNav">
                 <a id="showSigin" class="showSigin" href="#"><i id="signInStatusIconN"
                         class="fas fa-user-circle"></i></a>
-                <span id="signInStatusN">登入</span>
+                <span id="signInStatusN" class="showSigin">登入</span>
             </div>
             <div class="nav-pc">
                 <!--nav登入者資訊-->
@@ -287,7 +287,8 @@
             
             location.reload();//登入資訊抓取方式2:從整頁面
             //changeName();//登入資訊抓取方式1:登入後再次執行show資料的function
-        } else {
+        } 
+        else {
             alert("帳密錯誤");
         }
     }
@@ -369,7 +370,8 @@
             } else {
                 alert('密碼確認與第一次輸入不同');
             }
-        } else {
+        }
+        else {
             alert('欄位不可空白');
         }
     }
@@ -399,16 +401,35 @@
         
     function sendForgetForm() {//忘記密碼表單發送
         const forgetmemEmail = document.getElementById("forgetEmail").value;
+        const memNewPsw = newPsw(8);//呼叫新密碼產生
+        // console.log("----1",memNewPsw);
         //-------------使用ajax方法到Server端資料
         let xhr = new XMLHttpRequest();
-        xhr.open("post", "./phps/airPlanMailer/forget.php", true);
+        xhr.onload = function () {
+            console.log('密碼寄送結果:',xhr.responseText);
+            // memberCheck = JSON.parse(xhr.responseText);
+            // console.log("------memRowCheck",memberCheck);
+            if (xhr.responseText == 'Success!') {
+                document.getElementById("forgetBg").style.display = "none";
+                alert('新密碼已寄送至您的信箱中');
+            }
+            else {
+                alert('查無此Email');
+            }
+        }
+        xhr.open("post", "phps/airPlanMailer/forget.php", true);
         xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-        let memNewPsw = newPsw(8);//呼叫新密碼產生
-        console.log(memNewPsw);
-        let data_info = `memEmail=${forgetmemEmail}&newPsw=${memNewPsw}`;
-        xhr.send(data_info);
+        // console.log(memNewPsw);
+        if(forgetmemEmail != ''){
+            console.log("newpassword:",memNewPsw);
+            console.log("email:",forgetmemEmail);
+            let data_infoF = `memEmail=${forgetmemEmail}&newPsw=${memNewPsw}`;
+            xhr.send(data_infoF);
+        }
+        else {
+            alert('欄位不可空白');
+        }
         
-        alert('新密碼已寄出至信箱中');
     }
 
     function cancelForgetForm() {//清除忘記密碼表單內容
@@ -451,7 +472,8 @@
         item.addEventListener('click', () => {
             if (signInStatusL.innerHTML == "登入") {
                 signInBg.style.display = "block";
-            } else {//是登出
+            } 
+            else {//是登出
                 logout();
             }
         })
