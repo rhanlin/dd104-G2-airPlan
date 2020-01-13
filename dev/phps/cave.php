@@ -1,11 +1,24 @@
-<!DOCTYPE html>
+<?php
+try {
+    require_once("connectBook_cave.php");
+    $sql = "select * from `letter` where memNo=${memNo} order by letTime asc ";
+    $member = $pdo->query($sql);
+    
+} catch (PDOException $e) {
+    echo "例外行號 : ", $e->getLine(), "<br>";
+    echo "例外原因 : ", $e->getMessage(), "<br>";
+}
+?>
+
+
+    <!DOCTYPE html>
 <html lang="zh-Hant">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <title>caveP2</title>
@@ -40,12 +53,14 @@
                             <div class="cav-histLetter2">
                                 <div class="cav-letters cav-looking" data-aaa="sss">
                                     <div class="cav-letWord">
+                                        <?php  while ($memberRow = $member->fetch(PDO::FETCH_ASSOC)){?>
                                         <div>
-                                            <p class="cav-letTitle"></p>
+                                            <p class="cav-letTitle"><?= $memberRow["letTitle"] ?></p>
                                         </div>
                                         <div>
-                                            <h6 class="cav-letTime"></h6>
+                                            <h6 class="cav-letTime"><?= $memberRow["letTime"] ?></h6>
                                         </div>
+                                        <?php }?>
                                     </div>
                                     <div class="cav-letSetting">
                                         <div><i class="fas fa-ellipsis-h"></i></div>
@@ -57,7 +72,7 @@
                                     </div>
 
                                 </div>
-                                <!-- <div class="cav-letters">
+                                <div class="cav-letters">
                                     <div class="cav-letWord" data-aaa="xxx">
                                         <div>
                                             <p class="cav-letTitle">Title:今晚吃宵嗎?</p>
@@ -92,7 +107,7 @@
                                             </span>
                                         </div>
                                     </div>
-                                </div> -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -105,28 +120,81 @@
                                     <div class="letter-head">
                                         <div class="stamp-box"></div>
                                         <div class="letter-tittle">
-                                            <h3></h3>
+                                            <h3>舍，甲說，這是多麼傷心的事啊！</h3>
                                         </div>
                                     </div>
                                     <div class="letter-contant scroll-container">
                                         <div class="text">
-                                            <p></p>
-                                            <div class="letter-upload-img"><img src="" alt=""></div>
+                                            <p>籠罩著街上的煙，日頭是自東徂西，凶惡的他們忍相虐待，那時代，日月不相望的什麼新曆法，什麼是麵皮？在新月微光下的街市，看見鮮紅的血，但是他倆竟會自己走到橋上，就再開始。此刻，新年的一日，那時代，我去拿一面鑼來。在這黑暗之中，阻斷爭論，剛纔經市長一說，只有前進，在做頭老的，他不和人家分擔，不知流失多少人類所託命的田
+                                            </p>
+                                            <div class="letter-upload-img"></div>
+                                            <p>
+                                                礙步的石頭，互相提攜，和狺狺的狗吠，又產生有可供消費的勢力，農民播種犁田，現在不是糴不到半斗米？
+                                            </p>
                                         </div>
                                         <div class="cav-letNavbar">
                                             <div class="circle threed">
                                                 <button class="circle button like">
-                                                    <img src="./img/cave/coin.png" alt=""></button>
+                                                    <img src="./img/cave/coin.png" alt=""></i></button>
                                             </div>
                                         </div>
                                         <h4 class="cav-h3">留言</h4>
                                         <div class="cav-letComment">
                                             <div class="cav-commMain">
                                                 <div class="cav-commHead">
-                                                    <div class="cav-commId"></div>
-                                                    <div class="cav-commTime"></div>
+                                                    <div class="cav-commId">空中巴士a321</div>
+                                                    <div class="cav-commTime">2019/12/31 12:01</div>
                                                 </div>
-                                                <p class="cav-commText"></p>
+                                                <p class="cav-commText">派克真的讚讚~</p>
+                                            </div>
+                                            <div class="cav-commOption">
+                                                <div class="cav-commLike">
+                                                    <div class="circle threed">
+                                                        <button class="circle button like">
+                                                            <img src="./img/cave/coin.png" alt=""></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="cav-commReport">
+                                                    <div class="circle threed ">
+                                                        <button class="circle button report">
+                                                            <img src="./img/cave/exclamation-button.png"
+                                                                alt=""></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cav-letComment">
+                                            <div class="cav-commMain">
+                                                <div class="cav-commHead">
+                                                    <div class="cav-commId">波音787</div>
+                                                    <div class="cav-commTime">2019/12/31 12:06</div>
+                                                </div>
+                                                <p class="cav-commText">傳統派+1</p>
+                                            </div>
+                                            <div class="cav-commOption">
+                                                <div class="cav-commLike">
+                                                    <div class="circle threed">
+                                                        <button class="circle button like">
+                                                            <img src="./img/cave/coin.png" alt=""></i></button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="cav-commReport">
+                                                    <div class="circle threed ">
+                                                        <button class="circle button report">
+                                                            <img src="./img/cave/exclamation-button.png"
+                                                                alt=""></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cav-letComment">
+                                            <div class="cav-commMain">
+                                                <div class="cav-commHead">
+                                                    <div class="cav-commId">波音747</div>
+                                                    <div class="cav-commTime">2019/12/31 12:17</div>
+                                                </div>
+                                                <p class="cav-commText">脆皮最高啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
                                             </div>
                                             <div class="cav-commOption">
                                                 <div class="cav-commLike">
@@ -287,3 +355,5 @@
 </body>
 
 </html>
+
+
