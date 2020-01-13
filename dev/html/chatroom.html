@@ -16,9 +16,7 @@
     @@include("./layout/header.html")
     <main class="chatroom-main">
         <section class="mainSection">
-            <div class="sectionOver">
-                <input type="hidden" name="mname" id="mname">
-            </div>
+            <div class="sectionOver"></div>
         </section>
         <div class="mainBook">
             <div class="bookDashed">
@@ -29,7 +27,7 @@
                                 <div class="dashPage5">
                                     <img class="pageImg" src="./img/chatroom/book.png" alt="book.png">
                                     <div class="pageContent"> </div>
-                                    <div class="pageContent">
+                                    <!-- <div class="pageContent">
                                         <div class="contentYour">
                                             <img src="./img/chatroom/mark_1.png" alt="">
                                             <p>我是香菇啦2</p>
@@ -37,24 +35,25 @@
                                         <div class="contentMe">
                                             <p>誰都不要說抱歉</p>
                                         </div>
-                                        <div class="meClearfix"></div>
-                                        <div class="contentYour_1">
-                                            <img src="./img/chatroom/mark_1.png" alt="">
-                                            <p>何來虧欠</p>
-                                        </div>
                                         <div class="contentMe">
                                             <p>我敢給就敢心碎</p>
                                         </div>
                                         <div class="meClearfix"></div>
-                                        <div class="contentYour_2">
+                                        <div class="contentYour">
+                                            <img src="./img/chatroom/mark_1.png" alt="">
+                                            <p>何來虧欠</p>
+                                        </div>
+                                        <div class="meClearfix"></div>
+                                        <div class="contentYour">
                                             <img src="./img/chatroom/mark_1.png" alt="">
                                             <p>鏡頭前面是從前的我們</p>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="contentSend">
-                                        <form action="./js/chatroom.php" method="POST">
-                                            <input class="sendText" type="text">
-                                            <button><img src="./img/chatroom/send.png" alt=""></button>
+                                        <form method="POST">
+                                            <input class="sendText" name="sendText" type="text">
+                                            <input type="hidden" name="catch" id="catch">
+                                            <button class="sendBtn"><img src="./img/chatroom/send.png" alt=""></button>
                                         </form>
                                         <div class="sendClearfix"></div>
                                     </div>
@@ -71,12 +70,14 @@
     @@include("./layout/footer.html")
 
     <script>
-        let data=[];
+        let data = [];
         let memNo2;
 
-        // window.addEventListener("load", function(){
-
-        //     if ($('#signInStatusN').text() != "登入") {
+        // window.addEventListener("load", function(str){
+        //     // let data = JSON.parse(str);
+        //     console.log(data['mark'])
+        //     if (data['mark']) {
+        //         console.log($('#signInStatusN').text())
         //         showMark();
         //     } else {
         //         alert("請登入");
@@ -84,11 +85,12 @@
         // },true);
 
         // function showMark() {
-            window.addEventListener("load", function(){
+        window.addEventListener("load", function () {
             get_chat();
+            document.getElementsByClassName('sendBtn')[0].addEventListener('click', sendText, false);
             let Mark = document.querySelectorAll('.sectionMark1');
             Mark[0].classList.add("MarkRed");
-            // console.log(Mark.length);
+            // console.log(Mark[0].classList);
             for (let i = 0; i < Mark.length; i++) {
                 Mark[i].addEventListener('click', function (e) {
                     document.getElementsByClassName('pageContent')[0].innerHTML = "";
@@ -97,12 +99,12 @@
                         Mark[j].classList.remove("MarkRed");
                     }
                     e.currentTarget.classList.add("MarkRed");
-                    document.getElementsByClassName('sendText')[0].value = "";
+                    // document.getElementsByClassName('sendText')[0].value = "";
                     memNo2 = e.currentTarget.getElementsByTagName("p").innerText;
                 })
             };
 
-        },true);
+        }, true);
         // };
 
 
@@ -120,39 +122,64 @@
                     }
                 }
             } else {
-                alert('錯誤');
+                alert('沒抓到資料');
             }
         }
 
         // 抓聊天內容
         function showChat(str) {
             let data = JSON.parse(str);
-            
             for (var i in data['chat']) {
+                console.log(data['chat'][i].chatContent);
                 if (data['chat'][i].memNo1 == '1') {
                     $(`.pageContent`).append(
                         `<div class='contentMe'><p>${data['chat'][i].chatContent}</p></div>`);
                     // console.log(data['chat'][i].chatContent);
                 } else {
-                    for (var i in data['chat']) {
-                        // console.log(data['chat'][i].matPosUrl)
-                        $('.pageContent').append(
-                            `<div class='contentYour'><img src='${data['chat'][i].matPosUrl}'><p>${data['chat'][i].chatContent}</p></div>`
-                            // `<div class='contentYour'><img src=''><p>${data['chat'][i].chatContent}</p></div>`
+                    $('.pageContent').append(
+                        `<div class='contentYour'><div class='overImg'><img src='${data['chat'][i].matPosUrl}'></div><p>${data['chat'][i].chatContent}</p></div>`
                         );
-                    }
                 }
             }
         }
 
+        //輸入聊天內容
+        function sendText() {
+            let val = document.getElementById("catch").value;
+            if (val != "") {
+                let xhr = new XMLHttpRequest();
+                document.getElementById("catch").value = 'content';
+                let content = document.getElementById("catch").value;
+                let data_info = "catch=" + content + "&sendText=" + document.getElementsByClassName('sendText')[0]
+                .value;
+                console.log(document.getElementsByClassName('sendText')[0].value);
+                xhr.onload = function () {
+                    if (xhr.status == 200) {
+                        // console.log(xhr.responseText);
+                        data = xhr.responseText;
+                    } else {
+                        alert(xhr.status);
+                    }
+                }
+                xhr.open('post', './phps/chatroom.php', false);
+                xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+                xhr.send(data_info);
+            } else {
+                
+            }
+
+        }
+
         function get_chat() {
             let xhr = new XMLHttpRequest();
-            // let data_info = "memNo1=" + document.getElementsByClassName('.')[0];
-            let data_info = "memNo1=" + 1 + "memNo2=" + 2;
+            document.getElementById("catch").value = 'mark';
+            let mark = document.getElementById("catch").value;
+            let data_info = "catch=" + mark + "&memNo1=" + 1 + "&memNo2=" + 2;
+            console.log(document.getElementById("catch").value)
             xhr.onload = function () {
                 if (xhr.status == 200) {
                     // console.log(xhr.responseText);
-                    data=xhr.responseText;
+                    data = xhr.responseText;
                     showData(data);
                     showChat(data);
                 } else {
@@ -162,7 +189,6 @@
             xhr.open('post', './phps/chatroom.php', false);
             xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
             xhr.send(data_info);
-
         }
     </script>
 </body>
