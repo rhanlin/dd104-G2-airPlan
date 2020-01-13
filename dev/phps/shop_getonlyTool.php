@@ -4,9 +4,11 @@
 require_once "connectBook_shop.php";
 try {
 
-    $sql = "select `matName`,`matURL` from `material` where memNo='5' and matLSort='tool'";
+    $sql = "select `matName`,`matURL` from `material` where memNo=:memNo  and matLSort='tool'";
     // $sql = "select `matName`,`matURL` from `material` where memNo='5'";
-    $material = $pdo->query($sql);
+    $material = $pdo->prepare($sql);
+    $material->bindValue(":memNo", $_GET["memNo"]);
+    $material->execute();
     if ($material->rowCount() == 0) { //找不到
         //傳回空的JSON字串
         echo "{}";
