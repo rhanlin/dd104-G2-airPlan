@@ -2,16 +2,16 @@
 $phone:375px;
 
 //note
-$note-max:575px;
+$note-max:576px;
 $note-min:376px;
 
 //small
 $ipad-max:767px;
-$ipad-min:576px;
+$ipad-min:577px;
 
 //介於small & mediumSize中間
 $ipad-laptop-max:991px;
-$ipad-laptop-min:576px;
+$ipad-laptop-min:577px;
 
 //mediumSize
 $laptop-max:991px;
@@ -24,6 +24,10 @@ $desktop-min:992px;
 //大於1200 小於1500
 $desktopXl-max:1500px;
 $desktopXl-min:1200px;
+
+// 1501-1700
+$desktop_17-max:1700px;
+$desktop_15-min:1501px;
 
 //font-family:思源體
 $font:'Noto Sans TC',sans-serif;

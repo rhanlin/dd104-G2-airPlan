@@ -316,11 +316,20 @@ $('#outputPngBtn').mouseout(function () {
 
 //=======================畫筆區=====================================================
 //群組
-$('#group').click(function () {
-  canvas.getActiveObject().toGroup()
+$(document).ready(function () {
+  $('#group').click(function () {
+    if ($('#controlBox4').hasClass('clicked') == false) {
+      canvas.getActiveObject().toGroup()
+    }
+  })
 })
-$('#ungroup').click(function () {
-  canvas.getActiveObject().toActiveSelection();
+
+$(document).ready(function () {
+  $('#ungroup').click(function () {
+    if ($('#controlBox5').hasClass('clicked') == false) {
+      canvas.getActiveObject().toActiveSelection();
+    }
+  })
 })
 
 
@@ -334,109 +343,113 @@ $(".lineColorInput").change(function () {
 
 //切換
 canvas.isDrawingMode = false;
+$(document).ready(function () {
+  $('#mode').click(function () {
+    if ($('#controlBox1').hasClass('clicked') == false) {
+      canvas.isDrawingMode = !canvas.isDrawingMode;
+      if (!canvas.isDrawingMode) {
+        drawingOptionArea.style.display = "none";
+        $('#modeImg').attr('src', './img/product/toolcontrolbar/cannotWrite.png')
+        $('#modeImg').attr('title', '物件選取狀態')
 
-$('#mode').click(function () {
-  canvas.isDrawingMode = !canvas.isDrawingMode;
-  if (!canvas.isDrawingMode) {
-    drawingOptionArea.style.display = "none";
-    $('#modeImg').attr('src', './img/product/toolcontrolbar/cannotWrite.png')
-    $('#modeImg').attr('title', '物件選取狀態')
-
-  } else {
-    drawingOptionArea.style.display = "";
-    $('#modeImg').attr('src', './img/product/toolcontrolbar/control_write.svg')
-    $('#modeImg').attr('title', '繪畫板狀態')
-    canvas.freeDrawingBrush.color = $(".lineColorInput").val()
-  }
+      } else {
+        drawingOptionArea.style.display = "";
+        $('#modeImg').attr('src', './img/product/toolcontrolbar/control_write.svg')
+        $('#modeImg').attr('title', '繪畫板狀態')
+        canvas.freeDrawingBrush.color = $(".lineColorInput").val()
+      }
+    }
+  })
 })
-
 
 //清除畫面
 document.getElementById('clear').onclick = clearCanvas;
 
 function clearCanvas() {
-  canvas.clear();
+  if ($('#controlBox2').hasClass('clicked') == false) {
+    canvas.clear();
 
-  canvas.controlsAboveOverlay = true;
-  var clipPath = new fabric.Group([
-    new fabric.Polyline([{
-        x: 10,
-        y: 250
-      },
-      {
-        x: 700,
-        y: 10
-      },
-      {
-        x: 670,
-        y: 200
-      },
-      {
-        x: 40,
-        y: 250
-      },
-      {
-        x: 670,
-        y: 300
-      },
-      {
-        x: 700,
-        y: 490
-      },
-      {
-        x: 10,
-        y: 250
-      },
+    canvas.controlsAboveOverlay = true;
+    var clipPath = new fabric.Group([
+      new fabric.Polyline([{
+          x: 10,
+          y: 250
+        },
+        {
+          x: 700,
+          y: 10
+        },
+        {
+          x: 670,
+          y: 200
+        },
+        {
+          x: 40,
+          y: 250
+        },
+        {
+          x: 670,
+          y: 300
+        },
+        {
+          x: 700,
+          y: 490
+        },
+        {
+          x: 10,
+          y: 250
+        },
 
-    ], {
-      // stroke: 'red',
-      // color: 'red',
-      // left: 10,
-      // top: 10,
-      // fill: 'red'
-    }),
-    new fabric.Polyline([{
-        x: 120,
-        y: 248
-      },
+      ], {
+        // stroke: 'red',
+        // color: 'red',
+        // left: 10,
+        // top: 10,
+        // fill: 'red'
+      }),
+      new fabric.Polyline([{
+          x: 120,
+          y: 248
+        },
 
-      {
-        x: 670,
-        y: 205
-      },
-      {
-        x: 650,
-        y: 248
-      },
-      {
-        x: 120,
-        y: 248
-      },
-    ]),
-    new fabric.Polyline([{
-        x: 120,
-        y: 253
-      },
+        {
+          x: 670,
+          y: 205
+        },
+        {
+          x: 650,
+          y: 248
+        },
+        {
+          x: 120,
+          y: 248
+        },
+      ]),
+      new fabric.Polyline([{
+          x: 120,
+          y: 253
+        },
 
-      {
-        x: 650,
-        y: 253
-      },
-      {
-        x: 670,
-        y: 295
-      },
-      {
-        x: 120,
-        y: 253
-      },
-    ]),
-  ]);
-  canvas.clipPath = clipPath;
-  canvas.backgroundColor = "white";
-  canvas.renderAll();
+        {
+          x: 650,
+          y: 253
+        },
+        {
+          x: 670,
+          y: 295
+        },
+        {
+          x: 120,
+          y: 253
+        },
+      ]),
+    ]);
+
+    canvas.clipPath = clipPath;
+    canvas.backgroundColor = "white";
+    canvas.renderAll();
+  }
 }
-
 
 
 canvas.freeDrawingBrush.width = 10;
@@ -452,10 +465,14 @@ $(".lineWidthInput").change(function () {
 
 
 //橡皮擦功能
-$("#eraser").click(function () {
-  canvas.freeDrawingBrush.color = '#ffffff';
-  $(".lineWidthInput").val() = 10;
-  canvas.freeDrawingBrush.width = $(".lineWidthInput").val()
+$(document).ready(function () {
+  $("#eraser").click(function () {
+    if ($('#controlBox3').hasClass('clicked') == false) {
+      canvas.freeDrawingBrush.color = '#ffffff';
+      $(".lineWidthInput").val() = 10;
+      canvas.freeDrawingBrush.width = $(".lineWidthInput").val()
+    }
+  });
 });
 
 
@@ -560,7 +577,7 @@ function output(formatType) {
     if (boardType == "circle") {
       $.ajax({
         type: "POST",
-        url: "http://localhost/dev/phps/shop_saveStamp.php",
+        url: "../phps/shop_saveCustomzedmg.php",
         data: {
           image: dataURL,
           matName: patternName,
@@ -570,7 +587,7 @@ function output(formatType) {
     } else if (boardType == "plane") {
       $.ajax({
         type: "POST",
-        url: "http://localhost/dev/phps/shop_savePattern.php",
+        url: "../phps/shop_saveCustomzedmg.php",
         data: {
           image: dataURL,
           matName: patternName,
@@ -673,29 +690,35 @@ $(".brushSelect").change(function () {
 
 
 //相片灰階濾鏡功能
-$('#filter_Grayscale').on("click", function () {
+$(document).ready(function () {
+  $('#filter_Grayscale').on("click", function () {
+    console.log($('#controlBox7').hasClass('clicked'))
+    if ($('#controlBox7').hasClass('clicked') == false) {
+      obj = canvas.getActiveObject();
+      obj.filters.push(new fabric.Image.filters.Grayscale({
 
-  obj = canvas.getActiveObject();
-  obj.filters.push(new fabric.Image.filters.Grayscale({
-
-  }));
-  obj.applyFilters();
-  canvas.renderAll()
-});
-
+      }));
+      obj.applyFilters();
+      canvas.renderAll()
+    }
+  });
+})
 
 
 //文字功能
 $('#text').on("click", function () {
-  canvas.add(new fabric.IText('Tap and Type', {
-    left: 0,
-    top: 0,
-    fontFamily: 'arial black',
-    fill: '#333',
-    fontSize: 20,
-
-  }));
+  console.log(this)
+  if ($('#controlBox6').hasClass('clicked') == false) {
+    canvas.add(new fabric.IText('please key in text', {
+      left: 0,
+      top: 0,
+      fontFamily: 'arial black',
+      fill: '#333',
+      fontSize: 20,
+    }));
+  }
 })
+
 
 
 //===========上傳圖檔========================
@@ -709,44 +732,53 @@ function uploadFile(e) {
 }
 
 function handleFile() {
-  const fileReader = new FileReader();
-  fileReader.readAsDataURL(this.files[0]);
-  fileReader.onload = e => {
-    // 圖片 base64
-    const dataURL = e.target.result;
-    const divImage2 = document.createElement('div'); //創造div元素
-    const updateimg = document.createElement('img');
-    updateimg.draggable = true;
-    updateimg.src = dataURL;
-    divImage2.appendChild(updateimg); //img插入div
-    imgset.appendChild(divImage2)
-    // console.log(imgset)
+  if ($('#controlBox8').hasClass('clicked') == false) {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(this.files[0]);
+    fileReader.onload = e => {
+      // 圖片 base64
+      const dataURL = e.target.result;
+      const divImage2 = document.createElement('div'); //創造div元素
+      const updateimg = document.createElement('img');
+      updateimg.draggable = true;
+      updateimg.src = dataURL;
+      divImage2.appendChild(updateimg); //img插入div
+      imgset.appendChild(divImage2)
+      // console.log(imgset)
 
-    fabric.Image.fromURL(dataURL, function (img) { //使用fabric.Image方法
+      fabric.Image.fromURL(dataURL, function (img) { //使用fabric.Image方法
 
-      img.scaleToHeight(100); //指定img寬
-      img.scaleToWidth(100); //指定img高
-      // img.center();
-      // img.setCoords();
-      // canvas.renderAll(); //選染畫布
-      // canvas.add(img); //畫布加入新的圖片
-      img.scale(0.5).set({
-        left: 200,
-        top: 200,
-        selectable: true,
-        originX: 'left',
-        originY: 'top'
-      });
-      canvas.renderAll();
-      canvas.add(img).setActiveObject(img);;
+        img.scaleToHeight(100); //指定img寬
+        img.scaleToWidth(100); //指定img高
+        // img.center();
+        // img.setCoords();
+        // canvas.renderAll(); //選染畫布
+        // canvas.add(img); //畫布加入新的圖片
+        img.scale(0.5).set({
+          left: 200,
+          top: 200,
+          selectable: true,
+          originX: 'left',
+          originY: 'top'
+        });
+        canvas.renderAll();
+        canvas.add(img).setActiveObject(img);;
 
-    })
-  };
+      })
+    };
+  } else {
+    alert("您尚未購買此工具喔!!")
+  }
 }
+
 
 
 imageUploader.addEventListener('click', uploadFile, true);
 file.addEventListener('change', handleFile);
+
+
+
+
 
 
 
