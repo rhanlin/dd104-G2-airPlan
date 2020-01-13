@@ -577,7 +577,7 @@ function output(formatType) {
     if (boardType == "circle") {
       $.ajax({
         type: "POST",
-        url: "../phps/shop_saveCustomzedmg.php",
+        url: "phps/shop_saveCustomzedmg.php",
         data: {
           image: dataURL,
           matName: patternName,
@@ -587,7 +587,7 @@ function output(formatType) {
     } else if (boardType == "plane") {
       $.ajax({
         type: "POST",
-        url: "../phps/shop_saveCustomzedmg.php",
+        url: "phps/shop_saveCustomzedmg.php",
         data: {
           image: dataURL,
           matName: patternName,

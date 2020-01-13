@@ -6,7 +6,7 @@ try {
 
     $sql = "insert into `material`(matNo,memNo,matName,matURL,matLSort,matSSort) values(null,:memNo,:matName,:matURL,:matLSort,null)";
     $products = $pdo->prepare($sql);
-    $products->bindValue(":memNo", "5");
+    $products->bindValue(":memNo", $_POST["memNo"]);
     $products->bindValue(":matName", $_POST["matName"]);
     $products->bindValue(":matURL", $_POST["image"]);
     $products->bindValue(":matLSort", $_POST["matLSort"]);

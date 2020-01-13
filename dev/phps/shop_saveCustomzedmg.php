@@ -15,7 +15,7 @@ try {
     //取得自動創號的key值
     $psn = $pdo->lastInsertId();
 
-    $upload_dir = "./phps/upLoadImg/"; //檢查資料夾存不存在
+    $upload_dir = "./userUploadImg/"; //檢查資料夾存不存在
     if (!file_exists($upload_dir)) {
         mkdir($upload_dir);
     }

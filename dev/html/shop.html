@@ -444,6 +444,18 @@
             <div class="owl-item figure10"><img src="" alt="" class="figure"></div>
             <div class="owl-item figure11"><img src="" alt="" class="figure"></div>
             <div class="owl-item figure12"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure13"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure14"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure15"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure16"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure17"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure18"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure19"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure20"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure21"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure22"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure23"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure24"><img src="" alt="" class="figure"></div>
           </div>
         </div>
     </section>
@@ -466,7 +478,7 @@
   <script src="./js/jquery.nice-select.min.js"></script>
   <script src="./js/shop_carousel.js"></script>
   <script src="./js/shop_draw.js"></script>
-  <script src="./js/animate.js"></script>
+  <!-- <script src="./js/animate.js"></script> -->
   <script>
     $('#myCollapsible').on('hidden.bs.collapse', function () {
       // bootstrap手風琴用
@@ -921,13 +933,15 @@
           var msg = `您確定要購買【 ${ownMatName} 】這項商品嗎，它須花費【 ${ownMatPrice} 】元!!\n確定要購買請按『確定』，否則請按『取消』返回。`;
 
           if (confirm(msg) == true) {
-
+            cavMemberH = document.getElementById('cavMemberH');
+            // cavMemberH.innerHTML = 5;
 
             //==============如果跳窗抓到的URL值不是soldOut才可以購買(否則是重複購買)目前會員編號寫死======================================
 
             axios
-              .get('./phps/shop_getmaterial.php')
+              .get('./phps/shop_getmaterial.php?memNo=' + cavMemberH.innerHTML)
               .then((res) => {
+
                 var matObject = res.data;
                 // console.log(matObject)
                 arr = [];
@@ -945,10 +959,13 @@
                   ownMatURL = this.items[theIndex - 1].url;
                   itemIndex = this.items[theIndex - 1].id.substring(8);
                   if (0 < itemIndex && itemIndex < 54) {
+                    cavMemberH = document.getElementById('cavMemberH');
+                    // cavMemberH.innerHTML = 5;
                     $.ajax({
                       type: "POST",
                       url: "./phps/shop_saveImg.php",
                       data: {
+                        memNo: cavMemberH.innerHTML,
                         matName: ownMatName,
                         image: ownMatURL,
                         matLSort: materialMatSort,
@@ -959,6 +976,7 @@
                       type: "POST",
                       url: "./phps/shop_saveImg.php",
                       data: {
+                        memNo: cavMemberH.innerHTML,
                         matName: ownMatName,
                         image: ownMatURL,
                         matLSort: toolMatSort,
@@ -974,6 +992,9 @@
                   var xhr2 = new XMLHttpRequest();
                   xhr2.onload = function () {
                     if (xhr2.status == 200) {
+
+                      cavMemberH = document.getElementById('cavMemberH');
+                      // cavMemberH.innerHTML = 5;
                       let nowCoin = JSON.parse(xhr2.responseText);
 
                       uesrCoinNum = parseInt(nowCoin[0].airCoin);
@@ -990,6 +1011,7 @@
                           url: "./phps/shop_saveCoin.php",
                           data: {
                             remainCoin: remainCoin,
+                            memNo: cavMemberH.innerHTML,
                           },
                         });
                       } else {
@@ -1002,7 +1024,7 @@
                     }
 
                   }
-                  var url = "./phps/shop_getMemberCoin.php";
+                  var url = './phps/shop_getMemberCoin.php?memNo=' + cavMemberH.innerHTML;
                   xhr2.open("Get", url, true);
                   xhr2.send(null);
                 }
@@ -1026,13 +1048,15 @@
         //   }
         //   console.log(arr);
         carddark() {
+          cavMemberH = document.getElementById('cavMemberH');
+          // cavMemberH.innerHTML = 5;
           // var vm = this;
           axios
-            .get('./phps/shop_getmaterial.php')
+            .get('./phps/shop_getmaterial.php?memNo=' + cavMemberH.innerHTML)
             .then((res) => {
               var itemArr = res.data;
-              console.log(this.items)
-              console.log(itemArr)
+              // console.log(this.items)
+              // console.log(itemArr)
               for (var i = 0; i < this.items.length; i++) {
                 // console.log(vm.items[i].url)
                 // console.log(itemArr[0].matURL);
@@ -1089,7 +1113,7 @@
               }
             }
 
-            var url = "./phps/shop_prodItemGetInfo.php";
+            var url = "./phps/shop_prodItemGetInfo.php?";
             xhr.open("Get", url, true);
             xhr.send(null);
 
@@ -1145,10 +1169,12 @@
         },
 
         showToolInfo() {
+          cavMemberH = document.getElementById('cavMemberH');
+          // cavMemberH.innerHTML = 5;
           // ===================這是左邊功能頁(資料庫抓入已購買工具)  會員編號暫寫死=======================
 
           axios
-            .get('./phps/shop_getonlyTool.php')
+            .get('./phps/shop_getonlyTool.php?memNo=' + cavMemberH.innerHTML)
             .then((res) => {
               var toolInfo = res.data;
               console.log(toolInfo)
@@ -1187,26 +1213,32 @@
         },
 
         showMaterial() {
-
+          cavMemberH = document.getElementById('cavMemberH');
+          // cavMemberH.innerHTML = 5;
+          // =====================這是輪播圖片(資料庫抓入已購買素材)  會員編號暫寫死  =======================
           axios
-            .get('./phps/shop_getOnlyMaterial.php')
+            .get('./phps/shop_getOnlyMaterial.php?memNo=' + cavMemberH.innerHTML)
             .then((res) => {
-              var material = res.data;
-              if (material[0].matURL) {
-                for (var i = 0; i < material.length; i++) {
-                  owl_item = document.getElementsByClassName('owl-item')[i].firstChild;
+              var gotMaterial = res.data;
+              console.log(gotMaterial)
+              console.log(gotMaterial[0])
+              if (gotMaterial.length > 0) {
+
+                for (var i = 0; i < gotMaterial.length; i++) {
+                  owl_item = document.getElementsByClassName('owl-item')[0].firstChild;
+                  console.log(owl_item.src)
                   owl_imgcloned = document.getElementsByClassName('cloned')[i].firstChild;
                   owl_imgactive = document.querySelectorAll('.owl-stage .active')[i].firstChild;
-                  if (owl_item.src == "./phps/shop.html") {
+                  if (owl_item.src == location.href) {
                     // alert("")
-                    owl_item.src = material[i].matURL
-                    owl_imgcloned.src = material[i].matURL
-                    owl_imgactive.src = material[i].matURL
+                    owl_item.src = gotMaterial[i].matURL
+                    owl_imgcloned.src = gotMaterial[i].matURL
+                    owl_imgactive.src = gotMaterial[i].matURL
                     // console.log(owl_item)
                     // console.log(owl_imgcloned)
                   }
-                  if (owl_imgactive.src == "./phps/shop.html") {
-                    owl_imgactive.src = material[i].matURL
+                  if (owl_imgactive.src == location.href) {
+                    owl_imgactive.src = gotMaterial[i].matURL
                   }
                   // console.log(owl_imgactive)
                 }
@@ -1232,7 +1264,7 @@
         });
         //====================頁面onload後直接抓回64筆商城卡片資料給vue data=>items======================================
         axios
-          .get('./js/shop_axios_post.php')
+          .get('./phps/shop_axios_post.php')
           .then((res) => {
             var arr = res.data;
             for (var i = 0; i < arr.length; i++) {
@@ -1291,7 +1323,7 @@
     //   }
     // }
 
-    // var url = "./phps/shop_prodItemGetInfo.php";
+    // var url = "./phps/shop_prodItemGetInfo.php?";
     // xhr.open("Get", url, true);
     // xhr.send(null);
     // })
@@ -1318,7 +1350,7 @@
     //       owl_item = document.getElementsByClassName('owl-item')[i].firstChild;
     //       owl_imgcloned = document.getElementsByClassName('cloned')[i].firstChild;
     //       owl_imgactive = document.querySelectorAll('.owl-stage .active')[i].firstChild;
-    //       if (owl_item.src == "./phps/shop.html") {
+    //       if (owl_item.src == "http://localhost/dd104g2_test/shop.html") {
     //         // alert("")
     //         owl_item.src = material[i].matURL
     //         owl_imgcloned.src = material[i].matURL
@@ -1326,7 +1358,7 @@
     //         // console.log(owl_item)
     //         // console.log(owl_imgcloned)
     //       }
-    //       if (owl_imgactive.src == "./phps/shop.html") {
+    //       if (owl_imgactive.src == "http://localhost/dd104g2_test/shop.html") {
     //         owl_imgactive.src = material[i].matURL
     //       }
     //       // console.log(owl_imgactive)
@@ -1379,8 +1411,11 @@
           // alert(xhr.status);
         }
       }
-
-      var url = "./phps/shop_getMemberCoin.php";
+      cavMemberH = document.getElementById('cavMemberH').innerHTML;
+      cavMemberH = cavMemberH.toString().substring(3);
+      console.log("========2",cavMemberH)
+      // cavMemberH.innerHTML = 5;
+      var url = "./phps/shop_getMemberCoin.php?memNo=" + cavMemberH;
       xhr3.open("Get", url, true);
       xhr3.send(null);
     }
@@ -1422,9 +1457,9 @@
     }
   </script>
   <script>
-    // window.addEventListener('load', showMaterial, false);
-    // window.addEventListener('load', getToolInfo, false);
-    window.addEventListener('load', getMemberInfo, false);
+    window.addEventListener('load', function () {
+      setTimeout(getMemberInfo, 500);
+    }, false);
   </script>
 </body>
 
