@@ -206,10 +206,11 @@
       <div class="pilePaper"><span>xxxxxxxx xxxxxxx xxxxxx</span>
         <div class="innerBox"></div>
       </div>
+      <div class="cover"></div>
       <div class="pile">
-        <div class="clock"><img src="" alt=""></div>
+        <!-- <div class="clock"><img src="" alt=""></div>
         <div class="redWheel"><img src="" alt=""></div>
-        <div class="perpul"><img src="" alt=""></div>
+        <div class="perpul"><img src="" alt=""></div> -->
       </div>
     </div>
     <div class="container">
@@ -444,6 +445,14 @@
             <div class="owl-item figure10"><img src="" alt="" class="figure"></div>
             <div class="owl-item figure11"><img src="" alt="" class="figure"></div>
             <div class="owl-item figure12"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure13"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure14"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure15"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure16"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure17"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure18"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure19"><img src="" alt="" class="figure"></div>
+            <div class="owl-item figure20"><img src="" alt="" class="figure"></div>
           </div>
         </div>
     </section>
@@ -453,6 +462,10 @@
   <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.0/TweenMax.min.js'></script>
+  <script src="./js/ScrollToPlugin.min.js"></script>
+  <script src="./js/ScrollMagic.min.js"></script>
+  <script src="./js/animation.gsap.min.js"></script>
+  <script src="./js/debug.addIndicators.min.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
     integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
@@ -461,7 +474,6 @@
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.4.0/fabric.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script> -->
   <script src="./js/fastclick.js"></script>
   <script src="./js/jquery.nice-select.min.js"></script>
   <script src="./js/shop_carousel.js"></script>
@@ -882,22 +894,6 @@
           );
 
         },
-
-        //==================filter陣列寫法=======================================================
-        // filteredItems() {
-        //   // var newitems = [];
-        //   var vm = this;
-        //   if (vm.visibility == 'all') {
-        //     return vm.items
-        //   } else {
-        //     vm.items.filter(function (item) {
-        //       return vm.visibility === item.style
-        //     })
-        //     console.log(item.style)
-        //     // return newitems
-        //     return [];
-        //   }
-        // },
       },
       watch: {
         page() {
@@ -921,13 +917,15 @@
           var msg = `您確定要購買【 ${ownMatName} 】這項商品嗎，它須花費【 ${ownMatPrice} 】元!!\n確定要購買請按『確定』，否則請按『取消』返回。`;
 
           if (confirm(msg) == true) {
-
-
-            //==============如果跳窗抓到的URL值不是soldOut才可以購買(否則是重複購買)目前會員編號寫死======================================
-
+            cavMemberH = document.getElementById('cavMemberH').innerHTML;
+            cavMemberH = cavMemberH.toString().substring(3);
+ 
+            //==============如果跳窗抓到的URL值不是soldOut才可以購買(否則是重複購買)======================================
+      // ===========這是從資料庫抓已購素材中的url來對比並把卡片改成soldOut ================================================
             axios
-              .get('./phps/shop_getmaterial.php')
+              .get('./phps/shop_getmaterial.php?memNo=' + cavMemberH)
               .then((res) => {
+
                 var matObject = res.data;
                 // console.log(matObject)
                 arr = [];
@@ -945,10 +943,15 @@
                   ownMatURL = this.items[theIndex - 1].url;
                   itemIndex = this.items[theIndex - 1].id.substring(8);
                   if (0 < itemIndex && itemIndex < 54) {
+                    cavMemberH = document.getElementById('cavMemberH').innerHTML;
+                    cavMemberH = cavMemberH.toString().substring(3);
+                    console.log(cavMemberH)
+                    // cavMemberH.innerHTML = 5;
                     $.ajax({
                       type: "POST",
                       url: "./phps/shop_saveImg.php",
                       data: {
+                        memNo: cavMemberH,
                         matName: ownMatName,
                         image: ownMatURL,
                         matLSort: materialMatSort,
@@ -959,6 +962,7 @@
                       type: "POST",
                       url: "./phps/shop_saveImg.php",
                       data: {
+                        memNo: cavMemberH,
                         matName: ownMatName,
                         image: ownMatURL,
                         matLSort: toolMatSort,
@@ -974,6 +978,10 @@
                   var xhr2 = new XMLHttpRequest();
                   xhr2.onload = function () {
                     if (xhr2.status == 200) {
+
+                      cavMemberH = document.getElementById('cavMemberH').innerHTML;
+                      cavMemberH = cavMemberH.toString().substring(3);
+                      // cavMemberH.innerHTML = 5;
                       let nowCoin = JSON.parse(xhr2.responseText);
 
                       uesrCoinNum = parseInt(nowCoin[0].airCoin);
@@ -990,6 +998,7 @@
                           url: "./phps/shop_saveCoin.php",
                           data: {
                             remainCoin: remainCoin,
+                            memNo: cavMemberH,
                           },
                         });
                       } else {
@@ -1002,7 +1011,7 @@
                     }
 
                   }
-                  var url = "./phps/shop_getMemberCoin.php";
+                  var url = './phps/shop_getMemberCoin.php?memNo=' + cavMemberH;
                   xhr2.open("Get", url, true);
                   xhr2.send(null);
                 }
@@ -1018,21 +1027,17 @@
 
         },
         //====================資料庫data寫入跳窗內資料==========================================
-        // changeIndex() {
-        //   arr = [];
-        //   for (i = 0; i < this.items.length; i++) {
-        //     theIndex = this.items[i].id;
-        //     arr.push(theIndex)
-        //   }
-        //   console.log(arr);
         carddark() {
+          cavMemberH = document.getElementById('cavMemberH').innerHTML;
+          cavMemberH = cavMemberH.toString().substring(3);
+          console.log(cavMemberH)
           // var vm = this;
           axios
-            .get('./phps/shop_getmaterial.php')
+            .get('./phps/shop_getmaterial.php?memNo=' + cavMemberH)
             .then((res) => {
               var itemArr = res.data;
-              console.log(this.items)
-              console.log(itemArr)
+              // console.log(this.items)
+              // console.log(itemArr)
               for (var i = 0; i < this.items.length; i++) {
                 // console.log(vm.items[i].url)
                 // console.log(itemArr[0].matURL);
@@ -1089,7 +1094,7 @@
               }
             }
 
-            var url = "./phps/shop_prodItemGetInfo.php";
+            var url = "./phps/shop_prodItemGetInfo.php?";
             xhr.open("Get", url, true);
             xhr.send(null);
 
@@ -1145,10 +1150,12 @@
         },
 
         showToolInfo() {
-          // ===================這是左邊功能頁(資料庫抓入已購買工具)  會員編號暫寫死=======================
-
+          cavMemberH = document.getElementById('cavMemberH').innerHTML;
+          cavMemberH = cavMemberH.toString().substring(3);
+          // ===================這是左邊功能頁(資料庫抓入已購買工具) =======================
+          console.log(cavMemberH)
           axios
-            .get('./phps/shop_getonlyTool.php')
+            .get('./phps/shop_getonlyTool.php?memNo=' + cavMemberH)
             .then((res) => {
               var toolInfo = res.data;
               console.log(toolInfo)
@@ -1161,7 +1168,6 @@
                 'controlBtn8', 'controlBtn9'
               ]
               for (i = 0; i < toolInfo.length; i++) {
-
 
                 if (toolInfo[i].matURL) {
 
@@ -1182,31 +1188,37 @@
             .catch((error) => {
               console.log(error)
             })
-
-
         },
 
         showMaterial() {
-
+          cavMemberH = document.getElementById('cavMemberH').innerHTML;
+          cavMemberH = cavMemberH.toString().substring(3);
+          // cavMemberH.innerHTML = 5;
+          console.log(cavMemberH)
+          // =====================這是輪播圖片(資料庫抓入已購買素材)   =======================
           axios
-            .get('./phps/shop_getOnlyMaterial.php')
+            .get('./phps/shop_getOnlyMaterial.php?memNo=' + cavMemberH)
             .then((res) => {
-              var material = res.data;
-              if (material[0].matURL) {
-                for (var i = 0; i < material.length; i++) {
-                  owl_item = document.getElementsByClassName('owl-item')[i].firstChild;
+              var gotMaterial = res.data;
+              console.log(gotMaterial)
+              console.log(gotMaterial[0])
+              if (gotMaterial.length > 0) {
+
+                for (var i = 0; i < gotMaterial.length; i++) {
+                  owl_item = document.getElementsByClassName('owl-item')[0].firstChild;
+                  console.log(owl_item.src)
                   owl_imgcloned = document.getElementsByClassName('cloned')[i].firstChild;
                   owl_imgactive = document.querySelectorAll('.owl-stage .active')[i].firstChild;
-                  if (owl_item.src == "./phps/shop.html") {
+                  if (owl_item.src == location.href) {
                     // alert("")
-                    owl_item.src = material[i].matURL
-                    owl_imgcloned.src = material[i].matURL
-                    owl_imgactive.src = material[i].matURL
+                    owl_item.src = gotMaterial[i].matURL
+                    owl_imgcloned.src = gotMaterial[i].matURL
+                    owl_imgactive.src = gotMaterial[i].matURL
                     // console.log(owl_item)
                     // console.log(owl_imgcloned)
                   }
-                  if (owl_imgactive.src == "./phps/shop.html") {
-                    owl_imgactive.src = material[i].matURL
+                  if (owl_imgactive.src == location.href) {
+                    owl_imgactive.src = gotMaterial[i].matURL
                   }
                   // console.log(owl_imgactive)
                 }
@@ -1221,10 +1233,17 @@
       },
 
       mounted() {
-        window.addEventListener('load', this.carddark);
-        window.addEventListener('load', this.showToolInfo);
-        window.addEventListener('load', this.showMaterial);
-        //====================Vue響應式=========================================================
+        var vm = this;
+        window.addEventListener('load', function () {
+          setTimeout(vm.carddark, 500);
+        });
+        window.addEventListener('load', function () {
+          setTimeout(vm.showToolInfo, 500);
+        });
+        window.addEventListener('load', function () {
+          setTimeout(vm.showMaterial, 500);
+        });
+        //====================Vue響應式==========================================================================
         this.$nextTick(function () {
           window.addEventListener('resize', this.getWindowWidth);
           this.getWindowWidth()
@@ -1232,7 +1251,7 @@
         });
         //====================頁面onload後直接抓回64筆商城卡片資料給vue data=>items======================================
         axios
-          .get('./js/shop_axios_post.php')
+          .get('./phps/shop_axios_post.php')
           .then((res) => {
             var arr = res.data;
             for (var i = 0; i < arr.length; i++) {
@@ -1242,8 +1261,6 @@
           .catch((error) => {
             console.log(error)
           });
-        // ===========這是從資料庫抓已購素材中的url來對比並把卡片改成soldOut ================================================
-
 
       },
       beforeDestroy() {
@@ -1253,7 +1270,7 @@
     })
   </script>
   <script>
-    //  ================這是3D按鈕用=============================================================
+    //  ================這是3D按鈕用===================================================================
     $('.switchBtn').mousedown(function () {
       $(this).addClass('clicked');
     });
@@ -1267,34 +1284,6 @@
       $(this).removeClass('clicked');
     });
 
-    //  ================這是跳窗用 單純JQ版=====================================================
-
-    // $('.itemCard').click(function (e) {
-    // theIndex = $(this).index();
-    // var xhr = new XMLHttpRequest();
-    // xhr.onload = function () {
-    //   if (xhr.status == 200) {
-    //     //modify here
-    //     // showProduct();
-    //     let product = JSON.parse(xhr.responseText);
-    //     // console.log(product) 
-
-    //     i = theIndex - 2;
-    //     $('#titleInner').html(product[i].matNameCH);
-    //     $('#infoInner').html(product[i].matInfo);
-    //     $('#chanceInner').html(product[i].matChance);
-    //     $('#priceInner').html(product[i].prodPrice);
-
-    //     // console.log(xhr.responseText)
-    //   } else {
-    //     alert(xhr.status);
-    //   }
-    // }
-
-    // var url = "./phps/shop_prodItemGetInfo.php";
-    // xhr.open("Get", url, true);
-    // xhr.send(null);
-    // })
   </script>
 
   <script>
@@ -1304,57 +1293,8 @@
       FastClick.attach(document.body);
     });
   </script>
-
   <script>
-    // =====================這是輪播圖片(資料庫抓入已購買素材)  會員編號暫寫死   原生xhr版=======================
-    // function showMaterial(jsonStr) {
-
-    //   let material = JSON.parse(jsonStr);
-    //   console.log(material)
-    //   // console.log(owl_item)
-
-    //   if (material[0].matURL) {
-    //     for (var i = 0; i < material.length; i++) {
-    //       owl_item = document.getElementsByClassName('owl-item')[i].firstChild;
-    //       owl_imgcloned = document.getElementsByClassName('cloned')[i].firstChild;
-    //       owl_imgactive = document.querySelectorAll('.owl-stage .active')[i].firstChild;
-    //       if (owl_item.src == "./phps/shop.html") {
-    //         // alert("")
-    //         owl_item.src = material[i].matURL
-    //         owl_imgcloned.src = material[i].matURL
-    //         owl_imgactive.src = material[i].matURL
-    //         // console.log(owl_item)
-    //         // console.log(owl_imgcloned)
-    //       }
-    //       if (owl_imgactive.src == "./phps/shop.html") {
-    //         owl_imgactive.src = material[i].matURL
-    //       }
-    //       // console.log(owl_imgactive)
-    //     }
-    //   } else {
-    //     alert("無任何素材");
-    //   }
-    // }
-
-
-    // var xhr = new XMLHttpRequest();
-    // xhr.onload = function () {
-    //   if (xhr.status == 200) {
-    //     showMaterial(xhr.responseText);
-    //     // console.log(xhr.responseText)
-    //   } else {
-    //     // alert(xhr.status);
-    //   }
-    // }
-
-    // xhr.open("post", "./phps/shop_getOnlyMaterial.php", true);
-    // xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-    // let data_info = `memNo=5`;
-    // xhr.send(data_info);
-  </script>
-
-  <script>
-    // ===================這是現有air幣從資料庫抓數字到網頁  會員編號暫寫死=======================
+    // ===================這是現有air幣從資料庫抓數字到網頁 =======================
     function showMemberInfo(jsonStr) {
 
       coin = document.getElementById('coin');
@@ -1379,8 +1319,11 @@
           // alert(xhr.status);
         }
       }
-
-      var url = "./phps/shop_getMemberCoin.php";
+      cavMemberH = document.getElementById('cavMemberH').innerHTML;
+      cavMemberH = cavMemberH.toString().substring(3);
+      console.log("========2", cavMemberH)
+      // cavMemberH.innerHTML = 5;
+      var url = "./phps/shop_getMemberCoin.php?memNo=" + cavMemberH;
       xhr3.open("Get", url, true);
       xhr3.send(null);
     }
@@ -1422,10 +1365,9 @@
     }
   </script>
   <script>
-    // window.addEventListener('load', showMaterial, false);
-    // window.addEventListener('load', getToolInfo, false);
-    window.addEventListener('load', getMemberInfo, false);
+    window.addEventListener('load', function () {
+      setTimeout(getMemberInfo, 500);
+    }, false);
   </script>
 </body>
-
 </html>
