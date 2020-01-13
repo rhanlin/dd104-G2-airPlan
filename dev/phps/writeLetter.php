@@ -60,15 +60,7 @@ try {
   $imgSql = "select letImgUrl from `letter` where letNo= $letNo";
   $letImg = $pdo->query($imgSql);
   $letImgRow = $letImg->fetch(PDO::FETCH_ASSOC);
-  // $letImgRow = $letImg->fetchAll(PDO::FETCH_ASSOC);
-
-  // foreach($letImgRow as $url){
-  //   $info[] = [
-  //     'url'=>$url['letImgUrl'],
-  //   ];
-  // }
-  // echo print_r($info);
-  // echo json_encode([ 'status'=>'success', 'data'=>$info]);
+  
   $letImgRow = str_replace('userLetterCanvas//', './phps/userLetterCanvas/', $letImgRow);//把前端要用的url做好
   echo json_encode(['data'=>$letImgRow]);
 

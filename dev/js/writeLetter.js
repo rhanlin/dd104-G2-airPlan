@@ -99,7 +99,7 @@ let vm3 = new Vue({
       this.previewPattern = this.$refs.bg[index].style.backgroundImage;
       this.letterPattern = e.target.firstChild.value;
       e.target.firstChild.checked = true;
-      saveImage();
+      canvasSet();
     },
   },
   mounted() {
@@ -278,38 +278,37 @@ CanvasRenderingContext2D.prototype.wrapText = function (text, x, y, maxWidth, li
       y += lineHeight;
     }
 }
+
+function canvasSet(){
+  // console.log('製作canvas！');
+  context.clearRect(0, 0, canvas.width, canvas.height);//清空畫布
+  let canvasWidth = parseInt(document.getElementById('myCanvas').style.width);
+  let canvasHeight = parseInt(document.getElementById('myCanvas').style.height);
+  let letFrameImg = new Image();
+  letFrameImg.src = "./img/share/postCard-vertical.svg";//信件邊框的裝飾圖
+  //信件邊框
+  letFrameImg.addEventListener('load',()=>{
+    context.drawImage(letFrameImg, 0, 0, canvasWidth, canvasHeight);
+  })
+  saveImage();
+}
+
 function saveImage(){
-  console.log('執行到！');
-  
   let textTittle = document.getElementById('letterTitle');
   let letterContant = document.getElementById('letterContant');
   let img = new Image();
-  let letFrameImg = new Image();
-  let canvasWidth = parseInt(document.getElementById('myCanvas').style.width);
-  let canvasHeight = parseInt(document.getElementById('myCanvas').style.height);
-
-  letFrameImg.src = "./img/share/postCard-vertical.svg";//信件邊框的裝飾圖
   img.src = vm2.letterUploadImg;//user上傳的圖片
 
+  let widthScale = img.width/160;//換算user上傳圖片要縮小的比例
+  img.width = img.width/widthScale;
+  img.height = img.height/widthScale;
+  context.wrapText(textTittle.value, 220, 70, 230, 40, 30);
+  context.wrapText(letterContant.value, 40, 240, 415, 28, 18);
+  //文字長度參考: https://news.ltn.com.tw/news/world/breakingnews/3035551 要在限制標題跟內文字數
   //信件內容
   img.addEventListener('load',()=>{
-    context.clearRect(0, 0, canvas.width, canvas.height);//清空畫布
-
-    //信件邊框
-    letFrameImg.addEventListener('load',()=>{
-      context.drawImage(letFrameImg, 0, 0, canvasWidth, canvasHeight);
-      let widthScale =  img.width/160;//換算user上傳圖片要縮小的比例
-      img.width = img.width/widthScale;
-      img.height = img.height/widthScale;
-      
-      context.drawImage(img, 40, 50,img.width,img.height);
-      
-      context.wrapText(textTittle.value, 220, 70, 230, 40, 30);
-      context.wrapText(letterContant.value, 40, 240, 415, 28, 18);
-      //文字長度參考: https://news.ltn.com.tw/news/world/breakingnews/3035551 要在限制標題跟內文字數
-    })
+    context.drawImage(img, 40, 50,img.width,img.height);
   })
-  // writeLetterExm();//檢查表單內容格式是否正確 !!螢幕寬度縮小會執行不到!!!!
 }
 
 //AJAX送資料到後端
@@ -339,13 +338,11 @@ function submitToLetterTable() {
   //註冊callback function 來判斷是否新增資料完成
   xhr.onload = function(){
     if(xhr.status == 200){
-      // let json = xhr.responseText;
       let json = JSON.parse(xhr.responseText);
       vmImgWrap.letUrl = `url('${json.data.letImgUrl}')`;//把圖片路徑塞去摺紙的畫面上
       console.log(vmImgWrap.letUrl);
     }else{
       console.log('上傳失敗');
-
     }
   }
   

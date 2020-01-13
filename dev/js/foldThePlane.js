@@ -23,7 +23,7 @@ let vmUserStamp = new Vue({
             this.stampValue.push(json.data[i].stampNo);//取 使用者飛機彩繪的編號得值(matPosNo)
           }
         }
-        console.log(this.userStamp);
+        // console.log(this.userStamp);
       })
   },
 });

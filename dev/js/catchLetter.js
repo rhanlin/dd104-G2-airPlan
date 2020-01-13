@@ -35,6 +35,7 @@ let vmCatchLetter = new Vue({
       net.style.display="block";
       threeWorld.style.cursor = "none"; //滑鼠消失
       chooseBtn[0].parentElement.style.display = "none";//關閉選擇按鈕
+
       if(e.target.innerText == "撈個新聞看看"){
         console.log(`撈到新聞`);
         catchNews();//撈新聞Fn
