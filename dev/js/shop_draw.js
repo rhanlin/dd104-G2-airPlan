@@ -1,13 +1,3 @@
-// var nwidth = $(window).width();
-// console.log(nwidth)
-// if (nwidth > 576) { //不同螢幕寬度隱藏JS檔
-//   shop_draw()
-// } 
-// function shop_draw() {
-
-//=================素材點按進畫板==============================
-
-
 let canvas = new fabric.Canvas('canvas', {
   backgroundColor: "white"
 }); //創建fabric環境
@@ -149,21 +139,7 @@ canvas.on('drop', dropImg)
 
 $('.figure').click(function () {
   var itemImage = this.getAttribute('src'); //獲取點取物件的src路徑
-  // console.log(itemImage); //確認有沒有取到正確的圖片路徑
-  // // let drawingPanel = document.getElementsByClassName('drawingPanel')[0]; //創建一個畫板空間
-  // let canvas = document.getElementById('canvas');
-  // // let divImage = document.createElement('div'); //創造div元素
-  // // divImage.style.width = '50px'; //決定div大小
-  // // divImage.style.height = '50px';
-  // // let image = document.createElement('img'); //創造img元素
-  // // image.style.width = '100%'; //決定img大小
-  // // image.style.height = '100%';
-  // // image.src = itemImage; //寫入img路徑
-  // // divImage.appendChild(image); //img插入div
-  // // console.log(divImage)
-  // // console.log(image)
-  // // drawingPanel.appendChild(divImage); //div插入畫板空間
-  // // canvas.appendChild(drawingPanel);
+
 
   fabric.Image.fromURL(itemImage, function (img) { //使用fabric.Image方法
     // canvas.on('after:render', function () {
@@ -538,36 +514,7 @@ function output(formatType) {
     multiplier: 1,
     quality: 0.1
   });
-  // dataURL = dataURL.substring([22]);
 
-  // const b64toBlob = (b64Data, contentType = '', sliceSize = 512) => {
-  //   const byteCharacters = atob(b64Data);
-  //   const byteArrays = [];
-
-  //   for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
-  //     const slice = byteCharacters.slice(offset, offset + sliceSize);
-
-  //     const byteNumbers = new Array(slice.length);
-  //     for (let i = 0; i < slice.length; i++) {
-  //       byteNumbers[i] = slice.charCodeAt(i);
-  //     }
-
-  //     const byteArray = new Uint8Array(byteNumbers);
-  //     byteArrays.push(byteArray);
-  //   }
-
-  //   const blob = new Blob(byteArrays, {
-  //     type: contentType
-  //   });
-  //   return blob;
-  // }
-
-  // const contentType = 'image/png';
-  // const b64Data = dataURL;
-
-  // const blob = b64toBlob(b64Data, contentType);
-
-  // const blobUrl = URL.createObjectURL(blob);
   console.log(dataURL)
   // console.log(boardType)
   circleMatSort = "postmark";
@@ -575,35 +522,32 @@ function output(formatType) {
   if (patternName != "") {
 
     if (boardType == "circle") {
+      cavMemberH = document.getElementById('cavMemberH').innerHTML;
+      cavMemberH = cavMemberH.toString().substring(3);
       $.ajax({
         type: "POST",
-        url: "../phps/shop_saveCustomzedmg.php",
+        url: "phps/shop_saveStamp.php",
         data: {
+          memNo: cavMemberH,
           image: dataURL,
           matName: patternName,
           matLSort: circleMatSort,
         }
       })
     } else if (boardType == "plane") {
+      cavMemberH = document.getElementById('cavMemberH').innerHTML;
+      cavMemberH = cavMemberH.toString().substring(3);
       $.ajax({
         type: "POST",
-        url: "../phps/shop_saveCustomzedmg.php",
+        url: "phps/shop_savePattern.php",
         data: {
+          memNo: cavMemberH,
           image: dataURL,
           matName: patternName,
           matLSort: planeMatSort,
         }
       })
     }
-    // .done(function (respond) {
-    //   console.log("done:" + respond);
-    // })
-    // .fail(function (respond) {
-    //   console.log("fail");
-    // })
-    // .always(function (respond) {
-    //   console.log("always");
-    // })
 
     const a = document.createElement('a');
     a.href = dataURL
@@ -621,32 +565,6 @@ function output(formatType) {
   }
 
 }
-
-
-
-
-//轉存成JPG
-// outputJpgBtn = document.getElementById("outputJpgBtn")
-// outputJpgBtn.addEventListener('click', () => output2('jpeg'))
-
-// function output2(formatType) {
-
-//     let dataURL = canvas.toDataURL({
-//     format: `image/${formatType}`,
-//     top: 0,
-//     left: 0,
-//     width: 800,
-//     height: 500,
-//     multiplier: 1,
-//     quality: 0.1
-//   })
-//   const a = document.createElement('a');
-//   a.href = dataURL
-//   a.download = `output.${formatType}`
-//   document.body.appendChild(a);
-//   a.click()
-//   document.body.removeChild(a)
-// }
 
 
 
@@ -829,5 +747,3 @@ function resizeCanvas() {
   canvas.renderAll();
 }
 resizeCanvas();
-
-// }

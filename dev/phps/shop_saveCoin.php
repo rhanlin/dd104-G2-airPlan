@@ -4,9 +4,10 @@
 require_once "connectBook_shop.php";
 try {
 
-    $sql = "update `member` set airCoin =:airCoin where memNo='5'";
+    $sql = "update `member` set airCoin =:airCoin where memNo =:memNo";
     $emp = $pdo->prepare($sql);
     $emp->bindValue(":airCoin", $_POST['remainCoin']);
+    $emp->bindValue(":memNo", $_POST["memNo"]);
     $emp->execute();
 
 } catch (PDOException $e) {
