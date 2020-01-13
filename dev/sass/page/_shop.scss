@@ -812,20 +812,21 @@ $arrow_color: $gray !default;
       max-width: 80%;
       height: 30vw;
       margin: 0 auto;
+      position: relative;
 
       .pilePaper {
+        position: absolute;
         margin-left: 7vw;
-        width: 9vw;
+        width:7.5vw;
         height: 9vw;
         border: $border;
         transform: skew(20deg) translateY(10%) rotate(15deg);
         background-color: #fff;
         text-align: center;
-        z-index: -100;
+        z-index: 0;
 
         span {
           font-size: 20px;
-
         }
 
         .innerBox {
@@ -839,51 +840,60 @@ $arrow_color: $gray !default;
       }
 
 
-
+      .cover {
+        left: 5.9%;
+        width:13vw;
+        height: 10vw;
+        background-image: url("../img/product/decorate/cover-02.svg");
+        background-repeat: no-repeat;
+        position: absolute;
+        background-size: contain;
+        z-index: -1;
+      }
 
       .pile {
-        margin-left: 5%;
-        width: 85vw;
-        height: 150vw;
-        background-image: url("../img/product/decorate/pile.png");
+        top:5.7%;
+        width: 95vw;
+        height: 100vw;
+        background-image: url("../img/product/decorate/waterTube-01.svg");
         background-repeat: no-repeat;
-        position: relative;
+        position: absolute;
         background-size: contain;
-        z-index: 0;
+        z-index: 1;
 
-        .clock {
-          width: 18%;
-          padding-top: 100%;
-          background-image: url("../img/product/decorate/clock-04.svg");
-          background-repeat: no-repeat;
-          position: absolute;
-          background-size: contain;
-          left: -2%;
-          top: 15%;
-        }
+        // .clock {
+        //   width: 18%;
+        //   padding-top: 100%;
+        //   background-image: url("../img/product/decorate/clock-04.svg");
+        //   background-repeat: no-repeat;
+        //   position: absolute;
+        //   background-size: contain;
+        //   left: -2%;
+        //   top: 15%;
+        // }
 
-        .redWheel {
-          width: 18%;
-          padding-top: 100%;
-          background-image: url("../img/product/decorate/redWheel-04.svg");
-          background-repeat: no-repeat;
-          position: absolute;
-          background-size: contain;
-          left: 50.5%;
-          top: 3.5%;
+        // .redWheel {
+        //   width: 18%;
+        //   padding-top: 100%;
+        //   background-image: url("../img/product/decorate/redWheel-04.svg");
+        //   background-repeat: no-repeat;
+        //   position: absolute;
+        //   background-size: contain;
+        //   left: 50.5%;
+        //   top: 3.5%;
 
-        }
+        // }
 
-        .perpul {
-          width: 18%;
-          padding-top: 100%;
-          background-image: url("../img/product/decorate/perpul.png");
-          background-repeat: no-repeat;
-          position: absolute;
-          background-size: contain;
-          left: 75%;
-          top: 20%;
-        }
+        // .perpul {
+        //   width: 18%;
+        //   padding-top: 100%;
+        //   background-image: url("../img/product/decorate/perpul.png");
+        //   background-repeat: no-repeat;
+        //   position: absolute;
+        //   background-size: contain;
+        //   left: 75%;
+        //   top: 20%;
+        // }
       }
     }
 
@@ -2467,7 +2477,7 @@ $arrow_color: $gray !default;
           margin-left: 0%;
           width: 100vw;
           height: 130vw;
-          background-image: url("../img/product/decorate/pile.png");
+          background-image: url("../img/product/decorate/glassPipe-01");
           background-repeat: no-repeat;
           position: relative;
 

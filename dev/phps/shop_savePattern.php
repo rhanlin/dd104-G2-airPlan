@@ -7,7 +7,7 @@ try {
 
     $sql = "insert into `material`(matNo,memNo,matName,matURL,matLSort,matSSort) values(null,:memNo,:matName,'',:matLSort,null)";
     $products = $pdo->prepare($sql);
-    $products->bindValue(":memNo", "5");
+    $products->bindValue(":memNo", $_POST['memNo']);
     $products->bindValue(":matName", $_POST['matName']);
     $products->bindValue(":matLSort", $_POST['matLSort']);
     $products->execute();
@@ -15,7 +15,7 @@ try {
     //取得自動創號的key值
     $psn = $pdo->lastInsertId();
 
-    $upload_dir = "./phps/userPattern/"; //檢查資料夾存不存在
+    $upload_dir = "./userPattern/"; //檢查資料夾存不存在
     if (!file_exists($upload_dir)) {
         mkdir($upload_dir);
     }
@@ -31,7 +31,7 @@ try {
     //準備好要存的filename
 
     $fileName = "{$psn}";
-    $file = $upload_dir . $fileName . ".png";
+    $file = $upload_dir . "plan-pattern-" . $fileName . ".png";
     $success = file_put_contents($file, $data);
     if ($success) {
 
