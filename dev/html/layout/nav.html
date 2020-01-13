@@ -386,15 +386,27 @@
         signInBg.style.display = "block";
     }
 
-
+    function newPsw(length) {//密碼產生器
+        let newPsw = '';
+        let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let alphabetLength = alphabet.length;
+        for ( let i = 0; i < length; i++ ) {
+            newPsw += alphabet.charAt(Math.floor(Math.random() * alphabetLength));
+        }
+        return newPsw;
+    }       
+        
     function sendForgetForm() {//忘記密碼表單發送
         const forgetmemEmail = document.getElementById("forgetEmail").value;
         //-------------使用ajax方法到Server端資料
         let xhr = new XMLHttpRequest();
         xhr.open("post", "./phps/airPlanMailer/forget.php", true);
         xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-        let data_info = `memEmail=${forgetmemEmail}`;
+        let memNewPsw = newPsw(8);//呼叫新密碼產生
+        console.log(memNewPsw);
+        let data_info = `memEmail=${forgetmemEmail}&newPsw=${memNewPsw}`;
         xhr.send(data_info);
+        
         alert('新密碼已寄出至信箱中');
     }
 
