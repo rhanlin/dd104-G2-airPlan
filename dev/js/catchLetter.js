@@ -139,7 +139,12 @@ let vmCatchLetter = new Vue({
       stampEffectDiv.setAttribute('id','stampEffect');
       stampEffectDiv.style.top = `${e.offsetY}px`;
       stampEffectDiv.style.left = `${e.offsetX}px`;
-      stampEffectDiv.style.backgroundImage = `url(./img/userStamp/user-stamp_${Math.floor(Math.random() * 9) + 1}.png)`;
+      let userStampLength = vmCatchLet.userStamp.length;
+      let randStampInx = Math.floor(Math.random() * userStampLength);//用戶當前有幾個stamp抓index值
+      stampEffectDiv.style.backgroundImage = vmCatchLet.userStamp[randStampInx];
+      // console.log(randStampInx);
+      // console.log(vmCatchLet.userStamp[randStampInx]);
+      
       stampshot.appendChild(stampEffectDiv);
       console.log(e.pageX, e.pageY);
       setTimeout(()=>{
