@@ -55,9 +55,9 @@ try {
   $letInsert->bindValue(':letImgUrl',$userLetterCanvas);
   $letInsert->execute();
 
-
+//select l.letImgUrl, m.matPatUrl from `letter` l JOIN `matPattern` m on l.matPatNo=m.matPatNo where letNo=27;
   $letNo = $pdo->lastInsertId();
-  $imgSql = "select letImgUrl from `letter` where letNo= $letNo";
+  $imgSql = "select l.letImgUrl, m.matPatUrl from `letter` l JOIN `matPattern` m on l.matPatNo=m.matPatNo where letNo= $letNo";
   $letImg = $pdo->query($imgSql);
   $letImgRow = $letImg->fetch(PDO::FETCH_ASSOC);
   

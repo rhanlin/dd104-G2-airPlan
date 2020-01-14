@@ -1,5 +1,3 @@
-
-
 @mixin foldthePlane() {
   .planeBox {
     width: auto;
@@ -12,7 +10,8 @@
     position: relative;
     overflow: hidden;
   }
-  #cloudDiv{
+
+  #cloudDiv {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -21,33 +20,38 @@
     height: 100%;
     background: #3b93ff;
     overflow: hidden;
-    box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
     animation: ascene 5s linear infinite;
+
     .cloud {
       position: absolute;
       color: #ccc;
-      animation:  acloud 1.8s linear infinite;
+      animation: acloud 1.8s linear infinite;
     }
+
     .cloud1 {
       left: 10%;
-      top:30%;
+      top: 30%;
       font-size: 6em;
     }
+
     .cloud2 {
       left: 45%;
-      top:10%;
+      top: 10%;
       font-size: 3em;
       z-index: -1;
       animation-delay: -0.8s;
     }
+
     .cloud3 {
       right: 20%;
-      top:18%;
+      top: 18%;
       font-size: 3em;
       animation-delay: -0.4s;
     }
   }
-  #iceLand{
+
+  #iceLand {
     width: 100vw;
     padding-bottom: 100vw;
     border-radius: 50%;
@@ -63,8 +67,9 @@
     left: 0%;
     transform: translateX(-50%);
     animation: iceLand 3s linear infinite;
-    
+
   }
+
   #imgWrap {
     width: 55.6vw;
     max-width: 495px;
@@ -79,6 +84,7 @@
     position: relative;
     filter: drop-shadow(0px 0px 15px #bbb);
     z-index: 9;
+
     #planeShadow {
       width: 5%;
       height: 75%;
@@ -152,6 +158,7 @@
       }
     }
   }
+
   #img {
     width: 100%;
     height: 100%;
@@ -242,6 +249,7 @@
     -webkit-clip-path: polygon(0 0, 0% 100%, 100% 0);
     clip-path: polygon(0 0, 0% 100%, 100% 0);
     z-index: 1;
+    background-size: inherit;
   }
 
   #imgLeftTriangle2 {
@@ -254,7 +262,7 @@
     z-index: 1;
     -webkit-clip-path: polygon(100% 0, 100% 55%, 0 100%);
     clip-path: polygon(100% 0, 100% 55%, 0 100%);
-
+    background-size: inherit;
     display: none;
   }
 
@@ -272,6 +280,7 @@
     -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);
     clip-path: polygon(100% 0, 0 0, 100% 100%);
     z-index: 1;
+    background-size: inherit;
   }
 
   #imgRightTriangle2 {
@@ -285,6 +294,7 @@
     -webkit-clip-path: polygon(0% 0%, 0% 55%, 100% 100%);
     clip-path: polygon(0% 0%, 0% 55%, 100% 100%);
     display: none;
+    background-size: inherit;
   }
 
   #imgFinalStep {
@@ -301,6 +311,9 @@
     animation-name: foldAnimation;
     animation-delay: .3s;
     animation-duration: 0.5s;
+    background-size: cover;
+    filter: opacity(1);
+
   }
 
   #planeWing {
@@ -318,6 +331,21 @@
     animation-delay: .5s;
     animation-duration: .5s;
     animation-fill-mode: forwards;
+    background-size: cover;
+    filter: opacity(1);
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(70deg, #bbb, #fff 60%, #fff);
+      /* background-color: #fff; */
+      filter: opacity(0.2);
+      opacity: 0.65;
+    }
   }
 
   #planeBody {
@@ -326,113 +354,114 @@
     position: absolute;
     top: 0;
     left: 0;
-    /* background-color: red; */
+    // background-color: #ccc;
     /* background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c); */
     background: linear-gradient(70deg, #000, #fff 0%, #ddd);
     z-index: 99;
     -webkit-clip-path: polygon(50% 0%, 100% 100%, 100% 100%, 100% 100%, 50% 100%);
     clip-path: polygon(50% 0%, 100% 100%, 100% 100%, 100% 100%, 50% 100%);
-
+    filter: brightness(0.9);
+    background-size: cover;
+    overflow: hidden;
     display: none;
-    /* animation-name: foldAnimation;
-  animation-delay: .5s;
-  animation-duration: 0.5s; */
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(70deg, #000, #fff 0%, #ddd);
+      filter: contrast(0.5);
+      opacity: .2;
+    }
   }
-  @include respond(note){
-    .planeBox {
-      
+
+  @include respond(note) {
+    .planeBox {}
+
+    #cloudDiv {
+      .cloud {}
+
+      .cloud1 {}
+
+      .cloud2 {}
+
+      .cloud3 {}
     }
-    #cloudDiv{
-      .cloud {
-      }
-      .cloud1 {
-      }
-      .cloud2 {
-      }
-      .cloud3 {
-      }
-    }
-    #iceLand{
-      
-    }
+
+    #iceLand {}
+
     #imgWrap {
       width: 82.6vw;
       height: 120vw;
       max-width: unset;
       max-height: unset;
-      #planeShadow {
-      }
-  
+
+      #planeShadow {}
+
       #windSpeedWrap {
-  
+
         span {
-  
-          &:nth-child(1) {
-          }
-  
-          &:nth-child(2) {
-          }
-  
-          &:nth-child(3) {
-          }
-  
-          &:nth-child(4) {
-          }
+
+          &:nth-child(1) {}
+
+          &:nth-child(2) {}
+
+          &:nth-child(3) {}
+
+          &:nth-child(4) {}
         }
       }
     }
-    #img {
-    }
-  
+
+    #img {}
+
     .pointerAll {
       width: 10vw;
       height: 10vw;
     }
-  
+
     #pointer {
       right: -4.8vw;
     }
-  
+
     #pointer2 {
       left: -4.8vw;
     }
-  
+
     #pointer3 {
       right: -4.8vw;
     }
-  
+
     #pointer4 {
       left: -4.8vw;
     }
-  
+
     #pointer5 {
       right: -4.8vw;
     }
-  
+
     #imgLeftTriangle {
       width: 41.3vw;
       height: 41.5vw;
     }
-  
-    #imgLeftTriangle2 {
-    }
-  
+
+    #imgLeftTriangle2 {}
+
     #imgRightTriangle {
       width: 41.3vw;
       height: 41.5vw;
     }
-  
-    #imgRightTriangle2 {
-    }
-  
-    #imgFinalStep {
-    }
-  
-    #planeWing {
-    }
-  
-    #planeBody {
-    }
+
+    #imgRightTriangle2 {}
+
+    #imgFinalStep {}
+
+    #planeWing {}
+
+    #planeBody {}
   }
 }
 
@@ -448,6 +477,7 @@
     clip-path: polygon(9% 0%, 0% 80%, 50% 100%, 80% 100%);
   }
 }
+
 @keyframes foldAnimation {
   from {
     -webkit-clip-path: polygon(50% 0%, 0 85%, 0 100%, 0 100%, 50% 100%);
@@ -459,6 +489,7 @@
     clip-path: polygon(50% 0%, 100% 85%, 100% 100%, 100% 100%, 50% 100%);
   }
 }
+
 @keyframes pointerName {
   from {
     transform: translateY(-50%) scale(1);
@@ -468,6 +499,7 @@
     transform: translateY(-50%) scale(.5);
   }
 }
+
 @keyframes speed {
   0% {
     transform: translateX(0%);
@@ -491,6 +523,7 @@
     opacity: 1;
   }
 }
+
 @keyframes rotatePlane {
   from {
     transform: rotate(0);
@@ -506,19 +539,23 @@
     height: 80vw;
   }
 }
+
 @keyframes hoverPlane {
-  0% {      
+  0% {
     transform: rotate(-85deg) translate(15%, 20%);
     opacity: .5;
   }
-  50%{
+
+  50% {
     opacity: 1;
   }
+
   to {
     transform: rotate(-85deg) translate(-15%, -30%);
     opacity: .5;
   }
 }
+
 @keyframes opacityShow {
   from {
     opacity: 0;
@@ -528,115 +565,139 @@
     opacity: 1;
   }
 }
+
 @keyframes shakePlane {
   0% {
-    transform: rotate(-85deg) scale(0.95,1.05);
+    transform: rotate(-85deg) scale(0.95, 1.05);
   }
+
   10% {
-    transform: rotate(-82deg) scale(0.9,1.1);
+    transform: rotate(-82deg) scale(0.9, 1.1);
   }
+
   20% {
-    transform: rotate(-85deg) scale(0.95,1.05);
+    transform: rotate(-85deg) scale(0.95, 1.05);
   }
+
   30% {
-    transform: rotate(-82deg) scale(0.9,1.1);
+    transform: rotate(-82deg) scale(0.9, 1.1);
   }
+
   40% {
-    transform: rotate(-85deg) scale(0.95,1.05);
+    transform: rotate(-85deg) scale(0.95, 1.05);
   }
+
   50% {
-    transform: rotate(-82deg) scale(0.9,1.1);
+    transform: rotate(-82deg) scale(0.9, 1.1);
   }
+
   60% {
-    transform: rotate(-85deg) scale(0.95,1.05);
+    transform: rotate(-85deg) scale(0.95, 1.05);
   }
+
   70% {
-    transform: rotate(-82deg) scale(0.9,1.1);
+    transform: rotate(-82deg) scale(0.9, 1.1);
   }
+
   80% {
-    transform: rotate(-85deg) scale(0.95,1.05);
+    transform: rotate(-85deg) scale(0.95, 1.05);
   }
+
   90% {
-    transform: rotate(-82deg) scale(0.9,1.1);
+    transform: rotate(-82deg) scale(0.9, 1.1);
   }
+
   100% {
-    transform: rotate(-85deg) scale(0.95,1.05);
+    transform: rotate(-85deg) scale(0.95, 1.05);
   }
 }
+
 @keyframes shootPlane {
-  from{
+  from {
     transform: rotate(-85deg) translateY(-0%);
     opacity: 1;
   }
-  to{
+
+  to {
     transform: rotate(-85deg) translateY(-200%);
     opacity: 0;
   }
 }
 
 @keyframes shootPlaneSecond {
-  from{
+  from {
     opacity: 0;
     transform: rotate(-85deg) translateY(200%);
   }
-  to{
+
+  to {
     opacity: 1;
     transform: rotate(-85deg) translateY(0%);
   }
 }
 
 @keyframes iceLand {
-  from{
+  from {
     transform: rotate(0deg);
     bottom: -98%;
   }
-  to{
+
+  to {
     transform: rotate(360deg);
     bottom: -100%;
   }
 }
 
 @keyframes arocket {
-	0% {
-		transform: rotate(-85deg) translate(0,0);
-	}
-	50% {
-		transform: rotate(-85deg) translate(-5px,5px);
-	}
-	100% {
-		transform: rotate(-85deg) translate(0,0);
-	}
+  0% {
+    transform: rotate(-85deg) translate(0, 0);
+  }
+
+  50% {
+    transform: rotate(-85deg) translate(-5px, 5px);
+  }
+
+  100% {
+    transform: rotate(-85deg) translate(0, 0);
+  }
 }
 
 @keyframes ascene {
-	0% {
-		background: #b339ff
-	}
-	30% {
-		background: #3b93ff
-	}
-	70% {
-		background: #3b93ff
-	}
-	100% {
-		background: #b339ff
-	}
-}
-@keyframes acloud {
-	0% {
-		transform: translateX(-100%);
-	}
-	100% {
-		transform: translateX(1000%);
-	}
-}
-@keyframes showScene {
-  from{
-    opacity: .5;
-    transform: translate(-200%,-50%)
+  0% {
+    background: #b339ff
   }
-  to{
+
+  30% {
+    background: #3b93ff
+  }
+
+  70% {
+    background: #3b93ff
+  }
+
+  100% {
+    background: #b339ff
+  }
+}
+
+@keyframes acloud {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(1000%);
+  }
+}
+
+@keyframes showScene {
+  from {
+    opacity: .5;
+    transform: translate(-200%, -50%)
+  }
+
+  to {
     opacity: 1;
-    transform: translate(-50%,-50%)
+    transform: translate(-50%, -50%)
   }
 }

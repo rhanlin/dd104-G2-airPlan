@@ -103,20 +103,26 @@ let vm3 = new Vue({
     },
   },
   mounted() {
-    fetch('./phps/fetchAllUserMat.php',{
-      method:'POST',
-      body: new URLSearchParams(`memNo=10`) //10要改成${變數} 此變數從session撈出目前登入的用戶number
-    })
-      .then(res=>res.json()).then(json=>{
-        //拆出 pattern
-        for(let i=0 ; i<json.data.length ; i++){
-          if(json.data[i].patternNo){
-            this.userPattern.push(`url(${json.data[i].patternUrl})`);
-            this.patternValue.push(json.data[i].patternNo);//取 使用者"擁有"飛機彩繪的編號(matPatNo) 得值
-          }
-        }
-        // console.log(this.patternValue);
+    setTimeout(()=>{
+      if(document.getElementById("signInStatusN").innerText == "登入"){
+        console.log('還沒登入');
+      }else{
+        fetch('./phps/fetchAllUserMat.php',{
+        // method:'POST',
+        // body: new URLSearchParams(`memNo=10`) //10要改成${變數} 此變數從session撈出目前登入的用戶number
       })
+        .then(res=>res.json()).then(json=>{
+          //拆出 pattern
+          for(let i=0 ; i<json.data.length ; i++){
+            if(json.data[i].patternNo){
+              this.userPattern.push(`url(${json.data[i].patternUrl})`);
+              this.patternValue.push(json.data[i].patternNo);//取 使用者"擁有"飛機彩繪的編號(matPatNo) 得值
+            }
+          }
+          // console.log(this.patternValue);
+        })
+      }
+    },1500)
   },
 });
 
@@ -340,7 +346,8 @@ function submitToLetterTable() {
     if(xhr.status == 200){
       let json = JSON.parse(xhr.responseText);
       vmImgWrap.letUrl = `url('${json.data.letImgUrl}')`;//把圖片路徑塞去摺紙的畫面上
-      console.log(vmImgWrap.letUrl);
+      vmImgWrap.letPattern = `url('${json.data.matPatUrl}')`;//用戶選擇的彩繪花紋
+      // console.log(json);
     }else{
       console.log('上傳失敗');
     }
