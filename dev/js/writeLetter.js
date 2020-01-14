@@ -103,26 +103,67 @@ let vm3 = new Vue({
     },
   },
   mounted() {
-    setTimeout(()=>{
-      if(document.getElementById("signInStatusN").innerText == "登入"){
-        console.log('還沒登入');
-      }else{
-        fetch('./phps/fetchAllUserMat.php',{
-        // method:'POST',
-        // body: new URLSearchParams(`memNo=10`) //10要改成${變數} 此變數從session撈出目前登入的用戶number
-      })
+    function onFulfilled(value){
+      console.log(value);
+      fetch('./phps/fetchAllUserMat.php')
         .then(res=>res.json()).then(json=>{
           //拆出 pattern
+          console.log(json);
+          
           for(let i=0 ; i<json.data.length ; i++){
             if(json.data[i].patternNo){
-              this.userPattern.push(`url(${json.data[i].patternUrl})`);
-              this.patternValue.push(json.data[i].patternNo);//取 使用者"擁有"飛機彩繪的編號(matPatNo) 得值
+              vm3.userPattern.push(`url(${json.data[i].patternUrl})`);
+              vm3.patternValue.push(json.data[i].patternNo);//取 使用者"擁有"飛機彩繪的編號(matPatNo) 得值
             }
           }
-          // console.log(this.patternValue);
+          for(let i=0 ; i<json.data.length ; i++){
+            if(json.data[i].stampNo){
+              vmUserStamp.userStamp.push(`url(${json.data[i].stampUrl})`);
+              vmUserStamp.stampValue.push(json.data[i].stampNo);//取 使用者飛機彩繪的編號得值(matPosNo)
+            }
+          }
         })
-      }
-    },1500)
+    }
+    function onRejected(reason){
+      console.log(reason.message);
+    }
+    function getSignInInfo(){
+      return new Promise((resolve, reject)=>{
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            let member = JSON.parse(xhr.responseText);
+            if (member.memNo) {
+              document.getElementById("cavMemberN").innerText = '會員:' + member.memNo;
+              document.getElementById("cavMemberH").innerText = '會員:' + member.memNo;
+              document.getElementById("cavPaperN").innerText = '信紙:' + member.letCount;
+              document.getElementById("cavPaperH").innerText = '信紙:' + member.letCount;
+              document.getElementById("cavCoinN").innerText = 'Air幣:' + member.airCoin;
+              document.getElementById("cavCoinH").innerText = 'Air幣:' + member.airCoin;
+              document.getElementById("signInStatusIconN").style.color = 'green';
+              document.getElementById("signInStatusIconH").style.color = 'green';
+              document.getElementById("signInStatusN").innerHTML = "登出";
+              document.getElementById("signInStatusH").innerHTML = "登出";
+              // console.log( "========1",member.memNo);
+              console.log(member.memNo);
+              resolve(member.memNo);
+            }else{
+              reject(new Error('沒登入'))
+            }
+        }
+        xhr.open("get", "./phps/getSignInInfo.php", true);
+        xhr.send(null);
+      })
+    }
+    getSignInInfo()
+      .then(onFulfilled)
+      .catch(onRejected)
+    // setTimeout(()=>{
+    //   if(document.getElementById("signInStatusN").innerText == "登入"){
+    //     console.log('還沒登入');
+    //   }else{
+        
+    //   }
+    // },1500)
   },
 });
 
