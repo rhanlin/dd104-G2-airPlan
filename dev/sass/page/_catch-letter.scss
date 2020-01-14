@@ -396,16 +396,16 @@
       // display: flex;
       .letter-head {
         // border: 1px solid green;
-        height: 26%;
+        height: 35%;
         width: 100%;
         display: flex;
       }
 
       .stamp-box {
         height: 100%;
-        width: 60%;
+        width: 100%;
         // border: 1px solid red;
-        background-image: url(../img/catch-letter/post-mark-test.png);
+        // background-image: url(../img/catch-letter/post-mark-test.png);
         background-size: 95%;
         background-position: center;
         background-repeat: no-repeat;
@@ -424,15 +424,11 @@
       }
 
       .letter-contant {
-        height: 70%;
+        height: 62%;
         width: 100%;
-        // border: 1px solid pink;
-        padding: 3.5%;
+        padding: 2%;
         overflow-y: auto;
-
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
+        margin-top: 3%;
         .text {
           color: rgba($main-black, .8);
         }
@@ -443,7 +439,7 @@
           width: 50%;
           height: 9.5vw;
           // border: 1px solid slateblue;
-          background-image: url(../img/catch-letter/tenor.gif);
+          // background-image: url(../img/catch-letter/tenor.gif);
           background-size: 180%;
           background-position: 40% 50%;
           background-repeat: no-repeat;
@@ -747,7 +743,7 @@
         .letter-head {}
 
         .stamp-box {
-          width: 48%;
+          width: 100%;
         }
 
         .letter-tittle {
@@ -997,7 +993,7 @@
         .letter-head {}
 
         .stamp-box {
-          width: 48%;
+          width: 100%;
         }
 
         .letter-tittle {

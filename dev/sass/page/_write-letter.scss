@@ -16,6 +16,7 @@
     main {
         margin-top: 10vw;
         font-family: 'Noto Sans TC', sans-serif;
+        position: relative;
         form{
         .goto-shop-btn {
             // border: 1px solid blue;
@@ -1098,6 +1099,16 @@
         }
 
         }
+        #myCanvas{
+            margin: 0 auto;
+            display: block;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            opacity: 0;
+        }
     }
 
     @include foldthePlane();
@@ -1113,6 +1124,7 @@
         height: auto;
 
         main {
+            // overflow-x: hidden;
             margin-top: 30%;
             form{
             .goto-shop-btn {
@@ -1626,6 +1638,7 @@
         height: auto;
 
         main {
+            overflow-x: hidden;
             margin-top: 20vw;
             form{
             .goto-shop-btn {
@@ -2149,6 +2162,7 @@
         height: auto;
 
         main {
+            overflow-x: hidden;
             margin-top: 20vw;
             form{
             .goto-shop-btn {
