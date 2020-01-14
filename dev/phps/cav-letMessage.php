@@ -1,6 +1,6 @@
 <?php
 try {
-    require_once("connectBook_cave.php");
+    require_once("connectBook_root.php");
     $sql = "select * from `message` where letNo=:letNo order by msgTime DESC";
     // $sql = "select * from `message` where letNo=11 order by msgTime DESC";
     // $sql = "select * from `message` order by msgTime DESC";
