@@ -1,7 +1,7 @@
 <!-- 修改會員資料 -->
 <?php 
 try {
-    require_once "connectBook_userSetting.php";
+    require_once "connectBook_root.php";
 	$sql2 = "select * from `member` where memEmail='{$_POST["memEmail"]}'";
 	$memPsw = $_POST['memPsw'];
 	$memPswAgain = $_POST['memPswAgain'];

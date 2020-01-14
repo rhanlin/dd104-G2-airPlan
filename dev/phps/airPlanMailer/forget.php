@@ -1,6 +1,6 @@
 <?php
 try {
-    require_once("../connectBook_userSetting.php");
+    require_once("../connectBook_root.php");
     $sqlSearch = "select * from `member` where memEmail=:memEmail";
     $memberSearch = $pdo->prepare($sqlSearch);
     $memberSearch->bindValue(':memEmail', $_POST["memEmail"]);
