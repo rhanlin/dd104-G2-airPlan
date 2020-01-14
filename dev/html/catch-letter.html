@@ -26,6 +26,7 @@
       <section class="catch-step-1">
         <div class="box-white catch-letter">
           <div class="letter-wrap">
+            <div style="width:35%;height:20%;position:absolute;top:11%;right:-18%;background-position:center;background-size:contain;background-repeat:no-repeat;transform:translate(-50%,-50%) rotate(-15deg);" :style="{backgroundImage:userStamp[0]}"></div>
             <div class="paper-cloud"></div>
             <div class="letter-head">
               <div class="stamp-box" :style="{backgroundImage:letterUploadImg}"></div>
@@ -101,10 +102,12 @@
                             <span class="arrow-white"></span>
                             <div class="stamp-type">
                               <template v-for="(item,index) in 3">
-                                <button class="type" name="userStamp" :value="index" @click.prevent="clickStamp" @touchstart.prevent="clickStamp">
+                                <button class="type" name="userStamp" :value="stampValue[index]" type="button"
+                                @click="clickStamp"
+                                @touchstart="clickStamp">
                                     <span :style="{backgroundImage: userStamp[index]}"></span>
                                 </button>
-                              </template>
+                            </template>
                             </div>
                             <span class="arrow-white reverse"></span>
                         </div>
@@ -130,6 +133,7 @@
         // threeOpen: true,
         viewMoreOpen:true,
         userStamp:[],//存使用者 擁有 的郵戳
+        stampValue:[],
         letterStamp: '',
         //串接信件內容
         letteTittle: "",
@@ -155,7 +159,7 @@
           for(let i=0 ; i<json.data.length ; i++){
             if(json.data[i].stampNo){
               vmCatchLet.userStamp.push(`url(${json.data[i].stampUrl})`);
-              // vmUserStamp.stampValue.push(json.data[i].stampNo);//取 使用者飛機彩繪的編號得值(matPosNo)
+              vmCatchLet.stampValue.push(json.data[i].stampNo);//取 使用者飛機彩繪的編號得值(matPosNo)
             }
           }
           console.log(vmCatchLet.userStamp);

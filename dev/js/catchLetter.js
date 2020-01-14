@@ -48,7 +48,7 @@ let vmCatchLetter = new Vue({
         threeWorld.addEventListener('mousedown', mouseDownFn);//監聽撈信事件
       }else{
         console.log(`撈到一封信`);
-        //catchALetter(); //撈一封信Fn
+        catchALetter(); //撈一封信Fn
         threeWorld.addEventListener('mousedown', mouseDownFn);//監聽撈信事件
       }
     })
@@ -61,6 +61,8 @@ let vmCatchLetter = new Vue({
     net.style.top = e.pageY + 'px';
   })
   
+  
+
   function mouseDownFn() {
     net.style.transform = 'rotate(-45deg)';
     let successNum = getRandom(10);
