@@ -108,21 +108,57 @@ let vmCatchLetter = new Vue({
   let time = 5
 
   function letterFlim() {
-    setTimeout(() => {
-      time--;
-      if (time < 0) {
-        setTimeout(() => {
-          openMotion.style.display = "none";
-          net.style.display = "none";
-          catchLetterShow.style.display = "block";
-          // console.log(catchLetterShow);
-        }, 400)
-      } else {
-        openMotion.style.backgroundImage = `url(./img/catch-letter/letter-fold-${time+1}.png)`
-        letterFlim()
-      }
-      console.log(time)
-    }, 400)
+    let imgWrap_catch = document.getElementById('imgWrap_catch');
+    let imgfinalStep_catch = document.getElementById('imgfinalStep_catch');
+    let planeBody_catch = document.getElementById('planeBody_catch');
+    let planeWing_catch = document.getElementById('planeWing_catch');
+    let imgRightTriangle2_catch = document.getElementById('imgRightTriangle2_catch');
+    let imgLeftTriangle2_catch = document.getElementById('imgLeftTriangle2_catch');
+    let imgRightTriangle_catch = document.getElementById('imgRightTriangle_catch');
+    let imgLeftTriangle_catch = document.getElementById('imgLeftTriangle_catch');
+    setTimeout(()=>{
+      // 執行自動動畫
+      net.style.display="none";
+      imgWrap_catch.style.animationName = "rotateCatchPlane";
+      planeWing_catch.style.animationName = "openCatchPlane1";
+      setTimeout(()=>{
+        imgfinalStep_catch.style.webkitClipPath = "polygon(50% 0%, 0 85%, 0 100%, 0 100%, 50% 100%);";
+        imgfinalStep_catch.style.clipPath = "polygon(50% 0%, 0 85%, 0 100%, 0 100%, 50% 100%);";
+        setTimeout(()=>{
+          planeWing_catch.style = "-webkit-clip-path:polygon(9% 0%, 97% 81%, 98% 95.2%, 0% 95.2%, 8% 1%);clip-path:polygon(9% 0%, 97% 81%, 98% 95.2%, 0% 95.2%, 8% 1%)";
+          planeWing_catch.style.animationName = "openPlanePaper_1";
+          planeBody_catch.style.display="none";
+          setTimeout(()=>{
+            imgRightTriangle2_catch.style.display = "block";
+            imgLeftTriangle2_catch.style = "display:block;z-index:99;box-shadow:inset 0 0 7px rgba(0,0,0,.3);-webkit-clip-path: polygon(100% 0%, 100% 55%, 0% 100%);clip-path: polygon(100% 0%, 100% 55%, 0% 100%)";
+            setTimeout(()=>{
+              // imgLeftTriangle2_catch.style.animationName = "openPlanePaper_2_left";
+              // imgRightTriangle2_catch.style.animationName = "openPlanePaper_2_right";
+              planeWing_catch.style.display="none";
+              imgLeftTriangle2_catch.style.display="none";
+              imgRightTriangle2_catch.style.display="none";
+              imgfinalStep_catch.style= "-webkit-clip-path:polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0px 100%, 0px 34.5%, 50% 34.5%);clip-path:polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0px 100%, 0px 34.5%, 50% 34.5%)";
+              imgRightTriangle_catch.style.display="block";
+              imgLeftTriangle_catch.style.display="block";
+              catchLetterShow.style= "position: absolute;top: 50%; left:50%; transform: translate(-50%,-50%);-webkit-clip-path:polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0px 100%, 0px 34.5%, 50% 34.5%);clip-path:polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0px 100%, 0px 34.5%, 50% 34.5%)";
+              catchLetterShow.style.display= "block";
+              setTimeout(()=>{
+                imgfinalStep_catch.style= "-webkit-clip-path:polygon(50% 0%, 100% 0, 100% 40%, 100% 100%, 0 100%, 0 40%, 0 0);clip-path:polygon(50% 0%, 100% 0, 100% 40%, 100% 100%, 0 100%, 0 40%, 0 0)";
+                catchLetterShow.style="position: absolute; top: 50%; left:50%; transform: translate(-50%,-50%);-webkit-clip-path:polygon(50% 0%, 100% 0, 100% 40%, 100% 100%, 0 100%, 0 40%, 0 0);clip-path:polygon(50% 0%, 100% 0, 100% 40%, 100% 100%, 0 100%, 0 40%, 0 0)";
+                // imgRightTriangle_catch.style= "-webkit-clip-path:polygon(100% 0, 0 0, 100% 100%);clip-path:polygon(100% 0, 0 0, 100% 100%)";
+                // imgLeftTriangle_catch.style= "-webkit-clip-path:polygon(0 0, 0% 100%, 100% 0);clip-path:polygon(0 0, 0% 100%, 100% 0)";
+                imgRightTriangle_catch.style.display="none";
+                imgLeftTriangle_catch.style.display="none";
+                setTimeout(()=>{
+                  
+                  imgfinalStep_catch.style.display="none";
+                },500)
+              },500)
+            },300)
+          },1000)
+        },500)
+      },500)
+    },500)
   }
 
   function getRandom(num) {
