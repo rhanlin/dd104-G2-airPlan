@@ -11,20 +11,36 @@ let vmUserStamp = new Vue({
     },
   },
   mounted() {
-    fetch('./phps/fetchAllUserMat.php',{
-      method:'POST',
-      body: new URLSearchParams(`memNo=10`) //10要改成${變數} 此變數從session撈出目前登入的用戶number
-    })
-      .then(res=>res.json()).then(json=>{
-        //拆出 pattern
-        for(let i=0 ; i<json.data.length ; i++){
-          if(json.data[i].stampNo){
-            this.userStamp.push(`url(${json.data[i].stampUrl})`);
-            this.stampValue.push(json.data[i].stampNo);//取 使用者飛機彩繪的編號得值(matPosNo)
-          }
-        }
-        console.log(this.userStamp);
-      })
+    // setTimeout(()=>{
+    //   if(document.getElementById("cavMemberN").innerText == ""){
+    //     console.log('還沒登入');
+    //   }else{
+    //     fetch('./phps/fetchAllUserMat.php',{
+    //     // method:'POST',
+    //     // body: new URLSearchParams(`memNo=10`) //10要改成${變數} 此變數從session撈出目前登入的用戶number
+    //   })
+    //     .then(res=>res.json()).then(json=>{
+    //       //拆出 pattern
+    //       for(let i=0 ; i<json.data.length ; i++){
+    //         if(json.data[i].stampNo){
+    //           this.userStamp.push(`url(${json.data[i].stampUrl})`);
+    //           this.stampValue.push(json.data[i].stampNo);//取 使用者飛機彩繪的編號得值(matPosNo)
+    //         }
+    //       }
+    //       // console.log(this.userStamp);
+    //     })
+    //   }
+    // },1500)
+    
+  },
+});
+
+
+let vmImgWrap = new Vue({
+  el: '#imgWrap',
+  data: {
+    letUrl: '',
+    letPattern: '',
   },
 });
 function confirmSubmit(){
@@ -184,6 +200,7 @@ function foldThePlane(){
             imgWrap.style.filter = 'unset';
             imgWrap.style.cursor= 'pointer'; //讓飛機上的滑鼠變成pointer的狀態
             planeBody.style.display = "block";
+            // planeBody.style.filter = "contrast(.5)";
             shootPlane();
           }, 500);
         }, 500);
@@ -292,6 +309,7 @@ function foldThePlane(){
             imgWrap.style.filter = 'unset';
             imgWrap.style.cursor= 'pointer'; //讓飛機上的滑鼠變成pointer的狀態
             planeBody.style.display = "block";
+            // planeBody.style.filter = "contrast(.5)";
             shootPlane();
           }, 500);
         }, 500);
@@ -325,6 +343,7 @@ function setPlaneShadow(){
 function shootPlane(){
   // 飛機hover
   planeWing.addEventListener('mouseover',()=>{
+
     // imgWrap.style.animation = "hoverPlane";
     // imgWrap.style.animationDuration = "1s";
     // imgWrap.style.animationFillMode = "none";
