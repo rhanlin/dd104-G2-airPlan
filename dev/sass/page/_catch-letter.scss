@@ -53,8 +53,167 @@
       animation-delay: .5s;
       animation-duration: .5s;
       animation-fill-mode: forwards;
+      
     }
+    #imgWrap_catch {
+      width: 55vw;
+      max-width: 495px;
+      height: 80vw;
+      max-height: 716px;
+      position: relative;
+      opacity: 1;
+      animation-delay: .5s;
+      animation-duration: .5s;
+      animation-fill-mode: forwards;
+      margin: 0 auto;
+      position: relative;
+      // filter: drop-shadow(0px 0px 15px #bbb);
+      z-index: 9;
+      transform: rotate(-85deg);
 
+      #imgfinalStep_catch {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        display:block;
+        animation-delay: .3s;
+        animation-duration: 0.5s;
+        background-size: cover;
+        filter: opacity(1);
+        
+        // &::after {
+        //   content: '';
+        //   width: 100%;
+        //   height: 100%;
+        //   position: absolute;
+        //   top: 0;
+        //   left: 0;
+        //   background: linear-gradient(70deg, #000, #fff 0%, #ddd);
+        //   filter: contrast(0.5);
+        //   opacity: .2;
+        // }
+      }
+      #planeBody_catch {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(70deg, #000, #fff 0%, #ddd);
+        z-index: 99;
+        -webkit-clip-path: polygon(50% 0%, 100% 100%, 100% 100%, 100% 100%, 50% 100%);
+        clip-path: polygon(50% 0%, 100% 100%, 100% 100%, 100% 100%, 50% 100%);
+        filter: brightness(0.9);
+        background-size: cover;
+        overflow: hidden;
+        display: block;
+    
+        // &::after {
+        //   content: '';
+        //   width: 100%;
+        //   height: 100%;
+        //   position: absolute;
+        //   top: 0;
+        //   left: 0;
+        //   background: linear-gradient(70deg, #000, #fff 0%, #ddd);
+        //   filter: contrast(0.5);
+        //   opacity: .2;
+        // }
+      }
+      #planeWing_catch {
+        height: 105%;
+        width: 55%;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 99;
+        display: block;
+        /* animation-name: foldAnimationStep2; */
+        animation-delay: .5s;
+        animation-duration: .5s;
+        animation-fill-mode: forwards;
+        background-size: cover;
+        filter: opacity(1);
+    
+        // &::after {
+        //   content: '';
+        //   width: 100%;
+        //   height: 100%;
+        //   position: absolute;
+        //   top: 0;
+        //   left: 0;
+        //   background: linear-gradient(70deg, #aaa, #fff 50%, #fff);
+        //   /* background-color: #fff; */
+        //   filter: contrast(.85);
+        //   opacity: .4;
+        // }
+      }
+      #imgLeftTriangle_catch{
+        width: 27.8vw;
+        max-width: 247.5px;
+        height: 27.8vw;
+        max-height: 247.5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #FFFFFF;
+        /* border: 1px solid #fff; */
+        -webkit-clip-path: polygon(0 0, 0% 100%, 100% 0);
+        clip-path: polygon(0 0, 0% 100%, 100% 0);
+        z-index: 9;
+        background-size: inherit;
+      }
+      #imgLeftTriangle2_catch{
+        width: 50%;
+        height: 85%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        z-index: 1;
+        
+        background-size: inherit;
+        animation-delay: .5s;
+        animation-duration: .5s;
+        animation-fill-mode: forwards;
+        
+      }
+      #imgRightTriangle_catch{
+        width: 27.8vw;
+        max-width: 247.5px;
+        height: 27.8vw;
+        max-height: 247.5px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #FFFFFF;
+        /* border: 1px solid #fff; */
+        -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);
+        clip-path: polygon(100% 0, 0 0, 100% 100%);
+        z-index: 9;
+        background-size: inherit;
+      }
+      #imgRightTriangle2_catch{
+        width: 50%;
+        height: 85%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #fff;
+        z-index: 99;
+        
+        display: none;
+        background-size: inherit;
+        animation-delay: .5s;
+        animation-duration: .5s;
+        animation-fill-mode: forwards;
+        
+      }
+    }
     #nextStepArrow {
       display: inline-block;
       // width: 10vw;
@@ -374,6 +533,7 @@
     background-size: cover;
     display: flex;
     position: relative;
+    z-index: 9;
     // font-size: 1.5vw;
     // display: none;
     @include paper_cloud();
@@ -1119,6 +1279,68 @@
         }
       }
     }
+  }
+}
+@keyframes openPlanePaper_2_right {
+  from{
+    -webkit-clip-path:polygon(0% 0%, 0% 55%, 100% 100%);
+    clip-path:polygon(0% 0%, 0% 55%, 100% 100%);
+  }
+  to{
+    -webkit-clip-path:polygon(100% 0%, 100% 100%, 0% 0%);
+    clip-path:polygon(100% 0%, 100% 100%, 0% 0%);
+    box-shadow: unset;
+  }
+}
+@keyframes openPlanePaper_2_left {
+  from{
+    -webkit-clip-path:polygon(0% 0%, 0% 55%, 100% 100%);
+    clip-path:polygon(0% 0%, 0% 55%, 100% 100%);
+  }
+  to{
+    -webkit-clip-path:polygon(100% 0%, 0% 0%, 0% 100%);
+    clip-path:polygon(100% 0%, 0% 0%, 0% 100%);
+    box-shadow: unset;
+  }
+}
+@keyframes openPlanePaper_1 {
+  from{
+    -webkit-clip-path:polygon(9% 0%, 97% 81%, 98% 95.2%, 0% 95.2%, 8% 1%);
+    clip-path:polygon(9% 0%, 97% 81%, 98% 95.2%, 0% 95.2%, 8% 1%);
+    -webkit-transform:translate3d(0,0,0);
+		transform:translate3d(0,0,0);
+    // transform: scaleX(1) translateX(0);
+  }
+  to{
+    -webkit-clip-path:polygon(0% 0%, 97% 81%, 98% 95.2%, 0% 95.2%, 0% 0%);
+    clip-path:polygon(0% 0%, 97% 81%, 98% 95.2%, 0% 95.2%, 0% 0%);
+    -webkit-transform:translate3d(-88%,0,25px) rotate3d(0,1,0,-160deg);
+		transform:translate3d(-88%,0,25px) rotate3d(0,1,0,-160deg);
+    // transform: scaleX(-1) translateX(82%);
+  }
+}
+@keyframes rotateCatchPlane {
+  from{
+    transform: rotate(-85deg);
+    opacity: 1;
+    width: 55vw;
+    height: 80vw;
+  }
+  to{
+    transform: rotate(0);
+    opacity: 1;
+    width: 82.6vw;
+    height: 120vw;
+  }
+}
+@keyframes openCatchPlane1 {
+  from{
+    -webkit-clip-path: polygon(9% 0%, 0% 80%, 50% 100%, 80% 100%);
+    clip-path: polygon(9% 0%, 0% 80%, 50% 100%, 80% 100%);
+  }
+  to{
+    -webkit-clip-path: polygon(9% 0%, 100% 81%, 100% 95.3%, 50% 95.3%);
+    clip-path: polygon(9% 0%, 100% 81%, 100% 95.3%, 50% 95.3%);
   }
 }
 

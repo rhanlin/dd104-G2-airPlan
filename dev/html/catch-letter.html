@@ -26,6 +26,7 @@
       <section class="catch-step-1">
         <div class="box-white catch-letter">
           <div class="letter-wrap">
+            <div style="width:35%;height:20%;position:absolute;top:11%;right:-18%;background-position:center;background-size:contain;background-repeat:no-repeat;transform:translate(-50%,-50%) rotate(-15deg);" :style="{backgroundImage:userStamp[0]}"></div>
             <div class="paper-cloud"></div>
             <div class="letter-head">
               <div class="stamp-box" :style="{backgroundImage:letterUploadImg}"></div>
@@ -101,10 +102,12 @@
                             <span class="arrow-white"></span>
                             <div class="stamp-type">
                               <template v-for="(item,index) in 3">
-                                <button class="type" name="userStamp" :value="index" @click.prevent="clickStamp" @touchstart.prevent="clickStamp">
+                                <button class="type" name="userStamp" :value="stampValue[index]" type="button"
+                                @click="clickStamp"
+                                @touchstart="clickStamp">
                                     <span :style="{backgroundImage: userStamp[index]}"></span>
                                 </button>
-                              </template>
+                            </template>
                             </div>
                             <span class="arrow-white reverse"></span>
                         </div>
@@ -121,7 +124,7 @@
 
     <script src="./js/foldThePlane.js"></script>
     <script src="./js/catchLetter.js"></script>
-    <script src="./js/catchNews.js"></script>
+    <script src="./js/randomCatch.js"></script>
   
   <script>
     let vmCatchLet= new Vue({
@@ -129,11 +132,8 @@
       data:{
         // threeOpen: true,
         viewMoreOpen:true,
-        userStamp:[//存使用者 擁有 的郵戳
-          "url(./img/userStamp/user-stamp_1.png)",
-          "url(./img/userStamp/user-stamp_2.png)",
-          "url(./img/userStamp/user-stamp_3.png)",
-        ],
+        userStamp:[],//存使用者 擁有 的郵戳
+        stampValue:[],
         letterStamp: '',
         //串接信件內容
         letteTittle: "",
@@ -149,6 +149,76 @@
           // console.log(this.letterStamp);
         },
       },
+      mounted() {
+    function onFulfilled(value){
+      //登入成功 -> 取用戶彩繪圖案、用戶郵戳
+      console.log(value);
+      fetch('./phps/fetchAllUserMat.php')
+        .then(res=>res.json()).then(json=>{
+          //拆出 stamp
+          for(let i=0 ; i<json.data.length ; i++){
+            if(json.data[i].stampNo){
+              vmCatchLet.userStamp.push(`url(${json.data[i].stampUrl})`);
+              vmCatchLet.stampValue.push(json.data[i].stampNo);//取 使用者飛機彩繪的編號得值(matPosNo)
+            }
+          }
+          console.log(vmCatchLet.userStamp);
+        })
+    }
+    function onRejected(reason){
+      //沒有登入
+      console.log(reason.message);
+      let singInBox = document.getElementById('signInBg');
+      let closeSigin = document.getElementById('closeSigin');
+      let closeRegister = document.getElementById('closeRegister');
+      let signInCancelBtn = document.getElementById('signInCancelBtn');
+      let closeForget = document.getElementById('closeForget');
+      let vistiorsBtn = document.createElement('button');
+      let singInText = document.createElement('p');
+      let vistiorsBtnText = document.createElement('p');
+      singInBox.style.display = "block";
+      
+      closeSigin.style.display = "none";
+      closeRegister.style.display = "none";
+      closeForget.style.display = "none";
+      signInCancelBtn.style.display = "none";
+      vistiorsBtnText.innerText = "訪客登入";
+      vistiorsBtn.setAttribute('id','vistiorsBtn');
+      vistiorsBtn.setAttribute('type','button');
+      vistiorsBtn.appendChild(vistiorsBtnText);
+      singInText.innerText = reason.message;
+      singInText.style="display:inline-block;width:80%;text-align:center;background-size:100% 100%;position:absolute;top:7.5%;left: 50%;transform:translate(-50%, -50%);z-index:999;color:#fff;font-size:2rem;";
+      singInBox.appendChild(singInText);
+      document.querySelector('.formsignInData').appendChild(vistiorsBtn);
+
+      vistiorsBtn.addEventListener('click',visitorsLogin,false);
+      // signInCancelBtn.onclick = visitorsLogin;
+    }
+    function visitorsLogin(e){
+      e.target.preventDefault;
+      document.getElementById('signInEmail').value="h750307@ii5g.org.tw";
+      document.getElementById('signInPassword').value= "000";
+    }
+    function getSignInInfo(){
+      return new Promise((resolve, reject)=>{
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            let member = JSON.parse(xhr.responseText);
+            if (member.memNo) {
+              console.log(member.memNo);
+              resolve(member.memNo);
+            }else{
+              reject(new Error('請先登入才能撈信'))
+            }
+        }
+        xhr.open("get", "./phps/getSignInInfo.php", true);
+        xhr.send(null);
+      })
+    }
+    getSignInInfo()
+      .then(onFulfilled)
+      .catch(onRejected)
+  },
     });
   </script>
 </body>

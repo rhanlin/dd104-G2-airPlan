@@ -12,10 +12,12 @@ try {
     else{ //找得到
       	$memRow = $member->fetch(PDO::FETCH_ASSOC);//取回一筆資料
         session_start();//登入成功,將登入者的資料寫入session
-        $_SESSION["memEmail"] = $memRow["memEmail"];
+		$_SESSION["memName"] = $memRow["memName"];
+		$_SESSION["memEmail"] = $memRow["memEmail"];
 	    $_SESSION["memNo"] = $memRow["memNo"];
         $_SESSION["letCount"] = $memRow["letCount"]; 
-        $_SESSION["airCoin"] = $memRow["airCoin"];      
+		$_SESSION["airCoin"] = $memRow["airCoin"];  
+		$_SESSION["intColor"] = $memRow["intColor"];     
       	echo json_encode($memRow);//送出json字串
     } 
 

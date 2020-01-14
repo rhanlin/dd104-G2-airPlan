@@ -37,11 +37,19 @@
     }
   }
 
+  @else if $breakpoint=="from920_mediumSize" {
+    @media all and (max-width:$Newlaptop-max)and(min-width:$laptop-min) {
+      @content;
+    }
+  }
+
   @else if $breakpoint=="mediumSize" {
     @media all and (max-width:$laptop-max)and(min-width:$laptop-min) {
       @content;
     }
   }
+
+
 
   @else if $breakpoint=="mediumSize_max" {
     @media all and (max-width:$laptop-max) {

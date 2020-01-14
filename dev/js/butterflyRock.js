@@ -33,14 +33,19 @@
     butterflies = [];
     boids = [];
 
-    const skinMap = new THREE.TextureLoader().load('./img/catch-letter/plane-pattern/stamp.jpg');
+    const skinMap = new THREE.TextureLoader().load('./phps/userPattern/stamp.jpg');
     skinMap.wrapS = skinMap.wrapT = THREE.RepeatWrapping;
-    var mat = new THREE.MeshBasicMaterial({
+    var mat = new THREE.MeshBasicMaterial({//MeshBasicMaterial//MeshPhongMaterial
+      // transparent: true, 
+      // opacity: 0.5, 
+      reflectivity: 0.2,
+      shininess: 0.3,
+      // color: 0xffffff,
       // shading: THREE.FlatShading, color: Math.random()*0xffffff, 
-      // side: THREE.DoubleSide//, alphaMap:alpha, alphaTest: 0.5
       side: THREE.DoubleSide,
       map: skinMap,
     });
+    
     for (var i = 0; i < 50; i++) {
       boid = boids[i] = new Boid();
       boid.position.x = Math.random() * 400 - 200;
@@ -52,7 +57,6 @@
       boid.setAvoidWalls(true);
       boid.setWorldSize(500, 500, 400);
       // var alpha = THREE.ImageUtils.loadTexture('mask'+Math.floor(Math.random()*4)+'.jpg');
-
       butterfly = butterflies[i] = new THREE.Mesh(new Butterfly(), mat);
       butterfly.geometry.scale(2, 2, 2); //改飛機大小
       // butterfly.phase = Math.floor( Math.random() * 62.83 );
@@ -64,7 +68,7 @@
       antialias: true,
       alpha:true,
     });
-    renderer.setClearColor(0xC4D7F2, 0);
+    // renderer.setClearColor(0xC4D7F2, 0);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
     renderer.autoClear = true;
@@ -93,8 +97,6 @@
     renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
-  // make butterflies react to mouse move
-  // ... if we decide we want this later ...
   // -----------------------------------------------
   function onDocumentMouseMove(event) {
     var vector = new THREE.Vector3(event.clientX - SCREEN_WIDTH_HALF, -event.clientY + SCREEN_HEIGHT_HALF, 0);
