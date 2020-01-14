@@ -78,7 +78,7 @@ let vm2 = new Vue({
       this.showUploadImg = `url('${e.target.result}')`;
       this.letterUploadImg = e.target.result;
       document.getElementById('hookimg').style.animationName = "hookimgRise";
-      console.log(this.letterUploadImg);
+      // console.log(this.letterUploadImg);
       
     },
   },
@@ -99,23 +99,85 @@ let vm3 = new Vue({
       this.previewPattern = this.$refs.bg[index].style.backgroundImage;
       this.letterPattern = e.target.firstChild.value;
       e.target.firstChild.checked = true;
+      canvasSet();
     },
   },
   mounted() {
-    fetch('./phps/fetchAllUserMat.php',{
-      method:'POST',
-      body: new URLSearchParams(`memNo=10`) //10要改成${變數} 此變數從session撈出目前登入的用戶number
-    })
-      .then(res=>res.json()).then(json=>{
-        //拆出 pattern
-        for(let i=0 ; i<json.data.length ; i++){
-          if(json.data[i].patternNo){
-            this.userPattern.push(`url(${json.data[i].patternUrl})`);
-            this.patternValue.push(json.data[i].patternNo);//取 使用者"擁有"飛機彩繪的編號(matPatNo) 得值
+    function onFulfilled(value){
+      //登入成功 -> 取用戶彩繪圖案、用戶郵戳
+      console.log(value);
+      fetch('./phps/fetchAllUserMat.php')
+        .then(res=>res.json()).then(json=>{
+          //拆出 pattern
+          console.log(json);
+          
+          for(let i=0 ; i<json.data.length ; i++){
+            if(json.data[i].patternNo){
+              vm3.userPattern.push(`url(${json.data[i].patternUrl})`);
+              vm3.patternValue.push(json.data[i].patternNo);//取 使用者"擁有"飛機彩繪的編號(matPatNo) 得值
+            }
           }
+          for(let i=0 ; i<json.data.length ; i++){
+            if(json.data[i].stampNo){
+              vmUserStamp.userStamp.push(`url(${json.data[i].stampUrl})`);
+              vmUserStamp.stampValue.push(json.data[i].stampNo);//取 使用者飛機彩繪的編號得值(matPosNo)
+            }
+          }
+        })
+    }
+    function onRejected(reason){
+      //沒有登入
+      console.log(reason.message);
+      let singInBox = document.getElementById('signInBg');
+      let closeSigin = document.getElementById('closeSigin');
+      let closeRegister = document.getElementById('closeRegister');
+      let signInCancelBtn = document.getElementById('signInCancelBtn');
+      let closeForget = document.getElementById('closeForget');
+      let vistiorsBtn = document.createElement('button');
+      let singInText = document.createElement('p');
+      let vistiorsBtnText = document.createElement('p');
+      singInBox.style.display = "block";
+      
+      closeSigin.style.display = "none";
+      closeRegister.style.display = "none";
+      closeForget.style.display = "none";
+      signInCancelBtn.style.display = "none";
+      vistiorsBtnText.innerText = "訪客登入";
+      vistiorsBtn.setAttribute('id','vistiorsBtn');
+      vistiorsBtn.setAttribute('type','button');
+      vistiorsBtn.appendChild(vistiorsBtnText);
+      singInText.innerText = reason.message;
+      singInText.style="display:inline-block;width:80%;text-align:center;background-size:100% 100%;position:absolute;top:7.5%;left: 50%;transform:translate(-50%, -50%);z-index:999;color:#fff;font-size:2rem;";
+      singInBox.appendChild(singInText);
+      document.querySelector('.formsignInData').appendChild(vistiorsBtn);
+
+      vistiorsBtn.addEventListener('click',visitorsLogin,false);
+      // signInCancelBtn.onclick = visitorsLogin;
+    }
+    function visitorsLogin(e){
+      e.target.preventDefault;
+      document.getElementById('signInEmail').value="h750307@ii5g.org.tw";
+      document.getElementById('signInPassword').value= "000";
+    }
+    function getSignInInfo(){
+      return new Promise((resolve, reject)=>{
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            let member = JSON.parse(xhr.responseText);
+            if (member.memNo) {
+              console.log(member.memNo);
+              resolve(member.memNo);
+            }else{
+              reject(new Error('請先登入才能寫信'))
+            }
         }
-        // console.log(this.patternValue);
+        xhr.open("get", "./phps/getSignInInfo.php", true);
+        xhr.send(null);
       })
+    }
+    getSignInInfo()
+      .then(onFulfilled)
+      .catch(onRejected)
   },
 });
 
@@ -152,11 +214,23 @@ function typeEffect(element, speed) {
 let submitStamp = document.querySelector('.stamp-type').children;
 for (let i = 0; i < submitStamp.length; i++) {
   submitStamp[i].addEventListener('click', (e) => {
-    // e.preventDefault();//解掉冒泡事件
+    e.preventDefault();//解掉冒泡事件
     e.stopPropagation();
     e.stopImmediatePropagation();
     // let letterStamp = parseInt(e.target.firstChild.value)+1;
     // console.log(e.target);
+    // saveImage();//先存好canvas
+    writeLetterExm();
+  })
+}
+for (let i = 0; i < submitStamp.length; i++) {
+  submitStamp[i].addEventListener('touchend', (e) => {
+    e.preventDefault();//解掉冒泡事件
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+    // let letterStamp = parseInt(e.target.firstChild.value)+1;
+    // console.log(e.target);
+    // saveImage();//先存好canvas
     writeLetterExm();
   })
 }
@@ -167,7 +241,7 @@ function writeLetterExm() {
   let letterContant = document.getElementById('letterContant');
   let lettrtCat = document.getElementsByName('letSort');
   // console.log(lettrtCat[0].checked);
-
+  
   //判斷 信件分類
   let checkflag = 0;
   for (var i = 0; i < lettrtCat.length; i++) {
@@ -182,12 +256,123 @@ function writeLetterExm() {
   } else if (letterContant.value == "") {
     alert("請輸入信件內容");
   } else {
-    //判斷必要欄位皆有填值，前往下一步->摺紙
-    confirmSubmit();
+    //判斷必要欄位皆有填值
+    // saveImage();//先存好canvas
+    // setTimeout(()=>{
+    //   confirmSubmit();//前往下一步->摺紙
+    // },1000)
+    confirmSubmit();//前往下一步->摺紙
+    
+    
   }
 }
 
+//把信件存成圖片
+var counter = 0;
+let canvas = document.getElementById('myCanvas');
+let context = canvas.getContext("2d");
+// let imgCtx = canvas.getContext("2d");
+//按實際渲染倍率來縮放canvas
+let getPixelRatio = function (context) {
+  let backingStore = context.backingStorePixelRatio ||
+      context.webkitBackingStorePixelRatio ||
+      context.mozBackingStorePixelRatio ||
+      context.msBackingStorePixelRatio ||
+      context.oBackingStorePixelRatio ||
+      context.backingStorePixelRatio || 1;
+  return (window.devicePixelRatio || 1) / backingStore;
+}
+let ratio = getPixelRatio(context);
+canvas.style.width = canvas.width + 'px';
+canvas.style.height = canvas.height + 'px';
+ 
+canvas.width = canvas.width * ratio;
+canvas.height = canvas.height * ratio;
 
+context.scale(ratio, ratio);
+// context.textBaseline = 'top';
+context.fillStyle = "#212121";
+
+function b(arr, target, context) {
+  let low = 0
+  let high = arr.length - 1
+  let mid = low + Math.floor((high - low) / 2)
+  let i = 0
+  if(high < low) return -1;
+  while(high > low) {
+    var s = arr.slice(0, mid + 1).join('')
+    var len = context.measureText(s).width
+    if (len < target) {
+      low = mid
+    } else {
+      high = mid - 1
+    }
+    mid = low + Math.floor((high - low + 1) / 2)
+    counter++;
+  }
+  return mid
+}
+
+CanvasRenderingContext2D.prototype.wrapText = function (text, x, y, maxWidth, lineHeight , fontSize) {
+	if (typeof text != 'string' || typeof x != 'number' || typeof y != 'number') {
+		return;
+	}
+	
+	var context = this;
+	context.font=`${fontSize}px Noto-Sans-TC`;
+	// 字符分隔
+	var arrText = text.split('');
+	var line = '';
+     
+    var start = 0;
+    var end = 0
+    var lineArr = []
+    var line = ''
+    var isEnd = false
+  
+    while(end !== -1) {
+      end = b(arrText, maxWidth, context)
+      // console.log('start: ' + start, 'end: ' + end)
+      lineArr = arrText.splice(start, end + 1)
+      line = lineArr.join('')
+      context.fillText(line, x, y);
+      y += lineHeight;
+    }
+}
+
+function canvasSet(){
+  // console.log('製作canvas！');
+  context.clearRect(0, 0, canvas.width, canvas.height);//清空畫布
+  let canvasWidth = parseInt(document.getElementById('myCanvas').style.width);
+  let canvasHeight = parseInt(document.getElementById('myCanvas').style.height);
+  let letFrameImg = new Image();
+  letFrameImg.src = "./img/share/postCard-vertical.svg";//信件邊框的裝飾圖
+  //信件邊框
+  letFrameImg.addEventListener('load',()=>{
+    context.drawImage(letFrameImg, 0, 0, canvasWidth, canvasHeight);
+  })
+  saveImage();
+}
+
+function saveImage(){
+  let textTittle = document.getElementById('letterTitle');
+  let letterContant = document.getElementById('letterContant');
+  let img = new Image();
+  img.src = vm2.letterUploadImg;//user上傳的圖片
+
+  let widthScale = img.width/160;//換算user上傳圖片要縮小的比例
+  img.width = img.width/widthScale;
+  img.height = img.height/widthScale;
+  context.wrapText(textTittle.value, 220, 70, 230, 40, 30);
+  context.wrapText(letterContant.value, 40, 240, 415, 28, 18);
+  //文字長度參考: https://news.ltn.com.tw/news/world/breakingnews/3035551 要在限制標題跟內文字數
+  //信件內容
+  img.addEventListener('load',()=>{
+    context.drawImage(img, 40, 50,img.width,img.height);
+  })
+}
+
+//AJAX送資料到後端
 function submitToLetterTable() {
   // let formData = new FormData(document.getElementById('wrtLetForm'))
   // console.log(formData);
@@ -200,25 +385,34 @@ function submitToLetterTable() {
   letterImg = letterImg.replace(/\+/g,"%2B");
   let letterPattern = vm3.letterPattern;
   let userStamp = vmUserStamp.letterStamp;
-  // let letTime = new Date().;
+  let canvas = document.getElementById('myCanvas');
+  let hidden_data = canvas.toDataURL("image/png");
+  hidden_data = hidden_data.replace(/\&/g,"%26");
+  hidden_data = hidden_data.replace(/\+/g,"%2B");
+  // document.getElementById('hidden_data').value = letImgUrl;
+  // console.log(hidden_data);
+  
   //--- 產生XMLHttpRequest物件
   let xhr = new XMLHttpRequest();
+  //--- 設定好所要連結的程式
+  let url = "./phps/writeLetter.php";
   //註冊callback function 來判斷是否新增資料完成
   xhr.onload = function(){
     if(xhr.status == 200){
-      console.log(xhr.responseText);
+      let json = JSON.parse(xhr.responseText);
+      vmImgWrap.letUrl = `url('${json.data.letImgUrl}')`;//把圖片路徑塞去摺紙的畫面上
+      vmImgWrap.letPattern = `url('${json.data.matPatUrl}')`;//用戶選擇的彩繪花紋
+      // console.log(json);
     }else{
       console.log('上傳失敗');
-
     }
   }
-  //--- 設定好所要連結的程式
-  let url = "./phps/writeLetter.php";
+  
   xhr.open("POST", url, true);
   //--- 送出資料
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-  let data_info = `memNo=10&letPower=1&matPatNo=${letterPattern}&matPosNo=${userStamp}&letTitle=${letterTitle}&letContent=${letterContant}&imgUrl=${letterImg}&mesCount=0&letSort=${lettrtCat}&letStatus=0&letImgUrl=null`;
+  let data_info = `memNo=10&letPower=1&matPatNo=${letterPattern}&matPosNo=${userStamp}&letTitle=${letterTitle}&letContent=${letterContant}&imgUrl=${letterImg}&mesCount=0&letSort=${lettrtCat}&letStatus=0&hidden_data=${hidden_data}`;
   //memNo=10 10要改成${變數} 此變數從session撈出目前登入的用戶number
   
   xhr.send(data_info);

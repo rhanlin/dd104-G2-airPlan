@@ -32,6 +32,7 @@
       margin: 50px 20px 0 0;
       z-index: 990;
       display: none;
+
       .hambuger {
         cursor: pointer;
         height: 60px;
@@ -40,6 +41,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+
         .line {
           background-color: $main-black;
           height: 5px;
@@ -53,14 +55,17 @@
             animation: coLine1 0.5s forwards;
             margin-top: 13px;
           }
+
           &:nth-of-type(2) {
             margin: 10px auto;
           }
+
           &:nth-of-type(3) {
             animation: coLine3 0.5s forwards;
           }
         }
       }
+
       .change {
         .line {
           &:nth-of-type(1) {
@@ -81,9 +86,11 @@
         0% {
           transform: translateY(0) rotate(0);
         }
+
         50% {
           transform: translateY(15px) rotate(0);
         }
+
         100% {
           transform: translateY(15px) rotate(45deg);
         }
@@ -93,9 +100,11 @@
         0% {
           transform: translateY(0) rotate(0);
         }
+
         50% {
           transform: translateY(-15px) rotate(0);
         }
+
         100% {
           transform: translateY(-15px) rotate(135deg);
         }
@@ -105,9 +114,11 @@
         0% {
           transform: translateY(10px) rotate(45deg);
         }
+
         50% {
           transform: translateY(10px) rotate(0);
         }
+
         100% {
           transform: translateY(0) rotate(0);
         }
@@ -117,9 +128,11 @@
         0% {
           transform: translateY(-10px) rotate(135deg);
         }
+
         50% {
           transform: translateY(-10px) rotate(0);
         }
+
         100% {
           transform: translateY(0) rotate(0);
         }
@@ -127,6 +140,7 @@
     }
   }
 }
+
 .nav-navBgWrap {
   position: fixed;
   left: 0;
@@ -171,6 +185,7 @@
       .nav-navPageWrap {
         width: 80%;
         height: 100%;
+
         .nav-list {
           width: 80%;
           height: 100%;
@@ -189,6 +204,7 @@
             align-items: center;
             justify-content: center;
             width: 17%;
+
             a {
               color: #333;
               text-decoration: none;
@@ -196,13 +212,16 @@
               width: 75%;
               text-align: center;
               font-weight: bolder;
-              > p {
+
+              >p {
                 white-space: nowrap;
                 font-size: 1.1rem;
                 margin: 0.8rem 0 0.5rem;
+
                 &:hover {
                   color: $main-dark-red;
-                  + %nav-circle {
+
+                  +%nav-circle {
                     background-color: $main-yellow;
                     background-image: url(../img/share/nav-paper-plane.png);
                     background-position: 40% 55%;
@@ -230,6 +249,7 @@
               .nav-circle-5,
               .nav-circle-6 {
                 @extend %nav-circle;
+
                 &:hover {
                   background-color: $main-yellow;
                   background-image: url(../img/share/nav-paper-plane.png);
@@ -241,7 +261,8 @@
 
               .nav-now {
                 color: $main-dark-red;
-                + %nav-circle {
+
+                +%nav-circle {
                   background-color: $main-yellow;
                   background-image: url(../img/share/nav-paper-plane.png);
                   background-position: 40% 55%;
@@ -251,12 +272,15 @@
               }
             }
           }
+
           .hbg-littleNav {
             display: none;
           }
+
           .hbg-pc {
             display: none;
           }
+
           &.open {
             width: 100vw;
             height: 100vh;
@@ -284,6 +308,7 @@
             li {
               width: 150px;
               text-align: center;
+
               a {
                 width: 100%;
                 height: 100%;
@@ -296,27 +321,31 @@
                   font-size: 1.2rem;
                   color: $main-white;
                   order: 2;
+
                   &:hover {
                     color: $main-red;
                   }
                 }
+
                 %nav-circle {
                   order: 1;
                   vertical-align: middle;
                 }
               }
             }
+
             .hbg-botWrap {
               display: inline-block;
 
               .hbg-littleNav {
                 display: inline-block;
-                > a {
+
+                >a {
                   display: inline-block;
                   height: 48px;
                   width: 48px;
 
-                  > i {
+                  >i {
                     font-size: 48px;
                     color: #aaa;
                     cursor: pointer;
@@ -326,18 +355,28 @@
                     }
                   }
                 }
+
+                .showSigin {
+                  cursor: pointer;
+
+                  &:hover {
+                    color: $main-dark-red;
+                  }
+                }
               }
+
               .hbg-pc {
                 display: inline-block;
                 color: $main-white;
               }
             }
 
-            + .nav-road {
+            +.nav-road {
               display: none;
             }
           }
         }
+
         .nav-road {
           width: 70%;
           height: 25px;
@@ -347,7 +386,7 @@
           background-color: #426e96;
           padding-top: 5px;
 
-          > div {
+          >div {
             border: 6px dashed #426e96;
             width: 100%;
             background-color: $main-yellow;
@@ -373,11 +412,14 @@
       top: 36%;
       right: 2.5%;
       z-index: 998;
-      > a {
+      &:hover{}
+      cursor: pointer;
+      >a {
         display: inline-block;
         height: 24px;
         width: 24px;
-        > i {
+
+        >i {
           font-size: 24px;
           color: #aaa;
           cursor: pointer;
@@ -387,7 +429,16 @@
           }
         }
       }
+
+      .showSigin {
+        cursor: pointer;
+
+        &:hover {
+          color: $main-dark-red;
+        }
+      }
     }
+
     .nav-pc {
       position: absolute;
       top: 63%;
@@ -397,6 +448,7 @@
     }
   }
 }
+
 .nav-navBgWrap.-on {
   position: fixed;
   // animation: 0.2 all;
@@ -407,14 +459,17 @@
 @include respond(desktop) {
   .nav-body {
     width: 100%;
+
     .nav-hamPosition {
       width: 100%;
     }
   }
+
   .open {
     li {
       width: 30%;
       text-align: center;
+
       a {
         width: 100%;
         display: block;
@@ -426,6 +481,7 @@
           line-height: 60px;
           font-size: 1.2rem;
           color: $main-white;
+
           &:hover {
             color: $main-red;
           }
@@ -434,9 +490,11 @@
     }
   }
 }
+
 @include respond(mediumSize) {
   .nav-body {
     width: 100%;
+
     .nav-hamPosition {
       width: 100%;
 
@@ -448,20 +506,24 @@
 
   .nav-navBgWrap {
     .nav-navBg {
-      > img {
+      >img {
         display: none;
       }
+
       .nav-logoWrap {
         img {
           display: none;
         }
       }
+
       .nav-pc {
         display: none;
       }
+
       .nav-road {
         display: none;
       }
+
       .nav-littleNav {
         display: none;
       }
@@ -471,13 +533,16 @@
   .nav-navWrap {
     top: -200px !important;
   }
+
   .open {
     display: block;
   }
 }
+
 @include respond(small) {
   .nav-body {
     width: 100%;
+
     .nav-hamPosition {
       width: 100%;
 
@@ -488,21 +553,26 @@
 
     .nav-navBgWrap {
       display: inline-block;
+
       .nav-navBg {
-        > img {
+        >img {
           display: none;
         }
+
         .nav-logoWrap {
           img {
             display: none;
           }
         }
+
         .nav-pc {
           display: none;
         }
+
         .nav-road {
           display: none;
         }
+
         .nav-littleNav {
           display: none;
         }
@@ -513,16 +583,20 @@
       top: -200px !important;
       // display: none;
     }
+
     .open {
       display: block;
     }
   }
 }
+
 @include respond(note) {
   .nav-body {
     width: 100%;
+
     .nav-hamPosition {
       width: 100%;
+
       .nav-hamburgerWrap {
         display: inline-block;
       }
@@ -531,20 +605,24 @@
 
   .nav-navBgWrap {
     .nav-navBg {
-      > img {
+      >img {
         display: none;
       }
+
       .nav-logoWrap {
         img {
           display: none;
         }
       }
+
       .nav-pc {
         display: none;
       }
+
       .nav-road {
         display: none;
       }
+
       .nav-littleNav {
         display: none;
       }
@@ -555,6 +633,7 @@
     top: -200px !important;
     // display: none;
   }
+
   .open {
     display: block;
   }
@@ -563,8 +642,10 @@
 @include respond(iphone) {
   .nav-body {
     width: 100%;
+
     .nav-hamPosition {
       width: 100%;
+
       .nav-hamburgerWrap {
         display: inline-block;
       }
@@ -573,20 +654,24 @@
 
   .nav-navBgWrap {
     .nav-navBg {
-      > img {
+      >img {
         display: none;
       }
+
       .nav-logoWrap {
         img {
           display: none;
         }
       }
+
       .nav-pc {
         display: none;
       }
+
       .nav-road {
         display: none;
       }
+
       .nav-littleNav {
         display: none;
       }
@@ -597,6 +682,7 @@
     top: -200px !important;
     // display: none;
   }
+
   .open {
     display: block;
   }
@@ -614,6 +700,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
+
   .signInData {
     padding: 20px;
     width: 550px;
@@ -625,26 +712,32 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 70;
+
     h4 {
       text-align: center;
     }
+
     .closeSignin {
       position: absolute;
       top: 3%;
       right: 4%;
       cursor: pointer;
     }
+
     .formsignInData {
       width: 100%;
       @include marginAuto;
+
       p {
         margin-bottom: 0;
       }
+
       .signInLogo {
         width: 50%;
         display: block;
         @include marginAuto;
       }
+
       input {
         width: 100%;
         box-sizing: border-box;
@@ -655,12 +748,14 @@
         margin-bottom: 5px;
         @include border;
       }
+
       .showForget,
       .showRegister {
         // display: inline-block;
 
         cursor: pointer;
       }
+
       button {
         width: 100%;
         height: 40px;
@@ -685,6 +780,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
+
   .registerData {
     padding: 20px;
     width: 550px;
@@ -696,26 +792,33 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 70;
+
     h4 {
       text-align: center;
     }
+
     .closeRegister {
       position: absolute;
       top: 3%;
       right: 4%;
       cursor: pointer;
     }
+
     .formRegisterData {
       width: 100%;
+
       p {
         margin-bottom: 0;
       }
+
       @include marginAuto;
+
       .registerLogo {
         width: 50%;
         display: block;
         @include marginAuto;
       }
+
       input {
         width: 100%;
         box-sizing: border-box;
@@ -726,6 +829,7 @@
         margin-bottom: 5px;
         @include border;
       }
+
       button {
         width: 100%;
         height: 40px;
@@ -736,6 +840,7 @@
       }
     }
   }
+
   .envelopedown {
     width: 30%;
     position: absolute;
@@ -744,11 +849,13 @@
     transform: translate(-50%, 0);
     z-index: 69;
   }
+
   .envelopeup {
     z-index: 71;
     @extend.envelopedown;
   }
 }
+
 //忘記密碼
 .forgetBg {
   width: 100%;
@@ -761,6 +868,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
+
   .forgetBgData {
     padding: 20px;
     width: 550px;
@@ -772,26 +880,32 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 70;
+
     h4 {
       text-align: center;
     }
+
     .closeForget {
       position: absolute;
       top: 3%;
       right: 4%;
       cursor: pointer;
     }
+
     .formForgetData {
       width: 100%;
       @include marginAuto;
+
       p {
         margin-bottom: 0;
       }
+
       .forgetLogo {
         width: 50%;
         display: block;
         @include marginAuto;
       }
+
       input {
         width: 100%;
         box-sizing: border-box;
@@ -802,6 +916,7 @@
         margin-bottom: 5px;
         @include border;
       }
+
       button {
         width: 100%;
         height: 40px;
@@ -815,9 +930,11 @@
 }
 
 @include respond(mediumSize) {
+
   .signInBg,
   .registerBg,
   .forgetBg {
+
     .signInData,
     .registerData,
     .forgetBgData {
@@ -828,9 +945,11 @@
 }
 
 @include respond(small) {
+
   .signInBg,
   .registerBg,
   .forgetBg {
+
     .signInData,
     .registerData,
     .forgetBgData {
@@ -839,10 +958,13 @@
     }
   }
 }
+
 @include respond(note) {
+
   .signInBg,
   .registerBg,
   .forgetBg {
+
     .signInData,
     .registerData,
     .forgetBgData {
@@ -851,10 +973,13 @@
     }
   }
 }
+
 @include respond(iphone) {
+
   .signInBg,
   .registerBg,
   .forgetBg {
+
     .signInData,
     .registerData,
     .forgetBgData {

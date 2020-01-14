@@ -28,20 +28,29 @@
           <div class="letter-wrap">
             <div class="paper-cloud"></div>
             <div class="letter-head">
-              <div class="stamp-box"></div>
-              <div class="letter-tittle">
-                <h3>{{letteTittle}}</h3>
-              </div>
+              <div class="stamp-box" :style="{backgroundImage:letterUploadImg}"></div>
             </div>
             <div class="letter-contant scroll-container">
               <div class="text">
+                <p style="font-weight: 800;">
+                  {{letteTittle}}
+                </p>
+                <!-- 蓋章區 -->
+                <div id="stampshot">
+                  <!-- <div class=""></div> -->
+                </div>
                 <p>
                   {{letterContant_1}}
-                </p> 
-                <div class="letter-upload-img"></div>
+                </p>
                 <p>
                   {{letterContant_2}}
-                </p> 
+                </p>
+                <p>
+                  {{publishedAt}}
+                </p>
+                <p>
+                  {{author}}
+                </p>
               </div>
             </div>
             
@@ -127,10 +136,12 @@
         ],
         letterStamp: '',
         //串接信件內容
-        letteTittle: vmCatchLetter.letteTittle,
-        letterContant_1: vmCatchLetter.letterContant_1,
-        letterContant_2: vmCatchLetter.letterContant_2,
+        letteTittle: "",
+        letterContant_1: "",
+        letterContant_2: "",
         letterUploadImg: "",
+        publishedAt: "",
+        author: "",
       },
       methods: {
         clickStamp(e) {
