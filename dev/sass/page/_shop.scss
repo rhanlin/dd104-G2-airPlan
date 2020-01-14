@@ -39,10 +39,9 @@ $arrow_color: $gray !default;
     width: 100%;
 
     #coinBox {
-
       position: fixed;
-      right: 5%;
-      top: 15%;
+      right: 1%;
+      top: 25%;
       width: 15%;
       border: 2px solid black;
       background-color: rgb(253, 253, 253);
@@ -59,9 +58,9 @@ $arrow_color: $gray !default;
             width: 100%;
             position: absolute;
             left: 100%;
-            top: -50px;
+            top: -40px;
             color: $yellow;
-            opacity: 0;
+            opacity: 1;
             z-index: 99;
             font-size: 2vw;
 
@@ -70,10 +69,10 @@ $arrow_color: $gray !default;
           #coinInnerCount {
             width: 100%;
             position: absolute;
-            left: 150%;
+            left: 130%;
             top: -35px;
             color: $yellow;
-            opacity: 0;
+            opacity: 1;
             z-index: 99;
             font-size: 1.2vw;
           }
@@ -92,7 +91,7 @@ $arrow_color: $gray !default;
             width: 80%;
             left: 3%;
             top: -40px;
-            opacity: 0;
+            opacity: 1;
             z-index: 99;
 
             img {
@@ -155,14 +154,14 @@ $arrow_color: $gray !default;
           .itemPage1 {
             width: 90%;
             height: 100%;
-            background-color: #ffe5cc;
+            background-color: #ffeddc;
             border: $border;
 
             .itemPage2 {
               margin-top: 3%;
               margin-left: 3%;
               width: 100%;
-              background-color: #ffe3b5;
+              background-color: #ffe2c9;
               border: $border;
               height: 100%;
 
@@ -504,7 +503,7 @@ $arrow_color: $gray !default;
                     position: absolute;
                     width: 3.2vw;
                     height: 1vw;
-                    left: -2.2vw;
+                    left: -2.22vw;
                     bottom: 0.35vw;
                     border: 0.15vw solid black;
                     transform: rotate(90deg) skew(45deg);
@@ -536,14 +535,14 @@ $arrow_color: $gray !default;
                     &:before {
                       border: 0.15vw solid black;
                       height: 0.55vw;
-                      left: -2.0vw;
+                      left: -2.02vw;
                       bottom: 0.7vw;
                     }
 
                     &:after {
                       border: 0.15vw solid black;
-                      height: 0.7vw;
-                      bottom: -0.87vw;
+                      height: 0.65vw;
+                      bottom: -0.8vw;
                       left: -0.5vw;
                     }
                   }
@@ -574,14 +573,14 @@ $arrow_color: $gray !default;
       #medal {
         width: 450px;
         height: 600px;
-        background-image: url('../img/product/decorate/model.jpg');
+        background-image: url('../img/product/decorate/model-04.jpg');
         background-size: contain;
         background-repeat: no-repeat;
         z-index: 99;
         transform: translate(-50%, -50%);
         position: fixed;
-        top: 50%;
-        left: 70%;
+        top: 60%;
+        left: 50%;
         transition: all 1s;
         display: none;
 
@@ -817,7 +816,7 @@ $arrow_color: $gray !default;
       .pilePaper {
         position: absolute;
         margin-left: 7vw;
-        width:7.5vw;
+        width: 7.5vw;
         height: 9vw;
         border: $border;
         transform: skew(20deg) translateY(10%) rotate(15deg);
@@ -842,7 +841,7 @@ $arrow_color: $gray !default;
 
       .cover {
         left: 5.9%;
-        width:13vw;
+        width: 13vw;
         height: 10vw;
         background-image: url("../img/product/decorate/cover-02.svg");
         background-repeat: no-repeat;
@@ -852,7 +851,7 @@ $arrow_color: $gray !default;
       }
 
       .pile {
-        top:5.7%;
+        top: 5.7%;
         width: 95vw;
         height: 100vw;
         background-image: url("../img/product/decorate/waterTube-01.svg");
@@ -936,35 +935,41 @@ $arrow_color: $gray !default;
     }
 
     #section2 {
-      max-width: 1300px;
+      max-width: 1400px;
+      width: 100%;
       margin: 0 auto;
 
       .customizeArea {
         margin: 0 auto;
         display: flex;
-        width: 80%;
+        width: 100%;
         flex-wrap: wrap;
 
         .controlTool {
-          width: 20%;
           margin-right: 3%;
-          border: $border;
-          background: #fff;
+          width: 30%;
+          background-image: url('../img/product/decorate/machineFrame-02.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
           z-index: 100;
+          height: 1000px;
 
           .controlToolTopFlex {
+            width: 65%;
+            margin: 0 auto;
             display: flex;
+            margin-top: 15%;
+            padding-left: 10%;
 
             .controlToolTop {
               width: 100%;
               display: flex;
               flex-wrap: wrap;
+              margin: 2%;
 
               .controlBox1 {
                 text-align: center;
                 width: 33.3%;
-                border: $border;
-                background-color: #fff;
                 z-index: 32;
 
                 .controlBox1_button {
@@ -1056,8 +1061,6 @@ $arrow_color: $gray !default;
               .controlBox2 {
                 text-align: center;
                 width: 33.3%;
-                border: $border;
-                background-color: #fff;
                 z-index: 31;
 
                 .controlBox2_button {
@@ -1150,8 +1153,6 @@ $arrow_color: $gray !default;
               .controlBox3 {
                 text-align: center;
                 width: 33.3%;
-                border: $border;
-                background-color: #fff;
                 z-index: 30;
 
                 .controlBox3_button {
@@ -1246,8 +1247,6 @@ $arrow_color: $gray !default;
               .controlBox4 {
                 text-align: center;
                 width: 33.3%;
-                border: $border;
-                background-color: #fff;
                 z-index: 35;
 
                 .controlBox4_button {
@@ -1340,8 +1339,6 @@ $arrow_color: $gray !default;
               .controlBox5 {
                 text-align: center;
                 width: 33.3%;
-                border: $border;
-                background-color: #fff;
                 z-index: 34;
 
                 .controlBox5_button {
@@ -1434,8 +1431,6 @@ $arrow_color: $gray !default;
               .controlBox6 {
                 text-align: center;
                 width: 33.3%;
-                border: $border;
-                background-color: #fff;
                 z-index: 33;
 
                 .controlBox6_button {
@@ -1530,8 +1525,6 @@ $arrow_color: $gray !default;
               .controlBox7 {
                 text-align: center;
                 width: 33.3%;
-                border: $border;
-                background-color: #fff;
                 z-index: 39;
 
                 .controlBox7_button {
@@ -1629,8 +1622,6 @@ $arrow_color: $gray !default;
               .controlBox8 {
                 text-align: center;
                 width: 33.3%;
-                border: $border;
-                background-color: #fff;
                 z-index: 38;
 
 
@@ -1732,8 +1723,6 @@ $arrow_color: $gray !default;
               .controlBox9 {
                 text-align: center;
                 width: 33.3%;
-                border: $border;
-                background-color: #fff;
                 z-index: 37;
 
                 .controlBox9_button {
@@ -1829,9 +1818,9 @@ $arrow_color: $gray !default;
           }
 
           .controlBoxBottom {
-            padding: 5% 10%;
-            width: 100%;
-            background: #fff;
+            margin: 0 auto;
+            padding: 5% 0 0 10%;
+            width: 65%;
 
             .brushType {
               display: flex;
@@ -2059,34 +2048,41 @@ $arrow_color: $gray !default;
               .shadowOffsetYlabel {}
             }
           }
-        }
 
-        .controlBoxRight {
-          display: none;
+
+          .controlBoxRight {
+            display: none;
+          }
         }
 
 
         .drawingBoardBox {
-          width: 77%;
-          border: $border;
-          background: #8ebfbf;
+          width: 57%;
+          background: rgb(171, 198, 196);
           z-index: 20;
 
-          #canvasBox {
-            margin: 4.5%;
+          .canvasWindowBox {
 
-            #canvas {
-              height: 100%;
+            width: 100%;
+
+            #canvasBox {
               width: 100%;
-              background: #b5b5b6;
+              height: 620px;
+              background-image: url('../img/product/decorate/windowFrame.svg');
+              background-size: cover;
+              background-repeat: no-repeat;
+              padding: 5.82% 6.5%;
+              background-color: #acacac;
 
-              .drawingPanel {}
+              #canvas {
+                background: #acacac;
+
+              }
             }
-
           }
 
           #btns {
-            width: 85%;
+            width: 100%;
             display: flex;
             margin: 0 auto;
 
@@ -2198,14 +2194,14 @@ $arrow_color: $gray !default;
             }
 
             .patNameInput {
-              background-color: rgb(255, 236, 224);
-              border: $border;
+              // border: $border;
               width: 70%;
               margin-left: 10%;
               padding: 5%;
-              border-radius: 1em;
+              // border-radius: 1em;
 
               .patternName {
+                letter-spacing: 0.15vw;
                 width: 80%;
               }
 
@@ -2220,7 +2216,7 @@ $arrow_color: $gray !default;
     }
 
     #section3 {
-      background-color: cornsilk;
+      margin-top: 10%;
       width: 100%;
       border: 5px solid black;
 
@@ -2328,6 +2324,13 @@ $arrow_color: $gray !default;
       #section2 {
         .customizeArea {
           .drawingBoardBox {
+            .canvasWindowBox {
+              #canvasBox {
+                width: 103%;
+                background-size: contain;
+              }
+            }
+
             #btns {
               width: 90%;
             }
@@ -2404,7 +2407,13 @@ $arrow_color: $gray !default;
               width: 30%;
 
               .itemCardAsideBox {
-                .threed_text_box {}
+                margin-left: 10%;
+
+                .threed_text_box {
+                  top: -15%;
+                  width: 80%;
+                  padding: 10% 0% 10% 0%;
+                }
 
                 .accordion {
                   margin-top: 5%;
@@ -2474,36 +2483,40 @@ $arrow_color: $gray !default;
         }
 
         .pile {
-          margin-left: 0%;
-          width: 100vw;
-          height: 130vw;
-          background-image: url("../img/product/decorate/glassPipe-01");
-          background-repeat: no-repeat;
-          position: relative;
+          // margin-left: 0%;
+          // width: 100vw;
+          // height: 130vw;
 
-          .clock {
-            left: -2%;
-            top: 19.8%;
-          }
-
-          .redWheel {
-            left: 50.5%;
-            top: 5%;
-          }
-
-          .perpul {
-            width: 18%;
-            padding-top: 100%;
-            left: 75%;
-            top: 25%;
-          }
         }
       }
 
-
       #section2 {
         .customizeArea {
+          .controlTool {
+            margin-right: 1%;
+            width: 35%;
+
+            .controlToolTopFlex {
+              width: 60%;
+            }
+
+            .controlBoxBottom {
+              width: 70%;
+            }
+          }
+
           .drawingBoardBox {
+            .canvasWindowBox {
+              width: 100%;
+
+              #canvasBox {
+                padding: 6.5% 7.5%;
+                background-image: url('../img/product/decorate/windowFrame_912to1199.svg');
+                width: 100%;
+                height: 700px;
+              }
+            }
+
             #btns {
               margin: 0 auto;
               width: 95%;
@@ -2579,6 +2592,52 @@ $arrow_color: $gray !default;
 
   .shop-body {
     .shop-main {
+      #coinBox {
+        right: 3%;
+        top: 90%;
+        width: 30%;
+
+        #coinArea {
+          .coinBox {
+            width: 30%;
+
+            .airCoinTxt {
+              left: 70%;
+              top: -30px;
+            }
+
+
+            #coinInnerCount {
+              top: -30px;
+              left: 100%;
+              font-size: 2vw;
+            }
+
+            .airCoin {
+              width: 90%;
+
+              img {
+                width: 80%;
+              }
+            }
+
+            .airCoinSingle {
+              img {
+                width: 80%;
+              }
+
+            }
+          }
+
+          #coinTextArea {
+            width: 65%;
+            padding: 6% 0;
+            margin-left: 5%;
+
+          }
+        }
+      }
+
       #section1 {
         .container {
           .row {
@@ -2664,6 +2723,7 @@ $arrow_color: $gray !default;
               // @include threed-text-white($threed-text);
 
               .dropdown {
+
                 width: 15%;
 
                 &.show {
@@ -2705,8 +2765,7 @@ $arrow_color: $gray !default;
 
 
         #medal {
-          width: 350px;
-          left: 50%;
+          width: 400px;
 
           .cross {
             right: 0%;
@@ -2725,7 +2784,7 @@ $arrow_color: $gray !default;
             width: 70%;
             margin: 10% auto 3%;
 
-            .textBox {
+            .titleBox {
               font-size: 25px;
               font-weight: 700;
               line-height: 60px;
@@ -2888,36 +2947,10 @@ $arrow_color: $gray !default;
 
           }
         }
-
-        .pile {
-          margin-left: 0%;
-          width: 100vw;
-          height: 130vw;
-          background-image: url("../img/product/decorate/pile.png");
-          background-repeat: no-repeat;
-          position: relative;
-
-          .clock {
-            left: -2%;
-            top: 19.8%;
-          }
-
-          .redWheel {
-            left: 50.5%;
-            top: 5%;
-          }
-
-          .perpul {
-            left: 75%;
-            top: 27%;
-          }
-        }
       }
 
       .container {
         .customize {
-
-
           .manual {
             transform: translate(10%, 50%);
             width: 60%;
@@ -2941,90 +2974,88 @@ $arrow_color: $gray !default;
       #section2 {
         .customizeArea {
           display: flex;
-          width: 95%;
+          width: 90%;
 
           .controlTool {
             display: block;
             width: 100%;
-            background-color: transparent;
             border: 0;
+            background-image: url('../img/product/decorate/machineFrame_under991-03.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 50vw;
+            margin: 0;
 
             .controlToolTopFlex {
               display: flex;
-              width: 100%;
+              width: 95%;
+              margin-top: 10%;
+              padding-left: 10%;
 
               .controlToolTop {
                 width: 100%;
 
+
                 .controlBox1 {
                   text-align: center;
                   width: 10%;
-                  border: $border;
-                  background-color: #fff;
+
                   z-index: 28;
                 }
 
                 .controlBox2 {
                   text-align: center;
                   width: 10%;
-                  border: $border;
-                  background-color: #fff;
+
                   z-index: 27;
                 }
 
                 .controlBox3 {
                   text-align: center;
                   width: 10%;
-                  border: $border;
-                  background-color: #fff;
+
                   z-index: 26;
                 }
 
                 .controlBox4 {
                   text-align: center;
                   width: 10%;
-                  border: $border;
-                  background-color: #fff;
+
                   z-index: 25;
                 }
 
                 .controlBox5 {
                   text-align: center;
                   width: 10%;
-                  border: $border;
-                  background-color: #fff;
+
                   z-index: 24;
                 }
 
                 .controlBox6 {
                   text-align: center;
                   width: 10%;
-                  border: $border;
-                  background-color: #fff;
+
                   z-index: 23;
                 }
 
                 .controlBox7 {
                   text-align: center;
                   width: 10%;
-                  border: $border;
-                  background-color: #fff;
+
                   z-index: 22;
                 }
 
                 .controlBox8 {
                   text-align: center;
                   width: 10%;
-                  border: $border;
-                  background-color: #fff;
+
                   z-index: 21;
                 }
 
                 .controlBox9 {
                   text-align: center;
                   width: 10%;
-                  border: $border;
-                  background-color: #fff;
+
                   z-index: 20;
                 }
 
@@ -3039,250 +3070,259 @@ $arrow_color: $gray !default;
             .controlBoxBottom {
               display: none;
             }
-          }
 
-          .controlBoxRight {
-            z-index: 100;
-            display: flex;
-            flex-wrap: wrap;
-            width: 90%;
-            padding: 2% 5%;
-            border: $border;
-            background: #fff;
 
-            .brushType {
-              width: 33%;
+            .controlBoxRight {
+              margin-left: 10%;
+              z-index: 100;
               display: flex;
+              flex-wrap: wrap;
+              width: 90%;
+              padding: 2% 5%;
 
-              .brushlabel {}
+              .brushType {
+                width: 33%;
+                display: flex;
 
-              .box {
+                .brushlabel {}
 
-                // Style the dropdown
-                .nice-select {
-                  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-                  background-color: #fff;
-                  border-radius: $input_border_radius;
-                  border: solid 1px $gray_light;
-                  box-sizing: border-box;
-                  clear: both;
-                  cursor: pointer;
-                  display: block;
-                  float: left;
-                  font-family: inherit;
-                  font-weight: normal;
-                  height: $input_height;
-                  line-height: $input_height - 2;
-                  outline: none;
-                  padding-left: $dropdown_padding;
-                  padding-right: $dropdown_padding + 12;
-                  position: relative;
-                  text-align: left !important;
-                  transition: all 0.2s ease-in-out;
-                  user-select: none;
-                  white-space: nowrap;
-                  width: auto;
+                .box {
 
-                  &:hover {
-                    border-color: darken($gray_light, 5%);
-                  }
-
-                  &:active,
-                  &:focus {
-                    border-color: $primary_light;
-                  }
-
-                  // Arrow
-                  &:after {
-                    border-bottom: 2px solid $arrow_color;
-                    border-right: 2px solid $arrow_color;
-                    content: '';
-                    display: block;
-                    height: 5px;
-                    margin-top: -4px;
-                    pointer-events: none;
-                    position: absolute;
-                    right: 12px;
-                    top: 50%;
-                    transform-origin: 66% 66%;
-                    transform: rotate(45deg);
-                    transition: all 0.15s ease-in-out;
-                    width: 5px;
-                  }
-
-                  &.open {
-                    // @extend :active;
-
-                    &:after {
-                      transform: rotate(-135deg);
-                    }
-
-                    .list {
-                      opacity: 1;
-                      pointer-events: auto;
-                      transform: scale(1) translateY(0);
-                    }
-                  }
-
-                  &.disabled {
-                    border-color: lighten($gray_light, 2%);
-                    color: $gray;
-                    pointer-events: none;
-
-                    &:after {
-                      border-color: lighten($arrow_color, 20%);
-                    }
-                  }
-
-                  // Modifiers
-                  &.wide {
-                    width: 100%;
-
-                    .list {
-                      left: 0 !important;
-                      right: 0 !important;
-                    }
-                  }
-
-                  &.right {
-                    float: right;
-
-                    .list {
-                      left: auto;
-                      right: 0;
-                    }
-                  }
-
-                  &.small {
-                    height: $input_height_small;
-                    line-height: $input_height_small - 2;
-
-                    &:after {
-                      height: 4px;
-                      width: 4px;
-                    }
-
-                    .option {
-                      line-height: $input_height_small - 2;
-                      min-height: $input_height_small - 2;
-                    }
-                  }
-
-                  // List and options
-                  .list {
+                  // Style the dropdown
+                  .nice-select {
+                    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
                     background-color: #fff;
                     border-radius: $input_border_radius;
-                    box-shadow: 0 0 0 1px rgba($gray_dark, .11);
+                    border: solid 1px $gray_light;
                     box-sizing: border-box;
-                    margin-top: 4px;
-                    opacity: 0;
-                    overflow: hidden;
-                    padding: 0;
-                    pointer-events: none;
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    transform-origin: 50% 0;
-                    transform: scale(.75) translateY(- $input_height / 2);
-                    transition: all .2s cubic-bezier(0.5, 0, 0, 1.25), opacity .15s ease-out;
-                    z-index: 9;
-
-                    &:hover .option:not(:hover) {
-                      background-color: transparent !important;
-                    }
-                  }
-
-                  .option {
+                    clear: both;
                     cursor: pointer;
-                    font-weight: 400;
+                    display: block;
+                    float: left;
+                    font-family: inherit;
+                    font-weight: normal;
+                    height: $input_height;
                     line-height: $input_height - 2;
-                    list-style: none;
-                    min-height: $input_height - 2;
                     outline: none;
                     padding-left: $dropdown_padding;
-                    padding-right: $dropdown_padding + 11;
-                    text-align: left;
-                    transition: all 0.2s;
+                    padding-right: $dropdown_padding + 12;
+                    position: relative;
+                    text-align: left !important;
+                    transition: all 0.2s ease-in-out;
+                    user-select: none;
+                    white-space: nowrap;
+                    width: auto;
 
-                    &:hover,
-                    &.focus,
-                    &.selected.focus {
-                      background-color: $gray_lighter;
+                    &:hover {
+                      border-color: darken($gray_light, 5%);
                     }
 
-                    &.selected {
-                      font-weight: bold;
+                    &:active,
+                    &:focus {
+                      border-color: $primary_light;
+                    }
+
+                    // Arrow
+                    &:after {
+                      border-bottom: 2px solid $arrow_color;
+                      border-right: 2px solid $arrow_color;
+                      content: '';
+                      display: block;
+                      height: 5px;
+                      margin-top: -4px;
+                      pointer-events: none;
+                      position: absolute;
+                      right: 12px;
+                      top: 50%;
+                      transform-origin: 66% 66%;
+                      transform: rotate(45deg);
+                      transition: all 0.15s ease-in-out;
+                      width: 5px;
+                    }
+
+                    &.open {
+                      // @extend :active;
+
+                      &:after {
+                        transform: rotate(-135deg);
+                      }
+
+                      .list {
+                        opacity: 1;
+                        pointer-events: auto;
+                        transform: scale(1) translateY(0);
+                      }
                     }
 
                     &.disabled {
-                      background-color: transparent;
+                      border-color: lighten($gray_light, 2%);
                       color: $gray;
-                      cursor: default;
+                      pointer-events: none;
+
+                      &:after {
+                        border-color: lighten($arrow_color, 20%);
+                      }
                     }
-                  }
-                }
 
-                // Use display instead of opacity for IE <= 10
-                .no-csspointerevents .nice-select {
-                  .list {
-                    display: none;
-                  }
+                    // Modifiers
+                    &.wide {
+                      width: 100%;
 
-                  &.open {
+                      .list {
+                        left: 0 !important;
+                        right: 0 !important;
+                      }
+                    }
+
+                    &.right {
+                      float: right;
+
+                      .list {
+                        left: auto;
+                        right: 0;
+                      }
+                    }
+
+                    &.small {
+                      height: $input_height_small;
+                      line-height: $input_height_small - 2;
+
+                      &:after {
+                        height: 4px;
+                        width: 4px;
+                      }
+
+                      .option {
+                        line-height: $input_height_small - 2;
+                        min-height: $input_height_small - 2;
+                      }
+                    }
+
+                    // List and options
                     .list {
-                      display: block;
+                      background-color: #fff;
+                      border-radius: $input_border_radius;
+                      box-shadow: 0 0 0 1px rgba($gray_dark, .11);
+                      box-sizing: border-box;
+                      margin-top: 4px;
+                      opacity: 0;
+                      overflow: hidden;
+                      padding: 0;
+                      pointer-events: none;
+                      position: absolute;
+                      top: 100%;
+                      left: 0;
+                      transform-origin: 50% 0;
+                      transform: scale(.75) translateY(- $input_height / 2);
+                      transition: all .2s cubic-bezier(0.5, 0, 0, 1.25), opacity .15s ease-out;
+                      z-index: 9;
+
+                      &:hover .option:not(:hover) {
+                        background-color: transparent !important;
+                      }
+                    }
+
+                    .option {
+                      cursor: pointer;
+                      font-weight: 400;
+                      line-height: $input_height - 2;
+                      list-style: none;
+                      min-height: $input_height - 2;
+                      outline: none;
+                      padding-left: $dropdown_padding;
+                      padding-right: $dropdown_padding + 11;
+                      text-align: left;
+                      transition: all 0.2s;
+
+                      &:hover,
+                      &.focus,
+                      &.selected.focus {
+                        background-color: $gray_lighter;
+                      }
+
+                      &.selected {
+                        font-weight: bold;
+                      }
+
+                      &.disabled {
+                        background-color: transparent;
+                        color: $gray;
+                        cursor: default;
+                      }
                     }
                   }
 
+                  // Use display instead of opacity for IE <= 10
+                  .no-csspointerevents .nice-select {
+                    .list {
+                      display: none;
+                    }
+
+                    &.open {
+                      .list {
+                        display: block;
+                      }
+                    }
+
+                  }
                 }
               }
-            }
 
-            .lineColor {
-              width: 33%;
-              font-size: 14px;
+              .lineColor {
+                width: 33%;
+                font-size: 14px;
 
-              .lineColorlabel {}
-            }
+                .lineColorlabel {}
+              }
 
-            .shadowColor {
-              width: 33%;
-              font-size: 14px;
+              .shadowColor {
+                width: 33%;
+                font-size: 14px;
 
-              .shadowColorlabel {}
-            }
+                .shadowColorlabel {}
+              }
 
-            .lineWidth {
-              width: 25%;
-              font-size: 14px;
+              .lineWidth {
+                width: 25%;
+                font-size: 14px;
 
-              .lineWidthlabel {}
-            }
+                .lineWidthlabel {}
+              }
 
-            .shadowBlur {
-              width: 25%;
-              font-size: 14px;
+              .shadowBlur {
+                width: 25%;
+                font-size: 14px;
 
-              .shadowBlurlabel {}
-            }
+                .shadowBlurlabel {}
+              }
 
-            .shadowOffsetX {
-              width: 25%;
-              font-size: 14px;
+              .shadowOffsetX {
+                width: 25%;
+                font-size: 14px;
 
-              .shadowOffsetXlabel {}
-            }
+                .shadowOffsetXlabel {}
+              }
 
-            .shadowOffsetY {
-              width: 25%;
-              font-size: 14px;
+              .shadowOffsetY {
+                width: 25%;
+                font-size: 14px;
 
-              .shadowOffsetYlabel {}
+                .shadowOffsetYlabel {}
+              }
             }
           }
 
           .drawingBoardBox {
-            width: 100%;
+            width: 90%;
+            margin: 0 auto;
+
+            .canvasWindowBox {
+              #canvasBox {
+                padding: 5.5% 6.5%;
+                height: 650px;
+
+              }
+            }
 
             #btns {
               margin: 0 auto;
@@ -3366,6 +3406,28 @@ $arrow_color: $gray !default;
   }
 }
 
+@include respond(from920_mediumSize) {
+  .shop-body {
+    .shop-main {
+      #section2 {
+        .customizeArea {
+          .drawingBoardBox {
+            .canvasWindowBox {
+              #canvasBox {
+                padding: 6% 7%;
+                height: 700px;
+                background-size: center;
+                background-image: url('../img/product/decorate/windowFrame_912to1199.svg');
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
 @include respond(small_max) {
 
   //767px以下
@@ -3430,17 +3492,16 @@ $arrow_color: $gray !default;
 
                 .switchBtnBox {
                   .switchBtn {
+                    text-align: center;
                     font-size: 0.5vw;
                     width: 9vw;
-                    height: 3vw;
-                    text-shadow: none;
-                    color: black;
+                    height: 4.7vw;
 
                     &:before {
-                      width: 3vw;
+                      width: 4.6vw;
                       height: 1.5vw;
-                      left: -2.4vw;
-                      bottom: -0.3vw;
+                      left: -3.2vw;
+                      bottom: 0.8vw;
                     }
 
                     &:after {
@@ -3456,8 +3517,8 @@ $arrow_color: $gray !default;
 
                       &:before {
                         height: 1vw;
-                        left: -2vw;
-                        bottom: 0.35vw;
+                        left: -2.8vw;
+                        bottom: 1.3vw;
                       }
 
                       &:after {
@@ -3504,24 +3565,36 @@ $arrow_color: $gray !default;
           width: 95%;
 
           .controlTool {
+            height: 55vw;
 
             .controlToolTopFlex {
+              margin-top: 5%;
+
               .controlToolTop {
                 width: 100%;
 
               }
             }
-          }
 
-          .controlBoxRight {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
+            .controlBoxRight {
+              width: 90%;
+
+            }
           }
 
           .drawingBoardBox {
-            #btns {
+            width: 90%;
 
+            .canvasWindowBox {
+              #canvasBox {
+                width: 100%;
+                padding: 6% 7%;
+                background-size: auto;
+                background-image: url('../img/product/decorate/windowFrame_under991.svg');
+              }
+            }
+
+            #btns {
               .orderBtnBoxGroup {
                 margin: 5%;
               }
@@ -3543,6 +3616,7 @@ $arrow_color: $gray !default;
       }
 
       #section3 {
+
         .owl-carousel {
           .owl-nav {
             // top: -45%;
@@ -3583,6 +3657,47 @@ $arrow_color: $gray !default;
   //576px以下;
   .shop-body {
     .shop-main {
+      #coinBox {
+        right: 10%;
+        top: 90%;
+        width: 60%;
+
+        #coinArea {
+          .coinBox {
+            .airCoinTxt {
+              left: 50%;
+              top: -35px;
+
+            }
+
+            #coinInnerCount {
+              top: -35px;
+              left: 65%;
+              font-size: 3vw;
+            }
+
+            .airCoin {
+              width: 90%;
+
+              img {
+                width: 70%;
+              }
+            }
+
+            .airCoinSingle {
+              img {
+                width: 50%;
+              }
+
+            }
+          }
+
+          #coinTextArea {
+            padding: 4% 0;
+          }
+        }
+      }
+
       #section1 {
         .container {
 
@@ -3622,6 +3737,227 @@ $arrow_color: $gray !default;
                 @include itemCardRow1_note(64);
 
               }
+
+              #emptyBtn {
+                margin: 0 auto;
+                width: 80%;
+
+                .switchBtnBox {
+                  width: 33.33%;
+
+                  .switchBtn {
+                    font-size: 1vw;
+                    width: 15vw;
+                    height: 9vw;
+
+                    &:before {
+                      width: 9vw;
+                      height: 3vw;
+                      left: -6vw;
+                      bottom: 1.6vw;
+                    }
+
+                    &:after {
+                      width: 15vw;
+                      height: 3vw;
+                      bottom: -2.8vw;
+                      left: -1.3vw;
+                    }
+
+                    &.clicked {
+                      left: -1.8vw;
+                      bottom: -0.65vw;
+
+                      &:before {
+                        width: 8.8vw;
+                        height: 2.2vw;
+                        left: -5.5vw;
+                        bottom: 2.6vw;
+                      }
+
+                      &:after {
+                        height: 1.8vw;
+                        bottom: -1.7vw;
+                        left: -1.3vw;
+                      }
+
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+
+        #medal {
+          width: 330px;
+
+          .cross {
+            right: 0%;
+            width: 7%;
+
+            &:before {
+              left: 30%;
+            }
+
+            &:after {
+              left: 30%;
+            }
+          }
+
+          #textBox {
+            width: 65%;
+
+            .titleBox {
+
+              h4 {
+                font-weight: 700;
+                line-height: 40px;
+                font-size: 18px;
+              }
+            }
+
+            .textBox {
+              letter-spacing: 0.1rem;
+              line-height: 1rem;
+
+              h6 {
+                font-size: 12px;
+              }
+            }
+
+            h5 {
+              font-size: 16px;
+            }
+
+          }
+
+
+          .orderBtnBoxGroup {
+            position: relative;
+            width: 35%;
+            margin: 5% auto;
+
+            .orderBtnBox {
+              position: absolute;
+              width: 100%;
+
+              .orderBtn {
+
+                font-size: 20px;
+                letter-spacing: 0.2em;
+                position: absolute;
+                width: 100%;
+                height: 50px;
+                background-color: #FFD139;
+                border: $border;
+                text-align: center;
+                line-height: 40px;
+                border-radius: 0.3em;
+                cursor: pointer;
+                color: white;
+                text-shadow: 1px 1px 1px black;
+
+                .orderText {
+                  font-weight: 900;
+                  font-size: 40px;
+                  color: #06a4ff;
+                  @include stroke(2, #0f0f0f);
+                  font-weight: 500;
+
+                  &::before {
+                    content: '購買';
+                    position: absolute;
+                    left: 17%;
+                    font-weight: 900;
+                    font-size: 40px;
+                    color: #fff;
+                    @include stroke(2, #0f0f0f);
+                    font-weight: 500;
+                  }
+                }
+
+                &:before {
+                  content: '';
+                  position: absolute;
+                  width: 40%;
+                  height: 50%;
+                  left: -30%;
+                  bottom: -10%;
+                  border-radius: 0.3em;
+                  border: $border;
+                  transform: rotate(90deg) skew(60deg);
+                  background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background-size: 7px 7px;
+                }
+
+                &:after {
+                  content: '';
+                  position: absolute;
+                  position: absolute;
+                  width: 40%;
+                  height: 50%;
+                  left: 90%;
+                  bottom: -10%;
+                  border-radius: 0.3em;
+                  border: $border;
+                  transform: rotate(90deg) skew(300deg);
+                  background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background-size: 7px 7px;
+                }
+
+                span {
+                  position: absolute;
+                  width: 138%;
+                  height: 38px;
+                  left: -20%;
+                  top: 92%;
+                  border: 3px solid black;
+                  background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
+                  background-size: 7px 7px;
+                  border-radius: 0.1em;
+                  z-index: -1;
+
+                }
+
+
+                &.clicked {
+                  top: 20px;
+
+
+                  &:before {
+                    width: 40%;
+                    height: 35%;
+                    left: -25%;
+                    bottom: 15%;
+                    border-radius: 0.1em;
+                    transform: rotate(90deg) skew(50deg);
+                    background-size: 6px 6px;
+                  }
+
+                  &:after {
+                    width: 40%;
+                    ;
+                    height: 35%;
+                    left: 85%;
+                    bottom: 15%;
+                    border-radius: 0.1em;
+                    transform: rotate(90deg) skew(305deg);
+                    background-size: 5px 5px;
+                  }
+
+                  span {
+                    top: 65%;
+                    height: 35px;
+                    left: -11%;
+                    width: 123%;
+                  }
+                }
+              }
             }
           }
         }
@@ -3631,16 +3967,18 @@ $arrow_color: $gray !default;
         .customizeArea {
 
           .controlTool {
-            width: 90%;
-            margin: 0;
+
+            height: 110vw;
+            background-image: url('../img/product/decorate/machineFrame_under576-03.svg');
 
             .controlToolTopFlex {
               width: 100%;
+              margin-top: 5%;
+              padding-left: 15%;
 
               .controlToolTop {
                 width: 70%;
-                margin-left: 30%;
-                ;
+
 
                 .controlBox1 {
 
@@ -3690,75 +4028,111 @@ $arrow_color: $gray !default;
 
               }
             }
-          }
 
-          .controlBoxRight {
-            display: flex;
-            flex-wrap: wrap;
 
-            .brushType {
-              width: 55%;
+            .controlBoxRight {
+              width: 90%;
+              display: flex;
+              flex-wrap: wrap;
 
-              .brushlabel h5 {
-                font-size: 10px;
+              .brushType {
+                width: 55%;
+
+                .brushlabel h6 {
+                  font-size: 10px;
+                }
+
+                .box {
+                  .brushSelect {
+                    option {
+                      font-size: 10px;
+                    }
+                  }
+                }
+
+              }
+
+              .lineColor {
+
+                width: 22.5%;
+
+                .lineColorlabel h6 {
+                  font-size: 10px;
+                }
+              }
+
+              .shadowColor {
+
+                width: 22.5%;
+
+                .shadowColorlabel h6 {
+                  font-size: 10px;
+                }
+              }
+
+              .lineWidth {
+                width: 45%;
+
+                .lineWidthlabel h6 {
+                  font-size: 10px;
+                }
+
+                span {
+                  font-size: 10px;
+                }
+              }
+
+              .shadowBlur {
+                width: 45%;
+
+                .shadowBlurlabel h6 {
+                  font-size: 10px;
+                }
+
+                span {
+                  font-size: 10px;
+                }
+              }
+
+              .shadowOffsetX {
+                width: 45%;
+
+                .shadowOffsetXlabel h6 {
+                  font-size: 10px;
+                }
+
+                span {
+                  font-size: 10px;
+                }
+              }
+
+              .shadowOffsetY {
+                width: 45%;
+
+                .shadowOffsetYlabel h6 {
+                  font-size: 10px;
+                }
+
+                span {
+                  font-size: 10px;
+                }
               }
 
             }
-
-            .lineColor {
-
-              width: 22.5%;
-
-              .lineColorlabel h5 {
-                font-size: 10px;
-              }
-            }
-
-            .shadowColor {
-
-              width: 22.5%;
-
-              .shadowColorlabel h5 {
-                font-size: 10px;
-              }
-            }
-
-            .lineWidth {
-              width: 50%;
-
-              .lineWidthlabel h5 {
-                font-size: 10px;
-
-              }
-            }
-
-            .shadowBlur {
-              width: 50%;
-
-              .shadowBlurlabel h5 {
-                font-size: 10px;
-              }
-            }
-
-            .shadowOffsetX {
-              width: 50%;
-
-              .shadowOffsetXlabel h5 {
-                font-size: 10px;
-              }
-            }
-
-            .shadowOffsetY {
-              width: 50%;
-
-              .shadowOffsetYlabel h5 {
-                font-size: 10px;
-              }
-            }
-
           }
 
           .drawingBoardBox {
+            .canvasWindowBox {
+
+              #canvasBox {
+                width: 100%;
+                padding: 6% 7%;
+                height: auto;
+                background-size: cover;
+                background-image: url('../img/product/decorate/windowFrame_under576.svg');
+              }
+            }
+
             #btns {
               .orderBtnBoxGroup {}
             }

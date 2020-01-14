@@ -2,25 +2,23 @@
 try {
     require_once "connectBook_chat.php";
     //會員資料
-    // if ($_SESSION["memNo1"]) {
-    //     $memNo1 = $_SESSION["memNo1"];
-    // } else {
-    //     echo"未登入";
-    // }
+    session_start();
+    // include 'login.php';
+    // echo json_encode($_SERVER["memNo"]);
+    if (isset($_SESSION["memNo"])) {
+        $memNo1 = $_SESSION["memNo"];
+    } else {
+        echo"未登入";
+    }
 
     $type = $_POST["catch"];
-    // exit($type);
-    
+    $memNo1 = $_SESSION["memNo"];
+    $memNo2 = $_POST["memNo2"];
+    $chatNo = 0;
+
     switch ($type) {
         case "mark":
             //聊天室內容
-            $memNo1 = 1;
-            $memNo2 = 2;
-            $chatNo = 0;
-            //session_start();
-            // $memNo1 = $_session["memNo1"];
-            // $memNo2 = $_session["memNo2"];
-            // $chatNo = $_session["chatNo"];
             $sql = "select * 
             from chat join `matpostmark` on (chat.memNo2 = matpostmark.memNo)
             where (((memNo1 = :memNo1 and memNo2 = :memNo2) or (memNo2 = :memNo1 and memNo1 = :memNo2)) and chatNo > :chatNo) and (matpostmark.mugStatus = 1);";
@@ -33,7 +31,6 @@ try {
 
             //聊天室列表
             // $memNo1 = $_POST["memNo1"];
-            $memNo1 = 1;
             // $mname = $_POST["ename"];
             $sql = "select a.memNo,chatTime,b.memNo,b.memName,matPosUrl,mugStatus
             from `chat` join`member` a on(chat.memNo1=a.memNo)join `member`b on(chat.memNo2 = b.memNo) join `matpostmark` on (b.memNo = matpostmark.memNo)
@@ -58,8 +55,15 @@ try {
             $sendText->bindValue(":chatTime", $chatTime);
             $sendText->bindValue(":chatContent", $_POST["sendText"]);
             $sendText->execute();
-            // if(){}
-            $sendText->fetch(PDO::FETCH_ASSOC);
+            if ($sendText->rowCount() > 0) {
+                $sql = 'select * from `chat` where memNo1 = :memNo1 and memNo2 = :memNo2 order by chatTime desc;';
+                $newText = $pdo->prepare($sql);
+                $newText->bindValue(":memNo1", $memNo1);
+                $newText->bindValue(":memNo2", $memNo2);
+                $newText->execute();
+                $newRow = $newText->fetch(PDO::FETCH_ASSOC);
+                echo json_encode($newRow);
+            }
             break;
     }
 } catch (PDOException $e) {

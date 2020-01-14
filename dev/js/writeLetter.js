@@ -104,6 +104,7 @@ let vm3 = new Vue({
   },
   mounted() {
     function onFulfilled(value){
+      //登入成功 -> 取用戶彩繪圖案、用戶郵戳
       console.log(value);
       fetch('./phps/fetchAllUserMat.php')
         .then(res=>res.json()).then(json=>{
@@ -125,7 +126,38 @@ let vm3 = new Vue({
         })
     }
     function onRejected(reason){
+      //沒有登入
       console.log(reason.message);
+      let singInBox = document.getElementById('signInBg');
+      let closeSigin = document.getElementById('closeSigin');
+      let closeRegister = document.getElementById('closeRegister');
+      let signInCancelBtn = document.getElementById('signInCancelBtn');
+      let closeForget = document.getElementById('closeForget');
+      let vistiorsBtn = document.createElement('button');
+      let singInText = document.createElement('p');
+      let vistiorsBtnText = document.createElement('p');
+      singInBox.style.display = "block";
+      
+      closeSigin.style.display = "none";
+      closeRegister.style.display = "none";
+      closeForget.style.display = "none";
+      signInCancelBtn.style.display = "none";
+      vistiorsBtnText.innerText = "訪客登入";
+      vistiorsBtn.setAttribute('id','vistiorsBtn');
+      vistiorsBtn.setAttribute('type','button');
+      vistiorsBtn.appendChild(vistiorsBtnText);
+      singInText.innerText = reason.message;
+      singInText.style="display:inline-block;width:80%;text-align:center;background-size:100% 100%;position:absolute;top:7.5%;left: 50%;transform:translate(-50%, -50%);z-index:999;color:#fff;font-size:2rem;";
+      singInBox.appendChild(singInText);
+      document.querySelector('.formsignInData').appendChild(vistiorsBtn);
+
+      vistiorsBtn.addEventListener('click',visitorsLogin,false);
+      // signInCancelBtn.onclick = visitorsLogin;
+    }
+    function visitorsLogin(e){
+      e.target.preventDefault;
+      document.getElementById('signInEmail').value="h750307@ii5g.org.tw";
+      document.getElementById('signInPassword').value= "000";
     }
     function getSignInInfo(){
       return new Promise((resolve, reject)=>{
@@ -133,21 +165,10 @@ let vm3 = new Vue({
         xhr.onload = function () {
             let member = JSON.parse(xhr.responseText);
             if (member.memNo) {
-              document.getElementById("cavMemberN").innerText = '會員:' + member.memNo;
-              document.getElementById("cavMemberH").innerText = '會員:' + member.memNo;
-              document.getElementById("cavPaperN").innerText = '信紙:' + member.letCount;
-              document.getElementById("cavPaperH").innerText = '信紙:' + member.letCount;
-              document.getElementById("cavCoinN").innerText = 'Air幣:' + member.airCoin;
-              document.getElementById("cavCoinH").innerText = 'Air幣:' + member.airCoin;
-              document.getElementById("signInStatusIconN").style.color = 'green';
-              document.getElementById("signInStatusIconH").style.color = 'green';
-              document.getElementById("signInStatusN").innerHTML = "登出";
-              document.getElementById("signInStatusH").innerHTML = "登出";
-              // console.log( "========1",member.memNo);
               console.log(member.memNo);
               resolve(member.memNo);
             }else{
-              reject(new Error('沒登入'))
+              reject(new Error('請先登入才能寫信'))
             }
         }
         xhr.open("get", "./phps/getSignInInfo.php", true);
@@ -157,13 +178,6 @@ let vm3 = new Vue({
     getSignInInfo()
       .then(onFulfilled)
       .catch(onRejected)
-    // setTimeout(()=>{
-    //   if(document.getElementById("signInStatusN").innerText == "登入"){
-    //     console.log('還沒登入');
-    //   }else{
-        
-    //   }
-    // },1500)
   },
 });
 

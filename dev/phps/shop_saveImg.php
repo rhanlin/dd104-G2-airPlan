@@ -1,7 +1,7 @@
 <?php
 
 //=============把商城購買素材完後更新的會員的已持有素材  依照material/postmark/figure 三種matLSort分類寫回資料庫========================
-require_once "connectBook_shop.php";
+require_once "connectBook_root.php";
 try {
 
     $sql = "insert into `material`(matNo,memNo,matName,matURL,matLSort,matSSort) values(null,:memNo,:matName,:matURL,:matLSort,null)";

@@ -1,7 +1,7 @@
 <?php
 
 //=============把商城購買商品完後更新的會員air幣寫回資料庫=============================================
-require_once "connectBook_shop.php";
+require_once "connectBook_root.php";
 try {
 
     $sql = "update `member` set airCoin =:airCoin where memNo =:memNo";

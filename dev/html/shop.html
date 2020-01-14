@@ -17,7 +17,7 @@
     <div id="coinBox">
       <div id="coinArea">
         <div class="coinBox">
-          <span class="airCoinTxt">-</span>
+          <span class="airCoinTxt">–</span>
           <span id="coinInnerCount"></span>
           <div class="airCoinSingle"><img src="./img/product/decorate/airCoinSingle.png" alt=""></div>
           <div class="airCoin"><img src="./img/product/decorate/airCoin.png" alt=""></div>
@@ -208,9 +208,6 @@
       </div>
       <div class="cover"></div>
       <div class="pile">
-        <!-- <div class="clock"><img src="" alt=""></div>
-        <div class="redWheel"><img src="" alt=""></div>
-        <div class="perpul"><img src="" alt=""></div> -->
       </div>
     </div>
     <div class="container">
@@ -290,7 +287,7 @@
           <div class="controlBoxBottom">
             <div class="brushType">
               <label class="brushlabel">
-                <h5>畫筆種類</h5>
+                <h6>畫筆種類</h6>
               </label>
               <div class="box">
                 <select class="brushSelect">
@@ -303,110 +300,113 @@
             </div>
             <div class="lineColor">
               <label class="lineColorlabel">
-                <h5> 畫筆顏色</h5>
+                <h6> 畫筆顏色</h6>
               </label>
               <input type="color" min="0" max="150" class="lineColorInput">
             </div>
             <div class="shadowColor">
               <label class="shadowColorlabel">
-                <h5> 陰影顏色</h5>
+                <h6> 陰影顏色</h6>
               </label>
               <input type="color" min="0" max="150" class="shadowColorInput">
             </div>
             <div class="lineWidth">
               <label class="lineWidthlabel">
-                <h5> 畫筆大小</h5>
+                <h6> 畫筆大小</h6>
               </label>
               <input type="range" min="0" max="150" class="lineWidthInput" value="1">
               <span class="lineWidthValue">1</span>
             </div>
             <div class="shadowBlur">
               <label class="shadowBlurlabel">
-                <h5> 陰影模糊</h5>
+                <h6> 陰影模糊</h6>
               </label>
               <input type="range" min="0" max="30" class="shadowBlurInput" value="1">
               <span class="shadowBlurValue">1</span>
             </div>
             <div class="shadowOffsetX">
               <label class="shadowOffsetXlabel">
-                <h5> 陰影X軸</h5>
+                <h6> 陰影X軸</h6>
               </label>
               <input type="range" min="0" max="50" class="shadowOffsetXInput" value="1">
               <span class="shadowOffsetXValue">1</span>
             </div>
             <div class="shadowOffsetY">
               <label class="shadowOffsetYlabel">
-                <h5> 陰影Y軸</h5>
+                <h6> 陰影Y軸</h6>
+              </label>
+              <input type="range" min="0" max="50" class="shadowOffsetYInput" value="1">
+              <span class="shadowOffsetYValue">1</span>
+            </div>
+          </div>
+
+          <div class="controlBoxRight">
+            <div class="brushType">
+              <label class="brushlabel">
+                <h6>畫筆種類</h6>
+              </label>
+              <div class="box">
+                <select class="brushSelect">
+                  <option value="Pencil">Pencil</option>
+                  <option value="Circle">Circle</option>
+                  <option value="Spray">Spray</option>
+                  <option value="Square">Square</option>
+                </select>
+              </div>
+            </div>
+            <div class="lineColor">
+              <label class="lineColorlabel">
+                <h6> 畫筆顏色</h6>
+              </label>
+              <input type="color" min="0" max="150" class="lineColorInput">
+            </div>
+            <div class="shadowColor">
+              <label class="shadowColorlabel">
+                <h6> 陰影顏色</h6>
+              </label>
+              <input type="color" min="0" max="150" class="shadowColorInput">
+            </div>
+            <div class="lineWidth">
+              <label class="lineWidthlabel">
+                <h6> 畫筆大小</h6>
+              </label>
+              <input type="range" min="0" max="150" class="lineWidthInput" value="1">
+              <span class="lineWidthValue">1</span>
+            </div>
+            <div class="shadowBlur">
+              <label class="shadowBlurlabel">
+                <h6> 陰影模糊</h6>
+              </label>
+              <input type="range" min="0" max="30" class="shadowBlurInput" value="1">
+              <span class="shadowBlurValue">1</span>
+            </div>
+            <div class="shadowOffsetX">
+              <label class="shadowOffsetXlabel">
+                <h6> 陰影X軸</h6>
+              </label>
+              <input type="range" min="0" max="50" class="shadowOffsetXInput" value="1">
+              <span class="shadowOffsetXValue">1</span>
+            </div>
+            <div class="shadowOffsetY">
+              <label class="shadowOffsetYlabel">
+                <h6> 陰影Y軸</h6>
               </label>
               <input type="range" min="0" max="50" class="shadowOffsetYInput" value="1">
               <span class="shadowOffsetYValue">1</span>
             </div>
           </div>
         </div>
-        <div class="controlBoxRight">
-          <div class="brushType">
-            <label class="brushlabel">
-              <h5>畫筆種類</h5>
-            </label>
-            <div class="box">
-              <select class="brushSelect">
-                <option value="Pencil">Pencil</option>
-                <option value="Circle">Circle</option>
-                <option value="Spray">Spray</option>
-                <option value="Square">Square</option>
-              </select>
+        <div class="drawingBoardBox">
+          <div class="canvasWindowBox">
+            <div id="canvasBox">
+              <canvas id="canvas">
+                <div class="drawingPanel" id="drawingOptionArea"></div>
+              </canvas>
             </div>
           </div>
-          <div class="lineColor">
-            <label class="lineColorlabel">
-              <h5> 畫筆顏色</h5>
-            </label>
-            <input type="color" min="0" max="150" class="lineColorInput">
-          </div>
-          <div class="shadowColor">
-            <label class="shadowColorlabel">
-              <h5> 陰影顏色</h5>
-            </label>
-            <input type="color" min="0" max="150" class="shadowColorInput">
-          </div>
-          <div class="lineWidth">
-            <label class="lineWidthlabel">
-              <h5> 畫筆大小</h5>
-            </label>
-            <input type="range" min="0" max="150" class="lineWidthInput" value="1">
-            <span class="lineWidthValue">1</span>
-          </div>
-          <div class="shadowBlur">
-            <label class="shadowBlurlabel">
-              <h5> 陰影模糊</h5>
-            </label>
-            <input type="range" min="0" max="30" class="shadowBlurInput" value="1">
-            <span class="shadowBlurValue">1</span>
-          </div>
-          <div class="shadowOffsetX">
-            <label class="shadowOffsetXlabel">
-              <h5> 陰影X軸</h5>
-            </label>
-            <input type="range" min="0" max="50" class="shadowOffsetXInput" value="1">
-            <span class="shadowOffsetXValue">1</span>
-          </div>
-          <div class="shadowOffsetY">
-            <label class="shadowOffsetYlabel">
-              <h5> 陰影Y軸</h5>
-            </label>
-            <input type="range" min="0" max="50" class="shadowOffsetYInput" value="1">
-            <span class="shadowOffsetYValue">1</span>
-          </div>
-        </div>
-        <div class="drawingBoardBox">
-          <div id="canvasBox">
-            <canvas id="canvas">
-              <div class="drawingPanel" id="drawingOptionArea"></div>
-            </canvas>
-          </div>
           <div id="btns" class="btns">
-            <div class="orderBtnBoxGroup ">
-              <div class="orderBtnBox ">
+            <div class="orderBtnBoxGroup">
+              <div class="orderBtnBox">
                 <div id="boardSwitchBtn" class="orderBtn">
                   <div class="orderText">
                     <h6>切換郵戳畫板</h6>
@@ -417,7 +417,7 @@
             </div>
             <div class="patNameInput">
               <label class="patternName" for="patternName">
-                <h5>為您製作的圖案取個名字吧</h5>
+                <h6>為您製作的圖案取個名字吧!</h6>
               </label>
               <input type="text" name="patternName" id="patternName">
             </div>
@@ -919,9 +919,9 @@
           if (confirm(msg) == true) {
             cavMemberH = document.getElementById('cavMemberH').innerHTML;
             cavMemberH = cavMemberH.toString().substring(3);
- 
+
             //==============如果跳窗抓到的URL值不是soldOut才可以購買(否則是重複購買)======================================
-      // ===========這是從資料庫抓已購素材中的url來對比並把卡片改成soldOut ================================================
+            // ===========這是從資料庫抓已購素材中的url來對比並把卡片改成soldOut ================================================
             axios
               .get('./phps/shop_getmaterial.php?memNo=' + cavMemberH)
               .then((res) => {
@@ -1120,18 +1120,31 @@
 
           if (this.windowWidth < 576) {
             if (this.page == 1) {
+              document.getElementsByClassName("line_bottom")[0].style.display = "none";
+              document.getElementsByClassName("line_top")[0].style.display = "none";
               if (index < 6) return true;
             } else if (this.page == 2) {
+              document.getElementsByClassName("line_bottom")[0].style.display = "none";
+              document.getElementsByClassName("line_top")[0].style.display = "none";
               if (index < 12 && index >= 6) return true;
             } else if (this.page == 3) {
-              if (index < 18 && index >= 12) return true;
+              if (index < 18 && index >= 12) return t
+              document.getElementsByClassName("line_bottom")[0].style.display = "none";
+              document.getElementsByClassName("line_top")[0].style.display = "none";
+              rue;
             }
           } else if (this.windowWidth < 767) {
             if (this.page == 1) {
+              document.getElementsByClassName("line_bottom")[0].style.display = "none";
+              document.getElementsByClassName("line_top")[0].style.display = "none";
               if (index < 8) return true;
             } else if (this.page == 2) {
+              document.getElementsByClassName("line_bottom")[0].style.display = "none";
+              document.getElementsByClassName("line_top")[0].style.display = "none";
               if (index < 17 && index >= 8) return true;
             } else if (this.page == 3) {
+              document.getElementsByClassName("line_bottom")[0].style.display = "none";
+              document.getElementsByClassName("line_top")[0].style.display = "none";
               if (index < 25 && index >= 17) return true;
             }
           } else if (this.page == 1) {
@@ -1283,7 +1296,6 @@
     $('.orderBtn').mouseup(function () {
       $(this).removeClass('clicked');
     });
-
   </script>
 
   <script>
@@ -1336,29 +1348,29 @@
   <script>
     function boughtProd() {
 
-      TweenMax.fromTo('.airCoinSingle', 8, {
+      TweenMax.fromTo('.airCoinSingle', 5, {
         y: 0,
         opacity: 1,
 
       }, {
-        y: -200,
+        y: -100,
         opacity: 0,
       })
 
-      TweenMax.fromTo('.airCoinTxt', 8, {
+      TweenMax.fromTo('.airCoinTxt', 5, {
         y: 0,
         opacity: 1,
 
       }, {
-        y: -200,
+        y: -100,
         opacity: 0,
       })
-      TweenMax.fromTo('#coinInnerCount', 8, {
+      TweenMax.fromTo('#coinInnerCount', 5, {
         y: 0,
         opacity: 1,
 
       }, {
-        y: -200,
+        y: -100,
         opacity: 0,
       });
 
@@ -1370,4 +1382,5 @@
     }, false);
   </script>
 </body>
+
 </html>

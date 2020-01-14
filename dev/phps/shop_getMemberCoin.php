@@ -1,7 +1,7 @@
 <?php
 
 //====================把會員目前持有的air幣 從資料庫中撈回，顯示在頁面右上角的fixed區塊===========================
-require_once "connectBook_shop.php";
+require_once "connectBook_root.php";
 try {
 
     $sql = "select * from `member` where memNo=:memNo";
