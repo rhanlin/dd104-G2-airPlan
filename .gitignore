@@ -3,3 +3,10 @@ node_modules/
 dist/
 dev/css/main.css
 dev/*.html
+dev/phps/userLetterCanvas
+dev/phps/userUploadImg
+dev/phps/connectBook_cave.php
+dev/phps/connectBook_chat.php
+dev/phps/connectBook_root.php
+dev/phps/connectBook_shop.php
+dev/phps/connectBook_userSetting.php

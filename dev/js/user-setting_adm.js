@@ -290,8 +290,8 @@ function changeName(){
         // tr.appendChild(td)
         console.log(td1);
         const usedata = document.getElementById('cavMemberN').innerText;
-        // console.log(usedata.split(":").length-1);
-        console.log(usedata);
+        const usedataNo = usedata.toString().substring(3);
+        console.log(usedataNo);
         // alert('ddd');
     })
     .catch((error) => {

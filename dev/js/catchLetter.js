@@ -1,16 +1,22 @@
 let vmCatchLetter = new Vue({
   el: "#catchLetterShow",
   data: {
-    letteTittle: "舍，甲說，這是多麼傷心的事啊！",
-    letterContant_1: "籠罩著街上的煙，日頭是自東徂西，凶惡的他們忍相虐待，那時代，日月不相望的什麼新曆法，什麼是麵皮？在新月微光下的街市，看見鮮紅的血，但是他倆竟會自己走到橋上，就再開始。此刻，新年的一日，那時代，我去拿一面鑼來。在這黑暗之中，阻斷爭論，剛纔經市長一說，只有前進，在做頭老的，他不和人家分擔，不知流失多少人類所託命的田",
-    letterContant_2: "礙步的石頭，互相提攜，和狺狺的狗吠，又產生有可供消費的勢力，農民播種犁田，現在不是糴不到半斗米？",
+    letteTittle: "",
+    letterContant_1: "",
+    letterContant_2: "",
     letterUploadImg: "",
+    publishedAt:"",
+    author:"",
   },
-  components: {
-    
-  },
-  methods: {
-
+  mounted() {
+    // fetch('./phps/fetchAllUserMat.php',{
+    //   // method:'POST',
+    //   // body: new URLSearchParams(`memNo=10`) //10要改成${變數} 此變數從session撈出目前登入的用戶number
+    // })
+    //   .then(res=>res.json()).then(json=>{
+        
+    //     console.log(json);
+    //   })
   },
 });
   
@@ -35,6 +41,7 @@ let vmCatchLetter = new Vue({
       net.style.display="block";
       threeWorld.style.cursor = "none"; //滑鼠消失
       chooseBtn[0].parentElement.style.display = "none";//關閉選擇按鈕
+
       if(e.target.innerText == "撈個新聞看看"){
         console.log(`撈到新聞`);
         catchNews();//撈新聞Fn
