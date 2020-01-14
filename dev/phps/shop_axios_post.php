@@ -1,7 +1,7 @@
 <?php
 //===============頁面onload後直接抓回64筆商城卡片資料給vue data=>items===============================
 try {
-    require_once "connectBook_shop.php";
+    require_once "connectBook_root.php";
     $sql = "select prodUrl from `product`";
     $product = $pdo->query($sql);
     if ($product->rowCount() == 0) { 

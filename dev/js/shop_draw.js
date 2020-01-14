@@ -1,7 +1,7 @@
 let canvas = new fabric.Canvas('canvas', {
   backgroundColor: "white"
 }); //創建fabric環境
-canvas.setHeight(500);
+canvas.setHeight(490.5);
 
 //=================剪裁飛機或郵戳畫板==========================
 canvas.controlsAboveOverlay = true;
@@ -135,7 +135,7 @@ canvas.on('drop', dropImg)
 
 
 //==================點按slide到畫板===============================
-// drawingOptionArea = document.getElementById('drawingOptionArea');
+drawingOptionArea = document.getElementById('drawingOptionArea');
 
 $('.figure').click(function () {
   var itemImage = this.getAttribute('src'); //獲取點取物件的src路徑
@@ -318,6 +318,7 @@ $(".lineColorInput").change(function () {
 
 
 //切換
+
 canvas.isDrawingMode = false;
 $(document).ready(function () {
   $('#mode').click(function () {
@@ -502,7 +503,6 @@ outputPngBtn.addEventListener('click', () => output('png'))
 
 
 function output(formatType) {
-
   var patternName = $('#patternName').val();
   // console.log(patternName)
   let dataURL = canvas.toDataURL({
@@ -646,57 +646,53 @@ const imgset = document.getElementsByClassName("drawingPanel")[0];
 
 
 function uploadFile(e) {
-  file.click()
-}
-
-function handleFile() {
   if ($('#controlBox8').hasClass('clicked') == false) {
-    const fileReader = new FileReader();
-    fileReader.readAsDataURL(this.files[0]);
-    fileReader.onload = e => {
-      // 圖片 base64
-      const dataURL = e.target.result;
-      const divImage2 = document.createElement('div'); //創造div元素
-      const updateimg = document.createElement('img');
-      updateimg.draggable = true;
-      updateimg.src = dataURL;
-      divImage2.appendChild(updateimg); //img插入div
-      imgset.appendChild(divImage2)
-      // console.log(imgset)
-
-      fabric.Image.fromURL(dataURL, function (img) { //使用fabric.Image方法
-
-        img.scaleToHeight(100); //指定img寬
-        img.scaleToWidth(100); //指定img高
-        // img.center();
-        // img.setCoords();
-        // canvas.renderAll(); //選染畫布
-        // canvas.add(img); //畫布加入新的圖片
-        img.scale(0.5).set({
-          left: 200,
-          top: 200,
-          selectable: true,
-          originX: 'left',
-          originY: 'top'
-        });
-        canvas.renderAll();
-        canvas.add(img).setActiveObject(img);;
-
-      })
-    };
+    file.click()
   } else {
     alert("您尚未購買此工具喔!!")
   }
 }
 
+function handleFile() {
+
+  const fileReader = new FileReader();
+  fileReader.readAsDataURL(this.files[0]);
+  fileReader.onload = e => {
+    // 圖片 base64
+    const dataURL = e.target.result;
+    const divImage2 = document.createElement('div'); //創造div元素
+    const updateimg = document.createElement('img');
+    updateimg.draggable = true;
+    updateimg.src = dataURL;
+    divImage2.appendChild(updateimg); //img插入div
+    imgset.appendChild(divImage2)
+    // console.log(imgset)
+
+    fabric.Image.fromURL(dataURL, function (img) { //使用fabric.Image方法
+
+      img.scaleToHeight(100); //指定img寬
+      img.scaleToWidth(100); //指定img高
+      // img.center();
+      // img.setCoords();
+      // canvas.renderAll(); //選染畫布
+      // canvas.add(img); //畫布加入新的圖片
+      img.scale(0.5).set({
+        left: 200,
+        top: 200,
+        selectable: true,
+        originX: 'left',
+        originY: 'top'
+      });
+      canvas.renderAll();
+      canvas.add(img).setActiveObject(img);;
+
+    })
+  };
+}
 
 
 imageUploader.addEventListener('click', uploadFile, true);
 file.addEventListener('change', handleFile);
-
-
-
-
 
 
 
@@ -726,20 +722,20 @@ window.addEventListener('resize', resizeCanvas, false);
 
 function resizeCanvas() {
   if (window.innerWidth < 576) {
-    canvasBox.width = (window.innerWidth * .75) + (window.innerWidth / 13)
+    canvasBox.width = (window.innerWidth * .67) + (window.innerWidth / 70)
   } else if (window.innerWidth < 768) {
-    canvasBox.width = (window.innerWidth * .75) + (window.innerWidth / 11);
+    canvasBox.width = (window.innerWidth * .60) + (window.innerWidth / 11);
   } else if (window.innerWidth < 992) {
-    canvasBox.width = (window.innerWidth * .75) + (window.innerWidth / 10);
-  } else if (window.innerWidth < 1200) {
-    canvasBox.width = (window.innerWidth * .56) + (window.innerWidth / 10);
+    canvasBox.width = (window.innerWidth * .65) + (window.innerWidth / 30);
+  } else if (window.innerWidth < 1330) {
+    canvasBox.width = (window.innerWidth * .50) + (window.innerWidth / 35);
   } else if (window.innerWidth < 1500) {
-    canvasBox.width = 650 + (window.innerWidth / 65);
+    canvasBox.width = 670 + (window.innerWidth / 55);
   } else if (window.innerWidth < 1700) {
-    canvasBox.width = 690 + (window.innerWidth / 80);
+    canvasBox.width = 670 + (window.innerWidth / 68);
 
   } else {
-    canvasBox.width = 700 + (window.innerWidth / 90)
+    canvasBox.width = 670 + (window.innerWidth / 80)
 
   }
   canvas.setWidth(canvasBox.width)

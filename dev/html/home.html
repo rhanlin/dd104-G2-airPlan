@@ -22,6 +22,9 @@
 <body class="home_body">
     @@include("./layout/nav.html")
 
+    <div class="goTop">
+        <img class="goTop_plane" src="./img/home/goTop.svg" alt="">
+    </div>
     <section class="home_first">
         <div class="cloudBlue"></div>
         <div class="firstLetter">
@@ -65,8 +68,15 @@
                     <div class="write_many">
                     </div>
                     <div class="write_paper box-white">
+                        <div class="stampGrip">
+                            <p>Stamp<br>Here</p>
+                        </div>
+                        <div class="write_inputTitle">
+                            <label for="content">信件標題：</label>
+                            <input class="write_content" type="text" name="" id="content">
+                        </div>
                         <div class="goWrite_pos">
-                            <a class="goWrite" href="#">前往寫信</a>
+                            <a class="goWrite" href="./write-letter.html">前往寫信</a>
                         </div>
                     </div>
                     <img class="pen" src="./img/home/write/pen.svg" alt="">
@@ -114,7 +124,7 @@
             </div>
             <div class="boardBot">
                 <h3>立即撈信，<br>就能與他人<br>擁有共同話題</h3>
-                <a class="goCatch" href="#">前往撈信</a>
+                <a class="goCatch" href="./catch-letter.html">前往撈信</a>
             </div>
         </div>
     </section>
@@ -192,7 +202,7 @@
             </div>
             <div class="windowBg">
                 <div class="price">
-                    <a class="goBuy" href="#">前往購買</a>
+                    <a class="goBuy" href="./shop.html">前往購買</a>
                 </div>
                 <img class="paintPlane" src="./img/home/store/paintPlane.svg" alt="">
             </div>
@@ -232,9 +242,10 @@
                                         </div>
                                     </div>
                                     <div class="chatMix5">
-                                        <div class="send">
-                                            <img src="./img/chatroom/send.png" alt="">
-                                        </div>
+                                        <a class="send" href="./chatroom.html">
+                                            <span>前往聊天室</span>
+                                            <div class="arrow"></div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -275,7 +286,6 @@
         function animate() {
             document.querySelector('.firstLetter').classList.toggle('animate');
         };
-        // setTimeout(animate, 5000);
 
         if ($(window).width() > 1182) {
             setTimeout(animate, 5000);

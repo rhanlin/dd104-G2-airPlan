@@ -1,7 +1,8 @@
 <?php
 
 //====================測試能否順利撈取和顯示存入material表格的所有圖檔===========================
-require_once "connectBook_shop.php";
+
+require_once "connectBook_root.php";
 try {
 
     $sql = "select `matName`,`matURL` from `material` where memNo=:memNo and (matLSort='material' or matLSort='tool')";
