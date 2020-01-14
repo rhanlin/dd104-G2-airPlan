@@ -179,9 +179,19 @@
                                         margin-left: 20px;
                                         margin-bottom: 5px;
 
-                                        img {
+                                        .overImg {
+                                            width: 70px;
+                                            margin: 0 auto;
                                             vertical-align: top;
+                                            display: inline-block;
+                                            margin-bottom: 1%;
+
+
+                                            img {
+                                                width: 100%;
+                                            }                                            
                                         }
+
 
                                         p {
                                             margin: 80px 0 0 0;

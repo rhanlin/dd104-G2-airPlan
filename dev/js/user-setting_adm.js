@@ -298,7 +298,9 @@ function changeName(){
         console.log(error)
     })
 }
-window.addEventListener("load", function () {
-changeName();
-
-});
+// window.addEventListener("load", function () {
+// changeName();
+// });
+window.addEventListener('load', function () {
+    setTimeout(changeName(), 500);
+}, false);

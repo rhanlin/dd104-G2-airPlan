@@ -236,6 +236,12 @@
               visibility: hidden;
               transition: all 0.5s;
 
+              // .cav-letNo{
+              //   position: absolute;
+              //   left: -5%;
+              //   top: -2%;
+              //   font-size: 1rem;
+              // }
               .cav-letClose {
                 position: absolute;
                 right: -5%;
@@ -367,7 +373,7 @@
                       img {
                         width: 160%;
                         height: 106%;
-                        margin-top: -5%;
+                        margin-top: -4%;
                         margin-left: -30%;
                       }
                     }
@@ -480,7 +486,7 @@
                           img {
                             width: 160%;
                             height: 106%;
-                            margin-top: -5%;
+                            margin-top: -4%;
                             margin-left: -30%;
                           }
                         }
@@ -535,7 +541,7 @@
                           img {
                             width: 160%;
                             height: 106%;
-                            margin-top: -5%;
+                            margin-top: -4%;
                             margin-left: -28%;
                           }
                         }
@@ -1023,11 +1029,6 @@
           position: absolute;
           top: 1%;
           left: 3.3%;
-          // width: 100%;
-          // // height: 100%;
-          // padding: 10px;
-          // display: flex;
-          // flex-wrap: wrap;
         }
       }
 
@@ -2108,6 +2109,11 @@
               .letter-wrap {
                 width: 100%;
                 margin: 0 auto;
+                // .cav-letNo{
+                //   left: -18%;
+                //   top: -4%;
+
+                // }
                 .cav-letClose {
                   right: -20%;
                   top: -4%;

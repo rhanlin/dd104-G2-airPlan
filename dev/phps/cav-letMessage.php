@@ -1,9 +1,13 @@
 <?php
 try {
     require_once("connectBook_cave.php");
-    $sql = "select * from `message` where letNo=11 order by msgTime DESC";
+    $sql = "select * from `message` where letNo=:letNo order by msgTime DESC";
+    // $sql = "select * from `message` where letNo=11 order by msgTime DESC";
+    // $sql = "select * from `message` order by msgTime DESC";
     $replys = $pdo->prepare($sql);
-  
+    $replys->bindValue(":letNo", $_GET["letNo"]);
+    $replys->execute();
+
     if ($replys->rowCount() == 0) { //找不到
         //傳回空的JSON字串
         echo "{}";

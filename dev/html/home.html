@@ -64,7 +64,11 @@
                 <div class="write_Rbox">
                     <div class="write_many">
                     </div>
-                    <div class="write_paper box-white"></div>
+                    <div class="write_paper box-white">
+                        <div class="goWrite_pos">
+                            <a class="goWrite" href="#">前往寫信</a>
+                        </div>
+                    </div>
                     <img class="pen" src="./img/home/write/pen.svg" alt="">
                 </div>
             </div>
@@ -109,7 +113,8 @@
                 <h1 class="threed-text-blue">撈信</h1>
             </div>
             <div class="boardBot">
-                <h2>立即撈信，<br>就能與他人<br>擁有共同話題</h2>
+                <h3>立即撈信，<br>就能與他人<br>擁有共同話題</h3>
+                <a class="goCatch" href="#">前往撈信</a>
             </div>
         </div>
     </section>
@@ -187,7 +192,7 @@
             </div>
             <div class="windowBg">
                 <div class="price">
-                    <h3>前往購買</h3>
+                    <a class="goBuy" href="#">前往購買</a>
                 </div>
                 <img class="paintPlane" src="./img/home/store/paintPlane.svg" alt="">
             </div>
@@ -272,7 +277,7 @@
         };
         // setTimeout(animate, 5000);
 
-        if ($(window).width() > 576) {
+        if ($(window).width() > 1182) {
             setTimeout(animate, 5000);
         } else {
             setTimeout(animate, 100);

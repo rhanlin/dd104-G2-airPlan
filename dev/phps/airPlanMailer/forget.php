@@ -14,8 +14,8 @@ $mail = new PHPMailer(true);
 //Typical mail data
 $mail->AddAddress("a0926036356@gmail.com");//========收件者
 $mail->SetFrom("dd104g23@gmail.com");//========回覆
-$mail->Subject = "airPlan email test2";//========
-$mail->Body = "韓國瑜珈老師 下～課～囉～ 戰神QQ";//========
+$mail->Subject = "AirPlan 新密碼通知～";//========
+$mail->Body = "親愛的好機友 您的新密碼為：";//========
 
 try{
     $mail->Send();
