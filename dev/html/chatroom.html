@@ -16,7 +16,9 @@
     @@include("./layout/header.html")
     <main class="chatroom-main">
         <section class="mainSection">
-            <div class="sectionOver"></div>
+            <div class="sectionOver">
+                <input type="hidden" name="memNo2" id="memNo2">
+            </div>
         </section>
         <div class="mainBook">
             <div class="bookDashed">
@@ -49,7 +51,12 @@
 
     <script>
         let data = [];
-        let memNo2;
+        let memNo2 = document.getElementById("memNo2");
+        // let xhr = new XMLHttpRequest();
+        // function get_mem (str) {
+        //     let memNo1 = JSON.parse(str);
+        //     alert(str);
+        // }
 
         // window.addEventListener("load", function(str){
         //     // let data = JSON.parse(str);
@@ -64,26 +71,43 @@
 
         // function showMark() {
         window.addEventListener("load", function () {
-            get_chat();
-            document.getElementsByClassName('sendBtn')[0].addEventListener('click', sendText, false);
-            let Mark = document.querySelectorAll('.sectionMark1');
-            Mark[0].classList.add("MarkRed");
-            // console.log(Mark[0].classList);
-            for (let i = 0; i < Mark.length; i++) {
-                Mark[i].addEventListener('click', function (e) {
-                    document.getElementsByClassName('pageContent')[0].innerHTML = "";
-                    reget();
-                    for (let j = 0; j < Mark.length; j++) {
-                        Mark[j].classList.remove("MarkRed");
-                    }
-                    e.currentTarget.classList.add("MarkRed");
-                    memNo2 = e.currentTarget.getElementsByTagName("p").innerText;
-                })
-            };
-
+            getLogin();
         }, true);
         // };
 
+        function getLogin() {
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                let xhr = new XMLHttpRequest();
+                member = JSON.parse(xhr.responseText);
+                console.log(xhr.responseText)
+                // if (member.memNo) {
+                //     get_chat();
+                //     document.getElementsByClassName('sendBtn')[0].addEventListener('click', sendText, false);
+                //     let Mark = document.querySelectorAll('.sectionMark1');
+                //     Mark[0].classList.add("MarkRed");
+                //     // console.log(Mark[0].classList);
+                //     for (let i = 0; i < Mark.length; i++) {
+                //         Mark[i].addEventListener('click', function (e) {
+                //             document.getElementsByClassName('pageContent')[0].innerHTML = "";
+                //             reget();
+                //             for (let j = 0; j < Mark.length; j++) {
+                //                 Mark[j].classList.remove("MarkRed");
+                //             }
+                //             e.currentTarget.classList.add("MarkRed");
+                //             memNo2.value = e.currentTarget.childNodes[1].innerText;
+                //             // console.log(memNo2.value)
+                //         })
+                //     };
+                // } else {
+
+                // }
+
+            }
+            xhr.open('post', './phps/chatroom.php', false);
+            xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+            xhr.send(null);
+        }
 
         // 抓聊天列表的資料
         function showData(str) {
@@ -124,10 +148,8 @@
             let xhr = new XMLHttpRequest();
             document.getElementById("catch").value = 'mark';
             let mark = document.getElementById("catch").value;
-            let memNo1 = document.getElementById("cavMemberN").innerHTML.split(":")[1];
-            console.log(document.getElementById("cavMemberN").innerHTML);
-            let data_info = "catch=" + mark + "&memNo1=" + memNo1 + "&memNo2=" + 2;
-            // console.log(document.getElementById("catch").value)
+            let data_info = "catch=" + mark + "&memNo2=" + memNo2;
+            // console.log(memNo2)
             xhr.onload = function () {
                 if (xhr.status == 200) {
                     // console.log(xhr.responseText);
@@ -135,22 +157,21 @@
                     showData(data);
                     showChat(data);
                 } else {
-                    alert(xhr.status);
+                    alert(xhr.status, xhr.statusText);
                 }
             }
             xhr.open('post', './phps/chatroom.php', false);
             xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
             xhr.send(data_info);
-           
         }
 
         function reget() {
             let xhr = new XMLHttpRequest();
             document.getElementById("catch").value = 'mark';
+            // memNo2 = Mark[i].childNodes[1].innerText;
+            // console.log(Mark[i].childNodes[1].innerText)
             let mark = document.getElementById("catch").value;
-            let memNo1 = document.getElementById("cavMemberN").innerHTML.split(":")[1];
-            console.log(document.getElementById("cavMemberN").innerHTML);
-            let data_info = "catch=" + mark + "&memNo1=" + memNo1 + "&memNo2=" + 2;
+            let data_info = "catch=" + mark + "&memNo2=" + 2;
             // console.log(document.getElementById("catch").value)
             xhr.onload = function () {
                 if (xhr.status == 200) {
@@ -164,9 +185,8 @@
             xhr.open('post', './phps/chatroom.php', false);
             xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
             xhr.send(data_info);
-           
-        }
 
+        }
 
         //輸入聊天內容
         function showText(str) {
@@ -183,7 +203,7 @@
                 let xhr = new XMLHttpRequest();
                 document.getElementById("catch").value = 'content';
                 let content = document.getElementById("catch").value;
-                let data_info = "catch=" + content + "&memNo1=" + 1 + "&memNo2=" + 2 + "&sendText=" + val;
+                let data_info = "catch=" + content + "&memNo2=" + memNo2.value + "&sendText=" + val;
                 // console.log(document.getElementsByClassName('sendText')[0].value);
                 // console.log(content);
                 xhr.onload = function () {

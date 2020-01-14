@@ -2,21 +2,19 @@
 try {
     require_once "connectBook_chat.php";
     //會員資料
-    // session_start();
-    // if ($_SESSION["memNo1"]) {
-    //     $memNo1 = $_SESSION["memNo1"];
-    // } else {
-    //     echo"未登入";
-    // }
+    session_start();
+    // include 'login.php';
+    // echo json_encode($_SERVER["memNo"]);
+    if (isset($_SESSION["memNo"])) {
+        $memNo1 = $_SESSION["memNo"];
+    } else {
+        echo"未登入";
+    }
 
     $type = $_POST["catch"];
-    $memNo1 = 1;
-    $memNo2 = 2;
+    $memNo1 = $_SESSION["memNo"];
+    $memNo2 = $_POST["memNo2"];
     $chatNo = 0;
-    //session_start();
-    // $memNo1 = $_session["memNo1"];
-    // $memNo2 = $_session["memNo2"];
-    // $chatNo = $_session["chatNo"];
 
     switch ($type) {
         case "mark":
@@ -33,7 +31,6 @@ try {
 
             //聊天室列表
             // $memNo1 = $_POST["memNo1"];
-            $memNo1 = 1;
             // $mname = $_POST["ename"];
             $sql = "select a.memNo,chatTime,b.memNo,b.memName,matPosUrl,mugStatus
             from `chat` join`member` a on(chat.memNo1=a.memNo)join `member`b on(chat.memNo2 = b.memNo) join `matpostmark` on (b.memNo = matpostmark.memNo)
