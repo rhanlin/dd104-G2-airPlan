@@ -1,15 +1,16 @@
 <?php
 
 //=============把商城購買素材完後更新的會員的已持有素材  依照material/postmark/figure 三種matLSort分類寫回資料庫========================
-require_once "connectBook_shop.php";
+require_once "connectBook_root.php";
 try {
     $pdo->beginTransaction();
 
-    $sql = "insert into `material`(matNo,memNo,matName,matURL,matLSort,matSSort) values(null,:memNo,:matName,'',:matLSort,null)";
+    $sql = "insert into `matpostmark`(matPosNo,memNo,matPosName,matPosUrl,mugStatus,matPosLSort,matPosSSort) values(null,:memNo,:matPosName,'',:mugStatus,:matPosLSort,null)";
     $products = $pdo->prepare($sql);
     $products->bindValue(":memNo", $_POST['memNo']);
-    $products->bindValue(":matName", $_POST['matName']);
-    $products->bindValue(":matLSort", $_POST['matLSort']);
+    $products->bindValue(":matPosName", $_POST['matName']);
+    $products->bindValue(":mugStatus", '0');
+    $products->bindValue(":matPosLSort", $_POST['matLSort']);
     $products->execute();
 
     //取得自動創號的key值
@@ -36,9 +37,9 @@ try {
     if ($success) {
 
         //將檔案名稱寫回資料庫
-        $sql = "update `material` set matURL = :matURL where matNo = $psn";
+        $sql = "update `matpostmark` set matPosUrl = :matPosUrl where matPosNo = $psn";
         $products = $pdo->prepare($sql);
-        $products->bindValue(":matURL", $file);
+        $products->bindValue(":matPosUrl", $file);
         $products->execute();
         echo "新增成功~";
         $pdo->commit();
