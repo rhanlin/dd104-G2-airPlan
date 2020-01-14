@@ -156,32 +156,86 @@ new Vue({
     }
 });
 
-//    <?php 
-//     $letterlikeRow = $letterlike -> fetch_assoc()){
-//     echo json_encode( $memRow);
-//     ?>
-//                 <tr>
-//                     <td ><?=$letterlikeRow["letLikeTime"]?></td>
-//                     <td><?=$letterlikeRow["letTitle"]?></td>
-//                     <td><?=$letterlikeRow["likeMemNo"]?></td>
-//                 </tr>
-//                 <?php	
-//                 }
-//                 ?>
+
 
 //JS
 //會員資訊_外觀設定
-function showLarge(e) {
-    let memsmall = e.target;
-    document.getElementById("memcolorBigLarge").src = memsmall.src;
+//小圖換大圖
+// function showLarge(e) {
+//     let memsmall = e.target;
+//     document.getElementById("memcolorBigLarge").src = memsmall.src;
+// };
+// let picture_small = document.querySelectorAll(".memcolorSmall img");
+// for (let i = 0; i < picture_small.length; i++) {
+//     picture_small[i].onclick = showLarge;
+// };
+
+
+
+//按鈕寫入新的intcolor資料
+
+function showMemColor(jsonStrC){
+    let member = JSON.parse(jsonStrC);
+        if (member.memNo) {
+            if(member.intColor==0){
+                document.getElementById("intColor").style.backgroundColor = "rgba(255,255,0,.2)";
+            }
+            else{
+                document.getElementById("intColor").style.backgroundColor = "rgba(0,255,255,.2)";
+            }
+            document.getElementById("signInBg").style.display = "none";
+            //location.reload();//登入資訊抓取方式2:從整頁面
+        } 
+        else {
+            alert("白癡喔～你有問題拉～");
+        }
+}
+
+function sendColor0Form(){
+    let xhr = new XMLHttpRequest();
+    let memNo = document.getElementById('cavMemberN').innerText.toString().substring(3);
+    let intColor = '0';
+    console.log( "========77",memNo);
+    xhr.onload = function () {//使用ajax方法到Server端資料
+        showMemColor(xhr.responseText);
+    }
+    xhr.open("post", "./phps/changeIntColor.php", true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    
+    let data_infoColor = `intColor=${intColor}&memNo=${memNo}`;
+    console.log( "========88",memNo);
+    console.log( "========88",intColor);
+    xhr.send(data_infoColor);
+    
+
+}
+
+function sendColor1Form(){
+    let xhr = new XMLHttpRequest();
+    let memNo = document.getElementById('cavMemberN').innerText.toString().substring(3);
+    let intColor = '1';
+    console.log( "========77",memNo);
+    xhr.onload = function () {//使用ajax方法到Server端資料
+        showMemColor(xhr.responseText);
+    }
+    xhr.open("post", "./phps/changeIntColor.php", true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    
+    let data_infoColor = `intColor=${intColor}&memNo=${memNo}`;
+    console.log( "========88",memNo);
+    console.log( "========88",intColor);
+    xhr.send(data_infoColor);
+}
+
+
+let intColorBtn0 =document.getElementById("intColorBtn0");
+let intColorBtn1 =document.getElementById("intColorBtn1");
+intColorBtn0.onclick = function(){
+    sendColor0Form();
 };
-
-let picture_small = document.querySelectorAll(".memcolorSmall img");
-for (let i = 0; i < picture_small.length; i++) {
-    picture_small[i].onclick = showLarge;
+intColorBtn1.onclick = function(){
+    sendColor1Form();
 };
-
-
 
 //會員資訊_會員資料修改燈箱
 var setDataBg = document.getElementById("setDataBg");
@@ -298,9 +352,9 @@ function changeName(){
         console.log(error)
     })
 }
-// window.addEventListener("load", function () {
+window.addEventListener("load", function () {
 // changeName();
-// });
-window.addEventListener('load', function () {
-    setTimeout(changeName(), 500);
-}, false);
+});
+// window.addEventListener('load', function () {
+//     setTimeout(changeName(), 500);
+// }, false);

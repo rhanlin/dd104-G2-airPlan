@@ -2,7 +2,7 @@
     <div id="navHead" class="nav-navBgWrap">
         <div class="nav-navBg">
             <img src="./img/share/nav_lightBox.svg" alt="">
-            <nav class="nav-navWrap">
+            <nav id="intColor" class="nav-navWrap">
                 <!-- <div class="nav-topBlock">
                 登入和設定 
             </div> -->
@@ -264,6 +264,7 @@
             document.getElementById("signInStatusIconH").style.color = '#aaa';
             document.getElementById("signInStatusN").innerHTML = "登入";
             document.getElementById("signInStatusH").innerHTML = "登入";
+            document.getElementById("intColor").style.backgroundColor = "";
             location.reload();//登出後刷新頁面清除資料
         }
         xhr.open("get", "./phps/logout.php", true);
@@ -272,10 +273,13 @@
 
     function showMemInfo(jsonStr) {//////////////////顯示登入者資訊
         let member = JSON.parse(jsonStr);
+        console.log(member);
+        console.log('1111111',member.memName);
         if (member.memNo) {
-            console.log(member.memNo);
-            document.getElementById("cavMemberN").innerText = '會員:' + member.memNo;
-            document.getElementById("cavMemberH").innerText = '會員:' + member.memNo;
+            console.log('1111111',member.memName);
+            
+            document.getElementById("cavMemberN").innerText = '會員:' + member.memName +'-'+ member.memNo;
+            document.getElementById("cavMemberH").innerText = '會員:' + member.memName +'-'+ member.memNo;
             document.getElementById("cavPaperN").innerText = '信紙:' + member.letCount;
             document.getElementById("cavPaperH").innerText = '信紙:' + member.letCount;
             document.getElementById("cavCoinN").innerText = 'Air幣:' + member.airCoin;
@@ -284,8 +288,13 @@
             document.getElementById("signInStatusIconH").style.color = 'green';
             document.getElementById("signInStatusN").innerHTML = "登出";
             document.getElementById("signInStatusH").innerHTML = "登出";
+            if(member.intColor==0){
+                document.getElementById("intColor").style.backgroundColor = "rgba(255,255,0,.2)";
+            }
+            else{
+                document.getElementById("intColor").style.backgroundColor = "rgba(0,255,255,.2)";
+            }
             document.getElementById("signInBg").style.display = "none";
-            
             location.reload();//登入資訊抓取方式2:從整頁面
             //changeName();//登入資訊抓取方式1:登入後再次執行show資料的function
         } 
@@ -322,9 +331,10 @@
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
             let member = JSON.parse(xhr.responseText);
+            console.log(member.memName);
             if (member.memNo) {
-                document.getElementById("cavMemberN").innerText = '會員:' + member.memNo;
-                document.getElementById("cavMemberH").innerText = '會員:' + member.memNo;
+                document.getElementById("cavMemberN").innerText = '會員:' + member.memName +'-'+ member.memNo;
+                document.getElementById("cavMemberH").innerText = '會員:' + member.memName +'-'+ member.memNo;
                 document.getElementById("cavPaperN").innerText = '信紙:' + member.letCount;
                 document.getElementById("cavPaperH").innerText = '信紙:' + member.letCount;
                 document.getElementById("cavCoinN").innerText = 'Air幣:' + member.airCoin;
@@ -333,6 +343,12 @@
                 document.getElementById("signInStatusIconH").style.color = 'green';
                 document.getElementById("signInStatusN").innerHTML = "登出";
                 document.getElementById("signInStatusH").innerHTML = "登出";
+                if(member.intColor==0){
+                document.getElementById("intColor").style.backgroundColor = "rgba(255,255,0,.2)";
+                }
+                else{
+                    document.getElementById("intColor").style.backgroundColor = "rgba(0,255,255,.2)";
+                }
                 console.log( "========1",member.memNo);
             }
         }
@@ -340,11 +356,20 @@
         xhr.send(null);
     }
 
+    
+    function memName(){//////////////////memName產生器
+        var arr = ['波音','空巴'];
+        // var arr = ['波音777','波音747','波音787','空中巴士A350','空中巴士A380'];
+        var index = Math.floor((Math.random()*arr.length));
+        return arr[index];
+    }
 
     function sendRegisterForm() {//////////////////註冊表單發送
         const registermemEmail = document.getElementById("registerEmail").value;
         const registermemPsw = document.getElementById("registerPassword").value;
         const registermemPswCheck = document.getElementById("registerPasswordCheck").value;
+        const registermemName = memName();
+        console.log(registermemName);
         //-------------使用ajax方法到Server端資料
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
@@ -363,7 +388,7 @@
         xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         if (registermemEmail != '' && registermemPsw != '' && registermemPswCheck != '') {
             if (registermemPsw == registermemPswCheck) {
-                let data_info = `memEmail=${registermemEmail}&memPsw=${registermemPsw}`;
+                let data_info = `memName=${registermemName}&memEmail=${registermemEmail}&memPsw=${registermemPsw}`;
                 xhr.send(data_info);
             } else {
                 alert('密碼確認與第一次輸入不同');
