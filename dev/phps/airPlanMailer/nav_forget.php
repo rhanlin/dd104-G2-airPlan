@@ -7,8 +7,7 @@ try {
     $memberSearch->execute();
     if($memberSearch->rowCount() == 0 ){//找不到
         echo "{}";//傳回空的JSON字串
-    }
-    else{ //找得到
+    }else{ //找得到
         $sqlUpdate = "update `member` set memPsw=:memNewPsw where memEmail=:memEmail;";
         $memberUpdate = $pdo->prepare($sqlUpdate);
         $memberUpdate->bindValue(':memEmail', $_POST["memEmail"]);
@@ -23,7 +22,7 @@ try {
         $memRowCheck= $memberCheck->fetch(PDO::FETCH_ASSOC);
         
 
-        
+        //gmail寄送密碼
         $userEmailF = $_POST["memEmail"];
         $userPasswordF = $_POST["newPsw"];
         require("class.phpmailer.php");
@@ -44,14 +43,13 @@ try {
         try{
             $mail->Send();
             echo "Success!";
-        } catch(Exception $e){
+        }catch(Exception $e){
             //Something went bad
             echo "Fail - " . $mail->ErrorInfo;
         }
         //echo json_encode($memRowCheck);//送出json字串
     }
-} 
-catch (PDOException $e) {
+}catch (PDOException $e) {
 	echo "例外行號 : ", $e->getLine(),"<br>";
 	echo "例外原因 : ", $e->getMessage(),"<br>";		
 }

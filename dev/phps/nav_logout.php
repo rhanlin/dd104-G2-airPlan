@@ -6,3 +6,4 @@ unset($_SESSION["memNo"]);
 unset($_SESSION["letCount"]);
 unset($_SESSION["airCoin"]);
 unset($_SESSION["intColor"]);
+unset($_SESSION["matPosUrl"]);
