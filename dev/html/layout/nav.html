@@ -144,13 +144,13 @@
                   <P>Password:</P>
               </label>
               <input class="registerPassword" type="password" id="registerPassword" placeholder="password"
-                  name="memPsw" required>
+                  name="memPsw" maxlength="12" required>
 
               <label for="registerPasswordCheck">
                   <P>Password again:</P>
               </label>
               <input class="registerPasswordCheck" type="password" id="registerPasswordCheck"
-                  placeholder="password again" name="memPswAgain" required>
+                  placeholder="password again" name="memPswAgain" maxlength="12" required>
 
               <br>
               <button id="registerBtn" class="registerBtn" type="button" value="註冊">
@@ -252,116 +252,129 @@
 <!-- 登入系統 及 註冊系統 -->
 <script>
   function logout() {//////////////////登出
-      let xhr = new XMLHttpRequest();
-      xhr.onload = function () {
-          document.getElementById("cavMemberN").innerText = "";
-          document.getElementById("cavMemberH").innerText = "";
-          document.getElementById("cavPaperN").innerText = "";
-          document.getElementById("cavPaperH").innerText = "";
-          document.getElementById("cavCoinN").innerText = "";
-          document.getElementById("cavCoinH").innerText = "";
-          document.getElementById("signInStatusIconN").style.color = '#aaa';
-          document.getElementById("signInStatusIconH").style.color = '#aaa';
-          document.getElementById("signInStatusN").innerHTML = "登入";
-          document.getElementById("signInStatusH").innerHTML = "登入";
-          document.getElementById("intColor").style.backgroundColor = "";
-          location.reload();//登出後刷新頁面清除資料
-      }
-      xhr.open("get", "./phps/logout.php", true);
-      xhr.send(null)
-  }
-
-  function showMemInfo(jsonStr) {//////////////////顯示登入者資訊
-      let member = JSON.parse(jsonStr);
-      console.log(member);
-      console.log('1111111',member.memName);
-      if (member.memNo) {
-          console.log('1111111',member.memName);
-          
-          document.getElementById("cavMemberN").innerText = '會員:' + member.memName +'-'+ member.memNo;
-          document.getElementById("cavMemberH").innerText = '會員:' + member.memName +'-'+ member.memNo;
-          document.getElementById("cavPaperN").innerText = '信紙:' + member.letCount;
-          document.getElementById("cavPaperH").innerText = '信紙:' + member.letCount;
-          document.getElementById("cavCoinN").innerText = 'Air幣:' + member.airCoin;
-          document.getElementById("cavCoinH").innerText = 'Air幣:' + member.airCoin;
-          document.getElementById("signInStatusIconN").style.color = 'green';
-          document.getElementById("signInStatusIconH").style.color = 'green';
-          document.getElementById("signInStatusN").innerHTML = "登出";
-          document.getElementById("signInStatusH").innerHTML = "登出";
-          if(member.intColor==0){
-              document.getElementById("intColor").style.backgroundColor = "rgba(255,255,0,.2)";
-          }
-          else{
-              document.getElementById("intColor").style.backgroundColor = "rgba(0,255,255,.2)";
-          }
-          document.getElementById("signInBg").style.display = "none";
-          location.reload();//登入資訊抓取方式2:從整頁面
-          //changeName();//登入資訊抓取方式1:登入後再次執行show資料的function
-      } 
-      else {
-          alert("帳密錯誤");
-      }
-  }
-
-  function sendSignInForm() {//////////////////登入表單發送
-      const signInmemEmail = document.getElementById("signInEmail").value;
-      const signInmemPsw = document.getElementById("signInPassword").value;
-      let xhr = new XMLHttpRequest();
-      xhr.onload = function () {//使用ajax方法到Server端資料
-          showMemInfo(xhr.responseText);
-      }
-      xhr.open("post", "./phps/login.php", true);
-      xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-      if (signInmemEmail != '' && signInmemPsw != '') {
-          let data_info = `memEmail=${signInmemEmail}&memPsw=${signInmemPsw}`;
-          xhr.send(data_info);
-      }
-      else {
-          alert('欄位不可空白');
-      }
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+      document.getElementById("cavMemberN").innerText = "";
+      document.getElementById("cavMemberH").innerText = "";
+      document.getElementById("cavPaperN").innerText = "";
+      document.getElementById("cavPaperH").innerText = "";
+      document.getElementById("cavCoinN").innerText = "";
+      document.getElementById("cavCoinH").innerText = "";
+      document.getElementById("signInStatusIconN").style.color = '#aaa';
+      document.getElementById("signInStatusIconH").style.color = '#aaa';
+      document.getElementById("signInStatusN").innerHTML = "登入";
+      document.getElementById("signInStatusH").innerHTML = "登入";
+      document.getElementById("intColor").style.backgroundColor = "";
+      location.reload();//登出後刷新頁面清除資料
+    }
+    xhr.open("get", "./phps/nav_logout.php", true);
+    xhr.send(null)
   }
 
   function cancelSignIn() {//////////////////清除登入表單內容
-      document.getElementById("signInEmail").value = "";
-      document.getElementById("signInPassword").value = "";
-      document.getElementById("signInBg").style.display = "none";
+    document.getElementById("signInEmail").value = "";
+    document.getElementById("signInPassword").value = "";
+    document.getElementById("signInBg").style.display = "none";
   }
 
-  function getSignInInfo() {//////////////////取得登入資訊 依登入狀況呈現登入資訊
-      let xhr = new XMLHttpRequest();
-      xhr.onload = function () {
-          let member = JSON.parse(xhr.responseText);
-          console.log(member.memName);
-          if (member.memNo) {
-              document.getElementById("cavMemberN").innerText = '會員:' + member.memName +'-'+ member.memNo;
-              document.getElementById("cavMemberH").innerText = '會員:' + member.memName +'-'+ member.memNo;
-              document.getElementById("cavPaperN").innerText = '信紙:' + member.letCount;
-              document.getElementById("cavPaperH").innerText = '信紙:' + member.letCount;
-              document.getElementById("cavCoinN").innerText = 'Air幣:' + member.airCoin;
-              document.getElementById("cavCoinH").innerText = 'Air幣:' + member.airCoin;
-              document.getElementById("signInStatusIconN").style.color = 'green';
-              document.getElementById("signInStatusIconH").style.color = 'green';
-              document.getElementById("signInStatusN").innerHTML = "登出";
-              document.getElementById("signInStatusH").innerHTML = "登出";
-              if(member.intColor==0){
-              document.getElementById("intColor").style.backgroundColor = "rgba(255,255,0,.2)";
-              }
-              else{
-                  document.getElementById("intColor").style.backgroundColor = "rgba(0,255,255,.2)";
-              }
-              console.log( "========1",member.memNo);
-          }
+  function showMemInfo(jsonStr) {//////////////////顯示登入者資訊
+    let member = JSON.parse(jsonStr);
+    console.log(member);
+    console.log('1111111',member.memName);
+    if (member.memNo) {
+      console.log('1111111',member.memName);
+          
+      document.getElementById("cavMemberN").innerText = '會員:' + member.memName +'-'+ member.memNo;
+      document.getElementById("cavMemberH").innerText = '會員:' + member.memName +'-'+ member.memNo;
+      document.getElementById("cavPaperN").innerText = '信紙:' + member.letCount;
+      document.getElementById("cavPaperH").innerText = '信紙:' + member.letCount;
+      document.getElementById("cavCoinN").innerText = 'Air幣:' + member.airCoin;
+      document.getElementById("cavCoinH").innerText = 'Air幣:' + member.airCoin;
+      document.getElementById("signInStatusIconN").style.color = 'green';
+      document.getElementById("signInStatusIconH").style.color = 'green';
+      document.getElementById("signInStatusN").innerHTML = "登出";
+      document.getElementById("signInStatusH").innerHTML = "登出";
+      if(member.intColor==0){
+        document.getElementById("intColor").style.backgroundColor = "rgba(255, 190, 0, .2)";
+      }else{
+        document.getElementById("intColor").style.backgroundColor = "rgba(0,120, 250, .2)";
       }
-      xhr.open("get", "./phps/getSignInInfo.php", true);
-      xhr.send(null);
+      // document.getElementById("signInBg").style.display = "none";
+      cancelSignIn();
+      location.reload();//登入資訊抓取方式2:從整頁面
+      //changeName();//登入資訊抓取方式1:登入後再次執行show資料的function
+    }else{
+      alert("帳密錯誤");
+    }
+  }
+
+  function sendSignInForm() {//////////////////登入表單發送
+    const signInmemEmail = document.getElementById("signInEmail").value;
+    const signInmemPsw = document.getElementById("signInPassword").value;
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {//使用ajax方法到Server端資料
+      showMemInfo(xhr.responseText);
+    }
+    xhr.open("post", "./phps/nav_login.php", true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    if (signInmemEmail != '' && signInmemPsw != '') {
+      let data_info = `memEmail=${signInmemEmail}&memPsw=${signInmemPsw}`;
+      xhr.send(data_info);
+    }else {
+      alert('欄位不可空白');
+    }
+  }
+
+  
+
+  function getSignInInfo() {//////////////////取得登入資訊 依登入狀況呈現登入資訊
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+      let member = JSON.parse(xhr.responseText);
+      console.log("第一手session資料_memName:",member.memNo);
+      console.log("第一手session資料_memNo:",member.memName);
+      console.log("第一手session資料_letCount:",member.memEmail);
+      console.log("第一手session資料_airCoin:",member.letCount);
+      console.log("第一手session資料_intColor:",member.airCoin);
+      console.log("第一手session資料_intColor:",member.intColor);
+      console.log("第一手session資料_matPosUrl:",member.matPosUrl);
+      console.log("第一手session資料_memPsw:",member.memPsw);
+      if(member.memNo) {
+        document.getElementById("cavMemberN").innerText = '會員:' + member.memName +'-'+ member.memNo;
+        document.getElementById("cavMemberH").innerText = '會員:' + member.memName +'-'+ member.memNo;
+        document.getElementById("cavPaperN").innerText = '信紙:' + member.letCount;
+        document.getElementById("cavPaperH").innerText = '信紙:' + member.letCount;
+        document.getElementById("cavCoinN").innerText = 'Air幣:' + member.airCoin;
+        document.getElementById("cavCoinH").innerText = 'Air幣:' + member.airCoin;
+        document.getElementById("signInStatusIconN").style.color = 'green';
+        document.getElementById("signInStatusIconH").style.color = 'green';
+        document.getElementById("signInStatusN").innerHTML = "登出";
+        document.getElementById("signInStatusH").innerHTML = "登出";
+        if(member.intColor==0){
+          document.getElementById("intColor").style.backgroundColor = "rgba(255, 190, 0, .2)";
+        }else{
+          document.getElementById("intColor").style.backgroundColor = "rgba(0,120, 250, .2)";
+        }
+      }
+    }
+    xhr.open("get", "./phps/nav_getSignInInfo.php", true);
+    xhr.send(null);
   }
 
   
   function memName(){//////////////////memName產生器
-      var arr = ['波音','空巴'];
+      var arr = ['波音','空巴','達索'];
       // var arr = ['波音777','波音747','波音787','空中巴士A350','空中巴士A380'];
       var index = Math.floor((Math.random()*arr.length));
       return arr[index];
+  }
+
+  function cancelRegisterForm() {//////////////////清除註冊表單內容
+      document.getElementById("registerEmail").value = "";
+      document.getElementById("registerPassword").value = "";
+      document.getElementById("registerPasswordCheck").value = "";
+      document.getElementById("registerBg").style.display = "none";
+      document.getElementById("signInBg").style.display = "block";
   }
 
   function sendRegisterForm() {//////////////////註冊表單發送
@@ -376,36 +389,38 @@
           console.log(xhr.responseText);
           memberR = JSON.parse(xhr.responseText);
           console.log(memberR);
-          if (memberR.memEmail) {
-              document.getElementById("registerBg").style.display = "none";
+          if(memberR.memEmail) {
+              // document.getElementById("registerBg").style.display = "none";
+              cancelRegisterForm();
               alert(memberR.memEmail + ' ' + '您好！ 您已註冊成功');
           }
-          else {
+          else{
               alert('此Email已註冊過');
           }
       }
-      xhr.open("post", "./phps/register.php", true);
+      xhr.open("post", "./phps/nav_register.php", true);
       xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
       if (registermemEmail != '' && registermemPsw != '' && registermemPswCheck != '') {
-          if (registermemPsw == registermemPswCheck) {
+        if(registermemPsw.length>=8){
+          if(!registermemPsw.match(/[^a-zA-Z0-9]+/)){
+            if (registermemPsw == registermemPswCheck) {
               let data_info = `memName=${registermemName}&memEmail=${registermemEmail}&memPsw=${registermemPsw}`;
               xhr.send(data_info);
-          } else {
+            } else {
               alert('密碼確認與第一次輸入不同');
+            }
+          }else{
+            alert('密碼須為英文大小寫或數字');
           }
-      }
-      else {
-          alert('欄位不可空白');
+        }else{
+          alert('密碼長度需為8-12');
+        }
+      }else {
+         alert('欄位不可空白');
       }
   }
 
-  function cancelRegisterForm() {//////////////////清除註冊表單內容
-      document.getElementById("registerEmail").value = "";
-      document.getElementById("registerPassword").value = "";
-      document.getElementById("registerPasswordCheck").value = "";
-      document.getElementById("registerBg").style.display = "none";
-      document.getElementById("signInBg").style.display = "block";
-  }
+
 
   function newPsw(length) {//////////////////密碼產生器
       let newPsw = '';
@@ -416,7 +431,13 @@
       }
       return newPsw;
   }       
-      
+  
+  function cancelForgetForm() {//////////////////清除忘記密碼表單內容
+      document.getElementById("forgetEmail").value = "";
+      document.getElementById("forgetBg").style.display = "none";
+      document.getElementById("signInBg").style.display = "block";
+  }
+  
   function sendForgetForm() {//////////////////忘記密碼表單發送
       const forgetmemEmail = document.getElementById("forgetEmail").value;
       const memNewPsw = newPsw(8);//呼叫新密碼產生器
@@ -434,7 +455,7 @@
               alert('查無此Email');
           }
       }
-      xhr.open("post", "phps/airPlanMailer/forget.php", true);
+      xhr.open("post", "phps/airPlanMailer/nav_forget.php", true);
       xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
       // console.log(memNewPsw);
       if(forgetmemEmail != ''){
@@ -449,11 +470,7 @@
       
   }
 
-  function cancelForgetForm() {//////////////////清除忘記密碼表單內容
-      document.getElementById("forgetEmail").value = "";
-      document.getElementById("forgetBg").style.display = "none";
-      document.getElementById("signInBg").style.display = "block";
-  }
+
 
 
   window.addEventListener("load", function () {//////////////////表單按鈕事件聆聽
@@ -487,9 +504,8 @@
       })
   })
   closeSigin.onclick = function () {//////////////////x關閉登入燈箱
-      signInBg.style.display = "none";
+    cancelSignIn();  
   };
-
   const registerBg = document.getElementById("registerBg");//註冊燈箱
   const showRegister = document.getElementById("showRegister");
   const closeRegister = document.getElementById("closeRegister");
@@ -498,7 +514,8 @@
       signInBg.style.display = "none";
   };
   closeRegister.onclick = function () {//////////////////關閉註冊燈箱
-      registerBg.style.display = "none";
+      cancelRegisterForm();
+      signInBg.style.display = "none";
   };
 
   const forgetBg = document.getElementById("forgetBg");//忘記密碼燈箱
@@ -509,6 +526,7 @@
       signInBg.style.display = "none";
   };
   closeForget.onclick = function () {//////////////////關閉忘記密碼燈箱
-      forgetBg.style.display = "none";
+    cancelForgetForm();
+    signInBg.style.display = "none";
   };
 </script>
