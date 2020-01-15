@@ -22,9 +22,13 @@
 <body class="home_body">
     @@include("./layout/nav.html")
 
-    <div class="goTop">
-        <img class="goTop_plane" src="./img/home/goTop.svg" alt="">
+    <div class="goTop_box" id="goTop_box">
+        <div class="goTop">
+            <img class="goTop_plane" src="./img/home/goTop.svg" alt="">
+        </div>
+        <h5>TOP</h5>
     </div>
+
     <section class="home_first">
         <div class="cloudBlue"></div>
         <div class="firstLetter">
@@ -292,6 +296,16 @@
         } else {
             setTimeout(animate, 100);
         };
+    </script>
+    <script>
+        $(function () {
+            $("#goTop_box").click(function () {
+                $("html,body").animate({
+                    scrollTop: 0
+                }, 1000);
+                return false;
+            });
+        });
     </script>
 
     <script id="scollJS" src="./js/home_scroll.js"></script>
