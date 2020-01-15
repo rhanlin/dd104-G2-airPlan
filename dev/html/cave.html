@@ -127,17 +127,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <form id="cav-reportForm" action="./phps\cav-msgReport.php" method="get">
+                            <!-- <form id="cav-reportForm" action="./phps\cav-msgReport.php" method="get"> -->
+                            <form id="cav-reportForm">
                                 <div class="cav-reportList">
                                     <span class="closeTag">x</span>
                                     <h4>檢舉留言</h4>
                                     <h5>檢舉原因</h5>
                                     <select name="report" id="cav-reportSelector">
                                         <option value="reason" selected disabled>請選擇檢舉原因</option>
-                                        <option name="" value="badWord">不雅文字</option>
-                                        <option name="" value="abuse">謾罵、挑釁</option>
-                                        <option name="" value="hatred">引發仇恨</option>
-                                        <option name="" value="ad">廣告訊息</option>
+                                        <option name="msgRepReason" value="badWord">不雅文字</option>
+                                        <option name="msgRepReason" value="abuse">謾罵、挑釁</option>
+                                        <option name="msgRepReason" value="hatred">引發仇恨</option>
+                                        <option name="msgRepReason" value="ad">廣告訊息</option>
                                     </select><br>
                                     <button class="cav-sendReport" type="submit">送出檢舉</button>
                                 </div>
@@ -191,13 +192,10 @@
                         </div>
                         <div class="tab1 cav-leftBlock-2">
                             <div class="cav-prodWrap">
-                                <div class="cav-prod cav-prodU wearing"><img
-                                        src="./img/catch-letter/user-stamp/user-stamp_1.png">
+                                <div class="cav-prod cav-prodU wearing"><img src="./img/userStamp/user-stamp_1.png">
                                 </div>
-                                <div class="cav-prod cav-prodU"><img
-                                        src="./img/catch-letter/user-stamp/user-stamp_2.png"></div>
-                                <div class="cav-prod cav-prodU"><img
-                                        src="./img/catch-letter/user-stamp/user-stamp_3.png"></div>
+                                <div class="cav-prod cav-prodU"><img src="./img/userStamp/user-stamp_2.png"></div>
+                                <div class="cav-prod cav-prodU"><img src="./img/userStamp/user-stamp_3.png"></div>
                             </div>
                         </div>
                     </div>
