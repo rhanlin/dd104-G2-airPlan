@@ -31,25 +31,23 @@ function catchALetter(){
   })
   .then(res=>res.json()).then(json=>{
     console.log(json);
-    vmCatchLetter.letteTittle = json.data.letTitle;
-    vmCatchLetter.letterContant_1 = json.data.letContent;
-    // vmCatchLetter.letterContant_2 = json.articles[randNews].content;
-    vmCatchLetter.publishedAt = `publishedAt: ${json.data.letTime}`;
-    vmCatchLetter.author = `author: ${json.data.memNo}`;
-    vmCatchLetter.letterUploadImg = `url(${json.data.imgUrl})`;
+    vmCatchLetter.letteTittle = json.letter.letTitle;
+    vmCatchLetter.letterContant_1 = json.letter.letContent;
+    vmCatchLetter.publishedAt = `publishedAt: ${json.letter.letTime}`;
+    vmCatchLetter.author = `author: ${json.letter.memNo}`;
+    vmCatchLetter.letterUploadImg = `url(${json.letter.imgUrl})`;
 
     //內頁
-    vmCatchLet.letteTittle = json.data.letTitle;
-    vmCatchLet.letterContant_1 = json.data.letContent;
-    // vmCatchLet.letterContant_2 = json.articles[randNews].content;
-    vmCatchLet.publishedAt = `publishedAt: ${json.data.letTime}`;
-    vmCatchLet.author = `author: ${json.data.memNo}`;
-    vmCatchLet.letterUploadImg = `url(${json.data.imgUrl})`;
+    vmCatchLet.letteTittle = json.letter.letTitle;
+    vmCatchLet.letterContant_1 = json.letter.letContent;
+    vmCatchLet.publishedAt = `publishedAt: ${json.letter.letTime}`;
+    vmCatchLet.author = `author: ${json.letter.memNo}`;
+    vmCatchLet.letterUploadImg = `url(${json.letter.imgUrl})`;
 
     //將留言存起來
-    vmCatchLet.letNo = json.data.letNo;
+    vmCatchLet.letNo = json.letter.letNo;
     
-  })
+  }).catch(err=>console.log(err))
   
 }
 
