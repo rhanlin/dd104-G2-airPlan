@@ -16,9 +16,8 @@
     @@include("./layout/header.html")
     <main class="chatroom-main">
         <section class="mainSection">
-            <div class="sectionOver">
-                <input type="hidden" name="memNo2" id="memNo2">
-            </div>
+            <div class="sectionOver"></div>
+            <input type="hidden" name="memNo2" id="memNo2">
         </section>
         <div class="mainBook">
             <div class="bookDashed">
@@ -50,61 +49,61 @@
     @@include("./layout/footer.html")
 
     <script>
-        let data = [];
-        let memNo2 = document.getElementById("memNo2");
-        // let xhr = new XMLHttpRequest();
-        // function get_mem (str) {
-        //     let memNo1 = JSON.parse(str);
-        //     alert(str);
-        // }
+        // let data = [];
+        let mem2 = document.getElementById("memNo2").value;
 
-        // window.addEventListener("load", function(str){
-        //     // let data = JSON.parse(str);
-        //     console.log(data['mark'])
-        //     if (data['mark']) {
-        //         console.log($('#signInStatusN').text())
-        //         showMark();
-        //     } else {
-        //         alert("請登入");
-        //     }
-        // },true);
-
-        // function showMark() {
         window.addEventListener("load", function () {
             getLogin();
+            document.getElementsByClassName('sendBtn')[0].addEventListener('click', sendText,
+                false); //=====當點擊mark時執行傳送聊天內容
+            let Mark = document.querySelectorAll('.sectionMark1');
+            Mark[0].classList.add("MarkRed"); //=====第一個mark顯示為紅色
+            // showChat(member); //=====執行傳送聊天內容
+            // console.log(Mark[0].classList);
+            if (Mark.length > 0) { //=====聊天列表為0
+                for (let i = 0; i < Mark.length; i++) {
+                    Mark[i].addEventListener('click', function (e) {
+                        document.getElementsByClassName('pageContent')[0].innerHTML = ""; //=====清空聊天室內容
+                        reget(mem2); //=====執行再撈一次聊天室內容
+                        // get_chat(mem2);//=====執行撈取資料
+                        get_Data();
+                        for (let j = 0; j < Mark.length; j++) {
+                            Mark[j].classList.remove("MarkRed"); //=====移除所有mark的顏色
+                        }
+                        e.currentTarget.classList.add("MarkRed"); //=====點到的mark新增紅色的class
+
+                        // console.log(memNo2.value)
+                    })
+                };
+            } else {
+                $('.sectionOver').append(
+                    `<div class='sectionMark1'><div class='overImg'><img src='./img/share/LOGO.png'></div><p>Air Plan</p></div>`
+                );
+                $('.pageContent').append(
+                    `<div class='contentYour'><div class='overImg'><img src='./img/share/LOGO.png'></div><p>快加入好友，一起來聊天吧！</p></div>`
+                );
+            }
         }, true);
-        // };
 
         function getLogin() {
             let xhr = new XMLHttpRequest();
             xhr.onload = function () {
-                let xhr = new XMLHttpRequest();
                 member = JSON.parse(xhr.responseText);
-                console.log(xhr.responseText)
-                // if (member.memNo) {
-                //     get_chat();
-                //     document.getElementsByClassName('sendBtn')[0].addEventListener('click', sendText, false);
-                //     let Mark = document.querySelectorAll('.sectionMark1');
-                //     Mark[0].classList.add("MarkRed");
-                //     // console.log(Mark[0].classList);
-                //     for (let i = 0; i < Mark.length; i++) {
-                //         Mark[i].addEventListener('click', function (e) {
-                //             document.getElementsByClassName('pageContent')[0].innerHTML = "";
-                //             reget();
-                //             for (let j = 0; j < Mark.length; j++) {
-                //                 Mark[j].classList.remove("MarkRed");
-                //             }
-                //             e.currentTarget.classList.add("MarkRed");
-                //             memNo2.value = e.currentTarget.childNodes[1].innerText;
-                //             // console.log(memNo2.value)
-                //         })
-                //     };
-                // } else {
-
-                // }
+                // console.log(member.memNo)
+                if (member.memNo) { //=====為登入狀態
+                    get_Data(member.memNo); //=====執行撈聊天列表
+                    console.log(mem2)
+                } else {
+                    $('.sectionOver').append(
+                        `<div class='sectionMark1'><div class='overImg'><img src='./img/share/LOGO.png'></div><p>Air Plan</p></div>`
+                    );
+                    $('.pageContent').append(
+                        `<div class='contentYour'><div class='overImg'><img src='./img/share/LOGO.png'></div><p>請先登入</p></div>`
+                    );
+                }
 
             }
-            xhr.open('post', './phps/chatroom.php', false);
+            xhr.open('post', './phps/getSignInInfo.php', false);
             xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
             xhr.send(null);
         }
@@ -112,50 +111,61 @@
         // 抓聊天列表的資料
         function showData(str) {
             let data = JSON.parse(str);
-            // console.log(data['mark']);
-            // console.log(data['chat'][0].chatContent);
+            let overChil = document.getElementsByClassName('sectionOver')[0].childNodes.length;
+            let markLen = document.querySelectorAll('.sectionMark1').length;
             if (data != "") {
-                if (data['mark']) {
-                    for (var i in data['mark']) {
+                if (overChil > 0) {
+                    for ($i = overChil; $i > markLen; i++) {
+                        console.log(i)
+                        document.getElementsByClassName('sectionOver')[0].removeChild(i);
+                    }
+            // console.log(overChil)
+                } else {
+                    for (var i in data) {
                         $('.sectionOver').append(
-                            `<div class='sectionMark1'><div class='overImg'><img src='${data['mark'][i].matPosUrl}'></div><p>${data['mark'][i].memName}</p></div>`,
+                            `<div class='sectionMark1'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].memName}</p></div>`,
                         );
                     }
+                    // console.log($('.sectionOver').children.length)
+                    // console.log(document.querySelectorAll('.sectionMark1').length)
+
                 }
-            } else {
-                alert('沒抓到資料');
+                mem2 = document.querySelectorAll('.sectionMark1')[0].childNodes[1].innerText;
+                get_chat(document.querySelectorAll('.sectionMark1')[0].childNodes[1].innerText); //=====執行聊天內容
             }
+
         }
 
         // 抓聊天內容
         function showChat(str) {
-            let data = JSON.parse(str);
-            for (var i in data['chat']) {
-                // console.log(data['chat'][i].chatContent);
-                if (data['chat'][i].memNo1 == '1') {
+            // let data = JSON.parse(str);
+            // console.log(str);
+            for (var i in str) {
+                // console.log(str['chat'][i].chatContent);
+                // console.log(125)
+                if (str[i].memNo1 == '1') {
                     $(`.pageContent`).append(
-                        `<div class='contentMe'><p>${data['chat'][i].chatContent}</p></div>`);
-                    // console.log(data['chat'][i].chatContent);
+                        `<div class='contentMe'><p>${str[i].chatContent}</p></div>`);
+                    // console.log(str['chat'][i].chatContent);
                 } else {
                     $('.pageContent').append(
-                        `<div class='contentYour'><div class='overImg'><img src='${data['chat'][i].matPosUrl}'></div><p>${data['chat'][i].chatContent}</p></div>`
+                        `<div class='contentYour'><div class='overImg'><img src='${str[i].matPosUrl}'></div><p>${str[i].chatContent}</p></div>`
                     );
                 }
             }
         }
 
-        function get_chat() {
+        function get_Data(memNo1) {
             let xhr = new XMLHttpRequest();
             document.getElementById("catch").value = 'mark';
             let mark = document.getElementById("catch").value;
-            let data_info = "catch=" + mark + "&memNo2=" + memNo2;
-            // console.log(memNo2)
+            let data_info = "catch=" + mark + "&memNo1=" + memNo1;
             xhr.onload = function () {
                 if (xhr.status == 200) {
                     // console.log(xhr.responseText);
                     data = xhr.responseText;
                     showData(data);
-                    showChat(data);
+                    // get_chat(mem2);
                 } else {
                     alert(xhr.status, xhr.statusText);
                 }
@@ -165,19 +175,38 @@
             xhr.send(data_info);
         }
 
+        function get_chat(memNo2) {
+
+            let xhr = new XMLHttpRequest();
+            document.getElementById("catch").value = 'chat';
+            let chat = document.getElementById("catch").value;
+            let data_info = "catch=" + chat + "&memNo2=" + memNo2;
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    console.log(xhr.responseText);
+                    // data = xhr.responseText;
+                    showChat(xhr.responseText);
+                } else {
+                    alert(xhr.status, xhr.statusText);
+                }
+            }
+
+            xhr.open('post', './phps/chatroom.php', false);
+            xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+            xhr.send(data_info);
+        }
+
         function reget() {
             let xhr = new XMLHttpRequest();
             document.getElementById("catch").value = 'mark';
-            // memNo2 = Mark[i].childNodes[1].innerText;
-            // console.log(Mark[i].childNodes[1].innerText)
             let mark = document.getElementById("catch").value;
-            let data_info = "catch=" + mark + "&memNo2=" + 2;
+            let data_info = "catch=" + mark + "&memNo2=" + memNo2;
             // console.log(document.getElementById("catch").value)
             xhr.onload = function () {
                 if (xhr.status == 200) {
                     // console.log(xhr.responseText);
                     data = xhr.responseText;
-                    showChat(data);
+                    // showChat(data);
                 } else {
                     alert(xhr.status);
                 }
