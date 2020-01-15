@@ -61,7 +61,19 @@ let vmCatchLetter = new Vue({
     net.style.top = e.pageY + 'px';
   })
   
-  
+  //將留言送到後端
+  function submitLeaveMsg(){
+    // console.log(`letNo=${vmCatchLet.letNo}`);
+    //memNo, letNo, msgContent
+    let leaveMsg = document.getElementById('leaveMsg').value;
+    fetch('./phps/userLeaveMsg.php',{
+      method: 'POST',
+      body: new URLSearchParams(`memNo=${vmCatchLet.userNo}&letNo=${vmCatchLet.letNo}&msgContent=${leaveMsg}`)
+    })
+    // .then(res=>res.json()).then(json=>{
+    //   console.log(json);
+    // })
+  }
 
   function mouseDownFn() {
     net.style.transform = 'rotate(-45deg)';
@@ -200,6 +212,7 @@ let vmCatchLetter = new Vue({
         threeWorld.style.animationFillMode = "forwards";
         setTimeout(()=>{
           threeWorld.style.display = "none";
+          
           document.getElementById('navHead').classList = "nav-navBgWrap";//選單向下出來
           document.getElementById('catchLetterMain').style.display = "block";
           document.getElementById('catchLetterMain').style.animationName = "showCatchLetter";

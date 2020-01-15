@@ -25,7 +25,10 @@ function catchNews(){
 }
 
 function catchALetter(){
-  fetch('./phps/catchLetter.php')
+  fetch('./phps/catchLetter.php',{
+    method: 'POST',
+    body: new URLSearchParams(`memNo=${vmCatchLet.userNo}`),
+  })
   .then(res=>res.json()).then(json=>{
     console.log(json);
     vmCatchLetter.letteTittle = json.data.letTitle;
@@ -35,7 +38,6 @@ function catchALetter(){
     vmCatchLetter.author = `author: ${json.data.memNo}`;
     vmCatchLetter.letterUploadImg = `url(${json.data.imgUrl})`;
 
-
     //內頁
     vmCatchLet.letteTittle = json.data.letTitle;
     vmCatchLet.letterContant_1 = json.data.letContent;
@@ -43,6 +45,10 @@ function catchALetter(){
     vmCatchLet.publishedAt = `publishedAt: ${json.data.letTime}`;
     vmCatchLet.author = `author: ${json.data.memNo}`;
     vmCatchLet.letterUploadImg = `url(${json.data.imgUrl})`;
+
+    //將留言存起來
+    vmCatchLet.letNo = json.data.letNo;
+    
   })
   
 }

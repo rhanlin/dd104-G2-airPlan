@@ -199,8 +199,9 @@
 
             .side-way__text {
                 transform: rotateX(30deg) rotateZ(-180deg) rotateY(180deg);
-                font: bold 4vw "微軟正黑體";
+                font: bold 2.5rem "Noto Sans TC";
                 color: white;
+                text-align: center;
             }
         }
 
@@ -218,13 +219,39 @@
         --box-deep: 1rem !important;
     }
 
-    //   .btn-big-test:hover {
-    //     --box-deep: 1rem !important;
-    //    }
+    .btn-big-test:active {
+        --box-deep: 1rem !important;
+    }
 
-    //    .btn-big-test:hover .top{
-    //        box-shadow: 0 -3px 5px 0 var(--light), 0 -5px 10px 0 var(--light-2);
-    //    }
+    .btn-big-test:active .top {
+        box-shadow: 0 -3px 5px 0 var(--light), 0 -5px 10px 0 var(--light-2);
+    }
+
+    @include respond(note) {
+        .btn-big-test {
+            --color: #f3de6b;
+            --color-dark: #e7cc56;
+            --color-dark-side-way: #e7cc56;
+            --box-height: 200%;
+            --box-width: 305%;
+            --box-deep: 11vw;
+            --light: #212121;
+            --light-2: #f08b8c;
+        }
+    }
+
+    @include respond(iphone) {
+        .btn-big-test {
+            --color: #f3de6b;
+            --color-dark: #e7cc56;
+            --color-dark-side-way: #e7cc56;
+            --box-height: 200%;
+            --box-width: 305%;
+            --box-deep: 11vw;
+            --light: #212121;
+            --light-2: #f08b8c;
+        }
+    }
 
     @keyframes rotate {
         100% {
@@ -265,12 +292,12 @@
     // $border-weight-half: $border-weight / 2;
 
 
-    .btn{
+    .btn {
         /*
         button,
         input[type="submit"] 
         */
-    
+
         transition:
             transform $btn-animation-duration,
             background-color $btn-animation-duration;
@@ -353,6 +380,7 @@
             transform: translate($btn-press-depth, -$btn-press-depth);
             background: $btn-side-colour;
             outline: none;
+
             &:before,
             &:after {
                 background: $btn-side-colour-pressed;
@@ -367,12 +395,14 @@
             }
 
         }
+
         &:active,
         &:focus {
             outline: none;
             transform: translate($btn-press-depth, -$btn-press-depth);
             background: $main-dark-red;
             color: #fff;
+
             &:before,
             &:after {
                 background: $main-dark-red;
@@ -387,11 +417,13 @@
             }
 
         }
-        &.click{
+
+        &.click {
             outline: none;
             transform: translate($btn-press-depth, -$btn-press-depth);
             background: $main-dark-red;
             color: #fff;
+
             &:before,
             &:after {
                 background: $main-dark-red;

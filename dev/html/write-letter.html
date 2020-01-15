@@ -158,7 +158,7 @@
                 <span class="arrow-white"></span>
                     <div id="painteType" class="painte-type">
                         
-                        <template v-for="(item, index) in 3"><!-- 3要改成 用戶的素材長度 -->
+                        <template v-for="(item, index) in userPattern.length">
                             <label class="type" :class="{active: index === openIndex}"
                                 @click.prevent="clickPattern($event,index)" 
                                 @touchstart.prevent="clickPattern($event,index)">
@@ -199,7 +199,7 @@
                             <div class="select-stamp">
                                 <span class="arrow-white"></span>
                                 <div class="stamp-type">
-                                    <template v-for="(item,index) in 3">
+                                    <template v-for="(item,index) in userStamp.length">
                                         <button class="type" name="userStamp" :value="stampValue[index]" type="button"
                                         @click="clickStamp"
                                         @touchstart="clickStamp">
