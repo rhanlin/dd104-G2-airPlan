@@ -1,6 +1,6 @@
 <?php
 try {
-    require_once("connectBook_cave.php");
+    require_once("connectBook_root.php");
     $sql = "select * from `letter` where memNo=:memNo order by letTime DESC ";
     $letter = $pdo->prepare($sql);
     $letter->bindValue(":memNo", $_POST["memNo"]);

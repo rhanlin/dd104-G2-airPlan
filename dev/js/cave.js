@@ -2,11 +2,17 @@ $(document).ready(function () {
   async function cavAjax() {
     /* AJAX  撈取我的信件、撈取信件內容  */
     await $.ajax({
-      url: 'http://localhost/dev-g2/dev/phps/cav-whosLetter.php',
+      url: "http://localhost/dev-g2/dev/phps/cav-whosLetter.php",
       type: "POST",
       dataType: "json",
       data: {
-        "memNo": $("#cavMemberN").text().split(":")[$("#cavMemberN").text().split(":").length - 1]
+        memNo: $("#cavMemberN")
+          .text()
+          .split(":")[
+          $("#cavMemberN")
+            .text()
+            .split(":").length - 1
+        ]
       },
 
       success: function (letRow) {
@@ -16,31 +22,47 @@ $(document).ready(function () {
         let fullLet = new Array();
 
         for (i = 0; i < letRow.length; i++) {
-          myLet = myLetter(myLet, letRow[i].letTitle, letRow[i].letTime, letRow[i].letNo);//撈取歷史信件
-          fullLet.push([letRow[i].letTitle, letRow[i].letContent, letRow[i].imgUrl]);//單一信件所需內容
+          myLet = myLetter(
+            myLet,
+            letRow[i].letTitle,
+            letRow[i].letTime,
+            letRow[i].letNo
+          ); //撈取歷史信件
+          fullLet.push([
+            letRow[i].letTitle,
+            letRow[i].letContent,
+            letRow[i].imgUrl
+          ]); //單一信件所需內容
           // console.log(fullLet);
 
-          $('.cav-histLetter2').html(myLet);
+          $(".cav-histLetter2").html(myLet);
         }
 
         /* 點擊歷史信件秀出對應信件標題、內文、圖片 */
         function letterContent(fullLet) {
-          $('.cav-letters').on("click", function () {
-            letTit = $(this).find('.cav-letTitle').text();
+          $(".cav-letters").on("click", function () {
+            letTit = $(this)
+              .find(".cav-letTitle")
+              .text();
             // console.log(letTit);
             // console.log(fullLet)
 
             for (let i = 0; i < fullLet.length; i++) {
               if (letTit == fullLet[i][0]) {
-                $(".letter-tittle").children("h3").text(fullLet[i][0]);
-                $(".text").children("p").text(fullLet[i][1]);
-                $(".letter-upload-img").children("img").attr("src", fullLet[i][2]);
+                $(".letter-tittle")
+                  .children("h3")
+                  .text(fullLet[i][0]);
+                $(".text")
+                  .children("p")
+                  .text(fullLet[i][1]);
+                $(".letter-upload-img")
+                  .children("img")
+                  .attr("src", fullLet[i][2]);
                 // $(".cav-letNo").text("no." + fullLet[i][3]);
                 console.log(fullLet[i][0]);
                 break;
               }
             }
-
           });
         }
         letterContent(fullLet);
@@ -54,36 +76,79 @@ $(document).ready(function () {
     /*AJAX 撈取信件回覆 */
     $(function () {
       $(".cav-letters").on("click", function () {
-        let witchLetMsg = $(this).find('.cav-letTitle').attr("data-letter-num");
+        let witchLetMsg = $(this).find(".cav-letTitle").attr("data-letter-num");
         $.ajax({
           url: "http://localhost/dev-g2/dev/phps/cav-letMessage.php",
           type: "GET",
           dataType: "json",
-          data: { "letNo": witchLetMsg },
+          data: { letNo: witchLetMsg },
           success: function (msgRow) {
             console.log(msgRow);
             let letReply = "";
             // let witchLetMsg;
-
             // console.log(witchLetMsg);
 
-            for (let i = 0; i < msgRow.length; i++) { //撈出所有回覆
-              letReply = letterReply(letReply, msgRow[i].memNo, msgRow[i].msgTime, msgRow[i].msgContent);
-              // console.log(letReply);
-
+            for (let i = 0; i < msgRow.length; i++) {
+              //撈出所有回覆
+              letReply = letterReply(
+                letReply,
+                msgRow[i].memNo,
+                msgRow[i].msgTime,
+                msgRow[i].msgContent,
+                msgRow[i].msgNo
+              );
+              console.log(letReply);
             }
-            $('.cav-replys').html(letReply);
 
+            $(".cav-replys").html(letReply);
 
             //打賞跳金幣,並只能打賞一次
             $(function () {
-              $(".like").on("click", function () {
+              $(".like").on("click", function (e) {
+                // console.log(e.target.parentNode);
+                let obj = e.target.parentNode;
+                let likeThis = $(this).attr("data-like");
+                console.log($(this).attr("data-like"));
+                let whoLike = $("#cavMemberN").text().split(":")[$("#cavMemberN").text().split(":").length - 1];
+                let now = new Date();
+                let likeTime = now.getFullYear() + "-" + now.getMonth() + "-" + now.getDate() +
+                  " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+                console.log(likeThis);
+                console.log(whoLike);
+                console.log(likeTime);
+                $.ajax({
+                  url: "http://localhost/dev-g2/dev/phps/cav-msgLike.php",
+                  type: "GET",
+                  dataType: "json",
+                  data: {
+                    "likeThis": likeThis,
+                    "whoLike": whoLike,
+                    "likeTime": likeTime,
+                  },
+                  success: function (likeRow) {
+                    console.log('8787', likeRow);
+                    if (likeRow.memNo != 0) {
+                      // $(this).parent().attr("disabled", true);
+                      // $(this).attr("disabled", true);
+                      obj.disabled = true;
+                      console.log(obj);
+                      // console.log($(this).parent().attr("data-like"));
+                      // console.log(666);
+                    } else {
+                      console.log(111);
+                    }
+                  },
+                  error: function (likeRow) {
+                    console.log(likeRow);
+                  }
+                });
+
                 $(this).parents(".cav-letComment").find(".cav-commId").addClass("active");
                 console.log("coin");
                 setTimeout(() => {
-                  $(".cav-commId").removeClass('active');
-                }, 1000)
-                $(this).attr("disabled", true);
+                  $(".cav-commId").removeClass("active");
+                }, 1000);
+                // $(this).attr("disabled", true);
               });
             });
 
@@ -106,21 +171,41 @@ $(document).ready(function () {
                 }
               });
             });
-
           },
           error: function (msgRow) {
             console.log(msgRow);
           }
         });
-      })
+        checkLike();
+
+        function checkLike() {
+          let xhr = new XMLHttpRequest();
+          xhr.onload = function () {
+            let member = JSON.parse(xhr.responseText);
+            if (member.memNo) {
+              document.getElementById("cavMemberN").innerText = '會員:' + member.memNo;
+              document.getElementById("cavMemberH").innerText = '會員:' + member.memNo;
+              document.getElementById("cavPaperN").innerText = '信紙:' + member.letCount;
+              document.getElementById("cavPaperH").innerText = '信紙:' + member.letCount;
+              document.getElementById("cavCoinN").innerText = 'Air幣:' + member.airCoin;
+              document.getElementById("cavCoinH").innerText = 'Air幣:' + member.airCoin;
+              document.getElementById("signInStatusIconN").style.color = 'green';
+              document.getElementById("signInStatusIconH").style.color = 'green';
+              document.getElementById("signInStatusN").innerHTML = "登出";
+              document.getElementById("signInStatusH").innerHTML = "登出";
+              console.log("========1", member.memNo);
+            }
+          }
+          xhr.open("get", "./phps/checkLike.php", true);
+          xhr.send(null);
+        }
+      });
     });
   }
 
   window.addEventListener("load", function () {
-    setTimeout(cavAjax, 100)
+    setTimeout(cavAjax, 100);
   });
-
-
 
   // function getMemberNo() {
   //   var memberNo = document.getElementById("cavMemberN").innerText;
@@ -132,7 +217,6 @@ $(document).ready(function () {
 
   // }
 
-
   /* ------------------------------------------------------------------- */
   function cavJs() {
     //bookMarkL
@@ -140,7 +224,10 @@ $(document).ready(function () {
       $("a.tab1").on("click", function (e) {
         e.preventDefault();
 
-        $(this).closest("ul").find("a.tab1").removeClass("-on");
+        $(this)
+          .closest("ul")
+          .find("a.tab1")
+          .removeClass("-on");
         $(this).addClass("-on");
 
         $("div.tab1").removeClass("-on");
@@ -155,7 +242,10 @@ $(document).ready(function () {
       $("a.tab2").on("click", function (e) {
         e.preventDefault();
 
-        $(this).closest("ul").find("a.tab2").removeClass("-on");
+        $(this)
+          .closest("ul")
+          .find("a.tab2")
+          .removeClass("-on");
         $(this).addClass("-on");
 
         $("div.tab2").removeClass("-on");
@@ -171,43 +261,38 @@ $(document).ready(function () {
       });
     });
 
-
     //顯示正在看的歷史信件
     $(function () {
       $(".cav-letters").on("click", function () {
         $(".cav-letters").removeClass("cav-looking");
         $(this).addClass("cav-looking");
-      })
+      });
     });
-
 
     //更換按鈕
-    $('.switchBtn').mousedown(function () {
-      $(this).addClass('clicked');
+    $(".switchBtn").mousedown(function () {
+      $(this).addClass("clicked");
     });
-    $('.switchBtn').mouseup(function () {
-      $(this).removeClass('clicked');
-    });
-
-    $('.orderBtn').mousedown(function () {
-      $(this).addClass('clicked');
-    });
-    $('.orderBtn').mouseup(function () {
-      $(this).removeClass('clicked');
+    $(".switchBtn").mouseup(function () {
+      $(this).removeClass("clicked");
     });
 
+    $(".orderBtn").mousedown(function () {
+      $(this).addClass("clicked");
+    });
+    $(".orderBtn").mouseup(function () {
+      $(this).removeClass("clicked");
+    });
 
     //單一信件跳窗
     $(function () {
       $(".cav-letters").on("click", function (e) {
-        $('.cav-boxFrontRight').addClass('active');
+        $(".cav-boxFrontRight").addClass("active");
       });
       $(".cav-letClose").on("click", function (e) {
-        $('.cav-boxFrontRight').removeClass('active');
+        $(".cav-boxFrontRight").removeClass("active");
       });
     });
-
-
 
     //顯示信件紀錄更多選項
     // $(function () {
@@ -250,7 +335,6 @@ $(document).ready(function () {
     //   });
     // });
 
-
     //選取所要套用的圖案
     $(function () {
       $("div.cav-prodI").on("click", function () {
@@ -269,28 +353,30 @@ $(document).ready(function () {
 
     //預覽要套用的圖案
     $(function () {
-      $(".cav-prodI").find("img").on("click", function () {
-        let ii = $(this).attr("src");
-        // console.log(ii);
-        $(".cav-mask-1").css("background-image", `url(${ii})`);
-      });
+      $(".cav-prodI")
+        .find("img")
+        .on("click", function () {
+          let ii = $(this).attr("src");
+          // console.log(ii);
+          $(".cav-mask-1").css("background-image", `url(${ii})`);
+        });
     });
 
     //預覽要套用的郵戳
     $(function () {
-      $(".cav-prodU").find("img").on("click", function () {
-        let uu = $(this).attr("src");
-        // console.log(uu);
-        $(".cav-mask-2").css("background-image", `url(${uu})`);
-      });
+      $(".cav-prodU")
+        .find("img")
+        .on("click", function () {
+          let uu = $(this).attr("src");
+          // console.log(uu);
+          $(".cav-mask-2").css("background-image", `url(${uu})`);
+        });
     });
   }
 
   window.addEventListener("load", function () {
-    setTimeout(cavJs, 200)
+    setTimeout(cavJs, 200);
   });
-
-
 
   //資料串接
   // function showletter(jsonStr) {
@@ -301,7 +387,7 @@ $(document).ready(function () {
   //     letTitle = letter.letTitle;
   //     letTime = letter.letTime;
   //     console.log(letTitle);
-  //   } 
+  //   }
   //   document.getElementsByClassName("cav-letTitle")[0].innerHTML = letTitle;
   //   document.getElementsByClassName("cav-letTime")[0].innerHTML = letTime;
   // }
@@ -342,12 +428,12 @@ $(document).ready(function () {
       </div>
 
       </div>  
-       `
+       `;
     return myLet;
-  };
+  }
 
   //動態產生回復留言
-  function letterReply(letReply, memNo, msgTime, msgContent) {
+  function letterReply(letReply, memNo, msgTime, msgContent, msgNo) {
     letReply += `<div class="cav-letComment">
       <div class="cav-commMain">
           <div class="cav-commHead">
@@ -359,7 +445,7 @@ $(document).ready(function () {
       <div class="cav-commOption">
           <div class="cav-commLike">
               <div class="circle threed">
-                  <button class="circle button like">
+                  <button class="circle button like" data-like="${msgNo}">
                       <img src="./img/cave/coin.png" alt=""></i></button>
               </div>
           </div>
@@ -372,8 +458,7 @@ $(document).ready(function () {
           </div>
       </div>
   </div>
-  `
+  `;
     return letReply;
-  };
+  }
 });
-

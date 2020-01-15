@@ -8,7 +8,7 @@ try {
 	if( $memberE->rowCount() == 0 ){ //尚未註冊過
 		$sql = "insert into `member` (memName, memPsw, memEmail, letCount, airCoin, intColor) values (:memName, :memPsw, :memEmail, :letCount, :airCoin, :intColor)";
 		$member = $pdo->prepare( $sql );
-		$member->bindValue(':memName', '波音');
+		$member->bindValue(':memName', $_POST['memName']);
 		$member->bindValue(':memPsw', $_POST['memPsw']);
 		$member->bindValue(':memEmail', $_POST['memEmail']);
 		$member->bindValue(':letCount', 5);
