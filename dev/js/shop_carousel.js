@@ -7,8 +7,11 @@ $(document).ready(function () {
     mouseDrag: false,
     touchDrag: false,
     responsive: {
-      499: {
+      376: {
         items: 4,
+      },
+      499: {
+        items: 5,
       },
       575: {
         items: 5,
