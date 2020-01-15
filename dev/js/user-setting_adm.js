@@ -159,75 +159,54 @@ new Vue({
 
 
 //JS
-//會員資訊_外觀設定
-//小圖換大圖
-// function showLarge(e) {
-//     let memsmall = e.target;
-//     document.getElementById("memcolorBigLarge").src = memsmall.src;
-// };
-// let picture_small = document.querySelectorAll(".memcolorSmall img");
-// for (let i = 0; i < picture_small.length; i++) {
-//     picture_small[i].onclick = showLarge;
-// };
-
-
 
 //按鈕寫入新的intcolor資料
-
-function showMemColor(jsonStrC){
+function showMemColor(jsonStrC){//依intColor資料顯示介面顏色
     let member = JSON.parse(jsonStrC);
         if (member.memNo) {
             if(member.intColor==0){
-                document.getElementById("intColor").style.backgroundColor = "rgba(255,255,0,.2)";
-            }
-            else{
-                document.getElementById("intColor").style.backgroundColor = "rgba(0,255,255,.2)";
+                document.getElementById("intColor").style.backgroundColor = "rgba(255, 190, 0, .2)";
+            }else{
+                document.getElementById("intColor").style.backgroundColor = "rgba(0,120, 250, .2)";
             }
             document.getElementById("signInBg").style.display = "none";
             //location.reload();//登入資訊抓取方式2:從整頁面
-        } 
-        else {
-            alert("白癡喔～你有問題拉～");
-        }
+        }else{
+            alert("尚未登入");
+    }
 }
 
 function sendColor0Form(){
     let xhr = new XMLHttpRequest();
     let memNo = document.getElementById('cavMemberN').innerText.toString().substring(6);
     let intColor = '0';
-    console.log( "========77",memNo);
+    // console.log( "========77",memNo);
     xhr.onload = function () {//使用ajax方法到Server端資料
         showMemColor(xhr.responseText);
     }
-    xhr.open("post", "./phps/changeIntColor.php", true);
+    xhr.open("post", "./phps/userSetting_changeIntColor.php", true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
     
     let data_infoColor = `intColor=${intColor}&memNo=${memNo}`;
-    console.log( "========88",memNo);
-    console.log( "========88",intColor);
+    console.log("intColor:",intColor);
     xhr.send(data_infoColor);
-    
-
 }
 
 function sendColor1Form(){
     let xhr = new XMLHttpRequest();
     let memNo = document.getElementById('cavMemberN').innerText.toString().substring(6);
     let intColor = '1';
-    console.log( "========77",memNo);
+    // console.log( "========77",memNo);
     xhr.onload = function () {//使用ajax方法到Server端資料
         showMemColor(xhr.responseText);
     }
-    xhr.open("post", "./phps/changeIntColor.php", true);
+    xhr.open("post", "./phps/userSetting_changeIntColor.php", true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
     
     let data_infoColor = `intColor=${intColor}&memNo=${memNo}`;
-    console.log( "========88",memNo);
-    console.log( "========88",intColor);
+    console.log("intColor:",intColor);
     xhr.send(data_infoColor);
 }
-
-
 let intColorBtn0 =document.getElementById("intColorBtn0");
 let intColorBtn1 =document.getElementById("intColorBtn1");
 intColorBtn0.onclick = function(){
@@ -237,16 +216,8 @@ intColorBtn1.onclick = function(){
     sendColor1Form();
 };
 
-//會員資訊_會員資料修改燈箱
-var setDataBg = document.getElementById("setDataBg");
-var showForm = document.getElementById("showForm");
-var closeForm = document.getElementById("closeForm");
-showForm.onclick = function(){
-    setDataBg.style.display = "block";
-};
-closeForm.onclick = function(){
-    setDataBg.style.display = "none";
-};
+
+
 
 
 //會員資訊_頁籤樣式切換
@@ -306,13 +277,116 @@ btnVar.onclick = function(){
     btnVar.style.color = 'white';
 };
 
+//顯示會員資訊-會員資料/密碼修改表單
+function showMemData(json){
+    let memdata = JSON.parse(json);
+    document.getElementById('memNo').innerText = memdata.memName+'-'+memdata.memNo;
+    document.getElementById('memEmail').innerText = memdata.memEmail;
+    document.getElementById('letCount').innerText = memdata.letCount;
+    document.getElementById('airCoin').innerText = memdata.airCoin;
+    document.getElementById('mempic').src = memdata.matPosUrl;
+    document.getElementById('setMempic').src = memdata.matPosUrl;
+    document.getElementById('setMemNo_name').placeholder = memdata.memName+'-'+memdata.memNo;
+    document.getElementById('setPassword').placeholder = memdata.memPsw;
+    document.getElementById('setPasswordCheck').placeholder = memdata.memPsw;
+    // console.log('------src',document.getElementById('mempic').src);
+}
 
 
+function getUsersettingInfo() {//////////////////取得登入資訊 依登入狀況呈現登入資訊
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        let member = JSON.parse(xhr.responseText);
+        console.log("usersetting_session資料_memNo:",member.memNo);
+        console.log("usersetting_session資料_memName:",member.memName);
+        console.log("usersetting_session資料_memEmail:",member.memEmail);
+        console.log("usersetting_session資料_letCount:",member.letCount);
+        console.log("usersetting_session資料_airCoin:",member.airCoin);
+        console.log("usersetting_session資料_intColor:",member.intColor);
+        console.log("usersetting_session資料_matPosUrl:",member.matPosUrl);
+        console.log("usersetting_session資料_memPsw:",member.memPsw);
+        if (member.memNo) {
+            // console.log("memNo:",member.memNo);
+            showMemData(xhr.responseText)
+        }
+    }
+    xhr.open("get", "./phps/nav_getSignInInfo.php", true);
+    xhr.send(null);
+}
+
+
+function cancelSetDataForm() {//////////////////清除密碼修改表單內容
+    document.getElementById("setPassword").value = "";
+    document.getElementById("setPasswordCheck").value = "";
+}
+
+function sendsetDataForm() {//////////////////密碼修改表單發送
+    let memNo = document.getElementById("cavMemberN").innerText.toString().substring(6);
+    let setPassword = document.getElementById("setPassword").value;
+    let setPasswordCheck = document.getElementById("setPasswordCheck").value;
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {//使用ajax方法到Server端資料
+        let pswRowCheck = JSON.parse(xhr.responseText);
+        if(pswRowCheck.memPsw){
+            document.getElementById('setDataBg').style.display = 'none';
+            document.getElementById('setPassword').placeholder = pswRowCheck.memPsw;
+            document.getElementById('setPasswordCheck').placeholder = pswRowCheck.memPsw;
+            cancelSetDataForm();
+            alert('密碼更新完成');
+        }
+    }
+    xhr.open("post", "phps/userSetting_setData.php", true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    console.log(memNo);
+    console.log(setPassword);
+    if (setPassword != '' && setPasswordCheck != '') {
+        if(setPassword.length >= 8){
+            if(!setPassword.match(/[^a-zA-Z0-9]+/)){
+                if(setPassword == setPasswordCheck){
+                    let data_info = `memNo=${memNo}&memPsw=${setPassword}`;
+                    xhr.send(data_info);
+                }else{
+                    alert('密碼確認與第一次輸入不同');
+                }
+            }else{
+                alert('密碼須為英文大小寫或數字');
+            } 
+        }else{
+            alert('密碼長度需為8-12');
+        }
+    }else {
+        alert('欄位不可空白');
+    }
+}
+
+let setDataBtn = document.getElementById('setDataBtn');
+setDataBtn.onclick = function(){
+    sendsetDataForm();
+};
+
+
+//會員資訊_會員資料修改燈箱
+var setDataBg = document.getElementById("setDataBg");
+var showForm = document.getElementById("showForm");
+var closeForm = document.getElementById("closeForm");
+showForm.onclick = function(){
+    let signIns = document.getElementById('cavMemberN').innerText;
+    console.log("----------ggg",signIns);
+    if(signIns!=0){
+        setDataBg.style.display = "block";
+    }else{
+        alert('尚未登入');
+    }
+};
+closeForm.onclick = function(){
+    cancelSetDataForm()
+    setDataBg.style.display = "none";
+};
 
 function changeName(){
     
     axios
-    .get('phps/letLike.php')
+    .get('phps/userSetting_letLike.php')
     .then((res) => {
         var arr = res.data;
         console.log(arr[0].letLikeTime);
@@ -354,6 +428,7 @@ function changeName(){
 }
 window.addEventListener("load", function () {
 // changeName();
+getUsersettingInfo()
 });
 // window.addEventListener('load', function () {
 //     setTimeout(changeName(), 500);

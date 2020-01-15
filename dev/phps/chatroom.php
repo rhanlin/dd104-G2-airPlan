@@ -13,22 +13,32 @@ try {
 
     $type = $_POST["catch"];
     $memNo1 = $_SESSION["memNo"];
-    $memNo2 = $_POST["memNo2"];
     $chatNo = 0;
 
     switch ($type) {
-        case "mark":
-            //聊天室內容
+        case "chat":
+            // 聊天室內容
+            $memNo2 = '空中巴士';
+            $sql = 'select memNo from `member` where memName = :memNo2;';
+            $member = $pdo->prepare($sql);
+            // $memNo2->bindValue(":memNo1", $memNo1);
+            $member->bindValue(":memNo2", $memNo2);
+            // $memNo2->bindValue(":chatNo", $chatNo);
+            $member->execute();
+            $memNo2Row = $member->fetch(PDO::FETCH_ASSOC);
+
             $sql = "select * 
             from chat join `matpostmark` on (chat.memNo2 = matpostmark.memNo)
             where (((memNo1 = :memNo1 and memNo2 = :memNo2) or (memNo2 = :memNo1 and memNo1 = :memNo2)) and chatNo > :chatNo) and (matpostmark.mugStatus = 1);";
             $content = $pdo->prepare($sql);
             $content->bindValue(":memNo1", $memNo1);
-            $content->bindValue(":memNo2", $memNo2);
+            $content->bindValue(":memNo2", $memNo2Row['memNo']);
             $content->bindValue(":chatNo", $chatNo);
             $content->execute();
-            $chat = $content->fetchAll(PDO::FETCH_ASSOC);
+            $chat = $content->fetch(PDO::FETCH_ASSOC);
+            echo json_encode($chat);
 
+        case "mark":
             //聊天室列表
             // $memNo1 = $_POST["memNo1"];
             // $mname = $_POST["ename"];
@@ -41,8 +51,7 @@ try {
             $content->bindValue(":memNo1", $memNo1);
             $content->execute();
             $mark = $content->fetchAll(PDO::FETCH_ASSOC);
-            $data = array("mark" => $mark, "chat" => $chat);
-            echo json_encode($data);
+            echo json_encode($mark);
             break;
 
         case "content":

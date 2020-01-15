@@ -1,7 +1,7 @@
 let canvas = new fabric.Canvas('canvas', {
   backgroundColor: "white"
 }); //創建fabric環境
-canvas.setHeight(490.5);
+canvas.setHeight(470);
 
 //=================剪裁飛機或郵戳畫板==========================
 canvas.controlsAboveOverlay = true;
@@ -36,11 +36,7 @@ var clipPath = new fabric.Group([
     },
 
   ], {
-    // stroke: 'red',
-    // color: 'red',
-    // left: 10,
-    // top: 10,
-    // fill: 'red'
+
   }),
   new fabric.Polyline([{
       x: 120,
@@ -84,23 +80,27 @@ canvas.renderAll();
 
 
 var clipPath2 = new fabric.Circle({
-  radius: 250,
-  top: 0,
-  left: 100,
-  // fill: ''
+  radius: 200,
+  top: 50,
+  left: 50,
+
 })
 
 //切換畫板以便設定轉存圖檔的分類(郵戳或圖案)
 var boardType = "plane";
 $('#boardSwitchBtn').click(function () {
+  orderText = document.querySelector('.orderText h6');
+  orderText.innerHTML
   if (canvas.clipPath != clipPath2) {
     canvas.clipPath = clipPath2;
     boardType = "circle";
+    orderText.innerHTML = "切換圖案畫板";
     // console.log(boardType)
     canvas.renderAll();
   } else {
     canvas.clipPath = clipPath;
     boardType = "plane";
+    orderText.innerHTML = "切換郵戳畫板";
     // console.log(boardType)
     canvas.renderAll();
   }
@@ -723,12 +723,13 @@ window.addEventListener('resize', resizeCanvas, false);
 function resizeCanvas() {
   if (window.innerWidth < 576) {
     canvasBox.width = (window.innerWidth * .67) + (window.innerWidth / 70)
+
   } else if (window.innerWidth < 768) {
     canvasBox.width = (window.innerWidth * .60) + (window.innerWidth / 11);
   } else if (window.innerWidth < 992) {
-    canvasBox.width = (window.innerWidth * .65) + (window.innerWidth / 30);
+    canvasBox.width = (window.innerWidth * .62) + (window.innerWidth / 30);
   } else if (window.innerWidth < 1330) {
-    canvasBox.width = (window.innerWidth * .50) + (window.innerWidth / 35);
+    canvasBox.width = (window.innerWidth * .50) + (window.innerWidth / 70);
   } else if (window.innerWidth < 1500) {
     canvasBox.width = 670 + (window.innerWidth / 55);
   } else if (window.innerWidth < 1700) {
