@@ -193,7 +193,7 @@ function showMemColor(jsonStrC){
 
 function sendColor0Form(){
     let xhr = new XMLHttpRequest();
-    let memNo = document.getElementById('cavMemberN').innerText.toString().substring(3);
+    let memNo = document.getElementById('cavMemberN').innerText.toString().substring(6);
     let intColor = '0';
     console.log( "========77",memNo);
     xhr.onload = function () {//使用ajax方法到Server端資料
@@ -212,7 +212,7 @@ function sendColor0Form(){
 
 function sendColor1Form(){
     let xhr = new XMLHttpRequest();
-    let memNo = document.getElementById('cavMemberN').innerText.toString().substring(3);
+    let memNo = document.getElementById('cavMemberN').innerText.toString().substring(6);
     let intColor = '1';
     console.log( "========77",memNo);
     xhr.onload = function () {//使用ajax方法到Server端資料
