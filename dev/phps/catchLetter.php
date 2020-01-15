@@ -10,8 +10,8 @@ try {
   $sql = "SELECT * FROM `letter` where memNo != :memNo ORDER BY RAND() LIMIT 1";
 
   $randLetter = $pdo->prepare($sql);
-  // $randLetter->bindValue(':memNo',$_POST['memNo']);
-  $randLetter->bindValue(':memNo',10); //測試
+  $randLetter->bindValue(':memNo',$_POST['memNo']);
+  // $randLetter->bindValue(':memNo',10); //測試
   $randLetter->execute();
   // $randLetterRow = $randLetter->fetchAll(PDO::FETCH_ASSOC);
   
