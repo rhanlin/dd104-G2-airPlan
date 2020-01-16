@@ -239,8 +239,8 @@
                 </div>
               </div>
               <div id="clear" class="controlBox2">
-                <div id="controlBox2" class="controlBox2_button clicked">
-                  <div class="controlBtn2 clicked "><img src="./img/product/toolcontrolbar/control_reset.svg" alt="">
+                <div id="controlBox2" class="controlBox2_button">
+                  <div class="controlBtn2 "><img src="./img/product/toolcontrolbar/control_reset.svg" alt="">
                   </div>
                 </div>
               </div>
@@ -398,12 +398,13 @@
         </div>
         <div class="drawingBoardBox">
           <div class="canvasWindowBox">
-            <div id="canvasBox">
-              <canvas id="canvas">
+            <div id="canvasBox" >
+              <canvas id="canvas" style="position: absolute; left: 0; top: 0; z-index: 1;">
                 <div class="drawingPanel" id="drawingOptionArea"></div>
               </canvas>
-              <!-- <canvas id="canvas2">
-              </canvas> -->
+              <canvas id="canvas2" style="position: absolute; left: 0; top: 0; z-index: 0;">
+                <div class="drawingPanel"></div>
+              </canvas>
             </div>
           </div>
           <div id="btns" class="btns">
