@@ -355,6 +355,9 @@
         }else{
           document.getElementById("intColor").style.backgroundColor = "rgba(0,120, 250, .2)";
         }
+        console.log('登入狀態:已登入');
+      }else{
+        console.log('登入狀態:尚未登入');
       }
     }
     xhr.open("get", "./phps/nav_getSignInInfo.php", true);
@@ -390,8 +393,8 @@
           memberR = JSON.parse(xhr.responseText);
           console.log(memberR);
           if(memberR.memEmail) {
-              // document.getElementById("registerBg").style.display = "none";
               cancelRegisterForm();
+              document.getElementById("signInBg").style.display = "none";
               alert(memberR.memEmail + ' ' + '您好！ 您已註冊成功');
           }
           else{
