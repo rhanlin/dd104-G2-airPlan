@@ -39,9 +39,9 @@ try {
 
         case "mark":
             //聊天室列表
-            $sql = "select a.memNo,b.memName,chatTime,b.memNo,b.memName,matPosUrl,mugStatus
-            from `chat` join`member` a on(chat.memNo1=a.memNo)join `member`b on(chat.memNo2 = b.memNo) join `matpostmark` on (b.memNo = matpostmark.memNo)
-            where (a.memNo = $memNo1 and mugStatus = 1)
+            $sql = "select a.memNo as 'user1',a.memName as 'mem1',chatTime,b.memNo as 'user2',b.memName as 'mem2',matPosUrl,mugStatus
+            from `chat` join `member` a on (chat.memNo1=a.memNo) join `member`b on(chat.memNo2 = b.memNo) join `matpostmark` on (b.memNo = matpostmark.memNo)
+            where ((a.memNo = :memNo1 or b.memNo = :memNo1) and mugStatus = 1)
             group by b.memNo
             order by chatTime desc;";
             $content = $pdo->prepare($sql);
