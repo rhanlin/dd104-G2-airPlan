@@ -60,7 +60,7 @@ $arrow_color: $gray !default;
             left: 100%;
             top: -40px;
             color: $yellow;
-            opacity: 1;
+            opacity: 0;
             z-index: 99;
             font-size: 2vw;
 
@@ -72,7 +72,7 @@ $arrow_color: $gray !default;
             left: 130%;
             top: -35px;
             color: $yellow;
-            opacity: 1;
+            opacity:0;
             z-index: 99;
             font-size: 1.2vw;
           }
@@ -91,7 +91,7 @@ $arrow_color: $gray !default;
             width: 80%;
             left: 3%;
             top: -40px;
-            opacity: 1;
+            opacity:0;
             z-index: 99;
 
             img {
