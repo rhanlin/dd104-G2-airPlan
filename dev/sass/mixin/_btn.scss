@@ -137,7 +137,7 @@
         --box-width: 452%;
         --box-deep: 3vw;
         --light: #212121;
-        --light-2: #f08b8c;
+        --light-2: #e7cc56;
     }
 
     .side-way,
@@ -199,7 +199,7 @@
 
             .side-way__text {
                 transform: rotateX(30deg) rotateZ(-180deg) rotateY(180deg);
-                font: bold 2.5rem "Noto Sans TC";
+                font: bold 3vw "Noto Sans TC";
                 color: white;
                 text-align: center;
             }

@@ -181,8 +181,8 @@ let vm3 = new Vue({
     }
     function visitorsLogin(e) {
       e.target.preventDefault;
-      document.getElementById('signInEmail').value = "h750307@ii5g.org.tw";
-      document.getElementById('signInPassword').value = "000";
+      document.getElementById('signInEmail').value = "visiter@gmail.com";
+      document.getElementById('signInPassword').value = "111";
     }
     function getSignInInfo() {
       return new Promise((resolve, reject) => {
