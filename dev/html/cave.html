@@ -38,7 +38,7 @@
                         </div>
                         <div class="cav-histLetter1">
                             <div class="cav-histLetter2">
-                                <div class="cav-letters cav-looking" data-aaa="sss">
+                                <div class="cav-letters cav-looking">
                                     <div class="cav-letWord">
                                         <div>
                                             <p class="cav-letTitle"></p>
@@ -101,7 +101,46 @@
                             <div class="cav-showLetter">
                                 <!-- 單一信件 -->
                                 <div class="letter-wrap">
-                                    <!-- <span class="cav-letNo"></span> -->
+                                    <span class="cav-letClose">x</span>
+                                    <!-- <div style="width:35%;height:20%;position:absolute;top:11%;right:-18%;background-position:center;background-size:contain;background-repeat:no-repeat;transform:translate(-50%,-50%) rotate(-15deg);" :style="{backgroundImage:userStamp[0]}"></div> -->
+                                    <div class="letter-head">
+                                        <div class="letter-img"></div>
+                                    </div>
+                                    <div class="letter-contant scroll-container">
+                                        <div class="text">
+                                            <div class="letter-tittle">
+                                                <h5></h5>
+                                            </div>
+                                            <div class="text">
+                                                <p></p>
+                                            </div>
+                                            <p class="letter-time"></p>
+                                            <p class="letter-author"></p>
+                                        </div>
+                                        <div class="cav-letNavbar">
+                                            <div class="cav-LetLike">
+                                                <div class="circle threed">
+                                                    <button class="circle button letLike" data-like="">
+                                                        <img src="./img/cave/coin.png" alt=""></button>
+                                                </div>
+                                            </div>
+                                            <div class="cav-LetReport">
+                                                <div class="circle threed ">
+                                                    <button class="circle button letReport" data-report="">
+                                                        <img src="./img/cave/exclamation-button.png" alt=""></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h4 class="cav-h3">留言</h4>
+                                        <div class="cav-replys">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <!-- <div class="letter-wrap">
                                     <span class="cav-letClose">x</span>
                                     <div class="letter-head">
                                         <div class="stamp-box"></div>
@@ -116,8 +155,12 @@
                                         </div>
                                         <div class="cav-letNavbar">
                                             <div class="circle threed">
-                                                <button class="circle button like">
+                                                <button class="circle button like" data-like="${letNo}">
                                                     <img src="./img/cave/coin.png" alt=""></button>
+                                            </div>
+                                            <div class="circle threed ">
+                                                <button class="circle button report" data-report="${letNo}">
+                                                    <img src="./img/cave/exclamation-button.png" alt=""></button>
                                             </div>
                                         </div>
                                         <h4 class="cav-h3">留言</h4>
@@ -125,7 +168,7 @@
 
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <!-- <form id="cav-reportForm" action="./phps\cav-msgReport.php" method="get"> -->
                             <form id="cav-reportForm">
@@ -140,7 +183,8 @@
                                         <option name="msgRepReason" value="hatred">引發仇恨</option>
                                         <option name="msgRepReason" value="ad">廣告訊息</option>
                                     </select><br>
-                                    <button class="cav-sendReport" type="submit">送出檢舉</button>
+                                    <button class="cav-sendReport">送出檢舉</button>
+                                    <!-- <button class="cav-sendReport" type="submit">送出檢舉</button> -->
                                 </div>
                             </form>
                         </div>

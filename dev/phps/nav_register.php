@@ -60,7 +60,7 @@ try {
 		$matpostmark = $pdo->prepare($sqlM);
 		$matpostmark->bindValue(':memNo',$matpostmarkMemNo );
 		$matpostmark->bindValue(':matPosName', '足球');
-		$matpostmark->bindValue(':matPosUrl', './img/product/postmark/postmark_countries_5.svg');
+		$matpostmark->bindValue(':matPosUrl', './phps/userStamp/user-stamp_2.png');
 		$matpostmark->bindValue(':mugStatus', '1');
 		$matpostmark->bindValue(':matPosLSort', 'postmark');
 		$matpostmark->bindValue(':matPosSSort', 'football');
@@ -71,7 +71,7 @@ try {
 		$matpattern = $pdo->prepare($sqlP);
 		$matpattern->bindValue(':memNo',$matpatternMemNo );
 		$matpattern->bindValue(':matPatName', '黃點點');
-		$matpattern->bindValue(':matPatUrl', './phps\userPattern\plan-pattern-plan-pattern-1.png');
+		$matpattern->bindValue(':matPatUrl', './phps/userPattern/plan-pattern-plan-pattern-1.png');
 		$matpattern->bindValue(':PatStatus', '1');
 		$matpattern->bindValue(':matPatLSort', 'pattern');
 		$matpattern->bindValue(':matPatSSort', 'point');
