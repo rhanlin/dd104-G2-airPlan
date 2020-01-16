@@ -523,7 +523,7 @@ function output(formatType) {
 
     if (boardType == "circle") {
       cavMemberH = document.getElementById('cavMemberH').innerHTML;
-      cavMemberH = cavMemberH.toString().substring(3);
+      cavMemberH = cavMemberH.toString().substring(6);
       $.ajax({
         type: "POST",
         url: "phps/shop_saveStamp.php",
@@ -536,7 +536,7 @@ function output(formatType) {
       })
     } else if (boardType == "plane") {
       cavMemberH = document.getElementById('cavMemberH').innerHTML;
-      cavMemberH = cavMemberH.toString().substring(3);
+      cavMemberH = cavMemberH.toString().substring(6);
       $.ajax({
         type: "POST",
         url: "phps/shop_savePattern.php",
