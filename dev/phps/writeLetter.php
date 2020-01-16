@@ -39,12 +39,13 @@ try {
   //...
   //把寫信內容新增進資料庫 
   require_once("connectBook_root.php");
-  $sql = "insert into `letter`( memNo, letPower, matPatNo, matPosNo, letTime, letTitle, letContent, imgUrl,mesCount, letSort, letStatus, letImgUrl) VALUES ( 10, 1, :matPatNo, :matPosNo, :letTime, :letTitle, :letContent, :imgUrl, 0, :letSort, 0, :letImgUrl)";
+  $sql = "insert into `letter`( memNo, letPower, matPatNo, matPosNo, letTime, letTitle, letContent, imgUrl,mesCount, letSort, letStatus, letImgUrl) VALUES ( :memNo, 1, :matPatNo, :matPosNo, :letTime, :letTitle, :letContent, :imgUrl, 0, :letSort, 0, :letImgUrl)";
 
   date_default_timezone_set("Asia/Taipei");  //設定時區
   $letTime=date("Y-n-j H:i:s");  //將時間格式化
 
   $letInsert = $pdo->prepare($sql);
+  $letInsert->bindValue(':memNo',$_POST['memNo']);
   $letInsert->bindValue(':matPatNo',$_POST['matPatNo']);
   $letInsert->bindValue(':matPosNo',$_POST['matPosNo']);
   $letInsert->bindValue(':letTime',$letTime);

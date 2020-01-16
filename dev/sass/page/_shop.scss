@@ -260,7 +260,7 @@ $arrow_color: $gray !default;
             padding-top: 15%;
             padding-left: 5%;
             position: relative;
-            @include itemCardRow1(64);
+            @include itemCardRow1(63);
 
             .cardFilter {
               width: 100%;
@@ -285,6 +285,8 @@ $arrow_color: $gray !default;
                 width: 75%;
               }
 
+              
+
               #itemCard1,
               #itemCard11,
               #itemCard16,
@@ -292,8 +294,7 @@ $arrow_color: $gray !default;
               #itemCard32,
               #itemCard40,
               #itemCard47,
-              #itemCard54,
-              #itemCard64 {
+              #itemCard54 {
                 transform: translate(25%, -30%) rotate(15deg);
 
                 &.bought {
@@ -470,6 +471,14 @@ $arrow_color: $gray !default;
                 img {
                   width: 2.5vw;
                   transform: translate(15%, -70%) rotate(330deg);
+                }
+              }
+              #itemCard64 {
+                width: 20vw;
+                height: 20vw;
+                background-color: brown;
+                img {
+                  display: none;
                 }
               }
             }
@@ -2672,7 +2681,7 @@ $arrow_color: $gray !default;
                   transform: translate(0%, 200%);
                 }
 
-                @include itemCardRow1_md(64);
+                @include itemCardRow1_md(63);
 
               }
             }
@@ -3457,7 +3466,7 @@ $arrow_color: $gray !default;
                   display: none;
                 }
 
-                @include itemCardRow1_sm(64);
+                @include itemCardRow1_sm(63);
 
               }
 
@@ -3708,7 +3717,7 @@ $arrow_color: $gray !default;
 
               .cardFilter {
                 height: 60vw;
-                @include itemCardRow1_note(64);
+                @include itemCardRow1_note(63);
 
               }
 

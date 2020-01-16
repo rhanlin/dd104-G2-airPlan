@@ -62,7 +62,7 @@ function confirmSubmit(){
       document.getElementById('writeLetterMain').style.animationFillMode = "forwards";
     }else if( pageUrlTitle == "catch-letter" ){
       //將資料送去php程式
-      //function(){} ...
+      submitLeaveMsg();
       document.getElementById('catchLetterMain').style.animationName = "elementDisappear";
       document.getElementById('catchLetterMain').style.animationDelay = ".5s";
       document.getElementById('catchLetterMain').style.animationDuration = ".8s";

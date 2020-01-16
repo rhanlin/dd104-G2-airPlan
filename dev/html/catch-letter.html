@@ -57,37 +57,94 @@
             
           </div>
         </div>
-        <div class="dot-box-yellow comment-wrap">
-          <span class="share-clip clip-left"></span>
-          <div class="box-white top-left-bg">
-              <div class="box-white top-left-bg">
 
-                <div class="dot-box-white comment-outbox scroll-container">
-                  <template v-for="(item, index) in 5">
-                    <div class="box-white comment">
-                      <div class="comment-contant">
-                        <h3 class="user-name">XXXXXXX</h3>
-                        <p class="user-text">真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！真是太有趣了！</p>
-                      </div>
-                      <!-- btn -->
-                      <div class="comment-btn">
-                        <!-- 檢舉 -->
-                        <div class="circle circleBtn like">
-                          <button class="circle button"></button>
+        <div class="catchLet-msgBox">
+          <div class="dot-box-yellow comment-wrap">
+            <span class="share-clip clip-left"></span>
+            <div class="box-white top-left-bg">
+                <div class="box-white top-left-bg">
+
+                  <div class="dot-box-white comment-outbox scroll-container">
+                    <template v-for="(item, index) in levMsg.length">
+                      <div class="box-white comment">
+                        <div class="comment-contant">
+                          <h3 class="user-name">{{ msgUserId[index] }}</h3>
+                          <p class="user-text">{{ levMsg[index] }}</p>
                         </div>
-                        <div class="circle circleBtn report">
-                          <button class="circle button"></button>
+                        <!-- btn -->
+                        <div class="comment-btn">
+                          <!-- 檢舉 -->
+                          <div class="circle circleBtn like">
+                            <button class="circle button"></button>
+                          </div>
+                          <div class="circle circleBtn report">
+                            <button class="circle button"></button>
+                          </div>
+                          
                         </div>
-                        
                       </div>
-                    </div>
-                  </template>
+                    </template>
+                  </div>
+
                 </div>
-
-              </div>
+            </div>
           </div>
+          <div class="catchLet-Btn">
+            <div class="likeBtn">
+              <div class="btn-big-test">
+                <div class="back side-way"></div>
+                <div class="left side-way"></div>
+                <div class="right side-way"></div>
+                <div class="top side-way"></div>
+                <div class="bottom side-way">
+                    <div class='side-way__text'> 打賞此信 </div>
+                </div>
+                <div class="front side-way"></div>
+              </div>
+            </div>
+            <div class="likeBtn">
+              <div class="btn-big-test">
+                <div class="back side-way"></div>
+                <div class="left side-way"></div>
+                <div class="right side-way"></div>
+                <div class="top side-way"></div>
+                <div class="bottom side-way">
+                    <div class='side-way__text'> 檢舉此信 </div>
+                </div>
+                <div class="front side-way"></div>
+              </div>
+            </div>
+          </div>
+          
+          
         </div>
       </section>
+      <section class="catch-step-msg">
+        <div class="dot-box-red comment-wrap">
+        <div class="box-white top-left-bg">
+            <div class="box-white top-left-bg">
+              <div class="dot-box-white comment-outbox scroll-container">
+                <div class="box-white comment invite-msg">留下你的想法！</div>
+                  <!-- <input type="text" id="leaveMsg" name="leaveMsg" cols="30" rows="10" class="leaveMsg"> -->
+                  <textarea id="leaveMsg" name="leaveMsg" cols="30" rows="10" class="leaveMsg" required>
+                  </textarea>
+              </div>
+
+            </div>
+        </div>
+        </div>
+        <a href="#" class="goto-shop-btn">
+          <div class="paper-cloud"></div>
+          <img src="./img/write-letter/goto-shop-btn.svg">
+          <div class="dot-box-blue shop-signboard">
+              <div class="box-white shop-title">
+                  <h3 class="threed-text-red shop-text">邀請聊天</h3>
+              </div>
+          </div>
+          
+        </a>
+      </section>
+      
       <section class="catch-step-2" id="catchStep2">
         <div class="box-white bottom-bg">
             <span class="share-clip clip-left">
@@ -101,7 +158,7 @@
                         <div class="select-stamp">
                             <span class="arrow-white"></span>
                             <div class="stamp-type">
-                              <template v-for="(item,index) in 3">
+                              <template v-for="(item,index) in userStamp.length">
                                 <button class="type" name="userStamp" :value="stampValue[index]" type="button"
                                 @click="clickStamp"
                                 @touchstart="clickStamp">
@@ -132,6 +189,7 @@
       data:{
         // threeOpen: true,
         viewMoreOpen:true,
+        userNo: 0,
         userStamp:[],//存使用者 擁有 的郵戳
         stampValue:[],
         letterStamp: '',
@@ -142,83 +200,87 @@
         letterUploadImg: "",
         publishedAt: "",
         author: "",
+        msgUserId:[], //存留言者的id
+        levMsg:[], //存留言
+        letNo: 0,//撈出來的信件編號
       },
       methods: {
         clickStamp(e) {
           this.letterStamp = e.target.style.backgroundImage;
-          // console.log(this.letterStamp);
         },
       },
       mounted() {
-    function onFulfilled(value){
-      //登入成功 -> 取用戶彩繪圖案、用戶郵戳
-      console.log(value);
-      fetch('./phps/fetchAllUserMat.php')
-        .then(res=>res.json()).then(json=>{
-          //拆出 stamp
-          for(let i=0 ; i<json.data.length ; i++){
-            if(json.data[i].stampNo){
-              vmCatchLet.userStamp.push(`url(${json.data[i].stampUrl})`);
-              vmCatchLet.stampValue.push(json.data[i].stampNo);//取 使用者飛機彩繪的編號得值(matPosNo)
-            }
-          }
-          console.log(vmCatchLet.userStamp);
-        })
-    }
-    function onRejected(reason){
-      //沒有登入
-      console.log(reason.message);
-      let singInBox = document.getElementById('signInBg');
-      let closeSigin = document.getElementById('closeSigin');
-      let closeRegister = document.getElementById('closeRegister');
-      let signInCancelBtn = document.getElementById('signInCancelBtn');
-      let closeForget = document.getElementById('closeForget');
-      let vistiorsBtn = document.createElement('button');
-      let singInText = document.createElement('p');
-      let vistiorsBtnText = document.createElement('p');
-      singInBox.style.display = "block";
-      
-      closeSigin.style.display = "none";
-      closeRegister.style.display = "none";
-      closeForget.style.display = "none";
-      signInCancelBtn.style.display = "none";
-      vistiorsBtnText.innerText = "訪客登入";
-      vistiorsBtn.setAttribute('id','vistiorsBtn');
-      vistiorsBtn.setAttribute('type','button');
-      vistiorsBtn.appendChild(vistiorsBtnText);
-      singInText.innerText = reason.message;
-      singInText.style="display:inline-block;width:80%;text-align:center;background-size:100% 100%;position:absolute;top:7.5%;left: 50%;transform:translate(-50%, -50%);z-index:999;color:#fff;font-size:2rem;";
-      singInBox.appendChild(singInText);
-      document.querySelector('.formsignInData').appendChild(vistiorsBtn);
-
-      vistiorsBtn.addEventListener('click',visitorsLogin,false);
-      // signInCancelBtn.onclick = visitorsLogin;
-    }
-    function visitorsLogin(e){
-      e.target.preventDefault;
-      document.getElementById('signInEmail').value="h750307@ii5g.org.tw";
-      document.getElementById('signInPassword').value= "000";
-    }
-    function getSignInInfo(){
-      return new Promise((resolve, reject)=>{
-        let xhr = new XMLHttpRequest();
-        xhr.onload = function () {
-            let member = JSON.parse(xhr.responseText);
-            if (member.memNo) {
-              console.log(member.memNo);
-              resolve(member.memNo);
-            }else{
-              reject(new Error('請先登入才能撈信'))
-            }
+        function onFulfilled(value){
+          //登入成功 -> 取用戶彩繪圖案、用戶郵戳
+          vmCatchLet.userNo = value;
+          console.log(`userNo: ${vmCatchLet.userNo}`);
+          
+          fetch('./phps/fetchAllUserMat.php')
+            .then(res=>res.json()).then(json=>{
+              //拆出 stamp
+              for(let i=0 ; i<json.data.length ; i++){
+                if(json.data[i].stampNo){
+                  vmCatchLet.userStamp.push(`url(${json.data[i].stampUrl})`);
+                  vmCatchLet.stampValue.push(json.data[i].stampNo);//取 使用者飛機彩繪的編號得值(matPosNo)
+                }
+              }
+              console.log(vmCatchLet.userStamp);
+            })
         }
-        xhr.open("get", "./phps/getSignInInfo.php", true);
-        xhr.send(null);
-      })
-    }
-    getSignInInfo()
-      .then(onFulfilled)
-      .catch(onRejected)
-  },
+        function onRejected(reason){
+          //沒有登入
+          console.log(reason.message);
+          let singInBox = document.getElementById('signInBg');
+          let closeSigin = document.getElementById('closeSigin');
+          let closeRegister = document.getElementById('closeRegister');
+          let signInCancelBtn = document.getElementById('signInCancelBtn');
+          let closeForget = document.getElementById('closeForget');
+          let vistiorsBtn = document.createElement('button');
+          let singInText = document.createElement('p');
+          let vistiorsBtnText = document.createElement('p');
+          singInBox.style.display = "block";
+          
+          closeSigin.style.display = "none";
+          closeRegister.style.display = "none";
+          closeForget.style.display = "none";
+          signInCancelBtn.style.display = "none";
+          vistiorsBtnText.innerText = "訪客登入";
+          vistiorsBtn.setAttribute('id','vistiorsBtn');
+          vistiorsBtn.setAttribute('type','button');
+          vistiorsBtn.appendChild(vistiorsBtnText);
+          singInText.innerText = reason.message;
+          singInText.style="display:inline-block;width:80%;text-align:center;background-size:100% 100%;position:absolute;top:7.5%;left: 50%;transform:translate(-50%, -50%);z-index:999;color:#fff;font-size:2rem;";
+          singInBox.appendChild(singInText);
+          document.querySelector('.formsignInData').appendChild(vistiorsBtn);
+
+          vistiorsBtn.addEventListener('click',visitorsLogin,false);
+          // signInCancelBtn.onclick = visitorsLogin;
+        }
+        function visitorsLogin(e){
+          e.target.preventDefault;
+          document.getElementById('signInEmail').value="h750307@ii5g.org.tw";
+          document.getElementById('signInPassword').value= "000";
+        }
+        function getSignInInfo(){
+          return new Promise((resolve, reject)=>{
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                let member = JSON.parse(xhr.responseText);
+                if (member.memNo) {
+                  console.log(member.memNo);
+                  resolve(member.memNo);
+                }else{
+                  reject(new Error('請先登入才能撈信'))
+                }
+            }
+            xhr.open("get", "./phps/nav_getSignInInfo.php", true);
+            xhr.send(null);
+          })
+        }
+        getSignInInfo()
+          .then(onFulfilled)
+          .catch(onRejected)
+      },
     });
   </script>
 </body>

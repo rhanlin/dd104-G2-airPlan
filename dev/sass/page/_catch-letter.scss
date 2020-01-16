@@ -346,194 +346,312 @@
     width: 100%;
     height: 100vh;
   }
+  .goto-shop-btn {
+    // border: 1px solid blue;
+    height: auto;
+    width: 14.7vw;
+    position: absolute;
+    top: 53%;
+    left: 78%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    z-index: 9999;
+    @include paper_cloud();
 
+    .paper-cloud {
+        top: -72%;
+        left: 89%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+    }
+
+    img {
+        width: 17%;
+    }
+
+    .shop-signboard {
+        width: 86%;
+        height: 17vw;
+        border-radius: $main-borderRadius;
+        position: absolute;
+        top: 50%;
+        left: 58.4%;
+        transform: translate(-50%, -50%);
+        z-index: 99;
+
+        .shop-title {
+            width: 80%;
+            height: 80%;
+            border-radius: $main-borderRadius;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            .shop-text {
+                font-size: 4vw;
+                -webkit-writing-mode: vertical-lr;
+                writing-mode: vertical-lr;
+                letter-spacing: 1.2vw;
+                line-height: 1.1;
+                height: 100%;
+                width: 100%;
+                color: $main-dark-red;
+                padding-top: 18%;
+            }
+        }
+    }
+   
+  }
   .catch-step-1 {
+    width: 90%;
     font-size: 0;
-    // border: 1px solid red;
     display: flex;
     justify-content: space-around;
     position: relative;
     z-index: 999;
-
-    .comment-wrap {
-      margin: 0;
-      height: 28vw;
-      width: 35vw;
-      max-height: 788px;
-      position: absolute;
-      top: 6vw;
-      right: 7vw;
-
-      .clip-left {
-        top: -17%;
-        right: 18%;
-        height: auto;
-        background-image: url(../img/share/clip.svg);
-
-        &::before {
-          content: '';
-          display: block;
-          width: .15vw;
-          height: 25vw;
-          background: linear-gradient(#e5e5e500 20%, $main-black 60%, $main-black);
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -112%);
-          z-index: -9;
-        }
-      }
-
-      // .clip-right {
-      //   top: -65%;
-      //   right: 18%;
-      // }
-
-      .top-left-bg {
+    margin: 0 auto;
+    .catchLet-msgBox{
+      width: 50%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      // justify-content: space-around;
+      align-items: center;
+      .catchLet-Btn{
+        display: flex;
         width: 100%;
-        height: 100%;
-        position: relative;
-        top: 10px;
-        left: -15px;
-
-        .headpg-name {
-          width: 100%;
-          height: 100%;
-          text-align: left;
-          padding: 0 2vw;
-          display: flex;
-          justify-content: space-between;
-          // flex-wrap: wrap;
-        }
-
-        ;
+        height: 30%;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
       }
+      .likeBtn{
+        cursor: pointer;
+        width: 31.3%;
+        height: 6.4vw;
+        margin-top: 10%;
+        // min-height: 108px;
+        // min-height: 200px;
+      }
+    }
+    
+  }
+  .catch-step-msg{
+    width: 90%;
+    font-size: 0;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    z-index: 999;
+    margin: 0 auto;
+    .comment-wrap{
+      margin-top: 7vw;
+      height: 28vw;
+      width: 40%;
+    }
+    .dot-box-red{
+      margin-top: 6%;
+      .clip-left{
+        top: 26%;
+        left: -13%;
+        transform: translate(-50%,-50%) rotate(-90deg);
+      }
+    }
+    .leaveMsg{
+      border: .2vw solid $main-black;
+      background: $main-green;
+      color: white;
+      padding: 2%;
+      width: 100%;
+      height: 73%;
+      outline: none;
+      border-radius: $main-borderRadius;
+      font-size: 1.5rem;
+      // margin-bottom: 5%;
+    }
+    .invite-msg{
+      color: $main-dark-blue;
+      font-weight: 800;
+      letter-spacing: 1rem;
+      font-size: 1.5rem !important;
+    }
+  }
+  .comment-wrap {
+    margin: 0;
+    height: 70%;
+    width: 80%;
+    max-height: 788px;
 
-      .comment-outbox {
-        width: 90%;
-        height: 90%;
+    .clip-left {
+      top: -17%;
+      right: 18%;
+      height: auto;
+      background-image: url(../img/share/clip.svg);
+
+      &::before {
+        content: '';
+        display: block;
+        width: .15vw;
+        height: 25vw;
+        background: linear-gradient(#e5e5e500 20%, $main-black 60%, $main-black);
         position: absolute;
         top: 50%;
         left: 50%;
-        border-radius: $main-borderRadius;
-        transform: translate(-50%, -50%);
-        padding: 1vw;
-        // display: flex;
-        // flex-direction: column;
-        // align-items: center;
+        transform: translate(-50%, -112%);
+        z-index: -9;
+      }
+    }
+
+    // .clip-right {
+    //   top: -65%;
+    //   right: 18%;
+    // }
+
+    .top-left-bg {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      top: 10px;
+      left: -15px;
+
+      .headpg-name {
+        width: 100%;
+        height: 100%;
+        text-align: left;
+        padding: 0 2vw;
+        display: flex;
+        justify-content: space-between;
+        // flex-wrap: wrap;
       }
 
-      .comment {
-        width: 90%;
-        height: auto;
-        border-radius: $main-borderRadius;
-        padding: 1.5vw;
-        margin: 1vw;
+      ;
+    }
+
+    .comment-outbox {
+      width: 90%;
+      height: 90%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: $main-borderRadius;
+      transform: translate(-50%, -50%);
+      padding: 1vw;
+      // display: flex;
+      // flex-direction: column;
+      // align-items: center;
+    }
+
+    .comment {
+      width: 100%;
+      height: auto;
+      border-radius: $main-borderRadius;
+      padding: 2%;
+      margin-bottom: 5%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.5vw;
+
+      .comment-contant {
+        width: 100%;
+        height: 90%;
+      }
+
+      .user-name {
+        margin: 0;
+        width: 100%;
+        margin-bottom: .5vw;
+      }
+
+      .user-text {
+        width: 100%;
+        margin: 0;
+        font-size: 1.15vw;
+        // padding: 0 0 0 1vw;
+      }
+
+      .comment-btn {
+        width: 100%;
+        height: 5vw;
+        position: relative;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 1.5vw;
+        flex-direction: row;
 
-        .comment-contant {
-          width: 100%;
-          height: 90%;
+        .like {
+          right: 20%;
         }
 
-        .user-name {
-          margin: 0;
-          width: 100%;
-          margin-bottom: .5vw;
+        .report {
+          right: 0;
         }
 
-        .user-text {
-          width: 100%;
-          margin: 0;
-          font-size: 1.15vw;
-          // padding: 0 0 0 1vw;
+        .like .button {
+          background: $main-blue;
+          box-shadow: 0 .5vw 0 0 $main-dark-blue;
         }
 
-        .comment-btn {
-          width: 100%;
-          height: 5vw;
-          position: relative;
-          display: flex;
-          flex-direction: row;
-
-          .like {
-            right: 20%;
-          }
-
-          .report {
-            right: 0;
-          }
-
-          .like .button {
-            background: $main-blue;
-            box-shadow: 0 .5vw 0 0 $main-dark-blue;
-          }
-
-          .report .button {
-            background: $main-red;
-            box-shadow: 0 .5vw 0 0 $main-dark-red;
-          }
+        .report .button {
+          background: $main-red;
+          box-shadow: 0 .5vw 0 0 $main-dark-red;
         }
+      }
 
-        .circleBtn {
-          background: $main-black;
-          width: 3vw;
-          height: 3vw;
+      .circleBtn {
+        background: $main-black;
+        width: 3vw;
+        height: 3vw;
+        position: absolute;
+        margin: 0 auto;
+        display: block;
+        bottom: 0;
+
+        // transform: translateY(-50%);
+        // box-shadow: 15px 15px 50px 5px #5f5f5f;
+        .button {
+          width: 80%;
+          height: 80%;
           position: absolute;
-          margin: 0 auto;
-          display: block;
-          bottom: 0;
-
-          // transform: translateY(-50%);
-          // box-shadow: 15px 15px 50px 5px #5f5f5f;
-          .button {
-            width: 80%;
-            height: 80%;
-            position: absolute;
-            top: -7%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: none;
-            transition: all .2s ease;
-            outline: none;
-          }
-
-          .button:active {
-            box-shadow: 0 1px 1px 1px $main-black;
-            top: 10%;
-            outline: none;
-          }
-
-          // .report.button:active {
-          //   box-shadow: 0 1px 1px 1px #b33c3c;
-          //   top: 10%;
-          //   outline: none;
-          // }
+          top: -7%;
+          left: 50%;
+          transform: translateX(-50%);
+          border: none;
+          transition: all .2s ease;
+          outline: none;
         }
 
-        .circle {
-          border-radius: 50%;
+        .button:active {
+          box-shadow: 0 1px 1px 1px $main-black;
+          top: 10%;
+          outline: none;
         }
+
+        // .report.button:active {
+        //   box-shadow: 0 1px 1px 1px #b33c3c;
+        //   top: 10%;
+        //   outline: none;
+        // }
+      }
+
+      .circle {
+        border-radius: 50%;
       }
     }
   }
-
   .catch-letter {
     width: 55.6vw;
     max-width: 495px;
     height: 80vw;
     max-height: 716px;
-    margin: 0 40% 0 0;
+    margin: 0 auto;
     background-color: #fff;
     background-image: url(../img/share/postCard-vertical.svg);
     background-position: center;
     background-size: cover;
     display: flex;
     position: relative;
-    z-index: 9;
+    z-index: 999;
     // font-size: 1.5vw;
     // display: none;
     @include paper_cloud();
@@ -821,7 +939,30 @@
     .catch-step-1 {
       flex-direction: column;
       align-items: center;
-
+      .catchLet-msgBox{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        // justify-content: space-around;
+        align-items: center;
+        .likeBtn{
+          width: 34vw;
+          height: 23vw;
+          margin-top: 10%;
+          // min-height: 108px;
+          // min-height: 200px;
+          .bottom {
+            .side-way__text {
+                transform: rotateX(30deg) rotateZ(-180deg) rotateY(180deg);
+                font: bold 3rem "Noto Sans TC";
+                color: white;
+                line-height: 3rem;
+                text-align: center;
+            }
+        }
+        }
+      }
       .comment-wrap {
         position: unset;
         top: unset;
@@ -829,7 +970,7 @@
         width: 82.6vw;
         height: 70vw;
         margin-top: 15%;
-        margin-right: 10%;
+        // margin-right: 10%;
 
         .clip-left {
           display: none;
@@ -892,7 +1033,82 @@
         }
       }
     }
+    .goto-shop-btn {
+      // border: 1px solid blue;
+      height: auto;
+      width: 50%;
+      position: absolute;
+      top: 131%;
+      left: 50%;
+      transform: translate(-50%,-50%) rotate(90deg);
+  
+      .paper-cloud {
+          display: none;
+      }
+  
+      img {
+          width: 17%;
+      }
+  
+      .shop-signboard {
+          width: 85%;
+          height: 50vw;
+          border-radius: $main-borderRadius;
+          position: absolute;
+          top: 50%;
+          left: 58.4%;
+          transform: translate(-50%, -50%);
+          z-index: 99;
+  
+          .shop-title {
+              width: 80%;
+              height: 80%;
+              border-radius: $main-borderRadius;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+  
+              .shop-text {
+                transform: rotate(-90deg);
+                font-size: 2.8rem;
+                -webkit-writing-mode: unset;
+                writing-mode: unset;
+                letter-spacing: unset;
+                line-height: 1.2;
+                height: 98%;
+                width: 100%;
+                color: $main-dark-red;
+                padding-top: 18%;
+              }
+          }
+      }
+     
+    }
 
+    .catch-step-msg{
+      .comment-wrap{
+        height: 70vw;
+        width: 82.6vw;
+        top: unset;
+        right: unset;
+        position: unset;
+        max-height: 788px;
+        margin-top: 15% ;
+      }
+      .leaveMsg{
+        height: 70%;
+        
+      }
+      .invite-msg{
+        color: $main-dark-blue;
+        font-weight: 800;
+        letter-spacing: unset;
+        font-size: 1.5rem !important;
+        margin-bottom: 3% !important;
+        margin-top: 3% !important;
+      }
+    }
     .catch-letter {
 
       .letter-wrap {
@@ -938,7 +1154,7 @@
     }
 
     .catch-step-2 {
-      margin-top: 15%;
+      margin-top: 43%;
       height: auto;
 
       .bottom-bg {
@@ -1071,7 +1287,28 @@
     .catch-step-1 {
       flex-direction: column;
       align-items: center;
-
+      .catchLet-msgBox{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        // justify-content: space-around;
+        align-items: center;
+        .likeBtn{
+          width: 34vw;
+          height: 23vw;
+          margin-top: 10%;
+          .bottom {
+            .side-way__text {
+                transform: rotateX(30deg) rotateZ(-180deg) rotateY(180deg);
+                font: bold 2.6rem "Noto Sans TC";
+                color: white;
+                line-height: 2.8rem;
+                text-align: center;
+            }
+        }
+        }
+      }
       .comment-wrap {
         position: unset;
         top: unset;
@@ -1079,7 +1316,7 @@
         width: 82.6vw;
         height: 70vw;
         margin-top: 15%;
-        margin-right: 10%;
+        // margin-right: 10%;
 
         .clip-left {
           display: none;
@@ -1142,7 +1379,82 @@
         }
       }
     }
+    .goto-shop-btn {
+      // border: 1px solid blue;
+      height: auto;
+      width: 50%;
+      position: absolute;
+      top: 131%;
+      left: 50%;
+      transform: translate(-50%,-50%) rotate(90deg);
+  
+      .paper-cloud {
+          display: none;
+      }
+  
+      img {
+          width: 17%;
+      }
+  
+      .shop-signboard {
+          width: 85%;
+          height: 50vw;
+          border-radius: $main-borderRadius;
+          position: absolute;
+          top: 50%;
+          left: 58.4%;
+          transform: translate(-50%, -50%);
+          z-index: 99;
+  
+          .shop-title {
+              width: 80%;
+              height: 80%;
+              border-radius: $main-borderRadius;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+  
+              .shop-text {
+                  transform: rotate(-90deg);
+                  font-size: 2.8rem;
+                  -webkit-writing-mode: unset;
+                  writing-mode: unset;
+                  letter-spacing: unset;
+                  line-height: 1.2;
+                  height: 98%;
+                  width: 100%;
+                  color: $main-dark-red;
+                  padding-top: 18%;
+              }
+          }
+      }
+     
+    }
 
+    .catch-step-msg{
+      .comment-wrap{
+        height: 70vw;
+        width: 82.6vw;
+        top: unset;
+        right: unset;
+        position: unset;
+        max-height: 788px;
+        margin-top: 15%;
+      }
+      .leaveMsg{
+        height: 66%;
+        
+      }
+      .invite-msg{
+        color: $main-dark-blue;
+        font-weight: 800;
+        letter-spacing: unset;
+        font-size: 1.5rem !important;
+        margin-bottom: 3% !important;
+        margin-top: 3% !important;
+      }
+    }
     .catch-letter {
 
       .letter-wrap {
@@ -1188,7 +1500,7 @@
     }
 
     .catch-step-2 {
-      margin-top: 15%;
+      margin-top: 43%;
       height: auto;
 
       .bottom-bg {
