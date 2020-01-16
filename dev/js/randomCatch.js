@@ -55,7 +55,7 @@ function catchALetter(){
     if(json.msg){
       for(let i=0 ; i<json.msg.length ; i++){
         if(json.msg[i].memNo){
-          vmCatchLet.msgUserId.push(json.msg[i].memNo);
+          vmCatchLet.msgUserId.push(`用戶編號：${json.msg[i].memNo}`);
         }
       }
       for(let i=0 ; i<json.msg.length ; i++){
@@ -63,6 +63,9 @@ function catchALetter(){
           vmCatchLet.levMsg.push(json.msg[i].msgContent);
         }
       }
+    }else{
+      vmCatchLet.msgUserId.push("歡迎留言！");
+      vmCatchLet.levMsg.push("目前沒有留言...");
     }
     
   
