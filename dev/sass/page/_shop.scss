@@ -41,8 +41,8 @@ $arrow_color: $gray !default;
     #coinBox {
       position: fixed;
       right: 1%;
-      top: 25%;
-      width: 15%;
+      top: 20%;
+      width: 8%;
       border: 2px solid black;
       background-color: rgb(253, 253, 253);
       z-index: 500;
@@ -51,7 +51,7 @@ $arrow_color: $gray !default;
         display: flex;
 
         .coinBox {
-          width: 20%;
+          width: 34%;
           position: relative;
 
           .airCoinTxt {
@@ -60,7 +60,7 @@ $arrow_color: $gray !default;
             left: 100%;
             top: -40px;
             color: $yellow;
-            opacity: 1;
+            opacity: 0;
             z-index: 99;
             font-size: 2vw;
 
@@ -72,7 +72,7 @@ $arrow_color: $gray !default;
             left: 130%;
             top: -35px;
             color: $yellow;
-            opacity: 1;
+            opacity: 0;
             z-index: 99;
             font-size: 1.2vw;
           }
@@ -91,7 +91,7 @@ $arrow_color: $gray !default;
             width: 80%;
             left: 3%;
             top: -40px;
-            opacity: 1;
+            opacity: 0;
             z-index: 99;
 
             img {
@@ -103,7 +103,7 @@ $arrow_color: $gray !default;
         #coinTextArea {
           width: 65%;
           padding: 5% 0;
-          margin-left: 10%;
+          margin-left: 1%;
 
         }
       }
@@ -260,7 +260,7 @@ $arrow_color: $gray !default;
             padding-top: 15%;
             padding-left: 5%;
             position: relative;
-            @include itemCardRow1(64);
+            @include itemCardRow1(63);
 
             .cardFilter {
               width: 100%;
@@ -285,6 +285,8 @@ $arrow_color: $gray !default;
                 width: 75%;
               }
 
+
+
               #itemCard1,
               #itemCard11,
               #itemCard16,
@@ -292,8 +294,7 @@ $arrow_color: $gray !default;
               #itemCard32,
               #itemCard40,
               #itemCard47,
-              #itemCard54,
-              #itemCard64 {
+              #itemCard54 {
                 transform: translate(25%, -30%) rotate(15deg);
 
                 &.bought {
@@ -470,6 +471,17 @@ $arrow_color: $gray !default;
                 img {
                   width: 2.5vw;
                   transform: translate(15%, -70%) rotate(330deg);
+                }
+              }
+
+              #itemCard64 {
+                margin-left: 5%;
+                width: 40vw;
+                height: 20vw;
+                background-color: brown;
+
+                img {
+                  display: none;
                 }
               }
             }
@@ -2040,7 +2052,15 @@ $arrow_color: $gray !default;
               background-repeat: no-repeat;
               padding: 5.82% 6.5%;
 
-              #canvas {}
+              #canvas {
+                width: 100%;
+                height: 100%;
+              }
+              // #canvas2{
+              //   width: 100%;
+              //   height: 100%;
+              //   background-color: grba();
+              // }
             }
           }
 
@@ -2573,9 +2593,9 @@ $arrow_color: $gray !default;
   .shop-body {
     .shop-main {
       #coinBox {
-        right: 3%;
+        right: 1%;
         top: 90%;
-        width: 30%;
+        width: 18%;
 
         #coinArea {
           .coinBox {
@@ -2594,10 +2614,10 @@ $arrow_color: $gray !default;
             }
 
             .airCoin {
-              width: 90%;
+              width: 100%;
 
               img {
-                width: 80%;
+                width: 100%;
               }
             }
 
@@ -2612,7 +2632,7 @@ $arrow_color: $gray !default;
           #coinTextArea {
             width: 65%;
             padding: 6% 0;
-            margin-left: 5%;
+            margin-left: 0%;
 
           }
         }
@@ -2672,7 +2692,7 @@ $arrow_color: $gray !default;
                   transform: translate(0%, 200%);
                 }
 
-                @include itemCardRow1_md(64);
+                @include itemCardRow1_md(63);
 
               }
             }
@@ -3457,7 +3477,7 @@ $arrow_color: $gray !default;
                   display: none;
                 }
 
-                @include itemCardRow1_sm(64);
+                @include itemCardRow1_sm(63);
 
               }
 
@@ -3632,15 +3652,15 @@ $arrow_color: $gray !default;
   .shop-body {
     .shop-main {
       #coinBox {
-        right: 10%;
-        top: 90%;
-        width: 60%;
+        // right: 10%;
+        // top: 90%;
+        width: 40%;
 
         #coinArea {
           .coinBox {
             .airCoinTxt {
-              left: 50%;
-              top: -35px;
+              // left: 50%;
+              // top: -35px;
 
             }
 
@@ -3648,14 +3668,6 @@ $arrow_color: $gray !default;
               top: -35px;
               left: 65%;
               font-size: 3vw;
-            }
-
-            .airCoin {
-              width: 90%;
-
-              img {
-                width: 70%;
-              }
             }
 
             .airCoinSingle {
@@ -3708,7 +3720,7 @@ $arrow_color: $gray !default;
 
               .cardFilter {
                 height: 60vw;
-                @include itemCardRow1_note(64);
+                @include itemCardRow1_note(63);
 
               }
 
