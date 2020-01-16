@@ -32,7 +32,7 @@ try {
     //準備好要存的filename
 
     $fileName = "{$psn}";
-    $file = $upload_dir . "user-stamp_" . $fileName . ".png";
+    $file = "./phps/".$upload_dir . "user-stamp_" . $fileName . ".png";
     $success = file_put_contents($file, $data);
     if ($success) {
 
