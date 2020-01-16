@@ -173,7 +173,7 @@ let vm3 = new Vue({
               reject(new Error('請先登入才能寫信'))
             }
         }
-        xhr.open("get", "./phps/getSignInInfo.php", true);
+        xhr.open("get", "./phps/nav_getSignInInfo.php", true);
         xhr.send(null);
       })
     }
