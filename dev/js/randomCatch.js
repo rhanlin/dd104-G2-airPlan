@@ -47,6 +47,9 @@ function catchALetter(){
     //將留言存起來
     vmCatchLet.letNo = json.letter.letNo;
     
+    //保存撈到信件的canvas圖檔
+    vmImgWrap.letUrl = `url('${json.letter.letImgUrl}')`;//此信的canvas
+    vmImgWrap.letPattern = `url('${json.letPattern.matPatUrl}')`;//此信的彩繪花紋
   }).catch(err=>console.log(err))
   
 }
