@@ -79,7 +79,7 @@ let vm2 = new Vue({
       this.letterUploadImg = e.target.result;
       document.getElementById('hookimg').style.animationName = "hookimgRise";
       // console.log(this.letterUploadImg);
-      
+
     },
   },
 });
@@ -90,12 +90,12 @@ let vm3 = new Vue({
     openIndex: null,
     userPattern: [],//存 使用者"擁有"的飛機彩繪對應的URL
     previewPattern: null,
-    patternValue:[], //input radio 的value值
+    patternValue: [], //input radio 的value值
     letterPattern: 0, //存 使用者"選到"的飛機彩繪編號(matPatNo) 得值
     userNo: 0,
   },
   methods: {
-    clickPattern(e,index) {
+    clickPattern(e, index) {
       this.openIndex = index;
       this.previewPattern = this.$refs.bg[index].style.backgroundImage;
       this.letterPattern = e.target.firstChild.value;
@@ -104,30 +104,53 @@ let vm3 = new Vue({
     },
   },
   mounted() {
-    function onFulfilled(value){
+    function onFulfilled(value) {
       //登入成功 -> 取用戶彩繪圖案、用戶郵戳
       vm3.userNo = value;
       console.log(`userNo: ${vm3.userNo}`);
       fetch('./phps/fetchAllUserMat.php')
-        .then(res=>res.json()).then(json=>{
+        .then(res => res.json()).then(json => {
           //拆出 pattern
           console.log(json);
-          
-          for(let i=0 ; i<json.data.length ; i++){
-            if(json.data[i].patternNo){
+
+          for (let i = 0; i < json.data.length; i++) {
+            if (json.data[i].patternNo) {
               vm3.userPattern.push(`url(${json.data[i].patternUrl})`);
               vm3.patternValue.push(json.data[i].patternNo);//取 使用者"擁有"飛機彩繪的編號(matPatNo) 得值
             }
           }
-          for(let i=0 ; i<json.data.length ; i++){
-            if(json.data[i].stampNo){
+          for (let i = 0; i < json.data.length; i++) {
+            if (json.data[i].stampNo) {
               vmUserStamp.userStamp.push(`url(${json.data[i].stampUrl})`);
               vmUserStamp.stampValue.push(json.data[i].stampNo);//取 使用者飛機彩繪的編號得值(matPosNo)
             }
           }
         })
+        .then(listenSubmitBtn)
     }
-    function onRejected(reason){
+    
+    // 監聽所有的submit按鈕(用戶郵戳)，當觸發點擊事件後，先檢查必要欄位是否有填值
+    function listenSubmitBtn() {
+      let submitStamp = document.getElementById('submitStamp').childNodes;
+      // console.log(`stamp length: ${submitStamp.length}`);
+      for (let i = 0; i < submitStamp.length; i++) {
+        submitStamp[i].addEventListener('click', (e) => {
+          // e.preventDefault();//解掉冒泡事件
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+          writeLetterExm();
+        })
+      }
+      for (let i = 0; i < submitStamp.length; i++) {
+        submitStamp[i].addEventListener('touchend', (e) => {
+          // e.preventDefault();//解掉冒泡事件
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+          writeLetterExm();
+        })
+      }
+    }
+    function onRejected(reason) {
       //沒有登入
       console.log(reason.message);
       let singInBox = document.getElementById('signInBg');
@@ -139,39 +162,39 @@ let vm3 = new Vue({
       let singInText = document.createElement('p');
       let vistiorsBtnText = document.createElement('p');
       singInBox.style.display = "block";
-      
+
       closeSigin.style.display = "none";
       closeRegister.style.display = "none";
       closeForget.style.display = "none";
       signInCancelBtn.style.display = "none";
       vistiorsBtnText.innerText = "訪客登入";
-      vistiorsBtn.setAttribute('id','vistiorsBtn');
-      vistiorsBtn.setAttribute('type','button');
+      vistiorsBtn.setAttribute('id', 'vistiorsBtn');
+      vistiorsBtn.setAttribute('type', 'button');
       vistiorsBtn.appendChild(vistiorsBtnText);
       singInText.innerText = reason.message;
-      singInText.style="display:inline-block;width:80%;text-align:center;background-size:100% 100%;position:absolute;top:7.5%;left: 50%;transform:translate(-50%, -50%);z-index:999;color:#fff;font-size:2rem;";
+      singInText.style = "display:inline-block;width:80%;text-align:center;background-size:100% 100%;position:absolute;top:7.5%;left: 50%;transform:translate(-50%, -50%);z-index:999;color:#fff;font-size:2rem;";
       singInBox.appendChild(singInText);
       document.querySelector('.formsignInData').appendChild(vistiorsBtn);
 
-      vistiorsBtn.addEventListener('click',visitorsLogin,false);
+      vistiorsBtn.addEventListener('click', visitorsLogin, false);
       // signInCancelBtn.onclick = visitorsLogin;
     }
-    function visitorsLogin(e){
+    function visitorsLogin(e) {
       e.target.preventDefault;
-      document.getElementById('signInEmail').value="h750307@ii5g.org.tw";
-      document.getElementById('signInPassword').value= "000";
+      document.getElementById('signInEmail').value = "visiter@gmail.com";
+      document.getElementById('signInPassword').value = "111";
     }
-    function getSignInInfo(){
-      return new Promise((resolve, reject)=>{
+    function getSignInInfo() {
+      return new Promise((resolve, reject) => {
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
-            let member = JSON.parse(xhr.responseText);
-            if (member.memNo) {
-              console.log(member.memNo);
-              resolve(member.memNo);
-            }else{
-              reject(new Error('請先登入才能寫信'))
-            }
+          let member = JSON.parse(xhr.responseText);
+          if (member.memNo) {
+            console.log(member.memNo);
+            resolve(member.memNo);
+          } else {
+            reject(new Error('請先登入才能寫信'))
+          }
         }
         xhr.open("get", "./phps/nav_getSignInInfo.php", true);
         xhr.send(null);
@@ -180,6 +203,7 @@ let vm3 = new Vue({
     getSignInInfo()
       .then(onFulfilled)
       .catch(onRejected)
+
   },
 });
 
@@ -197,7 +221,7 @@ setInterval(() => {
 function typeEffect(element, speed) {
   var text = element.innerHTML;
   element.innerHTML = "";
-  
+
   var i = 0;
   var timer = setInterval(function () {
     if (i < text.length) {
@@ -209,41 +233,16 @@ function typeEffect(element, speed) {
   }, speed);
 }
 
-/*
- * 寫信頁面表單送出按鈕
- */
-// 監聽所有的submit按鈕(用戶郵戳)，當觸發點擊事件後，先檢查必要欄位是否有填值
-let submitStamp = document.querySelector('.stamp-type').children;
-for (let i = 0; i < submitStamp.length; i++) {
-  submitStamp[i].addEventListener('click', (e) => {
-    e.preventDefault();//解掉冒泡事件
-    e.stopPropagation();
-    e.stopImmediatePropagation();
-    // let letterStamp = parseInt(e.target.firstChild.value)+1;
-    // console.log(e.target);
-    // saveImage();//先存好canvas
-    writeLetterExm();
-  })
-}
-for (let i = 0; i < submitStamp.length; i++) {
-  submitStamp[i].addEventListener('touchend', (e) => {
-    e.preventDefault();//解掉冒泡事件
-    e.stopPropagation();
-    e.stopImmediatePropagation();
-    // let letterStamp = parseInt(e.target.firstChild.value)+1;
-    // console.log(e.target);
-    // saveImage();//先存好canvas
-    writeLetterExm();
-  })
-}
+
 
 //判斷必要欄位是否有填值
 function writeLetterExm() {
   let letterTitle = document.getElementById('letterTitle');
   let letterContant = document.getElementById('letterContant');
   let lettrtCat = document.getElementsByName('letSort');
+  let letterPat = document.getElementsByName('userPattern');
   // console.log(lettrtCat[0].checked);
-  
+
   //判斷 信件分類
   let checkflag = 0;
   for (var i = 0; i < lettrtCat.length; i++) {
@@ -251,12 +250,22 @@ function writeLetterExm() {
       checkflag = 1;
     }
   }
+  //判斷 彩繪圖案
+  let patFlag = 0;
+  for (var i = 0; i < letterPat.length; i++) {
+    if (letterPat[i].checked == true) {
+      patFlag = 1;
+    }
+  }
+
   if (checkflag == 0) { //沒有work??
     alert("請選擇信件分類");
   } else if (letterTitle.value == "") {
     alert("請輸入信件標題");
   } else if (letterContant.value == "") {
     alert("請輸入信件內容");
+  } else if (patFlag == 0) {
+    alert("請選擇彩繪圖案");
   } else {
     //判斷必要欄位皆有填值
     // saveImage();//先存好canvas
@@ -264,8 +273,6 @@ function writeLetterExm() {
     //   confirmSubmit();//前往下一步->摺紙
     // },1000)
     confirmSubmit();//前往下一步->摺紙
-    
-    
   }
 }
 
@@ -277,17 +284,17 @@ let context = canvas.getContext("2d");
 //按實際渲染倍率來縮放canvas
 let getPixelRatio = function (context) {
   let backingStore = context.backingStorePixelRatio ||
-      context.webkitBackingStorePixelRatio ||
-      context.mozBackingStorePixelRatio ||
-      context.msBackingStorePixelRatio ||
-      context.oBackingStorePixelRatio ||
-      context.backingStorePixelRatio || 1;
+    context.webkitBackingStorePixelRatio ||
+    context.mozBackingStorePixelRatio ||
+    context.msBackingStorePixelRatio ||
+    context.oBackingStorePixelRatio ||
+    context.backingStorePixelRatio || 1;
   return (window.devicePixelRatio || 1) / backingStore;
 }
 let ratio = getPixelRatio(context);
 canvas.style.width = canvas.width + 'px';
 canvas.style.height = canvas.height + 'px';
- 
+
 canvas.width = canvas.width * ratio;
 canvas.height = canvas.height * ratio;
 
@@ -300,8 +307,8 @@ function b(arr, target, context) {
   let high = arr.length - 1
   let mid = low + Math.floor((high - low) / 2)
   let i = 0
-  if(high < low) return -1;
-  while(high > low) {
+  if (high < low) return -1;
+  while (high > low) {
     var s = arr.slice(0, mid + 1).join('')
     var len = context.measureText(s).width
     if (len < target) {
@@ -315,34 +322,34 @@ function b(arr, target, context) {
   return mid
 }
 
-CanvasRenderingContext2D.prototype.wrapText = function (text, x, y, maxWidth, lineHeight , fontSize) {
-	if (typeof text != 'string' || typeof x != 'number' || typeof y != 'number') {
-		return;
-	}
-	
-	var context = this;
-	context.font=`${fontSize}px Noto-Sans-TC`;
-	// 字符分隔
-	var arrText = text.split('');
-	var line = '';
-     
-    var start = 0;
-    var end = 0
-    var lineArr = []
-    var line = ''
-    var isEnd = false
-  
-    while(end !== -1) {
-      end = b(arrText, maxWidth, context)
-      // console.log('start: ' + start, 'end: ' + end)
-      lineArr = arrText.splice(start, end + 1)
-      line = lineArr.join('')
-      context.fillText(line, x, y);
-      y += lineHeight;
-    }
+CanvasRenderingContext2D.prototype.wrapText = function (text, x, y, maxWidth, lineHeight, fontSize) {
+  if (typeof text != 'string' || typeof x != 'number' || typeof y != 'number') {
+    return;
+  }
+
+  var context = this;
+  context.font = `${fontSize}px Noto-Sans-TC`;
+  // 字符分隔
+  var arrText = text.split('');
+  var line = '';
+
+  var start = 0;
+  var end = 0
+  var lineArr = []
+  var line = ''
+  var isEnd = false
+
+  while (end !== -1) {
+    end = b(arrText, maxWidth, context)
+    // console.log('start: ' + start, 'end: ' + end)
+    lineArr = arrText.splice(start, end + 1)
+    line = lineArr.join('')
+    context.fillText(line, x, y);
+    y += lineHeight;
+  }
 }
 
-function canvasSet(){
+function canvasSet() {
   // console.log('製作canvas！');
   context.clearRect(0, 0, canvas.width, canvas.height);//清空畫布
   let canvasWidth = parseInt(document.getElementById('myCanvas').style.width);
@@ -350,27 +357,27 @@ function canvasSet(){
   let letFrameImg = new Image();
   letFrameImg.src = "./img/share/postCard-vertical.svg";//信件邊框的裝飾圖
   //信件邊框
-  letFrameImg.addEventListener('load',()=>{
+  letFrameImg.addEventListener('load', () => {
     context.drawImage(letFrameImg, 0, 0, canvasWidth, canvasHeight);
   })
   saveImage();
 }
 
-function saveImage(){
+function saveImage() {
   let textTittle = document.getElementById('letterTitle');
   let letterContant = document.getElementById('letterContant');
   let img = new Image();
   img.src = vm2.letterUploadImg;//user上傳的圖片
 
-  let widthScale = img.width/160;//換算user上傳圖片要縮小的比例
-  img.width = img.width/widthScale;
-  img.height = img.height/widthScale;
+  let widthScale = img.width / 160;//換算user上傳圖片要縮小的比例
+  img.width = img.width / widthScale;
+  img.height = img.height / widthScale;
   context.wrapText(textTittle.value, 220, 70, 230, 40, 30);
   context.wrapText(letterContant.value, 40, 240, 415, 28, 18);
   //文字長度參考: https://news.ltn.com.tw/news/world/breakingnews/3035551 要在限制標題跟內文字數
   //信件內容
-  img.addEventListener('load',()=>{
-    context.drawImage(img, 40, 50,img.width,img.height);
+  img.addEventListener('load', () => {
+    context.drawImage(img, 40, 50, img.width, img.height);
   })
 }
 
@@ -383,41 +390,41 @@ function submitToLetterTable() {
   let letterTitle = document.getElementById('letterTitle').value;
   let letterContant = document.getElementById('letterContant').value;
   letterImg = vm2.letterUploadImg;
-  letterImg = letterImg.replace(/\&/g,"%26");//將ajax傳送的base64格式轉譯
-  letterImg = letterImg.replace(/\+/g,"%2B");
+  letterImg = letterImg.replace(/\&/g, "%26");//將ajax傳送的base64格式轉譯
+  letterImg = letterImg.replace(/\+/g, "%2B");
   let letterPattern = vm3.letterPattern;
   let userStamp = vmUserStamp.letterStamp;
   let userNo = vm3.userNo;
   let canvas = document.getElementById('myCanvas');
   let hidden_data = canvas.toDataURL("image/png");
-  hidden_data = hidden_data.replace(/\&/g,"%26");
-  hidden_data = hidden_data.replace(/\+/g,"%2B");
+  hidden_data = hidden_data.replace(/\&/g, "%26");
+  hidden_data = hidden_data.replace(/\+/g, "%2B");
   // document.getElementById('hidden_data').value = letImgUrl;
   // console.log(hidden_data);
-  
+
   //--- 產生XMLHttpRequest物件
   let xhr = new XMLHttpRequest();
   //--- 設定好所要連結的程式
   let url = "./phps/writeLetter.php";
   //註冊callback function 來判斷是否新增資料完成
-  xhr.onload = function(){
-    if(xhr.status == 200){
+  xhr.onload = function () {
+    if (xhr.status == 200) {
       let json = JSON.parse(xhr.responseText);
       vmImgWrap.letUrl = `url('${json.data.letImgUrl}')`;//把圖片路徑塞去摺紙的畫面上
       vmImgWrap.letPattern = `url('${json.data.matPatUrl}')`;//用戶選擇的彩繪花紋
       // console.log(json);
-    }else{
+    } else {
       console.log('上傳失敗');
     }
   }
-  
+
   xhr.open("POST", url, true);
   //--- 送出資料
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
   let data_info = `memNo=${userNo}&letPower=1&matPatNo=${letterPattern}&matPosNo=${userStamp}&letTitle=${letterTitle}&letContent=${letterContant}&imgUrl=${letterImg}&mesCount=0&letSort=${lettrtCat}&letStatus=0&hidden_data=${hidden_data}`;
   //memNo=10 10要改成${變數} 此變數從session撈出目前登入的用戶number
-  
+
   xhr.send(data_info);
 
 }

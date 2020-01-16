@@ -66,11 +66,14 @@ let vmCatchLetter = new Vue({
     // console.log(`letNo=${vmCatchLet.letNo}`);
     //memNo, letNo, msgContent
     let leaveMsg = document.getElementById('leaveMsg').value;
-    fetch('./phps/userLeaveMsg.php',{
-      method: 'POST',
-      body: new URLSearchParams(`memNo=${vmCatchLet.userNo}&letNo=${vmCatchLet.letNo}&msgContent=${leaveMsg}`)
-    })
-    // .then(res=>res.json()).then(json=>{
+    if(leaveMsg != ""){
+      fetch('./phps/userLeaveMsg.php',{
+        method: 'POST',
+        body: new URLSearchParams(`memNo=${vmCatchLet.userNo}&letNo=${vmCatchLet.letNo}&msgContent=${leaveMsg}`)
+      })
+    }
+
+    // .then(res=>res.text()).then(json=>{
     //   console.log(json);
     // })
   }
@@ -98,7 +101,7 @@ let vmCatchLetter = new Vue({
        */
       openLetter();//開信
       document.getElementById('navHead').classList.add('-on');//將navBar推上去
-      stampShot();//蓋章
+      
       threeWorld.removeEventListener('mousedown', mouseDownFn);//解除撈信滑鼠事件
       threeWorld.removeEventListener('mouseup', mouseUpFn );//解除撈信滑鼠事件
       // changeMouseToStamp();//把滑鼠變成戳章
@@ -112,70 +115,84 @@ let vmCatchLetter = new Vue({
   }
 
   function openLetter() {
-    planeLetter.classList.add('active');
-    letterFlim();
-    threeWorld.style.cursor = 'auto';
+    return new Promise((resolve, reject) => {
+      
+      planeLetter.classList.add('active');
+      //判斷是撈新聞還是撈一封信，
+      //如果是撈到 新聞 則出現返回撈信的按鈕 
+      //如果是撈到 一封信 則可以蓋郵戳
+      if(vmImgWrap.letUrl != ""){
+        letterFlim()//開信
+        .then(stampShot())//蓋章
+      }else{
+        letterFlim()//開信
+        .then(goBackBtn())//返回按鈕
+      }
+      // letterFlim();
+      threeWorld.style.cursor = 'auto';
+    })
   }
 
   let time = 5
-
   function letterFlim() {
-    let imgWrap_catch = document.getElementById('imgWrap_catch');
-    let imgfinalStep_catch = document.getElementById('imgfinalStep_catch');
-    let planeBody_catch = document.getElementById('planeBody_catch');
-    let planeWing_catch = document.getElementById('planeWing_catch');
-    let imgRightTriangle2_catch = document.getElementById('imgRightTriangle2_catch');
-    let imgLeftTriangle2_catch = document.getElementById('imgLeftTriangle2_catch');
-    let imgRightTriangle_catch = document.getElementById('imgRightTriangle_catch');
-    let imgLeftTriangle_catch = document.getElementById('imgLeftTriangle_catch');
-    setTimeout(()=>{
-      // 執行自動動畫
-      net.style.display="none";
-      imgWrap_catch.style.animationName = "rotateCatchPlane";
-      planeWing_catch.style.animationName = "openCatchPlane1";
+    return new Promise((resolve, reject)=>{
+      let imgWrap_catch = document.getElementById('imgWrap_catch');
+      let imgfinalStep_catch = document.getElementById('imgfinalStep_catch');
+      let planeBody_catch = document.getElementById('planeBody_catch');
+      let planeWing_catch = document.getElementById('planeWing_catch');
+      let imgRightTriangle2_catch = document.getElementById('imgRightTriangle2_catch');
+      let imgLeftTriangle2_catch = document.getElementById('imgLeftTriangle2_catch');
+      let imgRightTriangle_catch = document.getElementById('imgRightTriangle_catch');
+      let imgLeftTriangle_catch = document.getElementById('imgLeftTriangle_catch');
       setTimeout(()=>{
-        imgfinalStep_catch.style.webkitClipPath = "polygon(50% 0%, 0 85%, 0 100%, 0 100%, 50% 100%);";
-        imgfinalStep_catch.style.clipPath = "polygon(50% 0%, 0 85%, 0 100%, 0 100%, 50% 100%);";
+        // 執行自動動畫
+        net.style.display="none";
+        imgWrap_catch.style.animationName = "rotateCatchPlane";
+        planeWing_catch.style.animationName = "openCatchPlane1";
         setTimeout(()=>{
-          planeWing_catch.style = "-webkit-clip-path:polygon(9% 0%, 97% 81%, 98% 95.2%, 0% 95.2%, 8% 1%);clip-path:polygon(9% 0%, 97% 81%, 98% 95.2%, 0% 95.2%, 8% 1%)";
-          planeWing_catch.style.animationName = "openPlanePaper_1";
-          planeBody_catch.style.display="none";
+          imgfinalStep_catch.style.webkitClipPath = "polygon(50% 0%, 0 85%, 0 100%, 0 100%, 50% 100%);";
+          imgfinalStep_catch.style.clipPath = "polygon(50% 0%, 0 85%, 0 100%, 0 100%, 50% 100%);";
           setTimeout(()=>{
-            imgRightTriangle2_catch.style.display = "block";
-            imgLeftTriangle2_catch.style = "display:block;z-index:99;box-shadow:inset 0 0 7px rgba(0,0,0,.3);-webkit-clip-path: polygon(100% 0%, 100% 55%, 0% 100%);clip-path: polygon(100% 0%, 100% 55%, 0% 100%)";
+            planeWing_catch.style = "-webkit-clip-path:polygon(9% 0%, 97% 81%, 98% 95.2%, 0% 95.2%, 8% 1%);clip-path:polygon(9% 0%, 97% 81%, 98% 95.2%, 0% 95.2%, 8% 1%)";
+            planeWing_catch.style.animationName = "openPlanePaper_1";
+            planeBody_catch.style.display="none";
             setTimeout(()=>{
-              // imgLeftTriangle2_catch.style.animationName = "openPlanePaper_2_left";
-              // imgRightTriangle2_catch.style.animationName = "openPlanePaper_2_right";
-              planeWing_catch.style.display="none";
-              imgLeftTriangle2_catch.style.display="none";
-              imgRightTriangle2_catch.style.display="none";
-              imgfinalStep_catch.style= "-webkit-clip-path:polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0px 100%, 0px 34.5%, 50% 34.5%);clip-path:polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0px 100%, 0px 34.5%, 50% 34.5%)";
-              imgRightTriangle_catch.style.display="block";
-              imgLeftTriangle_catch.style.display="block";
-              catchLetterShow.style= "position: absolute;top: 50%; left:50%; transform: translate(-50%,-50%);-webkit-clip-path:polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0px 100%, 0px 34.5%, 50% 34.5%);clip-path:polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0px 100%, 0px 34.5%, 50% 34.5%)";
-              catchLetterShow.style.display= "block";
+              imgRightTriangle2_catch.style.display = "block";
+              imgLeftTriangle2_catch.style = "display:block;z-index:99;box-shadow:inset 0 0 7px rgba(0,0,0,.3);-webkit-clip-path: polygon(100% 0%, 100% 55%, 0% 100%);clip-path: polygon(100% 0%, 100% 55%, 0% 100%)";
               setTimeout(()=>{
-                imgfinalStep_catch.style= "-webkit-clip-path:polygon(50% 0%, 100% 0, 100% 40%, 100% 100%, 0 100%, 0 40%, 0 0);clip-path:polygon(50% 0%, 100% 0, 100% 40%, 100% 100%, 0 100%, 0 40%, 0 0)";
-                catchLetterShow.style="position: absolute; top: 50%; left:50%; transform: translate(-50%,-50%);-webkit-clip-path:polygon(50% 0%, 100% 0, 100% 40%, 100% 100%, 0 100%, 0 40%, 0 0);clip-path:polygon(50% 0%, 100% 0, 100% 40%, 100% 100%, 0 100%, 0 40%, 0 0)";
-                // imgRightTriangle_catch.style= "-webkit-clip-path:polygon(100% 0, 0 0, 100% 100%);clip-path:polygon(100% 0, 0 0, 100% 100%)";
-                // imgLeftTriangle_catch.style= "-webkit-clip-path:polygon(0 0, 0% 100%, 100% 0);clip-path:polygon(0 0, 0% 100%, 100% 0)";
-                imgRightTriangle_catch.style.display="none";
-                imgLeftTriangle_catch.style.display="none";
+                // imgLeftTriangle2_catch.style.animationName = "openPlanePaper_2_left";
+                // imgRightTriangle2_catch.style.animationName = "openPlanePaper_2_right";
+                planeWing_catch.style.display="none";
+                imgLeftTriangle2_catch.style.display="none";
+                imgRightTriangle2_catch.style.display="none";
+                imgfinalStep_catch.style= "-webkit-clip-path:polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0px 100%, 0px 34.5%, 50% 34.5%);clip-path:polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0px 100%, 0px 34.5%, 50% 34.5%)";
+                imgRightTriangle_catch.style.display="block";
+                imgLeftTriangle_catch.style.display="block";
+                catchLetterShow.style= "position: absolute;top: 50%; left:50%; transform: translate(-50%,-50%);-webkit-clip-path:polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0px 100%, 0px 34.5%, 50% 34.5%);clip-path:polygon(50% 0%, 50% 34.5%, 100% 34.5%, 100% 100%, 0px 100%, 0px 34.5%, 50% 34.5%)";
+                catchLetterShow.style.display= "block";
                 setTimeout(()=>{
-                  
-                  imgfinalStep_catch.style.display="none";
+                  imgfinalStep_catch.style= "-webkit-clip-path:polygon(50% 0%, 100% 0, 100% 40%, 100% 100%, 0 100%, 0 40%, 0 0);clip-path:polygon(50% 0%, 100% 0, 100% 40%, 100% 100%, 0 100%, 0 40%, 0 0)";
+                  catchLetterShow.style="position: absolute; top: 50%; left:50%; transform: translate(-50%,-50%);-webkit-clip-path:polygon(50% 0%, 100% 0, 100% 40%, 100% 100%, 0 100%, 0 40%, 0 0);clip-path:polygon(50% 0%, 100% 0, 100% 40%, 100% 100%, 0 100%, 0 40%, 0 0)";
+                  // imgRightTriangle_catch.style= "-webkit-clip-path:polygon(100% 0, 0 0, 100% 100%);clip-path:polygon(100% 0, 0 0, 100% 100%)";
+                  // imgLeftTriangle_catch.style= "-webkit-clip-path:polygon(0 0, 0% 100%, 100% 0);clip-path:polygon(0 0, 0% 100%, 100% 0)";
+                  imgRightTriangle_catch.style.display="none";
+                  imgLeftTriangle_catch.style.display="none";
+                  setTimeout(()=>{
+                    imgfinalStep_catch.style.display="none";
+                  },500)
                 },500)
-              },500)
-            },300)
-          },1000)
+              },300)
+            },1000)
+          },500)
         },500)
       },500)
-    },500)
+    })
   }
 
   function getRandom(num) {
     return Math.floor(Math.random() * num) + 1;
   };
+
   //蓋印章
   function stampShot(){
     planeLetter.addEventListener('click',(e)=>{
@@ -200,7 +217,8 @@ let vmCatchLetter = new Vue({
       setTimeout(()=>{
         planeLetter.style.animationName = "rotateLetter";
       },500)
-      //下一步的箭頭
+
+      //出現下一步的箭頭
       if(stampshot.style.display === "block"){
         nextStepArrow.style.display="block";
       }
@@ -220,6 +238,13 @@ let vmCatchLetter = new Vue({
           document.querySelector('footer').style.display= "block";//將footer顯示出來
           document.querySelector('header').style.animationName = "showHeader";
 
+          //判斷是否有留言，如果沒有，把打賞留言按鈕none
+          let userNameValue = document.querySelector('.user-name').innerText;
+          // console.log(userNameValue);
+          if(userNameValue == "歡迎留言！"){
+            document.getElementById('commentBtn').style.display="none";
+          }
+
           //監聽所有的submit按鈕(用戶郵戳)，當觸發點擊事件後，前往下一步->摺紙
           let submitStamp = document.querySelectorAll('.type');
           for(let i = 0 ; i<submitStamp.length ; i++){
@@ -230,7 +255,29 @@ let vmCatchLetter = new Vue({
               confirmSubmit();
             })
           }
+          for(let i = 0 ; i<submitStamp.length ; i++){
+            submitStamp[i].addEventListener('touchend',(e)=>{
+              // e.preventDefault();//解掉冒泡事件
+              e.stopPropagation();
+              e.stopImmediatePropagation();
+              confirmSubmit();
+            })
+          }
         },500)
       })
     })
+  }
+
+  //返回鈕
+  function goBackBtn(){
+    let goBackBtn = document.getElementById('goBackBtn');
+    setTimeout(()=>{
+      goBackBtn.style.display = "flex";
+    },5000)
+    let catchAgain = document.getElementById('catchAgain');
+    catchAgain.addEventListener('click', clearLetter ,false)
+  }
+
+  function clearLetter(){
+    location.reload();
   }

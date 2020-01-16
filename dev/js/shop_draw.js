@@ -3,6 +3,11 @@ let canvas = new fabric.Canvas('canvas', {
 }); //創建fabric環境
 canvas.setHeight(470);
 
+// let canvas2 = new fabric.Canvas('canvas', {
+//   backgroundColor: "grba(255, 255, 255, 0.2)"
+// }); //創建fabric環境
+// canvas.setHeight(470);
+
 //=================剪裁飛機或郵戳畫板==========================
 canvas.controlsAboveOverlay = true;
 var clipPath = new fabric.Group([
@@ -343,89 +348,89 @@ $(document).ready(function () {
 document.getElementById('clear').onclick = clearCanvas;
 
 function clearCanvas() {
-  if ($('#controlBox2').hasClass('clicked') == false) {
-    canvas.clear();
 
-    canvas.controlsAboveOverlay = true;
-    var clipPath = new fabric.Group([
-      new fabric.Polyline([{
-          x: 10,
-          y: 250
-        },
-        {
-          x: 700,
-          y: 10
-        },
-        {
-          x: 670,
-          y: 200
-        },
-        {
-          x: 40,
-          y: 250
-        },
-        {
-          x: 670,
-          y: 300
-        },
-        {
-          x: 700,
-          y: 490
-        },
-        {
-          x: 10,
-          y: 250
-        },
+  canvas.clear();
+  canvas.backgroundColor = "white";
+  canvas.controlsAboveOverlay = true;
+  var clipPath = new fabric.Group([
+    new fabric.Polyline([{
+        x: 10,
+        y: 250
+      },
+      {
+        x: 700,
+        y: 10
+      },
+      {
+        x: 670,
+        y: 200
+      },
+      {
+        x: 40,
+        y: 250
+      },
+      {
+        x: 670,
+        y: 300
+      },
+      {
+        x: 700,
+        y: 490
+      },
+      {
+        x: 10,
+        y: 250
+      },
 
-      ], {
-        // stroke: 'red',
-        // color: 'red',
-        // left: 10,
-        // top: 10,
-        // fill: 'red'
-      }),
-      new fabric.Polyline([{
-          x: 120,
-          y: 248
-        },
+    ], {
+      // stroke: 'red',
+      // color: 'red',
+      // left: 10,
+      // top: 10,
+      // fill: 'red'
+    }),
+    new fabric.Polyline([{
+        x: 120,
+        y: 248
+      },
 
-        {
-          x: 670,
-          y: 205
-        },
-        {
-          x: 650,
-          y: 248
-        },
-        {
-          x: 120,
-          y: 248
-        },
-      ]),
-      new fabric.Polyline([{
-          x: 120,
-          y: 253
-        },
+      {
+        x: 670,
+        y: 205
+      },
+      {
+        x: 650,
+        y: 248
+      },
+      {
+        x: 120,
+        y: 248
+      },
+    ]),
+    new fabric.Polyline([{
+        x: 120,
+        y: 253
+      },
 
-        {
-          x: 650,
-          y: 253
-        },
-        {
-          x: 670,
-          y: 295
-        },
-        {
-          x: 120,
-          y: 253
-        },
-      ]),
-    ]);
+      {
+        x: 650,
+        y: 253
+      },
+      {
+        x: 670,
+        y: 295
+      },
+      {
+        x: 120,
+        y: 253
+      },
+    ]),
+  ]);
 
-    canvas.clipPath = clipPath;
-    canvas.backgroundColor = "white";
-    canvas.renderAll();
-  }
+  canvas.clipPath = clipPath;
+  canvas.backgroundColor = "white";
+  canvas.renderAll();
+
 }
 
 
@@ -505,21 +510,23 @@ outputPngBtn.addEventListener('click', () => output('png'))
 function output(formatType) {
   var patternName = $('#patternName').val();
   // console.log(patternName)
-  let dataURL = canvas.toDataURL({
-    format: `image/${formatType}`,
-    top: 0,
-    left: 0,
-    width: 800,
-    height: 500,
-    multiplier: 1,
-    quality: 0.1
-  });
-
-  console.log(dataURL)
-  // console.log(boardType)
-  circleMatSort = "postmark";
-  planeMatSort = "figure";
   if (patternName != "") {
+    canvas.backgroundColor = "transparent";
+    let dataURL = canvas.toDataURL({
+      format: `image/${formatType}`,
+      top: 0,
+      left: 0,
+      width: 800,
+      height: 500,
+      multiplier: 1,
+      quality: 0.1
+    });
+
+    console.log(dataURL)
+    // console.log(boardType)
+    circleMatSort = "postmark";
+    planeMatSort = "figure";
+
 
     if (boardType == "circle") {
       cavMemberH = document.getElementById('cavMemberH').innerHTML;
@@ -559,6 +566,7 @@ function output(formatType) {
     document.body.removeChild(a)
     alert("圖檔已存入我的包包~~請到我的包包確認")
     clearCanvas();
+
 
   } else {
     alert("請填寫欲儲存的圖檔名稱~~感謝您");
@@ -740,7 +748,10 @@ function resizeCanvas() {
 
   }
   canvas.setWidth(canvasBox.width)
+
   // console.log('window.innerWidth: ', window.innerWidth);
+
   canvas.renderAll();
+
 }
 resizeCanvas();

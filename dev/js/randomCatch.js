@@ -21,6 +21,8 @@ function catchNews(){
     vmCatchLet.author = `author: ${json.articles[randNews].author}`;
     // vmCatchLet.letterContant_2 = `${json.articles[randNews].author}<br>${json.articles[randNews].publishedAt}`;
     vmCatchLet.letterUploadImg = `url(${json.articles[randNews].urlToImage})`;
+    // console.log(vmImgWrap.letUrl);
+    
   })
 }
 
@@ -44,8 +46,31 @@ function catchALetter(){
     vmCatchLet.author = `author: ${json.letter.memNo}`;
     vmCatchLet.letterUploadImg = `url(${json.letter.imgUrl})`;
 
+    //保存撈到信件的canvas圖檔
+    vmImgWrap.letUrl = `url('${json.letter.letImgUrl}')`;//此信的canvas
+    vmImgWrap.letPattern = `url('${json.letPattern.matPatUrl}')`;//此信的彩繪花紋
+
     //將留言存起來
     vmCatchLet.letNo = json.letter.letNo;
+    if(json.msg){
+      for(let i=0 ; i<json.msg.length ; i++){
+        if(json.msg[i].memNo){
+          vmCatchLet.msgUserId.push(`用戶編號：${json.msg[i].memNo}`);
+        }
+      }
+      for(let i=0 ; i<json.msg.length ; i++){
+        if(json.msg[i].msgContent){
+          vmCatchLet.levMsg.push(json.msg[i].msgContent);
+        }
+      }
+    }else{
+      vmCatchLet.msgUserId.push("歡迎留言！");
+      vmCatchLet.levMsg.push("目前沒有留言...");
+    }
+    
+  
+
+    console.log(`canvas: ${vmImgWrap.letUrl}`);
     
   }).catch(err=>console.log(err))
   
