@@ -240,6 +240,7 @@ function writeLetterExm() {
   let letterTitle = document.getElementById('letterTitle');
   let letterContant = document.getElementById('letterContant');
   let lettrtCat = document.getElementsByName('letSort');
+  let letterPat = document.getElementsByName('userPattern');
   // console.log(lettrtCat[0].checked);
 
   //判斷 信件分類
@@ -249,12 +250,22 @@ function writeLetterExm() {
       checkflag = 1;
     }
   }
+  //判斷 彩繪圖案
+  let patFlag = 0;
+  for (var i = 0; i < letterPat.length; i++) {
+    if (letterPat[i].checked == true) {
+      patFlag = 1;
+    }
+  }
+
   if (checkflag == 0) { //沒有work??
     alert("請選擇信件分類");
   } else if (letterTitle.value == "") {
     alert("請輸入信件標題");
   } else if (letterContant.value == "") {
     alert("請輸入信件內容");
+  } else if (patFlag == 0) {
+    alert("請選擇彩繪圖案");
   } else {
     //判斷必要欄位皆有填值
     // saveImage();//先存好canvas
@@ -262,8 +273,6 @@ function writeLetterExm() {
     //   confirmSubmit();//前往下一步->摺紙
     // },1000)
     confirmSubmit();//前往下一步->摺紙
-
-
   }
 }
 
