@@ -152,15 +152,15 @@
                             @include marginAuto;
                             // @extend.userSetting_memData;
                         }
-                        .userSetting_airCoinTable{
+                        .userSetting_airCoinTable,.userSetting_airCoinTable2{
                             width: 90%;
                             @include marginAuto;
                             // @extend.userSetting_memDataTable;
                         }
-                        .userSetting_airCoinTable tr:hover{
-                            @include hoverFontsize;
-                        }
-                        .userSetting_airCoinTable td,.userSetting_airCoinTable th{
+                        // .userSetting_airCoinTable tr:hover,.userSetting_airCoinTable2 tr:hover{
+                        //     @include hoverFontsize;
+                        // }
+                        .userSetting_airCoinTable td,.userSetting_airCoinTable th,.userSetting_airCoinTable2 td,.userSetting_airCoinTable2 th{
                             width: 33.33%;
                             border: none;
                             border-bottom: 3px dashed $main-green;

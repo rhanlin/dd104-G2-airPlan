@@ -347,45 +347,72 @@ closeForm.onclick = function(){
 
 
 
-//////////////////打賞紀錄
-function changeName(){
+//////////////////信件打賞紀錄
+function getLetLike(){
+    let letLikememNo = document.getElementById('cavMemberH').innerText.toString().substring(6);
+    console.log('airCoinmemNo:',letLikememNo);
     axios
-    .get('phps/userSetting_letLike.php')
+    .get('phps/userSetting_letLike.php?memNo=' + letLikememNo)
     .then((res) => {
-        var arr = res.data;
-        console.log('arrrrr',arr);
-        console.log(arr[0].letLikeTime);
-        console.log(arr[0].letTitle);
-        console.log(arr[0].letLikeNo);
-        var text9=arr[0].letLikeTime;
-        var text8=arr[0].letTitle;
-        var text7=arr[0].letLikeNo;
-        var td1=document.getElementById('td1');
-        var td2=document.getElementById('td2');
-        var td3=document.getElementById('td3');
-        td1.innerHTML=text9;
-        td2.innerHTML=text8;
-        td3.innerHTML=text7;
-        var text6=arr[1].letLikeTime;
-        var text5=arr[1].letTitle;
-        var text4=arr[1].letLikeNo;
-        var td4=document.getElementById('td4');
-        var td5=document.getElementById('td5');
-        var td6=document.getElementById('td6');
-        td4.innerHTML=text6;
-        td5.innerHTML=text5;
-        td6.innerHTML=text4;
-        // td=document.createElement('td')
-        // span=document.createElement('span')
-        // span.innerHTML=arr[0].letLikeTime
-        // td.appendChild(span)
-        // console.log(span)
-        // tr.appendChild(td)
-        console.log(td1);
-        const usedata = document.getElementById('cavMemberN').innerText;
-        const usedataNo = usedata.toString().substring(3);
-        console.log(usedataNo);
-        // alert('ddd');
+        let letLikeRow = res.data;
+        let letLike = "";
+        // console.log('撈回來的信件打賞紀錄',letLikeRow);
+        // console.log(letLikeRow[2].letLikeTime);
+        
+        for(i=0;i<letLikeRow.length;i++){
+            letLike = letterLike(
+                letLike,
+                letLikeRow[i].letLikeTime,
+                letLikeRow[i].letTitle,
+                letLikeRow[i].memNo
+            );
+        }
+        $("#letLike").html(letLike);
+        function letterLike(letLike,letLikeTime,letTitle,memNo){
+            letLike+=`
+                <tr>
+                    <td>${letLikeTime}</td>
+                    <td>${letTitle}</td>
+                    <td>${memNo}</td>
+                </tr>
+            `;
+            return letLike;
+        }
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+}
+
+//////////////////留言打賞紀錄
+function getmsgLike(){
+    let msgLikememNo = document.getElementById('cavMemberH').innerText.toString().substring(6);
+    console.log('msgLikememNo:',msgLikememNo);
+    axios
+    .get('phps/userSetting_msgLike.php?memNo=' + msgLikememNo)
+    .then((res) => {
+        let msgLikeRow = res.data;
+        let msgLike = "";
+        // console.log('撈回來的留言打賞紀錄',msgLikeRow);
+        for(i=0;i<msgLikeRow.length;i++){
+            msgLike = messageLike(
+                msgLike,
+                msgLikeRow[i].msgLikeTime,
+                msgLikeRow[i].msgContent,
+                msgLikeRow[i].memNo
+            );
+        }
+        $("#msgLike").html(msgLike);
+        function messageLike(msgLike,msgLikeTime,msgContent,memNo){
+            msgLike+=`
+                <tr>
+                    <td>${msgLikeTime}</td>
+                    <td>${msgContent}</td>
+                    <td>${memNo}</td>
+                </tr>
+            `;
+            return msgLike;
+        }
     })
     .catch((error) => {
         console.log(error)
@@ -422,6 +449,8 @@ function getUsersettingInfo() {
         console.log("usersetting_session資料_memPsw:",member.memPsw);
         if (member.memNo) {
             showMemData(xhr.responseText);
+            getLetLike();//信件打賞紀錄撈取
+            getmsgLike();//留言打賞紀錄撈取
         }
     }
     xhr.open("get", "./phps/nav_getSignInInfo.php", true);
@@ -431,8 +460,7 @@ function getUsersettingInfo() {
 
 
 window.addEventListener("load", function () {
-changeName();
-getUsersettingInfo()
+    getUsersettingInfo();
 });
 // window.addEventListener('load', function () {
 //     setTimeout(changeName(), 500);
