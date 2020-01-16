@@ -11,7 +11,7 @@
     flex-direction: column;
     justify-content: center;
     transform: translate(-50%, -50%);
-    
+    z-index: 9;
     .goBtn{
       cursor: pointer;
       text-decoration:none;
@@ -451,6 +451,18 @@
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+        .redBtn_light{
+          background:$main-red;
+        }
+        .redBtn{
+          background:$main-dark-red;
+        }
+        .blueBtn_light{
+          background:$main-blue;
+        }
+        .blueBtn{
+          background:$main-dark-blue;
+        }
       }
       .likeBtn{
         cursor: pointer;
