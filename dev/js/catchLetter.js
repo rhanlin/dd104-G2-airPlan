@@ -203,9 +203,13 @@ let vmCatchLetter = new Vue({
       setTimeout(()=>{
         planeLetter.style.animationName = "rotateLetter";
       },500)
-      //下一步的箭頭
-      if(stampshot.style.display === "block"){
+      //判斷是撈新聞還是撈一封信，
+      //如果是撈到 新聞 則出現返回撈信的按鈕 
+      //如果是撈到 一封信 則出現下一步的箭頭
+      if(stampshot.style.display === "block" && vmImgWrap.letUrl != ""){
         nextStepArrow.style.display="block";
+      }else{
+        console.log("不往下執行");
       }
       //下一步的箭頭被點擊->查看信件
       nextStepArrow.addEventListener('click',()=>{
