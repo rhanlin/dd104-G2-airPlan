@@ -238,6 +238,13 @@ let vmCatchLetter = new Vue({
           document.querySelector('footer').style.display= "block";//將footer顯示出來
           document.querySelector('header').style.animationName = "showHeader";
 
+          //判斷是否有留言，如果沒有，把打賞留言按鈕none
+          let userNameValue = document.querySelector('.user-name').innerText;
+          // console.log(userNameValue);
+          if(userNameValue == "歡迎留言！"){
+            document.getElementById('commentBtn').style.display="none";
+          }
+
           //監聽所有的submit按鈕(用戶郵戳)，當觸發點擊事件後，前往下一步->摺紙
           let submitStamp = document.querySelectorAll('.type');
           for(let i = 0 ; i<submitStamp.length ; i++){
