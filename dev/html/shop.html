@@ -922,7 +922,7 @@
 
           if (confirm(msg) == true) {
             cavMemberH = document.getElementById('cavMemberH').innerHTML;
-            cavMemberH = cavMemberH.toString().substring(3);
+            cavMemberH = cavMemberH.toString().substring(6);
 
             //==============如果跳窗抓到的URL值不是soldOut才可以購買(否則是重複購買)======================================
             // ===========這是從資料庫抓已購素材中的url來對比並把卡片改成soldOut ================================================
@@ -948,7 +948,7 @@
                   itemIndex = this.items[theIndex - 1].id.substring(8);
                   if (0 < itemIndex && itemIndex < 54) {
                     cavMemberH = document.getElementById('cavMemberH').innerHTML;
-                    cavMemberH = cavMemberH.toString().substring(3);
+                    cavMemberH = cavMemberH.toString().substring(6);
                     console.log(cavMemberH)
                     // cavMemberH.innerHTML = 5;
                     $.ajax({
@@ -984,7 +984,7 @@
                     if (xhr2.status == 200) {
 
                       cavMemberH = document.getElementById('cavMemberH').innerHTML;
-                      cavMemberH = cavMemberH.toString().substring(3);
+                      cavMemberH = cavMemberH.toString().substring(6);
                       // cavMemberH.innerHTML = 5;
                       let nowCoin = JSON.parse(xhr2.responseText);
 
@@ -1033,7 +1033,7 @@
         //====================資料庫data寫入跳窗內資料==========================================
         carddark() {
           cavMemberH = document.getElementById('cavMemberH').innerHTML;
-          cavMemberH = cavMemberH.toString().substring(3);
+          cavMemberH = cavMemberH.toString().substring(6);
           console.log(cavMemberH)
           // var vm = this;
           axios
@@ -1168,7 +1168,7 @@
 
         showToolInfo() {
           cavMemberH = document.getElementById('cavMemberH').innerHTML;
-          cavMemberH = cavMemberH.toString().substring(3);
+          cavMemberH = cavMemberH.toString().substring(6);
           // ===================這是左邊功能頁(資料庫抓入已購買工具) =======================
           console.log(cavMemberH)
           axios
@@ -1209,7 +1209,7 @@
 
         showMaterial() {
           cavMemberH = document.getElementById('cavMemberH').innerHTML;
-          cavMemberH = cavMemberH.toString().substring(3);
+          cavMemberH = cavMemberH.toString().substring(6);
           // cavMemberH.innerHTML = 5;
           console.log(cavMemberH)
           // =====================這是輪播圖片(資料庫抓入已購買素材)   =======================
@@ -1336,7 +1336,7 @@
         }
       }
       cavMemberH = document.getElementById('cavMemberH').innerHTML;
-      cavMemberH = cavMemberH.toString().substring(3);
+      cavMemberH = cavMemberH.toString().substring(6);
       console.log("========2", cavMemberH)
       // cavMemberH.innerHTML = 5;
       var url = "./phps/shop_getMemberCoin.php?memNo=" + cavMemberH;
