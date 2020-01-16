@@ -395,6 +395,7 @@ function shootPlane(){
             document.getElementById('imgWrap').style = "display: block; opacity: 1; transform: rotate(-85deg); animation: arocket .2s linear infinite; filter: unset;";
             // document.getElementById('cloudDiv').style.animation ="ascene 5s linear infinite;";//...??
           }
+          goBackBtn();
         },800)
       },800)
     },1500)
