@@ -2045,6 +2045,7 @@ $arrow_color: $gray !default;
             width: 100%;
 
             #canvasBox {
+              // position: relative;
               width: 100%;
               height: 600px;
               background-image: url('../img/product/decorate/windowFrame.svg');
@@ -2053,14 +2054,19 @@ $arrow_color: $gray !default;
               padding: 5.82% 6.5%;
 
               #canvas {
+                // left: 0;
+                // position: absolute;
                 width: 100%;
                 height: 100%;
               }
-              // #canvas2{
-              //   width: 100%;
-              //   height: 100%;
-              //   background-color: grba();
-              // }
+
+              #canvas2 {
+                // left: 0;
+                // position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: grba(255, 255, 255, 0.2);
+              }
             }
           }
 
