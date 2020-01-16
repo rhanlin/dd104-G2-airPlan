@@ -50,6 +50,7 @@
 
     <script>
         // let data = [];
+        userMemNo = 0;
         let mem2 = document.getElementById("memNo2").value;
 
         window.addEventListener("load", function () {
@@ -89,6 +90,8 @@
                 member = JSON.parse(xhr.responseText);
                 // console.log(member.memNo)
                 if (member.memNo) { //=====為登入狀態
+                    console.log(member.memNo);
+                    userMemNo = member.memNo;
                     get_Data(member.memNo); //=====執行撈聊天列表
                     // console.log(mem2)
                 } else {
@@ -111,7 +114,7 @@
             let data = JSON.parse(str);
             let overChil = document.getElementsByClassName('sectionOver')[0].childNodes.length;
             let markLen = document.querySelectorAll('.sectionMark1').length;
-            
+            console.log(data);
             if (data != "") {
                 if (overChil > 0) {
                     for ($i = overChil; $i > markLen; i++) {
@@ -121,9 +124,14 @@
             // console.log(overChil)
                 } else {
                     for (var i in data) {
-                        $('.sectionOver').append(
-                            `<div class='sectionMark1'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].memName}</p></div>`,
-                        );
+                        if (data[i].user1 == userMemNo) {
+                            $('.sectionOver').append(
+                            `<div class='sectionMark1'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].mem2}</p></div>`);
+                        } else {
+                            $('.sectionOver').append(
+                            `<div class='sectionMark1'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].mem1}</p></div>`);
+                        }
+
                     }
                     // console.log($('.sectionOver').children.length)
                     // console.log(document.querySelectorAll('.sectionMark1').length)
