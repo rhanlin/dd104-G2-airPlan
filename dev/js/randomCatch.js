@@ -44,12 +44,29 @@ function catchALetter(){
     vmCatchLet.author = `author: ${json.letter.memNo}`;
     vmCatchLet.letterUploadImg = `url(${json.letter.imgUrl})`;
 
-    //將留言存起來
-    vmCatchLet.letNo = json.letter.letNo;
-    
     //保存撈到信件的canvas圖檔
     vmImgWrap.letUrl = `url('${json.letter.letImgUrl}')`;//此信的canvas
     vmImgWrap.letPattern = `url('${json.letPattern.matPatUrl}')`;//此信的彩繪花紋
+
+    //將留言存起來
+    vmCatchLet.letNo = json.letter.letNo;
+    if(json.msg){
+      for(let i=0 ; i<json.msg.length ; i++){
+        if(json.msg[i].memNo){
+          vmCatchLet.msgUserId.push(json.msg[i].memNo);
+        }
+      }
+      for(let i=0 ; i<json.msg.length ; i++){
+        if(json.msg[i].msgContent){
+          vmCatchLet.levMsg.push(json.msg[i].msgContent);
+        }
+      }
+    }
+    
+  
+
+    console.log(`canvas: ${vmImgWrap.letUrl}`);
+    
   }).catch(err=>console.log(err))
   
 }

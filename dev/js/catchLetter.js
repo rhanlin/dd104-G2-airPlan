@@ -66,11 +66,14 @@ let vmCatchLetter = new Vue({
     // console.log(`letNo=${vmCatchLet.letNo}`);
     //memNo, letNo, msgContent
     let leaveMsg = document.getElementById('leaveMsg').value;
-    fetch('./phps/userLeaveMsg.php',{
-      method: 'POST',
-      body: new URLSearchParams(`memNo=${vmCatchLet.userNo}&letNo=${vmCatchLet.letNo}&msgContent=${leaveMsg}`)
-    })
-    // .then(res=>res.json()).then(json=>{
+    if(leaveMsg != ""){
+      fetch('./phps/userLeaveMsg.php',{
+        method: 'POST',
+        body: new URLSearchParams(`memNo=${vmCatchLet.userNo}&letNo=${vmCatchLet.letNo}&msgContent=${leaveMsg}`)
+      })
+    }
+
+    // .then(res=>res.text()).then(json=>{
     //   console.log(json);
     // })
   }
