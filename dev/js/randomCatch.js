@@ -21,7 +21,7 @@ function catchNews(){
     vmCatchLet.author = `author: ${json.articles[randNews].author}`;
     // vmCatchLet.letterContant_2 = `${json.articles[randNews].author}<br>${json.articles[randNews].publishedAt}`;
     vmCatchLet.letterUploadImg = `url(${json.articles[randNews].urlToImage})`;
-    console.log(vmImgWrap.letUrl);
+    // console.log(vmImgWrap.letUrl);
     
   })
 }
