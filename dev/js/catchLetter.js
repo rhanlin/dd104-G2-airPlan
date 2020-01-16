@@ -230,6 +230,14 @@ let vmCatchLetter = new Vue({
               confirmSubmit();
             })
           }
+          for(let i = 0 ; i<submitStamp.length ; i++){
+            submitStamp[i].addEventListener('touchend',(e)=>{
+              // e.preventDefault();//解掉冒泡事件
+              e.stopPropagation();
+              e.stopImmediatePropagation();
+              confirmSubmit();
+            })
+          }
         },500)
       })
     })

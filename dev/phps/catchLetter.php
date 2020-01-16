@@ -13,7 +13,6 @@ try {
   $randLetter->bindValue(':memNo',$_POST['memNo']);
   // $randLetter->bindValue(':memNo',10); //測試
   $randLetter->execute();
-  // $randLetterRow = $randLetter->fetchAll(PDO::FETCH_ASSOC);
   
   if($randLetter->rowCount()){
     // $letter = $randLetter->fetchObject();
@@ -27,8 +26,6 @@ try {
     $userMsg->execute();
     if($userMsg->rowCount()){
       $userMsgRow = $userMsg->fetchAll(PDO::FETCH_ASSOC);
-      // echo json_encode($letter["letNo"]);
-      // exit();
     }
 
     $letter = str_replace('userUploadImg//', './phps/userUploadImg/', $letter);//把前端要用的url做好
