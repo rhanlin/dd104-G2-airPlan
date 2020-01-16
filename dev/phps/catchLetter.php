@@ -17,21 +17,31 @@ try {
   if($randLetter->rowCount()){
     // $letter = $randLetter->fetchObject();
     $letter = $randLetter->fetch(PDO::FETCH_ASSOC);
-    
-    
-    $msgSql = "SELECT * FROM `message` where letNo = :letNo";
 
+    //撈出此信件的留言
+    $msgSql = "SELECT * FROM `message` where letNo = :letNo";
     $userMsg = $pdo->prepare($msgSql);
-    $userMsg->bindValue(':letNo',$letter["letNo"]);
+    $userMsg->bindValue(':letNo',$letter['letNo']);
     $userMsg->execute();
     if($userMsg->rowCount()){
       $userMsgRow = $userMsg->fetchAll(PDO::FETCH_ASSOC);
     }
+    //撈出此信件當初設定的彩繪貼圖
+    $patSql = "SELECT matPatUrl FROM `matPattern` WHERE matPatNo = :matPatNo";
+    $catchLetPat = $pdo->prepare($patSql);
+    $catchLetPat->bindValue(':matPatNo',$letter['matPatNo']);
+    $catchLetPat->execute();
+    if($catchLetPat->rowCount()){
+      $catchLetPatRow = $catchLetPat->fetch(PDO::FETCH_ASSOC);
+    }
 
-    $letter = str_replace('userUploadImg//', './phps/userUploadImg/', $letter);//把前端要用的url做好
+    //把前端要用的url做好
+    $letter = str_replace('userUploadImg//', './phps/userUploadImg/', $letter);
+    $letter = str_replace('userLetterCanvas//', './phps/userLetterCanvas/', $letter);
     $data = [
       'letter'=>$letter,
-      'msg'=>$userMsgRow
+      'msg'=>$userMsgRow,
+      'letPattern'=>$catchLetPatRow,
     ];
     echo json_encode($data);
 
