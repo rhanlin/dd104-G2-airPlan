@@ -92,6 +92,7 @@ let vm3 = new Vue({
     previewPattern: null,
     patternValue:[], //input radio 的value值
     letterPattern: 0, //存 使用者"選到"的飛機彩繪編號(matPatNo) 得值
+    userNo: 0,
   },
   methods: {
     clickPattern(e,index) {
@@ -105,7 +106,8 @@ let vm3 = new Vue({
   mounted() {
     function onFulfilled(value){
       //登入成功 -> 取用戶彩繪圖案、用戶郵戳
-      console.log(value);
+      vm3.userNo = value;
+      console.log(`userNo: ${vm3.userNo}`);
       fetch('./phps/fetchAllUserMat.php')
         .then(res=>res.json()).then(json=>{
           //拆出 pattern
@@ -171,7 +173,7 @@ let vm3 = new Vue({
               reject(new Error('請先登入才能寫信'))
             }
         }
-        xhr.open("get", "./phps/getSignInInfo.php", true);
+        xhr.open("get", "./phps/nav_getSignInInfo.php", true);
         xhr.send(null);
       })
     }
@@ -385,6 +387,7 @@ function submitToLetterTable() {
   letterImg = letterImg.replace(/\+/g,"%2B");
   let letterPattern = vm3.letterPattern;
   let userStamp = vmUserStamp.letterStamp;
+  let userNo = vm3.userNo;
   let canvas = document.getElementById('myCanvas');
   let hidden_data = canvas.toDataURL("image/png");
   hidden_data = hidden_data.replace(/\&/g,"%26");
@@ -412,7 +415,7 @@ function submitToLetterTable() {
   //--- 送出資料
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-  let data_info = `memNo=10&letPower=1&matPatNo=${letterPattern}&matPosNo=${userStamp}&letTitle=${letterTitle}&letContent=${letterContant}&imgUrl=${letterImg}&mesCount=0&letSort=${lettrtCat}&letStatus=0&hidden_data=${hidden_data}`;
+  let data_info = `memNo=${userNo}&letPower=1&matPatNo=${letterPattern}&matPosNo=${userStamp}&letTitle=${letterTitle}&letContent=${letterContant}&imgUrl=${letterImg}&mesCount=0&letSort=${lettrtCat}&letStatus=0&hidden_data=${hidden_data}`;
   //memNo=10 10要改成${變數} 此變數從session撈出目前登入的用戶number
   
   xhr.send(data_info);

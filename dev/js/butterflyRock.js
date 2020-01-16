@@ -39,7 +39,7 @@
       // transparent: true, 
       // opacity: 0.5, 
       reflectivity: 0.2,
-      shininess: 0.3,
+      // shininess: 0.3,
       // color: 0xffffff,
       // shading: THREE.FlatShading, color: Math.random()*0xffffff, 
       side: THREE.DoubleSide,

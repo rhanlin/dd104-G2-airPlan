@@ -157,70 +157,10 @@ new Vue({
 });
 
 
+//////////////////以上為Vue//////////////////
+//////////////////以下為JS//////////////////
 
-//JS
-
-//按鈕寫入新的intcolor資料
-function showMemColor(jsonStrC){//依intColor資料顯示介面顏色
-    let member = JSON.parse(jsonStrC);
-        if (member.memNo) {
-            if(member.intColor==0){
-                document.getElementById("intColor").style.backgroundColor = "rgba(255, 190, 0, .2)";
-            }else{
-                document.getElementById("intColor").style.backgroundColor = "rgba(0,120, 250, .2)";
-            }
-            document.getElementById("signInBg").style.display = "none";
-            //location.reload();//登入資訊抓取方式2:從整頁面
-        }else{
-            alert("尚未登入");
-    }
-}
-
-function sendColor0Form(){
-    let xhr = new XMLHttpRequest();
-    let memNo = document.getElementById('cavMemberN').innerText.toString().substring(6);
-    let intColor = '0';
-    // console.log( "========77",memNo);
-    xhr.onload = function () {//使用ajax方法到Server端資料
-        showMemColor(xhr.responseText);
-    }
-    xhr.open("post", "./phps/userSetting_changeIntColor.php", true);
-    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-    
-    let data_infoColor = `intColor=${intColor}&memNo=${memNo}`;
-    console.log("intColor:",intColor);
-    xhr.send(data_infoColor);
-}
-
-function sendColor1Form(){
-    let xhr = new XMLHttpRequest();
-    let memNo = document.getElementById('cavMemberN').innerText.toString().substring(6);
-    let intColor = '1';
-    // console.log( "========77",memNo);
-    xhr.onload = function () {//使用ajax方法到Server端資料
-        showMemColor(xhr.responseText);
-    }
-    xhr.open("post", "./phps/userSetting_changeIntColor.php", true);
-    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-    
-    let data_infoColor = `intColor=${intColor}&memNo=${memNo}`;
-    console.log("intColor:",intColor);
-    xhr.send(data_infoColor);
-}
-let intColorBtn0 =document.getElementById("intColorBtn0");
-let intColorBtn1 =document.getElementById("intColorBtn1");
-intColorBtn0.onclick = function(){
-    sendColor0Form();
-};
-intColorBtn1.onclick = function(){
-    sendColor1Form();
-};
-
-
-
-
-
-//會員資訊_頁籤樣式切換
+//////////////////會員資訊_頁籤樣式切換
 var btnMemData = document.getElementById("btnMemData");
 var btnAirCoin = document.getElementById("btnAirCoin");
 var btnMemcolor = document.getElementById("btnMemcolor");
@@ -261,7 +201,7 @@ btnMemcolor.onclick = function(){
     userSetting_memcolor.style.display = 'block';
 };
 
-//系統資訊_頁籤樣式切換
+//////////////////系統資訊_頁籤樣式切換
 var btnMemData = document.getElementById("btnMemData");
 var btnAirCoin = document.getElementById("btnAirCoin");
 btnManu.onclick = function(){
@@ -277,50 +217,73 @@ btnVar.onclick = function(){
     btnVar.style.color = 'white';
 };
 
-//顯示會員資訊-會員資料/密碼修改表單
-function showMemData(json){
-    let memdata = JSON.parse(json);
-    document.getElementById('memNo').innerText = memdata.memName+'-'+memdata.memNo;
-    document.getElementById('memEmail').innerText = memdata.memEmail;
-    document.getElementById('letCount').innerText = memdata.letCount;
-    document.getElementById('airCoin').innerText = memdata.airCoin;
-    document.getElementById('mempic').src = memdata.matPosUrl;
-    document.getElementById('setMempic').src = memdata.matPosUrl;
-    document.getElementById('setMemNo_name').placeholder = memdata.memName+'-'+memdata.memNo;
-    document.getElementById('setPassword').placeholder = memdata.memPsw;
-    document.getElementById('setPasswordCheck').placeholder = memdata.memPsw;
-    // console.log('------src',document.getElementById('mempic').src);
-}
 
-
-function getUsersettingInfo() {//////////////////取得登入資訊 依登入狀況呈現登入資訊
-    let xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-        let member = JSON.parse(xhr.responseText);
-        console.log("usersetting_session資料_memNo:",member.memNo);
-        console.log("usersetting_session資料_memName:",member.memName);
-        console.log("usersetting_session資料_memEmail:",member.memEmail);
-        console.log("usersetting_session資料_letCount:",member.letCount);
-        console.log("usersetting_session資料_airCoin:",member.airCoin);
-        console.log("usersetting_session資料_intColor:",member.intColor);
-        console.log("usersetting_session資料_matPosUrl:",member.matPosUrl);
-        console.log("usersetting_session資料_memPsw:",member.memPsw);
+//////////////////外觀設定
+//////////////////依intcolor資料呈現介面顏色
+function showMemColor(jsonStrC){//依intColor資料顯示介面顏色
+    let member = JSON.parse(jsonStrC);
         if (member.memNo) {
-            // console.log("memNo:",member.memNo);
-            showMemData(xhr.responseText)
-        }
+            if(member.intColor==0){
+                document.getElementById("intColor").style.backgroundColor = "rgba(255, 190, 0, .2)";
+            }else{
+                document.getElementById("intColor").style.backgroundColor = "rgba(0,120, 250, .2)";
+            }
+            document.getElementById("signInBg").style.display = "none";
+            //location.reload();//登入資訊抓取方式2:從整頁面
+        }else{
+            alert("尚未登入");
     }
-    xhr.open("get", "./phps/nav_getSignInInfo.php", true);
-    xhr.send(null);
 }
+//////////////////寫入0到intcolor資料欄位
+function sendColor0Form(){
+    let xhr = new XMLHttpRequest();
+    let memNo = document.getElementById('cavMemberN').innerText.toString().substring(6);
+    let intColor = '0';
+    // console.log( "========77",memNo);
+    xhr.onload = function () {//使用ajax方法到Server端資料
+        showMemColor(xhr.responseText);
+    }
+    xhr.open("post", "./phps/userSetting_changeIntColor.php", true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    
+    let data_infoColor = `intColor=${intColor}&memNo=${memNo}`;
+    console.log("intColor:",intColor);
+    xhr.send(data_infoColor);
+}
+//////////////////寫入1到intcolor資料欄位
+function sendColor1Form(){
+    let xhr = new XMLHttpRequest();
+    let memNo = document.getElementById('cavMemberN').innerText.toString().substring(6);
+    let intColor = '1';
+    xhr.onload = function () {//使用ajax方法到Server端資料
+        showMemColor(xhr.responseText);
+    }
+    xhr.open("post", "./phps/userSetting_changeIntColor.php", true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    
+    let data_infoColor = `intColor=${intColor}&memNo=${memNo}`;
+    console.log("intColor:",intColor);
+    xhr.send(data_infoColor);
+}
+let intColorBtn0 =document.getElementById("intColorBtn0");
+let intColorBtn1 =document.getElementById("intColorBtn1");
+intColorBtn0.onclick = function(){
+    sendColor0Form();
+};
+intColorBtn1.onclick = function(){
+    sendColor1Form();
+};
 
 
-function cancelSetDataForm() {//////////////////清除密碼修改表單內容
+//////////////////會員資訊
+//////////////////清除密碼修改表單內容
+function cancelSetDataForm() {
     document.getElementById("setPassword").value = "";
     document.getElementById("setPasswordCheck").value = "";
 }
 
-function sendsetDataForm() {//////////////////密碼修改表單發送
+//////////////////密碼修改表單發送
+function sendsetDataForm() {
     let memNo = document.getElementById("cavMemberN").innerText.toString().substring(6);
     let setPassword = document.getElementById("setPassword").value;
     let setPasswordCheck = document.getElementById("setPasswordCheck").value;
@@ -358,14 +321,13 @@ function sendsetDataForm() {//////////////////密碼修改表單發送
         alert('欄位不可空白');
     }
 }
-
+//////////////////密碼修改表單發送鍵
 let setDataBtn = document.getElementById('setDataBtn');
 setDataBtn.onclick = function(){
     sendsetDataForm();
 };
 
-
-//會員資訊_會員資料修改燈箱
+//////////////////會員資料修改燈箱
 var setDataBg = document.getElementById("setDataBg");
 var showForm = document.getElementById("showForm");
 var closeForm = document.getElementById("closeForm");
@@ -383,52 +345,122 @@ closeForm.onclick = function(){
     setDataBg.style.display = "none";
 };
 
-function changeName(){
-    
+
+
+//////////////////信件打賞紀錄
+function getLetLike(){
+    let letLikememNo = document.getElementById('cavMemberH').innerText.toString().substring(6);
+    console.log('airCoinmemNo:',letLikememNo);
     axios
-    .get('phps/userSetting_letLike.php')
+    .get('phps/userSetting_letLike.php?memNo=' + letLikememNo)
     .then((res) => {
-        var arr = res.data;
-        console.log(arr[0].letLikeTime);
-        console.log(arr[0].letTitle);
-        console.log(arr[0].letLikeNo);
-        var text9=arr[0].letLikeTime;
-        var text8=arr[0].letTitle;
-        var text7=arr[0].letLikeNo;
-        var td1=document.getElementById('td1');
-        var td2=document.getElementById('td2');
-        var td3=document.getElementById('td3');
-        td1.innerHTML=text9;
-        td2.innerHTML=text8;
-        td3.innerHTML=text7;
-        var text6=arr[1].letLikeTime;
-        var text5=arr[1].letTitle;
-        var text4=arr[1].letLikeNo;
-        var td4=document.getElementById('td4');
-        var td5=document.getElementById('td5');
-        var td6=document.getElementById('td6');
-        td4.innerHTML=text6;
-        td5.innerHTML=text5;
-        td6.innerHTML=text4;
-        // td=document.createElement('td')
-        // span=document.createElement('span')
-        // span.innerHTML=arr[0].letLikeTime
-        // td.appendChild(span)
-        // console.log(span)
-        // tr.appendChild(td)
-        console.log(td1);
-        const usedata = document.getElementById('cavMemberN').innerText;
-        const usedataNo = usedata.toString().substring(3);
-        console.log(usedataNo);
-        // alert('ddd');
+        let letLikeRow = res.data;
+        let letLike = "";
+        // console.log('撈回來的信件打賞紀錄',letLikeRow);
+        // console.log(letLikeRow[2].letLikeTime);
+        
+        for(i=0;i<letLikeRow.length;i++){
+            letLike = letterLike(
+                letLike,
+                letLikeRow[i].letLikeTime,
+                letLikeRow[i].letTitle,
+                letLikeRow[i].memNo
+            );
+        }
+        $("#letLike").html(letLike);
+        function letterLike(letLike,letLikeTime,letTitle,memNo){
+            letLike+=`
+                <tr>
+                    <td>${letLikeTime}</td>
+                    <td>${letTitle}</td>
+                    <td>${memNo}</td>
+                </tr>
+            `;
+            return letLike;
+        }
     })
     .catch((error) => {
         console.log(error)
     })
 }
+
+//////////////////留言打賞紀錄
+function getmsgLike(){
+    let msgLikememNo = document.getElementById('cavMemberH').innerText.toString().substring(6);
+    console.log('msgLikememNo:',msgLikememNo);
+    axios
+    .get('phps/userSetting_msgLike.php?memNo=' + msgLikememNo)
+    .then((res) => {
+        let msgLikeRow = res.data;
+        let msgLike = "";
+        // console.log('撈回來的留言打賞紀錄',msgLikeRow);
+        for(i=0;i<msgLikeRow.length;i++){
+            msgLike = messageLike(
+                msgLike,
+                msgLikeRow[i].msgLikeTime,
+                msgLikeRow[i].msgContent,
+                msgLikeRow[i].memNo
+            );
+        }
+        $("#msgLike").html(msgLike);
+        function messageLike(msgLike,msgLikeTime,msgContent,memNo){
+            msgLike+=`
+                <tr>
+                    <td>${msgLikeTime}</td>
+                    <td>${msgContent}</td>
+                    <td>${memNo}</td>
+                </tr>
+            `;
+            return msgLike;
+        }
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+}
+
+
+//////////////////顯示會員資料/密碼修改表單
+function showMemData(json){
+    let memdata = JSON.parse(json);
+    document.getElementById('memNo').innerText = memdata.memName+'-'+memdata.memNo;
+    document.getElementById('memEmail').innerText = memdata.memEmail;
+    document.getElementById('letCount').innerText = memdata.letCount;
+    document.getElementById('airCoin').innerText = memdata.airCoin;
+    document.getElementById('mempic').src = memdata.matPosUrl;
+    document.getElementById('setMempic').src = memdata.matPosUrl;
+    document.getElementById('setMemNo_name').placeholder = memdata.memName+'-'+memdata.memNo;
+    document.getElementById('setPassword').placeholder = memdata.memPsw;
+    document.getElementById('setPasswordCheck').placeholder = memdata.memPsw;
+}
+
+//////////////////取得登入資訊 依登入狀況呈現登入資訊
+function getUsersettingInfo() {
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        let member = JSON.parse(xhr.responseText);
+        console.log("usersetting_session資料_memNo:",member.memNo);
+        console.log("usersetting_session資料_memName:",member.memName);
+        console.log("usersetting_session資料_memEmail:",member.memEmail);
+        console.log("usersetting_session資料_letCount:",member.letCount);
+        console.log("usersetting_session資料_airCoin:",member.airCoin);
+        console.log("usersetting_session資料_intColor:",member.intColor);
+        console.log("usersetting_session資料_matPosUrl:",member.matPosUrl);
+        console.log("usersetting_session資料_memPsw:",member.memPsw);
+        if (member.memNo) {
+            showMemData(xhr.responseText);
+            getLetLike();//信件打賞紀錄撈取
+            getmsgLike();//留言打賞紀錄撈取
+        }
+    }
+    xhr.open("get", "./phps/nav_getSignInInfo.php", true);
+    xhr.send(null);
+}
+
+
+
 window.addEventListener("load", function () {
-// changeName();
-getUsersettingInfo()
+    getUsersettingInfo();
 });
 // window.addEventListener('load', function () {
 //     setTimeout(changeName(), 500);

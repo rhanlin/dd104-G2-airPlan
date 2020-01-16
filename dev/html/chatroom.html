@@ -54,19 +54,17 @@
 
         window.addEventListener("load", function () {
             getLogin();
-            document.getElementsByClassName('sendBtn')[0].addEventListener('click', sendText,
-                false); //=====當點擊mark時執行傳送聊天內容
+            document.getElementsByClassName('sendBtn')[0].addEventListener('click',sendText,false); //=====當點擊mark時執行傳送聊天內容
             let Mark = document.querySelectorAll('.sectionMark1');
             Mark[0].classList.add("MarkRed"); //=====第一個mark顯示為紅色
-            // showChat(member); //=====執行傳送聊天內容
             // console.log(Mark[0].classList);
             if (Mark.length > 0) { //=====聊天列表為0
                 for (let i = 0; i < Mark.length; i++) {
                     Mark[i].addEventListener('click', function (e) {
-                        document.getElementsByClassName('pageContent')[0].innerHTML = ""; //=====清空聊天室內容
-                        reget(mem2); //=====執行再撈一次聊天室內容
-                        // get_chat(mem2);//=====執行撈取資料
-                        get_Data();
+                        mem2 = e.currentTarget.getElementsByTagName("p")[0].innerText;
+                        // console.log(mem2)
+                        get_chat(mem2);//=====執行撈取資料
+                        // get_Data();
                         for (let j = 0; j < Mark.length; j++) {
                             Mark[j].classList.remove("MarkRed"); //=====移除所有mark的顏色
                         }
@@ -92,7 +90,7 @@
                 // console.log(member.memNo)
                 if (member.memNo) { //=====為登入狀態
                     get_Data(member.memNo); //=====執行撈聊天列表
-                    console.log(mem2)
+                    // console.log(mem2)
                 } else {
                     $('.sectionOver').append(
                         `<div class='sectionMark1'><div class='overImg'><img src='./img/share/LOGO.png'></div><p>Air Plan</p></div>`
@@ -103,7 +101,7 @@
                 }
 
             }
-            xhr.open('post', './phps/getSignInInfo.php', false);
+            xhr.open('post', './phps/nav_getSignInInfo.php', false);
             xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
             xhr.send(null);
         }
@@ -113,10 +111,11 @@
             let data = JSON.parse(str);
             let overChil = document.getElementsByClassName('sectionOver')[0].childNodes.length;
             let markLen = document.querySelectorAll('.sectionMark1').length;
+            
             if (data != "") {
                 if (overChil > 0) {
                     for ($i = overChil; $i > markLen; i++) {
-                        console.log(i)
+                        // console.log(i)
                         document.getElementsByClassName('sectionOver')[0].removeChild(i);
                     }
             // console.log(overChil)
@@ -138,18 +137,19 @@
 
         // 抓聊天內容
         function showChat(str) {
-            // let data = JSON.parse(str);
-            // console.log(str);
-            for (var i in str) {
+            let data = JSON.parse(str);
+            // console.log(data);
+            document.getElementsByClassName('pageContent')[0].innerHTML = ""; //=====清空聊天室內容
+            for (var i in data) {
                 // console.log(str['chat'][i].chatContent);
-                // console.log(125)
-                if (str[i].memNo1 == '1') {
+                // console.log(data[i].memNo1)
+                if (data[i].memNo1 == '1') {
                     $(`.pageContent`).append(
-                        `<div class='contentMe'><p>${str[i].chatContent}</p></div>`);
+                        `<div class='contentMe'><p>${data[i].chatContent}</p></div>`);
                     // console.log(str['chat'][i].chatContent);
                 } else {
                     $('.pageContent').append(
-                        `<div class='contentYour'><div class='overImg'><img src='${str[i].matPosUrl}'></div><p>${str[i].chatContent}</p></div>`
+                        `<div class='contentYour'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].chatContent}</p></div>`
                     );
                 }
             }
@@ -162,7 +162,7 @@
             let data_info = "catch=" + mark + "&memNo1=" + memNo1;
             xhr.onload = function () {
                 if (xhr.status == 200) {
-                    // console.log(xhr.responseText);
+                    console.log(xhr.responseText);
                     data = xhr.responseText;
                     showData(data);
                     // get_chat(mem2);
@@ -183,8 +183,9 @@
             let data_info = "catch=" + chat + "&memNo2=" + memNo2;
             xhr.onload = function () {
                 if (xhr.status == 200) {
-                    console.log(xhr.responseText);
+                    // console.log(xhr.responseText);
                     // data = xhr.responseText;
+                    // document.getElementsByClassName('pageContent')[0].innerHTML = ""; //=====清空聊天室內容
                     showChat(xhr.responseText);
                 } else {
                     alert(xhr.status, xhr.statusText);
@@ -196,19 +197,18 @@
             xhr.send(data_info);
         }
 
-        function reget() {
+        function reget(memNo2) {
             let xhr = new XMLHttpRequest();
             document.getElementById("catch").value = 'mark';
             let mark = document.getElementById("catch").value;
             let data_info = "catch=" + mark + "&memNo2=" + memNo2;
-            // console.log(document.getElementById("catch").value)
             xhr.onload = function () {
                 if (xhr.status == 200) {
                     // console.log(xhr.responseText);
                     data = xhr.responseText;
-                    // showChat(data);
+                    showChat(data);
                 } else {
-                    alert(xhr.status);
+                    alert(xhr.status, xhr.statusText);
                 }
             }
             xhr.open('post', './phps/chatroom.php', false);
@@ -220,6 +220,7 @@
         //輸入聊天內容
         function showText(str) {
             let data = JSON.parse(str);
+            // console.log(data)
             document.getElementsByClassName('sendText')[0].value = "";
             $(`.pageContent`).append(
                 `<div class='contentMe'><p>${data.chatContent}</p></div>`);
@@ -232,16 +233,15 @@
                 let xhr = new XMLHttpRequest();
                 document.getElementById("catch").value = 'content';
                 let content = document.getElementById("catch").value;
-                let data_info = "catch=" + content + "&memNo2=" + memNo2.value + "&sendText=" + val;
-                // console.log(document.getElementsByClassName('sendText')[0].value);
-                // console.log(content);
+                mem2 = document.querySelectorAll('.sectionMark1')[0].childNodes[1].innerText;
+                let data_info = "catch=" + content + "&memNo2=" + mem2 + "&sendText=" + val;
+                // console.log(val);
                 xhr.onload = function () {
                     if (xhr.status == 200) {
-                        // console.log(xhr.responseText);
                         data = xhr.responseText;
                         showText(data);
                     } else {
-                        alert(xhr.status);
+                        alert(xhr.status, xhr.statusText);
                     }
                 }
                 xhr.open('post', './phps/chatroom.php', false);
