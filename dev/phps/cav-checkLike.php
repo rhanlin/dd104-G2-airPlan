@@ -1,7 +1,8 @@
 <?php
 try {
     require_once("connectBook_root.php");
-    $sql = "select * from `message` m join `messageLike` ml on ( ml.msgNo = m.msgNo) where ml.memNo = :memNo";
+    // $sql = "select * from `message` m join `messageLike` ml on ( ml.msgNo = m.msgNo) where ml.memNo = :memNo";
+    $sql = "select * from `messageLike` where memNo=:memNo";
     $chkLike = $pdo->prepare($sql);
     $chkLike->bindValue(":memNo", $_GET["memNo"]);
     // $chkLike->bindValue(":msgLike", $_GET["likeThis"]);
