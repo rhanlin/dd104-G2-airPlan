@@ -1,5 +1,5 @@
 @mixin itemCardRow1($sum) {
-  @for $i from 1 through $sum {
+  @for $i from 2 through $sum {
 
     //從1跑到5
     #itemCard#{$i} {
@@ -18,7 +18,7 @@
 
 
 @mixin itemCardRow1_md($sum) {
-  @for $i from 1 through $sum {
+  @for $i from 2 through $sum {
 
     //從1跑到5
     #itemCard#{$i} {
@@ -37,7 +37,7 @@
 
 
 @mixin itemCardRow1_sm($sum) {
-  @for $i from 1 through $sum {
+  @for $i from 2 through $sum {
 
     //從1跑到3
     #itemCard#{$i} {
@@ -59,7 +59,7 @@
 }
 
 @mixin itemCardRow1_note($sum) {
-  @for $i from 1 through $sum {
+  @for $i from 2 through $sum {
 
     //從1跑到3
     #itemCard#{$i} {

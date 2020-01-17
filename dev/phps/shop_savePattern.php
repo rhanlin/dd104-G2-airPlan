@@ -31,7 +31,7 @@ try {
     //準備好要存的filename
 
     $fileName = "{$psn}";
-    $file = $upload_dir . "plan-pattern-" . $fileName . ".png";
+    $file = "./phps/".$upload_dir . "plan-pattern-" . $fileName . ".png";
     $success = file_put_contents($file, $data);
     if ($success) {
 

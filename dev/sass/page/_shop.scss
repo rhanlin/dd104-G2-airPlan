@@ -58,11 +58,11 @@ $arrow_color: $gray !default;
             width: 100%;
             position: absolute;
             left: 100%;
-            top: -40px;
+            top: -35px;
             color: $yellow;
             opacity: 0;
             z-index: 99;
-            font-size: 2vw;
+            font-size: 1vw;
 
           }
 
@@ -154,15 +154,17 @@ $arrow_color: $gray !default;
           .itemPage1 {
             width: 90%;
             height: 100%;
-            background-color: #ffeddc;
+            background-color: #f9c4b8;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%23bd7878' fill-opacity='0.59'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
             border: $border;
 
             .itemPage2 {
               margin-top: 3%;
               margin-left: 3%;
               width: 100%;
-              background-color: #ffe2c9;
               border: $border;
+              background-color: #f2cb96;
+              background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ead9b1' fill-opacity='0.58' fill-rule='evenodd'/%3E%3C/svg%3E");
               height: 100%;
 
               .itemPage0 {
@@ -260,7 +262,7 @@ $arrow_color: $gray !default;
             padding-top: 15%;
             padding-left: 5%;
             position: relative;
-            @include itemCardRow1(63);
+            @include itemCardRow1(62);
 
             .cardFilter {
               width: 100%;
@@ -286,15 +288,14 @@ $arrow_color: $gray !default;
               }
 
 
-
-              #itemCard1,
-              #itemCard11,
-              #itemCard16,
+              #itemCard2,
+              #itemCard10,
+              #itemCard20,
               #itemCard25,
-              #itemCard32,
-              #itemCard40,
-              #itemCard47,
-              #itemCard54 {
+              #itemCard34,
+              #itemCard41,
+              #itemCard48,
+              #itemCard55 {
                 transform: translate(25%, -30%) rotate(15deg);
 
                 &.bought {
@@ -307,11 +308,15 @@ $arrow_color: $gray !default;
                 }
               }
 
-              #itemCard2,
-              #itemCard12,
+              #itemCard3,
+              #itemCard11,
+              #itemCard21,
+              #itemCard26,
               #itemCard33,
-              #itemCard41,
-              #itemCard52,
+              #itemCard35,
+              #itemCard42,
+              #itemCard49,
+              #itemCard56,
               #itemCard62 {
                 transform: translate(15%, -10%) rotate(355deg);
 
@@ -325,13 +330,13 @@ $arrow_color: $gray !default;
                 }
               }
 
-              #itemCard3,
-              #itemCard13,
-              #itemCard18,
+              #itemCard4,
+              #itemCard12,
+              #itemCard22,
               #itemCard27,
-              #itemCard42,
               #itemCard43,
-              #itemCard49,
+              #itemCard50,
+              #itemCard57,
               #itemCard63 {
                 transform: translate(0, 5%) rotate(360deg);
 
@@ -346,12 +351,14 @@ $arrow_color: $gray !default;
 
               }
 
-              #itemCard4,
-              #itemCard14,
-              #itemCard19,
+              #itemCard5,
+              #itemCard13,
+              #itemCard23,
+
               #itemCard28,
-              #itemCard34,
-              #itemCard50,
+              #itemCard37,
+              #itemCard51,
+              #itemCard58,
               #itemCard44 {
                 transform: translate(0, 10%) rotate(350deg);
 
@@ -366,14 +373,14 @@ $arrow_color: $gray !default;
               }
 
 
-              #itemCard5,
-              #itemCard15,
+              #itemCard6,
+              #itemCard14,
+              #itemCard24,
               #itemCard29,
-              #itemCard35,
+              #itemCard38,
               #itemCard45,
-              #itemCard51,
-              #itemCard55,
-              #itemCard58 {
+              #itemCard52,
+              #itemCard59 {
                 transform: translate(0, 5%) rotate(15deg);
 
                 &.bought {
@@ -388,12 +395,12 @@ $arrow_color: $gray !default;
 
 
 
-              #itemCard6,
-              #itemCard21,
-              #itemCard26,
+              #itemCard7,
+              #itemCard15,
               #itemCard36,
+              #itemCard39,
               #itemCard46,
-              #itemCard56 {
+              #itemCard53 {
                 transform: translate(0%, 0%) rotate(350deg);
 
                 &.bought {
@@ -406,13 +413,13 @@ $arrow_color: $gray !default;
                 }
               }
 
-              #itemCard7,
+              #itemCard8,
+              #itemCard16,
               #itemCard17,
-              #itemCard22,
               #itemCard31,
-              #itemCard37,
-              #itemCard53,
-              #itemCard57 {
+              #itemCard40,
+              #itemCard47,
+              #itemCard54 {
                 transform: translate(0%, 0%) rotate(15deg);
 
                 &.bought {
@@ -425,10 +432,8 @@ $arrow_color: $gray !default;
                 }
               }
 
-              #itemCard8,
-              #itemCard23,
-              #itemCard38,
-              #itemCard48,
+
+              #itemCard32,
               #itemCard61 {
                 transform: translate(-0%, -10%) rotate(0deg);
 
@@ -443,9 +448,7 @@ $arrow_color: $gray !default;
               }
 
               #itemCard9,
-              #itemCard24,
-              #itemCard39,
-              #itemCard59 {
+              #itemCard18 {
                 transform: translate(-0%, -10%) rotate(10deg);
 
                 &.bought {
@@ -458,8 +461,7 @@ $arrow_color: $gray !default;
                 }
               }
 
-              #itemCard10,
-              #itemCard20,
+              #itemCard19,
               #itemCard30,
               #itemCard60 {
                 transform: translate(-0%, -0%) rotate(0deg);
@@ -474,14 +476,25 @@ $arrow_color: $gray !default;
                 }
               }
 
-              #itemCard64 {
+              #itemCard1 {
                 margin-left: 5%;
-                width: 40vw;
-                height: 20vw;
-                background-color: brown;
+                width: 42.5vw;
+                padding-top: 5%;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-color: white;
 
                 img {
                   display: none;
+                }
+              }
+
+              #itemCard62 {
+                display: none;
+
+                img {
+                  width: 2.5vw;
+                  transform: translate(15%, -70%) rotate(330deg);
                 }
               }
             }
@@ -1610,6 +1623,8 @@ $arrow_color: $gray !default;
                   width: 100%;
                   top: -35%;
                   left: 15%;
+                  background-color: transparent;
+                  border: transparent;
 
 
 
@@ -1625,7 +1640,7 @@ $arrow_color: $gray !default;
 
                   .controlBtn8 {
                     outline: none;
-                    width: 135%;
+                    width: 120%;
                     background-color: #FFD139;
                     border: $border;
                     text-align: center;
@@ -1640,9 +1655,9 @@ $arrow_color: $gray !default;
                       content: '';
                       position: absolute;
                       width: 105%;
-                      height: 50%;
-                      left: -65%;
-                      bottom: 5%;
+                      height: 30%;
+                      left: -60%;
+                      bottom: 20%;
                       border: $border;
                       transform: rotate(90deg) skew(45deg);
                       background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -1670,10 +1685,10 @@ $arrow_color: $gray !default;
 
 
                       &:before {
-                        width: 100%;
+                        width: 90%;
                         height: 30%;
                         left: -50%;
-                        bottom: 20%;
+                        bottom: 25%;
                         border: $border;
                         transform: rotate(90deg) skew(45deg);
                         background: -webkit-linear-gradient(40deg, $main-blue2 45%, #000 45%, #000 55%, $main-blue2 55%);
@@ -2187,16 +2202,16 @@ $arrow_color: $gray !default;
               // border: $border;
               width: 70%;
               margin-left: 10%;
-              padding: 5%;
-              // border-radius: 1em;
+              margin-top: 5%;
+              border-radius: 1em;
 
               .patternName {
                 letter-spacing: 0.15vw;
-                width: 80%;
+                width: 100%;
               }
 
               #patternName {
-                width: 90%;
+                width: 100%;
               }
             }
 
@@ -2213,11 +2228,12 @@ $arrow_color: $gray !default;
         position: relative;
 
         .hand1 {
-          right: 0;
-          top: -300px;
+          right: -5vw;
+          top: -600px;
           position: absolute;
           z-index: 100;
           width: 20%;
+          transform: rotate(-30deg);
 
           img {
             width: 100%;
@@ -2225,8 +2241,8 @@ $arrow_color: $gray !default;
         }
 
         .hand2 {
-          right: 0;
-          top: -300px;
+          right: -5vw;
+          top: -600px;
           position: absolute;
           z-index: 100;
           width: 20%;
@@ -2358,6 +2374,10 @@ $arrow_color: $gray !default;
       }
 
       #section3 {
+        #hand {
+          display: none;
+        }
+
         .owl-carousel {
           .owl-nav {
             // top: -45%;
@@ -2609,12 +2629,12 @@ $arrow_color: $gray !default;
 
             .airCoinTxt {
               left: 70%;
-              top: -30px;
+              top: -35px;
             }
 
 
             #coinInnerCount {
-              top: -30px;
+              top: -40px;
               left: 100%;
               font-size: 2vw;
             }
@@ -2698,7 +2718,7 @@ $arrow_color: $gray !default;
                   transform: translate(0%, 200%);
                 }
 
-                @include itemCardRow1_md(63);
+                @include itemCardRow1_md(62);
 
               }
             }
@@ -3483,7 +3503,7 @@ $arrow_color: $gray !default;
                   display: none;
                 }
 
-                @include itemCardRow1_sm(63);
+                @include itemCardRow1_sm(62);
 
               }
 
@@ -3660,21 +3680,30 @@ $arrow_color: $gray !default;
       #coinBox {
         // right: 10%;
         // top: 90%;
-        width: 40%;
+        width: 30%;
 
         #coinArea {
           .coinBox {
             .airCoinTxt {
-              // left: 50%;
-              // top: -35px;
+              left: 50%;
+              top: -35px;
 
             }
 
             #coinInnerCount {
-              top: -35px;
-              left: 65%;
+              top: -38px;
+              left: 70%;
               font-size: 3vw;
             }
+
+            .airCoin {
+              width: 80%;
+
+              img {
+                width: 100%;
+              }
+            }
+
 
             .airCoinSingle {
               img {
@@ -3726,7 +3755,7 @@ $arrow_color: $gray !default;
 
               .cardFilter {
                 height: 60vw;
-                @include itemCardRow1_note(63);
+                @include itemCardRow1_note(62);
 
               }
 
@@ -4368,7 +4397,7 @@ $arrow_color: $gray !default;
               #canvasBox {
                 width: 100%;
                 padding: 6% 7%;
-                height: 400px;
+                height: 380px;
                 background-size: contain;
                 background-image: url('../img/product/decorate/windowFrame_under768.svg');
               }
@@ -4379,17 +4408,18 @@ $arrow_color: $gray !default;
               display: block;
 
               .orderBtnBoxGroup {
-                width: 43%;
+                width: 45%;
                 margin: 0 auto;
               }
 
               .patNameInput {
-                // border: $border;
-                width: 100%;
-                margin-top: 10%;
-                margin-left: 7%;
-                padding-top: 5%;
-                // border-radius: 1em;
+                width: 80%;
+                margin: 0 auto;
+                padding-top: 15%;
+
+                .patternName h5 {
+                  font-size: 4vw;
+                }
 
               }
             }
@@ -4402,7 +4432,7 @@ $arrow_color: $gray !default;
           .owl-stage-outer {
             .owl-stage {
               .owl-item {
-                height: 15vw;
+                height: 40vw;
                 width: 70%;
                 border: 2px solid;
 
@@ -4413,7 +4443,13 @@ $arrow_color: $gray !default;
             }
           }
 
-          .owl-nav {}
+          .owl-nav {
+
+            transform: translate(22%, -1000%);
+            width: 100%;
+            height: 6vw;
+
+          }
         }
       }
     }

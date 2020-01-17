@@ -13,7 +13,7 @@ try {
         echo "{}";
     } else { //找得到
         //取回一筆資料
-        $likeRow = $liked->fetchAll(PDO::FETCH_ASSOC);
+        $likeRow = $liked->fetch(PDO::FETCH_ASSOC);
         //送出json字串
 
         echo json_encode($likeRow);
