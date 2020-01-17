@@ -135,7 +135,7 @@ let vm3 = new Vue({
       // console.log(`stamp length: ${submitStamp.length}`);
       for (let i = 0; i < submitStamp.length; i++) {
         submitStamp[i].addEventListener('click', (e) => {
-          // e.preventDefault();//解掉冒泡事件
+          e.preventDefault();//解掉冒泡事件
           e.stopPropagation();
           e.stopImmediatePropagation();
           writeLetterExm();
@@ -143,7 +143,7 @@ let vm3 = new Vue({
       }
       for (let i = 0; i < submitStamp.length; i++) {
         submitStamp[i].addEventListener('touchend', (e) => {
-          // e.preventDefault();//解掉冒泡事件
+          e.preventDefault();//解掉冒泡事件
           e.stopPropagation();
           e.stopImmediatePropagation();
           writeLetterExm();
@@ -322,15 +322,48 @@ function b(arr, target, context) {
   return mid
 }
 
-CanvasRenderingContext2D.prototype.wrapText = function (text, x, y, maxWidth, lineHeight, fontSize) {
+CanvasRenderingContext2D.prototype.wrapText = function (text, x, y, maxWidth, lineHeight, fontSize, isTittle) {
   if (typeof text != 'string' || typeof x != 'number' || typeof y != 'number') {
     return;
   }
 
   var context = this;
   context.font = `${fontSize}px Noto-Sans-TC`;
+
+
   // 字符分隔
   var arrText = text.split('');
+  var newArrText = new Array();
+  let max;//字符能存的最大長度
+  let maxTitle;
+  var end = "...";
+  //驗證字符為英文或是中文
+  var Chinese = new RegExp("[\u4E00-\u9FA5]+");
+  var English = new RegExp("[A-Za-z]+");
+  if(Chinese.test(text)){
+    // alert('中文！');
+    max = 305;
+    maxTitle = 38;
+  }else if(English.test(text)){
+    // alert('Engilsh!');
+    max = 740;
+    maxTitle = 80;
+  }
+  if(isTittle == true){
+    //信件標題
+    for (i=0;i<maxTitle ;i++ ) {
+      newArrText.push(arrText[i]);
+    }
+    if(arrText.length >= maxTitle) newArrText.push(end);
+  }else{
+    //信件內容
+    for (i=0;i<max ;i++ ) {
+      newArrText.push(arrText[i]);
+    }
+    if(arrText.length >= max) newArrText.push(end);
+  }
+  
+
   var line = '';
 
   var start = 0;
@@ -340,9 +373,9 @@ CanvasRenderingContext2D.prototype.wrapText = function (text, x, y, maxWidth, li
   var isEnd = false
 
   while (end !== -1) {
-    end = b(arrText, maxWidth, context)
+    end = b(newArrText, maxWidth, context)
     // console.log('start: ' + start, 'end: ' + end)
-    lineArr = arrText.splice(start, end + 1)
+    lineArr = newArrText.splice(start, end + 1)
     line = lineArr.join('')
     context.fillText(line, x, y);
     y += lineHeight;
@@ -367,17 +400,20 @@ function saveImage() {
   let textTittle = document.getElementById('letterTitle');
   let letterContant = document.getElementById('letterContant');
   let img = new Image();
+  let sizeScale;
   img.src = vm2.letterUploadImg;//user上傳的圖片
-
-  let widthScale = img.width / 160;//換算user上傳圖片要縮小的比例
-  img.width = img.width / widthScale;
-  img.height = img.height / widthScale;
-  context.wrapText(textTittle.value, 220, 70, 230, 40, 30);
-  context.wrapText(letterContant.value, 40, 240, 415, 28, 18);
-  //文字長度參考: https://news.ltn.com.tw/news/world/breakingnews/3035551 要在限制標題跟內文字數
-  //信件內容
+  //判斷圖片是直式還是橫式，並換算user上傳圖片要縮小的比例
   img.addEventListener('load', () => {
-    context.drawImage(img, 40, 50, img.width, img.height);
+  if(img.height > img.width){
+    sizeScale = img.height / 260;
+  }else{
+    sizeScale = img.width / 415;
+  }
+  img.width = img.width / sizeScale;
+  img.height = img.height / sizeScale;
+  context.wrapText(textTittle.value, 40, img.height+70, 415, 28, 20, true);//60
+  context.wrapText(letterContant.value, 40, img.height+130, 415, 24, 16 , false);
+  context.drawImage(img, 40, 35, img.width, img.height);
   })
 }
 
@@ -410,6 +446,8 @@ function submitToLetterTable() {
   xhr.onload = function () {
     if (xhr.status == 200) {
       let json = JSON.parse(xhr.responseText);
+      console.log(json);
+      
       vmImgWrap.letUrl = `url('${json.data.letImgUrl}')`;//把圖片路徑塞去摺紙的畫面上
       vmImgWrap.letPattern = `url('${json.data.matPatUrl}')`;//用戶選擇的彩繪花紋
       // console.log(json);
