@@ -857,12 +857,12 @@
             url: '',
             class: ""
           },
-          {
-            style: 'vector',
-            id: 'itemCard62',
-            url: '',
-            class: ""
-          },
+          // {
+          //   style: 'vector',
+          //   id: 'itemCard62',
+          //   url: '',
+          //   class: ""
+          // },
 
         ],
         page: 1,
@@ -1281,13 +1281,31 @@
           .then((res) => {
             var arr = res.data;
             console.log(arr)
+            //====================動態新增商品數量======================================
+            if (arr.length >= 62) {
+              console.log(arr.length)
+              var j = 0;
+              for (var i = arr.length; i > 61; i--) {
 
+                var arrIndex = 62 + j;
+                var item = {
+                  style: 'vector',
+                  id: `itemCard${arrIndex}`,
+                  url: '',
+                  class: ""
+                }
+                this.items.push(item)
+                j++;
+              }
+            }
             for (var i = 0; i < arr.length; i++) {
               this.items[i].url = arr[i].prodUrl
             }
-            if (arr.length != 62) {
-              this.items[61].class = "hide"
-            }
+            // if (arr.length != 62) {
+            //   this.items[61].class = "hide"
+            // }
+
+
           })
           .catch((error) => {
             console.log(error)
