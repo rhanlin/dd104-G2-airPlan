@@ -151,21 +151,93 @@
                             display: none;
                             @include marginAuto;
                             // @extend.userSetting_memData;
+                            .airCoinBtnL{
+                                display: inline-block;
+                                width: 50px;
+                                height: 50px;
+                                background-image: url('../img/share/arrow-white.svg');
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                cursor: pointer;
+                                position: absolute;
+                                top: 150px;
+                                left: 20px;
+                                z-index: 120;
+                            }
+                            .airCoinBtnR{
+                                transform: scaleX(-1);
+                                display: inline-block;
+                                width: 50px;
+                                height: 50px;
+                                background-image: url('../img/share/arrow-white.svg');
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                cursor: pointer;
+                                position: absolute;
+                                top: 150px;
+                                right: 20px;
+                            }
+                            .airCoinTableLet{
+                                width: 90%;
+                                display: block;
+                                @include marginAuto;
+                                .airCoinTableLetHead{
+                                    width: 100%;
+                                    display: flex;
+                                    div{
+                                        width: 33.33%;
+                                        h4{
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                                .letLike{
+                                    width: 100%;
+                                    tr{
+                                        width: 100%;
+                                        display: flex;
+
+                                        td{
+                                            width: 33.33%;
+                                            border: none;
+                                            border-bottom: 3px dashed $main-green;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                            }
+                            .airCoinTableMsg{
+                                width: 90%;
+                                display: inline-block;
+                                display: none;
+                                @include marginAuto;
+                                .airCoinTableMsgHead{
+                                    width: 100%;
+                                    display: flex;
+                                    div{
+                                        width: 33.33%;
+                                        h4{
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                                .msgLike{
+                                    width: 100%;
+                                    tr{
+                                        width: 100%;
+                                        display: flex;
+
+                                        td{
+                                            width: 33.33%;
+                                            border: none;
+                                            border-bottom: 3px dashed $main-green;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                            }
                         }
-                        .userSetting_airCoinTable,.userSetting_airCoinTable2{
-                            width: 90%;
-                            @include marginAuto;
-                            // @extend.userSetting_memDataTable;
-                        }
-                        // .userSetting_airCoinTable tr:hover,.userSetting_airCoinTable2 tr:hover{
-                        //     @include hoverFontsize;
-                        // }
-                        .userSetting_airCoinTable td,.userSetting_airCoinTable th,.userSetting_airCoinTable2 td,.userSetting_airCoinTable2 th{
-                            width: 33.33%;
-                            border: none;
-                            border-bottom: 3px dashed $main-green;
-                            text-align: center;
-                        }
+                        
                         .userSetting_memcolor{
                             text-align: center;
                             padding-bottom: 20px;
@@ -178,7 +250,7 @@
                             // @extend.userSetting_memData;
                             .memcolorBig{
                                 width: 90%;
-                                border: 3px dashed $main-green;
+                                border: 3px solid $main-green;
                                 border-bottom:none;
                                 @include marginAuto;
                             }
@@ -189,7 +261,7 @@
                                 @extend .memcolorBig;
                                 img{
                                     width: 50%;
-                                    border: 3px dashed $main-green;
+                                    border: 3px solid $main-green;
                                     cursor: pointer;
                                 }
                             }
@@ -262,6 +334,7 @@
                     position: absolute;
                     left: 0px;
                     bottom: 0;
+                    z-index: 110;
                 }
                 .robotB1_2{
                     width: 55%;
@@ -745,3 +818,6 @@
         }
     }
 }
+
+
+

@@ -11,26 +11,6 @@ let vmUserStamp = new Vue({
     },
   },
   mounted() {
-    // setTimeout(()=>{
-    //   if(document.getElementById("cavMemberN").innerText == ""){
-    //     console.log('還沒登入');
-    //   }else{
-    //     fetch('./phps/fetchAllUserMat.php',{
-    //     // method:'POST',
-    //     // body: new URLSearchParams(`memNo=10`) //10要改成${變數} 此變數從session撈出目前登入的用戶number
-    //   })
-    //     .then(res=>res.json()).then(json=>{
-    //       //拆出 pattern
-    //       for(let i=0 ; i<json.data.length ; i++){
-    //         if(json.data[i].stampNo){
-    //           this.userStamp.push(`url(${json.data[i].stampUrl})`);
-    //           this.stampValue.push(json.data[i].stampNo);//取 使用者飛機彩繪的編號得值(matPosNo)
-    //         }
-    //       }
-    //       // console.log(this.userStamp);
-    //     })
-    //   }
-    // },1500)
     
   },
 });
@@ -41,7 +21,18 @@ let vmImgWrap = new Vue({
   data: {
     letUrl: '',
     letPattern: '',
+    gobackFlag: false,
   },
+  watch:{
+    gobackFlag: {
+      handler(newVal , oldVal){
+        console.log(`${oldVal} -> ${newVal}`);
+        if(newVal == true) goBackBtn();
+      },
+      // immediate: true,
+      deep: true,
+    },
+  }
 });
 function confirmSubmit(){
   
@@ -386,7 +377,8 @@ function shootPlane(){
         imgWrap.style.animationFillMode = "forwards";
         addScene();
         setTimeout(()=>{
-          console.log('work!!');
+          vmImgWrap.gobackFlag = true;
+          console.log(vmImgWrap.gobackFlag);
 
           //判斷是否為手機版
           if(screen.width<=414){
@@ -395,7 +387,8 @@ function shootPlane(){
             document.getElementById('imgWrap').style = "display: block; opacity: 1; transform: rotate(-85deg); animation: arocket .2s linear infinite; filter: unset;";
             // document.getElementById('cloudDiv').style.animation ="ascene 5s linear infinite;";//...??
           }
-          goBackBtn();
+          
+          
         },800)
       },800)
     },1500)
@@ -489,4 +482,25 @@ function pointerSetting(){
     }
  
 }
-   
+
+//返回鈕
+function goBackBtn(){
+  let goBackBtn = document.getElementById('goBackBtn');
+  setTimeout(()=>{
+    goBackBtn.style.display = "flex";
+    goBackBtn.classList = "goBackBtn_2";
+  },3000)
+  let catchAgain = document.getElementById('catchAgain');
+  catchAgain.addEventListener('click', clearLetter ,false)
+}
+function goBackBtn_News(){
+  let goBackBtn = document.getElementById('goBackBtn');
+  setTimeout(()=>{
+    goBackBtn.style.display = "flex";
+  },3000)
+  let catchAgain = document.getElementById('catchAgain');
+  catchAgain.addEventListener('click', clearLetter ,false)
+}
+function clearLetter(){
+  location.reload();
+}

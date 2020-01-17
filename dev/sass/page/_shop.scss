@@ -490,7 +490,10 @@ $arrow_color: $gray !default;
               }
 
               #itemCard62 {
-                display: none;
+
+                &.hide {
+                  display: none;
+                }
 
                 img {
                   width: 2.5vw;
