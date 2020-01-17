@@ -38,7 +38,7 @@ try {
         //將檔案名稱寫回資料庫
         $sql = "update `matpattern` set matPatUrl = :matPatUrl where matPatNo = $psn";
         $products = $pdo->prepare($sql);
-        $products->bindValue(":matPatUrl", $file);
+        $products->bindValue(":matPatUrl", "./phps$file");
         $products->execute();
         echo "新增成功~";
         $pdo->commit();

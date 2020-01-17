@@ -39,7 +39,7 @@ try {
         //將檔案名稱寫回資料庫
         $sql = "update `matpostmark` set matPosUrl = :matPosUrl where matPosNo = $psn";
         $products = $pdo->prepare($sql);
-        $products->bindValue(":matPosUrl", $file);
+        $products->bindValue(":matPosUrl", "./phps$file");
         $products->execute();
         echo "新增成功~";
         $pdo->commit();

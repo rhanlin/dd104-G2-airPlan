@@ -110,8 +110,8 @@
             </div>
             <div class=" itemCardContainer">
               <div class="cardFilter">
-                <img src="./img/product/decorate/lineTop.png" alt="" class="line_top">
-                <img src="./img/product/decorate/lineButtom.png" alt="" class="line_bottom">
+                <img src="./img/product/decorate/lineTop.png" alt="" class="line_top" id="line_top">
+                <img src="./img/product/decorate/lineButtom.png" alt="" class="line_bottom" id="line_bottom">
                 <div @click="changeIndex($event)" v-for="(item,index) in pagedListdata" v-if="change(index)"
                   :style="{backgroundImage:`url(${item.url})`}" :id=item.id :class=item.class>
                   <img src="./img/product/decorate/clip-04.svg" alt="">
@@ -398,12 +398,9 @@
         </div>
         <div class="drawingBoardBox">
           <div class="canvasWindowBox">
-            <div id="canvasBox" >
-              <canvas id="canvas" style="position: absolute; left: 0; top: 0; z-index: 1;">
+            <div id="canvasBox">
+              <canvas id="canvas">
                 <div class="drawingPanel" id="drawingOptionArea"></div>
-              </canvas>
-              <canvas id="canvas2" style="position: absolute; left: 0; top: 0; z-index: 0;">
-                <div class="drawingPanel"></div>
               </canvas>
             </div>
           </div>
@@ -420,22 +417,18 @@
             </div>
             <div class="patNameInput">
               <label class="patternName" for="patternName">
-                <h6>為您製作的圖案取個名字吧!</h6>
+                <h5>為您製作的圖案取個名字吧!</h5>
               </label>
               <input type="text" name="patternName" id="patternName">
             </div>
-            <!-- <div>
-              <canvas id="pngCanvas">
-              </canvas>
-            </div> -->
           </div>
         </div>
       </div>
     </section>
     <section id="section3">
       <div id="hand">
-        <img class="hand1" src="./img/product/decorate/hand-01.svg" alt="">
-        <img class="hand2" src="./img/product/decorate/handCatch-01.svg" alt="">
+        <img class="hand1" src="./img/product/decorate/hand1-01.svg" alt="">
+        <img class="hand2" src="./img/product/decorate/hand2-01.svg" alt="">
       </div>
       <div class="owl-carousel owl-theme owl-loaded owl-drag">
         <div class="owl-stage-outer">
@@ -499,55 +492,55 @@
       data: {
         visibility: 'countries',
         items: [{
-            style: 'countries',
+            style: 'letter',
             id: 'itemCard1',
             url: '',
             class: ""
           },
           {
-            style: 'countries',
+            style: 'tool',
             id: 'itemCard2',
             url: '',
             class: ""
           },
           {
-            style: 'countries',
+            style: 'tool',
             id: 'itemCard3',
             url: '',
             class: ""
           },
           {
-            style: 'countries',
+            style: 'tool',
             id: 'itemCard4',
             url: '',
             class: ""
           },
           {
-            style: 'countries',
+            style: 'tool',
             id: 'itemCard5',
             url: '',
             class: ""
           },
           {
-            style: 'countries',
+            style: 'tool',
             id: 'itemCard6',
             url: '',
             class: ""
           },
           {
-            style: 'countries',
+            style: 'tool',
             id: 'itemCard7',
             url: '',
             class: ""
           },
           {
-            style: 'countries',
+            style: 'tool',
             id: 'itemCard8',
             url: '',
             class: ""
           },
           {
-            style: 'countries',
+            style: 'tool',
             id: 'itemCard9',
             url: '',
             class: ""
@@ -589,299 +582,287 @@
             class: ""
           },
           {
-            style: 'frame',
+            style: 'countries',
             id: 'itemCard16',
             url: '',
             class: ""
           },
           {
-            style: 'frame',
+            style: 'countries',
             id: 'itemCard17',
             url: '',
             class: ""
           },
           {
-            style: 'frame',
+            style: 'countries',
             id: 'itemCard18',
             url: '',
             class: ""
           },
           {
-            style: 'frame',
+            style: 'countries',
             id: 'itemCard19',
             url: '',
             class: ""
           },
           {
-            style: 'frame',
+            style: 'countries',
             id: 'itemCard20',
             url: '',
             class: ""
           },
           {
-            style: 'frame',
+            style: 'countries',
             id: 'itemCard21',
             url: '',
             class: ""
           },
           {
-            style: 'frame',
+            style: 'countries',
             id: 'itemCard22',
             url: '',
             class: ""
           },
           {
-            style: 'frame',
+            style: 'countries',
             id: 'itemCard23',
             url: '',
             class: ""
           },
           {
-            style: 'frame',
+            style: 'countries',
             id: 'itemCard24',
             url: '',
             class: ""
           },
           {
-            style: 'simple',
+            style: 'frame',
             id: 'itemCard25',
             url: '',
             class: ""
           },
           {
-            style: 'simple',
+            style: 'frame',
             id: 'itemCard26',
             url: '',
             class: ""
           },
           {
-            style: 'simple',
+            style: 'frame',
             id: 'itemCard27',
             url: '',
             class: ""
           },
           {
-            style: 'simple',
+            style: 'frame',
             id: 'itemCard28',
             url: '',
             class: ""
           },
           {
-            style: 'simple',
+            style: 'frame',
             id: 'itemCard29',
             url: '',
             class: ""
           },
           {
-            style: 'simple',
+            style: 'frame',
             id: 'itemCard30',
             url: '',
             class: ""
           },
           {
-            style: 'simple',
+            style: 'frame',
             id: 'itemCard31',
             url: '',
             class: ""
           },
           {
-            style: 'animal',
+            style: 'frame',
             id: 'itemCard32',
             url: '',
             class: ""
           },
           {
-            style: 'animal',
+            style: 'frame',
             id: 'itemCard33',
             url: '',
             class: ""
           },
           {
-            style: 'animal',
+            style: 'simple',
             id: 'itemCard34',
             url: '',
             class: ""
           },
           {
-            style: 'animal',
+            style: 'simple',
             id: 'itemCard35',
             url: '',
             class: ""
           },
           {
-            style: 'animal',
+            style: 'simple',
             id: 'itemCard36',
             url: '',
             class: ""
           },
           {
-            style: 'animal',
+            style: 'simple',
             id: 'itemCard37',
             url: '',
             class: ""
           },
           {
-            style: 'animal',
+            style: 'simple',
             id: 'itemCard38',
             url: '',
             class: ""
           },
           {
-            style: 'animal',
+            style: 'simple',
             id: 'itemCard39',
             url: '',
             class: ""
           },
           {
-            style: 'handpattern',
+            style: 'simple',
             id: 'itemCard40',
             url: '',
             class: ""
           },
           {
-            style: 'handpattern',
+            style: 'animal',
             id: 'itemCard41',
             url: '',
             class: ""
           },
           {
-            style: 'handpattern',
+            style: 'animal',
             id: 'itemCard42',
             url: '',
             class: ""
           },
           {
-            style: 'handpattern',
+            style: 'animal',
             id: 'itemCard43',
             url: '',
             class: ""
           },
           {
-            style: 'handpattern',
+            style: 'animal',
             id: 'itemCard44',
             url: '',
             class: ""
           },
           {
-            style: 'handpattern',
+            style: 'animal',
             id: 'itemCard45',
             url: '',
             class: ""
           },
           {
-            style: 'handpattern',
+            style: 'animal',
             id: 'itemCard46',
             url: '',
             class: ""
           },
           {
-            style: 'vector',
+            style: 'animal',
             id: 'itemCard47',
             url: '',
             class: ""
           },
           {
-            style: 'vector',
+            style: 'handpattern',
             id: 'itemCard48',
             url: '',
             class: ""
           },
           {
-            style: 'vector',
+            style: 'handpattern',
             id: 'itemCard49',
             url: '',
             class: ""
           },
           {
-            style: 'vector',
+            style: 'handpattern',
             id: 'itemCard50',
             url: '',
             class: ""
           },
           {
-            style: 'vector',
+            style: 'handpattern',
             id: 'itemCard51',
             url: '',
             class: ""
           },
           {
-            style: 'vector',
+            style: 'handpattern',
             id: 'itemCard52',
             url: '',
             class: ""
           },
           {
-            style: 'vector',
+            style: 'handpattern',
             id: 'itemCard53',
             url: '',
             class: ""
           },
           {
-            style: 'tool',
+            style: 'handpattern',
             id: 'itemCard54',
             url: '',
             class: ""
           },
           {
-            style: 'tool',
+            style: 'vector',
             id: 'itemCard55',
             url: '',
             class: ""
           },
           {
-            style: 'tool',
+            style: 'vector',
             id: 'itemCard56',
             url: '',
             class: ""
           },
           {
-            style: 'tool',
+            style: 'vector',
             id: 'itemCard57',
             url: '',
             class: ""
           },
           {
-            style: 'tool',
+            style: 'vector',
             id: 'itemCard58',
             url: '',
             class: ""
           },
           {
-            style: 'tool',
+            style: 'vector',
             id: 'itemCard59',
             url: '',
             class: ""
           },
           {
-            style: 'tool',
+            style: 'vector',
             id: 'itemCard60',
             url: '',
             class: ""
           },
           {
-            style: 'tool',
+            style: 'vector',
             id: 'itemCard61',
             url: '',
             class: ""
           },
-          {
-            style: 'tool',
-            id: 'itemCard62',
-            url: '',
-            class: ""
-          },
-          {
-            style: 'tool',
-            id: 'itemCard63',
-            url: '',
-            class: ""
-          },
-          {
-            style: 'letter',
-            id: 'itemCard64',
-            url: '',
-            class: ""
-          },
+          // {
+          //   style: 'vector',
+          //   id: 'itemCard62',
+          //   url: '',
+          //   class: ""
+          // },
 
         ],
         page: 1,
@@ -896,8 +877,12 @@
           // if (vm.visibility == 'all') {
           //   return vm.items
           // }
+
           return vm.items.filter(
-            item => item.style == vm.visibility
+            item => {
+              return item.style == vm.visibility
+            }
+
           );
 
         },
@@ -906,6 +891,14 @@
         page() {
           this.change();
         },
+        visibility() {
+          var vm = this;
+          if (vm.visibility == "letter") {
+            console.log();
+            document.getElementById('line_top').style.display = "none";
+            document.getElementById('line_bottom').style.display = "none";
+          }
+        }
       },
       methods: {
         //==============跳窗的購買btn點按後將已購素材傳回資料庫的material表格 目前會員編號寫死======================================
@@ -949,7 +942,7 @@
                   // alert("aa")
                   ownMatURL = this.items[theIndex - 1].url;
                   itemIndex = this.items[theIndex - 1].id.substring(8);
-                  if (0 < itemIndex && itemIndex < 54) {
+                  if (10 < itemIndex) {
                     cavMemberH = document.getElementById('cavMemberH').innerHTML;
                     cavMemberH = cavMemberH.toString().substring(6);
                     console.log(cavMemberH)
@@ -964,7 +957,7 @@
                         matLSort: materialMatSort,
                       },
                     })
-                  } else if (54 <= itemIndex && itemIndex < 65) {
+                  } else if (2 <= itemIndex && itemIndex < 10) {
                     $.ajax({
                       type: "POST",
                       url: "./phps/shop_saveImg.php",
@@ -980,6 +973,7 @@
                   coin = document.getElementById('coin');
                   ownMatPriceNum = parseInt(ownMatPrice);
                   coinInnerCount = document.getElementById('coinInnerCount');
+
                   coinInnerCount.innerHTML = ownMatPriceNum;
                   console.log(coinInnerCount)
                   var xhr2 = new XMLHttpRequest();
@@ -997,6 +991,19 @@
                         remainCoin = uesrCoinNum - ownMatPriceNum;
                         remainCoinInnerCount = document.getElementById('coin');
                         remainCoinInnerCount.innerHTML = remainCoin;
+
+
+                        cavCoinH = document.getElementById('cavCoinN');
+                        cavCoinHInner = cavCoinH.innerHTML;
+                        cavCoinHNum = cavCoinHInner.toString().substring(5);
+                        // cavCoinHNum = coin.innerHTML;
+                        cavCoinHInner = `Air幣${remainCoin}`;
+                        cavCoinH.innerHTML = cavCoinHInner;
+                        // let navcoin = document.getElementById('cavCoinN').innerText;
+                        // console.log('airrrcoin', navcoin);
+                        // console.log("========1", coin.innerHTML)
+                        // console.log("========2", cavCoinHInner)
+                        // console.log("========3", cavCoinH.innerHTML)
                         // console.log(remainCoin) 
 
 
@@ -1044,7 +1051,7 @@
             .then((res) => {
               var itemArr = res.data;
               // console.log(this.items)
-              // console.log(itemArr)
+              console.log('itemArr:', itemArr)
               for (var i = 0; i < this.items.length; i++) {
                 // console.log(vm.items[i].url)
                 // console.log(itemArr[0].matURL);
@@ -1155,8 +1162,11 @@
               if (index < 25 && index >= 17) return true;
             }
           } else if (this.page == 1) {
-            document.getElementsByClassName("line_top")[0].style.display = "block";
-            document.getElementsByClassName("line_bottom")[0].style.display = "block";
+            if (this.visibility != "letter") {
+              document.getElementsByClassName("line_top")[0].style.display = "block";
+              document.getElementsByClassName("line_bottom")[0].style.display = "block";
+            }
+
             if (index < 10) return true;
           } else if (this.page == 2) {
             document.getElementsByClassName("line_top")[0].style.display = "block";
@@ -1243,17 +1253,23 @@
                   // console.log(owl_imgactive)
                 }
               } else {
-                alert("無任何素材");
+                // alert("無任何素材");
               }
             })
             .catch((error) => {
               console.log(error)
             })
         },
+
       },
 
       mounted() {
         var vm = this;
+
+        window.addEventListener('load', function () {
+          setTimeout(vm.checkItem, 500);
+        });
+
         window.addEventListener('load', function () {
           setTimeout(vm.carddark, 500);
         });
@@ -1263,26 +1279,53 @@
         window.addEventListener('load', function () {
           setTimeout(vm.showMaterial, 500);
         });
+
+
         //====================Vue響應式==========================================================================
         this.$nextTick(function () {
           window.addEventListener('resize', this.getWindowWidth);
           this.getWindowWidth()
 
         });
+
         //====================頁面onload後直接抓回64筆商城卡片資料給vue data=>items======================================
         axios
           .get('./phps/shop_axios_post.php')
           .then((res) => {
             var arr = res.data;
+            console.log(arr)
+            //====================動態新增商品數量======================================
+            if (arr.length >= 62) {
+              console.log(arr.length)
+              var j = 0;
+              for (var i = arr.length; i > 61; i--) {
+
+                var arrIndex = 62 + j;
+                var item = {
+                  style: 'vector',
+                  id: `itemCard${arrIndex}`,
+                  url: '',
+                  class: ""
+                }
+                this.items.push(item)
+                j++;
+              }
+            }
             for (var i = 0; i < arr.length; i++) {
               this.items[i].url = arr[i].prodUrl
             }
+            // if (arr.length != 62) {
+            //   this.items[61].class = "hide"
+            // }
+
+
           })
           .catch((error) => {
             console.log(error)
           });
-
       },
+
+
       beforeDestroy() {
         window.removeEventListener('resize', this.getWindowWidth);
       },
@@ -1319,10 +1362,19 @@
       coin = document.getElementById('coin');
       let MemberInfo = JSON.parse(jsonStr);
       // console.log(MemberInfo[0].airCoin)
-      // console.log(coin)
+      console.log('555555555', MemberInfo)
       if (MemberInfo[0].memName) {
         coin.innerHTML = MemberInfo[0].airCoin;
       }
+      // cavCoinH = document.getElementById('cavCoinH');
+      // cavCoinHInner = cavCoinH.innerHTML
+      // cavCoinHNum = cavCoinHInner.toString().substring(5);
+      // // cavCoinHNum = coin.innerHTML;
+      // cavCoinHInner = `Air幣${coin.innerHTML}`;
+      // console.log("========1", coin.innerHTML)
+      // console.log("========2", cavCoinHInner)
+      // cavCoinH.innerHTML = cavCoinHInner
+      // console.log("========3", cavCoinH.innerHTML)
     }
 
     function getMemberInfo() {
@@ -1384,6 +1436,12 @@
     }
   </script>
   <script>
+    function itemCheck() {
+      itemCard62 = document.getElementById('itemCard62')
+      console.log(itemCard62)
+    }
+
+    window.addEventListener('load', itemCheck);
     window.addEventListener('load', function () {
       setTimeout(getMemberInfo, 500);
     }, false);

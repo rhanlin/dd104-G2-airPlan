@@ -7,17 +7,18 @@ try {
     $liked->bindValue(":memNo", $_GET["whoLike"]);
     $liked->bindValue(":msgLikeTime", $_GET["likeTime"]);
     $liked->execute();
+    echo json_encode(['status' => 'success']);
 
-    if ($liked->rowCount() == 0) { //找不到
-        //傳回空的JSON字串
-        echo "{}";
-    } else { //找得到
-        //取回一筆資料
-        $likeRow = $liked->fetchAll(PDO::FETCH_ASSOC);
-        //送出json字串
+    // if ($liked->rowCount() == 0) { //找不到
+    //     //傳回空的JSON字串
+    //     echo "{}";
+    // } else { //找得到
+    //     //取回一筆資料
+    //     $likeRow = $liked->fetch(PDO::FETCH_ASSOC);
+    //     //送出json字串
 
-        echo json_encode($likeRow);
-    }
+    //     echo json_encode($likeRow);
+    // }
 } catch (PDOException $e) {
     echo $e->getMessage();
 }

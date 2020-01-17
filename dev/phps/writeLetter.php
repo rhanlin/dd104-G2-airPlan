@@ -55,6 +55,7 @@ try {
   $letInsert->bindValue(':letSort',$_POST['letSort']);
   $letInsert->bindValue(':letImgUrl',$userLetterCanvas);
   $letInsert->execute();
+  
 
 //select l.letImgUrl, m.matPatUrl from `letter` l JOIN `matPattern` m on l.matPatNo=m.matPatNo where letNo=27;
   $letNo = $pdo->lastInsertId();

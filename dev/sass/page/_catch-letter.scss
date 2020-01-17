@@ -3,32 +3,7 @@
   background-size: 8px 8px;
   height: auto;
   font-family: 'Noto Sans TC', sans-serif;
-  #goBackBtn{
-    position: absolute;
-    top: 50%;
-    left: 80%;
-    // display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transform: translate(-50%, -50%);
-    z-index: 9;
-    .goBtn{
-      cursor: pointer;
-      text-decoration:none;
-      background-color: $main-dark-red;
-      color: #fff;
-      padding: 20% 8%;
-      text-align: center;
-      margin: 10% 0;
-      font-size: 1.5rem;
-      // white-space: nowrap;
-      border-radius: $main-borderRadius;
-      &:hover{
-        background-color: $main-yellow;
-        color:$main-dark-red;
-      }
-    }
-  }
+  @include goBackBtn();
   header {
     display: none;
     animation-delay: .5s;
@@ -942,22 +917,7 @@
     background: radial-gradient(#000000 10%, #fff 20%);
     background-size: 4px 4px;
     height: auto;
-    #goBackBtn{
-      width: 85%;
-      top: unset;
-      bottom: 0;
-      left: 50%;
-      flex-direction: row;
-      justify-content: center;
-      transform: translate(-50%, 0%);
-      
-      .goBtn{
-        padding: 10px 8px;
-        text-align: center;
-        margin: 3% 3%;
-        font-size: 1.2rem;
-      }
-    }
+    
     #catchLetterMain {
       margin-top: 20%;
     }
@@ -1305,22 +1265,7 @@
     background: radial-gradient(#000000 10%, #fff 20%);
     background-size: 4px 4px;
     height: auto;
-    #goBackBtn{
-      width: 85%;
-      top: unset;
-      bottom: 0;
-      left: 50%;
-      flex-direction: row;
-      justify-content: center;
-      transform: translate(-50%, 0%);
-      
-      .goBtn{
-        padding: 10px 8px;
-        text-align: center;
-        margin: 3% 3%;
-        font-size: 1.2rem;
-      }
-    }
+    
     #catchLetterMain {
       margin-top: 20%;
     }
