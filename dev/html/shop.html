@@ -942,11 +942,12 @@
                   // alert("aa")
                   ownMatURL = this.items[theIndex - 1].url;
                   itemIndex = this.items[theIndex - 1].id.substring(8);
-                  if (10 < itemIndex) {
-                    cavMemberH = document.getElementById('cavMemberH').innerHTML;
-                    cavMemberH = cavMemberH.toString().substring(6);
-                    console.log(cavMemberH)
-                    // cavMemberH.innerHTML = 5;
+
+                  cavMemberH = document.getElementById('cavMemberH').innerHTML;
+                  cavMemberH = cavMemberH.toString().substring(6);
+                  console.log(cavMemberH)
+                  if (9 < itemIndex) {
+
                     $.ajax({
                       type: "POST",
                       url: "./phps/shop_saveImg.php",
@@ -968,6 +969,22 @@
                         matLSort: toolMatSort,
                       },
                     })
+                  } else if (itemIndex == 1) {
+                    cavPaperN = document.getElementById('cavPaperN');
+                    cavPaperHInner = cavPaperN.innerHTML;
+                    cavPaperNum = cavPaperHInner.toString().substring(3);
+                    remainLet = `信封:${parseInt(cavPaperNum)+10}`
+
+                    cavPaperN.innerHTML = remainLet;
+                    console.log(remainLet)
+                    $.ajax({
+                      type: "POST",
+                      url: "./phps/shop_saveLetter.php",
+                      data: {
+                        remainLet: remainLet,
+                        memNo: cavMemberH,
+                      },
+                    });
                   }
 
                   coin = document.getElementById('coin');
