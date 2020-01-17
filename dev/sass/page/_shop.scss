@@ -262,7 +262,7 @@ $arrow_color: $gray !default;
             padding-top: 15%;
             padding-left: 5%;
             position: relative;
-            @include itemCardRow1(62);
+            @include itemCardRow1(64);
 
             .cardFilter {
               width: 100%;
@@ -316,8 +316,7 @@ $arrow_color: $gray !default;
               #itemCard35,
               #itemCard42,
               #itemCard49,
-              #itemCard56,
-              #itemCard62 {
+              #itemCard56 {
                 transform: translate(15%, -10%) rotate(355deg);
 
                 &.bought {
@@ -336,8 +335,7 @@ $arrow_color: $gray !default;
               #itemCard27,
               #itemCard43,
               #itemCard50,
-              #itemCard57,
-              #itemCard63 {
+              #itemCard57 {
                 transform: translate(0, 5%) rotate(360deg);
 
                 &.bought {
@@ -354,7 +352,6 @@ $arrow_color: $gray !default;
               #itemCard5,
               #itemCard13,
               #itemCard23,
-
               #itemCard28,
               #itemCard37,
               #itemCard51,
@@ -448,7 +445,8 @@ $arrow_color: $gray !default;
               }
 
               #itemCard9,
-              #itemCard18 {
+              #itemCard18,
+              #itemCard62 {
                 transform: translate(-0%, -10%) rotate(10deg);
 
                 &.bought {
@@ -463,12 +461,23 @@ $arrow_color: $gray !default;
 
               #itemCard19,
               #itemCard30,
-              #itemCard60 {
+              #itemCard60,
+              #itemCard63 {
+
                 transform: translate(-0%, -0%) rotate(0deg);
 
                 &.bought {
                   background-color: rgba(0, 0, 0, 0.8);
                 }
+
+                img {
+                  width: 2.5vw;
+                  transform: translate(15%, -70%) rotate(330deg);
+                }
+              }
+
+              #itemCard64 {
+                transform: translate(-0%, -0%) rotate(0deg);
 
                 img {
                   width: 2.5vw;
@@ -486,15 +495,6 @@ $arrow_color: $gray !default;
 
                 img {
                   display: none;
-                }
-              }
-
-              #itemCard62 {
-                display: none;
-
-                img {
-                  width: 2.5vw;
-                  transform: translate(15%, -70%) rotate(330deg);
                 }
               }
             }
@@ -2718,7 +2718,7 @@ $arrow_color: $gray !default;
                   transform: translate(0%, 200%);
                 }
 
-                @include itemCardRow1_md(62);
+                @include itemCardRow1_md(64);
 
               }
             }
@@ -3503,7 +3503,7 @@ $arrow_color: $gray !default;
                   display: none;
                 }
 
-                @include itemCardRow1_sm(62);
+                @include itemCardRow1_sm(64);
 
               }
 
@@ -3755,7 +3755,7 @@ $arrow_color: $gray !default;
 
               .cardFilter {
                 height: 60vw;
-                @include itemCardRow1_note(62);
+                @include itemCardRow1_note(64);
 
               }
 

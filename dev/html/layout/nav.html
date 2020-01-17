@@ -331,14 +331,14 @@
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
       let member = JSON.parse(xhr.responseText);
-      console.log("第一手session資料_memName:",member.memNo);
-      console.log("第一手session資料_memNo:",member.memName);
-      console.log("第一手session資料_letCount:",member.memEmail);
-      console.log("第一手session資料_airCoin:",member.letCount);
-      console.log("第一手session資料_intColor:",member.airCoin);
-      console.log("第一手session資料_intColor:",member.intColor);
-      console.log("第一手session資料_matPosUrl:",member.matPosUrl);
-      console.log("第一手session資料_memPsw:",member.memPsw);
+    //   console.log("第一手session資料_memName:",member.memNo);
+    //   console.log("第一手session資料_memNo:",member.memName);
+    //   console.log("第一手session資料_letCount:",member.memEmail);
+    //   console.log("第一手session資料_airCoin:",member.letCount);
+    //   console.log("第一手session資料_intColor:",member.airCoin);
+    //   console.log("第一手session資料_intColor:",member.intColor);
+    //   console.log("第一手session資料_matPosUrl:",member.matPosUrl);
+    //   console.log("第一手session資料_memPsw:",member.memPsw);
       if(member.memNo) {
         document.getElementById("cavMemberN").innerText = '會員:' + member.memName +'-'+ member.memNo;
         document.getElementById("cavMemberH").innerText = '會員:' + member.memName +'-'+ member.memNo;
@@ -451,8 +451,10 @@
           // memberCheck = JSON.parse(xhr.responseText);
           // console.log("------memRowCheck",memberCheck);
           if (xhr.responseText == 'Success!') {
+                document.getElementById("forgetEmail").value = "";
               document.getElementById("forgetBg").style.display = "none";
               alert('新密碼已寄送至您的信箱中');
+
           }
           else {
               alert('查無此Email');

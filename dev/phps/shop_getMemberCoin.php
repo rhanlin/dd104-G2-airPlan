@@ -12,6 +12,8 @@ try {
         echo "{}";
     } else {
         $memberRow = $member->fetchAll(PDO::FETCH_ASSOC);
+        // session_start(); //登入成功,將登入者的資料寫入session
+        // $_SESSION["airCoin"] = $memberRow["airCoin"];
         echo json_encode($memberRow);
     }
 } catch (PDOException $e) {
