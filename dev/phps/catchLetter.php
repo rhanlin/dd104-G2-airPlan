@@ -3,9 +3,9 @@
 try {
   require_once("connectBook_root.php");
   $sql = "SELECT * FROM `letter` where memNo != :memNo ORDER BY RAND() LIMIT 1";
-
+  $memNo = $_POST['memNo'];
   $randLetter = $pdo->prepare($sql);
-  $randLetter->bindValue(':memNo',$_POST['memNo']);
+  $randLetter->bindValue(':memNo',$memNo);
   $randLetter->execute();
   
   if($randLetter->rowCount()){
@@ -17,6 +17,12 @@ try {
     $userMsg = $pdo->prepare($msgSql);
     $userMsg->bindValue(':letNo',$letter['letNo']);
     $userMsg->execute();
+
+    $histySql = "INSERT INTO `history`(memNo,letNo) VALUES (:memNo , :letNo) ";
+    $catchHist = $pdo->prepare($histySql);
+    $catchHist->bindValue(':memNo',$memNo);
+    $catchHist->bindValue(':letNo',$letter['letNo']);
+    $catchHist->execute();
 
     $patSql = "SELECT matPatUrl FROM `matPattern` WHERE matPatNo = :matPatNo";
     $catchLetPat = $pdo->prepare($patSql);
