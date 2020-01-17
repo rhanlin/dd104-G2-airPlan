@@ -32,14 +32,14 @@ try {
     //準備好要存的filename
 
     $fileName = "{$psn}";
-    $file = "./phps/".$upload_dir . "user-stamp_" . $fileName . ".png";
+    $file = $upload_dir . "user-stamp_" . $fileName . ".png";
     $success = file_put_contents($file, $data);
     if ($success) {
 
         //將檔案名稱寫回資料庫
         $sql = "update `matpostmark` set matPosUrl = :matPosUrl where matPosNo = $psn";
         $products = $pdo->prepare($sql);
-        $products->bindValue(":matPosUrl", $file);
+        $products->bindValue(":matPosUrl", "./phps$file");
         $products->execute();
         echo "新增成功~";
         $pdo->commit();
