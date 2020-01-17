@@ -284,11 +284,13 @@ $(document).ready(function () {
               msgRow[i].memNo,
               msgRow[i].msgTime,
               msgRow[i].msgContent,
-              msgRow[i].msgNo
+              msgRow[i].msgNo,
             );
             console.log(msgRow[i].msgNo);
             $(function checkLike() {
               let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
+              // let mesgNo = msgRow[i].msgNo;
+              console.log(msgRow[i].msgNo);
               console.log(memNo);
               $.ajax({
                 url: "./phps/cav-checkLike.php",
@@ -296,18 +298,26 @@ $(document).ready(function () {
                 dataType: "json",
                 data: { "memNo": memNo },
                 success: function (chkLikeRow) {
-                  // let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-                  // console.log(memNo);
+                  console.log(memNo);
                   // console.log(chkLikeRow);
-                  console.log("檢查打賞留言編號", chkLikeRow[i].msgNo);
-                  console.log("檢查打賞會員編號", chkLikeRow[i].memNo);
+                  // console.log("檢查打賞留言編號", chkLikeRow[i].msgNo);
+                  // console.log("檢查打賞留言編號", msgRow[i].msgNo);
+                  // console.log("檢查打賞會員編號", chkLikeRow[i].memNo);
+                  for (i = 0; i < chkLikeRow.length; i++) {
+                    $(".like").attr("data-like", msgRow[i]);
+                    console.log($(".like").attr("data-like", msgRow[i]));
+                    if ($(".like").attr({ "data-like": msgRow[i].msgNo }) == chkLikeRow[i].msgNo && memNo == chkLikeRow[i].memNo) {
+                      console.log($(".like").attr({ "data-like": msgRow[i].msgNo }));
+                      // $(".like").attr({ "data-like": msgRow[i].msgNo, "disabled": true });
 
-                  if (chkLikeRow[i].msgNo == msgRow[i].msgNo) {
-                    $(".like").attr("disabled", true);
-                    console.log($(".like").attr("disabled"));
-                  } else {
-                    console.log($(".like").attr("disabled"));
-                    console.log(memNo)
+                      // console.log(msgRow[i].msgNo);
+                      console.log($(".like").attr("data-like"));
+                      // $(".like").attr("data-like","${msgRow[i].msgNo}");
+                      console.log("檢查打賞留言編號", chkLikeRow[i].msgNo);
+                    } else {
+                      console.log($(".like").attr({ "data-like": msgRow[i].msgNo }));
+                      console.log(memNo)
+                    }
                   }
                 },
                 error: function (chkLikeRow) {
@@ -315,9 +325,6 @@ $(document).ready(function () {
                 },
               });
             });
-
-
-
 
             // $(function checkLike() {
             //   $.ajax({
@@ -374,9 +381,9 @@ $(document).ready(function () {
             let now = new Date();
             let likeTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() +
               " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-            console.log(likeThis);
-            console.log(whoLike);
-            console.log(likeTime);
+            console.log("被打賞留言編號:", likeThis);
+            console.log("打賞者", whoLike);
+            console.log("打賞時間", likeTime);
             $.ajax({
               url: "./phps/cav-msgLike.php",
               type: "GET",
@@ -388,7 +395,7 @@ $(document).ready(function () {
               },
               success: function (likeRow) {
                 console.log(likeRow);
-                if (likeRow.memNo != 0) {
+                if (likeRow.status == 'success') {
                   obj.disabled = true;
                   console.log(obj);
                   // console.log(666);

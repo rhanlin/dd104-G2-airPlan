@@ -53,7 +53,7 @@ Vue.component('manu', {
                         </div>
                     </div>
                     <div id="post5" class="panel-collapse collapse">
-                        <p class="panel-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis nam natus error et deserunt molestias placeat debitis nobis facilis quae. Sunt laudantium inventore hic omnis ab aliquam assumenda delectus corporis.</p>
+                        <p class="panel-body">首先要先有朋友，可以透過撈信並分享您對信件的想法與其他人交流藉此廣結善緣。</p>
                     </div>
                 </div>
                 <div class="panel panel-default">
@@ -239,7 +239,7 @@ function sendColor0Form(){
     let xhr = new XMLHttpRequest();
     let memNo = document.getElementById('cavMemberN').innerText.toString().substring(6);
     let intColor = '0';
-    // console.log( "========77",memNo);
+    console.log( "========77",memNo);
     xhr.onload = function () {//使用ajax方法到Server端資料
         showMemColor(xhr.responseText);
     }
@@ -255,6 +255,7 @@ function sendColor1Form(){
     let xhr = new XMLHttpRequest();
     let memNo = document.getElementById('cavMemberN').innerText.toString().substring(6);
     let intColor = '1';
+    console.log( "========77",memNo);
     xhr.onload = function () {//使用ajax方法到Server端資料
         showMemColor(xhr.responseText);
     }
@@ -268,10 +269,30 @@ function sendColor1Form(){
 let intColorBtn0 =document.getElementById("intColorBtn0");
 let intColorBtn1 =document.getElementById("intColorBtn1");
 intColorBtn0.onclick = function(){
-    sendColor0Form();
+    let signIns = document.getElementById('cavMemberN').innerText;
+    if(signIns == '會員:訪客身份-1'){
+        alert('訪客外觀無法修改');
+    }else{
+        if(signIns!=0 && signIns!='會員:訪客身份-1'){
+            sendColor0Form();
+        }
+        else{
+            alert('尚未登入');
+        }
+    }
 };
 intColorBtn1.onclick = function(){
-    sendColor1Form();
+    let signIns = document.getElementById('cavMemberN').innerText;
+    if(signIns == '會員:訪客身份-1'){
+        alert('訪客外觀無法修改');
+    }else{
+        if(signIns!=0 && signIns!='會員:訪客身份-1'){
+            sendColor1Form();
+        }
+        else{
+            alert('尚未登入');
+        }
+    }
 };
 
 
@@ -327,17 +348,22 @@ setDataBtn.onclick = function(){
     sendsetDataForm();
 };
 
-//////////////////會員資料修改燈箱
+//////////////////密碼修改燈箱
 var setDataBg = document.getElementById("setDataBg");
 var showForm = document.getElementById("showForm");
 var closeForm = document.getElementById("closeForm");
 showForm.onclick = function(){
     let signIns = document.getElementById('cavMemberN').innerText;
     console.log("----------ggg",signIns);
-    if(signIns!=0){
-        setDataBg.style.display = "block";
+    if(signIns == '會員:訪客身份-1'){
+        alert('訪客密碼無法修改');
     }else{
-        alert('尚未登入');
+        if(signIns!=0 && signIns!='會員:訪客身份-1'){
+            setDataBg.style.display = "block";
+        }
+        else{
+            alert('尚未登入');
+        }
     }
 };
 closeForm.onclick = function(){
@@ -356,24 +382,23 @@ function getLetLike(){
     .then((res) => {
         let letLikeRow = res.data;
         let letLike = "";
-        // console.log('撈回來的信件打賞紀錄',letLikeRow);
-        // console.log(letLikeRow[2].letLikeTime);
-        
+        console.log(letLikeRow);
         for(i=0;i<letLikeRow.length;i++){
             letLike = letterLike(
                 letLike,
                 letLikeRow[i].letLikeTime,
                 letLikeRow[i].letTitle,
+                letLikeRow[i].memName,
                 letLikeRow[i].memNo
             );
         }
         $("#letLike").html(letLike);
-        function letterLike(letLike,letLikeTime,letTitle,memNo){
+        function letterLike(letLike,letLikeTime,letTitle,memName,memNo){
             letLike+=`
                 <tr>
                     <td>${letLikeTime}</td>
                     <td>${letTitle}</td>
-                    <td>${memNo}</td>
+                    <td>${memName}-${memNo}</td>
                 </tr>
             `;
             return letLike;
@@ -393,22 +418,22 @@ function getmsgLike(){
     .then((res) => {
         let msgLikeRow = res.data;
         let msgLike = "";
-        // console.log('撈回來的留言打賞紀錄',msgLikeRow);
         for(i=0;i<msgLikeRow.length;i++){
             msgLike = messageLike(
                 msgLike,
                 msgLikeRow[i].msgLikeTime,
                 msgLikeRow[i].msgContent,
+                msgLikeRow[i].memName,
                 msgLikeRow[i].memNo
             );
         }
         $("#msgLike").html(msgLike);
-        function messageLike(msgLike,msgLikeTime,msgContent,memNo){
+        function messageLike(msgLike,msgLikeTime,msgContent,memName,memNo){
             msgLike+=`
                 <tr>
                     <td>${msgLikeTime}</td>
                     <td>${msgContent}</td>
-                    <td>${memNo}</td>
+                    <td>${memName}-${memNo}</td>
                 </tr>
             `;
             return msgLike;
@@ -418,6 +443,19 @@ function getmsgLike(){
         console.log(error)
     })
 }
+//////////////////打賞紀錄頁籤
+let airCoinBtnL = document.getElementById('airCoinBtnL');
+let airCoinBtnR = document.getElementById('airCoinBtnR');
+airCoinBtnL.onclick = function(){
+    document.getElementById('airCoinTableMsg').style.display = 'none'
+    document.getElementById('airCoinTableLet').style.display = 'block'
+    
+};
+airCoinBtnR.onclick = function(){
+    document.getElementById('airCoinTableLet').style.display = 'none'
+    document.getElementById('airCoinTableMsg').style.display = 'block'
+    
+};
 
 
 //////////////////顯示會員資料/密碼修改表單
@@ -439,14 +477,14 @@ function getUsersettingInfo() {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         let member = JSON.parse(xhr.responseText);
-        console.log("usersetting_session資料_memNo:",member.memNo);
-        console.log("usersetting_session資料_memName:",member.memName);
-        console.log("usersetting_session資料_memEmail:",member.memEmail);
-        console.log("usersetting_session資料_letCount:",member.letCount);
-        console.log("usersetting_session資料_airCoin:",member.airCoin);
-        console.log("usersetting_session資料_intColor:",member.intColor);
-        console.log("usersetting_session資料_matPosUrl:",member.matPosUrl);
-        console.log("usersetting_session資料_memPsw:",member.memPsw);
+        // console.log("usersetting_session資料_memNo:",member.memNo);
+        // console.log("usersetting_session資料_memName:",member.memName);
+        // console.log("usersetting_session資料_memEmail:",member.memEmail);
+        // console.log("usersetting_session資料_letCount:",member.letCount);
+        // console.log("usersetting_session資料_airCoin:",member.airCoin);
+        // console.log("usersetting_session資料_intColor:",member.intColor);
+        // console.log("usersetting_session資料_matPosUrl:",member.matPosUrl);
+        // console.log("usersetting_session資料_memPsw:",member.memPsw);
         if (member.memNo) {
             showMemData(xhr.responseText);
             getLetLike();//信件打賞紀錄撈取
