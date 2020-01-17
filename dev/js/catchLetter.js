@@ -122,11 +122,11 @@ let vmCatchLetter = new Vue({
       //如果是撈到 新聞 則出現返回撈信的按鈕 
       //如果是撈到 一封信 則可以蓋郵戳
       if(vmImgWrap.letUrl != ""){
-        letterFlim()//開信
+        letterFlim()//開信->一封信
         .then(stampShot())//蓋章
       }else{
-        letterFlim()//開信
-        .then(goBackBtn())//返回按鈕
+        letterFlim()//開信->新聞
+        .then(goBackBtn_News())//返回按鈕
       }
       // letterFlim();
       threeWorld.style.cursor = 'auto';
@@ -268,16 +268,3 @@ let vmCatchLetter = new Vue({
     })
   }
 
-  //返回鈕
-  function goBackBtn(){
-    let goBackBtn = document.getElementById('goBackBtn');
-    setTimeout(()=>{
-      goBackBtn.style.display = "flex";
-    },5000)
-    let catchAgain = document.getElementById('catchAgain');
-    catchAgain.addEventListener('click', clearLetter ,false)
-  }
-
-  function clearLetter(){
-    location.reload();
-  }

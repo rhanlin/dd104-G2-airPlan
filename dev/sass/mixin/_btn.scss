@@ -439,3 +439,102 @@
         }
     }
 }
+
+
+@mixin goBackBtn() {
+    .goBackBtn {
+        position: absolute;
+        top: 50%;
+        left: 80%;
+        // display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transform: translate(-50%, -50%);
+        z-index: 9;
+        width: 15%;
+        .goBtn {
+            background-color: $main-dark-red;
+            cursor: pointer;
+            text-decoration: none;
+            color: #fff;
+            padding: 15px 20px;
+            text-align: center;
+            margin: 3% 3%;
+            font-size: 1.5rem;
+            border-radius: $main-borderRadius;
+
+            &:hover {
+                background-color: $main-yellow;
+                color: $main-dark-red;
+            }
+        }
+    }
+
+    .goBackBtn_2 {
+        position: absolute;
+        display: flex;
+        width: 85%;
+        top: unset;
+        bottom: 0;
+        left: 50%;
+        flex-direction: row;
+        justify-content: center;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+
+        .goBtn {
+            cursor: pointer;
+            text-decoration: none;
+            background-color: $main-dark-red;
+            color: #fff;
+            border-radius: $main-borderRadius;
+            padding: 15px 20px;
+            text-align: center;
+            margin: 3% 3%;
+            font-size: 1.5rem;
+
+            &:hover {
+                background-color: $main-yellow;
+                color: $main-dark-red;
+            }
+        }
+    }
+
+    @include respond(note) {
+        #goBackBtn {
+            width: 85%;
+            top: unset;
+            bottom: 0;
+            left: 50%;
+            flex-direction: row;
+            justify-content: center;
+            transform: translate(-50%, 0%);
+
+            .goBtn {
+                padding: 10px 8px;
+                text-align: center;
+                margin: 3% 3%;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    @include respond(iphone) {
+        #goBackBtn {
+            width: 85%;
+            top: unset;
+            bottom: 0;
+            left: 50%;
+            flex-direction: row;
+            justify-content: center;
+            transform: translate(-50%, 0%);
+
+            .goBtn {
+                padding: 10px 8px;
+                text-align: center;
+                margin: 3% 3%;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
