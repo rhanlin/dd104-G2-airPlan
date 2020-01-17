@@ -1247,10 +1247,16 @@
               console.log(error)
             })
         },
+
       },
 
       mounted() {
         var vm = this;
+
+        window.addEventListener('load', function () {
+          setTimeout(vm.checkItem, 500);
+        });
+
         window.addEventListener('load', function () {
           setTimeout(vm.carddark, 500);
         });
@@ -1260,26 +1266,35 @@
         window.addEventListener('load', function () {
           setTimeout(vm.showMaterial, 500);
         });
+
+
         //====================Vue響應式==========================================================================
         this.$nextTick(function () {
           window.addEventListener('resize', this.getWindowWidth);
           this.getWindowWidth()
 
         });
+
         //====================頁面onload後直接抓回64筆商城卡片資料給vue data=>items======================================
         axios
           .get('./phps/shop_axios_post.php')
           .then((res) => {
             var arr = res.data;
+            console.log(arr)
+
             for (var i = 0; i < arr.length; i++) {
               this.items[i].url = arr[i].prodUrl
+            }
+            if (arr.length != 62) {
+              this.items[61].class = "hide"
             }
           })
           .catch((error) => {
             console.log(error)
           });
-
       },
+
+
       beforeDestroy() {
         window.removeEventListener('resize', this.getWindowWidth);
       },
@@ -1390,6 +1405,12 @@
     }
   </script>
   <script>
+    function itemCheck() {
+      itemCard62 = document.getElementById('itemCard62')
+      console.log(itemCard62)
+    }
+
+    window.addEventListener('load', itemCheck);
     window.addEventListener('load', function () {
       setTimeout(getMemberInfo, 500);
     }, false);
