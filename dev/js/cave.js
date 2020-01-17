@@ -267,108 +267,112 @@ $(document).ready(function () {
     /*AJAX 撈取信件回覆 */
     $(document).on("click", ".cav-letters", function () {
       let witchLetMsg = $(this).find(".cav-letTitle").attr("data-letter-num");
-      console.log(witchLetMsg);
+      // console.log(witchLetMsg); 6
       $.ajax({
         url: "./phps/cav-letMessage.php",
         type: "GET",
         dataType: "json",
         data: { letNo: witchLetMsg },
         success: function (msgRow) {
-          console.log("信件回復", msgRow);
+          // console.log("信件回復", msgRow); 6
           let letReply = "";
 
-          for (let i = 0; i < msgRow.length; i++) {
-            //撈出所有回覆
-            letReply = letterReply(
-              letReply,
-              msgRow[i].memNo,
-              msgRow[i].msgTime,
-              msgRow[i].msgContent,
-              msgRow[i].msgNo,
-            );
-            console.log(msgRow[i].msgNo);
-            $(function checkLike() {
-              let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-              // let mesgNo = msgRow[i].msgNo;
-              console.log(msgRow[i].msgNo);
-              console.log(memNo);
-              $.ajax({
-                url: "./phps/cav-checkLike.php",
-                type: "GET",
-                dataType: "json",
-                data: { "memNo": memNo },
-                success: function (chkLikeRow) {
-                  console.log(memNo);
-                  // console.log(chkLikeRow);
-                  // console.log("檢查打賞留言編號", chkLikeRow[i].msgNo);
-                  // console.log("檢查打賞留言編號", msgRow[i].msgNo);
-                  // console.log("檢查打賞會員編號", chkLikeRow[i].memNo);
-                  for (i = 0; i < chkLikeRow.length; i++) {
-                    $(".like").attr("data-like", msgRow[i]);
-                    console.log($(".like").attr("data-like", msgRow[i]));
-                    if ($(".like").attr({ "data-like": msgRow[i].msgNo }) == chkLikeRow[i].msgNo && memNo == chkLikeRow[i].memNo) {
-                      console.log($(".like").attr({ "data-like": msgRow[i].msgNo }));
-                      // $(".like").attr({ "data-like": msgRow[i].msgNo, "disabled": true });
+          $(function checkLike() {
+            let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
+            // let mesgNo = msgRow[i].msgNo;
+            // console.log(msgRow[j].msgNo);
+            // console.log(memNo); 6
+            $.ajax({
+              url: "./phps/cav-checkLike.php",
+              type: "GET",
+              dataType: "json",
+              data: { "memNo": memNo },
+              success: function (chkLikeRow) {
+                // console.log("會員編號", memNo); 6
+                // console.log("有打賞", chkLikeRow); 6
+                // console.log("留言", msgRow); 6
+                // console.log("有打賞過留言編號", chkLikeRow[0].msgNo); 6
+                // console.log("留言編號", msgRow[0].msgNo); 6
+                // console.log("",chkLikeRow.length);
 
-                      // console.log(msgRow[i].msgNo);
+                // console.log("檢查打賞留言編號", chkLikeRow[i].msgNo);
+                // console.log("檢查打賞留言編號", msgRow[i].msgNo);
+                // console.log("檢查打賞會員編號", chkLikeRow[i].memNo);
+                for (i = 0; i < chkLikeRow.length; i++) {
+                  // console.log();
+                  for (j = 0; j < msgRow.length; j++) {
+                    //撈出所有回覆
+                    letReply = letterReply(
+                      letReply,
+                      msgRow[j].memNo,
+                      msgRow[j].msgTime,
+                      msgRow[j].msgContent,
+                      msgRow[j].msgNo,
+                    );
+                    console.log(msgRow[j].msgNo);
+                    //   $(".like").attr(msgRow[i]);
+                    console.log(chkLikeRow[i].msgNo);
+
+                    if (msgRow[j].msgNo == chkLikeRow[i].msgNo && memNo == chkLikeRow[i].memNo) {
+                      console.log(msgRow[j].msgNo);
+                      $(".like").attr({ "data-like": msgRow[j].msgNo, "disabled": true });
                       console.log($(".like").attr("data-like"));
+                      // console.log($(".like").attr({ "data-like": msgRow[j].msgNo, "disabled": true }));
                       // $(".like").attr("data-like","${msgRow[i].msgNo}");
-                      console.log("檢查打賞留言編號", chkLikeRow[i].msgNo);
+
                     } else {
-                      console.log($(".like").attr({ "data-like": msgRow[i].msgNo }));
-                      console.log(memNo)
+                      console.log("沒有被打賞過");
                     }
                   }
-                },
-                error: function (chkLikeRow) {
-                  console.log(chkLikeRow);
-                },
-              });
+                }
+              },
+              error: function (chkLikeRow) {
+                console.log(chkLikeRow);
+              },
             });
+          });
 
-            // $(function checkLike() {
-            //   $.ajax({
-            //     url: "./phps/cav-checkLike.php",
-            //     type: "GET",
-            //     dataType: "json",
-            //     // data: {},
-            //     success: function (likeRow2) {
-            //       let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-            //       // let msgNo = $(".like").attr("data-like");
-            //       console.log(likeRow2);
-            //       // console.log(likeRow2);
-            //       // console.log(memNo);
-            //       // if (msgRow[i].msgNo == likeRow2.msgNo) {
-            //       if (msgRow[i].msgNo == likeRow2.msgNo && memNo == likeRow2.msgNo) {
-            //         // $(".like").attr("disabled", true);
-            //         $(".like").attr("disabled", true);
-            //         console.log($(".like"));
-            //       } else {
-            //         console.log($(".like"));
-            //       }
-            //     },
-            //     error: function (likeRow2) {
-            //       console.log(likeRow2);
-            //     },
-            //   });
-            // });
 
-            // $(function () {
-            //   $.ajax({
-            //     url: "./phps/cav-checkLike.php",
-            //     type: "GET",
-            //     dataType: "json",
-            //     // data: {},
-            //     success: function () {
+          // $(function checkLike() {
+          //   let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
+          //   // let mesgNo = msgRow[i].msgNo;
+          //   console.log(msgRow[i].msgNo);
+          //   console.log(memNo);
+          //   $.ajax({
+          //     url: "./phps/cav-checkLike.php",
+          //     type: "GET",
+          //     dataType: "json",
+          //     data: { "memNo": memNo },
+          //     success: function (chkLikeRow) {
+          //       console.log(memNo);
+          //       // console.log(chkLikeRow);
+          //       // console.log("檢查打賞留言編號", chkLikeRow[i].msgNo);
+          //       // console.log("檢查打賞留言編號", msgRow[i].msgNo);
+          //       // console.log("檢查打賞會員編號", chkLikeRow[i].memNo);
+          //       for (i = 0; i < chkLikeRow.length; i++) {
+          //         $(".like").attr(msgRow[i]);
+          //         console.log($(".like").attr("data-like", msgRow[i]));
+          //         if ($(".like").attr(msgRow[i].msgNo) == chkLikeRow[i].msgNo && memNo == chkLikeRow[i].memNo) {
+          //           console.log($(".like").attr(msgRow[i].msgNo));
+          //           // $(".like").attr({ "data-like": msgRow[i].msgNo, "disabled": true });
 
-            //     },
-            //     error: function () {
-            //       console.log();
-            //     },
-            //   });
-            // });
+          //           // console.log(msgRow[i].msgNo);
+          //           console.log($(".like").attr("data-like"));
+          //           // $(".like").attr("data-like","${msgRow[i].msgNo}");
+          //           console.log("檢查打賞留言編號", chkLikeRow[i].msgNo);
+          //         } else {
+          //           console.log($(".like").attr({ "data-like": msgRow[i].msgNo }));
+          //           console.log(memNo)
+          //         }
+          //       }
+          //     },
+          //     error: function (chkLikeRow) {
+          //       console.log(chkLikeRow);
+          //     },
+          //   });
+          // });
 
-          }
+
           $(".cav-replys").html(letReply);
 
 

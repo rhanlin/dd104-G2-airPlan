@@ -145,6 +145,7 @@
         width: 100%;
         height: 100%;
         border: .2vw solid $main-black;
+        pointer-events: none;
     }
 
 
@@ -154,6 +155,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        pointer-events: none;
     }
 
     .btn-big-test {
@@ -162,24 +164,27 @@
         transform-style: preserve-3d;
         transform: rotateX(30deg) rotateZ(-180deg) rotateY(180deg);
         perspective-origin: 50% 0rem;
-
+        pointer-events: none;
         // animation: rotate 10s ease-out infinite;
         .back {
             transform: translateY(calc(var(--box-height) - (var(--box-deep) * (0.5)))) translateZ(calc(var(--box-deep) * (-0.5))) rotateX(90deg);
             background: var(--color-dark);
             height: var(--box-deep);
+            pointer-events: none;
         }
 
         .left {
             transform: translateX(calc(var(--box-deep) * (-0.5))) translateZ(calc(var(--box-deep) * (-0.5))) rotateY(90deg);
             background: var(--color-dark-side-way);
             width: var(--box-deep);
+            pointer-events: none;
         }
 
         .right {
             transform: translateX(calc(var(--box-width) - var(--box-deep) * (0.5))) translateZ(calc(var(--box-deep) * (-0.5))) rotateY(90deg);
             background: var(--color-dark-side-way);
             width: var(--box-deep);
+            pointer-events: none;
         }
 
         .top {
@@ -187,6 +192,7 @@
             width: 100%;
             height: 100%;
             box-shadow: 0 -3px 5px 0 black;
+            pointer-events: none;
         }
 
         .bottom {
@@ -196,7 +202,7 @@
             height: 100%;
             border-radius: 2px;
             box-sizing: comtainer;
-
+            pointer-events: none;
             .side-way__text {
                 transform: rotateX(30deg) rotateZ(-180deg) rotateY(180deg);
                 font: bold 3vw "Noto Sans TC";
