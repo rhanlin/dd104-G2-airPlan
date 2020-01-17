@@ -135,7 +135,7 @@ let vm3 = new Vue({
       // console.log(`stamp length: ${submitStamp.length}`);
       for (let i = 0; i < submitStamp.length; i++) {
         submitStamp[i].addEventListener('click', (e) => {
-          // e.preventDefault();//解掉冒泡事件
+          e.preventDefault();//解掉冒泡事件
           e.stopPropagation();
           e.stopImmediatePropagation();
           writeLetterExm();
@@ -143,7 +143,7 @@ let vm3 = new Vue({
       }
       for (let i = 0; i < submitStamp.length; i++) {
         submitStamp[i].addEventListener('touchend', (e) => {
-          // e.preventDefault();//解掉冒泡事件
+          e.preventDefault();//解掉冒泡事件
           e.stopPropagation();
           e.stopImmediatePropagation();
           writeLetterExm();
