@@ -31,14 +31,14 @@ try {
     //準備好要存的filename
 
     $fileName = "{$psn}";
-    $file = "./phps/".$upload_dir . "plan-pattern-" . $fileName . ".png";
+    $file = $upload_dir . "plan-pattern-" . $fileName . ".png";
     $success = file_put_contents($file, $data);
     if ($success) {
 
         //將檔案名稱寫回資料庫
         $sql = "update `matpattern` set matPatUrl = :matPatUrl where matPatNo = $psn";
         $products = $pdo->prepare($sql);
-        $products->bindValue(":matPatUrl", $file);
+        $products->bindValue(":matPatUrl", "./phps$file");
         $products->execute();
         echo "新增成功~";
         $pdo->commit();
