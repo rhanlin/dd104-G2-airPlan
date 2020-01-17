@@ -511,24 +511,26 @@ function output(formatType) {
   var patternName = $('#patternName').val();
   // console.log(patternName)
   if (patternName != "") {
-    canvas.backgroundColor = "transparent";
-    let dataURL = canvas.toDataURL({
-      format: `image/${formatType}`,
-      top: 0,
-      left: 0,
-      width: 800,
-      height: 500,
-      multiplier: 1,
-      quality: 0.1
-    });
 
-    console.log(dataURL)
     // console.log(boardType)
     circleMatSort = "postmark";
-    planeMatSort = "figure";
-
+    planeMatSort = "pattern";
 
     if (boardType == "circle") {
+
+      canvas.backgroundColor = "transparent";
+      let dataURL = canvas.toDataURL({
+        format: `image/${formatType}`,
+        top: 0,
+        left: 0,
+        width: 800,
+        height: 500,
+        multiplier: 1,
+        quality: 0.1
+      });
+
+      console.log(dataURL)
+
       cavMemberH = document.getElementById('cavMemberH').innerHTML;
       cavMemberH = cavMemberH.toString().substring(6);
       $.ajax({
@@ -541,7 +543,32 @@ function output(formatType) {
           matLSort: circleMatSort,
         }
       })
+
+      var a = document.createElement('a');
+      a.href = dataURL
+      // console.log(blobUrl);
+      a.download = `ouput.${formatType}`
+      // console.log(a);
+      document.body.appendChild(a);
+      a.click()
+      document.body.removeChild(a)
+      alert("圖檔已存入我的包包~~請到我的包包確認")
+      clearCanvas();
+
+
     } else if (boardType == "plane") {
+
+      let dataURL = canvas.toDataURL({
+        format: `image/${formatType}`,
+        top: 0,
+        left: 0,
+        width: 800,
+        height: 500,
+        multiplier: 1,
+        quality: 0.1
+      });
+
+
       cavMemberH = document.getElementById('cavMemberH').innerHTML;
       cavMemberH = cavMemberH.toString().substring(6);
       $.ajax({
@@ -554,19 +581,19 @@ function output(formatType) {
           matLSort: planeMatSort,
         }
       })
+
+
+      var a = document.createElement('a');
+      a.href = dataURL
+      // console.log(blobUrl);
+      a.download = `ouput.${formatType}`
+      // console.log(a);
+      document.body.appendChild(a);
+      a.click()
+      document.body.removeChild(a)
+      alert("圖檔已存入我的包包~~請到我的包包確認")
+      clearCanvas();
     }
-
-    const a = document.createElement('a');
-    a.href = dataURL
-    // console.log(blobUrl);
-    a.download = `ouput.${formatType}`
-    // console.log(a);
-    document.body.appendChild(a);
-    a.click()
-    document.body.removeChild(a)
-    alert("圖檔已存入我的包包~~請到我的包包確認")
-    clearCanvas();
-
 
   } else {
     alert("請填寫欲儲存的圖檔名稱~~感謝您");
