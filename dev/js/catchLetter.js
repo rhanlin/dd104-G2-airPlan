@@ -9,14 +9,7 @@ let vmCatchLetter = new Vue({
     author:"",
   },
   mounted() {
-    // fetch('./phps/fetchAllUserMat.php',{
-    //   // method:'POST',
-    //   // body: new URLSearchParams(`memNo=10`) //10要改成${變數} 此變數從session撈出目前登入的用戶number
-    // })
-    //   .then(res=>res.json()).then(json=>{
-        
-    //     console.log(json);
-    //   })
+
   },
 });
   
@@ -230,6 +223,9 @@ let vmCatchLetter = new Vue({
         threeWorld.style.animationFillMode = "forwards";
         setTimeout(()=>{
           threeWorld.style.display = "none";
+          // console.log(renderer);
+          // renderer = null;
+          // console.log(renderer);
           
           document.getElementById('navHead').classList = "nav-navBgWrap";//選單向下出來
           document.getElementById('catchLetterMain').style.display = "block";
@@ -244,7 +240,8 @@ let vmCatchLetter = new Vue({
           if(userNameValue == "歡迎留言！"){
             document.getElementById('commentBtn').style.display="none";
           }
-
+          //打賞, 檢舉按鈕功能
+          likeOrReport();
           //監聽所有的submit按鈕(用戶郵戳)，當觸發點擊事件後，前往下一步->摺紙
           let submitStamp = document.querySelectorAll('.type');
           for(let i = 0 ; i<submitStamp.length ; i++){
@@ -268,3 +265,34 @@ let vmCatchLetter = new Vue({
     })
   }
 
+  //打賞, 檢舉信件本身
+  function likeOrReport(){
+    btn = document.querySelector('.catchLet-Btn').children;
+    for(let i=0;i<btn.length;i++){
+      btn[i].addEventListener('click',(e)=>{
+        e.preventDefault();//解掉冒泡事件
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        if(e.target.id == 'likeThis'){
+          console.log('打賞這封信');
+          fetch('./phps/likeOrReport.php',{
+            method:'POST',
+            body: new URLSearchParams(`memNo=${vmCatchLet.userNo}&letNo=${vmCatchLet.letNo}`),
+          })
+          // .then(res=>res.text()).then(text=>{
+          //   console.log(text);
+          // })
+        }else if(e.target.id == 'reportThis'){
+          console.log('檢舉這封信');
+
+        }else{
+          alert("出意外了沒點擊成功")
+        }
+      })
+    }
+    
+    // likeThisBtn = document.getElementById('likeThis');
+    // reportThisBtn = document.getElementById('reportThis');
+
+
+  }
