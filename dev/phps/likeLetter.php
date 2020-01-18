@@ -1,14 +1,5 @@
 <?php
 try {
-  //insert into `letterLike`( memNo, letNo, letLikeTime ) VALUES ( 10, 6,  '2020-01-17 21:07:30')
-  //select * from `letter` l JOIN `letterLike` k On l.letNo=k.letNo where k.letNo = 6
-  //select l.letNo , l.memNo 'writer', k.memNo 'liker', k.letLikeTime from `letter` l JOIN `letterLike` k On l.letNo=k.letNo where k.letNo = 6
-
-  //select l.letNo , l.memNo 'writerNo', m.airCoin 'writer-airCoin', k.memNo 'likerNo', k.letLikeTime 
-  //from `letter` l 
-  //JOIN `letterLike` k On l.letNo=k.letNo 
-  //Join `member` m on l.memNo=m.memNo
-  //where k.letNo = 6
   //打賞
   require_once("connectBook_root.php");
   $sql = "insert into `letterLike`(memNo, letNo, letLikeTime) VALUES (:memNo, :letNo, :letLikeTime)";
