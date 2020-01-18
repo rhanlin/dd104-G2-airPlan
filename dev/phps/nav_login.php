@@ -23,6 +23,8 @@ try {
 		$_SESSION["intColor"] = $memRow["intColor"];   
 		$_SESSION["matPosUrl"] = $memRow["matPosUrl"];
 		$_SESSION["memPsw"] = $memRow["memPsw"]; 
+		$_SESSION["matPosNo"] = $memRow["matPosNo"];
+		$_SESSION["matPatNo"] = $memRow["matPatNo"];
 		echo json_encode($memRow);//送出json字串
     } 
 } catch (PDOException $e) {
