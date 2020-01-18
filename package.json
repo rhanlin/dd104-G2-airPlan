@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@coreui/coreui": "^2.1.16",
+    "@coreui/icons": "^0.3.0",
     "bootstrap": "^4.4.1",
+    "font-awesome": "^4.7.0",
     "gsap": "^3.0.4",
     "gulp-concat": "^2.6.1",
     "gulp-prompt": "^1.2.0",
@@ -12,6 +15,7 @@
     "owl.carousel": "^2.3.4",
     "popper.js": "^1.16.0",
     "scrollmagic": "^2.0.7",
+    "simple-line-icons": "^2.4.1",
     "uglify-js": "^3.7.2",
     "vue-owl-carousel": "^2.0.3",
     "vuejs-paginator": "^2.0.2"

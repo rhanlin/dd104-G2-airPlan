@@ -2,6 +2,7 @@
 node_modules/
 dist/
 dev/css/main.css
+dev/css/bg_main.css
 dev/*.html
 dev/phps/userLetterCanvas
 dev/phps/userUploadImg
