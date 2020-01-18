@@ -331,14 +331,16 @@
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
       let member = JSON.parse(xhr.responseText);
-    //   console.log("第一手session資料_memName:",member.memNo);
-    //   console.log("第一手session資料_memNo:",member.memName);
-    //   console.log("第一手session資料_letCount:",member.memEmail);
-    //   console.log("第一手session資料_airCoin:",member.letCount);
-    //   console.log("第一手session資料_intColor:",member.airCoin);
-    //   console.log("第一手session資料_intColor:",member.intColor);
-    //   console.log("第一手session資料_matPosUrl:",member.matPosUrl);
-    //   console.log("第一手session資料_memPsw:",member.memPsw);
+      console.log("第一手session資料_memNo:",member.memNo);
+      console.log("第一手session資料_memName:",member.memName);
+      console.log("第一手session資料_memEmail:",member.memEmail);
+      console.log("第一手session資料_letCount:",member.letCount);
+      console.log("第一手session資料_airCoin:",member.airCoin);
+      console.log("第一手session資料_intColor:",member.intColor);
+      console.log("第一手session資料_matPosUrl:",member.matPosUrl);
+      console.log("第一手session資料_memPsw:",member.memPsw);
+      console.log("第一手session資料_matPosNo:",member.matPosNo);
+      console.log("第一手session資料_matPatNo:",member.matPatNo);
       if(member.memNo) {
         document.getElementById("cavMemberN").innerText = '會員:' + member.memName +'-'+ member.memNo;
         document.getElementById("cavMemberH").innerText = '會員:' + member.memName +'-'+ member.memNo;
