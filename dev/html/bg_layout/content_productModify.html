@@ -16,9 +16,82 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-sm-4 col-md-2 mb-3">
-                    <button class="btn btn-pill btn-block btn-success" type="button">新增商品</button>
+
+                <button class="btn btn-success mb-1" type="button" data-toggle="modal" data-target="#successModal"
+                    id="addProd">新增商品</button>
+
+
+                <!-- 跳窗 -->
+                <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                    style="display: none;" aria-hidden="true">
+                    <div class="modal-dialog modal-success" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">新增商品</h4>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form name="productForm">
+                                    <table>
+                                        <tr>
+                                            <td> <label>商品編號</label><input type="text" name="pname" id="pname"></td>
+                                        </tr>
+                                        <tr>
+                                            <td> <label>商品類別</label><input type="text" name="pLsort" id="pLsort"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>商品中文名稱</label><input type="text" name="pnameCH" id="pnameCH">
+                                            </td>
+                                        </tr>
+                                        <!-- <tr>
+                                            <td><label>商品英文名稱</label><input type="text" name="pnameENG" id="pnameENG">
+                                            </td>
+                                        </tr> -->
+                                        <!-- <tr>
+                                            <td><label>商品圖片</label><img src="" name="pImg" id="pImg"></td>
+                                        </tr> -->
+                                        <tr>
+                                            <td><label>商品資訊</label><input type="text" name="pInfo" id="pInfo"></td>
+                                        </tr>
+                                        <tr>
+                                            <td> <label>商品機率</label><input type="text" name="pchance" id="pchance"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>商品價格</label><input type="text" name="price" id="price"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>商品圖片路徑</label><input type="file" name="upFile" id="upFile">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>商品狀態</label><input type="text" name="pStatus" id="pStatus"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td> <label>商品小分類</label><input type="text" name="pSsort" id="pSsort"></td>
+                                        </tr>
+                                        <!-- <tr>
+                                            <td>
+                                                <input type="submit" value="送出">
+                                            </td>
+                                        </tr> -->
+                                    </table>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button"
+                                            data-dismiss="modal">Close</button>
+                                        <button class="btn btn-success" type="submit">送出</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- /.modal-content-->
+                    </div>
+                    <!-- /.modal-dialog-->
                 </div>
+
+
                 <table class="table table-responsive-sm table-striped">
                     <thead>
                         <tr>
@@ -27,209 +100,15 @@
                             <th>商品中文名稱</th>
                             <th>商品英文名稱</th>
                             <th>商品圖片</th>
-                            <th>商品描述</th>
+                            <th>商品資訊</th>
                             <th>商品價格</th>
                             <th>圖片路徑</th>
                             <th>商品狀態</th>
                             <th>編輯狀態</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                1
-                            </td>
-                            <td>
-                                <select class="form-control col-12" name="select1">
-                                    <option value="0">信紙</option>
-                                    <option value="1" selected>素材</option>
-                                    <option value="2">工具</option>
-                                </select>
-                            </td>
-                            <td><input class="form-control col-md-8" type="text" value="大象郵戳"></td>
-                            <td><input class="form-control col-12" type="text" value="postmark_countries_1"></td>
-                            <td>
-                                <img width="100" src="./img/background/Kenny.png" alt="">
-                            </td>
-                            <td>
-                                <div class="col-12">
-                                    <textarea class="form-control" id="textarea-input" name="textarea-input"
-                                        rows="9">「因為空間的黑暗，說我乖巧識禮，我的意見，只有前進，就發達繁昌起來，使成粉末，只在我們貴地，不聲不響...</textarea>
-                                </div>
-                            </td>
-                            <td><input class="form-control col-md-4" type="text" value="80"></td>
-                            <td>
-                                <input class="form-control col-12" type="text"
-                                    value="./img/product/postmark/postmark_countries_1.svg">
-                            </td>
-                            <td>
-                                <select class="form-control col-md-12" name="select1">
-                                    <option value="0">上架中</option>
-                                    <option value="1" selected>已下架</option>
-                                </select>
-                            </td>
-                            <td>
-                                <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
-                                    <button class="btn btn-block btn-outline-primary" type="button">編輯</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                2
-                            </td>
-                            <td>
-                                <select class="form-control col-12" name="select1">
-                                    <option value="0">信紙</option>
-                                    <option value="1">素材</option>
-                                    <option value="2" selected>工具</option>
-                                </select>
-                            </td>
-                            <td><input class="form-control col-md-8" type="text" value="筆刷"></td>
-                            <td><input class="form-control col-12" type="text" value="postmark_countries_2"></td>
-                            <td>
-                                <img width="100" src="./img/background/Kenny.png" alt="">
-                            </td>
-                            <td>
-                                <div class="col-12">
-                                    <textarea class="form-control" id="textarea-input" name="textarea-input"
-                                        rows="9">「因為空間的黑暗，說我乖巧識禮，我的意見，只有前進，就發達繁昌起來，使成粉末，只在我們貴地，不聲不響...</textarea>
-                                </div>
-                            </td>
-                            <td><input class="form-control col-md-4" type="text" value="10"></td>
-                            <td>
-                                <input class="form-control col-12" type="text"
-                                    value="./img/product/postmark/postmark_countries_2.svg">
-                            </td>
-                            <td>
-                                <select class="form-control col-md-12" name="select1">
-                                    <option value="0" selected>上架中</option>
-                                    <option value="1">已下架</option>
-                                </select>
-                            </td>
-                            <td>
-                                <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
-                                    <button class="btn btn-block btn-outline-primary" type="button">編輯</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                3
-                            </td>
-                            <td>
-                                <select class="form-control col-12" name="select1">
-                                    <option value="0" selected>信紙</option>
-                                    <option value="1">素材</option>
-                                    <option value="2">工具</option>
-                                </select>
-                            </td>
-                            <td><input class="form-control col-md-8" type="text" value="信紙"></td>
-                            <td><input class="form-control col-12" type="text" value="postmark_countries_3"></td>
-                            <td>
-                                <img width="100" src="./img/background/Kenny.png" alt="">
-                            </td>
-                            <td>
-                                <div class="col-12">
-                                    <textarea class="form-control" id="textarea-input" name="textarea-input"
-                                        rows="9">「因為空間的黑暗，說我乖巧識禮，我的意見，只有前進，就發達繁昌起來，使成粉末，只在我們貴地，不聲不響...</textarea>
-                                </div>
-                            </td>
-                            <td><input class="form-control col-md-4" type="text" value="3"></td>
-                            <td>
-                                <input class="form-control col-12" type="text"
-                                    value="./img/product/postmark/postmark_countries_3.svg">
-                            </td>
-                            <td>
-                                <select class="form-control col-md-12" name="select1">
-                                    <option value="0" selected>上架中</option>
-                                    <option value="1">已下架</option>
-                                </select>
-                            </td>
-                            <td>
-                                <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
-                                    <button class="btn btn-block btn-outline-primary" type="button">編輯</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                4
-                            </td>
-                            <td>
-                                <select class="form-control col-12" name="select1">
-                                    <option value="0">信紙</option>
-                                    <option value="1" selected>素材</option>
-                                    <option value="2">工具</option>
-                                </select>
-                            </td>
-                            <td><input class="form-control col-md-8" type="text" value="獅子圖案"></td>
-                            <td><input class="form-control col-12" type="text" value="postmark_countries_4"></td>
-                            <td>
-                                <img width="100" src="./img/background/Kenny.png" alt="">
-                            </td>
-                            <td>
-                                <div class="col-12">
-                                    <textarea class="form-control" id="textarea-input" name="textarea-input"
-                                        rows="9">「因為空間的黑暗，說我乖巧識禮，我的意見，只有前進，就發達繁昌起來，使成粉末，只在我們貴地，不聲不響...</textarea>
-                                </div>
-                            </td>
-                            <td><input class="form-control col-md-4" type="text" value="50"></td>
-                            <td>
-                                <input class="form-control col-12" type="text"
-                                    value="./img/product/postmark/postmark_countries_4.svg">
-                            </td>
-                            <td>
-                                <select class="form-control col-md-12" name="select1">
-                                    <option value="0" selected>上架中</option>
-                                    <option value="1">已下架</option>
-                                </select>
-                            </td>
-                            <td>
-                                <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
-                                    <button class="btn btn-block btn-outline-primary" type="button">編輯</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                5
-                            </td>
-                            <td>
-                                <select class="form-control col-12" name="select1">
-                                    <option value="0">信紙</option>
-                                    <option value="1">素材</option>
-                                    <option value="2" selected>工具</option>
-                                </select>
-                            </td>
-                            <td><input class="form-control col-md-8" type="text" value="鉛筆"></td>
-                            <td><input class="form-control col-12" type="text" value="postmark_countries_5"></td>
-                            <td>
-                                <img width="100" src="./img/background/Kenny.png" alt="">
-                            </td>
-                            <td>
-                                <div class="col-12">
-                                    <textarea class="form-control" id="textarea-input" name="textarea-input"
-                                        rows="9">「因為空間的黑暗，說我乖巧識禮，我的意見，只有前進，就發達繁昌起來，使成粉末，只在我們貴地，不聲不響...</textarea>
-                                </div>
-                            </td>
-                            <td><input class="form-control col-md-4" type="text" value="55"></td>
-                            <td>
-                                <input class="form-control col-12" type="text"
-                                    value="./img/product/postmark/postmark_countries_5.svg">
-                            </td>
-                            <td>
-                                <select class="form-control col-md-12" name="select1">
-                                    <option value="0" selected>上架中</option>
-                                    <option value="1">已下架</option>
-                                </select>
-                            </td>
-                            <td>
-                                <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
-                                    <button class="btn btn-block btn-outline-primary" type="button">編輯</button>
-                                </div>
-                            </td>
-                        </tr>
+                    <tbody id="productModify">
+                        
                     </tbody>
                 </table>
                 <ul class="pagination justify-content-center mt-5">
@@ -256,3 +135,5 @@
         </div>
     </div>
 </div>
+<input type="hidden" id="con_prodMod" name="con_prodMod">
+<input type="hidden" id="con_prodAdd" name="con_prodAdd">

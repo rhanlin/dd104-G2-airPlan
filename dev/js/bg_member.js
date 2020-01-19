@@ -37,13 +37,8 @@ function memberData(str) {
         };
         let memberInfo = document.getElementById("memberInfo");
         memberInfo.appendChild(tr);
-
     }
-
     // console.log(arr);
-
-
-
     console.log(memberInfo);
 }
 
