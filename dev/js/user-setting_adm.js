@@ -232,7 +232,6 @@ function showMemColor(json){//依intColor資料顯示介面顏色
             alert("尚未登入");
     }
 }
-
 //////////////////寫入0到intcolor資料欄位
 function sendColor0Form(json){
     let memdata = JSON.parse(json);
@@ -259,7 +258,7 @@ function sendColor0Form(json){
         }
     }
 }
-
+//////////////////寫入1到intcolor資料欄位
 function sendColor1Form(json){
     let memdata = JSON.parse(json);
     let memNo = memdata.memNo;
@@ -285,79 +284,6 @@ function sendColor1Form(json){
         }
     }
 }
-
-
-//////////////////會員資訊
-//////////////////清除密碼修改表單內容
-function cancelSetDataForm() {
-    document.getElementById("setPassword").value = "";
-    document.getElementById("setPasswordCheck").value = "";
-}
-
-//////////////////密碼修改表單發送
-function sendsetDataForm(json) {
-    let memdata = JSON.parse(json);
-    let memNo = memdata.memNo;
-    let setPassword = document.getElementById("setPassword").value;
-    let setPasswordCheck = document.getElementById("setPasswordCheck").value;
-    let xhr = new XMLHttpRequest();
-    let data_info = `memNo=${memNo}&memPsw=${setPassword}`;
-    xhr.onload = function () {
-        let pswRowCheck = JSON.parse(xhr.responseText);
-        if(pswRowCheck.memPsw){
-            document.getElementById('setDataBg').style.display = 'none';
-            document.getElementById('setPassword').placeholder = pswRowCheck.memPsw;
-            document.getElementById('setPasswordCheck').placeholder = pswRowCheck.memPsw;
-            cancelSetDataForm();
-            alert('密碼更新完成');
-        }
-    }
-    xhr.open("post", "phps/userSetting_setData.php", true);
-    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-    console.log(memNo);
-    console.log(setPassword);
-    if (setPassword != '' && setPasswordCheck != '') {
-        if(setPassword.length >= 8){
-            if(!setPassword.match(/[^a-zA-Z0-9]+/)){
-                if(setPassword == setPasswordCheck){
-                    xhr.send(data_info);
-                }else{
-                    alert('密碼確認與第一次輸入不同');
-                }
-            }else{
-                alert('密碼須為英文大小寫或數字');
-            } 
-        }else{
-            alert('密碼長度需為8-12');
-        }
-    }else {
-        alert('欄位不可空白');
-    }
-}
-
-
-//////////////////密碼修改燈箱
-let setDataBg = document.getElementById("setDataBg");
-let showForm = document.getElementById("showForm");
-let closeForm = document.getElementById("closeForm");
-showForm.onclick = function(){
-    let signIns = document.getElementById('cavMemberN').innerText;
-    if(signIns == '會員:訪客-1'){
-        alert('訪客密碼無法修改');
-    }else{
-        if(signIns!=0 && signIns!='會員:訪客-1'){
-            setDataBg.style.display = "block";
-        }
-        else{
-            alert('尚未登入');
-        }
-    }
-};
-closeForm.onclick = function(){
-    cancelSetDataForm()
-    setDataBg.style.display = "none";
-};
-
 
 
 //////////////////信件打賞紀錄
@@ -396,7 +322,6 @@ function getLetLike(json){
         console.log(error)
     })
 }
-
 //////////////////留言打賞紀錄
 function getmsgLike(json){
     let memdata = JSON.parse(json);
@@ -438,14 +363,81 @@ let airCoinBtnR = document.getElementById('airCoinBtnR');
 airCoinBtnL.onclick = function(){
     document.getElementById('airCoinTableMsg').style.display = 'none'
     document.getElementById('airCoinTableLet').style.display = 'block'
-    
 };
 airCoinBtnR.onclick = function(){
     document.getElementById('airCoinTableLet').style.display = 'none'
     document.getElementById('airCoinTableMsg').style.display = 'block'
-    
 };
 
+
+
+//////////////////會員資訊
+//////////////////清除密碼修改表單內容
+function cancelSetDataForm() {
+    document.getElementById("setPassword").value = "";
+    document.getElementById("setPasswordCheck").value = "";
+}
+//////////////////密碼修改表單發送
+function sendsetDataForm(json) {
+    let memdata = JSON.parse(json);
+    let memNo = memdata.memNo;
+    let setPassword = document.getElementById("setPassword").value;
+    let setPasswordCheck = document.getElementById("setPasswordCheck").value;
+    let xhr = new XMLHttpRequest();
+    let data_info = `memNo=${memNo}&memPsw=${setPassword}`;
+    xhr.onload = function () {
+        let pswRowCheck = JSON.parse(xhr.responseText);
+        if(pswRowCheck.memPsw){
+            document.getElementById('setDataBg').style.display = 'none';
+            document.getElementById('setPassword').placeholder = pswRowCheck.memPsw;
+            document.getElementById('setPasswordCheck').placeholder = pswRowCheck.memPsw;
+            cancelSetDataForm();
+            alert('密碼更新完成');
+        }
+    }
+    xhr.open("post", "phps/userSetting_setData.php", true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    console.log(memNo);
+    console.log(setPassword);
+    if (setPassword != '' && setPasswordCheck != '') {
+        if(setPassword.length >= 8){
+            if(!setPassword.match(/[^a-zA-Z0-9]+/)){
+                if(setPassword == setPasswordCheck){
+                    xhr.send(data_info);
+                }else{
+                    alert('密碼確認與第一次輸入不同');
+                }
+            }else{
+                alert('密碼須為英文大小寫或數字');
+            } 
+        }else{
+            alert('密碼長度需為8-12');
+        }
+    }else {
+        alert('欄位不可空白');
+    }
+}
+//////////////////密碼修改燈箱
+let setDataBg = document.getElementById("setDataBg");
+let showForm = document.getElementById("showForm");
+let closeForm = document.getElementById("closeForm");
+showForm.onclick = function(){
+    let signIns = document.getElementById('cavMemberN').innerText;
+    if(signIns == '會員:訪客-1'){
+        alert('訪客密碼無法修改');
+    }else{
+        if(signIns!=0 && signIns!='會員:訪客-1'){
+            setDataBg.style.display = "block";
+        }
+        else{
+            alert('尚未登入');
+        }
+    }
+};
+closeForm.onclick = function(){
+    cancelSetDataForm()
+    setDataBg.style.display = "none";
+};
 
 //////////////////顯示會員資料/密碼修改表單
 function showMemData(json){
@@ -470,13 +462,11 @@ function getUsersettingInfo() {
             showMemData(xhr.responseText);//show會員基本資料
             getLetLike(xhr.responseText);//信件打賞紀錄撈取
             getmsgLike(xhr.responseText);//留言打賞紀錄撈取
-
             ///////////////////密碼修改
             let setDataBtn = document.getElementById('setDataBtn');
             setDataBtn.onclick = function(){
                 sendsetDataForm(xhr.responseText);
             };
-
             /////////////////外觀設定
             let intColorBtn0 =document.getElementById("intColorBtn0");
             intColorBtn0.onclick = function(){//外觀設定黃色
@@ -498,8 +488,6 @@ function getUsersettingInfo() {
     xhr.open("get", "./phps/nav_getSignInInfo.php", true);
     xhr.send(null);
 }
-
-            
 
 window.addEventListener("load", function () {
     getUsersettingInfo();
