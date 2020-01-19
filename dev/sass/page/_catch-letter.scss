@@ -477,6 +477,7 @@
           margin: 5% auto 4%;
           display: flex;
           justify-content: center;
+          margin: 5% auto 1.5rem;
         }
       }
       .reportBtn{
@@ -487,6 +488,7 @@
         display: block;
         margin: 2% auto 5%;
         border: 2px solid $main-black;
+        background: transparent;
         &:focus{
           border: 2px solid $main-dark-red;
           background-color: $main-red;
@@ -798,7 +800,7 @@
       // background-color: pink;
       padding: 4.5%;
       position: relative;
-
+      
       .paper-cloud {
         height: 13vw;
         top: 0%;
@@ -842,6 +844,8 @@
         padding: 2%;
         overflow-y: auto;
         margin-top: 3%;
+        
+
         .text {
           color: rgba($main-black, .8);
         }
@@ -886,9 +890,20 @@
           }
         }
       }
-
+      
     }
-
+    .letter-wrap.active::before {
+      content: "";
+      background-image: url(../img/cave/coin1.png);
+      background-size: cover;
+      position: absolute;
+      width: 10vw;
+      height: 10vw;
+      top: 50%;
+      left: 40%;
+      transform: translate(-50%,-50%);
+      animation: popCoin 1s infinite;
+    }
   }
 
   .catch-step-2 {
@@ -1074,6 +1089,127 @@
     .catch-step-1 {
       flex-direction: column;
       align-items: center;
+      .reportBox{
+        width: 90vw;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        .exit{
+          position: absolute;
+          right: 25px;
+          top: 40px;
+          width: 30px;
+          height: 30px;
+          background: transparent;
+          border: 0;
+          margin: -15px 0 0 -15px;
+          cursor: pointer;
+          z-index: 9999;
+          outline: none;
+  
+          &:hover .mark{
+            background-color: $main-red;
+          }
+          .mark{
+            background-color: $main-black;
+            position: absolute;
+            height: 30px;
+            width: 4px;
+            display: block;
+            top: 0;
+          }
+          .x{
+            right: 14px; 
+            transform:rotate(45deg);
+          }
+          .xx{
+            left: 12px; 
+            transform:rotate(-45deg);
+          }
+        }
+        &::before{
+          content: '';
+          width: 100vw;
+          height: 330vh;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: rgba(0, 0, 0, 0.4);
+          z-index: 9;
+        }
+        .box-white{
+          position: relative;
+          top: 15px;
+          left: -15px;
+          width: 100%;
+          height: 100%;
+        }
+        .discription{
+          h3{
+            width: 80%;
+            font-size: 1.5rem;
+          }
+        }
+        .reportBtn{
+          cursor: pointer;
+          font-size: 1.2rem;
+          border-radius: 40px;
+          padding: 3% 3%;
+          display: block;
+          margin: 2% auto 5%;
+          border: 2px solid $main-black;
+          &:focus{
+            border: 2px solid $main-dark-red;
+            background-color: $main-red;
+            color: #fff;
+            outline: none;
+          }
+        }
+        .whyReport{
+          width: 100%;
+          height: auto;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          
+          .btn{
+            font-size: 1.2rem;
+            border: 2px solid $main-black;
+            border-radius: 25px;
+            margin: 1rem;
+            margin-top: unset;
+            background:#fff;
+            color: $main-black;
+            outline: none;
+            &:focus{
+              background:$main-red;
+              color: #fff;
+              outline: none;
+            }
+            &:active{
+              background:$main-red;
+              color: #fff;
+              outline: none;
+            }
+            &:hover{
+              background:$main-red;
+              color: #fff;
+            }
+            input{
+              -webkit-appearance: none;
+              appearance: none;
+            }
+            
+          }
+          
+        }
+      }
       .catchLet-msgBox{
         width: 100%;
         height: auto;
@@ -1422,6 +1558,127 @@
     .catch-step-1 {
       flex-direction: column;
       align-items: center;
+      .reportBox{
+        width: 90vw;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        .exit{
+          position: absolute;
+          right: 25px;
+          top: 40px;
+          width: 30px;
+          height: 30px;
+          background: transparent;
+          border: 0;
+          margin: -15px 0 0 -15px;
+          cursor: pointer;
+          z-index: 9999;
+          outline: none;
+  
+          &:hover .mark{
+            background-color: $main-red;
+          }
+          .mark{
+            background-color: $main-black;
+            position: absolute;
+            height: 30px;
+            width: 4px;
+            display: block;
+            top: 0;
+          }
+          .x{
+            right: 14px; 
+            transform:rotate(45deg);
+          }
+          .xx{
+            left: 12px; 
+            transform:rotate(-45deg);
+          }
+        }
+        &::before{
+          content: '';
+          width: 100vw;
+          height: 330vh;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: rgba(0, 0, 0, 0.4);
+          z-index: 9;
+        }
+        .box-white{
+          position: relative;
+          top: 15px;
+          left: -15px;
+          width: 100%;
+          height: 100%;
+        }
+        .discription{
+          h3{
+            width: 80%;
+            font-size: 1.5rem;
+          }
+        }
+        .reportBtn{
+          cursor: pointer;
+          font-size: 1.2rem;
+          border-radius: 40px;
+          padding: 3% 3%;
+          display: block;
+          margin: 2% auto 5%;
+          border: 2px solid $main-black;
+          &:focus{
+            border: 2px solid $main-dark-red;
+            background-color: $main-red;
+            color: #fff;
+            outline: none;
+          }
+        }
+        .whyReport{
+          width: 100%;
+          height: auto;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          
+          .btn{
+            font-size: 1.2rem;
+            border: 2px solid $main-black;
+            border-radius: 25px;
+            margin: 1rem;
+            margin-top: unset;
+            background:#fff;
+            color: $main-black;
+            outline: none;
+            &:focus{
+              background:$main-red;
+              color: #fff;
+              outline: none;
+            }
+            &:active{
+              background:$main-red;
+              color: #fff;
+              outline: none;
+            }
+            &:hover{
+              background:$main-red;
+              color: #fff;
+            }
+            input{
+              -webkit-appearance: none;
+              appearance: none;
+            }
+            
+          }
+          
+        }
+      }
       .catchLet-msgBox{
         width: 100%;
         height: auto;
@@ -1728,6 +1985,23 @@
     }
   }
 }
+
+@keyframes popCoin {
+  0% {
+    transform: translateY(0) rotateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-100%) rotateY(90deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-25%);
+    opacity: 0;
+  }
+}
+
+
 @keyframes openPlanePaper_2_right {
   from{
     -webkit-clip-path:polygon(0% 0%, 0% 55%, 100% 100%);
