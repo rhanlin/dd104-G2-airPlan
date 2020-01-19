@@ -268,8 +268,6 @@ let vmCatchLetter = new Vue({
               border-radius: 10px;
               align-items: center;`
               i.classList.add('noShow');
-              console.log(i.nextSbiling);
-              
             }
           };
           
@@ -312,7 +310,6 @@ let vmCatchLetter = new Vue({
       report.addEventListener('click',sendReportMsg,false);
     }
   }
-
   function sendLikeMsg(e){
     console.log(e.target);
     fetch(`./phps/likeMsg.php?memNo=${vmCatchLet.userNo}&msgNo=${e.target.value}`,{
@@ -327,8 +324,68 @@ let vmCatchLetter = new Vue({
       e.target.classList.add('active');
   }
   function sendReportMsg(e){
-    console.log(e.target.value);
-
+    // e.preventDefault();//解掉冒泡事件
+    // e.stopPropagation();
+    // e.stopImmediatePropagation();
+    e.target.style.pointerEvents = 'none';
+    e.target.style.background= "#aaa";
+    e.target.style.boxShadow="0 1px 1px 1px #878787";
+    e.target.style.top="7%";
+    e.target.classList.add('active');
+    
+    vmCatchLet.reportMsgNo = e.target.value;
+    // console.log(vmCatchLet.reportMsgNo);
+    // reportThisMsg();
+    document.getElementById('reportBox').style.display="block";
+    let exit = document.getElementById('closeReportBox');
+    let reportBtn = document.getElementById('reportBtn');
+    let whyReport = document.querySelector('.whyReport').children;
+    
+    // console.log(whyReport);
+    
+    //關閉檢舉視窗
+    exit.addEventListener('click',()=>{
+      document.getElementById('reportBox').style.display="none";
+      e.target.style="";
+      e.target.classList.remove('active');
+    })
+    //監聽檢舉原因選項
+    for(let i=0;i<whyReport.length;i++){
+      whyReport[i].addEventListener('click',(e)=>{
+        vmCatchLet.whyReportMsg = e.target.innerText;
+      })
+    }
+    
+    //送出檢舉原因
+    reportBtn.addEventListener('click', sendMsgReport , false);
+    //檢舉留言
+    let reportFlag = false;
+    function sendMsgReport(e){
+      e.preventDefault();//解掉冒泡事件
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      document.getElementById('reportBox').style.display="none";
+      console.log('reportMsg!');
+      fetch('./phps/reportMsg.php',{
+        method:'POST',
+        body: new URLSearchParams(`memNo=${vmCatchLet.userNo}&msgNo=${vmCatchLet.reportMsgNo}&msgRepReason=${vmCatchLet.whyReportMsg}`),
+      })
+      .then(res=>res.json()).then(json=>{
+        console.log(json);
+      })
+      e.target.style.pointerEvents = 'none';
+      e.target.style.background= "#aaa";
+      e.target.style.boxShadow="0 1px 1px 1px #878787";
+      e.target.style.top="7%";
+      e.target.classList.add('active');
+      shootStamp();
+    }
+    function shootStamp(){
+      let stamp = document.createElement('div');
+        stamp.setAttribute('id', 'reportStamp');
+        e.target.appendChild(stamp)
+        // console.log();
+    }
   }
 
   //信件打賞, 檢舉信件
@@ -369,7 +426,9 @@ let vmCatchLetter = new Vue({
     // document.getElementById('likeThis').style.pointerEvents = 'none';
     
   }
-
+  // function reportThisMsg(){
+    
+  // }
   function reportThis(){
     document.getElementById('reportBox').style.display="block";
     let exit = document.getElementById('closeReportBox');
@@ -394,6 +453,7 @@ let vmCatchLetter = new Vue({
     reportBtn.addEventListener('click', sendReport , false);
   }
 
+  
   function sendReport(){
     document.getElementById('reportBox').style.display="none";
     console.log('report!');
