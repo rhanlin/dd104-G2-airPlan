@@ -395,9 +395,19 @@
           memberR = JSON.parse(xhr.responseText);
           console.log(memberR);
           if(memberR.memEmail) {
-              cancelRegisterForm();
-              document.getElementById("signInBg").style.display = "none";
-              alert(memberR.memEmail + ' ' + '您好！ 您已註冊成功');
+            cancelRegisterForm();
+            document.getElementById("signInBg").style.display = "none";
+            let xhr = new XMLHttpRequest();
+            let memEmail = memberR.memEmail;
+            let memPsw = memberR.memPsw;
+            let data_info = `memEmail=${memEmail}&memPsw=${memPsw}`;
+            xhr.onload = function () {//使用ajax方法到Server端資料
+                showMemInfo(xhr.responseText);
+            }
+            xhr.open("post", "./phps/nav_login.php", true);
+            xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+            xhr.send(data_info);
+            alert(memberR.memEmail + ' ' + '您好！ 您已註冊成功');
           }
           else{
               alert('此Email已註冊過');

@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 //=============把商城購買商品完後更新的會員air幣寫回資料庫=============================================
 require_once "connectBook_root.php";
 try {
@@ -10,6 +10,7 @@ try {
     $emp->bindValue(":memNo", $_POST["memNo"]);
     
     $emp->execute();
+    session_start();
     $_SESSION["letCount"] = $_POST['remainLet'];
 
 } catch (PDOException $e) {
