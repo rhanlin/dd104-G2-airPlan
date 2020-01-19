@@ -10,84 +10,124 @@ canvas.setHeight(470);
 
 //=================剪裁飛機或郵戳畫板==========================
 canvas.controlsAboveOverlay = true;
-var clipPath = new fabric.Group([
-  new fabric.Polyline([{
-      x: 10,
-      y: 250
-    },
-    {
-      x: 700,
-      y: 10
-    },
-    {
-      x: 670,
-      y: 200
-    },
-    {
-      x: 40,
-      y: 250
-    },
-    {
-      x: 670,
-      y: 300
-    },
-    {
-      x: 700,
-      y: 490
-    },
-    {
-      x: 10,
-      y: 250
-    },
 
-  ], {
+// var clipPath = new fabric.Group([
+//   new fabric.Polyline([{
+//       x: 10,
+//       y: 250
+//     },
+//     {
+//       x: 700,
+//       y: 10
+//     },
+//     {
+//       x: 670,
+//       y: 200
+//     },
+//     {
+//       x: 40,
+//       y: 250
+//     },
+//     {
+//       x: 670,
+//       y: 300
+//     },
+//     {
+//       x: 700,
+//       y: 490
+//     },
+//     {
+//       x: 10,
+//       y: 250
+//     },
 
-  }),
-  new fabric.Polyline([{
-      x: 120,
-      y: 248
-    },
+//   ], {
 
-    {
-      x: 670,
-      y: 205
-    },
-    {
-      x: 650,
-      y: 248
-    },
-    {
-      x: 120,
-      y: 248
-    },
-  ]),
-  new fabric.Polyline([{
-      x: 120,
-      y: 253
-    },
+//   }),
+//   new fabric.Polyline([{
+//       x: 120,
+//       y: 248
+//     },
 
-    {
-      x: 650,
-      y: 253
-    },
-    {
-      x: 670,
-      y: 295
-    },
-    {
-      x: 120,
-      y: 253
-    },
-  ]),
-]);
-canvas.clipPath = clipPath;
-canvas.renderAll();
+//     {
+//       x: 670,
+//       y: 205
+//     },
+//     {
+//       x: 650,
+//       y: 248
+//     },
+//     {
+//       x: 120,
+//       y: 248
+//     },
+//   ]),
+//   new fabric.Polyline([{
+//       x: 120,
+//       y: 253
+//     },
+
+//     {
+//       x: 650,
+//       y: 253
+//     },
+//     {
+//       x: 670,
+//       y: 295
+//     },
+//     {
+//       x: 120,
+//       y: 253
+//     },
+//   ]),
+// ]);
+
+// var clipPath = new fabric.Circle({
+//   width: canvas.width,
+//   height: canvas.height,
+//   fill: "white"
+
+// })
+// canvas.clipPath = clipPath;
+// canvas.renderAll();
 
 
 var clipPath2 = new fabric.Circle({
-  radius: 200,
+  radius: 230,
+  top: 10,
+  left: 160,
+
+})
+var clipPath2_2 = new fabric.Circle({
+  radius: 230,
+  top: 10,
+  left: 140,
+
+})
+var clipPath2_3 = new fabric.Circle({
+  radius: 230,
+  top: 10,
+  left: 80,
+
+})
+
+var clipPath3 = new fabric.Circle({
+  radius: 230,
+  top: 10,
+  left: 40,
+
+})
+
+var clipPath4 = new fabric.Circle({
+  radius: 190,
   top: 50,
-  left: 50,
+  left: 10,
+
+})
+var clipPath5 = new fabric.Circle({
+  radius: 120,
+  top: 50,
+  left: 10,
 
 })
 
@@ -96,14 +136,15 @@ var boardType = "plane";
 $('#boardSwitchBtn').click(function () {
   orderText = document.querySelector('.orderText h6');
   orderText.innerHTML
-  if (canvas.clipPath != clipPath2) {
+  if (canvas.clipPath == null) {
     canvas.clipPath = clipPath2;
     boardType = "circle";
     orderText.innerHTML = "切換圖案畫板";
     // console.log(boardType)
     canvas.renderAll();
   } else {
-    canvas.clipPath = clipPath;
+    canvas.clipPath = null;
+    canvas.backgroundColor = 'white';
     boardType = "plane";
     orderText.innerHTML = "切換郵戳畫板";
     // console.log(boardType)
@@ -756,20 +797,27 @@ canvasBox.width = ocw;
 window.addEventListener('resize', resizeCanvas, false);
 
 function resizeCanvas() {
-  if (window.innerWidth < 576) {
+  if (window.innerWidth < 375) {
     canvasBox.width = (window.innerWidth * .67) + (window.innerWidth / 70)
-
+    clipPath2 = clipPath5;
+  } else if (window.innerWidth < 576) {
+    canvasBox.width = (window.innerWidth * .67) + (window.innerWidth / 70)
+    clipPath2 = clipPath4;
   } else if (window.innerWidth < 768) {
     canvasBox.width = (window.innerWidth * .60) + (window.innerWidth / 11);
+    clipPath2 = clipPath4;
   } else if (window.innerWidth < 992) {
     canvasBox.width = (window.innerWidth * .62) + (window.innerWidth / 30);
+    clipPath2 = clipPath2_3;
   } else if (window.innerWidth < 1330) {
     canvasBox.width = (window.innerWidth * .50) + (window.innerWidth / 70);
+    clipPath2 = clipPath3;
   } else if (window.innerWidth < 1500) {
     canvasBox.width = 670 + (window.innerWidth / 55);
+    clipPath2 = clipPath2_3;
   } else if (window.innerWidth < 1700) {
     canvasBox.width = 670 + (window.innerWidth / 68);
-
+    clipPath2 = clipPath2_2;
   } else {
     canvasBox.width = 670 + (window.innerWidth / 80)
 

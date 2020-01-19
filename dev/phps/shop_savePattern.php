@@ -15,7 +15,7 @@ try {
     //取得自動創號的key值
     $psn = $pdo->lastInsertId();
 
-    $upload_dir = "./userPattern/"; //檢查資料夾存不存在
+    $upload_dir = "userPattern/"; //檢查資料夾存不存在
     if (!file_exists($upload_dir)) {
         mkdir($upload_dir);
     }
@@ -38,7 +38,7 @@ try {
         //將檔案名稱寫回資料庫
         $sql = "update `matpattern` set matPatUrl = :matPatUrl where matPatNo = $psn";
         $products = $pdo->prepare($sql);
-        $products->bindValue(":matPatUrl", "./phps$file");
+        $products->bindValue(":matPatUrl", "./phps/$file");
         $products->execute();
         echo "新增成功~";
         $pdo->commit();
