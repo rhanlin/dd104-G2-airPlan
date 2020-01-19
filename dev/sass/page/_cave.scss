@@ -321,11 +321,61 @@
                   width: 100%;
                   // position: relative;
                   height: 3vw;
+                  .cav-LetChat {
+                    display: inline-block;
+                    position: relative;
+                    width: 40px;
+                    margin-right: 1.5%;
+                    .threed {
+                      background: $main-black;
+                      position: absolute;
+                      margin: 0 auto;
+                      display: block;
+                      min-height: 40px;
+                      min-width: 40px;
+
+                      .button {
+                        background: $main-blue;
+                        width: 80%;
+                        height: 80%;
+                        position: absolute;
+                        top: -7%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        box-shadow: 0 0.5vw 0 0 #234da7;
+                        border: none;
+                        transition: all 0.2s ease;
+                        outline: none;
+
+                        img {
+                          width: 160%;
+                          height: 106%;
+                          margin-top: -2%;
+                          margin-left: -30%;
+                        }
+                      }
+
+                      .button:active {
+                        box-shadow: 0 1px 1px 1px #234da7;
+                        top: 10%;
+                        outline: none;
+                      }
+                      .button:disabled {
+                        background: #bbb;
+                        box-shadow: 0 1px 1px 1px #999;
+                        top: -7%;
+                        outline: none;
+                      }
+                    }
+                    .circle {
+                      border-radius: 50%;
+                    }
+                  }
                   .cav-LetLike {
                     display: inline-block;
                     position: relative;
                     width: 40px;
-                    margin-right: 3%;
+                    margin-right: 1.5%;
                     .threed {
                       background: $main-black;
                       position: absolute;
@@ -357,7 +407,7 @@
                       }
 
                       .button:active {
-                        box-shadow: 0 1px 1px 1px #8c0606;
+                        box-shadow: 0 1px 1px 1px #b47e0a;
                         top: 10%;
                         outline: none;
                       }
@@ -405,13 +455,19 @@
                           width: 160%;
                           height: 106%;
                           margin-top: -4%;
-                          margin-left: -28%;
+                          margin-left: -34%;
                         }
                       }
 
                       .button:active {
                         box-shadow: 0 1px 1px 1px #8c0606;
                         top: 10%;
+                        outline: none;
+                      }
+                      .button:disabled {
+                        background: #bbb;
+                        box-shadow: 0 1px 1px 1px #999;
+                        top: -7%;
                         outline: none;
                       }
                     }
@@ -524,7 +580,7 @@
                         }
 
                         .button:active {
-                          box-shadow: 0 1px 1px 1px #8c0606;
+                          box-shadow: 0 1px 1px 1px #b47e0a;
                           top: 10%;
                           outline: none;
                         }
@@ -574,13 +630,19 @@
                             width: 160%;
                             height: 106%;
                             margin-top: -4%;
-                            margin-left: -28%;
+                            margin-left: -34%;
                           }
                         }
 
                         .button:active {
                           box-shadow: 0 1px 1px 1px #8c0606;
                           top: 10%;
+                          outline: none;
+                        }
+                        .button:disabled {
+                          background: #bbb;
+                          box-shadow: 0 1px 1px 1px #999;
+                          top: -7%;
                           outline: none;
                         }
                       }
