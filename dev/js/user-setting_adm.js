@@ -142,7 +142,6 @@ new Vue({
             var result = {
                 left: -this.now_index * this.span + "px"
             };
-            // console.log(result);
             return result;
         }
     },
@@ -220,8 +219,8 @@ btnVar.onclick = function(){
 
 //////////////////外觀設定
 //////////////////依intcolor資料呈現介面顏色
-function showMemColor(jsonStrC){//依intColor資料顯示介面顏色
-    let member = JSON.parse(jsonStrC);
+function showMemColor(json){//依intColor資料顯示介面顏色
+    let member = JSON.parse(json);
         if (member.memNo) {
             if(member.intColor==0){
                 document.getElementById("intColor").style.backgroundColor = "rgba(255, 190, 0, .2)";
@@ -229,71 +228,63 @@ function showMemColor(jsonStrC){//依intColor資料顯示介面顏色
                 document.getElementById("intColor").style.backgroundColor = "rgba(0,120, 250, .2)";
             }
             document.getElementById("signInBg").style.display = "none";
-            //location.reload();//登入資訊抓取方式2:從整頁面
         }else{
             alert("尚未登入");
     }
 }
+
 //////////////////寫入0到intcolor資料欄位
-function sendColor0Form(){
-    let xhr = new XMLHttpRequest();
-    let memNo = document.getElementById('cavMemberN').innerText.toString().substring(6);
+function sendColor0Form(json){
+    let memdata = JSON.parse(json);
+    let memNo = memdata.memNo;
+    let memName = memdata.memName;
     let intColor = '0';
-    console.log( "========77",memNo);
-    xhr.onload = function () {//使用ajax方法到Server端資料
-        showMemColor(xhr.responseText);
-    }
-    xhr.open("post", "./phps/userSetting_changeIntColor.php", true);
-    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-    
-    let data_infoColor = `intColor=${intColor}&memNo=${memNo}`;
-    console.log("intColor:",intColor);
-    xhr.send(data_infoColor);
-}
-//////////////////寫入1到intcolor資料欄位
-function sendColor1Form(){
     let xhr = new XMLHttpRequest();
-    let memNo = document.getElementById('cavMemberN').innerText.toString().substring(6);
-    let intColor = '1';
-    console.log( "========77",memNo);
-    xhr.onload = function () {//使用ajax方法到Server端資料
+    let data_infoColor = `intColor=${intColor}&memNo=${memNo}`;
+    console.log(memName);
+    xhr.onload = function () {
         showMemColor(xhr.responseText);
     }
     xhr.open("post", "./phps/userSetting_changeIntColor.php", true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-    
-    let data_infoColor = `intColor=${intColor}&memNo=${memNo}`;
     console.log("intColor:",intColor);
-    xhr.send(data_infoColor);
+    if(memName == '訪客'){
+        alert('訪客外觀無法修改');
+    }else{
+        if(memNo !=0 && memName!='訪客'){
+            xhr.send(data_infoColor);
+        }
+        else{
+            alert('尚未登入');
+        }
+    }
 }
-let intColorBtn0 =document.getElementById("intColorBtn0");
-let intColorBtn1 =document.getElementById("intColorBtn1");
-intColorBtn0.onclick = function(){
-    let signIns = document.getElementById('cavMemberN').innerText;
-    if(signIns == '會員:訪客身份-1'){
+
+function sendColor1Form(json){
+    let memdata = JSON.parse(json);
+    let memNo = memdata.memNo;
+    let memName = memdata.memName;
+    let intColor = '1';
+    let xhr = new XMLHttpRequest();
+    let data_infoColor = `intColor=${intColor}&memNo=${memNo}`;
+    console.log(memName);
+    xhr.onload = function () {
+        showMemColor(xhr.responseText);
+    }
+    xhr.open("post", "./phps/userSetting_changeIntColor.php", true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    console.log("intColor:",intColor);
+    if(memName == '訪客'){
         alert('訪客外觀無法修改');
     }else{
-        if(signIns!=0 && signIns!='會員:訪客身份-1'){
-            sendColor0Form();
+        if(memNo !=0 && memName!='訪客'){
+            xhr.send(data_infoColor);
         }
         else{
             alert('尚未登入');
         }
     }
-};
-intColorBtn1.onclick = function(){
-    let signIns = document.getElementById('cavMemberN').innerText;
-    if(signIns == '會員:訪客身份-1'){
-        alert('訪客外觀無法修改');
-    }else{
-        if(signIns!=0 && signIns!='會員:訪客身份-1'){
-            sendColor1Form();
-        }
-        else{
-            alert('尚未登入');
-        }
-    }
-};
+}
 
 
 //////////////////會員資訊
@@ -304,12 +295,14 @@ function cancelSetDataForm() {
 }
 
 //////////////////密碼修改表單發送
-function sendsetDataForm() {
-    let memNo = document.getElementById("cavMemberN").innerText.toString().substring(6);
+function sendsetDataForm(json) {
+    let memdata = JSON.parse(json);
+    let memNo = memdata.memNo;
     let setPassword = document.getElementById("setPassword").value;
     let setPasswordCheck = document.getElementById("setPasswordCheck").value;
     let xhr = new XMLHttpRequest();
-    xhr.onload = function () {//使用ajax方法到Server端資料
+    let data_info = `memNo=${memNo}&memPsw=${setPassword}`;
+    xhr.onload = function () {
         let pswRowCheck = JSON.parse(xhr.responseText);
         if(pswRowCheck.memPsw){
             document.getElementById('setDataBg').style.display = 'none';
@@ -327,7 +320,6 @@ function sendsetDataForm() {
         if(setPassword.length >= 8){
             if(!setPassword.match(/[^a-zA-Z0-9]+/)){
                 if(setPassword == setPasswordCheck){
-                    let data_info = `memNo=${memNo}&memPsw=${setPassword}`;
                     xhr.send(data_info);
                 }else{
                     alert('密碼確認與第一次輸入不同');
@@ -342,23 +334,18 @@ function sendsetDataForm() {
         alert('欄位不可空白');
     }
 }
-//////////////////密碼修改表單發送鍵
-let setDataBtn = document.getElementById('setDataBtn');
-setDataBtn.onclick = function(){
-    sendsetDataForm();
-};
+
 
 //////////////////密碼修改燈箱
-var setDataBg = document.getElementById("setDataBg");
-var showForm = document.getElementById("showForm");
-var closeForm = document.getElementById("closeForm");
+let setDataBg = document.getElementById("setDataBg");
+let showForm = document.getElementById("showForm");
+let closeForm = document.getElementById("closeForm");
 showForm.onclick = function(){
     let signIns = document.getElementById('cavMemberN').innerText;
-    console.log("----------ggg",signIns);
-    if(signIns == '會員:訪客身份-1'){
+    if(signIns == '會員:訪客-1'){
         alert('訪客密碼無法修改');
     }else{
-        if(signIns!=0 && signIns!='會員:訪客身份-1'){
+        if(signIns!=0 && signIns!='會員:訪客-1'){
             setDataBg.style.display = "block";
         }
         else{
@@ -374,8 +361,9 @@ closeForm.onclick = function(){
 
 
 //////////////////信件打賞紀錄
-function getLetLike(){
-    let letLikememNo = document.getElementById('cavMemberH').innerText.toString().substring(6);
+function getLetLike(json){
+    let memdata = JSON.parse(json);
+    let letLikememNo = memdata.memNo;
     console.log('airCoinmemNo:',letLikememNo);
     axios
     .get('phps/userSetting_letLike.php?memNo=' + letLikememNo)
@@ -410,8 +398,9 @@ function getLetLike(){
 }
 
 //////////////////留言打賞紀錄
-function getmsgLike(){
-    let msgLikememNo = document.getElementById('cavMemberH').innerText.toString().substring(6);
+function getmsgLike(json){
+    let memdata = JSON.parse(json);
+    let msgLikememNo = memdata.memNo;
     console.log('msgLikememNo:',msgLikememNo);
     axios
     .get('phps/userSetting_msgLike.php?memNo=' + msgLikememNo)
@@ -477,25 +466,40 @@ function getUsersettingInfo() {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         let member = JSON.parse(xhr.responseText);
-        // console.log("usersetting_session資料_memNo:",member.memNo);
-        // console.log("usersetting_session資料_memName:",member.memName);
-        // console.log("usersetting_session資料_memEmail:",member.memEmail);
-        // console.log("usersetting_session資料_letCount:",member.letCount);
-        // console.log("usersetting_session資料_airCoin:",member.airCoin);
-        // console.log("usersetting_session資料_intColor:",member.intColor);
-        // console.log("usersetting_session資料_matPosUrl:",member.matPosUrl);
-        // console.log("usersetting_session資料_memPsw:",member.memPsw);
         if (member.memNo) {
-            showMemData(xhr.responseText);
-            getLetLike();//信件打賞紀錄撈取
-            getmsgLike();//留言打賞紀錄撈取
+            showMemData(xhr.responseText);//show會員基本資料
+            getLetLike(xhr.responseText);//信件打賞紀錄撈取
+            getmsgLike(xhr.responseText);//留言打賞紀錄撈取
+
+            ///////////////////密碼修改
+            let setDataBtn = document.getElementById('setDataBtn');
+            setDataBtn.onclick = function(){
+                sendsetDataForm(xhr.responseText);
+            };
+
+            /////////////////外觀設定
+            let intColorBtn0 =document.getElementById("intColorBtn0");
+            intColorBtn0.onclick = function(){//外觀設定黃色
+                sendColor0Form(xhr.responseText);
+            };
+            let intColorBtn1 =document.getElementById("intColorBtn1");
+            intColorBtn1.onclick = function(){//外觀設定藍色
+                sendColor1Form(xhr.responseText);
+            };
+        }else{
+            intColorBtn0.onclick = function(){//尚未當入外觀設定黃色
+                alert('尚未登入');
+            };
+            intColorBtn1.onclick = function(){//尚未當入外觀設定藍色
+                alert('尚未登入');
+            };
         }
     }
     xhr.open("get", "./phps/nav_getSignInInfo.php", true);
     xhr.send(null);
 }
 
-
+            
 
 window.addEventListener("load", function () {
     getUsersettingInfo();
