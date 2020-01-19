@@ -280,12 +280,17 @@ let vmCatchLetter = new Vue({
   }
 
   function sendLikeMsg(e){
-    console.log(e.target.value);
+    console.log(e.target);
     fetch(`./phps/likeMsg.php?memNo=${vmCatchLet.userNo}&msgNo=${e.target.value}`,{
       method:'GET',
     }).then(res=>res.json()).then(json=>{
         console.log(json);
       })
+      e.target.style.pointerEvents = 'none';
+      e.target.style.background= "#aaa";
+      e.target.style.boxShadow="0 1px 1px 1px #878787";
+      e.target.style.top="7%";
+      e.target.classList.add('active');
   }
   function sendReportMsg(e){
     console.log(e.target.value);
@@ -328,9 +333,7 @@ let vmCatchLetter = new Vue({
     letterWrap.classList.add('active');
     document.getElementById('likeThis').style.pointerEvents = 'none';
     // document.getElementById('likeThis').style.pointerEvents = 'none';
-    setTimeout(()=>{
-      letterWrap.classList.remove('active');
-    },1500)
+    
   }
 
   function reportThis(){
