@@ -64,7 +64,7 @@
             <div class="box-white top-left-bg">
                 <div class="box-white top-left-bg">
 
-                  <div class="dot-box-white comment-outbox scroll-container">
+                  <div id="msgWrap" class="dot-box-white comment-outbox scroll-container">
                     <template v-for="(item, index) in levMsg.length">
                       <div class="box-white comment">
                         <div class="comment-contant">
@@ -75,10 +75,10 @@
                         <div id="commentBtn" class="comment-btn">
                           <!-- 檢舉 -->
                           <div class="circle circleBtn like">
-                            <button class="circle button"></button>
+                            <button class="msgLike circle button" :value="msgNo[index]"></button>
                           </div>
                           <div class="circle circleBtn report">
-                            <button class="circle button"></button>
+                            <button class="msgReport circle button" :value="msgNo[index]"></button>
                           </div>
                           
                         </div>
@@ -243,6 +243,7 @@
         author: "",
         msgUserId:[], //存留言者的id
         levMsg:[], //存留言
+        msgNo:[],//留言編號
         letNo: 0,//撈出來的信件編號
         whyReport: '',//存檢舉原因
       },

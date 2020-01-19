@@ -52,6 +52,7 @@ function catchALetter(){
 
     //將留言存起來
     vmCatchLet.letNo = json.letter.letNo;
+
     if(json.msg){
       for(let i=0 ; i<json.msg.length ; i++){
         if(json.msg[i].memNo){
@@ -61,6 +62,11 @@ function catchALetter(){
       for(let i=0 ; i<json.msg.length ; i++){
         if(json.msg[i].msgContent){
           vmCatchLet.levMsg.push(json.msg[i].msgContent);
+        }
+      }
+      for(let i=0 ; i<json.msg.length ; i++){
+        if(json.msg[i].msgNo){
+          vmCatchLet.msgNo.push(`${json.msg[i].msgNo}`);
         }
       }
     }else{

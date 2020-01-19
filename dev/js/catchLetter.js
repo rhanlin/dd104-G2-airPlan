@@ -240,8 +240,10 @@ let vmCatchLetter = new Vue({
           if(userNameValue == "歡迎留言！"){
             document.getElementById('commentBtn').style.display="none";
           }
-          //打賞, 檢舉按鈕功能
+          //信件打賞, 檢舉
           likeOrReport();
+          //留言打賞, 檢舉
+          msgLikeOrReport();
           //監聽所有的submit按鈕(用戶郵戳)，當觸發點擊事件後，前往下一步->摺紙
           let submitStamp = document.querySelectorAll('.type');
           for(let i = 0 ; i<submitStamp.length ; i++){
@@ -264,8 +266,33 @@ let vmCatchLetter = new Vue({
       })
     })
   }
+  //留言打賞, 檢舉
+  function msgLikeOrReport(){
+    let msgLike = document.querySelectorAll('.msgLike');
+    let msgReport = document.querySelectorAll('.msgReport');
+    // console.log(msgLike);
+    for(like of msgLike){
+      like.addEventListener('click',sendLikeMsg,false);
+    }
+    for(report of msgReport){
+      report.addEventListener('click',sendReportMsg,false);
+    }
+  }
 
-  //打賞, 檢舉信件本身
+  function sendLikeMsg(e){
+    console.log(e.target.value);
+    fetch(`./phps/likeMsg.php?memNo=${vmCatchLet.userNo}&msgNo=${e.target.value}`,{
+      method:'GET',
+    }).then(res=>res.json()).then(json=>{
+        console.log(json);
+      })
+  }
+  function sendReportMsg(e){
+    console.log(e.target.value);
+
+  }
+
+  //信件打賞, 檢舉信件
   function likeOrReport(){
     btn = document.querySelector('.catchLet-Btn').children;
     for(let i=0;i<btn.length;i++){
@@ -295,6 +322,7 @@ let vmCatchLetter = new Vue({
       })
     }
   }
+
   function likeThisLet(){
     let letterWrap = document.getElementById('letterWrap');
     letterWrap.classList.add('active');
@@ -302,8 +330,9 @@ let vmCatchLetter = new Vue({
     // document.getElementById('likeThis').style.pointerEvents = 'none';
     setTimeout(()=>{
       letterWrap.classList.remove('active');
-    },500)
+    },1500)
   }
+
   function reportThis(){
     document.getElementById('reportBox').style.display="block";
     let exit = document.getElementById('closeReportBox');
@@ -326,6 +355,7 @@ let vmCatchLetter = new Vue({
     //送出檢舉原因
     reportBtn.addEventListener('click', sendReport , false);
   }
+
   function sendReport(){
     document.getElementById('reportBox').style.display="none";
     console.log('report!');
