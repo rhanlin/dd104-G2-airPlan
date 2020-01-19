@@ -165,6 +165,7 @@
         transform: rotateX(30deg) rotateZ(-180deg) rotateY(180deg);
         perspective-origin: 50% 0rem;
         pointer-events: none;
+
         // animation: rotate 10s ease-out infinite;
         .back {
             transform: translateY(calc(var(--box-height) - (var(--box-deep) * (0.5)))) translateZ(calc(var(--box-deep) * (-0.5))) rotateX(90deg);
@@ -203,6 +204,7 @@
             border-radius: 2px;
             box-sizing: comtainer;
             pointer-events: none;
+
             .side-way__text {
                 transform: rotateX(30deg) rotateZ(-180deg) rotateY(180deg);
                 font: bold 3vw "Noto Sans TC";
@@ -227,6 +229,43 @@
 
     .btn-big-test:active {
         --box-deep: 1rem !important;
+        .redBtn_light,
+        .blueBtn_light {
+            background: #aaa !important;
+        }
+        .redBtn,
+        .blueBtn {
+            background: #878787 !important;
+        }
+
+        .back{
+            transform: translateY(450%) translateZ(calc(var(--box-deep) * (-0.5))) rotateX(90deg);
+        }
+        .right{
+            transform: translateX(1070%) translateZ(calc(var(--box-deep) * (-0.5))) rotateY(90deg);
+        }
+    }
+
+    .btn-big-test.active {
+        --box-deep: 1rem !important;
+
+        .redBtn_light,
+        .blueBtn_light {
+            background: #aaa !important;
+        }
+
+        .redBtn,
+        .blueBtn {
+            background: #878787 !important;
+        }
+
+        .back{
+            transform: translateY(450%) translateZ(calc(var(--box-deep) * (-0.5))) rotateX(90deg);
+        }
+        .right{
+            transform: translateX(1070%) translateZ(calc(var(--box-deep) * (-0.5))) rotateY(90deg);
+        }
+        
     }
 
     .btn-big-test:active .top {
@@ -458,6 +497,7 @@
         transform: translate(-50%, -50%);
         z-index: 9;
         width: 15%;
+
         .goBtn {
             background-color: $main-dark-red;
             cursor: pointer;

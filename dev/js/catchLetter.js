@@ -275,6 +275,9 @@ let vmCatchLetter = new Vue({
         e.stopImmediatePropagation();
         if(e.target.id == 'likeThis'){
           console.log('打賞這封信');
+          // console.log(e.target.children);
+          document.getElementById('likeActive').classList.add('active');
+          likeThisLet();
           fetch('./phps/likeLetter.php',{
             method:'POST',
             body: new URLSearchParams(`memNo=${vmCatchLet.userNo}&letNo=${vmCatchLet.letNo}`),
@@ -284,6 +287,7 @@ let vmCatchLetter = new Vue({
           // })
         }else if(e.target.id == 'reportThis'){
           console.log('檢舉這封信');
+          document.getElementById('reportActive').classList.add('active');
           reportThis();
         }else{
           alert("出意外了沒點擊成功")
@@ -291,7 +295,15 @@ let vmCatchLetter = new Vue({
       })
     }
   }
-
+  function likeThisLet(){
+    let letterWrap = document.getElementById('letterWrap');
+    letterWrap.classList.add('active');
+    document.getElementById('likeThis').style.pointerEvents = 'none';
+    // document.getElementById('likeThis').style.pointerEvents = 'none';
+    setTimeout(()=>{
+      letterWrap.classList.remove('active');
+    },500)
+  }
   function reportThis(){
     document.getElementById('reportBox').style.display="block";
     let exit = document.getElementById('closeReportBox');
@@ -302,6 +314,7 @@ let vmCatchLetter = new Vue({
     //關閉檢舉視窗
     exit.addEventListener('click',()=>{
       document.getElementById('reportBox').style.display="none";
+      document.getElementById('reportActive').classList.remove('active');
     })
     //監聽檢舉原因選項
     for(let i=0;i<whyReport.length;i++){

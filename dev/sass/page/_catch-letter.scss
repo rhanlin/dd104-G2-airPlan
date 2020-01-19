@@ -800,7 +800,7 @@
       // background-color: pink;
       padding: 4.5%;
       position: relative;
-
+      
       .paper-cloud {
         height: 13vw;
         top: 0%;
@@ -844,6 +844,8 @@
         padding: 2%;
         overflow-y: auto;
         margin-top: 3%;
+        
+
         .text {
           color: rgba($main-black, .8);
         }
@@ -888,9 +890,20 @@
           }
         }
       }
-
+      
     }
-
+    .letter-wrap.active::before {
+      content: "";
+      background-image: url(../img/cave/coin1.png);
+      background-size: cover;
+      position: absolute;
+      width: 10vw;
+      height: 10vw;
+      top: 50%;
+      left: 40%;
+      transform: translate(-50%,-50%);
+      animation: popCoin 1s infinite;
+    }
   }
 
   .catch-step-2 {
@@ -1972,6 +1985,23 @@
     }
   }
 }
+
+@keyframes popCoin {
+  0% {
+    transform: translateY(0) rotateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-100%) rotateY(90deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-25%);
+    opacity: 0;
+  }
+}
+
+
 @keyframes openPlanePaper_2_right {
   from{
     -webkit-clip-path:polygon(0% 0%, 0% 55%, 100% 100%);
