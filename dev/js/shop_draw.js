@@ -9,7 +9,7 @@ canvas.setHeight(470);
 // canvas.setHeight(470);
 
 //=================剪裁飛機或郵戳畫板==========================
-canvas.controlsAboveOverlay = true;
+// canvas.controlsAboveOverlay = true;
 
 // var clipPath = new fabric.Group([
 //   new fabric.Polyline([{
@@ -131,9 +131,11 @@ var clipPath5 = new fabric.Circle({
 
 })
 
+$('#boardSwitchBtn').on('click', switchBtn)
 //切換畫板以便設定轉存圖檔的分類(郵戳或圖案)
 var boardType = "plane";
-$('#boardSwitchBtn').click(function () {
+
+function switchBtn() {
   orderText = document.querySelector('.orderText h6');
   orderText.innerHTML
   if (canvas.clipPath == null) {
@@ -150,8 +152,11 @@ $('#boardSwitchBtn').click(function () {
     // console.log(boardType)
     canvas.renderAll();
   }
+}
 
-})
+
+
+
 
 //==================拖曳slide到畫板===============================
 
@@ -392,85 +397,84 @@ function clearCanvas() {
 
   canvas.clear();
   canvas.backgroundColor = "white";
-  canvas.controlsAboveOverlay = true;
-  var clipPath = new fabric.Group([
-    new fabric.Polyline([{
-        x: 10,
-        y: 250
-      },
-      {
-        x: 700,
-        y: 10
-      },
-      {
-        x: 670,
-        y: 200
-      },
-      {
-        x: 40,
-        y: 250
-      },
-      {
-        x: 670,
-        y: 300
-      },
-      {
-        x: 700,
-        y: 490
-      },
-      {
-        x: 10,
-        y: 250
-      },
-
-    ], {
-      // stroke: 'red',
-      // color: 'red',
-      // left: 10,
-      // top: 10,
-      // fill: 'red'
-    }),
-    new fabric.Polyline([{
-        x: 120,
-        y: 248
-      },
-
-      {
-        x: 670,
-        y: 205
-      },
-      {
-        x: 650,
-        y: 248
-      },
-      {
-        x: 120,
-        y: 248
-      },
-    ]),
-    new fabric.Polyline([{
-        x: 120,
-        y: 253
-      },
-
-      {
-        x: 650,
-        y: 253
-      },
-      {
-        x: 670,
-        y: 295
-      },
-      {
-        x: 120,
-        y: 253
-      },
-    ]),
-  ]);
-
-  canvas.clipPath = clipPath;
-  canvas.backgroundColor = "white";
   canvas.renderAll();
+  // canvas.controlsAboveOverlay = true;
+  //   var clipPath = new fabric.Group([
+  //     new fabric.Polyline([{
+  //         x: 10,
+  //         y: 250
+  //       },
+  //       {
+  //         x: 700,
+  //         y: 10
+  //       },
+  //       {
+  //         x: 670,
+  //         y: 200
+  //       },
+  //       {
+  //         x: 40,
+  //         y: 250
+  //       },
+  //       {
+  //         x: 670,
+  //         y: 300
+  //       },
+  //       {
+  //         x: 700,
+  //         y: 490
+  //       },
+  //       {
+  //         x: 10,
+  //         y: 250
+  //       },
+
+  //     ], {
+  //       // stroke: 'red',
+  //       // color: 'red',
+  //       // left: 10,
+  //       // top: 10,
+  //       // fill: 'red'
+  //     }),
+  //     new fabric.Polyline([{
+  //         x: 120,
+  //         y: 248
+  //       },
+
+  //       {
+  //         x: 670,
+  //         y: 205
+  //       },
+  //       {
+  //         x: 650,
+  //         y: 248
+  //       },
+  //       {
+  //         x: 120,
+  //         y: 248
+  //       },
+  //     ]),
+  //     new fabric.Polyline([{
+  //         x: 120,
+  //         y: 253
+  //       },
+
+  //       {
+  //         x: 650,
+  //         y: 253
+  //       },
+  //       {
+  //         x: 670,
+  //         y: 295
+  //       },
+  //       {
+  //         x: 120,
+  //         y: 253
+  //       },
+  //     ]),
+  //   ]);
+
+
 
 }
 
@@ -595,6 +599,8 @@ function output(formatType) {
       document.body.removeChild(a)
       alert("圖檔已存入我的包包~~請到我的包包確認")
       clearCanvas();
+      switchBtn()
+
 
 
     } else if (boardType == "plane") {
@@ -799,23 +805,30 @@ window.addEventListener('resize', resizeCanvas, false);
 function resizeCanvas() {
   if (window.innerWidth < 375) {
     canvasBox.width = (window.innerWidth * .67) + (window.innerWidth / 70)
+    canvas.setHeight(300);
     clipPath2 = clipPath5;
   } else if (window.innerWidth < 576) {
+    canvas.setHeight(300);
     canvasBox.width = (window.innerWidth * .67) + (window.innerWidth / 70)
-    clipPath2 = clipPath4;
+    clipPath2 = clipPath5;
   } else if (window.innerWidth < 768) {
+    canvas.setHeight(470);
     canvasBox.width = (window.innerWidth * .60) + (window.innerWidth / 11);
     clipPath2 = clipPath4;
   } else if (window.innerWidth < 992) {
+    canvas.setHeight(470);
     canvasBox.width = (window.innerWidth * .62) + (window.innerWidth / 30);
     clipPath2 = clipPath2_3;
   } else if (window.innerWidth < 1330) {
+    canvas.setHeight(470);
     canvasBox.width = (window.innerWidth * .50) + (window.innerWidth / 70);
     clipPath2 = clipPath3;
   } else if (window.innerWidth < 1500) {
+    canvas.setHeight(470);
     canvasBox.width = 670 + (window.innerWidth / 55);
     clipPath2 = clipPath2_3;
   } else if (window.innerWidth < 1700) {
+    canvas.setHeight(470);
     canvasBox.width = 670 + (window.innerWidth / 68);
     clipPath2 = clipPath2_2;
   } else {
