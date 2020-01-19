@@ -1,21 +1,3 @@
-arr = ['1', '波音33', '111666', 'i750307@iii.org.tw', '500', '50', '黃']
-var tr = document.createElement('tr');
-for (i = 0; i < 7; i++) {
-
-    var td = document.createElement('td');
-    // console.log(td);
-    td.innerHTML = arr[i]
-    tr.appendChild(td);
-    // console.log(tr.childNodes[i]);
-    // console.log(tr.childNodes[i].innerHTML)
-};
-let memberInfo=document.getElementById("memberInfo");
-memberInfo.appendChild(tr);
-
-console.log(memberInfo);
-
-
-
 function showMember() {
     let xhr = new XMLHttpRequest();
     document.getElementById("con_member").value = "member";
@@ -41,6 +23,28 @@ function memberData(str) {
     // document.getElementById("memNo").innerHTML=data[0].memNo;
 
     console.log(data);
+    // var arr = new Array();
+    for (j = 0; j < data.length; j++) {
+        var tr = document.createElement('tr');
+        for (i = 0; i < 7; i++) {
+            var td = document.createElement('td');
+            arr = [data[j].memNo, data[j].memName, data[j].memPsw, data[j].memEmail, data[j].letCount, data[j].airCoin, data[j].intColor];
+            // console.log(td);
+            td.innerHTML = arr[i];
+            tr.appendChild(td);
+            // console.log(tr.childNodes[i]);
+            // console.log(tr.childNodes[i].innerHTML)
+        };
+        let memberInfo = document.getElementById("memberInfo");
+        memberInfo.appendChild(tr);
+
+    }
+
+    // console.log(arr);
+
+
+
+    console.log(memberInfo);
 }
 
 
