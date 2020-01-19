@@ -240,6 +240,40 @@ let vmCatchLetter = new Vue({
           if(userNameValue == "歡迎留言！"){
             document.getElementById('commentBtn').style.display="none";
           }
+          //判斷每一筆留言的狀態為何
+          let isLaunched = document.querySelectorAll('.isLaunched');
+          for( i of isLaunched){
+            if(i.innerText == "1"){
+              i.innerText = "此留言已遭下架";
+              i.style=`
+              background-image: url(./img/share/transparent.jpg);
+              background-size: 200%;
+              background-position: center center;
+              position: absolute;
+              opacity: 1;
+              width: 100%;
+              height: 100%;
+              left: 0px;
+              top: 0px;
+              z-index: 99;
+              color: #DC5453;
+              white-space: pre;
+              font-size: 1.5rem;
+              font-weight: bold;
+              text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+              display: flex;
+              letter-spacing: .8rem;
+              flex-direction: column;
+              justify-content: center;
+              border-radius: 10px;
+              align-items: center;`
+              i.classList.add('noShow');
+              console.log(i.nextSbiling);
+              
+            }
+          };
+          
+
           //信件打賞, 檢舉
           likeOrReport();
           //留言打賞, 檢舉

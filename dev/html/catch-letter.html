@@ -68,6 +68,7 @@
                     <template v-for="(item, index) in levMsg.length">
                       <div class="box-white comment">
                         <div class="comment-contant">
+                          <p class="isLaunched" style="position: fixed; opacity: 0; width: 0;">{{ msgStatus[index] }}</p>
                           <h3 class="user-name">{{ msgUserId[index] }}</h3>
                           <p class="user-text">{{ levMsg[index] }}</p>
                         </div>
@@ -244,6 +245,7 @@
         msgUserId:[], //存留言者的id
         levMsg:[], //存留言
         msgNo:[],//留言編號
+        msgStatus:[],//存留言上下架狀態
         letNo: 0,//撈出來的信件編號
         whyReport: '',//存檢舉原因
       },

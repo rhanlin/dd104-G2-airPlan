@@ -56,17 +56,31 @@ function catchALetter(){
     if(json.msg){
       for(let i=0 ; i<json.msg.length ; i++){
         if(json.msg[i].memNo){
-          vmCatchLet.msgUserId.push(`用戶編號：${json.msg[i].memNo}`);
+          if(json.msg[i].msgStatus != 1){
+            vmCatchLet.msgUserId.push(`用戶編號：${json.msg[i].memNo}`);
+          }else{
+            vmCatchLet.msgUserId.push(`此用戶已經遭到檢舉`);
+          }
         }
       }
       for(let i=0 ; i<json.msg.length ; i++){
         if(json.msg[i].msgContent){
-          vmCatchLet.levMsg.push(json.msg[i].msgContent);
+          if(json.msg[i].msgStatus != 1){
+            vmCatchLet.levMsg.push(json.msg[i].msgContent);
+          }else{
+            vmCatchLet.levMsg.push("此留言已經被下架");
+          }
         }
       }
       for(let i=0 ; i<json.msg.length ; i++){
         if(json.msg[i].msgNo){
           vmCatchLet.msgNo.push(`${json.msg[i].msgNo}`);
+        }
+      }
+      //msgStatus
+      for(let i=0 ; i<json.msg.length ; i++){
+        if(json.msg[i].msgStatus){
+          vmCatchLet.msgStatus.push(`${json.msg[i].msgStatus}`);
         }
       }
     }else{
