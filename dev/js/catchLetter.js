@@ -324,47 +324,47 @@ let vmCatchLetter = new Vue({
       e.target.classList.add('active');
   }
   function sendReportMsg(e){
-    // e.preventDefault();//解掉冒泡事件
-    // e.stopPropagation();
-    // e.stopImmediatePropagation();
-    e.target.style.pointerEvents = 'none';
-    e.target.style.background= "#aaa";
-    e.target.style.boxShadow="0 1px 1px 1px #878787";
-    e.target.style.top="7%";
-    e.target.classList.add('active');
+    let btn = e.target;
+    btn.style.pointerEvents = 'none';
+    btn.style.background= "#aaa";
+    btn.style.boxShadow="0 1px 1px 1px #878787";
+    btn.style.top="7%";
+    btn.classList.add('active');
     
-    vmCatchLet.reportMsgNo = e.target.value;
+    vmCatchLet.reportMsgNo = btn.value;
     // console.log(vmCatchLet.reportMsgNo);
     // reportThisMsg();
-    document.getElementById('reportBox').style.display="block";
-    let exit = document.getElementById('closeReportBox');
-    let reportBtn = document.getElementById('reportBtn');
-    let whyReport = document.querySelector('.whyReport').children;
+    document.getElementById('msgReportBox').style.display="block";
+    let exit_msg = document.getElementById('closeReportBox_msg');
+    let msgReportBtn = document.getElementById('msgReportBtn');
+    let msgWhyReport = document.querySelector('.msgWhyReport').children;
     
-    // console.log(whyReport);
+    // console.log(msgWhyReport);
     
     //關閉檢舉視窗
-    exit.addEventListener('click',()=>{
-      document.getElementById('reportBox').style.display="none";
-      e.target.style="";
-      e.target.classList.remove('active');
+    exit_msg.addEventListener('click',(e)=>{
+      e.preventDefault();//解掉冒泡事件
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+      document.getElementById('msgReportBox').style.display="none";
+      btn.style="";
+      btn.classList.remove('active');
     })
     //監聽檢舉原因選項
-    for(let i=0;i<whyReport.length;i++){
-      whyReport[i].addEventListener('click',(e)=>{
+    for(let i=0;i<msgWhyReport.length;i++){
+      msgWhyReport[i].addEventListener('click',(e)=>{
         vmCatchLet.whyReportMsg = e.target.innerText;
       })
     }
     
     //送出檢舉原因
-    reportBtn.addEventListener('click', sendMsgReport , false);
+    msgReportBtn.addEventListener('click', sendMsgReport , true);
     //檢舉留言
-    let reportFlag = false;
     function sendMsgReport(e){
       e.preventDefault();//解掉冒泡事件
       e.stopPropagation();
       e.stopImmediatePropagation();
-      document.getElementById('reportBox').style.display="none";
+      document.getElementById('msgReportBox').style.display="none";
       console.log('reportMsg!');
       fetch('./phps/reportMsg.php',{
         method:'POST',
@@ -373,17 +373,17 @@ let vmCatchLetter = new Vue({
       .then(res=>res.json()).then(json=>{
         console.log(json);
       })
-      e.target.style.pointerEvents = 'none';
-      e.target.style.background= "#aaa";
-      e.target.style.boxShadow="0 1px 1px 1px #878787";
-      e.target.style.top="7%";
-      e.target.classList.add('active');
+      // e.target.style.pointerEvents = 'none';
+      // e.target.style.background= "#aaa";
+      // e.target.style.boxShadow="0 1px 1px 1px #878787";
+      // e.target.style.top="7%";
+      // e.target.classList.add('active');
       shootStamp();
     }
     function shootStamp(){
       let stamp = document.createElement('div');
         stamp.setAttribute('id', 'reportStamp');
-        e.target.appendChild(stamp)
+        btn.appendChild(stamp);
         // console.log();
     }
   }
