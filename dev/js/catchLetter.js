@@ -341,6 +341,7 @@ let vmCatchLetter = new Vue({
     let exit = document.getElementById('closeReportBox');
     let reportBtn = document.getElementById('reportBtn');
     let whyReport = document.querySelector('.whyReport').children;
+    
     // console.log(whyReport);
     
     //關閉檢舉視窗
@@ -364,6 +365,16 @@ let vmCatchLetter = new Vue({
     console.log('report!');
     fetch('./phps/reportLetter.php',{
       method:'POST',
-      body: new URLSearchParams(`memNo=${vmCatchLet.userNo}&letNo=${vmCatchLet.letNo}&letRepContent=${vmCatchLet.whyReport}`),
+      body: new URLSearchParams(`memNo=${vmCatchLet.userNo}&letNo=${vmCatchLet.letNo}&letRepReason=${vmCatchLet.whyReport}`),
     })
+    .then(res=>res.json()).then(json=>{
+            console.log(json);
+          })
+    //蓋上以檢舉印章
+    let letterWrap = document.getElementById('letterWrap');
+    letterWrap.classList.add('reportSeal');
+    //檢舉後不能再打賞
+    document.getElementById('likeThis').style.pointerEvents = 'none';
+    document.getElementById('reportThis').style.pointerEvents = 'none';
+    document.getElementById('likeActive').classList.add('quiet');
   }

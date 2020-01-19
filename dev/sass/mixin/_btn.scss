@@ -245,7 +245,7 @@
         //     transform: translateX(1070%) translateZ(calc(var(--box-deep) * (-0.5))) rotateY(90deg);
         // }
     }
-
+    
     .btn-big-test.active {
         --box-deep: 1rem !important;
 
@@ -258,16 +258,17 @@
         .blueBtn {
             background: #878787 !important;
         }
-
-        // .back{
-        //     transform: translateY(450%) translateZ(calc(var(--box-deep) * (-0.5))) rotateX(90deg);
-        // }
-        // .right{
-        //     transform: translateX(1070%) translateZ(calc(var(--box-deep) * (-0.5))) rotateY(90deg);
-        // }
-        
     }
-
+    .btn-big-test.quiet {
+        .redBtn_light,
+        .blueBtn_light {
+            background: #aaa !important;
+        }
+        .redBtn,
+        .blueBtn {
+            background: #878787 !important;
+        }
+    }
     .btn-big-test:active .top {
         box-shadow: 0 -3px 5px 0 var(--light), 0 -5px 10px 0 var(--light-2);
     }

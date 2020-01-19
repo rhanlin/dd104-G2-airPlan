@@ -920,6 +920,23 @@
       animation-iteration-count: 3;
       animation-fill-mode: forwards;
     }
+    .letter-wrap.reportSeal::before {
+      content: "";
+      // background-image: url(../img/cave/coin1.png);
+      background: red;
+      background-size: cover;
+      position: absolute;
+      width: 30vw;
+      height: 30vw;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      animation-name: pulse;
+      animation-delay: .2s;
+      animation-duration: 0.5s;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
   }
 
   .catch-step-2 {
