@@ -207,7 +207,15 @@
         <div class="innerBox"></div>
       </div>
       <div class="cover"></div>
-      <div class="pile">
+      <div class="pile"></div>
+      <div class="redTapeRight"><img src="./img/share/red-tape-rough.svg" alt=""></div>
+      <div class="redTapeLeft"><img src="./img/share/red-tape-sticky-02.svg" alt=""></div>
+      <div class="redTapeLeftUp"><img src="./img/share/red-tape-up-02.svg" alt=""></div>
+      <div class="pileTitleBoard">
+        <div class="pileTitle">
+          <h5> 購買完客製化素材及工具之後~<br>就可以開始客製你的專屬郵戳及圖案囉!<br>
+            不同畫板上的完成圖，存檔後會存入我的包包，並可使用在撰寫信件或大頭貼中。</h5>
+        </div>
       </div>
     </div>
     <div class="container">
@@ -478,7 +486,7 @@
   <script src="./js/jquery.nice-select.min.js"></script>
   <script src="./js/shop_carousel.js"></script>
   <script src="./js/shop_draw.js"></script>
-  <script src="./js/animate.js"></script>
+  <script src="./js/animate_tube.js"></script>
   <script>
     $('#myCollapsible').on('hidden.bs.collapse', function () {
       // bootstrap手風琴用
@@ -857,13 +865,6 @@
             url: '',
             class: ""
           },
-          // {
-          //   style: 'vector',
-          //   id: 'itemCard62',
-          //   url: '',
-          //   class: ""
-          // },
-
         ],
         page: 1,
         windowWidth: 0,
@@ -973,9 +974,10 @@
                     cavPaperN = document.getElementById('cavPaperN');
                     cavPaperHInner = cavPaperN.innerHTML;
                     cavPaperNum = cavPaperHInner.toString().substring(3);
-                    remainLet = `信封:${parseInt(cavPaperNum)+10}`
+                    remainLet = `${parseInt(cavPaperNum)+10}`
+                    remainLetStr = `信封:${parseInt(cavPaperNum)+10}`
 
-                    cavPaperN.innerHTML = remainLet;
+                    cavPaperN.innerHTML = remainLetStr;
                     console.log(remainLet)
                     $.ajax({
                       type: "POST",
@@ -1373,7 +1375,7 @@
     });
   </script>
   <script>
-    // ===================這是現有air幣從資料庫抓數字到網頁 =======================
+    // ===================這是現有air幣從資料庫抓數字到本頁右方 =======================
     function showMemberInfo(jsonStr) {
 
       coin = document.getElementById('coin');
@@ -1382,6 +1384,7 @@
       console.log('555555555', MemberInfo)
       if (MemberInfo[0].memName) {
         coin.innerHTML = MemberInfo[0].airCoin;
+
       }
       // cavCoinH = document.getElementById('cavCoinH');
       // cavCoinHInner = cavCoinH.innerHTML

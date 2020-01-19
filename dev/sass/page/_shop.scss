@@ -886,6 +886,64 @@ $arrow_color: $gray !default;
         z-index: 1;
 
       }
+
+      .redTapeRight {
+        width: 10%;
+        top: 22%;
+        position: absolute;
+        right: 12%;
+        z-index: 10;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .redTapeLeft {
+        width: 10%;
+        position: absolute;
+        top: 17%;
+        right: 42%;
+        z-index: 10;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .redTapeLeftUp {
+        width: 10%;
+        position: absolute;
+        top: 17%;
+        right: 42%;
+        z-index: 10;
+        opacity: 0;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .pileTitleBoard {
+        width: 30vw;
+        top: 35%;
+        right: 15%;
+        position: absolute;
+        height: 17vw;
+        background-color: floralwhite;
+        border: $border;
+
+        .pileTitle {
+          padding: 5% 8%;
+          width: 90%;
+          margin: 0 auto;
+
+          h5 {
+            line-height: 2.2vw;
+          }
+
+        }
+      }
     }
 
     .container {
