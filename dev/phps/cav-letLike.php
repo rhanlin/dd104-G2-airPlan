@@ -1,5 +1,5 @@
 <?php
-// try {
+// try { 廢了
 //     require_once("connectBook_root.php");
 //     $sql = "insert into `letterlike`(memNo,letNo,letLikeTime)values(:memNo,:letNo,:letLikeTime)";
 //     $likedLet = $pdo->prepare($sql);

@@ -8,15 +8,17 @@ try {
     $liked->bindValue(":msgLikeTime", $_GET["likeTime"]);
     $liked->execute();
     echo json_encode(['status' => 'success']);
+    $liked = $pdo->lastInsertId();
+
     //撈出要增加airCoin的memNo
-    $writerSql = "SELECT l.memNo FROM `letter` l JOIN `letterLike` k ON k.letNo=l.letNo WHERE k.letLikeNo=:letLikeNo";
-    $writerNo = $pdo->prepare($writerSql);
-    $writerNo->bindValue(':letLikeNo', $letLikeNo);
-    $writerNo->execute();
-    $writerNoRow = $writerNo->fetch(PDO::FETCH_ASSOC);
+    $msgLikeSql = "SELECT m.memNo FROM `message` m JOIN `messagelike` ml ON ml.msgNo=m.msgNo WHERE ml.msgLikeNo=:msgLikeNo";
+    $likedMsg = $pdo->prepare($msgLikeSql);
+    $likedMsg->bindValue(':msgLikeNo', $liked);
+    $likedMsg->execute();
+    $likedMsgRow = $likedMsg->fetch(PDO::FETCH_ASSOC);
     $addMoneySql = "UPDATE `member` SET airCoin=airCoin+100 WHERE memNo=:memNo";
     $addMoney = $pdo->prepare($addMoneySql);
-    $addMoney->bindValue(':memNo', $writerNoRow['memNo']);
+    $addMoney->bindValue(':memNo', $likedMsgRow['memNo']);
     $addMoney->execute();
     // if ($liked->rowCount() == 0) { //找不到
     //     //傳回空的JSON字串
