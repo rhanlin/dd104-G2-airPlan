@@ -93,6 +93,7 @@ let vm3 = new Vue({
     patternValue: [], //input radio 的value值
     letterPattern: 0, //存 使用者"選到"的飛機彩繪編號(matPatNo) 得值
     userNo: 0,
+    letCount: 0,//使用者的信紙數量
   },
   methods: {
     clickPattern(e, index) {
@@ -107,28 +108,68 @@ let vm3 = new Vue({
     function onFulfilled(value) {
       //登入成功 -> 取用戶彩繪圖案、用戶郵戳
       vm3.userNo = value;
-      console.log(`userNo: ${vm3.userNo}`);
-      fetch('./phps/fetchAllUserMat.php')
-        .then(res => res.json()).then(json => {
-          //拆出 pattern
-          console.log(json);
+      return new Promise((resolve, reject) => {
+        if( vm3.letCount > 0 ){
+          // console.log(`userNo: ${vm3.userNo}`);
+          fetch('./phps/fetchAllUserMat.php')
+            .then(res => res.json()).then(json => {
+              //拆出 pattern
+              console.log(json);
 
-          for (let i = 0; i < json.data.length; i++) {
-            if (json.data[i].patternNo) {
-              vm3.userPattern.push(`url(${json.data[i].patternUrl})`);
-              vm3.patternValue.push(json.data[i].patternNo);//取 使用者"擁有"飛機彩繪的編號(matPatNo) 得值
-            }
-          }
-          for (let i = 0; i < json.data.length; i++) {
-            if (json.data[i].stampNo) {
-              vmUserStamp.userStamp.push(`url(${json.data[i].stampUrl})`);
-              vmUserStamp.stampValue.push(json.data[i].stampNo);//取 使用者飛機彩繪的編號得值(matPosNo)
-            }
-          }
-        })
-        .then(listenSubmitBtn)
+              for (let i = 0; i < json.data.length; i++) {
+                if (json.data[i].patternNo) {
+                  vm3.userPattern.push(`url(${json.data[i].patternUrl})`);
+                  vm3.patternValue.push(json.data[i].patternNo);//取 使用者"擁有"飛機彩繪的編號(matPatNo) 得值
+                }
+              }
+              for (let i = 0; i < json.data.length; i++) {
+                if (json.data[i].stampNo) {
+                  vmUserStamp.userStamp.push(`url(${json.data[i].stampUrl})`);
+                  vmUserStamp.stampValue.push(json.data[i].stampNo);//取 使用者飛機彩繪的編號得值(matPosNo)
+                }
+              }
+            })
+            .then(listenSubmitBtn)
+        }else{
+          reject(new Error('您的信紙用完了請前往商城購買'));
+        }
+      }).catch(onNoPapered)
     }
-    
+    //沒信紙
+    function onNoPapered(reason){
+      alert(reason);
+      let info = document.querySelector('.signInData h4');
+      let singInBox = document.getElementById('signInBg');
+      let closeSigin = document.getElementById('closeSigin');
+      let closeRegister = document.getElementById('closeRegister');
+      let signInCancelBtn = document.getElementById('signInCancelBtn');
+      let closeForget = document.getElementById('closeForget');
+
+      let goShopBtn = document.createElement('button');
+      let goShopBtnText = document.createElement('a');
+
+      singInBox.style.display = "block";
+      document.querySelector('.signInData').style=`
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+      `;
+      info.innerText = reason.message;
+      document.querySelector('.formsignInData').style.display="none";
+
+      closeSigin.style.display = "none";
+      closeRegister.style.display = "none";
+      closeForget.style.display = "none";
+      signInCancelBtn.style.display = "none";
+      goShopBtnText.innerText = "前往商城";
+      goShopBtn.setAttribute('id', 'goShopBtn');
+      goShopBtnText.setAttribute('href', './shop.html');
+
+      goShopBtn.appendChild(goShopBtnText);
+      document.querySelector('.signInData').appendChild(goShopBtn);
+    }
+
     // 監聽所有的submit按鈕(用戶郵戳)，當觸發點擊事件後，先檢查必要欄位是否有填值
     function listenSubmitBtn() {
       let submitStamp = document.getElementById('submitStamp').childNodes;
@@ -192,8 +233,10 @@ let vm3 = new Vue({
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
           let member = JSON.parse(xhr.responseText);
+          
           if (member.memNo) {
-            console.log(member.memNo);
+            vm3.letCount = member.letCount;
+            console.log(`我的信紙： ${vm3.letCount}`);
             resolve(member.memNo);
           } else {
             reject(new Error('請先登入才能寫信'))
@@ -455,8 +498,10 @@ function submitToLetterTable() {
   xhr.onload = function () {
     if (xhr.status == 200) {
       let json = JSON.parse(xhr.responseText);
+      // let json = xhr.responseText;
       console.log(json);
-      
+      document.getElementById("cavPaperN").innerText = '信紙:' + json.letCount;
+      document.getElementById("cavPaperH").innerText = '信紙:' + json.letCount;
       vmImgWrap.letUrl = `url('${json.data.letImgUrl}')`;//把圖片路徑塞去摺紙的畫面上
       vmImgWrap.letPattern = `url('${json.data.matPatUrl}')`;//用戶選擇的彩繪花紋
       // console.log(json);

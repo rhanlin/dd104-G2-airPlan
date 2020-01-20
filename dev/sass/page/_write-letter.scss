@@ -1102,7 +1102,28 @@
             // z-index: 9999;
         }
     }
-
+    #goShopBtn{
+        display: block;
+        width: 80%;
+        height: auto;
+        background-color: $main-blue;
+        color: #fff;
+        outline: none;
+        border-radius: 50px;
+        border: none;
+        padding: 5% 10%;
+        &:hover{
+            color: #fff;
+            text-decoration: none;
+            background-color: $main-dark-blue;
+        }
+        a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            letter-spacing: .5rem;
+        }
+    }
     @include foldthePlane();
 
 }
