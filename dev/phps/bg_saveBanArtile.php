@@ -25,20 +25,19 @@ switch ($_POST['type']) {
         };
         break;
 
-// case "saving":
-        // try {
+    case "saving":
+        try {
+            // echo $_POST['newNumber'];
+            // echo $_POST['letterNoNum'];
+            $sql = "update `letterreport` set letRepStatus =:letRepStatus where letNo =:letNo";
+            $emp = $pdo->prepare($sql);
+            $emp->bindValue(":letRepStatus", $_POST['newNumber']);
+            $emp->bindValue(":letNo", $_POST['letterNoNum']);
+            $emp->execute();
 
-//     $sql = "update `letterreport` set letRepStatus =:letRepStatus where letNo =:letNo";
-        //     $emp = $pdo->prepare($sql);
-        //     $emp->bindValue(":letRepStatus", $_POST['letRepStatus']);
-        //     $emp->bindValue(":letNo", $_POST["letNo"]);
-        //     $emp->execute();
-        //     echo
-        //     // $_SESSION["airCoin"] = $_POST['remainCoin'];
-
-// } catch (PDOException $e) {
-        //     echo "例外原因 : ", $e->getMessage(), "<br>";
-        //     echo "例外行號 : ", $e->getLine();
-        // };
-        // break;
+        } catch (PDOException $e) {
+            echo "例外原因 : ", $e->getMessage(), "<br>";
+            echo "例外行號 : ", $e->getLine();
+        };
+        break;
 }

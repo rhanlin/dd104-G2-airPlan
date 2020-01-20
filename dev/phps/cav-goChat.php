@@ -7,6 +7,10 @@ try {
     $chat->bindValue(":memNo2", $_GET["whoGotChat"]);
     $chat->execute();
     echo json_encode(['status' => 'success']);
+
+
+
+    // echo json_encode($chatRow);
     // if ($chat->rowCount() == 0) { //找不到
     //     //傳回空的JSON字串
     //     echo "{}";
@@ -14,7 +18,6 @@ try {
     //     //取回一筆資料
     //     $chatRow = $chat->fetchAll(PDO::FETCH_ASSOC);
     //     //送出json字串
-    //     echo json_encode($chatRow);
     // }
 } catch (PDOException $e) {
     echo $e->getMessage();
