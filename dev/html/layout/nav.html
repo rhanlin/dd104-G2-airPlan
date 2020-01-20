@@ -107,7 +107,7 @@
               <label for="signInPassword">
                   <P>Password:</P>
               </label>
-              <input class="signInPassword" type="password" id="signInPassword" placeholder="password" name="memPsw"
+              <input class="signInPassword" type="password" id="signInPassword" placeholder="密碼需為8-12長度的英文大小寫或數字" name="memPsw"
                   required>
 
               <p class="showForget" id="showForget">忘記密碼</p>
@@ -143,14 +143,14 @@
               <label for="registerPassword">
                   <P>Password:</P>
               </label>
-              <input class="registerPassword" type="password" id="registerPassword" placeholder="password"
+              <input class="registerPassword" type="password" id="registerPassword" placeholder="密碼需為8-12長度的英文大小寫或數字"
                   name="memPsw" maxlength="12" required>
 
               <label for="registerPasswordCheck">
                   <P>Password again:</P>
               </label>
               <input class="registerPasswordCheck" type="password" id="registerPasswordCheck"
-                  placeholder="password again" name="memPswAgain" maxlength="12" required>
+                  placeholder="密碼需為8-12長度的英文大小寫或數字" name="memPswAgain" maxlength="12" required>
 
               <br>
               <button id="registerBtn" class="registerBtn" type="button" value="註冊">
@@ -360,7 +360,7 @@
 
   
   function memName(){//////////////////memName產生器
-      var arr = ['波音','空巴','達索'];
+      var arr = ['丹迪紙','雲彩紙','粉彩紙','西卡紙','牛皮紙'];
       var index = Math.floor((Math.random()*arr.length));
       return arr[index];
   }

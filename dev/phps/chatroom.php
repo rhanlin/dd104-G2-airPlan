@@ -11,7 +11,7 @@ try {
             case "chat":
                 // 聊天室內容
                 $sql = "select * 
-                from chat join `matpostmark` on (chat.memNo2 = matpostmark.memNo)
+                from chat join `matpostmark` on (chat.memNo1 = matpostmark.memNo)
                 where (((memNo1 = :memNo1 and memNo2 = :memNo2) or (memNo2 = :memNo1 and memNo1 = :memNo2)) and chatNo > 0) and (matpostmark.mugStatus = 1);";
                 $content = $pdo->prepare($sql);
                 $content->bindValue(":memNo1", $memNo1);
@@ -23,9 +23,9 @@ try {
 
             case "mark":
                 //聊天室列表
-                $sql = "select chatTime,a.memNo as 'user2',a.memName as 'mem2',matPosUrl,mugStatus
-                from `chat` join `member` a on (chat.memNo1 = a.memNo) join `member`b on(chat.memNo2 = b.memNo) join `matpostmark` on (b.memNo = matpostmark.memNo)
-                where (a.memNo = :memNo1 or b.memNo = :memNo1 ) and mugStatus = 1 
+                $sql = "select chatTime,b.memNo as 'user1',b.memName as 'mem1',a.memNo as 'user2',a.memName as 'mem2',matPosUrl,mugStatus
+                from `chat` join `member` a on (chat.memNo1=a.memNo) join `member`b on(chat.memNo2 = b.memNo) join `matpostmark` on (a.memNo = matpostmark.memNo)
+                where (a.memNo = :memNo1 or b.memNo = :memNo1 ) and mugStatus = 1
                 group by a.memNo
                 order by chatTime desc;";
                 $content = $pdo->prepare($sql);

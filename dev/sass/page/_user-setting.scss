@@ -540,30 +540,61 @@
                                 }
                             }
                             .control_left {
-                                width: 40px;
-                                height: 40px;
-                                border: solid 1px white;
-                                position: fixed;
-                                border-radius: 50%;
-                                color: rgb(0, 0, 0);
-                                font-size: 30px;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                transition: 0.3s 0s;
-                                left: 50px;
-                                background-color: rgba(255, 255, 255, .5);
-                            }
-                            .control_right {
-                                @extend.control_left;
-                                left: unset;
-                                right: 50px;
-                            }
-                            .control_left:hover, .control_right:hover {
+                                display: inline-block;
                                 width: 50px;
                                 height: 50px;
-                                @include hoverFontsize;
+                                background-image: url('../img/share/arrow-white.svg');
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                cursor: pointer;
+                                position: absolute;
+                                // top: 150px;
+                                left: 20px;
+                                z-index: 120;
                             }
+                            .control_right {
+                                transform: scaleX(-1);
+                                display: inline-block;
+                                width: 50px;
+                                height: 50px;
+                                background-image: url('../img/share/arrow-white.svg');
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                cursor: pointer;
+                                position: absolute;
+                                // top: 150px;
+                                right: 20px;
+                            }
+                            .control_left:hover, .control_right:hover {
+                                // width: 50px;
+                                // height: 50px;
+                                // @include hoverFontsize;
+                            }
+                            // .control_left {
+                            //     width: 40px;
+                            //     height: 40px;
+                            //     border: solid 1px white;
+                            //     position: fixed;
+                            //     border-radius: 50%;
+                            //     color: rgb(0, 0, 0);
+                            //     font-size: 30px;
+                            //     display: flex;
+                            //     justify-content: center;
+                            //     align-items: center;
+                            //     transition: 0.3s 0s;
+                            //     left: 50px;
+                            //     background-color: rgba(255, 255, 255, .5);
+                            // }
+                            // .control_right {
+                            //     @extend.control_left;
+                            //     left: unset;
+                            //     right: 50px;
+                            // }
+                            // .control_left:hover, .control_right:hover {
+                            //     width: 50px;
+                            //     height: 50px;
+                            //     @include hoverFontsize;
+                            // }
                         }
                     }
                  }

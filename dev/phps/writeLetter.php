@@ -56,15 +56,31 @@ try {
   $letInsert->bindValue(':letImgUrl',$userLetterCanvas);
   $letInsert->execute();
   
-
-//select l.letImgUrl, m.matPatUrl from `letter` l JOIN `matPattern` m on l.matPatNo=m.matPatNo where letNo=27;
+  //select l.letImgUrl, m.matPatUrl from `letter` l JOIN `matPattern` m on l.matPatNo=m.matPatNo where letNo=27;
   $letNo = $pdo->lastInsertId();
   $imgSql = "select l.letImgUrl, m.matPatUrl from `letter` l JOIN `matPattern` m on l.matPatNo=m.matPatNo where letNo= $letNo";
   $letImg = $pdo->query($imgSql);
   $letImgRow = $letImg->fetch(PDO::FETCH_ASSOC);
-  
   $letImgRow = str_replace('userLetterCanvas//', './phps/userLetterCanvas/', $letImgRow);//把前端要用的url做好
-  echo json_encode(['data'=>$letImgRow]);
+
+  $memNo = $_POST['memNo'];
+  $loseLetter = "UPDATE `member` SET letCount=letCount-1 WHERE memNo=$memNo";
+  $reduceLet = $pdo->prepare($loseLetter);
+  $reduceLet->execute();
+
+  $getletterCount = "SELECT letCount FROM `member` WHERE memNo=$memNo";
+  //拿出扣掉後的信紙數量然後回前端在摺紙階段show出來
+  $getLetCount = $pdo->query($getletterCount);
+  $letCountRow = $getLetCount->fetch(PDO::FETCH_ASSOC);
+  
+  $data=[
+    'data'=>$letImgRow,
+    'letCount'=>$letCountRow["letCount"],
+  ];
+
+  session_start();
+  $_SESSION["letCount"] = $letCountRow["letCount"]; 
+  echo json_encode($data);
 
 } catch (PDOException $e) {
   echo "例外行號 : ", $e->getLine(),"<br>";
