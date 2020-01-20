@@ -38,8 +38,8 @@
                         </div>
                         <div id="userSetting_memData" class="userSetting_memData">
                             <table class="userSetting_memDataTable">
-                                <tr>
-                                    <td colspan="6"><img id="mempic" class="mempic" src="./img/chatroom/mark_1.png" alt="mempic">
+                                <tr class="mempictr">
+                                    <td colspan="6"><img id="mempic" class="mempic" src="./img/share/LOGO.png" alt="mempic">
                                     </td>
                                 </tr>
                                 <tr>
@@ -160,9 +160,11 @@
                                     <div class="postbox" v-for="(work,id) in works" :class="{cur_item:id==now_index}">
                                         <div class="cover" :style="bg_css(work.cover)">
                                             <div class="infos">
-                                                <h5>{{work.title}}</h5>
                                                 <a v-bind:href="(work.src)" target="_blank">
-                                                    <p>{{work.description}}</p>
+                                                    <h3 class="threed-text-red shop-text">
+                                                    <span class="devName">{{work.title}}</span> 
+                                                    <span>個人作品:</span>
+                                                    <p>{{work.description}}</p></h3>
                                                 </a>
                                             </div>
                                         </div>

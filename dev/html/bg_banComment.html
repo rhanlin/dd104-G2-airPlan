@@ -2,58 +2,102 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Air-Plan | 不當內容檢舉管理 - 被檢舉信件留言</title>
-    <!-- Icons-->
-    <link href="../node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
-    <link href="../node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Air-Plan | 不當內容檢舉管理 - 被檢舉信件留言</title>
+  <!-- Icons-->
+  <link href="../node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+  <link href="../node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
-    <!-- Main styles for this application-->
-    <link href="css/bg_main.css" rel="stylesheet">
+  <!-- Main styles for this application-->
+  <link href="css/bg_main.css" rel="stylesheet">
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
-    <!-- top_header -->
-    @@include('./bg_layout/b_top_header.html')
-    <div class="app-body">
-        <div class="sidebar">
-            <!-- sidebar menu-->
-            @@include('./bg_layout/b_sidebar_nav.html')
-            <button class="sidebar-minimizer brand-minimizer" type="button"></button>
-        </div>
-        <main class="main">
-            <!-- Breadcrumb-->
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="./bg_index.html">Home</a>
-                </li>
-                <li class="breadcrumb-item">
-                    <a href="#">不當內容檢舉管理</a>
-                </li>
-                <li class="breadcrumb-item active">被檢舉信件留言</li>
-            </ol>
-            <div class="container-fluid">
-                <!-- 中間內容 -->
-                @@include('./bg_layout/content_banComment.html')
-                <!-- end -->
-            </div>
-        </main>
+  <!-- top_header -->
+  @@include('./bg_layout/b_top_header.html')
+  <div class="app-body">
+    <div class="sidebar">
+      <!-- sidebar menu-->
+      @@include('./bg_layout/b_sidebar_nav.html')
+      <button class="sidebar-minimizer brand-minimizer" type="button"></button>
     </div>
-    @@include('./bg_layout/b_footer.html')
-    <!-- CoreUI and necessary plugins-->
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/popper.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/pace.min.js"></script>
-    <script src="./js/perfect-scrollbar.min.js"></script>
-    <script src="./js/coreui.min.js"></script>
-    <script>
-    
-    
-    </script>
+    <main class="main">
+      <!-- Breadcrumb-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="./bg_index.html">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="#">不當內容檢舉管理</a>
+        </li>
+        <li class="breadcrumb-item active">被檢舉信件留言</li>
+      </ol>
+      <div class="container-fluid">
+        <!-- 中間內容 -->
+        @@include('./bg_layout/content_banComment.html')
+        <!-- end -->
+      </div>
+    </main>
+  </div>
+  @@include('./bg_layout/b_footer.html')
+  <!-- CoreUI and necessary plugins-->
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/pace.min.js"></script>
+  <script src="./js/perfect-scrollbar.min.js"></script>
+  <script src="./js/coreui.min.js"></script>
+  <script>
+    $.post("./phps/bg_saveBanArtile.php?", {
+        type: 'catching',
+      },
+      res => {
+
+        res = JSON.parse(res);
+        console.log(res.length)
+        select = document.createElement('select')
+        var handleArr = ['未處理', '已下架', '保持上架']
+        for (x = 0; x < 3; x++) {
+          option = document.createElement('option');
+          option.setAttribute("value", x);
+          option.innerHTML = handleArr[x];
+          select.appendChild(option);
+        };
+
+
+        for (j = 0; j < res.length; j++) {
+          var tr = document.createElement('tr');
+          for (i = 0; i < 5; i++) {
+            var td = document.createElement('td');
+            arr = [res[j].letRepNo, res[j].memNo, res[j].letNo, res[j].letRepTime, res[j].letRepReason
+              // , res[j].letRepStatus
+            ];
+            // console.log(td);
+            td.innerHTML = arr[i];
+            tr.appendChild(td);
+
+            var td2 = document.createElement('td');
+            td2.appendChild(select);
+      
+            tr.appendChild(td2);
+          };
+
+          let BanArtileInfo = document.getElementById("BanArtileInfo");
+          BanArtileInfo.appendChild(tr);
+        }
+      });
+
+    // document.getElementsByTagName('select').classList.add("form_control")
+
+    function saveResult(e) {
+      console.log(e.target)
+      // document.querySelectorAll('.form_control')
+    }
+    window.addEventListener('change', saveResult);
+  </script>
 </body>
 
 </html>

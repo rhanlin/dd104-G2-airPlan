@@ -12,7 +12,7 @@ try {
 		$member->bindValue(':memPsw', $_POST['memPsw']);
 		$member->bindValue(':memEmail', $_POST['memEmail']);
 		$member->bindValue(':letCount', 5);
-		$member->bindValue(':airCoin', 500);
+		$member->bindValue(':airCoin', 1000);
 		$member->bindValue(':intColor', 0);
 		$member->execute();
 
@@ -28,7 +28,7 @@ try {
 		$matpostmark = $pdo->prepare($sqlM);
 		$matpostmark->bindValue(':memNo',$matpostmarkMemNo );
 		$matpostmark->bindValue(':matPosName', '郵戳');
-		$matpostmark->bindValue(':matPosUrl', './phps/userStamp/user-stamp-default-1.png');
+		$matpostmark->bindValue(':matPosUrl', './phps/userStamp/user-stamp-default-3.png');
 		$matpostmark->bindValue(':mugStatus', '1');
 		$matpostmark->bindValue(':matPosLSort', 'postmark');
 		$matpostmark->bindValue(':matPosSSort', 'postmark');
@@ -39,7 +39,7 @@ try {
 		$matpattern = $pdo->prepare($sqlP);
 		$matpattern->bindValue(':memNo',$matpatternMemNo );
 		$matpattern->bindValue(':matPatName', '圖案');
-		$matpattern->bindValue(':matPatUrl', './phps/userPattern/plan-pattern-1.png');
+		$matpattern->bindValue(':matPatUrl', './phps/userPattern/plan-pattern-2.png');
 		$matpattern->bindValue(':PatStatus', '1');
 		$matpattern->bindValue(':matPatLSort', 'pattern');
 		$matpattern->bindValue(':matPatSSort', 'pattern');

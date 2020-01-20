@@ -13,6 +13,9 @@
 
   <!-- Main styles for this application-->
   <link href="css/bg_main.css" rel="stylesheet">
+
+  <!-- 登入JS -->
+  <script src="./js/bg_login.js"></script>
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
@@ -39,15 +42,42 @@
             <a class="btn" href="#">
               <i class="icon-settings"></i>  Settings</a>
           </div>
-        </li>
-      </ol> -->
+        </li> -->
+      </ol>
         <div class="container-fluid">
-
           <!-- 中間內容 -->
           <!-- @@include('layout/content.html') -->
           <!-- end -->
         </div>
     </main>
+  </div>
+  <!-- <div id="bg_box" class="modal-body">
+    <div id="bg_lightBox">
+      <h2>後台登入</h2>
+      <h4>帳號：</h4>
+      <input type="text" id="admId" class="form-control" placeholder="Email address" required="" autofocus="">
+    </div>
+  </div> -->
+  <div class="modal fade show" id="primaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-modal="true" style="display: block;width:100vw;height:100vh;background-color: rgba(0, 0, 0, .7);position: fixed;left:0;top:0;">
+    <div class="modal-dialog modal-primary" role="document">
+      <div class="modal-content" style="border: 1px solid darkblue;height: 400px;position: absolute;">
+        <div class="modal-header" style="text-align: center;">
+          <h4 class="modal-title" style="margin-left:45%;">Login</h4>
+          <button id="closebox" class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body" style="padding: 10% 2%;text-align: center;">
+          <input type="text" id="admId" class="form-control" placeholder="Your Id" style="display: inline-block;width: 85%;height: 50px;">
+          <input type="text" id="admPsw" class="form-control" placeholder="Your password" style="display: inline-block;width: 85%;height: 50px;">
+          <button id="boxBtn" class="btn btn-lg btn-primary btn-block" type="submit" style="margin:0 auto;margin-top: 10%;width: 85%;">Sign in</button type="submit">
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+      <!-- /.modal-content-->
+    </div>
+    <!-- /.modal-dialog-->
   </div>
   @@include('./bg_layout/b_footer.html')
   <!-- CoreUI and necessary plugins-->
