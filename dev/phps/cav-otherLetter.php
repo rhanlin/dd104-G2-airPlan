@@ -1,8 +1,10 @@
 <?php
 try {
     require_once("connectBook_root.php");
-    $sql = "SELECT DISTINCT h.letNo,l.letNo,l.letTime,l.letTitle,l.letContent,l.imgUrl,l.letImgUrl FROM `history` h join `letter` l on (h.letNo=l.letNo) where h.memNo = :memNo ORDER BY l.letTime DESC
+    $sql = "SELECT DISTINCT h.letNo,l.memNo 'authorNo',l.letTime,l.letTitle,l.letContent,l.imgUrl,l.letImgUrl FROM `history` h join `letter` l on (h.letNo=l.letNo) where h.memNo = :memNo ORDER BY l.letTime DESC
     ";
+    // $sql = "SELECT DISTINCT h.memNo 'catcherNo',h.letNo,l.memNo 'authorNo' FROM `history` h JOIN `letter` l ON(h.letNo=l.letNo) where h.memNo= :memNo
+    // ";
     $letterOther = $pdo->prepare($sql);
     $letterOther->bindValue(":memNo", $_POST["memNo"]);
     $letterOther->execute();

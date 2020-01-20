@@ -6,43 +6,50 @@
     .bgimgwrap{
         width: 100%;
         height: 100%;
-        background: radial-gradient(rgba(255, 255, 255, .3) 30%, rgba(255, 255, 255,0) 20%);
-        background-size: 5px 5px;
+        // background: radial-gradient(rgba(255, 255, 255, .3) 30%, rgba(255, 255, 255,0) 20%);
+        // background-size: 5px 5px;
+        // animation: gradient 10s ease-in-out infinite alternate;
         display:flex;
         flex-direction:column;
         justify-content:center;
-        .btnWrap{
-            width: 50%;
-            display:flex;
+        .logoBox{
+            width: 80%;
             @include marginAuto;
-            border: 1px solid blue;
-            .forward{
-                width: 50%;
-                border: 1px solid rgb(55, 145, 92);
-                .forwardBtn{
-                    text-align: center;
-                    display: block;
-                    color: $main-yellow;
-                    font-size: 48px;
-                }
-                .forwardBtn:hover{
-                    
-                }
+            .logopic{
+                width: 80%;
+                max-width: 500px;
+                display: block;
+                margin: 0 auto 100px;
             }
-            .back{
+            .btnWrap{
                 width: 50%;
-                border: 1px solid rgb(55, 145, 92);
-                .backBtn{
-                    text-align: center;
-                    display: block;
-                    color: $main-yellow;
-                    font-size: 48px;
+                display:flex;
+                @include marginAuto;
+                .forward{
+                    width: 50%;
+                    .forwardBtn{
+                        display: block;
+                        text-decoration: none;
+                    }
+                    .forwardBtn:hover{
+                        background-color: rgba(255,255,255,.2);
+                        border-radius: 20px;
+                    }
                 }
-                .backBtn:hover{
-                    
+                .back{
+                    width: 50%;  
+                    .backBtn{
+                        display: block;
+                        text-decoration: none;
+                    }
+                    .backBtn:hover{
+                        background-color: rgba(255,255,255,.2);
+                        border-radius: 20px;
+                    }
                 }
             }
         }
+        
     }
     
 }
