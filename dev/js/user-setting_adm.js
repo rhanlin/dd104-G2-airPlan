@@ -224,8 +224,10 @@ function showMemColor(json){//依intColor資料顯示介面顏色
         if (member.memNo) {
             if(member.intColor==0){
                 document.getElementById("intColor").style.backgroundColor = "rgba(255, 190, 0, .2)";
+                alert('外觀顏色已更換');
             }else{
                 document.getElementById("intColor").style.backgroundColor = "rgba(0,120, 250, .2)";
+                alert('外觀顏色已更換');
             }
             document.getElementById("signInBg").style.display = "none";
         }else{
@@ -240,13 +242,13 @@ function sendColor0Form(json){
     let intColor = '0';
     let xhr = new XMLHttpRequest();
     let data_infoColor = `intColor=${intColor}&memNo=${memNo}`;
-    console.log(memName);
+    // console.log(memName);
     xhr.onload = function () {
         showMemColor(xhr.responseText);
     }
     xhr.open("post", "./phps/userSetting_changeIntColor.php", true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-    console.log("intColor:",intColor);
+    // console.log("intColor:",intColor);
     if(memName == '訪客'){
         alert('訪客外觀無法修改');
     }else{
@@ -266,13 +268,13 @@ function sendColor1Form(json){
     let intColor = '1';
     let xhr = new XMLHttpRequest();
     let data_infoColor = `intColor=${intColor}&memNo=${memNo}`;
-    console.log(memName);
+    // console.log(memName);
     xhr.onload = function () {
         showMemColor(xhr.responseText);
     }
     xhr.open("post", "./phps/userSetting_changeIntColor.php", true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-    console.log("intColor:",intColor);
+    // console.log("intColor:",intColor);
     if(memName == '訪客'){
         alert('訪客外觀無法修改');
     }else{
@@ -290,13 +292,13 @@ function sendColor1Form(json){
 function getLetLike(json){
     let memdata = JSON.parse(json);
     let letLikememNo = memdata.memNo;
-    console.log('airCoinmemNo:',letLikememNo);
+    // console.log('airCoinmemNo:',letLikememNo);
     axios
     .get('phps/userSetting_letLike.php?memNo=' + letLikememNo)
     .then((res) => {
         let letLikeRow = res.data;
         let letLike = "";
-        console.log(letLikeRow);
+        // console.log(letLikeRow);
         for(i=0;i<letLikeRow.length;i++){
             letLike = letterLike(
                 letLike,
@@ -322,11 +324,12 @@ function getLetLike(json){
         console.log(error)
     })
 }
+
 //////////////////留言打賞紀錄
 function getmsgLike(json){
     let memdata = JSON.parse(json);
     let msgLikememNo = memdata.memNo;
-    console.log('msgLikememNo:',msgLikememNo);
+    // console.log('msgLikememNo:',msgLikememNo);
     axios
     .get('phps/userSetting_msgLike.php?memNo=' + msgLikememNo)
     .then((res) => {
@@ -357,6 +360,7 @@ function getmsgLike(json){
         console.log(error)
     })
 }
+
 //////////////////打賞紀錄頁籤
 let airCoinBtnL = document.getElementById('airCoinBtnL');
 let airCoinBtnR = document.getElementById('airCoinBtnR');
@@ -368,8 +372,6 @@ airCoinBtnR.onclick = function(){
     document.getElementById('airCoinTableLet').style.display = 'none'
     document.getElementById('airCoinTableMsg').style.display = 'block'
 };
-
-
 
 //////////////////會員資訊
 //////////////////清除密碼修改表單內容
@@ -397,8 +399,8 @@ function sendsetDataForm(json) {
     }
     xhr.open("post", "phps/userSetting_setData.php", true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-    console.log(memNo);
-    console.log(setPassword);
+    // console.log(memNo);
+    // console.log(setPassword);
     if (setPassword != '' && setPasswordCheck != '') {
         if(setPassword.length >= 8){
             if(!setPassword.match(/[^a-zA-Z0-9]+/)){

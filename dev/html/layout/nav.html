@@ -107,7 +107,7 @@
               <label for="signInPassword">
                   <P>Password:</P>
               </label>
-              <input class="signInPassword" type="password" id="signInPassword" placeholder="password" name="memPsw"
+              <input class="signInPassword" type="password" id="signInPassword" placeholder="密碼需為8-12長度的英文大小寫或數字" name="memPsw"
                   required>
 
               <p class="showForget" id="showForget">忘記密碼</p>
@@ -143,14 +143,14 @@
               <label for="registerPassword">
                   <P>Password:</P>
               </label>
-              <input class="registerPassword" type="password" id="registerPassword" placeholder="password"
+              <input class="registerPassword" type="password" id="registerPassword" placeholder="密碼需為8-12長度的英文大小寫或數字"
                   name="memPsw" maxlength="12" required>
 
               <label for="registerPasswordCheck">
                   <P>Password again:</P>
               </label>
               <input class="registerPasswordCheck" type="password" id="registerPasswordCheck"
-                  placeholder="password again" name="memPswAgain" maxlength="12" required>
+                  placeholder="密碼需為8-12長度的英文大小寫或數字" name="memPswAgain" maxlength="12" required>
 
               <br>
               <button id="registerBtn" class="registerBtn" type="button" value="註冊">
@@ -279,11 +279,7 @@
 
   function showMemInfo(jsonStr) {//////////////////顯示登入者資訊
     let member = JSON.parse(jsonStr);
-    console.log(member);
-    console.log('1111111',member.memName);
     if (member.memNo) {
-      console.log('1111111',member.memName);
-          
       document.getElementById("cavMemberN").innerText = '會員:' + member.memName +'-'+ member.memNo;
       document.getElementById("cavMemberH").innerText = '會員:' + member.memName +'-'+ member.memNo;
       document.getElementById("cavPaperN").innerText = '信紙:' + member.letCount;
@@ -299,10 +295,8 @@
       }else{
         document.getElementById("intColor").style.backgroundColor = "rgba(0,120, 250, .2)";
       }
-      // document.getElementById("signInBg").style.display = "none";
       cancelSignIn();
       location.reload();//登入資訊抓取方式2:從整頁面
-      //changeName();//登入資訊抓取方式1:登入後再次執行show資料的function
     }else{
       alert("帳密錯誤");
     }
@@ -312,7 +306,7 @@
     const signInmemEmail = document.getElementById("signInEmail").value;
     const signInmemPsw = document.getElementById("signInPassword").value;
     let xhr = new XMLHttpRequest();
-    xhr.onload = function () {//使用ajax方法到Server端資料
+    xhr.onload = function () {
       showMemInfo(xhr.responseText);
     }
     xhr.open("post", "./phps/nav_login.php", true);
@@ -325,22 +319,20 @@
     }
   }
 
-  
-
   function getSignInInfo() {//////////////////取得登入資訊 依登入狀況呈現登入資訊
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
       let member = JSON.parse(xhr.responseText);
-      console.log("第一手session資料_memNo:",member.memNo);
-      console.log("第一手session資料_memName:",member.memName);
-      console.log("第一手session資料_memEmail:",member.memEmail);
-      console.log("第一手session資料_letCount:",member.letCount);
-      console.log("第一手session資料_airCoin:",member.airCoin);
-      console.log("第一手session資料_intColor:",member.intColor);
-      console.log("第一手session資料_matPosUrl:",member.matPosUrl);
-      console.log("第一手session資料_memPsw:",member.memPsw);
-      console.log("第一手session資料_matPosNo:",member.matPosNo);
-      console.log("第一手session資料_matPatNo:",member.matPatNo);
+    //   console.log("第一手session資料_memNo:",member.memNo);
+    //   console.log("第一手session資料_memName:",member.memName);
+    //   console.log("第一手session資料_memEmail:",member.memEmail);
+    //   console.log("第一手session資料_letCount:",member.letCount);
+    //   console.log("第一手session資料_airCoin:",member.airCoin);
+    //   console.log("第一手session資料_intColor:",member.intColor);
+    //   console.log("第一手session資料_matPosUrl:",member.matPosUrl);
+    //   console.log("第一手session資料_memPsw:",member.memPsw);
+    //   console.log("第一手session資料_matPosNo:",member.matPosNo);
+    //   console.log("第一手session資料_matPatNo:",member.matPatNo);
       if(member.memNo) {
         document.getElementById("cavMemberN").innerText = '會員:' + member.memName +'-'+ member.memNo;
         document.getElementById("cavMemberH").innerText = '會員:' + member.memName +'-'+ member.memNo;
@@ -357,9 +349,9 @@
         }else{
           document.getElementById("intColor").style.backgroundColor = "rgba(0,120, 250, .2)";
         }
-        console.log('登入狀態:已登入');
+        // console.log('登入狀態:已登入');
       }else{
-        console.log('登入狀態:尚未登入');
+        // console.log('登入狀態:尚未登入');
       }
     }
     xhr.open("get", "./phps/nav_getSignInInfo.php", true);
@@ -368,8 +360,7 @@
 
   
   function memName(){//////////////////memName產生器
-      var arr = ['波音','空巴','達索'];
-      // var arr = ['波音777','波音747','波音787','空中巴士A350','空中巴士A380'];
+      var arr = ['丹迪紙','雲彩紙','粉彩紙','西卡紙','牛皮紙'];
       var index = Math.floor((Math.random()*arr.length));
       return arr[index];
   }
@@ -387,13 +378,9 @@
       const registermemPsw = document.getElementById("registerPassword").value;
       const registermemPswCheck = document.getElementById("registerPasswordCheck").value;
       const registermemName = memName();
-      console.log(registermemName);
-      //-------------使用ajax方法到Server端資料
       let xhr = new XMLHttpRequest();
       xhr.onload = function () {
-          console.log(xhr.responseText);
           memberR = JSON.parse(xhr.responseText);
-          console.log(memberR);
           if(memberR.memEmail) {
             cancelRegisterForm();
             document.getElementById("signInBg").style.display = "none";
@@ -401,7 +388,7 @@
             let memEmail = memberR.memEmail;
             let memPsw = memberR.memPsw;
             let data_info = `memEmail=${memEmail}&memPsw=${memPsw}`;
-            xhr.onload = function () {//使用ajax方法到Server端資料
+            xhr.onload = function () {
                 showMemInfo(xhr.responseText);
             }
             xhr.open("post", "./phps/nav_login.php", true);
@@ -435,8 +422,6 @@
       }
   }
 
-
-
   function newPsw(length) {//////////////////密碼產生器
       let newPsw = '';
       let alphabet = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -456,17 +441,12 @@
   function sendForgetForm() {//////////////////忘記密碼表單發送
       const forgetmemEmail = document.getElementById("forgetEmail").value;
       const memNewPsw = newPsw(8);//呼叫新密碼產生器
-      // console.log("----1",memNewPsw);
       let xhr = new XMLHttpRequest();
       xhr.onload = function () {
-          console.log('密碼寄送結果:',xhr.responseText);
-          // memberCheck = JSON.parse(xhr.responseText);
-          // console.log("------memRowCheck",memberCheck);
           if (xhr.responseText == 'Success!') {
                 document.getElementById("forgetEmail").value = "";
               document.getElementById("forgetBg").style.display = "none";
               alert('新密碼已寄送至您的信箱中');
-
           }
           else {
               alert('查無此Email');
@@ -474,35 +454,25 @@
       }
       xhr.open("post", "phps/airPlanMailer/nav_forget.php", true);
       xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-      // console.log(memNewPsw);
       if(forgetmemEmail != ''){
-          console.log("newpassword:",memNewPsw);
-          console.log("email:",forgetmemEmail);
           let data_infoF = `memEmail=${forgetmemEmail}&newPsw=${memNewPsw}`;
           xhr.send(data_infoF);
       }
       else {
           alert('欄位不可空白');
       }
-      
   }
-
-
-
 
   window.addEventListener("load", function () {//////////////////表單按鈕事件聆聽
       getSignInInfo();//檢查登入狀態
       document.getElementById("signInBtn").onclick = sendSignInForm;//點擊登入按鈕呼叫發送表單function
       document.getElementById("signInCancelBtn").onclick = cancelSignIn;//點擊取消按鈕呼叫清除表單function
-
       document.getElementById("registerBtn").onclick = sendRegisterForm;//點擊註冊按鈕呼叫發送表單function
       document.getElementById("registerCancelBtn").onclick = cancelRegisterForm;//點擊註冊取消按鈕呼叫清除表單function
-
       document.getElementById("forgetBtn").onclick = sendForgetForm;//點擊忘記密碼按鈕呼叫發送表單function
       document.getElementById("forgetCancelBtn").onclick = cancelForgetForm;//點擊忘記密碼取消按鈕呼叫清除表單function
   });
 </script>
-
 
 <!-- 會員登入/註冊/忘記密碼燈箱 -->
 <script>
@@ -515,7 +485,7 @@
           if (signInStatusL.innerHTML == "登入") {
               signInBg.style.display = "block";
           } 
-          else {//是登出
+          else {//登出
               logout();
           }
       })

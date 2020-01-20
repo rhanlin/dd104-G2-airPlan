@@ -1,0 +1,48 @@
+.bgimg{
+    background-image: url("../img/index/index_pic.png");
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    .bgimgwrap{
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(rgba(255, 255, 255, .3) 30%, rgba(255, 255, 255,0) 20%);
+        background-size: 5px 5px;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        .btnWrap{
+            width: 50%;
+            display:flex;
+            @include marginAuto;
+            border: 1px solid blue;
+            .forward{
+                width: 50%;
+                border: 1px solid rgb(55, 145, 92);
+                .forwardBtn{
+                    text-align: center;
+                    display: block;
+                    color: $main-yellow;
+                    font-size: 48px;
+                }
+                .forwardBtn:hover{
+                    
+                }
+            }
+            .back{
+                width: 50%;
+                border: 1px solid rgb(55, 145, 92);
+                .backBtn{
+                    text-align: center;
+                    display: block;
+                    color: $main-yellow;
+                    font-size: 48px;
+                }
+                .backBtn:hover{
+                    
+                }
+            }
+        }
+    }
+    
+}

@@ -663,7 +663,7 @@ $(document).ready(function () {
           //           msgRow[j].memNo,
           //           msgRow[j].msgTime,
           //           msgRow[j].msgContent,
-          //           msgRow[j].msgNo,
+          //           msgRow[j].msgNo, 
           //         );
           //         msgNum[j] = msgRow[j].msgNo;
           //         $(".cav-replys").html(letReply);
@@ -1009,32 +1009,48 @@ function letterReply(letReply, memNo, msgTime, msgContent, msgNo) {
   return letReply;
 }
 
-//////////////////////////以下為我的物品///////////////////////////////
-////////////////////////更換預設的圖案/郵戳
-
 function cavePosChange(json) {////////////////////////更換預設郵戳
   let cavedata = JSON.parse(json);
   let xhr = new XMLHttpRequest();
   let memNo = cavedata.memNo;
-  let matPosNo = document.getElementsByClassName('wearing')[0].dataset.pos;
-  let matPosNoOld = cavedata.matPosNo;
-  // console.log("cavedata",cavedata);
-  console.log("memNo", memNo);
-  console.log("matPosNo", matPosNo);
-  console.log("matPosNoOld", matPosNoOld);
+  let matPosNo = document.getElementsByClassName('cav-prod cav-prodU wearing')[0].dataset.pos;
+  // console.log("memNo", memNo);
+  // console.log("matPosNo", matPosNo);
+  // console.log("OldmatPosNo---", cavedata.matPosUrl);
   xhr.onload = function () {
-    console.log("yaa");
+    let posdata = JSON.parse(xhr.responseText);
+    if (posdata.matPosUrl) {
+      // console.log("NewmatPosNo---", posdata.matPosUrl);
+      document.getElementById('previewPos').style.backgroundImage = `url("${posdata.matPosUrl}")`;
+      alert('預設圖案更換成功');
+    }
   }
-
   xhr.open("post", "phps/cave_posChange.php", true);
   xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-  let data_poschange = `memNo=${memNo}&matPosNo=${matPosNo}&matPosNoOld=${matPosNoOld}`;
+  let data_poschange = `memNo=${memNo}&matPosNo=${matPosNo}`;
   xhr.send(data_poschange);
 }
 
 function cavePatChange(json) {////////////////////////更換預設圖案
   let cavedata = JSON.parse(json);
-  console.log("cavedata", cavedata);
+  let xhr = new XMLHttpRequest();
+  let memNo = cavedata.memNo;
+  let matPatNo = document.getElementsByClassName('cav-prod cav-prodI wearing')[0].dataset.pat;
+  // console.log("memNo", memNo);
+  // console.log("matPatNo", matPatNo);
+  // console.log("OldmatPatNo---", cavedata.matPatUrl);
+  xhr.onload = function () {
+    let patdata = JSON.parse(xhr.responseText);
+    if (patdata.matPatUrl) {
+      // console.log("NewmatPatNo---", patdata.matPatUrl);
+      document.getElementById('previewPat').style.backgroundImage = `url("${patdata.matPatUrl}")`;
+      alert('預設圖案更換成功');
+    }
+  }
+  xhr.open("post", "phps/cave_patChange.php", true);
+  xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+  let data_patchange = `memNo=${memNo}&matPatNo=${matPatNo}`;
+  xhr.send(data_patchange);
 }
 
 
@@ -1044,6 +1060,8 @@ function showCaveData(json) {////////////////////////信紙,Air幣資訊
   let memdata = JSON.parse(json);
   document.getElementById('cavPaper').innerText = "信紙:" + memdata.letCount;
   document.getElementById('cavCoin').innerText = "Air幣:" + memdata.airCoin;
+  document.getElementById('previewPat').style.backgroundImage = `url("${memdata.matPatUrl}")`;
+  document.getElementById('previewPos').style.backgroundImage = `url("${memdata.matPosUrl}")`;
 }
 
 const matadd = `<div class="cav-addProd"><a href="./shop.html"><img src="./img/cave/add.svg"></a></div>`;
@@ -1054,7 +1072,6 @@ function getMatPostMark(json) {////////////////////////郵戳資料撈取
   let memNo = loginData.memNo;
   xhr.onload = function () {
     let postMarkRow = JSON.parse(xhr.responseText);
-
     let postMark = "";
     for (i = 0; i < postMarkRow.length; i++) {
       postMark = patternWrap(
@@ -1087,7 +1104,6 @@ function getMatPattern(json) {////////////////////////圖案資料撈取
   let memNo = loginData.memNo;
   xhr.onload = function () {
     let patternRow = JSON.parse(xhr.responseText);
-
     let pattern = "";
     for (i = 0; i < patternRow.length; i++) {
       pattern = patternWrap(
@@ -1101,7 +1117,7 @@ function getMatPattern(json) {////////////////////////圖案資料撈取
     $("#cavPatWrap").append(matadd);
     function patternWrap(pattern, matPatUrl, matPatName, matPatNo) {
       pattern += `
-        <div id="cavPatItem${matPatNo}" value="${matPatNo}" class="cav-prod cav-prodI">
+        <div id="cavPatItem${matPatNo}" data-pat="${matPatNo}" class="cav-prod cav-prodI">
           <img src="${matPatUrl}"></img>
         </div>
       `;
@@ -1127,7 +1143,6 @@ function getMaterial(json) {////////////////////////素材資料撈取
         materialRow[i].matURL,
         materialRow[i].matName,
         materialRow[i].matNo,
-        console.log("materialRow[i].matURL", materialRow[i].matURL)
       );
     }
     $("#cavMatWrap").html(material);
@@ -1183,16 +1198,14 @@ function getCaveInfo() {////////////////////////取得session資料
   let xhr = new XMLHttpRequest();
   xhr.onload = function () {
     let member = JSON.parse(xhr.responseText);
-    console.log('matPosNo', member.matPosNo);
-    console.log('matPatNo', member.matPatNo);
     if (member.memNo) {
       showCaveData(xhr.responseText);//show aircoin letcount
       getMatPostMark(xhr.responseText);//郵戳資料撈取
       getMatPattern(xhr.responseText);//圖案撈取
       getMaterial(xhr.responseText);//素材撈取
       getTool(xhr.responseText);//工具撈取
-      let cavePosChangeBtn = document.getElementById('btns');
-      let cavePatChangeBtn = document.getElementById('btns2');
+      let cavePosChangeBtn = document.querySelector('.posChange');
+      let cavePatChangeBtn = document.querySelector('.patChange');
       cavePosChangeBtn.onclick = function () {
         cavePosChange(xhr.responseText);//預設郵戳更換紐
       };
@@ -1208,3 +1221,4 @@ function getCaveInfo() {////////////////////////取得session資料
 window.addEventListener("load", function () {
   getCaveInfo();
 });
+
