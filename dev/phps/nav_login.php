@@ -1,9 +1,7 @@
 <?php 
 try {
 	require_once("connectBook_root.php");
-	// $sql = "select * from `member` where memEmail=:memEmail and memPsw=:memPsw";
 	$sql = "select `member`.*, `matpostmark`.*, `matpattern`.* from `member` left outer join `matpostmark` on member.memNo = matpostmark.memNo left outer join `matpattern` on member.memNo = matpattern.memNo where member.memEmail=:memEmail and member.memPsw =:memPsw and matpostmark.mugStatus=:mugStatus and matpattern.PatStatus=:PatStatus";
-	// $sql = "select `member`.*, `matpostmark`.* from `member` left outer join `matpostmark` on member.memNo = matpostmark.memNo where memEmail=:memEmail and memPsw=:memPsw and mugStatus=:mugStatus";
 	$member = $pdo->prepare($sql);
 	$member->bindValue(':memEmail', $_POST["memEmail"]);
 	$member->bindValue(':memPsw', $_POST["memPsw"]);
@@ -22,6 +20,7 @@ try {
 		$_SESSION["airCoin"] = $memRow["airCoin"];  
 		$_SESSION["intColor"] = $memRow["intColor"];   
 		$_SESSION["matPosUrl"] = $memRow["matPosUrl"];
+		$_SESSION["matPatUrl"] = $memRow["matPatUrl"];
 		$_SESSION["memPsw"] = $memRow["memPsw"]; 
 		$_SESSION["matPosNo"] = $memRow["matPosNo"];
 		$_SESSION["matPatNo"] = $memRow["matPatNo"];
