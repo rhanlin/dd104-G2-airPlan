@@ -2,94 +2,8 @@ let canvas = new fabric.Canvas('canvas', {
   backgroundColor: "white"
 }); //創建fabric環境
 canvas.setHeight(470);
-
-// let canvas2 = new fabric.Canvas('canvas', {
-//   backgroundColor: "grba(255, 255, 255, 0.2)"
-// }); //創建fabric環境
-// canvas.setHeight(470);
-
 //=================剪裁飛機或郵戳畫板==========================
-// canvas.controlsAboveOverlay = true;
-
-// var clipPath = new fabric.Group([
-//   new fabric.Polyline([{
-//       x: 10,
-//       y: 250
-//     },
-//     {
-//       x: 700,
-//       y: 10
-//     },
-//     {
-//       x: 670,
-//       y: 200
-//     },
-//     {
-//       x: 40,
-//       y: 250
-//     },
-//     {
-//       x: 670,
-//       y: 300
-//     },
-//     {
-//       x: 700,
-//       y: 490
-//     },
-//     {
-//       x: 10,
-//       y: 250
-//     },
-
-//   ], {
-
-//   }),
-//   new fabric.Polyline([{
-//       x: 120,
-//       y: 248
-//     },
-
-//     {
-//       x: 670,
-//       y: 205
-//     },
-//     {
-//       x: 650,
-//       y: 248
-//     },
-//     {
-//       x: 120,
-//       y: 248
-//     },
-//   ]),
-//   new fabric.Polyline([{
-//       x: 120,
-//       y: 253
-//     },
-
-//     {
-//       x: 650,
-//       y: 253
-//     },
-//     {
-//       x: 670,
-//       y: 295
-//     },
-//     {
-//       x: 120,
-//       y: 253
-//     },
-//   ]),
-// ]);
-
-// var clipPath = new fabric.Circle({
-//   width: canvas.width,
-//   height: canvas.height,
-//   fill: "white"
-
-// })
-// canvas.clipPath = clipPath;
-// canvas.renderAll();
+canvas.controlsAboveOverlay = true;
 
 
 var clipPath2 = new fabric.Circle({
@@ -155,9 +69,6 @@ function switchBtn() {
 }
 
 
-
-
-
 //==================拖曳slide到畫板===============================
 
 $('.figure').mousedown(function (e) {
@@ -204,20 +115,12 @@ $('.figure').click(function () {
       left: 200,
       top: 200,
       width: 450,
-      height: 400
-      // selectable: true,
-      // originX: 'left',
-      // originY: 'top'
-    });
+      height: 400,
 
+
+    });
     img.scaleToHeight(300); //指定img寬
     img.scaleToWidth(300); //指定img高
-    // console.log(img.width)
-    // img.center();
-    // img.setCoords();
-    // canvas.renderAll(); //選染畫布
-    // canvas.add(img); //畫布加入新的圖片
-
     canvas.renderAll();
     canvas.add(img).setActiveObject(img);
   })
@@ -371,6 +274,7 @@ $(".lineColorInput").change(function () {
 //切換
 
 canvas.isDrawingMode = false;
+
 $(document).ready(function () {
   $('#mode').click(function () {
     if ($('#controlBox1').hasClass('clicked') == false) {
@@ -396,85 +300,9 @@ document.getElementById('clear').onclick = clearCanvas;
 function clearCanvas() {
 
   canvas.clear();
+  canvas.controlsAboveOverlay = true;
   canvas.backgroundColor = "white";
   canvas.renderAll();
-  // canvas.controlsAboveOverlay = true;
-  //   var clipPath = new fabric.Group([
-  //     new fabric.Polyline([{
-  //         x: 10,
-  //         y: 250
-  //       },
-  //       {
-  //         x: 700,
-  //         y: 10
-  //       },
-  //       {
-  //         x: 670,
-  //         y: 200
-  //       },
-  //       {
-  //         x: 40,
-  //         y: 250
-  //       },
-  //       {
-  //         x: 670,
-  //         y: 300
-  //       },
-  //       {
-  //         x: 700,
-  //         y: 490
-  //       },
-  //       {
-  //         x: 10,
-  //         y: 250
-  //       },
-
-  //     ], {
-  //       // stroke: 'red',
-  //       // color: 'red',
-  //       // left: 10,
-  //       // top: 10,
-  //       // fill: 'red'
-  //     }),
-  //     new fabric.Polyline([{
-  //         x: 120,
-  //         y: 248
-  //       },
-
-  //       {
-  //         x: 670,
-  //         y: 205
-  //       },
-  //       {
-  //         x: 650,
-  //         y: 248
-  //       },
-  //       {
-  //         x: 120,
-  //         y: 248
-  //       },
-  //     ]),
-  //     new fabric.Polyline([{
-  //         x: 120,
-  //         y: 253
-  //       },
-
-  //       {
-  //         x: 650,
-  //         y: 253
-  //       },
-  //       {
-  //         x: 670,
-  //         y: 295
-  //       },
-  //       {
-  //         x: 120,
-  //         y: 253
-  //       },
-  //     ]),
-  //   ]);
-
-
 
 }
 
@@ -597,7 +425,7 @@ function output(formatType) {
       document.body.appendChild(a);
       a.click()
       document.body.removeChild(a)
-      alert("圖檔已存入我的包包~~請到我的包包確認")
+      alert("圖檔已存入我的倉庫~~請到我的倉庫確認")
       clearCanvas();
       switchBtn()
 
@@ -754,10 +582,6 @@ function handleFile() {
 
       img.scaleToHeight(100); //指定img寬
       img.scaleToWidth(100); //指定img高
-      // img.center();
-      // img.setCoords();
-      // canvas.renderAll(); //選染畫布
-      // canvas.add(img); //畫布加入新的圖片
       img.scale(0.5).set({
         left: 200,
         top: 200,
@@ -812,33 +636,32 @@ function resizeCanvas() {
     canvasBox.width = (window.innerWidth * .67) + (window.innerWidth / 70)
     clipPath2 = clipPath5;
   } else if (window.innerWidth < 768) {
-    canvas.setHeight(470);
+
     canvasBox.width = (window.innerWidth * .60) + (window.innerWidth / 11);
     clipPath2 = clipPath4;
   } else if (window.innerWidth < 992) {
-    canvas.setHeight(470);
+
     canvasBox.width = (window.innerWidth * .62) + (window.innerWidth / 30);
     clipPath2 = clipPath2_3;
   } else if (window.innerWidth < 1330) {
-    canvas.setHeight(470);
+
     canvasBox.width = (window.innerWidth * .50) + (window.innerWidth / 70);
     clipPath2 = clipPath3;
   } else if (window.innerWidth < 1500) {
-    canvas.setHeight(470);
+
     canvasBox.width = 670 + (window.innerWidth / 55);
     clipPath2 = clipPath2_3;
   } else if (window.innerWidth < 1700) {
-    canvas.setHeight(470);
+
     canvasBox.width = 670 + (window.innerWidth / 68);
     clipPath2 = clipPath2_2;
   } else {
-    canvasBox.width = 670 + (window.innerWidth / 80)
+    canvasBox.width = 700 + (window.innerWidth / 50)
 
   }
   canvas.setWidth(canvasBox.width)
 
   // console.log('window.innerWidth: ', window.innerWidth);
-
   canvas.renderAll();
 
 }
