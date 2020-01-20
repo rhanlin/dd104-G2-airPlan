@@ -3,43 +3,53 @@
 
 let productForm = document.forms.namedItem('productForm');
 
-document.getElementById("con_prodAdd").value = "prodAdd";
+// document.getElementById("con_prodAdd").value = "prodAdd";
 
-productForm.addEventListener('submit', prodAdd());
-
-function prodAdd() {
-    let xhr = new XMLHttpRequest();
-    document.getElementById("con_prodAdd").value = "prodAdd";
+productForm.addEventListener('submit', function (e) {
     post_items(event, productForm);
+    // e.preventDefault;
+});
 
-    xhr.onload = function () {
-        if (xhr.status == 200) {
-            let prodModRow = JSON.parse(xhr.responseText);
-            document.getElementById("con_prodAdd").value = "prodAdd";
-            // prodModData(xhr.responseText);
-            // console.log(xhr.responseText);
 
-        } else {
-            alert(xhr.status);
-        };
-    }
-    xhr.open("post", "./phps/background.php", true);
-    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+// productForm.addEventListener('submit', function (event) {
+//     post_items(event, productForm)
+// })
 
-    let data_info = "type=" + document.getElementById("con_prodAdd").value + "&pname=" + document.getElementById("pname").value + "&pnameCH=" + document.getElementById("pnameCH").value + "&pInfo=" + document.getElementById("pInfo").value + "&pchance=" + document.getElementById("pchance").value + "&price=" + document.getElementById("price").value + "&image=" + document.getElementById("upFile").value + "&pStatus=null" + "&pLsort=" + document.getElementById("pLsort").value+ "&pSsort=" + document.getElementById("pSsort").value;
-    console.log(data_info)
-    // xhr.send(data_info);
-}
+// function prodAdd() {
+//     let xhr = new XMLHttpRequest();
+//     document.getElementById("con_prodAdd").value = "prodAdd";
+//     post_items(event, productForm);
+
+//     xhr.onload = function () {
+//         if (xhr.status == 200) {
+//             let prodModRow = JSON.parse(xhr.responseText);
+//             document.getElementById("con_prodAdd").value = "prodAdd";
+//             // prodModData(xhr.responseText);
+//             // console.log(xhr.responseText);
+
+//         } else {
+//             alert(xhr.status);
+//         };
+//     }
+//     xhr.open("post", "./phps/background.php", true);
+//     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+
+//     let data_info = "type=" + document.getElementById("con_prodAdd").value + "&pname=" + document.getElementById("pname").value + "&pnameCH=" + document.getElementById("pnameCH").value + "&pInfo=" + document.getElementById("pInfo").value + "&pchance=" + document.getElementById("pchance").value + "&price=" + document.getElementById("price").value + "&image=" + document.getElementById("upFile").value + "&pStatus=null" + "&pLsort=" + document.getElementById("pLsort").value+ "&pSsort=" + document.getElementById("pSsort").value;
+//     console.log(data_info)
+//     // xhr.send(data_info);
+// }
 
 function post_items(event, form) {
     // 取消表單預設提交
-    // event.preventDefault()
+    event.preventDefault()
 
     let pname = document.getElementById('pname').value;
     let pLsort = document.getElementById('pLsort').value;
     let pnameCH = document.getElementById('pnameCH').value;
     // let pnameENG = document.getElementById('pnameENG').value;
+
     let file = $('.upFile')[0].files[0] // 單個檔案
+
     // let pImg = document.getElementById('pImg').src;
     let pInfo = document.getElementById('pInfo').value;
     let pchance = document.getElementById('pchance').value;
@@ -59,34 +69,36 @@ function post_items(event, form) {
     formData.append('pLsort', pLsort);
     formData.append('pnameCH', pnameCH);
     // formData.append('pnameENG', pnameENG);
+
     formData.append('file', file); // 檔案也可以透過 append 放進來
-    formData.append('pImg', pImg);
+
+    // formData.append('pImg', pImg);
     formData.append('pInfo', pInfo);
     formData.append('pchance', pchance)
     formData.append('price', price);
     formData.append('pStatus', pStatus);
     formData.append('pSsort', pSsort);
 
+    // document.getElementById("con_prodAdd").value = "prodAdd";
 
 
-    // $.ajax({
-    //         url: './phps/background.php',
-    //         type: 'POST',
-    //         data: formData,
-    //         enctype: 'multipart/form-data',
-    //         cache: false,
-    //         contentType: false,
-    //         processData: false
-    //     })
-    //     .done(function (data) {
-    //         alert(data);
-    //     }).fail(function (data) {
-    //         alert("Error: Ajax Failed.");
-    //     }).always(function (data) {
-    //         console.log(data)
-    //         // always do the following, no matter if it fails or not
-    //     })
-
+    $.ajax({
+            url: './phps/bg_prodMod.php',
+            type: 'POST',
+            data: formData,
+            enctype: 'multipart/form-data',
+            cache: false,
+            contentType: false,
+            processData: false
+        })
+        .done(function (data) {
+            console.log(data);
+        }).fail(function (data) {
+            alert("Error: Ajax Failed.");
+        }).always(function (data) {
+            console.log(data)
+            // always do the following, no matter if it fails or not
+        })
 }
 
 

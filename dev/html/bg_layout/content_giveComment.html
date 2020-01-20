@@ -1,25 +1,37 @@
+
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
-                <i class="fa fa-align-justify"></i> 寫信紀錄</div>
+                <i class="fa fa-align-justify"></i> 留言打賞紀錄</div>
             <div class="card-body">
                 <table class="table table-responsive-sm table-bordered table-striped table-sm mt-3">
                     <thead>
                         <tr>
-                            <th>會員編號</th>
-                            <th>會員名稱</th>
-                            <th>信件編號</th>
-                            <th>信件類別</th>
-                            <th>信件標題</th>
-                            <th>信件內容</th>
-                            <th>留言數</th>
-                            <th>寫信日期</th>
-                            <th>信件狀態</th>
+                            <th>留言打賞日期</th>
+                            <th>留言打賞編號</th>
+                            <th>被打賞會員編號</th>
+                            <th>被打賞留言編號</th>
+                            <th>被打賞留言內容</th>
+                            <th>打賞會員編號</th>
+                            <th>打賞會員名稱</th>
+                            <th>此留言內容狀態</th>
                         </tr>
                     </thead>
-                    <tbody id="letterRecord">
-                    
+                    <tbody id="giveComment_record">
+                        <!-- <tr>
+                            <td>2019/04/26</td>
+                            <td>111</td>
+                            <td>1</td>
+                            <td>60</td>
+                            <td>打賞我的人每人一份雞排</td>
+                            <td>9</td>
+                            <td>波音</td>
+                            <td>
+                                <span class="badge badge-danger">已下架</span>
+                            </td>
+                        </tr> -->
+                        
                     </tbody>
                 </table>
                 <nav>
@@ -48,4 +60,4 @@
         </div>
     </div>
 </div>
-<input type="hidden" name="con_write" id="con_write">
+<input type="hidden" id="con_giveComment" name="con_giveComment">

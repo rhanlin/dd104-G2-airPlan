@@ -4,22 +4,9 @@
             <div class="card-header">
                 <i class="fa fa-align-justify"></i> 商品資料</div>
             <div class="card-body">
-                <div class="form-group row justify-content-end">
-                    <div class="col-lg-4 col-sm-6 ">
-                        <div class="input-group">
-                            <input class="form-control" id="input1-group2" type="text" name="input1-group2"
-                                placeholder="請輸入商品編號">
-                            <span class="input-group-prepend">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fa fa-search"></i> Search</button>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="btn btn-success mb-1" type="button" data-toggle="modal" data-target="#successModal"
+            
+                <button class="btn btn-success mb-3" type="button" data-toggle="modal" data-target="#successModal"
                     id="addProd">新增商品</button>
-
 
                 <!-- 跳窗 -->
                 <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -56,33 +43,33 @@
                                             <td><label>商品資訊</label><input type="text" name="pInfo" id="pInfo"></td>
                                         </tr>
                                         <tr>
-                                            <td> <label>商品機率</label><input type="text" name="pchance" id="pchance"></td>
+                                            <td> <label>商品機率</label><input type="text" name="pchance" id="pchance" value="0"></td>
                                         </tr>
                                         <tr>
-                                            <td><label>商品價格</label><input type="text" name="price" id="price"></td>
+                                            <td><label>商品價格</label><input type="text" name="price" id="price" value="100"></td>
                                         </tr>
                                         <tr>
-                                            <td><label>商品圖片路徑</label><input type="file" name="upFile" id="upFile">
+                                            <td><label>商品圖片路徑</label><input type="file" name="upFile" class="upFile">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><label>商品狀態</label><input type="text" name="pStatus" id="pStatus"></td>
+                                            <td><label>商品狀態</label><input type="text" name="pStatus" id="pStatus" value="0"></td>
                                         </tr>
 
                                         <tr>
                                             <td> <label>商品小分類</label><input type="text" name="pSsort" id="pSsort"></td>
                                         </tr>
-                                        <!-- <tr>
+                                        <tr>
                                             <td>
                                                 <input type="submit" value="送出">
                                             </td>
-                                        </tr> -->
+                                        </tr>
                                     </table>
-                                    <div class="modal-footer">
+                                    <!-- <div class="modal-footer">
                                         <button class="btn btn-secondary" type="button"
                                             data-dismiss="modal">Close</button>
-                                        <button class="btn btn-success" type="submit">送出</button>
-                                    </div>
+                                        <button class="btn btn-success addBtn" type="submit">送出</button>
+                                    </div> -->
                                 </form>
                             </div>
                         </div>
