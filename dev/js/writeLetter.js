@@ -406,18 +406,24 @@ function saveImage() {
   let sizeScale;
   img.src = vm2.letterUploadImg;//user上傳的圖片
   //判斷圖片是直式還是橫式，並換算user上傳圖片要縮小的比例
-  img.addEventListener('load', () => {
-  if(img.height > img.width){
-    sizeScale = img.height / 260;
+  // console.log(img.src.indexOf('base64'));
+  if(img.src.indexOf('base64') != -1){
+    img.addEventListener('load', () => {
+      if(img.height > img.width){
+        sizeScale = img.height / 260;
+      }else{
+        sizeScale = img.width / 415;
+      }
+      img.width = img.width / sizeScale;
+      img.height = img.height / sizeScale;
+      context.wrapText(textTittle.value, 40, img.height+70, 415, 28, 20, true);//60
+      context.wrapText(letterContant.value, 40, img.height+130, 415, 24, 16 , false);
+      context.drawImage(img, 40, 35, img.width, img.height);
+      })
   }else{
-    sizeScale = img.width / 415;
+    context.wrapText(textTittle.value, 40, 50, 415, 28, 20, true);//60
+    context.wrapText(letterContant.value, 40, 110, 415, 24, 16 , false);
   }
-  img.width = img.width / sizeScale;
-  img.height = img.height / sizeScale;
-  context.wrapText(textTittle.value, 40, img.height+70, 415, 28, 20, true);//60
-  context.wrapText(letterContant.value, 40, img.height+130, 415, 24, 16 , false);
-  context.drawImage(img, 40, 35, img.width, img.height);
-  })
 }
 
 //AJAX送資料到後端
