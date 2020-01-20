@@ -138,6 +138,8 @@ let vm3 = new Vue({
           e.preventDefault();//解掉冒泡事件
           e.stopPropagation();
           e.stopImmediatePropagation();
+          vmImgWrap.chooseStampUrl = e.target.children[0].style.backgroundImage;
+          // console.log(vmImgWrap.chooseStampUrl);
           writeLetterExm();
         })
       }
@@ -146,6 +148,7 @@ let vm3 = new Vue({
           e.preventDefault();//解掉冒泡事件
           e.stopPropagation();
           e.stopImmediatePropagation();
+          vmImgWrap.chooseStampUrl = e.target.children[0].style.backgroundImage;
           writeLetterExm();
         })
       }

@@ -283,6 +283,8 @@ let vmCatchLetter = new Vue({
               e.preventDefault();//解掉冒泡事件
               e.stopPropagation();
               e.stopImmediatePropagation();
+              vmImgWrap.chooseStampUrl = e.target.style.backgroundImage;
+              console.log(vmImgWrap.chooseStampUrl);
               confirmSubmit();
             })
           }
@@ -291,6 +293,7 @@ let vmCatchLetter = new Vue({
               e.preventDefault();//解掉冒泡事件
               e.stopPropagation();
               e.stopImmediatePropagation();
+              vmImgWrap.chooseStampUrl = e.target.style.backgroundImage;
               confirmSubmit();
             })
           }
