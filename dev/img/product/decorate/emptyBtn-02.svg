@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 58"><defs>
-<style>.cls-1{fill:#f3de6b;stroke:#161616;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.8px; background: -webkit-linear-gradient(45deg, #fff 45%, #000 45%, #000 55%, #fff 55%);
-  background: linear-gradient(45deg, #fff 45%, #000 45%, #000 55%, #fff 55%);background-size: 5px 5px; -webkit-animation: bscale 10s infinite linear;animation: bscale 10s infinite linear; }</style>
-</defs><title>emptyBtn</title><g id="圖層_4" data-name="圖層 4"><rect class="cls-1" x="2" y="10.28" width="64" height="46.22" rx="2.78" ry="2.78"/><polygon class="cls-1" points="9 45 2 55.34 2 12.6 8.93 3.35 9 45"/><polygon class="cls-1" points="59 45 66 55.34 66 12.6 59.07 3.35 59 45"/><rect class="cls-1" x="8.93" y="3.35" width="50.84" height="42.75" rx="2.38" ry="2.38"/></g>
-</svg>

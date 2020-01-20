@@ -175,7 +175,23 @@
     clip-path: polygon(50% 0%, 100% 0, 100% 40%, 100% 100%, 0 100%, 0 40%, 0 0);
     z-index: 99;
   }
-
+  #selectStamp {
+    height: 60%;
+    width: 60%;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation-name: pulse;
+    animation-delay: .8s;
+    animation-duration: 0.5s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
   .pointerAll {
     --scale-value: 1;
     width: 3vw;
