@@ -87,6 +87,10 @@
                             color: $main-white;
                             background-repeat: no-repeat;
                             transition: 0.3s 0s;
+                            h3{
+                                font-size: 2.1rem;
+                            }
+                            
                         }
                         .memData:hover{
                             @include hoverDeg;
@@ -136,10 +140,16 @@
                         .emailSet:hover{
                             @include hoverDeg;
                         }
-                        .mempic{
-                            width: 200px;
-                            display: block;
-                            @include marginAuto;
+                        .mempictr{
+                                width: 200px;
+                                height: 200px;
+                                overflow: hidden;
+                            .mempic{
+                                width: 200px;
+                                height: 200px;
+                                display: block;
+                                @include marginAuto;
+                            }
                         }
                         .userSetting_airCoin{
                             text-align: center;
@@ -259,10 +269,26 @@
                                 border: none;
                                 display: flex;
                                 @extend .memcolorBig;
-                                img{
+                                .intColorBtn0{
                                     width: 50%;
                                     border: 3px solid $main-green;
                                     cursor: pointer;
+                                }
+                                .intColorBtn0:hover{
+                                    border: 3px solid $main-red;
+                                }
+                                .intColorBtn1{
+                                    width: 50%;
+                                    border: 3px solid $main-green;
+                                    cursor: pointer;
+                                }
+                                .intColorBtn1:hover{
+                                    border: 3px solid $main-red;
+                                }
+                                .on{
+                                    width: 50%;
+                                    border: 3px solid $main-dark-red;
+                                    cursor: pointer; 
                                 }
                             }
                         }
@@ -281,9 +307,14 @@
                     transform: translate(-50%,-50%);
                     display: none;
                     .setData{
-                        padding: 20px;
+                        // padding: 20px;
+                        // width: 550px;
+                        // background-image: url("../img/user-setting/setDataletter.png");
+                        padding: 40px;
                         width: 550px;
-                        background-image: url("../img/user-setting/setDataletter.png");
+                        height: 640px;
+                        background:white;
+                        background-image: url("../img/share/postCard-login3.jpg");
                         background-size: 100% 100%;
                         position: absolute;
                         top: 50%;
@@ -294,8 +325,8 @@
                         }
                         .setDataClose{
                             position: absolute;
-                            top: 3%;
-                            right: 4%;
+                            top: 5%;
+                            right: 6%;
                         }
                         .setDataClose:hover{
                             cursor: pointer;
@@ -379,6 +410,9 @@
                         color: $main-white;
                         background-repeat: no-repeat;
                         transition: 0.3s 0s;
+                        h3{
+                            font-size: 2.1rem;
+                        }
                     }
                     .manu:hover{
                         @include hoverDeg;
@@ -498,7 +532,7 @@
                                         .cover {
                                             width: 340px;
                                             height: 100%;
-                                            margin: auto 300px;
+                                            margin: auto 310px;
                                             background-size: cover;
                                             background-position: center;
                                             display: flex;
@@ -511,31 +545,47 @@
                                                 // transform: translateX(-50%);
                                                 text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
                                                 transition: 0.3s 0s;
-                                                // margin: 0;
+                                                position: relative;
+                                                left: 85px;
+                                                top: 210px;
                                                 h5 {
-                                                    // margin-bottom: 10px;
-                                                    // font-size: 50px;
-                                                    // font-weight: 400;
+                                                    color: $main-blue;
                                                     animation: sliceIn 1s 0.1s ease both;
                                                 }
-                                                p {
-                                                    // background-color: white;
-                                                    // color: rgb(245, 245, 245);
-                                                    // padding: 4px 12px;
-                                                    // font-size: 20px;
-                                                    // font-weight: 300;
-                                                    // box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+                                                span{
+                                                    color: $main-blue;
+                                                }
+                                                a{
+                                                    text-decoration: none;
+                                                    .devName{
+                                                        font-size: 40px;
+                                                        margin: 10px;
+                                                    }
+                                                    span{
+                                                        font-size: 24px;
+                                                        color: $main-blue;
+                                                        display: block;
+                                                        margin: 10px;
+                                                    }
+                                                    p {
+                                                        font-size: 24px;
+                                                        color: $main-red;
+                                                        margin: 10px;
+                                                    }
                                                 }
                                             }
                                         }
                                         .cover:hover {
                                             width: 340px;
                                             height: 110%;
+                                            span{
+                                                color: $main-red;
+                                            }
                                         }
+                                        
                                         .cover:hover .infos {
                                             transform: translate(-20%,-30%);
                                         }
-                                        
                                     }
                                 }
                             }

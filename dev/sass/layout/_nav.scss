@@ -702,10 +702,11 @@
   display: none;
 
   .signInData {
-    padding: 20px;
+    padding: 40px;
     width: 550px;
-    height: 580px;
-    background-image: url("../img/user-setting/setDataletter.png");
+    height: 600px;
+    background:white;
+    background-image: url("../img/share/postCard-login2.jpg");
     background-size: 100% 100%;
     position: absolute;
     top: 50%;
@@ -719,8 +720,8 @@
 
     .closeSignin {
       position: absolute;
-      top: 3%;
-      right: 4%;
+      top: 5%;
+      right: 6%;
       cursor: pointer;
     }
 
@@ -782,10 +783,11 @@
   display: none;
 
   .registerData {
-    padding: 20px;
+    padding: 40px;
     width: 550px;
-    height: 580px;
-    background-image: url("../img/user-setting/setDataletter.png");
+    height: 600px;
+    background:white;
+    background-image: url("../img/share/postCard-login2.jpg");
     background-size: 100% 100%;
     position: absolute;
     top: 50%;
@@ -799,8 +801,8 @@
 
     .closeRegister {
       position: absolute;
-      top: 3%;
-      right: 4%;
+      top: 5%;
+      right: 6%;
       cursor: pointer;
     }
 
@@ -870,10 +872,11 @@
   display: none;
 
   .forgetBgData {
-    padding: 20px;
+    padding: 40px;
     width: 550px;
-    height: 580px;
-    background-image: url("../img/user-setting/setDataletter.png");
+    height: 600px;
+    background:white;
+    background-image: url("../img/share/postCard-login2.jpg");
     background-size: 100% 100%;
     position: absolute;
     top: 50%;
@@ -887,8 +890,8 @@
 
     .closeForget {
       position: absolute;
-      top: 3%;
-      right: 4%;
+      top: 5%;
+      right: 6%;
       cursor: pointer;
     }
 
@@ -938,7 +941,7 @@
     .signInData,
     .registerData,
     .forgetBgData {
-      padding: 20px;
+      padding: 40px 20px;
       width: 60%;
     }
   }
@@ -953,7 +956,7 @@
     .signInData,
     .registerData,
     .forgetBgData {
-      padding: 20px;
+      padding: 40px 20px;
       width: 70%;
     }
   }
@@ -968,7 +971,7 @@
     .signInData,
     .registerData,
     .forgetBgData {
-      padding: 20px;
+      padding: 60px 20px;
       width: 80%;
     }
   }
@@ -983,7 +986,7 @@
     .signInData,
     .registerData,
     .forgetBgData {
-      padding: 20px;
+      padding: 100px 20px;
       width: 100%;
     }
   }
