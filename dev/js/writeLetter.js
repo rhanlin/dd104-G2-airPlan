@@ -94,6 +94,9 @@ let vm3 = new Vue({
     letterPattern: 0, //存 使用者"選到"的飛機彩繪編號(matPatNo) 得值
     userNo: 0,
     letCount: 0,//使用者的信紙數量
+    leftPosition: '0',
+    clickCount: 0,
+    origenCount:0,
   },
   methods: {
     clickPattern(e, index) {
@@ -103,6 +106,32 @@ let vm3 = new Vue({
       e.target.firstChild.checked = true;
       canvasSet();
     },
+    clickPatArrow(e){
+      let widthpx = Math.ceil(document.querySelector('#painteType .type').offsetWidth);//每個貼圖盒的寬度
+      let WINDOW_WIDTH = document.body.clientWidth;
+      let BOX_WIDTH = Math.ceil(widthpx/WINDOW_WIDTH*100);//貼圖盒佔整個螢幕的%數
+      let painteType = document.getElementById('painteType');
+      // const origenCount = vm3.clickCount;//存放起始可被點擊次數，不會被改動，拿來做判斷
+      // console.log(vm3.clickCount);
+      
+      if(e.target.id == "printArrow-Lf"){
+        if(vm3.clickCount == vm3.origenCount){
+          console.log('no');
+        }else{
+          vm3.clickCount ++;
+          vm3.leftPosition = `${Math.floor(parseInt(vm3.leftPosition) + BOX_WIDTH*1.8)}%`;
+          console.log(vm3.clickCount);
+        }
+      }else if(e.target.id == "printArrow-Rg"){
+        if(vm3.clickCount <= 0){
+          console.log('no');
+        }else{
+          vm3.clickCount --;
+          vm3.leftPosition = `${Math.floor(parseInt(vm3.leftPosition) - BOX_WIDTH*1.8)+1}%`;
+          console.log(vm3.clickCount);
+        }
+      }
+    }
   },
   mounted() {
     function onFulfilled(value) {
@@ -192,6 +221,30 @@ let vm3 = new Vue({
           vmImgWrap.chooseStampUrl = e.target.children[0].style.backgroundImage;
           writeLetterExm();
         })
+      }
+      
+      if(document.body.clientWidth <= 375){
+        let leftValue = Math.ceil(document.getElementById('painteType').offsetWidth);
+        if(leftValue>265)leftValue=265;
+        vm3.leftPosition = `${leftValue}%`;//計算輪播left值
+      }else if(document.body.clientWidth <= 414){
+        let leftValue = Math.ceil(document.getElementById('painteType').offsetWidth);
+        if(leftValue>245)leftValue=245;
+        vm3.leftPosition = `${leftValue}%`;//計算輪播left值
+      }else{
+        let leftValue = Math.ceil(document.getElementById('painteType').offsetWidth/13);
+        if(leftValue>68)leftValue=68;
+        vm3.leftPosition = `${leftValue}%`;//計算輪播left值
+      }
+      
+
+      //計算可以點擊的次數
+      if(document.body.clientWidth <= 414){
+        vm3.clickCount = document.querySelectorAll('#painteType .type').length-1;
+        vm3.origenCount = document.querySelectorAll('#painteType .type').length-1;
+      }else{
+        vm3.clickCount = document.querySelectorAll('#painteType .type').length-3;
+        vm3.origenCount = document.querySelectorAll('#painteType .type').length-3;
       }
     }
     function onRejected(reason) {
