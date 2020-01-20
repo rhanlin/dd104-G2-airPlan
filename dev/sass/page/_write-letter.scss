@@ -870,7 +870,7 @@
                             height: 120%;
                             width: 55%;
                             transform: rotateX(-51deg) rotateY(2deg) rotateZ(44deg) translateX(25%);
-                            z-index: -1;
+                            z-index: -99 !important;
                             position: absolute;
                             border: .15vw solid #212121;
                             display: none;

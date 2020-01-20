@@ -441,7 +441,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      z-index: 9999;
+      z-index: 99;
       .exit{
         position: absolute;
         right: 25px;
@@ -484,7 +484,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: rgba(0, 0, 0, 0.4);
-        z-index: 9;
+        z-index: 99;
       }
       .box-white{
         position: relative;
@@ -573,6 +573,7 @@
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+        z-index: 9;
         .redBtn_light{
           background:$main-red;
         }
@@ -824,7 +825,7 @@
     background-size: cover;
     display: flex;
     position: relative;
-    z-index: 999;
+    z-index: 9;
     // font-size: 1.5vw;
     // display: none;
     @include paper_cloud();
@@ -1131,6 +1132,19 @@
       left: -350%;
     }
     #threeWorld {
+      .chooseBtn {
+       
+        .choosw {
+          width: 45vw;
+          height: 45vw;
+          color: #fff;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+      }
       #planeLetter {}
 
       #nextStepArrow {
@@ -1158,7 +1172,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 9999;
+        z-index: 99;
         .exit{
           position: absolute;
           right: 25px;
@@ -1201,7 +1215,7 @@
           left: 50%;
           transform: translate(-50%, -50%);
           background-color: rgba(0, 0, 0, 0.4);
-          z-index: 9;
+          z-index: 99;
         }
         .box-white{
           position: relative;
@@ -1605,6 +1619,19 @@
       left: -350%;
     }
     #threeWorld {
+      .chooseBtn {
+       
+        .choosw {
+          width: 45vw;
+          height: 45vw;
+          color: #fff;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+      }
       #planeLetter {}
 
       #nextStepArrow {
@@ -1632,7 +1659,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 9999;
+        z-index: 99;
         .exit{
           position: absolute;
           right: 25px;
@@ -1675,7 +1702,7 @@
           left: 50%;
           transform: translate(-50%, -50%);
           background-color: rgba(0, 0, 0, 0.4);
-          z-index: 9;
+          z-index: 99;
         }
         .box-white{
           position: relative;

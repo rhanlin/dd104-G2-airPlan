@@ -237,9 +237,7 @@ let vm3 = new Vue({
       //   vm3.leftPosition = `${leftValue}%`;//計算輪播left值
       // }
       
-      
-      
-      if(document.body.clientWidth <= 414){
+      if(document.body.clientWidth <= 375){
         //計算可以點擊的次數
         vm3.clickCount = document.querySelectorAll('#painteType .type').length-1;
         vm3.origenCount = document.querySelectorAll('#painteType .type').length-1;
@@ -247,6 +245,16 @@ let vm3 = new Vue({
         let patBoxlength = document.querySelectorAll('#painteType .type').length;
         let oneWidth = document.querySelectorAll('#painteType .type')[0].offsetWidth;
         let allPercentage = Math.floor((oneWidth*patBoxlength)/document.body.clientWidth*100*0.83);
+        // console.log(allPercentage);
+        vm3.leftPosition = `${allPercentage}%`;
+      }else if(document.body.clientWidth <= 576){
+        //計算可以點擊的次數
+        vm3.clickCount = document.querySelectorAll('#painteType .type').length-1;
+        vm3.origenCount = document.querySelectorAll('#painteType .type').length-1;
+        //計算存放郵戳的總寬度
+        let patBoxlength = document.querySelectorAll('#painteType .type').length;
+        let oneWidth = document.querySelectorAll('#painteType .type')[0].offsetWidth;
+        let allPercentage = Math.floor((oneWidth*patBoxlength)/document.body.clientWidth*100*0.85);
         // console.log(allPercentage);
         vm3.leftPosition = `${allPercentage}%`;
       }else{
