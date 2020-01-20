@@ -224,8 +224,10 @@ function showMemColor(json){//依intColor資料顯示介面顏色
         if (member.memNo) {
             if(member.intColor==0){
                 document.getElementById("intColor").style.backgroundColor = "rgba(255, 190, 0, .2)";
+                alert('外觀顏色已更換');
             }else{
                 document.getElementById("intColor").style.backgroundColor = "rgba(0,120, 250, .2)";
+                alert('外觀顏色已更換');
             }
             document.getElementById("signInBg").style.display = "none";
         }else{
