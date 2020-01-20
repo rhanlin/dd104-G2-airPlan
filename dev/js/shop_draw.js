@@ -638,7 +638,7 @@ function output(formatType) {
       document.body.appendChild(a);
       a.click()
       document.body.removeChild(a)
-      alert("圖檔已存入我的包包~~請到我的包包確認")
+      alert("圖檔已存入我的倉庫~~請到我的倉庫確認")
       clearCanvas();
     }
 
