@@ -95,37 +95,37 @@ var works = [
     {
         title: "峻瑜",
         description: "Radara",
-        cover: "./img/user-developer/mike.png",
+        cover: "./img/user-developer/mike2.png",
         src: "http://140.115.236.71/demo-personal/DD104/web/T1901173/"
     },
     {
         title: "宗翰",
         description: "&on",
-        cover: "./img/user-developer/spencer.png",
+        cover: "./img/user-developer/spencer2.png",
         src: "http://140.115.236.71/demo-personal/DD104/web/T1901175/"
     },
     {
         title: "耀輝",
         description: "Snack Snake",
-        cover: "./img/user-developer/allen.png",
+        cover: "./img/user-developer/allen2.png",
         src: "http://140.115.236.71/demo-personal/DD104/web/T1901167/"
     },
     {
         title: "雅珺",
         description: "Powder Ski Resort",
-        cover: "./img/user-developer/grace.png",
+        cover: "./img/user-developer/grace2.png",
         src: "http://140.115.236.71/demo-personal/DD104/web/T1901164/1103demo/"
     },
     {
         title: "湘文",
         description: "Bonheur",
-        cover: "./img/user-developer/sharon.png",
+        cover: "./img/user-developer/sharon2.png",
         src: "http://140.115.236.71/demo-personal/DD104/web/T1901158/"
     },
     {
         title: "恒祥",
         description: "岳世界",
-        cover: "./img/user-developer/howard.png",
+        cover: "./img/user-developer/howard2.png",
         src: "http://140.115.236.71/demo-personal/DD104/web/T1901163/"
     }
 ];
