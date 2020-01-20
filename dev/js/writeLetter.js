@@ -93,6 +93,10 @@ let vm3 = new Vue({
     patternValue: [], //input radio 的value值
     letterPattern: 0, //存 使用者"選到"的飛機彩繪編號(matPatNo) 得值
     userNo: 0,
+    letCount: 0,//使用者的信紙數量
+    leftPosition: '0',
+    clickCount: 0,
+    origenCount:0,
   },
   methods: {
     clickPattern(e, index) {
@@ -102,33 +106,99 @@ let vm3 = new Vue({
       e.target.firstChild.checked = true;
       canvasSet();
     },
+    clickPatArrow(e){
+      let widthpx = Math.ceil(document.querySelector('#painteType .type').offsetWidth);//每個貼圖盒的寬度
+      let WINDOW_WIDTH = document.body.clientWidth;
+      let BOX_WIDTH = Math.ceil(widthpx/WINDOW_WIDTH*100);//貼圖盒佔整個螢幕的%數
+      let painteType = document.getElementById('painteType');
+      // const origenCount = vm3.clickCount;//存放起始可被點擊次數，不會被改動，拿來做判斷
+      // console.log(vm3.clickCount);
+      
+      if(e.target.id == "printArrow-Lf"){
+        if(vm3.clickCount == vm3.origenCount){
+          console.log('no');
+        }else{
+          vm3.clickCount ++;
+          vm3.leftPosition = `${Math.floor(parseInt(vm3.leftPosition) + BOX_WIDTH*1.8)}%`;
+          console.log(vm3.clickCount);
+        }
+      }else if(e.target.id == "printArrow-Rg"){
+        if(vm3.clickCount <= 0){
+          console.log('no');
+        }else{
+          vm3.clickCount --;
+          vm3.leftPosition = `${Math.floor(parseInt(vm3.leftPosition) - BOX_WIDTH*1.8)+1}%`;
+          console.log(vm3.clickCount);
+        }
+      }
+    }
   },
   mounted() {
     function onFulfilled(value) {
       //登入成功 -> 取用戶彩繪圖案、用戶郵戳
       vm3.userNo = value;
-      console.log(`userNo: ${vm3.userNo}`);
-      fetch('./phps/fetchAllUserMat.php')
-        .then(res => res.json()).then(json => {
-          //拆出 pattern
-          console.log(json);
+      return new Promise((resolve, reject) => {
+        if( vm3.letCount > 0 ){
+          // console.log(`userNo: ${vm3.userNo}`);
+          fetch('./phps/fetchAllUserMat.php')
+            .then(res => res.json()).then(json => {
+              //拆出 pattern
+              console.log(json);
 
-          for (let i = 0; i < json.data.length; i++) {
-            if (json.data[i].patternNo) {
-              vm3.userPattern.push(`url(${json.data[i].patternUrl})`);
-              vm3.patternValue.push(json.data[i].patternNo);//取 使用者"擁有"飛機彩繪的編號(matPatNo) 得值
-            }
-          }
-          for (let i = 0; i < json.data.length; i++) {
-            if (json.data[i].stampNo) {
-              vmUserStamp.userStamp.push(`url(${json.data[i].stampUrl})`);
-              vmUserStamp.stampValue.push(json.data[i].stampNo);//取 使用者飛機彩繪的編號得值(matPosNo)
-            }
-          }
-        })
-        .then(listenSubmitBtn)
+              for (let i = 0; i < json.data.length; i++) {
+                if (json.data[i].patternNo) {
+                  vm3.userPattern.push(`url(${json.data[i].patternUrl})`);
+                  vm3.patternValue.push(json.data[i].patternNo);//取 使用者"擁有"飛機彩繪的編號(matPatNo) 得值
+                }
+              }
+              for (let i = 0; i < json.data.length; i++) {
+                if (json.data[i].stampNo) {
+                  vmUserStamp.userStamp.push(`url(${json.data[i].stampUrl})`);
+                  vmUserStamp.stampValue.push(json.data[i].stampNo);//取 使用者飛機彩繪的編號得值(matPosNo)
+                }
+              }
+            })
+            .then(listenSubmitBtn)
+        }else{
+          reject(new Error('您的信紙用完了請前往商城購買'));
+        }
+      }).catch(onNoPapered)
     }
-    
+    //沒信紙
+    function onNoPapered(reason){
+      alert(reason);
+      let info = document.querySelector('.signInData h4');
+      let singInBox = document.getElementById('signInBg');
+      let closeSigin = document.getElementById('closeSigin');
+      let closeRegister = document.getElementById('closeRegister');
+      let signInCancelBtn = document.getElementById('signInCancelBtn');
+      let closeForget = document.getElementById('closeForget');
+
+      let goShopBtn = document.createElement('button');
+      let goShopBtnText = document.createElement('a');
+
+      singInBox.style.display = "block";
+      document.querySelector('.signInData').style=`
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+      `;
+      info.innerText = reason.message;
+      document.querySelector('.formsignInData').style.display="none";
+
+      closeSigin.style.display = "none";
+      closeRegister.style.display = "none";
+      closeForget.style.display = "none";
+      signInCancelBtn.style.display = "none";
+      goShopBtnText.innerText = "前往商城";
+      goShopBtn.setAttribute('id', 'goShopBtn');
+      goShopBtnText.setAttribute('href', './shop.html');
+
+      goShopBtn.appendChild(goShopBtnText);
+      document.querySelector('.signInData').appendChild(goShopBtn);
+    }
+
     // 監聽所有的submit按鈕(用戶郵戳)，當觸發點擊事件後，先檢查必要欄位是否有填值
     function listenSubmitBtn() {
       let submitStamp = document.getElementById('submitStamp').childNodes;
@@ -138,6 +208,8 @@ let vm3 = new Vue({
           e.preventDefault();//解掉冒泡事件
           e.stopPropagation();
           e.stopImmediatePropagation();
+          vmImgWrap.chooseStampUrl = e.target.children[0].style.backgroundImage;
+          // console.log(vmImgWrap.chooseStampUrl);
           writeLetterExm();
         })
       }
@@ -146,8 +218,47 @@ let vm3 = new Vue({
           e.preventDefault();//解掉冒泡事件
           e.stopPropagation();
           e.stopImmediatePropagation();
+          vmImgWrap.chooseStampUrl = e.target.children[0].style.backgroundImage;
           writeLetterExm();
         })
+      }
+      
+      // if(document.body.clientWidth <= 375){
+      //   let leftValue = Math.ceil(document.getElementById('painteType').offsetWidth);
+      //   if(leftValue>265)leftValue=265;
+      //   vm3.leftPosition = `${leftValue}%`;//計算輪播left值
+      // }else if(document.body.clientWidth <= 414){
+      //   let leftValue = Math.ceil(document.getElementById('painteType').offsetWidth);
+      //   if(leftValue>245)leftValue=245;
+      //   vm3.leftPosition = `${leftValue}%`;//計算輪播left值
+      // }else{
+      //   let leftValue = Math.ceil(document.getElementById('painteType').offsetWidth/13);
+      //   if(leftValue>68)leftValue=68;
+      //   vm3.leftPosition = `${leftValue}%`;//計算輪播left值
+      // }
+      
+      
+      
+      if(document.body.clientWidth <= 414){
+        //計算可以點擊的次數
+        vm3.clickCount = document.querySelectorAll('#painteType .type').length-1;
+        vm3.origenCount = document.querySelectorAll('#painteType .type').length-1;
+        //計算存放郵戳的總寬度
+        let patBoxlength = document.querySelectorAll('#painteType .type').length;
+        let oneWidth = document.querySelectorAll('#painteType .type')[0].offsetWidth;
+        let allPercentage = Math.floor((oneWidth*patBoxlength)/document.body.clientWidth*100*0.83);
+        // console.log(allPercentage);
+        vm3.leftPosition = `${allPercentage}%`;
+      }else{
+        //計算可以點擊的次數
+        vm3.clickCount = document.querySelectorAll('#painteType .type').length-3;
+        vm3.origenCount = document.querySelectorAll('#painteType .type').length-3;
+        //計算存放郵戳的總寬度
+        let patBoxlength = document.querySelectorAll('#painteType .type').length;
+        let oneWidth = document.querySelectorAll('#painteType .type')[0].offsetWidth;
+        let allPercentage = Math.floor((oneWidth*patBoxlength)/document.body.clientWidth*100*0.93)+1;
+        // console.log(allPercentage);
+        vm3.leftPosition = `${allPercentage}%`;
       }
     }
     function onRejected(reason) {
@@ -189,8 +300,10 @@ let vm3 = new Vue({
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
           let member = JSON.parse(xhr.responseText);
+          
           if (member.memNo) {
-            console.log(member.memNo);
+            vm3.letCount = member.letCount;
+            console.log(`我的信紙： ${vm3.letCount}`);
             resolve(member.memNo);
           } else {
             reject(new Error('請先登入才能寫信'))
@@ -403,18 +516,24 @@ function saveImage() {
   let sizeScale;
   img.src = vm2.letterUploadImg;//user上傳的圖片
   //判斷圖片是直式還是橫式，並換算user上傳圖片要縮小的比例
-  img.addEventListener('load', () => {
-  if(img.height > img.width){
-    sizeScale = img.height / 260;
+  // console.log(img.src.indexOf('base64'));
+  if(img.src.indexOf('base64') != -1){
+    img.addEventListener('load', () => {
+      if(img.height > img.width){
+        sizeScale = img.height / 260;
+      }else{
+        sizeScale = img.width / 415;
+      }
+      img.width = img.width / sizeScale;
+      img.height = img.height / sizeScale;
+      context.wrapText(textTittle.value, 40, img.height+70, 415, 28, 20, true);//60
+      context.wrapText(letterContant.value, 40, img.height+130, 415, 24, 16 , false);
+      context.drawImage(img, 40, 35, img.width, img.height);
+      })
   }else{
-    sizeScale = img.width / 415;
+    context.wrapText(textTittle.value, 40, 50, 415, 28, 20, true);//60
+    context.wrapText(letterContant.value, 40, 110, 415, 24, 16 , false);
   }
-  img.width = img.width / sizeScale;
-  img.height = img.height / sizeScale;
-  context.wrapText(textTittle.value, 40, img.height+70, 415, 28, 20, true);//60
-  context.wrapText(letterContant.value, 40, img.height+130, 415, 24, 16 , false);
-  context.drawImage(img, 40, 35, img.width, img.height);
-  })
 }
 
 //AJAX送資料到後端
@@ -446,8 +565,10 @@ function submitToLetterTable() {
   xhr.onload = function () {
     if (xhr.status == 200) {
       let json = JSON.parse(xhr.responseText);
+      // let json = xhr.responseText;
       console.log(json);
-      
+      document.getElementById("cavPaperN").innerText = '信紙:' + json.letCount;
+      document.getElementById("cavPaperH").innerText = '信紙:' + json.letCount;
       vmImgWrap.letUrl = `url('${json.data.letImgUrl}')`;//把圖片路徑塞去摺紙的畫面上
       vmImgWrap.letPattern = `url('${json.data.matPatUrl}')`;//用戶選擇的彩繪花紋
       // console.log(json);

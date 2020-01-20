@@ -23,7 +23,7 @@ Vue.component('manu', {
                         </div>
                     </div>
                     <div id="post2" class="panel-collapse collapse">
-                    <p class="panel-body"><ul><li>1.選擇分類<br>紙飛機的意義由自己賦予，也許心情抒發，也許生活趣事，一切就由選擇分類開始吧。</li><br><li>2.寫下內容<br>獨樂樂不如眾樂樂，有什麼大家必須知道的事情，最勁爆的踢爆、直擊與新聞，在此盡覽無遺。</li><br><li>3.漆上彩繪<br>選擇要漆上的彩繪，彩繪樣式可於<a href="./shop.html">商城</a>裡購買及設計。</li><br><li>4.選擇郵戳<br>選擇屬於自己的郵戳，郵戳樣式可於<a href="./shop.html">商城</a>裡購買及設計。</li><br><li>了解這些流程後快到<a href="./write-letter.html">寫信頁面</a>寫一封信吧。</li></ul></p><br>
+                    <p class="panel-body"><ul><li>1.選擇撈一封新聞或撈一封信<br>與時事接軌</li><br><li>2.寫下內容<br>獨樂樂不如眾樂樂，有什麼大家必須知道的事情，最勁爆的踢爆、直擊與新聞，在此盡覽無遺。</li><br><li>3.漆上彩繪<br>選擇要漆上的彩繪，彩繪樣式可於<a href="./shop.html">商城</a>裡購買及設計。</li><br><li>4.選擇郵戳<br>選擇屬於自己的郵戳，郵戳樣式可於<a href="./shop.html">商城</a>裡購買及設計。</li><br><li>了解這些流程後快到<a href="./write-letter.html">寫信頁面</a>寫一封信吧。</li></ul></p><br>
                     </div>
                 </div>
                 <div class="panel panel-default">
@@ -77,7 +77,8 @@ Vue.component('ver', {
             <h4>版本</h4>
             <p>1.0.0</p>
             <h4>版本內容</h4>
-            <p>紙飛機對每個人有不同意義<br>也許思念、也許請訴<br>也許祝福、也許願望<br>不論翱翔或墜落<br>飛出手的紙飛機<br>如果能再次回到手裡<br>會是什麼模樣呢？</p>
+            <p>天空裡飄著凝重的氣息，在忙碌的社會裡，已經沒有多餘的時間能夠交流情感，只能將來不及說或說不出⼝的⼼情堆砌在心裡。這個不斷飛翔的世界中，可以所有情緒包裹成紙⾶機拋向天際，讓象徵⾃由的紙飛機飄盪在宇宙空間之中，帶領著世界飛向更親近的未來。 
+            </p>
         </div>
             
        
@@ -95,37 +96,37 @@ var works = [
     {
         title: "峻瑜",
         description: "Radara",
-        cover: "./img/user-developer/mike.png",
+        cover: "./img/user-developer/mike2.png",
         src: "http://140.115.236.71/demo-personal/DD104/web/T1901173/"
     },
     {
         title: "宗翰",
         description: "&on",
-        cover: "./img/user-developer/spencer.png",
+        cover: "./img/user-developer/spencer2.png",
         src: "http://140.115.236.71/demo-personal/DD104/web/T1901175/"
     },
     {
         title: "耀輝",
         description: "Snack Snake",
-        cover: "./img/user-developer/allen.png",
+        cover: "./img/user-developer/allen2.png",
         src: "http://140.115.236.71/demo-personal/DD104/web/T1901167/"
     },
     {
         title: "雅珺",
-        description: "Powder Ski Resort",
-        cover: "./img/user-developer/grace.png",
+        description: "Powder",
+        cover: "./img/user-developer/grace2.png",
         src: "http://140.115.236.71/demo-personal/DD104/web/T1901164/1103demo/"
     },
     {
         title: "湘文",
         description: "Bonheur",
-        cover: "./img/user-developer/sharon.png",
+        cover: "./img/user-developer/sharon2.png",
         src: "http://140.115.236.71/demo-personal/DD104/web/T1901158/"
     },
     {
         title: "恒祥",
         description: "岳世界",
-        cover: "./img/user-developer/howard.png",
+        cover: "./img/user-developer/howard2.png",
         src: "http://140.115.236.71/demo-personal/DD104/web/T1901163/"
     }
 ];
@@ -224,8 +225,14 @@ function showMemColor(json){//依intColor資料顯示介面顏色
         if (member.memNo) {
             if(member.intColor==0){
                 document.getElementById("intColor").style.backgroundColor = "rgba(255, 190, 0, .2)";
+                $("#intColorBtn0").addClass("on");
+                $("#intColorBtn1").removeClass("on");
+                alert('外觀顏色已更換');
             }else{
                 document.getElementById("intColor").style.backgroundColor = "rgba(0,120, 250, .2)";
+                $("#intColorBtn1").addClass("on");
+                $("#intColorBtn0").removeClass("on");
+                alert('外觀顏色已更換');
             }
             document.getElementById("signInBg").style.display = "none";
         }else{
@@ -451,6 +458,11 @@ function showMemData(json){
     document.getElementById('setMemNo_name').placeholder = memdata.memName+'-'+memdata.memNo;
     document.getElementById('setPassword').placeholder = memdata.memPsw;
     document.getElementById('setPasswordCheck').placeholder = memdata.memPsw;
+    if(memdata.intColor==0){
+        $("#intColorBtn0").addClass("on");
+    }else{
+        $("#intColorBtn1").addClass("on");
+    }
 }
 
 //////////////////取得登入資訊 依登入狀況呈現登入資訊

@@ -22,6 +22,7 @@ let vmImgWrap = new Vue({
     letUrl: '',
     letPattern: '',
     gobackFlag: false,
+    chooseStampUrl:'',
   },
   watch:{
     gobackFlag: {
@@ -54,6 +55,7 @@ function confirmSubmit(){
     }else if( pageUrlTitle == "catch-letter" ){
       //將資料送去php程式
       submitLeaveMsg();
+      document.getElementById('reduceLetCount').remove();
       document.getElementById('catchLetterMain').style.animationName = "elementDisappear";
       document.getElementById('catchLetterMain').style.animationDelay = ".5s";
       document.getElementById('catchLetterMain').style.animationDuration = ".8s";

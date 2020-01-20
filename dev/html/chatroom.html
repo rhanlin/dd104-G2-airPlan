@@ -90,7 +90,7 @@
                 } else {
                     //=====聊天列表為空時
                     $('.sectionOver').append(
-                        `<div class='sectionMark1'><div class='overImg'><img src='./img/share/LOGO.png'></div><p>Air Plan</p></div>`
+                        `<div class='sectionMark1 MarkRed'><div class='overImg'><img src='./img/share/LOGO.png'></div><p>Air Plan</p></div>`
                     );
                     $('.pageContent').append(
                         `<div class='contentYour'><div class='overImg'><img src='./img/share/LOGO.png'></div><p>快加入好友，一起來聊天吧！</p></div>`
@@ -112,7 +112,7 @@
                     get_Data(userMemNo); //=====執行撈聊天列表
                 } else {
                     $('.sectionOver').append(
-                        `<div class='sectionMark1'><div class='overImg'><img src='./img/share/LOGO.png'></div><p>Air Plan</p></div>`
+                        `<div class='sectionMark1 MarkRed'><div class='overImg'><img src='./img/share/LOGO.png'></div><p>Air Plan</p></div>`
                     );
                     $('.pageContent').append(
                         `<div class='contentYour'><div class='overImg'><img src='./img/share/LOGO.png'></div><p>請先登入</p></div>`
@@ -139,8 +139,13 @@
                 } else {
                     for (var i in data) {
                         if (data[i].user2 != member.memNo) {
+                            console.log(data[i].matPosUrl)
                             $('.sectionOver').append(
                                 `<div class='sectionMark1'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].mem2}-${data[i].user2}</p></div>`
+                            );
+                        } else {
+                            $('.sectionOver').append(
+                                `<div class='sectionMark1'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].mem1}-${data[i].user1}</p></div>`
                             );
                         }
                     }
@@ -158,15 +163,30 @@
             for (var i in data) {
                 // console.log(str['chat'][i].chatContent);
                 // console.log(data[i].memNo1)
-                if (data[i].memNo1 == member.memNo) {
-                    $(`.pageContent`).append(
-                        `<div class='contentMe'><p>${data[i].chatContent}</p></div>`);
-                    // console.log(str['chat'][i].chatContent);
+                if (data[i].chatContent != null) {
+                    if (data[i].memNo1 == member.memNo) {
+                        $(`.pageContent`).append(
+                            `<div class='contentMe'><p>${data[i].chatContent}</p></div>`);
+                        // console.log(str['chat'][i].chatContent);
+                    } else {
+                        $('.pageContent').append(
+                            `<div class='contentYour'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].chatContent}</p></div>`
+                        );
+                    }                    
                 } else {
                     $('.pageContent').append(
-                        `<div class='contentYour'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].chatContent}</p></div>`
-                    );
+                            `<div class='contentYour'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>你們已經是好友囉~快來聊天吧~~</p></div>`
+                        );
                 }
+                // if (data[i].memNo1 == member.memNo) {
+                //     $(`.pageContent`).append(
+                //         `<div class='contentMe'><p>${data[i].chatContent}</p></div>`);
+                //     // console.log(str['chat'][i].chatContent);
+                // } else {
+                //     $('.pageContent').append(
+                //         `<div class='contentYour'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].chatContent}</p></div>`
+                //     );
+                // }
             }
         }
 

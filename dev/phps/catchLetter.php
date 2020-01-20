@@ -2,7 +2,7 @@
 <?php
 try {
   require_once("connectBook_root.php");
-  $sql = "SELECT * FROM `letter` where memNo != :memNo ORDER BY RAND() LIMIT 1";
+  $sql = "SELECT * FROM `letter` where memNo != :memNo and letStatus != 1 ORDER BY RAND() LIMIT 1";
   $memNo = $_POST['memNo'];
   $randLetter = $pdo->prepare($sql);
   $randLetter->bindValue(':memNo',$memNo);
