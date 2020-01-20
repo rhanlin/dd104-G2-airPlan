@@ -22,6 +22,7 @@ let vmImgWrap = new Vue({
     letUrl: '',
     letPattern: '',
     gobackFlag: false,
+    chooseStampUrl:'',
   },
   watch:{
     gobackFlag: {

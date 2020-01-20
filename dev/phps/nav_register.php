@@ -27,22 +27,22 @@ try {
 		$sqlM = "insert into `matpostmark` (memNo, matPosName, matPosUrl, mugStatus, matPosLSort, matPosSSort) values (:memNo, :matPosName, :matPosUrl, :mugStatus, :matPosLSort, :matPosSSort)";
 		$matpostmark = $pdo->prepare($sqlM);
 		$matpostmark->bindValue(':memNo',$matpostmarkMemNo );
-		$matpostmark->bindValue(':matPosName', '足球');
-		$matpostmark->bindValue(':matPosUrl', './phps/userStamp/user-stamp_2.png');
+		$matpostmark->bindValue(':matPosName', '郵戳');
+		$matpostmark->bindValue(':matPosUrl', './phps/userStamp/user-stamp-default-1.png');
 		$matpostmark->bindValue(':mugStatus', '1');
 		$matpostmark->bindValue(':matPosLSort', 'postmark');
-		$matpostmark->bindValue(':matPosSSort', 'football');
+		$matpostmark->bindValue(':matPosSSort', 'postmark');
 		$matpostmark->execute();
 		
 		$matpatternMemNo=$memRowRS["memNo"];
 		$sqlP = "insert into `matpattern` (memNo, matPatName, matPatUrl, PatStatus, matPatLSort, matPatSSort) values (:memNo, :matPatName, :matPatUrl, :PatStatus, :matPatLSort, :matPatSSort);";
 		$matpattern = $pdo->prepare($sqlP);
 		$matpattern->bindValue(':memNo',$matpatternMemNo );
-		$matpattern->bindValue(':matPatName', '黃點點');
+		$matpattern->bindValue(':matPatName', '圖案');
 		$matpattern->bindValue(':matPatUrl', './phps/userPattern/plan-pattern-1.png');
 		$matpattern->bindValue(':PatStatus', '1');
 		$matpattern->bindValue(':matPatLSort', 'pattern');
-		$matpattern->bindValue(':matPatSSort', 'point');
+		$matpattern->bindValue(':matPatSSort', 'pattern');
 		$matpattern->execute();
 	}else{ //已註冊過
 		echo "{}";//傳回空的JSON字串
