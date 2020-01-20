@@ -37,14 +37,20 @@
       justify-content: center;
 
       .choosw {
-        padding: 8% 10%;
-        background-color: green;
+        background-color: $main-red;
         margin: 0 2%;
         font-size: 2rem;
-        width: 30vw;
-        border-radius: $main-borderRadius;
-        border: 2px solid $main-black;
+        width: 25vw;
+        height: 15vw;
+        border-radius: 10px;
+        border: 2px solid #212121;
         cursor: pointer;
+        filter: opacity(0.8);
+        color: #fff;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
       }
     }
 

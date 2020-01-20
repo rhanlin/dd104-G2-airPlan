@@ -84,7 +84,19 @@
     position: relative;
     filter: drop-shadow(0px 0px 15px #bbb);
     z-index: 9;
-
+    .msg{
+      display: inline-block;
+      color: $main-dark-red;
+      font-size: 3rem;
+      font-weight: bold;
+      text-shadow: black -1px 0px, black 0px 1px, black 1px 0px, black 0px -1px;
+      animation: letCountMsg 3s ease;
+      animation-delay: .5s;
+      position: absolute;
+      top: 10%;
+      left: -40%;
+      opacity: 0;
+    }
     #planeShadow {
       width: 5%;
       height: 75%;
@@ -174,6 +186,7 @@
     -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 40%, 100% 100%, 0 100%, 0 40%, 0 0);
     clip-path: polygon(50% 0%, 100% 0, 100% 40%, 100% 100%, 0 100%, 0 40%, 0 0);
     z-index: 99;
+    
   }
   #selectStamp {
     height: 60%;
@@ -481,6 +494,16 @@
   }
 }
 
+@keyframes letCountMsg{
+  0% {
+    top: 50%;
+    opacity: 1;
+  }
+100% {
+    top: -10%;
+    opacity: 0;
+  }
+}
 
 @keyframes foldAnimationStep2 {
   from {

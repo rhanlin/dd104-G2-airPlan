@@ -3,7 +3,7 @@ require_once "connectBook_root.php";
 switch ($_GET['get']) {
 
 //===============頁面onload後直接抓回64筆商城卡片資料給vue data=>items===============================
-    case "shop_axios_post";
+    case "shop_axios_post":
         try {
 
             $sql = "select prodUrl from `product`";
@@ -22,7 +22,7 @@ switch ($_GET['get']) {
         }
         break;
 //====================測試能否順利撈取和顯示存入material表格的所有圖檔===========================
-    case "shop_getmaterial";
+    case "shop_getmaterial":
 
         try {
 
@@ -46,7 +46,7 @@ switch ($_GET['get']) {
         break;
 
 //     //====================把會員目前持有的air幣 從資料庫中撈回，顯示在頁面右上角的fixed區塊===========================
-    case "shop_getMemberCoin";
+    case "shop_getMemberCoin":
         try {
 
             $sql = "select * from `member` where memNo=:memNo ";
@@ -68,7 +68,7 @@ switch ($_GET['get']) {
         break;
 
 //     //====================測試能否順利撈取和顯示存入material表格的所有圖檔===========================
-    case "shop_getOnlyMaterial";
+    case "shop_getOnlyMaterial":
         try {
 
             $sql = "select `matName`,`matURL` from `material` where memNo=:memNo and matLSort='material'";
@@ -90,7 +90,7 @@ switch ($_GET['get']) {
         break;
 
     //====================測試能否順利撈取和顯示存入material表格的所有圖檔===========================
-    case "shop_getonlyTool";
+    case "shop_getonlyTool":
         try {
 
             $sql = "select `matName`,`matURL` from `material` where memNo=:memNo  and matLSort='tool'";
@@ -112,7 +112,7 @@ switch ($_GET['get']) {
         break;
 
     //=============把商城的商品清單從資料庫撈出 放上各自跳窗頁面=============================================
-    case "shop_prodItemGetInfo";
+    case "shop_prodItemGetInfo":
         try {
             $sql = "select `matNameCH`,`matInfo`,`matChance`,`prodPrice`  from `product`";
             $product = $pdo->query($sql);

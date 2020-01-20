@@ -268,7 +268,7 @@
                 height: 41.5vw;
                 max-height: 740px;
                 margin: 0 auto;
-                background-image: url(../img/share/postCard.svg);
+                background-image: url(../img/share/postCard-horizontal.svg);
                 background-position: center;
                 background-size: cover;
                 display: flex;
@@ -753,17 +753,28 @@
                 .reverse {
                     transform: scaleX(-1);
                 }
-
+                .pt_crousel{
+                    width: 65%;
+                    height: 180%;
+                    display: inline-block;
+                    overflow-x: hidden;
+                    position: relative;
+                }
                 .painte-type {
-                    width: 60%;
-                    height: 100%;
-                    // border: 1px solid red;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-
+                    width: auto;
+                    height: 150px;
+                    display: inline-block;
+                    margin: 0 auto;
+                    white-space: nowrap;
+                    position: absolute;
+                    top: 54%;
+                    left: 67%;
+                    transform: translate(-50%,-50%);
+                    animation-delay: .5s;
+                    animation-duration: 1s;
+                    transition: left 1s;
                     .type {
-                        width: 30%;
+                        width: 18vw;
                         height: 100%;
                         // border: 1px solid green;
                         background-image: url(../img/write-letter/print-type-box-blue.svg);
@@ -771,6 +782,7 @@
                         background-position: center;
                         position: relative;
                         cursor: pointer;
+                        margin-right: 12px;
                         // transform: rotate3d(.1, 0, 0, 30deg);
 
                         &.active {
@@ -793,10 +805,10 @@
 
                         .print-type-pattern {
                             display: inline-block;
-                            width: 46%;
-                            height: 46%;
-                            -webkit-clip-path: polygon(65% 9%, 52% 8%, 41% 21%, 29% 26%, 11% 41%, 0 59%, 3% 85%, 20% 90%, 30% 85%, 35% 97%, 51% 95%, 68% 76%, 83% 70%, 100% 50%, 100% 37%);
-                            clip-path: polygon(65% 9%, 52% 8%, 41% 21%, 29% 26%, 11% 41%, 0 59%, 3% 85%, 20% 90%, 30% 85%, 35% 97%, 51% 95%, 68% 76%, 83% 70%, 100% 50%, 100% 37%);
+                            width: 104px;
+                            height: 70px;
+                            -webkit-clip-path: polygon(65% 9%, 52% 8%, 41% 21%, 29% 26%, 11% 41%, 0 59%, 3% 85%, 20% 90%, 30% 85%, 35% 97%, 51% 95%, 68% 76%, 83% 66%, 98% 47%, 100% 37%);
+                            clip-path: polygon(65% 9%, 52% 8%, 41% 21%, 29% 26%, 11% 41%, 0 59%, 3% 85%, 20% 90%, 30% 85%, 35% 97%, 51% 95%, 68% 76%, 83% 66%, 98% 47%, 100% 37%);
                             background-repeat: no-repeat;
                             background-position: center;
                             background-size: cover;
@@ -816,8 +828,8 @@
                             background-repeat: no-repeat;
                             background-position: center;
                             position: absolute;
-                            top: 20%;
-                            left: 72%;
+                            top: 17%;
+                            left: 66%;
                             transform: translate(-50%, -50%);
                             pointer-events: none;
 
@@ -848,16 +860,16 @@
 
                         &:hover .printScraper {
                             top: -20%;
-                            left: 90%;
+                            left: 80%;
                             background-image: url(../img/write-letter/print-scraper-yellow.svg);
                             pointer-events: none;
                         }
 
                         .preview-paper {
                             display: inline-block;
-                            height: 126%;
-                            width: 74%;
-                            transform: rotateX(-51deg) rotateY(0deg) rotateZ(44deg);
+                            height: 120%;
+                            width: 55%;
+                            transform: rotateX(-51deg) rotateY(2deg) rotateZ(44deg) translateX(25%);
                             z-index: -1;
                             position: absolute;
                             border: .15vw solid #212121;
@@ -1494,27 +1506,38 @@
                         right: 5%;
                         transform: scaleX(-1) translateY(-50%);
                     }
-
+                    .pt_crousel{
+                        width: 80%;
+                        height: 120%;
+                        display: inline-block;
+                        overflow-x: hidden;
+                        position: relative;
+                    }
                     .painte-type {
-                        display: block;
-                        overflow: hidden;
-                        width: 65%;
-                        padding: 0 5%;
+                        width: auto;
+                        height: 150px;
+                        display: inline-block;
+                        margin: 0 auto;
+                        white-space: nowrap;
+                        position: absolute;
+                        top: 54%;
+                        left: 64%;
+                        transform: translate(-50%, -50%);
 
                         .type {
-                            width: 100%;
+                            width: 20vw;
 
                             &.active {}
 
                             .print-type-pattern {
-                                transform: translate(-54%, -48%) rotateY(-35deg);
-                                width: 40%;
+                                // transform: translate(-54%, -48%) rotateY(-35deg);
+                                // width: 40%;
                             }
 
                             .printScraper {
-                                top: 24%;
-                                left: 62%;
-                                width: 27%;
+                                top: 20%;
+                                left: 73%;
+                                width: 40%;
 
                                 &.active {}
                             }
@@ -1530,7 +1553,7 @@
                             }
 
                             .preview-paper {
-                                height: 90%;
+                                height: 110%;
                                 width: 74%;
                                 transform: rotateX(-51deg) rotateY(0deg) rotateZ(44deg) translate(6%, 5%);
                                 z-index: -99;
@@ -2014,25 +2037,37 @@
                         right: 5%;
                         transform: scaleX(-1) translateY(-50%);
                     }
-
-                    .painte-type {
-                        display: block;
-                        overflow: hidden;
+                    .pt_crousel{
                         width: 65%;
-                        padding: 0 5%;
+                        height: 120%;
+                        display: inline-block;
+                        overflow-x: hidden;
+                        position: relative;
+                    }
+                    .painte-type {
+                        //576-376
+                        width: auto;
+                        height: 150px;
+                        display: inline-block;
+                        margin: 0 auto;
+                        white-space: nowrap;
+                        position: absolute;
+                        top: 46%;
+                        left: 245%;
+                        transform: translate(-50%, -50%);
 
                         .type {
-                            width: 100%;
+                            width: 300px;
 
                             &.active {}
 
                             .print-type-pattern {
-                                transform: translate(-50%, -46%) rotateX(40deg);
+                                // transform: translate(-50%, -46%) rotateX(40deg);
                             }
 
                             .printScraper {
-                                top: 28%;
-                                left: 70%;
+                                top: 21%;
+                                left: 63%;
 
                                 &.active {}
                             }
@@ -2049,9 +2084,9 @@
                             }
 
                             .preview-paper {
-                                height: 90%;
-                                width: 74%;
-                                transform: rotateX(-51deg) rotateY(0deg) rotateZ(44deg) translate(6%, 5%);
+                                height: 120%;
+                                width: 55%;
+                                transform: rotateX(-51deg) rotateY(2deg) rotateZ(44deg) translateX(25%);
                                 z-index: -99;
 
                                 &.active {}
@@ -2538,25 +2573,41 @@
                         right: 5%;
                         transform: scaleX(-1) translateY(-50%);
                     }
-
-                    .painte-type {
-                        display: block;
-                        overflow: hidden;
+                    .pt_crousel{
                         width: 65%;
-                        padding: 0 5%;
+                        height: 120%;
+                        display: inline-block;
+                        overflow-x: hidden;
+                        position: relative;
+                    }
+                    .painte-type {
+                        //375
+                        width: auto;
+                        height: 120px;
+                        display: inline-block;
+                        margin: 0 auto;
+                        white-space: nowrap;
+                        position: absolute;
+                        top: 46%;
+                        left: 265%;
+                        transform: translate(-50%, -50%);
 
                         .type {
-                            width: 100%;
+                            width: 300px;
 
                             &.active {}
 
                             .print-type-pattern {
-                                transform: translate(-50%, -46%) rotateX(40deg);
+                                display: inline-block;
+                                width: 80px;
+                                height: 55px;
+                                top: 41%;
+                                left: 53%;
                             }
 
                             .printScraper {
-                                top: 28%;
-                                left: 70%;
+                                top: 21%;
+                                left: 63%;
 
                                 &.active {}
                             }
@@ -2573,11 +2624,10 @@
                             }
 
                             .preview-paper {
-                                height: 90%;
-                                width: 74%;
-                                transform: rotateX(-51deg) rotateY(0deg) rotateZ(44deg) translate(6%, 5%);
+                                height: 120%;
+                                width: 45%;
+                                transform: rotateX(-51deg) rotateY(2deg) rotateZ(44deg) translateX(40%);
                                 z-index: -99;
-
                                 &.active {}
                             }
                         }

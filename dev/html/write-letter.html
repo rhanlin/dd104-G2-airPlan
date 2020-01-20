@@ -155,8 +155,11 @@
             </div>
       
             <div class="select-paintes">
-                <span class="arrow-white"></span>
-                    <div id="painteType" class="painte-type">
+                <span id="printArrow-Lf" class="arrow-white"
+                @click.prevent="clickPatArrow($event)" 
+                @touchstart.prevent="clickPatArrow($event)"></span>
+                <div class="pt_crousel">
+                    <div id="painteType" class="painte-type" :style="{left: leftPosition}">
                         
                         <template v-for="(item, index) in userPattern.length">
                             <label class="type" :class="{active: index === openIndex}"
@@ -171,7 +174,11 @@
                         </template>
                         
                     </div>
-                <span class="arrow-white reverse"></span>
+                </div>
+                    
+                <span id="printArrow-Rg" class="arrow-white reverse" 
+                @click.prevent="clickPatArrow($event)" 
+                @touchstart.prevent="clickPatArrow($event)"></span>
             </div>
 
         </section>
