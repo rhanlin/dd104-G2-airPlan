@@ -51,52 +51,115 @@
   <script src="./js/perfect-scrollbar.min.js"></script>
   <script src="./js/coreui.min.js"></script>
   <script>
-    $.post("./phps/bg_saveBanArtile.php?", {
-        type: 'catching',
+    $.post("./phps/bg_saveBan.php", {
+        type: 'catchingComment',
       },
       res => {
 
         res = JSON.parse(res);
-        console.log(res.length)
-        select = document.createElement('select')
-        var handleArr = ['未處理', '已下架', '保持上架']
-        for (x = 0; x < 3; x++) {
-          option = document.createElement('option');
-          option.setAttribute("value", x);
-          option.innerHTML = handleArr[x];
-          select.appendChild(option);
-        };
+        // console.log(res.length)
 
+        var handleArr = ['未處理', '已處理'];
+        var passArr = ['未通過', '已通過'];
+        let BanArtileInfo = document.getElementById("BanArtileInfo");
 
         for (j = 0; j < res.length; j++) {
           var tr = document.createElement('tr');
+
+          var select1 = document.createElement('select')
+          var select2 = document.createElement('select')
+          var td2 = document.createElement('td');
+          var td3 = document.createElement('td');
+
+          for (x = 0; x < 2; x++) {
+            option = document.createElement('option');
+            option.setAttribute("value", x);
+            if (res[j].letRepStatus == x) {
+              option.setAttribute("defaultSelected", true);
+
+            }
+            option.innerHTML = handleArr[x];
+            select1.appendChild(option);
+          };
+          select1.appendChild(option);
+          td2.appendChild(select1);
+
+
+
+          for (g = 0; g < 2; g++) {
+            option2 = document.createElement('option');
+            option2.setAttribute("value", g);
+            if (res[j].msgRepPass == g) {
+              option2.setAttribute("defaultSelected", true);
+            }
+            option2.innerHTML = passArr[g];
+            select2.appendChild(option2);
+          };
+          // console.log(passArr[0])
+          select2.appendChild(option2);
+          td3.appendChild(select2);
+
+          select1.classList.add("form_control1");
+          select2.classList.add("form_control2");
           for (i = 0; i < 5; i++) {
-            var td = document.createElement('td');
-            arr = [res[j].letRepNo, res[j].memNo, res[j].letNo, res[j].letRepTime, res[j].letRepReason
-              // , res[j].letRepStatus
-            ];
+            var td = document.createElement('td');;
             // console.log(td);
+            arr = [res[j].msgRepNo, res[j].memNo, res[j].msgNo, res[j].msgRepTime, res[j].msgRepReason];
             td.innerHTML = arr[i];
             tr.appendChild(td);
 
-            var td2 = document.createElement('td');
-            td2.appendChild(select);
-      
             tr.appendChild(td2);
+            tr.appendChild(td3);
           };
 
-          let BanArtileInfo = document.getElementById("BanArtileInfo");
+          // tr.childNodes[2].classList.add("letterNo");
           BanArtileInfo.appendChild(tr);
         }
       });
 
-    // document.getElementsByTagName('select').classList.add("form_control")
+    $(document).on('change', '.form_control1', function () {
+      msgNo = $(this).parent().prev().prev().prev().html();
+      console.log('msgNo:', msgNo);
+      // console.log(this.selectedIndex);
+      // var BanArtileValue = e.target.value;
+      // $(this.options).prop("selected", false);
+      $(this.options).removeAttr("selected");
+      // this.options.removeAttribute("selected");
+      // this.options[this.selectedIndex].setAttribute("selected", true)
+      $(this.options[this.selectedIndex]).attr("selected", "selected")
+      if ($(this.options[this.selectedIndex]).attr("selected", "selected")) {
+        var newNumber = $(this.options[this.selectedIndex]).val()
+        console.log(newNumber);
+        // console.log(msgNo);
+        $.post("./phps/bg_saveBan.php", {
+          type: 'savingComment',
+          newNumber: newNumber,
+          msgNo: msgNo,
+        });
+      }
+    })
 
-    function saveResult(e) {
-      console.log(e.target)
-      // document.querySelectorAll('.form_control')
-    }
-    window.addEventListener('change', saveResult);
+    $(document).on('change', '.form_control2', function () {
+      msgNo2 = $(this).parent().prev().prev().prev().prev().html();
+      console.log('msgNo2:', msgNo2)
+      // console.log(this.selectedIndex);
+      // var BanArtileValue = e.target.value;
+      // $(this.options).prop("selected", false);
+      $(this.options).removeAttr("selected");
+      // this.options.removeAttribute("selected");
+      // this.options[this.selectedIndex].setAttribute("selected", true)
+      $(this.options[this.selectedIndex]).attr("selected", "selected")
+      if ($(this.options[this.selectedIndex]).attr("selected", "selected")) {
+        var newNumber = $(this.options[this.selectedIndex]).val()
+        console.log(newNumber);
+        // console.log(msgNo2);
+        $.post("./phps/bg_saveBan.php", {
+          type: 'savingComment2',
+          newNumber: newNumber,
+          msgNo: msgNo2,
+        });
+      }
+    })
   </script>
 </body>
 

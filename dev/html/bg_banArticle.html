@@ -52,29 +52,35 @@
   <script src="./js/perfect-scrollbar.min.js"></script>
   <script src="./js/coreui.min.js"></script>
   <script>
-    $.post("./phps/bg_saveBanArtile.php", {
+    $.post("./phps/bg_saveBan.php", {
         type: 'catching',
       },
       res => {
         // var bSelected = false;
         res = JSON.parse(res);
-        console.log(res.length)
-        select = document.createElement('select')
-        // select.setAttribute("id", "select");
-        var handleArr = ['未處理', '已下架', '保持上架']
-        for (x = 0; x < 3; x++) {
-          option = document.createElement('option');
-          option.setAttribute("value", x);
-          if (res[0].letRepStatus == x) {
-            option.setAttribute("defaultSelected", true);
-          }
-          option.innerHTML = handleArr[x];
-          select.appendChild(option);
-        };
-        // select.options[select.options.selectedIndex].selected = true;
+        // console.log(res.length)
+
+        var handleArr = ['未處理', '已下架', '保持上架'];
+        let BanArtileInfo = document.getElementById("BanArtileInfo");
 
         for (j = 0; j < res.length; j++) {
           var tr = document.createElement('tr');
+          // select.options[select.options.selectedIndex].selected = true;
+          var select = document.createElement('select')
+          var td2 = document.createElement('td');
+
+          for (x = 0; x < 3; x++) {
+            option = document.createElement('option');
+            option.setAttribute("value", x);
+            if (res[j].letRepStatus == x) {
+              option.setAttribute("defaultSelected", true);
+            }
+            option.innerHTML = handleArr[x];
+            select.appendChild(option);
+          };
+          select.appendChild(option);
+          td2.appendChild(select);
+          select.classList.add("form_control");
           for (i = 0; i < 5; i++) {
             var td = document.createElement('td');
             arr = [res[j].letRepNo, res[j].memNo, res[j].letNo, res[j].letRepTime, res[j].letRepReason
@@ -83,25 +89,17 @@
             // console.log(td);
             td.innerHTML = arr[i];
             tr.appendChild(td);
+            tr.appendChild(td2);
           };
-          var td2 = document.createElement('td');
-          td2.appendChild(select);
-          select.classList.add("form_control");
-          tr.appendChild(td2);
 
           tr.childNodes[2].classList.add("letterNo");
-          let BanArtileInfo = document.getElementById("BanArtileInfo");
           BanArtileInfo.appendChild(tr);
         }
       });
 
-
-
-
-
     $(document).on('change', 'select', function () {
-      letterNo = document.getElementsByClassName('letterNo')[0];
-      letterNoNum = letterNo.innerHTML
+      letterNo = $(this).parent().prev().prev().prev().html();
+      // console.log(letterNo)
       // console.log(this.selectedIndex);
       // var BanArtileValue = e.target.value;
       // $(this.options).prop("selected", false);
@@ -112,11 +110,11 @@
       if ($(this.options[this.selectedIndex]).attr("selected", "selected")) {
         var newNumber = $(this.options[this.selectedIndex]).val()
         console.log(newNumber);
-        console.log(letterNoNum);
-        $.post("./phps/bg_saveBanArtile.php", {
+
+        $.post("./phps/bg_saveBan.php", {
           type: 'saving',
           newNumber: newNumber,
-          letterNoNum: letterNoNum,
+          letterNoNum: letterNo,
         });
       }
     })
