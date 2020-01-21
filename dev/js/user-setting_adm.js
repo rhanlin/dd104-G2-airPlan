@@ -23,7 +23,7 @@ Vue.component('manu', {
                         </div>
                     </div>
                     <div id="post2" class="panel-collapse collapse">
-                    <p class="panel-body"><ul><li>1.選擇撈一封新聞或撈一封信<br>與時事接軌</li><br><li>2.寫下內容<br>獨樂樂不如眾樂樂，有什麼大家必須知道的事情，最勁爆的踢爆、直擊與新聞，在此盡覽無遺。</li><br><li>3.漆上彩繪<br>選擇要漆上的彩繪，彩繪樣式可於<a href="./shop.html">商城</a>裡購買及設計。</li><br><li>4.選擇郵戳<br>選擇屬於自己的郵戳，郵戳樣式可於<a href="./shop.html">商城</a>裡購買及設計。</li><br><li>了解這些流程後快到<a href="./write-letter.html">寫信頁面</a>寫一封信吧。</li></ul></p><br>
+                    <p class="panel-body"><ul><li>1.撈一封新聞或撈一封信<br>揮下網子撈一封新聞或撈一封信來閱讀</li><br><li>2.蓋郵戳<br>蓋下郵戳後打開信件</li><br><li>3.打賞或檢舉信件及留言<br>閱讀信件或留言內容後可以打賞或檢舉信件及留言</li><br><li>4.留言<br>留下自己對信件的看法</li><br><li>5.蓋郵戳<br>再次蓋上郵戳，自己的印記代表閱讀過</li><br><li>6.折飛機<br>按照指示信紙折成紙飛機</li><br><li>7.射飛機<br>點按紙飛機將飛機射回天空中</li><br><li>8.選擇下一步<br>選擇<a href="./write-letter.html">寫信頁面</a>寫一封信、<a href="catch-letter.html">再撈一封信</a>或到<a href="cave.html">我的倉庫</a>查看信件</li></ul></p><br>
                     </div>
                 </div>
                 <div class="panel panel-default">
@@ -33,7 +33,7 @@ Vue.component('manu', {
                         </div>
                     </div>
                     <div id="post3" class="panel-collapse collapse">
-                        <p class="panel-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis nam natus error et deserunt molestias placeat debitis nobis facilis quae. Sunt laudantium inventore hic omnis ab aliquam assumenda delectus corporis.</p>
+                    <p class="panel-body"><ul><li>1.選購素材<br>選擇郵戳、圖案、工具的頁籤選購商品，點選後按下購買按鈕即可扣Air幣購買素材。</li><br><li>2.客製圖案及郵戳<br>選擇自己的素材到畫板上即可開始客製編輯素材，也可購買畫筆及橡皮擦等工具來輔助及增添客製化趣味</li><br><li>3.點選下載紐<br>客製完成的圖案及郵戳就會立即送到<a href="cave.html">我的倉庫</a>及下載到使用者的電腦裡囉。</li></ul></p><br>
                     </div>
                 </div>
                 <div class="panel panel-default">
@@ -43,7 +43,7 @@ Vue.component('manu', {
                         </div>
                     </div>
                     <div id="post4" class="panel-collapse collapse">
-                        <p class="panel-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis nam natus error et deserunt molestias placeat debitis nobis facilis quae. Sunt laudantium inventore hic omnis ab aliquam assumenda delectus corporis.</p>
+                    <p class="panel-body"><ul><li>1.我的信件<br>點選我的信件按鈕即可查看我寫過的信，點選信件右邊則會顯示信件內容及留言。可針對信件和留言做打賞或檢舉動作</li><br><li>2.撈的信件<br>點選撈的信件按鈕即可查看我寫過的信，點選信件右邊則會顯示信件內容及留言。可針對信件和留言做打賞或檢舉動作</li><br><li>3.更換圖案<br>點選圖案頁籤，選擇一個圖案按下更換圖案即可設定為預設圖案。如果想再製作新的圖案可點選<a href="./shop.html">圖案+</a>跳轉到商城進行客製。</li><br><li>4.更換郵戳<br>點選郵戳頁籤，選擇一個郵戳按下更換郵戳即可設定為預設郵戳，而預設郵戳即是自己的大頭貼(聊天頁面、用戶設定頁面顯示)。如果想再製作新的郵戳可點選<a href="./shop.html">郵戳+</a>跳轉到商城進行客製</li><br><li>5.我的物品<br>我的物品區可瀏覽自己所有的素材及DIY工具。如果想再添購新的素材或工具可點選<a href="./shop.html">商城+</a>跳轉到商城進行購買</li></ul></p><br>
                     </div>
                 </div>
                 <div class="panel panel-default">
@@ -63,7 +63,7 @@ Vue.component('manu', {
                         </div>
                     </div>
                     <div id="post6" class="panel-collapse collapse">
-                        <p class="panel-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis nam natus error et deserunt molestias placeat debitis nobis facilis quae. Sunt laudantium inventore hic omnis ab aliquam assumenda delectus corporis.</p>
+                    <p class="panel-body"><ul><li>1.查看會員資訊<br>點選會員資料頁籤即可查看會員帳號、email、剩餘信紙及Air幣</li><br><li>2.修改密碼<br>點選修改密碼欄位旁的小齒輪，輸入舊的密碼後再輸入新的密碼及密碼確認，最後點選按扭送出。</li><br><li>3.更換郵戳<br>點選更換郵戳旁的小齒輪，頁面跳轉到<a href="cave.html">我的倉庫</a>的更換郵戳處後即可進行更換郵戳。</li><br><li>4.打賞紀錄<br>點選打賞紀錄的頁籤後即可查閱自己寫過信件的打賞紀錄，點按箭頭按鈕則可切換至留言打賞紀錄查閱自己留過言的打賞紀錄。</li><br><li>5.更換選單樣式<br>點選選單樣式的頁籤後即可選擇切換選單樣式紐。</li></ul></p><br>
                     </div>
                 </div>
             </div>
