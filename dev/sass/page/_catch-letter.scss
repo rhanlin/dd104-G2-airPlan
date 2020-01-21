@@ -457,11 +457,11 @@
         .redBtn{
           background:$main-dark-red;
         }
-        .blueBtn_light{
-          background:$main-blue;
+        .yellowBtn_light{
+          background:$main-yellow;
         }
-        .blueBtn{
-          background:$main-dark-blue;
+        .yellowBtn{
+          background:$main-dark-yellow;
         }
       }
       .likeBtn{
@@ -765,13 +765,19 @@
         }
 
         .like .button {
-          background: $main-blue;
-          box-shadow: 0 .5vw 0 0 $main-dark-blue;
+          background: $main-yellow;
+          box-shadow: 0 .5vw 0 0 $main-dark-yellow;
+          background-image: url(../img/cave/coin.png);
+          background-size: cover;
+          background-position: center;
         }
 
         .report .button {
           background: $main-red;
           box-shadow: 0 .5vw 0 0 $main-dark-red;
+          background-image: url(../img/cave/exclamation-button.png);
+          background-size: cover;
+          background-position: center;
         }
       }
 
