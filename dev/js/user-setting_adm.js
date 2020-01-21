@@ -381,6 +381,7 @@ airCoinBtnR.onclick = function(){
 //////////////////會員資訊
 //////////////////清除密碼修改表單內容
 function cancelSetDataForm() {
+    document.getElementById("setPasswordOld").value = "";
     document.getElementById("setPassword").value = "";
     document.getElementById("setPasswordCheck").value = "";
 }
@@ -388,6 +389,8 @@ function cancelSetDataForm() {
 function sendsetDataForm(json) {
     let memdata = JSON.parse(json);
     let memNo = memdata.memNo;
+    let memPswOld = memdata.memPsw;
+    let setPasswordOld = document.getElementById("setPasswordOld").value;
     let setPassword = document.getElementById("setPassword").value;
     let setPasswordCheck = document.getElementById("setPasswordCheck").value;
     let xhr = new XMLHttpRequest();
@@ -396,8 +399,8 @@ function sendsetDataForm(json) {
         let pswRowCheck = JSON.parse(xhr.responseText);
         if(pswRowCheck.memPsw){
             document.getElementById('setDataBg').style.display = 'none';
-            document.getElementById('setPassword').placeholder = pswRowCheck.memPsw;
-            document.getElementById('setPasswordCheck').placeholder = pswRowCheck.memPsw;
+            // document.getElementById('setPassword').placeholder = pswRowCheck.memPsw;
+            // document.getElementById('setPasswordCheck').placeholder = pswRowCheck.memPsw;
             cancelSetDataForm();
             alert('密碼更新完成');
         }
@@ -406,19 +409,23 @@ function sendsetDataForm(json) {
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
     // console.log(memNo);
     // console.log(setPassword);
-    if (setPassword != '' && setPasswordCheck != '') {
-        if(setPassword.length >= 8){
-            if(!setPassword.match(/[^a-zA-Z0-9]+/)){
-                if(setPassword == setPasswordCheck){
-                    xhr.send(data_info);
+    if (setPasswordOld != '' && setPassword != '' && setPasswordCheck != '') {
+        if(setPasswordOld == memPswOld){
+            if(setPassword.length >= 8){
+                if(!setPassword.match(/[^a-zA-Z0-9]+/)){
+                    if(setPassword == setPasswordCheck){
+                        xhr.send(data_info);
+                    }else{
+                        alert('密碼確認與第一次輸入不同');
+                    }
                 }else{
-                    alert('密碼確認與第一次輸入不同');
-                }
+                    alert('密碼須為英文大小寫或數字');
+                } 
             }else{
-                alert('密碼須為英文大小寫或數字');
-            } 
+                alert('密碼長度需為8-12');
+            }
         }else{
-            alert('密碼長度需為8-12');
+            alert('舊密碼輸入錯誤');
         }
     }else {
         alert('欄位不可空白');
@@ -455,15 +462,22 @@ function showMemData(json){
     document.getElementById('airCoin').innerText = memdata.airCoin;
     document.getElementById('mempic').src = memdata.matPosUrl;
     document.getElementById('setMempic').src = memdata.matPosUrl;
-    document.getElementById('setMemNo_name').placeholder = memdata.memName+'-'+memdata.memNo;
-    document.getElementById('setPassword').placeholder = memdata.memPsw;
-    document.getElementById('setPasswordCheck').placeholder = memdata.memPsw;
+    // document.getElementById('memName').innerText = memdata.memName+'-'+memdata.memNo;
+    //document.getElementById('setPasswordOld').placeholder = memdata.memPsw;//////////////////////
+    // document.getElementById('setPassword').placeholder = "請輸入新密碼";
+    // document.getElementById('setPasswordCheck').placeholder = "請再次輸入新密碼";
     if(memdata.intColor==0){
         $("#intColorBtn0").addClass("on");
     }else{
         $("#intColorBtn1").addClass("on");
     }
 }
+
+//////////////////跳轉業面至我的倉庫更換郵戳
+// function posChangeLink(){
+//     window.location.href="cave.html"
+//     $(".smooth").zxxAnchor({ anchortag: "cave.html"});
+// }
 
 //////////////////取得登入資訊 依登入狀況呈現登入資訊
 function getUsersettingInfo() {

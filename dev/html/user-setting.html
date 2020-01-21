@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/main.css">
-    <title>user-setting</title>
+    <title>Air Plan-Chatroom</title>
 </head>
 
 <body class="userSetting_body">
@@ -34,7 +34,7 @@
                             <h3>打賞紀錄</h3>
                         </div>
                         <div class="memcolor" id="btnMemcolor" @click="content='memcolor'">
-                            <h3>外觀設定</h3>
+                            <h3>選單樣式</h3>
                         </div>
                         <div id="userSetting_memData" class="userSetting_memData">
                             <table class="userSetting_memDataTable">
@@ -60,7 +60,12 @@
                                 </tr>
                                 <tr>
                                     <td class="passwordUpdate">密碼修改:</td>
-                                    <td><img id="showForm" class="emailSet" src="./img/user-setting/gear.svg" alt="robotB3"></td>
+                                    <td colspan="5"><img id="showForm" class="emailSet" src="./img/user-setting/gear.svg" alt="robotB3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="posChangeLink">更換郵戳:</td>
+                                    <td colspan="5"><a href="cave.html#news01"><img id="showForm" class="emailSet" src="./img/user-setting/gear.svg" alt="robotB3"></a></td>
+                                    <!-- <td><img id="goPosChange" class="emailSet" src="./img/user-setting/gear.svg" alt="robotB3"></td> -->
                                 </tr>
                             </table>
                         </div>
@@ -91,9 +96,13 @@
                         
                         <div id="userSetting_memcolor" class="userSetting_memcolor">
                             <div class="memcolorSmall">
-                                <img id="intColorBtn0" class="intColorBtn0" src="img/share/yellow-paint-bigline.svg" alt="blackB">
-                                <img id="intColorBtn1" class="intColorBtn1" src="img/share/blue-paint-bigline.svg" alt="blackY">
+                                <!-- <img id="intColorBtn0" class="intColorBtn0" src="img/share/yellow-paint-bigline.svg" alt="blackB"> -->
+                                <div id="intColorBtn0" class="intColorBtn0"></div>
+                                <!-- <img id="intColorBtn1" class="intColorBtn1" src="img/share/blue-paint-bigline.svg" alt="blackY"> -->
+                                <div id="intColorBtn1" class="intColorBtn1"></div>
                             </div>
+                            <h4 class="intColBtn0Title">黃色</h4>
+                            <h4 class="intColBtn1Title">藍色</h4>
                         </div>
                     </div>
                 </div>
@@ -103,18 +112,19 @@
                         <p class="setDataClose" id="closeForm">X</p>
                         <form class="formSetData" action="./phps/userUpdate.php" method="post">
                             <img id="setMempic" class="setMempic" src="./img/chatroom/mark_1.png" alt="會員圖片">
-                            <label for="memNo">
-                                <P>會員:</P>
+                            <!-- <p id="memName"></!--> -->
+                            <label for="memPsw">
+                                <P>舊密碼:</P>
                             </label>
-                            <input id="setMemNo_name" class="memNo" input type="text" disabled="disabled" placeholder="訪客模式" name="memNo" required>
+                            <input id="setPasswordOld" class="memPsw" input type="password" placeholder="請輸入舊密碼" name="memPswOld" required>
                             <label for="setPassword">
-                                <P>Password:</P>
+                                <P>新密碼:</P>
                             </label>
-                            <input id="setPassword" class="setPassword" type="password" placeholder="password" name="memPsw" required>
+                            <input id="setPassword" class="setPassword" type="password" placeholder="請輸入新密碼" name="memPsw" required>
                             <label for="setPasswordCheck">
-                                <P>Password again:</P>
+                                <P>新密碼確認:</P>
                             </label>
-                            <input id="setPasswordCheck" class="setPasswordCheck" type="password" placeholder="password again" name="memPswAgain" required>
+                            <input id="setPasswordCheck" class="setPasswordCheck" type="password" placeholder="請再次輸入新密碼" name="memPswAgain" required>
                             <br>
                             <button id="setDataBtn" class="setDataBtn" type="button">
                                 <p>確定</p>
