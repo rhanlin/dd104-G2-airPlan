@@ -390,7 +390,10 @@ let vmCatchLetter = new Vue({
         // console.log();
     }
   }
-
+  //禁止滾動事件
+  function wheel(e){
+    e.preventDefault();
+  }
   //信件打賞, 檢舉信件
   function likeOrReport(){
     btn = document.querySelector('.catchLet-Btn').children;
@@ -414,6 +417,8 @@ let vmCatchLetter = new Vue({
         }else if(e.target.id == 'reportThis'){
           console.log('檢舉這封信');
           document.getElementById('reportActive').classList.add('active');
+          document.getElementById('likeActive').classList.add('active');
+
           reportThis();
         }else{
           alert("出意外了沒點擊成功")
@@ -423,6 +428,7 @@ let vmCatchLetter = new Vue({
         e.preventDefault();//解掉冒泡事件
         e.stopPropagation();
         e.stopImmediatePropagation();
+        
         if(e.target.id == 'likeThis'){
           console.log('打賞這封信');
           // console.log(e.target.children);
@@ -438,6 +444,9 @@ let vmCatchLetter = new Vue({
         }else if(e.target.id == 'reportThis'){
           console.log('檢舉這封信');
           document.getElementById('reportActive').classList.add('active');
+          document.getElementById('likeActive').classList.add('active');
+          //禁止頁面滾動
+          document.body.addEventListener('touchmove', wheel, { passive: false });
           reportThis();
         }else{
           alert("出意外了沒點擊成功")
@@ -461,19 +470,14 @@ let vmCatchLetter = new Vue({
     let exit = document.getElementById('closeReportBox');
     let reportBtn = document.getElementById('reportBtn');
     let whyReport = document.querySelector('.whyReport').children;
-    //手機版
-    // if(document.body.clientWidth <= 576){
-    //   document.querySelector('.catch-letter').style = "opacity:0;"
-    //   document.querySelector('.catchLet-msgBox').style = "opacity:0;"
-    //   console.log('work');
-      
-    // }
-    // console.log(whyReport);
     
     //關閉檢舉視窗
     exit.addEventListener('click',()=>{
       document.getElementById('reportBox').style.display="none";
       document.getElementById('reportActive').classList.remove('active');
+      document.getElementById('likeActive').classList.remove('active');
+      //解除禁止滾動
+      document.body.removeEventListener('touchmove', wheel, { passive: false });
     })
     //監聽檢舉原因選項
     for(let i=0;i<whyReport.length;i++){
@@ -495,8 +499,10 @@ let vmCatchLetter = new Vue({
       body: new URLSearchParams(`memNo=${vmCatchLet.userNo}&letNo=${vmCatchLet.letNo}&letRepReason=${vmCatchLet.whyReport}`),
     })
     .then(res=>res.json()).then(json=>{
-            console.log(json);
-          })
+      console.log(json);
+      //解除禁止滾動
+      document.body.removeEventListener('touchmove', wheel, { passive: false });
+    })
     //蓋上以檢舉印章
     let letterWrap = document.getElementById('letterWrap');
     letterWrap.classList.add('reportSeal');
