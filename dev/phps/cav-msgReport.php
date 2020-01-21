@@ -1,7 +1,7 @@
 <?php
 try {
     require_once("connectBook_root.php");
-    $sql = "insert into `messageReport`(memNo,msgNo,msgRepTime,msgRepReason,msgRepStatus,msgRepPass)values(:memNo,:msgReport,:msgRepTime,:msgRepReason,0,0)";
+    $sql = "insert into `messageReport`(memNo,msgNo,msgRepTime,msgRepReason,msgRepStatus)values(:memNo,:msgReport,:msgRepTime,:msgRepReason,0)";
     $report = $pdo->prepare($sql);
     $report->bindValue(":memNo", $_GET["whoReport"]);
     $report->bindValue(":msgReport", $_GET["reportThis"]);

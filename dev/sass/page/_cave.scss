@@ -1,6 +1,6 @@
 /* 我的倉庫CSS */
 .cav-body {
-  background: radial-gradient(rgb(90, 155, 90) 30%, rgb(70, 131, 80) 20%);
+  background: radial-gradient(rgb(238, 198, 123) 30%, rgb(248, 248, 248) 20%);
   background-size: 10px 10px;
   margin: 0;
   padding: 0;
@@ -2423,6 +2423,12 @@
       .cav-leftWrap {
         width: 80%;
         margin: 0 auto;
+
+        .cav-addProd {
+          width: 30vw;
+          height: 30vw;
+          margin: 2%;
+        }
       }
     }
 
