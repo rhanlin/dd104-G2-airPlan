@@ -94,54 +94,78 @@ $(document).ready(function () {
         letterContent(fullLet);
 
         /* 檢查信件是否已被打賞 */
-        // $(function checkLetLike() {
-        //   let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-        //   console.log(chat77);
-        //   $.ajax({
-        //     url: "./phps/cav-checkLikeLet.php",
-        //     type: "GET",
-        //     dataType: "json",
-        //     data: { "memNo": memNo },
-        //     success: function (chkLikeLetRow) {
-        //       console.log(chkLikeLetRow);
-        //       let msgNum = new Array();
+        $(function checkLetLike() {
+          let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
+          let letNum = $(".letLike").attr("data-letlike");
+          // console.log(memNo);
+          // console.log("信件編號", letNum);
+          $.ajax({
+            url: "./phps/cav-checkLikeLet.php",
+            type: "GET",
+            dataType: "json",
+            data: { "memNo": memNo },
+            success: function (chkLikeLetRow) {
+              let checkLetNo = new Array();
 
-        //       // console.log("會員編號", memNo); 6
-        //       // console.log("有打賞", chkLikeLetRow); 6
-        //       // console.log("信件", msgRow); 6
-        //       // console.log("有打賞過信件編號", chkLikeLetRow[0].letNo); 6
-        //       // console.log("信件編號", chkLikeLetRow[0].letNo); 6
-        //       for (let i = 0; i < letRow.length; i++) {
-        //         //撈出所有回覆
-        //         letReply = letterReply(
-        //           letReply,
-        //           letRow[i].memNo,
-        //           letRow[i].letTime,
-        //           letRow[i].letContent,
-        //           letRow[i].letNo,
-        //         );
-        //         letNum[i] = letRow[i].msgNo;
-        //         $(".cav-replys").html(letReply);
-        //       }
-        //       for (i = 0; i < chkLikeLetRow.length; i++) {
-        //         // console.log(chkLikeLetRow[i].mlmsgNo);
+              // console.log("會員編號", memNo); 6
+              // console.log("有打賞", chkLikeLetRow); 6
+              for (i = 0; i < chkLikeLetRow.length; i++) {
+                checkLetNo[i] = chkLikeLetRow[i].letNo;
+                // console.log(checkLetNo);
+                // console.log($.inArray(letNum, checkLetNo));
+                // console.log(memNo == chkLikeLetRow[i].memNo);
+                if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkLikeLetRow[i].memNo) {
+                  $("#letLike" + letNum).attr("disabled", true);
+                  // console.log($("#letLike" + letNum));
+                }
+                else {
+                  $("#letLike" + letNum).attr("disabled", false);
+                  console.log("沒有被打賞過");
+                }
+              }
+            },
+            error: function () {
+              console.log("檢查打賞error");
+            },
+          });
+        });
 
-        //         if ($.inArray(chkLikeLetRow[i].mlmsgNo, msgNum) != -1 && memNo == chkLikeLetRow[i].mlmemNo) {
+        /* 檢查檢舉信件是否已被檢舉 */
+        $(function checkLetReport() {
+          let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
+          let letNum = $(".letReport").attr("data-letreport");
+          console.log(memNo);
+          console.log("信件編號", letNum);
+          $.ajax({
+            url: "./phps/cav-checkReportLet.php",
+            type: "GET",
+            dataType: "json",
+            data: { "memNo": memNo },
+            success: function (chkReportRow) {
+              let checkLetNo = new Array();
 
-        //           $("#like" + chkLikeLetRow[i].mlmsgNo).attr({ "data-like": chkLikeLetRow[i].mlmsgNo, "disabled": true });
-
-        //         }
-        //         else {
-        //           console.log("沒有被打賞過");
-        //         }
-        //       }
-        //     },
-        //     error: function (chkLikeLetRow) {
-        //       console.log(chkLikeLetRow);
-        //     },
-        //   });
-        // });
-
+              console.log("會員編號", memNo); 6
+              console.log("有打賞", chkReportRow); 6
+              for (i = 0; i < chkReportRow.length; i++) {
+                checkLetNo[i] = chkReportRow[i].letNo;
+                console.log(checkLetNo);
+                console.log($.inArray(letNum, checkLetNo));
+                console.log(memNo == chkReportRow[i].memNo);
+                if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkReportRow[i].memNo) {
+                  $("#letReport" + letNum).attr("disabled", true);
+                  console.log($("#letReport" + letNum));
+                }
+                else {
+                  $("#letReport" + letNum).attr("disabled", false);
+                  console.log("沒有被檢舉過");
+                }
+              }
+            },
+            error: function (chkReportRow) {
+              console.log(chkReportRow);
+            },
+          });
+        })
 
         /*---結束--- */
       },
@@ -449,6 +473,81 @@ $(document).ready(function () {
           });
 
           /*---結束--- */
+
+          /* 檢查信件是否已被打賞 */
+          $(function checkLetLike() {
+            let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
+            let letNum = $(".letLike").attr("data-letlike");
+            console.log(memNo);
+            console.log("信件編號", letNum);
+            $.ajax({
+              url: "./phps/cav-checkLikeLet.php",
+              type: "GET",
+              dataType: "json",
+              data: { "memNo": memNo },
+              success: function (chkLikeLetRow) {
+                let checkLetNo = new Array();
+
+                console.log("會員編號", memNo); 6
+                console.log("有打賞", chkLikeLetRow); 6
+                for (i = 0; i < chkLikeLetRow.length; i++) {
+                  checkLetNo[i] = chkLikeLetRow[i].letNo;
+                  console.log(checkLetNo);
+                  console.log($.inArray(letNum, checkLetNo));
+                  console.log(memNo == chkLikeLetRow[i].memNo);
+                  if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkLikeLetRow[i].memNo) {
+                    $("#letLike" + letNum).attr("disabled", true);
+                    console.log($("#letLike" + letNum));
+                  }
+                  else {
+                    $("#letLike" + letNum).attr("disabled", false);
+                    console.log("沒有被打賞過");
+                  }
+                }
+              },
+              error: function (chkLikeLetRow) {
+                console.log(chkLikeLetRow);
+              },
+            });
+          });
+
+          /* 檢查檢舉信件是否已被檢舉 */
+          $(function checkLetReport() {
+            let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
+            let letNum = $(".letReport").attr("data-letreport");
+            console.log(memNo);
+            console.log("信件編號", letNum);
+            $.ajax({
+              url: "./phps/cav-checkReportLet.php",
+              type: "GET",
+              dataType: "json",
+              data: { "memNo": memNo },
+              success: function (chkReportRow) {
+                let checkLetNo = new Array();
+
+                console.log("會員編號", memNo); 6
+                console.log("有打賞", chkReportRow); 6
+                for (i = 0; i < chkReportRow.length; i++) {
+                  checkLetNo[i] = chkReportRow[i].letNo;
+                  console.log(checkLetNo);
+                  console.log($.inArray(letNum, checkLetNo));
+                  console.log(memNo == chkReportRow[i].memNo);
+                  if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkReportRow[i].memNo) {
+                    $("#letReport" + letNum).attr("disabled", true);
+                    console.log($("#letReport" + letNum));
+                  }
+                  else {
+                    $("#letReport" + letNum).attr("disabled", false);
+                    console.log("沒有被檢舉過");
+                  }
+                }
+              },
+              error: function (chkReportRow) {
+                console.log(chkReportRow);
+              },
+            });
+          })
+
         },
         error: function (letRow) {
           console.log(letRow);
@@ -807,6 +906,80 @@ $(document).ready(function () {
             $("#letChat" + chatBtnId).attr("disabled", true);
             console.log($("#letChat" + chatBtnId));
           }
+
+          /* 檢查信件是否已被打賞 */
+          $(function checkLetLike() {
+            let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
+            let letNum = $(".letLike").attr("data-letlike");
+            console.log(memNo);
+            console.log("信件編號", letNum);
+            $.ajax({
+              url: "./phps/cav-checkLikeLet.php",
+              type: "GET",
+              dataType: "json",
+              data: { "memNo": memNo },
+              success: function (chkLikeLetRow) {
+                let checkLetNo = new Array();
+
+                console.log("會員編號", memNo); 6
+                console.log("有打賞", chkLikeLetRow); 6
+                for (i = 0; i < chkLikeLetRow.length; i++) {
+                  checkLetNo[i] = chkLikeLetRow[i].letNo;
+                  console.log(checkLetNo);
+                  console.log($.inArray(letNum, checkLetNo));
+                  console.log(memNo == chkLikeLetRow[i].memNo);
+                  if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkLikeLetRow[i].memNo) {
+                    $("#letLike" + letNum).attr("disabled", true);
+                    console.log($("#letLike" + letNum));
+                  }
+                  else {
+                    $("#letLike" + letNum).attr("disabled", false);
+                    console.log("沒有被打賞過");
+                  }
+                }
+              },
+              error: function (chkLikeLetRow) {
+                console.log(chkLikeLetRow);
+              },
+            });
+          });
+
+          /* 檢查檢舉信件是否已被檢舉 */
+          $(function checkLetReport() {
+            let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
+            let letNum = $(".letReport").attr("data-letreport");
+            console.log(memNo);
+            console.log("信件編號", letNum);
+            $.ajax({
+              url: "./phps/cav-checkReportLet.php",
+              type: "GET",
+              dataType: "json",
+              data: { "memNo": memNo },
+              success: function (chkReportRow) {
+                let checkLetNo = new Array();
+
+                console.log("會員編號", memNo); 6
+                console.log("有打賞", chkReportRow); 6
+                for (i = 0; i < chkReportRow.length; i++) {
+                  checkLetNo[i] = chkReportRow[i].letNo;
+                  console.log(checkLetNo);
+                  console.log($.inArray(letNum, checkLetNo));
+                  console.log(memNo == chkReportRow[i].memNo);
+                  if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkReportRow[i].memNo) {
+                    $("#letReport" + letNum).attr("disabled", true);
+                    console.log($("#letReport" + letNum));
+                  }
+                  else {
+                    $("#letReport" + letNum).attr("disabled", false);
+                    console.log("沒有被檢舉過");
+                  }
+                }
+              },
+              error: function (chkReportRow) {
+                console.log(chkReportRow);
+              },
+            });
+          })
           /*---結束--- */
         },
         error: function (letRow) {
@@ -822,34 +995,37 @@ $(document).ready(function () {
     //打賞信件跳金幣,並只能打賞一次
     $(".letLike").on("click", function (e) {
       let obj = e.target.parentNode;
-      let likeThis = $(this).attr("data-like");
+      let likeThis = e.target.parentNode.dataset.letlike;
+      // let likeThis = $(this).parents(".letter-contant").find(".letter-author").text().split(".")[$(this).parents(".letter-contant").find(".letter-author").text().split(".").length - 1];
+      console.log(likeThis);
+      // let likeThis = $(this).attr("data-like");
       console.log(likeThis);
       let whoLike = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-      // let now = new Date();
-      // let likeTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() +
-      //   " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+      let now = new Date();
+      let likeTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() +
+        " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
       console.log(likeThis);
       console.log(whoLike);
-      // console.log(likeTime);
+      console.log(likeTime);
       $.ajax({
-        url: "./phps/likeLetter.php",
-        type: "POST",
+        url: "./phps/cav-letLike.php",
+        type: "GET",
         dataType: "json",
         data: {
           "letNo": likeThis,
           "memNo": whoLike,
-          // "likeTime": likeTime,
+          "likeTime": likeTime,
         },
         success: function (likeRowLet) {
           console.log(likeRowLet);
           console.log(whoLike)
-          // if (likeRowLet.status == 'success') {
-          //   $("#letLike" + obj).attr("disabled", true);
-          //   console.log(obj);
-          //   // console.log(666);
-          // } else {
-          //   console.log(111);
-          // }
+          if (likeRowLet.status == 'success') {
+            $("#letLike" + likeThis).attr("disabled", true);
+            console.log(obj);
+            // console.log(666);
+          } else {
+            console.log(111);
+          }
         },
         error: function (likeRowLet) {
           console.log(likeRowLet);
@@ -1146,16 +1322,11 @@ $(document).ready(function () {
         data: { letNo: witchLetMsg },
         success: function (msgRow) {
           // console.log("信件回復", msgRow); 6
-          // let letReply = "";
-          // console.log(msgRow);
-          // console.log($.isEmptyObject(msgRow) == false);
+
           if ($.isEmptyObject(msgRow) == false) {
             $(function checkClickedBefore() {
               let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
 
-              // let mesgNo = msgRow[i].msgNo;
-              // console.log(msgRow[j].msgNo);
-              // console.log(memNo); 6
               $.ajax({
                 url: "./phps/cav-checkClickedBefore.php",
                 type: "GET",
@@ -1215,6 +1386,8 @@ $(document).ready(function () {
                       console.log("沒有被檢舉過");
                     }
                   }
+
+
 
                 },
                 error: function (chkClickRow) {
@@ -1336,6 +1509,80 @@ $(document).ready(function () {
             $(".cav-replys").html(letNoReply);
           }
 
+          /* 檢查信件是否已被打賞 */
+          $(function checkLetLike() {
+            let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
+            let letNum = $(".letLike").attr("data-letlike");
+            console.log(memNo);
+            console.log("信件編號", letNum);
+            $.ajax({
+              url: "./phps/cav-checkLikeLet.php",
+              type: "GET",
+              dataType: "json",
+              data: { "memNo": memNo },
+              success: function (chkLikeLetRow) {
+                let checkLetNo = new Array();
+
+                console.log("會員編號", memNo); 6
+                console.log("有打賞", chkLikeLetRow); 6
+                for (i = 0; i < chkLikeLetRow.length; i++) {
+                  checkLetNo[i] = chkLikeLetRow[i].letNo;
+                  console.log(checkLetNo);
+                  console.log($.inArray(letNum, checkLetNo));
+                  console.log(memNo == chkLikeLetRow[i].memNo);
+                  if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkLikeLetRow[i].memNo) {
+                    $("#letLike" + letNum).attr("disabled", true);
+                    console.log($("#letLike" + letNum));
+                  }
+                  else {
+                    $("#letLike" + letNum).attr("disabled", false);
+                    console.log("沒有被打賞過");
+                  }
+                }
+              },
+              error: function (chkLikeLetRow) {
+                console.log(chkLikeLetRow);
+              },
+            });
+          });
+
+          /* 檢查檢舉信件是否已被檢舉 */
+          $(function checkLetReport() {
+            let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
+            let letNum = $(".letReport").attr("data-letreport");
+            console.log(memNo);
+            console.log("信件編號", letNum);
+            $.ajax({
+              url: "./phps/cav-checkReportLet.php",
+              type: "GET",
+              dataType: "json",
+              data: { "memNo": memNo },
+              success: function (chkReportRow) {
+                let checkLetNo = new Array();
+
+                console.log("會員編號", memNo); 6
+                console.log("有打賞", chkReportRow); 6
+                for (i = 0; i < chkReportRow.length; i++) {
+                  checkLetNo[i] = chkReportRow[i].letNo;
+                  console.log(checkLetNo);
+                  console.log($.inArray(letNum, checkLetNo));
+                  console.log(memNo == chkReportRow[i].memNo);
+                  if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkReportRow[i].memNo) {
+                    $("#letReport" + letNum).attr("disabled", true);
+                    console.log($("#letReport" + letNum));
+                  }
+                  else {
+                    $("#letReport" + letNum).attr("disabled", false);
+                    console.log("沒有被檢舉過");
+                  }
+                }
+              },
+              error: function (chkReportRow) {
+                console.log(chkReportRow);
+              },
+            });
+          })
+
         },
         error: function (msgRow) {
           console.log(msgRow);
@@ -1343,62 +1590,6 @@ $(document).ready(function () {
       });
     });
 
-
-    /* 聊天按鈕disabled */
-    // $(function checkChat() {
-    //   let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-    //   console.log(chat77);
-    //   $.ajax({
-    //     url: "./phps/cav-checkChat.php",
-    //     type: "GET",
-    //     dataType: "json",
-    //     data: { "memNo": memNo },
-    //     success: function (chkChatRow) {
-    //       console.log(chkChatRow);
-    //       let letReply = "";
-    //       let msgNum = new Array();
-
-    //       // console.log("會員編號", memNo); 6
-    //       // console.log("有打賞", chkChatRow); 6
-    //       // console.log("留言", msgRow); 6
-    //       // console.log("有打賞過留言編號", chkChatRow[0].msgNo); 6
-    //       // console.log("留言編號", msgRow[0].msgNo); 6
-    //       for (let i = 0; i < msgRow.length; i++) {
-    //         //撈出所有回覆
-    //         letReply = letterReply(
-    //           letReply,
-    //           msgRow[i].memNo,
-    //           msgRow[i].msgTime,
-    //           msgRow[i].msgContent,
-    //           msgRow[i].msgNo,
-    //         );
-    //         msgNum[i] = msgRow[i].msgNo;
-    //         $(".cav-replys").html(letReply);
-    //       }
-
-    //       // console.log(msgNum);
-    //       // console.log(chkChatRow);
-    //       for (i = 0; i < chkChatRow.length; i++) {
-    //         // console.log(chkChatRow[i].mlmsgNo);
-
-    //         if ($.inArray(chkChatRow[i].mlmsgNo, msgNum) != -1 && memNo == chkChatRow[i].mlmemNo) {
-    //           // console.log(msgNum);
-    //           // console.log(chkChatRow[i].mlmsgNo);
-    //           // $("#" + chkChatRow[i].mlmsgNo).attr("disabled", true);
-    //           $("#like" + chkChatRow[i].mlmsgNo).attr({ "data-like": chkChatRow[i].mlmsgNo, "disabled": true });
-    //           // console.log($("#like" + chkChatRow[i].mlmsgNo).attr({ "data-like": chkChatRow[i].mlmsgNo, "disabled": true }));
-    //           // console.log($("#" + chkChatRow[i].msgNo).attr("disabled"));
-    //         }
-    //         else {
-    //           console.log("沒有被打賞過");
-    //         }
-    //       }
-    //     },
-    //     error: function (chkChatRow) {
-    //       console.log(chkChatRow);
-    //     },
-    //   });
-    // });
 
   }
 
@@ -1563,15 +1754,6 @@ function otherLetter(i, otherLet, letTitle, letTime, letNo) {
             <h6 class="cav-letTime">${letTime}</h6>
        </div>
       </div>
-      <div class="cav-letSetting">
-        <div><i class="fas fa-ellipsis-h"></i></div>
-        <div class="cav-landLetter">
-           <span class="cav-land ">
-               <h6>下架信件</h6>
-           </span>
-       </div>
-      </div>
-
       </div>  
        `;
   return otherLet;
