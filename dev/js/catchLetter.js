@@ -394,6 +394,11 @@ let vmCatchLetter = new Vue({
   function wheel(e){
     e.preventDefault();
   }
+  function scrollFunc(evt) {
+    console.log(1);
+    
+    return false;
+  }
   //信件打賞, 檢舉信件
   function likeOrReport(){
     btn = document.querySelector('.catchLet-Btn').children;
@@ -447,6 +452,8 @@ let vmCatchLetter = new Vue({
           document.getElementById('likeActive').classList.add('active');
           //禁止頁面滾動
           document.body.addEventListener('touchmove', wheel, { passive: false });
+          document.body.addEventListener('DOMMouseScroll', scrollFunc, false);
+          document.body.addEventListener('mousewheel', scrollFunc, false);
           reportThis();
         }else{
           alert("出意外了沒點擊成功")

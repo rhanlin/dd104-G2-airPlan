@@ -383,7 +383,7 @@
 
     .paper-cloud {
         top: -72%;
-        left: 89%;
+        left: 82%;
         transform: translate(-50%, -50%);
         z-index: 999;
     }
@@ -393,12 +393,12 @@
     }
 
     .shop-signboard {
-        width: 86%;
+        width: 78%;
         height: 17vw;
         border-radius: $main-borderRadius;
         position: absolute;
         top: 50%;
-        left: 58.4%;
+        left: 54.4%;
         transform: translate(-50%, -50%);
         z-index: 99;
 
@@ -410,17 +410,18 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-
+            display: flex;
+            align-items: center;
+            flex-direction: column-reverse;
             .shop-text {
                 font-size: 4vw;
-                -webkit-writing-mode: vertical-lr;
-                writing-mode: vertical-lr;
-                letter-spacing: 1.2vw;
-                line-height: 1.1;
+                -webkit-writing-mode: horizontal-tb;
+                writing-mode: horizontal-tb;
+                line-height: 1.05;
                 height: 100%;
-                width: 100%;
+                width: 50%;
                 color: $main-dark-red;
-                padding-top: 18%;
+                text-align-last: unset;
             }
         }
     }
@@ -432,7 +433,7 @@
     display: flex;
     justify-content: space-around;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     margin: 0 auto;
     
     .catchLet-msgBox{
@@ -507,7 +508,7 @@
         top: 0;
       }
       .x{
-        right: 14px; 
+        right: 12px; 
         transform:rotate(45deg);
       }
       .xx{
@@ -517,8 +518,9 @@
     }
     &::before{
       content: '';
-      width: 100vw;
-      height: 330vh;
+      width: 90vw;
+      height: 90vw;
+      filter: blur(100px);
       position: absolute;
       top: 50%;
       left: 50%;
@@ -668,14 +670,14 @@
       &::before {
         content: '';
         display: block;
-        width: .15vw;
-        height: 25vw;
+        width: 2.5%;
+        height: 12.5vw;
         background: linear-gradient(#e5e5e500 20%, $main-black 60%, $main-black);
         position: absolute;
-        top: 50%;
+        top: 31%;
         left: 50%;
         transform: translate(-50%, -112%);
-        z-index: -9;
+        z-index: 1;
       }
     }
 
@@ -972,12 +974,13 @@
     // border: 1px solid blue;
     display: flex;
     align-items: center;
-    z-index: 998;
+    z-index: 1;
 
     .bottom-bg {
       width: 71.25vw;
       height: 35vw;
       margin: 0 auto;
+      z-index: 1;
 
       // animation: shad-anim 10s linear infinite;
       .clip-left {
@@ -990,11 +993,12 @@
           content: '';
           position: absolute;
           width: 2.5%;
-          height: 56.6vw;
-          background-color: #212121;
-          top: -27.5vw;
+          height: 40vw;
+          background-color: $main-black;
+          top: -19.5vw;
           left: 50%;
           transform: translate(-50%, -50%);
+          z-index: 1;
         }
       }
 
@@ -1294,7 +1298,7 @@
           top: 0;
         }
         .x{
-          right: 14px; 
+          right: 12px; 
           transform:rotate(45deg);
         }
         .xx{
@@ -1302,17 +1306,7 @@
           transform:rotate(-45deg);
         }
       }
-      &::before{
-        content: '';
-        width: 100vw;
-        height: 330vh;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: rgba(0, 0, 0, 0.4);
-        z-index: 99;
-      }
+      
       .box-white{
         position: relative;
         top: 15px;
@@ -1383,56 +1377,7 @@
       }
     }
     .goto-shop-btn {
-      // border: 1px solid blue;
-      height: auto;
-      width: 50%;
-      position: absolute;
-      top: 131%;
-      left: 50%;
-      transform: translate(-50%,-50%) rotate(90deg);
-  
-      .paper-cloud {
-          display: none;
-      }
-  
-      img {
-          width: 17%;
-      }
-  
-      .shop-signboard {
-          width: 85%;
-          height: 50vw;
-          border-radius: $main-borderRadius;
-          position: absolute;
-          top: 50%;
-          left: 58.4%;
-          transform: translate(-50%, -50%);
-          z-index: 99;
-  
-          .shop-title {
-              width: 80%;
-              height: 80%;
-              border-radius: $main-borderRadius;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-  
-              .shop-text {
-                transform: rotate(-90deg);
-                font-size: 2.8rem;
-                -webkit-writing-mode: unset;
-                writing-mode: unset;
-                letter-spacing: unset;
-                line-height: 1.2;
-                height: 98%;
-                width: 100%;
-                color: $main-dark-red;
-                padding-top: 18%;
-              }
-          }
-      }
-     
+      display: none;
     }
 
     .catch-step-msg{
@@ -1503,7 +1448,7 @@
     }
 
     .catch-step-2 {
-      margin-top: 43%;
+      margin-top: 15%;
       height: auto;
 
       .bottom-bg {
@@ -1780,24 +1725,13 @@
           top: 0;
         }
         .x{
-          right: 14px; 
+          right: 12px; 
           transform:rotate(45deg);
         }
         .xx{
           left: 12px; 
           transform:rotate(-45deg);
         }
-      }
-      &::before{
-        content: '';
-        width: 100vw;
-        height: 330vh;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: rgba(0, 0, 0, 0.4);
-        z-index: 99;
       }
       .box-white{
         position: relative;
@@ -1869,56 +1803,7 @@
       }
     }
     .goto-shop-btn {
-      // border: 1px solid blue;
-      height: auto;
-      width: 50%;
-      position: absolute;
-      top: 131%;
-      left: 50%;
-      transform: translate(-50%,-50%) rotate(90deg);
-  
-      .paper-cloud {
-          display: none;
-      }
-  
-      img {
-          width: 17%;
-      }
-  
-      .shop-signboard {
-          width: 85%;
-          height: 50vw;
-          border-radius: $main-borderRadius;
-          position: absolute;
-          top: 50%;
-          left: 58.4%;
-          transform: translate(-50%, -50%);
-          z-index: 99;
-  
-          .shop-title {
-              width: 80%;
-              height: 80%;
-              border-radius: $main-borderRadius;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-  
-              .shop-text {
-                  transform: rotate(-90deg);
-                  font-size: 2.8rem;
-                  -webkit-writing-mode: unset;
-                  writing-mode: unset;
-                  letter-spacing: unset;
-                  line-height: 1.2;
-                  height: 98%;
-                  width: 100%;
-                  color: $main-dark-red;
-                  padding-top: 18%;
-              }
-          }
-      }
-     
+      display: none;
     }
 
     .catch-step-msg{
@@ -1989,7 +1874,7 @@
     }
 
     .catch-step-2 {
-      margin-top: 43%;
+      margin-top: 15%;
       height: auto;
 
       .bottom-bg {
