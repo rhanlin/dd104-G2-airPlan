@@ -5,9 +5,54 @@
                 <i class="fa fa-align-justify"></i> 管理員管理</div>
             <div class="card-body">
 
-                <div class="col-6 col-sm-4 col-md-2 mb-3">
-                    <button  id="addAdmin" class="btn btn-pill btn-block btn-success" type="button">新增管理員</button>
+                <button class="btn btn-success mb-3" type="button" data-toggle="modal" data-target="#successModal"
+                id="addProd">新增管理員</button>
+
+                <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                style="display: none;" aria-hidden="true">
+                <div class="modal-dialog modal-success" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 id="addAdmin" class="modal-title">新增管理員</h4>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form name="productForm">
+                                <table>
+                                   
+                                    <tr>
+                                        <td> <label>管理員名稱</label><input type="text" name="admName" id="admName"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>管理員帳號</label><input type="text" name="admI" id="admI">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>管理員密碼</label><input type="password" name="admPsw" id="admPsw"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>管理員密碼確認</label><input type="password" name="admPswCheck" id="admPswCheck"></td>
+                                    </tr>
+                                    <!-- <tr>
+                                        <td>
+                                            <input type="submit" value="送出">
+                                        </td>
+                                    </tr> -->
+                                </table>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-secondary" type="submit"
+                                                data-dismiss="modal">Close</button>
+                                            <button id="adminDataBtn" class="btn btn-success addBtn" type="submit">送出</buttonid="adminDataBtn">
+                                        </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /.modal-content-->
                 </div>
+                <!-- /.modal-dialog-->
+            </div>
                 <table class="table table-responsive-sm table-striped">
                     <thead>
                         <tr>
