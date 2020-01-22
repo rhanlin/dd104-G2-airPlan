@@ -51,75 +51,58 @@
   <script src="./js/perfect-scrollbar.min.js"></script>
   <script src="./js/coreui.min.js"></script>
   <script>
-    $.post("./phps/bg_saveBan.php", {
-        type: 'catchingComment',
-      },
-      res => {
-
-        res = JSON.parse(res);
-        // console.log(res.length)
-
-        var handleArr = ['未處理', '已處理'];
-        var passArr = ['未通過', '已通過'];
-        let BanArtileInfo = document.getElementById("BanArtileInfo");
-
-        for (j = 0; j < res.length; j++) {
-          var tr = document.createElement('tr');
-
-          var select1 = document.createElement('select')
-          var select2 = document.createElement('select')
-          var td2 = document.createElement('td');
-          var td3 = document.createElement('td');
-
-          for (x = 0; x < 2; x++) {
-            option = document.createElement('option');
-            option.setAttribute("value", x);
-            if (res[j].letRepStatus == x) {
-              option.setAttribute("defaultSelected", true);
-
-            }
-            option.innerHTML = handleArr[x];
-            select1.appendChild(option);
-          };
-          select1.appendChild(option);
-          td2.appendChild(select1);
+    function getBanComment() {
 
 
+      $.post("./phps/bg_saveBan.php", {
+          type: 'catchingComment',
+        },
+        res => {
+          // var bSelected = false;
+          res = JSON.parse(res);
+          // console.log(res.length)
 
-          for (g = 0; g < 2; g++) {
-            option2 = document.createElement('option');
-            option2.setAttribute("value", g);
-            if (res[j].msgRepPass == g) {
-              option2.setAttribute("defaultSelected", true);
-            }
-            option2.innerHTML = passArr[g];
-            select2.appendChild(option2);
-          };
-          // console.log(passArr[0])
-          select2.appendChild(option2);
-          td3.appendChild(select2);
+          var handleArr = ['未處理', '確定下架', '保持上架'];
+          let BanArtileInfo = document.getElementById("BanArtileInfo");
 
-          select1.classList.add("form_control1");
-          select2.classList.add("form_control2");
-          for (i = 0; i < 5; i++) {
-            var td = document.createElement('td');;
-            // console.log(td);
-            arr = [res[j].msgRepNo, res[j].memNo, res[j].msgNo, res[j].msgRepTime, res[j].msgRepReason];
-            td.innerHTML = arr[i];
-            tr.appendChild(td);
+          for (j = 0; j < res.length; j++) {
+            var tr = document.createElement('tr');
+            // select.options[select.options.selectedIndex].selected = true;
+            var select = document.createElement('select')
+            var td2 = document.createElement('td');
 
-            tr.appendChild(td2);
-            tr.appendChild(td3);
-          };
+            for (x = 0; x < 3; x++) {
+              option = document.createElement('option');
+              option.setAttribute("value", x);
+              if (res[j].msgRepStatus == x) {
+                option.setAttribute("defaultSelected", true);
+              }
+              option.innerHTML = handleArr[x];
+              select.appendChild(option);
+            };
+            select.selectedIndex = res[j].msgRepStatus;
+            // select.appendChild(option);
+            td2.appendChild(select);
+            select.classList.add("form_control");
+            for (i = 0; i < 5; i++) {
+              var td = document.createElement('td');
+              arr = [res[j].msgRepNo, res[j].memNo, res[j].msgNo, res[j].msgRepTime, res[j].msgRepReason
 
-          // tr.childNodes[2].classList.add("letterNo");
-          BanArtileInfo.appendChild(tr);
-        }
-      });
+              ];
+              // console.log(td);
+              td.innerHTML = arr[i];
+              tr.appendChild(td);
+              tr.appendChild(td2);
+            };
 
-    $(document).on('change', '.form_control1', function () {
-      msgNo = $(this).parent().prev().prev().prev().html();
-      console.log('msgNo:', msgNo);
+            tr.childNodes[2].classList.add("letterNo");
+            BanArtileInfo.appendChild(tr);
+          }
+        });
+    }
+    $(document).on('change', 'select', function () {
+      letterNo = $(this).parent().prev().prev().prev().html();
+      console.log(letterNo)
       // console.log(this.selectedIndex);
       // var BanArtileValue = e.target.value;
       // $(this.options).prop("selected", false);
@@ -130,36 +113,15 @@
       if ($(this.options[this.selectedIndex]).attr("selected", "selected")) {
         var newNumber = $(this.options[this.selectedIndex]).val()
         console.log(newNumber);
-        // console.log(msgNo);
+
         $.post("./phps/bg_saveBan.php", {
           type: 'savingComment',
           newNumber: newNumber,
-          msgNo: msgNo,
+          letterNo: letterNo,
         });
       }
     })
-
-    $(document).on('change', '.form_control2', function () {
-      msgNo2 = $(this).parent().prev().prev().prev().prev().html();
-      console.log('msgNo2:', msgNo2)
-      // console.log(this.selectedIndex);
-      // var BanArtileValue = e.target.value;
-      // $(this.options).prop("selected", false);
-      $(this.options).removeAttr("selected");
-      // this.options.removeAttribute("selected");
-      // this.options[this.selectedIndex].setAttribute("selected", true)
-      $(this.options[this.selectedIndex]).attr("selected", "selected")
-      if ($(this.options[this.selectedIndex]).attr("selected", "selected")) {
-        var newNumber = $(this.options[this.selectedIndex]).val()
-        console.log(newNumber);
-        // console.log(msgNo2);
-        $.post("./phps/bg_saveBan.php", {
-          type: 'savingComment2',
-          newNumber: newNumber,
-          msgNo: msgNo2,
-        });
-      }
-    })
+    window.addEventListener('load', getBanComment, false)
   </script>
 </body>
 

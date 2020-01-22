@@ -2,7 +2,7 @@
   <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="./bg_index.html">
+  <a class="navbar-brand" href="#">
     <img class="navbar-brand-full" src="./img/share/LOGO.png" height="45" alt="Logo">
   </a>
   <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
@@ -10,7 +10,7 @@
   </button>
   <ul class="nav navbar-nav ml-auto">
     <li class="nav-item d-md-down-none">
-      <a class="nav-link" href="#">
+      <a id="bg_logout" class="nav-link" href="#">
         登出
         <!-- <i class="icon-bell"></i>
           <span class="badge badge-pill badge-danger">5</span> -->
@@ -37,3 +37,21 @@
     </li>
   </ul>
 </header>
+
+
+<script>
+  function bg_logOut() {//////////////////登出
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+      window.location.href="bg_index.html"
+    }
+    xhr.open("get", "./phps/bg_logout.php", true);
+    xhr.send(null)
+  }
+
+  let bg_logoutBtn = document.getElementById('bg_logout');
+  bg_logoutBtn.onclick = function () {
+      bg_logOut();
+  };
+
+</script>
