@@ -30,6 +30,15 @@ function writeData(str) {
             var td = document.createElement('td');
             arr = [data[j].memNo, data[j].memName, data[j].letNo, data[j].letSort, data[j].letTitle, data[j].letContent, data[j].mesCount, data[j].letTime, data[j].letStatus];
             // console.log(td);
+
+            if(arr[8]==0){
+                arr[8]="未下架";
+            }else{
+                arr[8]="已下架";
+            }
+
+            console.log(arr[5]);
+
             td.innerHTML = arr[i];
             tr.appendChild(td);
             // console.log(tr.childNodes[i]);
