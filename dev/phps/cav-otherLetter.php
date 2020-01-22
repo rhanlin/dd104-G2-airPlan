@@ -15,10 +15,15 @@ try {
     } else { //找得到
         //取回一筆資料
         $letRowOther = $letterOther->fetchAll(PDO::FETCH_ASSOC);
-        $letRowOther = str_replace('userUploadImg//', './phps/userUploadImg/', $letRowOther);
-        // $memRow = $letterOther->fetchObject();  //$memRow->memName
+        $length = count($letRowOther)-1;
+        for($i=0;$i <= $length; $i++){
+            $letRowOther[$i] = str_replace('userUploadImg//', './phps/userUploadImg/', $letRowOther[$i]);
+            $data[]=$letRowOther[$i];
+        }
+        
         //送出json字串
-        echo json_encode($letRowOther);
+        echo json_encode($data);
+
     }
 } catch (PDOException $e) {
     echo $e->getMessage();

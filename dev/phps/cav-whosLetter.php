@@ -11,11 +11,12 @@ try {
         echo "{}";
     } else { //找得到
         //取回一筆資料
-        $letRow = $letter->fetchAll(PDO::FETCH_ASSOC);
+        $letRow = $letter->fetch(PDO::FETCH_ASSOC);
         $letRow = str_replace('userUploadImg//', './phps/userUploadImg/', $letRow);
         // $memRow = $letter->fetchObject();  //$memRow->memName
         //送出json字串
-        echo json_encode($letRow);
+        $data=[$letRow];
+        echo json_encode($data);
     }
 } catch (PDOException $e) {
     echo $e->getMessage();
