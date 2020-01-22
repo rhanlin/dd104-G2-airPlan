@@ -55,7 +55,8 @@
         @include marginAuto;
         .floor{
             width: 100%;
-            background: radial-gradient($main-red 30%, rgb(248, 230, 228) 20%);
+            background: radial-gradient($main-red 30%, rgb(255, 255, 255) 20%);
+            // background: radial-gradient($main-red 30%, rgb(248, 230, 228) 20%);
             background-size: 8px 8px;
             overflow: hidden;
             position: relative;
@@ -132,6 +133,11 @@
                             color: $main-red;
                             border: 3px solid $main-red;
                         }
+                        .posChangeLink{
+                            text-align: left;
+                            color: $main-red;
+                            border: 3px solid $main-red;
+                        }
                         .emailSet{
                             width: 2rem;
                             vertical-align: middle;
@@ -149,6 +155,9 @@
                                 height: 200px;
                                 display: block;
                                 @include marginAuto;
+                            }
+                            .poslink{
+                                text-align: right;
                             }
                         }
                         .userSetting_airCoin{
@@ -270,26 +279,42 @@
                                 display: flex;
                                 @extend .memcolorBig;
                                 .intColorBtn0{
-                                    width: 50%;
-                                    border: 3px solid $main-green;
+                                    margin: 5%;
+                                    width: 45%;
+                                    height: 280px;
+                                    background: radial-gradient($main-white 30%, $main-yellow 20%);
+                                    background-size: 8px 8px;
+                                    border: 3px solid $main-white;
                                     cursor: pointer;
                                 }
                                 .intColorBtn0:hover{
                                     border: 3px solid $main-red;
                                 }
                                 .intColorBtn1{
-                                    width: 50%;
-                                    border: 3px solid $main-green;
+                                    margin: 5%;
+                                    width: 45%;
+                                    height: 280px;
+                                    background: radial-gradient($main-white 30%, $main-blue 20%);
+                                    background-size: 8px 8px;
+                                    border: 3px solid $main-white;
                                     cursor: pointer;
                                 }
                                 .intColorBtn1:hover{
                                     border: 3px solid $main-red;
                                 }
                                 .on{
-                                    width: 50%;
+                                    width: 45%;
                                     border: 3px solid $main-dark-red;
                                     cursor: pointer; 
                                 }
+                            }
+                            .intColBtn0Title{
+                                display: inline-block;
+                                width: 50%;
+                                text-align: center;
+                            }
+                            .intColBtn1Title{
+                                @extend.intColBtn0Title;
                             }
                         }
                     }

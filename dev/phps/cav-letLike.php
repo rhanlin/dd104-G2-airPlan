@@ -1,23 +1,25 @@
 <?php
-// try { 廢了
-//     require_once("connectBook_root.php");
-//     $sql = "insert into `letterlike`(memNo,letNo,letLikeTime)values(:memNo,:letNo,:letLikeTime)";
-//     $likedLet = $pdo->prepare($sql);
-//     $likedLet->bindValue(":letNo", $_GET["likeThis"]);
-//     $likedLet->bindValue(":memNo", $_GET["whoLike"]);
-//     $likedLet->bindValue(":letLikeTime", $_GET["likeTime"]);
-//     $likedLet->execute();
-//     echo json_encode(['status' => 'success']);
-//     // if ($likedLet->rowCount() == 0) { //找不到
-//     //     //傳回空的JSON字串
-//     //     echo "{}";
-//     // } else { //找得到
-//     //     //取回一筆資料
-//     //     $likeRowLet = $likedLet->fetchAll(PDO::FETCH_ASSOC);
-//     //     //送出json字串
+try {
+    require_once("connectBook_root.php");
+    $sql = "insert into `letterlike`(memNo,letNo,letLikeTime)values(:memNo,:letNo,:letLikeTime)";
+    $likedLet = $pdo->prepare($sql);
+    $likedLet->bindValue(":letNo", $_GET["letNo"]);
+    $likedLet->bindValue(":memNo", $_GET["memNo"]);
+    $likedLet->bindValue(":letLikeTime", $_GET["likeTime"]);
+    $likedLet->execute();
+    echo json_encode(['status' => 'success']);
+    $likedLetNo = $pdo->lastInsertId();
 
-//     //     echo json_encode($likeRowLet);
-//     // }
-// } catch (PDOException $e) {
-//     echo $e->getMessage();
-// }
+    //撈出要增加airCoin的memNo
+    $likedWhoSql = "SELECT l.memNo FROM `letter` l JOIN `letterLike` k ON k.letNo=l.letNo WHERE k.letLikeNo=:letLikeNo";
+    $likedWhoNo = $pdo->prepare($likedWhoSql);
+    $likedWhoNo->bindValue(':letLikeNo', $likedLetNo);
+    $likedWhoNo->execute();
+    $likedWhoNoRow = $likedWhoNo->fetch(PDO::FETCH_ASSOC);
+    $addMoneySql = "UPDATE `member` SET airCoin=airCoin+100 WHERE memNo=:memNo";
+    $addMoney = $pdo->prepare($addMoneySql);
+    $addMoney->bindValue(':memNo', $likedWhoNoRow['memNo']);
+    $addMoney->execute();
+} catch (PDOException $e) {
+    echo $e->getMessage();
+}

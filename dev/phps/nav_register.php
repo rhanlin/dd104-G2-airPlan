@@ -11,7 +11,7 @@ try {
 		$member->bindValue(':memName', $_POST['memName']);
 		$member->bindValue(':memPsw', $_POST['memPsw']);
 		$member->bindValue(':memEmail', $_POST['memEmail']);
-		$member->bindValue(':letCount', 5);
+		$member->bindValue(':letCount', 1);
 		$member->bindValue(':airCoin', 1000);
 		$member->bindValue(':intColor', 0);
 		$member->execute();
