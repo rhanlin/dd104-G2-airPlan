@@ -7,7 +7,6 @@ try {
   $randLetter = $pdo->prepare($sql);
   $randLetter->bindValue(':memNo',$memNo);
   $randLetter->execute();
-  
   if($randLetter->rowCount()){
     $letter = $randLetter->fetch(PDO::FETCH_ASSOC);
     $letter = str_replace('userUploadImg//', './phps/userUploadImg/', $letter);
@@ -17,6 +16,8 @@ try {
     $userMsg = $pdo->prepare($msgSql);
     $userMsg->bindValue(':letNo',$letter['letNo']);
     $userMsg->execute();
+
+    $writerNo = $letter['memNo'];
 
     $histySql = "INSERT INTO `history`(memNo,letNo) VALUES (:memNo , :letNo) ";
     $catchHist = $pdo->prepare($histySql);
@@ -35,11 +36,38 @@ try {
         'letPattern'=>$catchLetPatRow,
       ];
     }
-    if($userMsg->rowCount()){
-      $userMsgRow = $userMsg->fetchAll(PDO::FETCH_ASSOC);
+
+    $wtrNameSql = "SELECT memName FROM `member` WHERE memNo=$writerNo";
+    $writerName = $pdo->prepare($wtrNameSql);
+    $writerName->execute();
+    if($writerName->rowCount()){
+      $writerNameRow = $writerName->fetch(PDO::FETCH_ASSOC);
       $data=[
         'letter'=>$letter,
         'letPattern'=>$catchLetPatRow,
+        'writerName'=>$writerNameRow,
+      ];
+    }
+
+    if($userMsg->rowCount()){
+      $userMsgRow = $userMsg->fetchAll(PDO::FETCH_ASSOC);
+      $arrLength = count($userMsgRow);
+      for($i=0; $i<$arrLength; $i++){
+        $msgUserNo = $userMsgRow[$i]['memNo'];
+        $msgUserNameSql = "SELECT memName FROM `member` WHERE memNo=$msgUserNo";
+        $msgUserName = $pdo->prepare($msgUserNameSql);
+        $msgUserName->execute();
+        if($msgUserName->rowCount()){
+          $msgUserNameRow = $msgUserName->fetch(PDO::FETCH_ASSOC);
+          $msgUserNameArr[]=$msgUserNameRow['memName'];
+        }
+      }
+
+      $data=[
+        'letter'=>$letter,
+        'letPattern'=>$catchLetPatRow,
+        'writerName'=>$writerNameRow,
+        'msgUserName'=>$msgUserNameArr,
         'msg'=>$userMsgRow,
       ];
     }

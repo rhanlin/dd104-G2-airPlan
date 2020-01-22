@@ -35,15 +35,15 @@ function catchALetter(){
     console.log(json);
     vmCatchLetter.letteTittle = json.letter.letTitle;
     vmCatchLetter.letterContant_1 = json.letter.letContent;
-    vmCatchLetter.publishedAt = `publishedAt: ${json.letter.letTime}`;
-    vmCatchLetter.author = `author: ${json.letter.memNo}`;
+    vmCatchLetter.publishedAt = `寄件時間: ${json.letter.letTime}`;
+    vmCatchLetter.author = `寄件人: ${json.writerName.memName}-${json.letter.memNo}`;
     vmCatchLetter.letterUploadImg = `url(${json.letter.imgUrl})`;
 
     //內頁
     vmCatchLet.letteTittle = json.letter.letTitle;
     vmCatchLet.letterContant_1 = json.letter.letContent;
-    vmCatchLet.publishedAt = `publishedAt: ${json.letter.letTime}`;
-    vmCatchLet.author = `author: ${json.letter.memNo}`;
+    vmCatchLet.publishedAt = `寄件時間: ${json.letter.letTime}`;
+    vmCatchLet.author = `寄件人: ${json.writerName.memName}-${json.letter.memNo}`;
     vmCatchLet.letterUploadImg = `url(${json.letter.imgUrl})`;
 
     //保存撈到信件的canvas圖檔
@@ -57,7 +57,7 @@ function catchALetter(){
       for(let i=0 ; i<json.msg.length ; i++){
         if(json.msg[i].memNo){
           if(json.msg[i].msgStatus != 1){
-            vmCatchLet.msgUserId.push(`用戶編號：${json.msg[i].memNo}`);
+            vmCatchLet.msgUserId.push(`${json.msgUserName[i]}-${json.msg[i].memNo}`);
           }else{
             vmCatchLet.msgUserId.push(`此用戶已經遭到檢舉`);
           }
