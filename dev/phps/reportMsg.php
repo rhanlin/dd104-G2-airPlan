@@ -2,7 +2,7 @@
 try {
   //檢舉
   require_once("connectBook_root.php");
-  $sql = "insert into `messageReport`(memNo, msgNo, msgRepTime, msgRepReason, msgRepStatus, msgRepPass) VALUES (:memNo, :msgNo, :msgRepTime, :msgRepReason, 0, 0)";
+  $sql = "insert into `messageReport`(memNo, msgNo, msgRepTime, msgRepReason, msgRepStatus) VALUES (:memNo, :msgNo, :msgRepTime, :msgRepReason, 0)";
 
   date_default_timezone_set("Asia/Taipei");  //設定時區
   $msgRepTime = date("Y-n-j H:i:s");  //將時間格式化
