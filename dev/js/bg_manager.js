@@ -57,5 +57,23 @@ function patternWrap(managerMod, admNo, admName, admI, admPsw, admStatus) {
     return managerMod;
 };
 
+function getSignInfo() {
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        let admin = JSON.parse(xhr.responseText);
+        if (admin.admI) {
+            console.log("admin.admI",admin.admI);
+            if(admin.admStatus == 0){
+                document.getElementById('addAdmin').style.display = "none";
+            }
+        }
+    }
+    xhr.open("get", "./phps/bg_getSignInfo.php", true);
+    xhr.send(null);
+}
+// window.addEventListener('load', managerMod,getSignInfo);
 
-window.addEventListener('load', managerMod);
+window.addEventListener("load", function () {
+    managerMod();
+    getSignInfo();
+});
