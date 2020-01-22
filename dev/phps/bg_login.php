@@ -1,7 +1,7 @@
 <?php 
 try {
 	require_once("connectBook_root.php");
-	$sql = "select * from `admin` where (admId = :admId) and (admPsw = :admPsw);";
+	$sql = "select * from `admin` where (admI = :admId) and (admPsw = :admPsw);";
 	$admin = $pdo->prepare($sql);
 	$admin->bindValue(':admId', $_POST["admId"]);
     $admin->bindValue(':admPsw', $_POST["admPsw"]);
@@ -17,7 +17,7 @@ try {
 		$_SESSION["admPsw"] = $adminRow["admPsw"];
 	    $_SESSION["admName"] = $adminRow["admName"];
         $_SESSION["admStatus"] = $adminRow["admStatus"]; 
-		$_SESSION["admId"] = $adminRow["admId"];  
+		$_SESSION["admI"] = $adminRow["admI"];  
 		echo json_encode($adminRow);//送出json字串
     } 
 } catch (PDOException $e) {
