@@ -305,6 +305,7 @@ $(document).ready(function () {
                             msgRow[j].msgTime,
                             msgRow[j].msgContent,
                             msgRow[j].msgNo,
+                            msgRow[j].msgStatus,
                           );
                           msgNum[j] = msgRow[j].msgNo;
                           $(".cav-replys").html(letReply);
@@ -407,15 +408,15 @@ $(document).ready(function () {
 
                   /* AJAX *註冊* 檢舉留言跳窗 */
                   var reportThis;
-                  $(document).on("click", ".report", function (e) {
+                  $(".report").click(function (e) {
                     obj1 = e.target.parentNode;
                     reportThis = $(this).on("click").attr("data-report");//被檢舉留言
                     $(".cav-reportList").toggle();
                   });
-                  $(".closeTag").on("click", function () {
+                  $(".closeTag").click(function () {
                     $(".cav-reportList").css("display", "none");
                   });
-                  $(".cav-sendReport").on("click", function () {
+                  $(".cav-sendReport").click(function () {
                     if ($("#cav-reportSelector").val() == null) {
                       alert("請選擇原因");
                       console.log($("#cav-reportSelector").val());
@@ -686,6 +687,7 @@ $(document).ready(function () {
                             msgRow[j].msgTime,
                             msgRow[j].msgContent,
                             msgRow[j].msgNo,
+                            msgRow[j].msgStatus,
                           );
                           msgNum[j] = msgRow[j].msgNo;
                           $(".cav-replys").html(letReply);
@@ -788,15 +790,15 @@ $(document).ready(function () {
 
                   /* AJAX *註冊* 檢舉留言跳窗 */
                   var reportThis;
-                  $(document).on("click", ".report", function (e) {
+                  $(".report").click(function (e) {
                     obj1 = e.target.parentNode;
                     reportThis = $(this).on("click").attr("data-report");//被檢舉留言
                     $(".cav-reportList").toggle();
                   });
-                  $(".closeTag").on("click", function () {
+                  $(".closeTag").click(function () {
                     $(".cav-reportList").css("display", "none");
                   });
-                  $(".cav-sendReport").on("click", function () {
+                  $(".cav-sendReport").click(function () {
                     if ($("#cav-reportSelector").val() == null) {
                       alert("請選擇原因");
                       console.log($("#cav-reportSelector").val());
@@ -1039,7 +1041,60 @@ $(document).ready(function () {
       // $(this).attr("disabled", true);
     });
 
-
+    /* AJAX *註冊* 檢舉留言跳窗  第一個*/
+    var reportThis;
+    $(document).on("click", ".report", function (e) {
+      obj1 = e.target.parentNode;
+      reportThis = $(this).on("click").attr("data-report");//被檢舉留言
+      $(".cav-reportList").toggle();
+    });
+    $(".closeTag").on("click", function () {
+      $(".cav-reportList").css("display", "none");
+    });
+    $(".cav-sendReport").click(function () {
+      if ($("#cav-reportSelector").val() == null) {
+        alert("請選擇原因");
+        // console.log($("#cav-reportSelector").val());
+      } else {
+        $(".cav-reportList").toggle();
+        alert("檢舉已送出，我們將盡速審核");
+        let whoReport = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];//檢舉會員
+        let now = new Date();//檢舉時間
+        let reportTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() +
+          " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+        let msgRepReason = $("#cav-reportSelector").val();//檢舉原因
+        // console.log(reportThis);
+        // console.log(whoReport);
+        // console.log(reportTime);
+        // console.log(msgRepReason);
+        $.ajax({
+          url: "./phps/cav-msgReport.php",
+          type: "GET",
+          dataType: "json",
+          data: {
+            "whoReport": whoReport,
+            "reportThis": reportThis,
+            "reportTime": reportTime,
+            "msgRepReason": msgRepReason,
+          },
+          success: function (reportRow) {
+            console.log(reportRow);
+            if (reportRow.status == 'success') {
+              // obj1.disabled = true;
+              $("#report" + obj1).attr("disabled", true);
+              console.log(obj1);
+              // console.log(666);
+            } else {
+              console.log(111);
+            }
+          },
+          error: function (reportRow) {
+            console.log(reportRow);
+          }
+        });
+        // e.preventDefault();
+      }
+    });
 
     // //檢舉信件跳窗
     // var reportThis2;
@@ -1096,6 +1151,9 @@ $(document).ready(function () {
     });
 
 
+
+
+
     /*自動撈取第一封信件回覆 */
     $(function changeFirstMsg() {
       let firstLookMsg = $(".cav-looking").find(".cav-letTitle").attr("data-letter-num");
@@ -1105,7 +1163,7 @@ $(document).ready(function () {
         dataType: "json",
         data: { letNo: firstLookMsg },
         success: function (msgRow) {
-          // console.log("信件回復", msgRow); 6
+          console.log("信件回復", msgRow); 6
           // let letReply = "";
           // console.log(msgRow);
           // console.log($.isEmptyObject(msgRow) == false);
@@ -1141,6 +1199,7 @@ $(document).ready(function () {
                       msgRow[j].msgTime,
                       msgRow[j].msgContent,
                       msgRow[j].msgNo,
+                      msgRow[j].msgStatus,
                     );
                     msgNum[j] = msgRow[j].msgNo;
                     $(".cav-replys").html(letReply);
@@ -1241,20 +1300,20 @@ $(document).ready(function () {
               // $(this).attr("disabled", true);
             });
 
-            /* AJAX *註冊* 檢舉留言跳窗 */
+            /* 註冊檢舉事件 原始 */
             var reportThis;
-            $(document).on("click", ".report", function (e) {
+            $(".report").click(function (e) {
               obj1 = e.target.parentNode;
               reportThis = $(this).on("click").attr("data-report");//被檢舉留言
               $(".cav-reportList").toggle();
             });
-            $(".closeTag").on("click", function () {
+            $(".closeTag").click(function () {
               $(".cav-reportList").css("display", "none");
             });
-            $(".cav-sendReport").on("click", function () {
+            $(".cav-sendReport").click(function () {
               if ($("#cav-reportSelector").val() == null) {
                 alert("請選擇原因");
-                // console.log($("#cav-reportSelector").val());
+                console.log($("#cav-reportSelector").val());
               } else {
                 $(".cav-reportList").toggle();
                 alert("檢舉已送出，我們將盡速審核");
@@ -1263,10 +1322,10 @@ $(document).ready(function () {
                 let reportTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() +
                   " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
                 let msgRepReason = $("#cav-reportSelector").val();//檢舉原因
-                // console.log(reportThis);
-                // console.log(whoReport);
-                // console.log(reportTime);
-                // console.log(msgRepReason);
+                console.log(reportThis);
+                console.log(whoReport);
+                console.log(reportTime);
+                console.log(msgRepReason);
                 $.ajax({
                   url: "./phps/cav-msgReport.php",
                   type: "GET",
@@ -1295,6 +1354,61 @@ $(document).ready(function () {
                 // e.preventDefault();
               }
             });
+
+            // /* AJAX *註冊* 檢舉留言跳窗  第一個*/
+            // var reportThis;
+            // $(document).on("click", ".report", function (e) {
+            //   obj1 = e.target.parentNode;
+            //   reportThis = $(this).on("click").attr("data-report");//被檢舉留言
+            //   $(".cav-reportList").toggle();
+            // });
+            // $(".closeTag").on("click", function () {
+            //   $(".cav-reportList").css("display", "none");
+            // });
+            // $(".cav-sendReport").click(function () {
+            //   if ($("#cav-reportSelector").val() == null) {
+            //     alert("請選擇原因");
+            //     // console.log($("#cav-reportSelector").val());
+            //   } else {
+            //     $(".cav-reportList").toggle();
+            //     alert("檢舉已送出，我們將盡速審核");
+            //     let whoReport = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];//檢舉會員
+            //     let now = new Date();//檢舉時間
+            //     let reportTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() +
+            //       " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+            //     let msgRepReason = $("#cav-reportSelector").val();//檢舉原因
+            //     // console.log(reportThis);
+            //     // console.log(whoReport);
+            //     // console.log(reportTime);
+            //     // console.log(msgRepReason);
+            //     $.ajax({
+            //       url: "./phps/cav-msgReport.php",
+            //       type: "GET",
+            //       dataType: "json",
+            //       data: {
+            //         "whoReport": whoReport,
+            //         "reportThis": reportThis,
+            //         "reportTime": reportTime,
+            //         "msgRepReason": msgRepReason,
+            //       },
+            //       success: function (reportRow) {
+            //         console.log(reportRow);
+            //         if (reportRow.status == 'success') {
+            //           // obj1.disabled = true;
+            //           $("#report" + obj1).attr("disabled", true);
+            //           console.log(obj1);
+            //           // console.log(666);
+            //         } else {
+            //           console.log(111);
+            //         }
+            //       },
+            //       error: function (reportRow) {
+            //         console.log(reportRow);
+            //       }
+            //     });
+            //     // e.preventDefault();
+            //   }
+            // });
           } else {
             let letNoReply = "";
             letNoReply = letterNoReply();
@@ -1321,7 +1435,8 @@ $(document).ready(function () {
         dataType: "json",
         data: { letNo: witchLetMsg },
         success: function (msgRow) {
-          // console.log("信件回復", msgRow); 6
+          console.log("信件回復", msgRow); 6
+
 
           if ($.isEmptyObject(msgRow) == false) {
             $(function checkClickedBefore() {
@@ -1352,10 +1467,12 @@ $(document).ready(function () {
                       msgRow[j].msgTime,
                       msgRow[j].msgContent,
                       msgRow[j].msgNo,
+                      msgRow[j].msgStatus,
                     );
                     msgNum[j] = msgRow[j].msgNo;
                     $(".cav-replys").html(letReply);
                   }
+
 
                   // console.log(msgNum);
                   // console.log(chkClickRow);
@@ -1386,8 +1503,6 @@ $(document).ready(function () {
                       console.log("沒有被檢舉過");
                     }
                   }
-
-
 
                 },
                 error: function (chkClickRow) {
@@ -1724,21 +1839,12 @@ function myLetter(i, myLet, letTitle, letTime, letNo) {
       <div class="cav-letWord">
         <div>
           <p class="cav-letTitle" data-letter-num="${letNo}">${letTitle}</p> 
-         </div>
-         <div>
+        </div>
+        <div>
             <h6 class="cav-letTime">${letTime}</h6>
        </div>
-      </div>
-      <div class="cav-letSetting">
-        <div><i class="fas fa-ellipsis-h"></i></div>
-        <div class="cav-landLetter">
-           <span class="cav-land ">
-               <h6>下架信件</h6>
-           </span>
-       </div>
-      </div>
-
-      </div>  
+      </div> 
+      </div> 
        `;
   return myLet;
 }
@@ -1760,33 +1866,43 @@ function otherLetter(i, otherLet, letTitle, letTime, letNo) {
 }
 
 /* 動態產生回復留言 */
-function letterReply(letReply, memNo, msgTime, msgContent, msgNo) {
-  letReply += `<div class="cav-letComment">
-  <div class="cav-commMain">
-      <div class="cav-commHead">
-          <div class="cav-commId">${memNo}</div>
-          <div class="cav-commTime">${msgTime}</div>
-      </div>
-      <p class="cav-commText">${msgContent}</p>
+function letterReply(letReply, memNo, msgTime, msgContent, msgNo, msgStatus) {
+  if (msgStatus == 0) {
+    letReply += `<div class="cav-letComment">
+    <div class="cav-commMain">
+        <div class="cav-commHead">
+            <div class="cav-commId">${memNo}</div>
+            <div class="cav-commTime">${msgTime}</div>
+        </div>
+        <p class="cav-commText">${msgContent}</p>
+    </div>
+    <div class="cav-commOption">
+        <div class="cav-commLike">
+            <div class="circle threed">
+                <button id="like${msgNo}" class="circle button like" data-like="${msgNo}">
+                    <img src="./img/cave/coin.png" alt=""></i></button>
+            </div>
+        </div>
+        <div class="cav-commReport">
+            <div class="circle threed ">
+                <button id="report${msgNo}" class="circle button report" data-report="${msgNo}">
+                    <img src="./img/cave/exclamation-button.png"
+                        alt=""></button>
+            </div>
+        </div>
+    </div>
   </div>
-  <div class="cav-commOption">
-      <div class="cav-commLike">
-          <div class="circle threed">
-              <button id="like${msgNo}" class="circle button like" data-like="${msgNo}">
-                  <img src="./img/cave/coin.png" alt=""></i></button>
-          </div>
+  `;
+    return letReply;
+  } else {
+    letReply +=
+      `<div class="cav-letComment">
+        <p class="cav-commText cav-commGotReport">留言已遭下架</p>
       </div>
-      <div class="cav-commReport">
-          <div class="circle threed ">
-              <button id="report${msgNo}" class="circle button report" data-report="${msgNo}">
-                  <img src="./img/cave/exclamation-button.png"
-                      alt=""></button>
-          </div>
-      </div>
-  </div>
-</div>
-`;
-  return letReply;
+    `;
+    return letReply;
+  }
+
 }
 
 function letterNoReply(letNoReply) {
