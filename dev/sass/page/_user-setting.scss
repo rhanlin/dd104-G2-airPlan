@@ -282,7 +282,7 @@
                                     margin: 5%;
                                     width: 45%;
                                     height: 280px;
-                                    background: radial-gradient($main-white 30%, $main-yellow 20%);
+                                    background: radial-gradient(rgba(0,0,0,.2) 30%, rgba(255, 255, 255, .2) 20%);
                                     background-size: 8px 8px;
                                     border: 3px solid $main-white;
                                     cursor: pointer;
@@ -294,7 +294,7 @@
                                     margin: 5%;
                                     width: 45%;
                                     height: 280px;
-                                    background: radial-gradient($main-white 30%, $main-blue 20%);
+                                    background: radial-gradient(rgba(255, 255, 255, .2) 30%, rgba(0,0,0,.2) 20%);
                                     background-size: 8px 8px;
                                     border: 3px solid $main-white;
                                     cursor: pointer;
@@ -588,13 +588,13 @@
                                                     }
                                                     span{
                                                         font-size: 24px;
-                                                        color: $main-blue;
+                                                        color: $main-red;
                                                         display: block;
                                                         margin: 10px;
                                                     }
                                                     p {
                                                         font-size: 24px;
-                                                        color: $main-red;
+                                                        color: $main-blue;
                                                         margin: 10px;
                                                     }
                                                 }
