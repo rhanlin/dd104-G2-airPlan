@@ -192,7 +192,7 @@ let vmCatchLetter = new Vue({
       planeLetter.style.animationName = "";
       // console.log("e.offsetX: ",e.offsetX);
       // console.log("e.offsetY: ",e.offsetY);
-      console.log(e.pageX, e.pageY);
+      // console.log(e.pageX, e.pageY);
       let stampshot = document.getElementById('stampshot');
       let stampEffectDiv = document.createElement('div');
       stampshot.style.display = "block";
@@ -206,7 +206,7 @@ let vmCatchLetter = new Vue({
       // console.log(vmCatchLet.userStamp[randStampInx]);
       
       stampshot.appendChild(stampEffectDiv);
-      console.log(e.pageX, e.pageY);
+      // console.log(e.pageX, e.pageY);
       setTimeout(()=>{
         planeLetter.style.animationName = "rotateLetter";
       },500)
@@ -284,7 +284,7 @@ let vmCatchLetter = new Vue({
               e.stopPropagation();
               e.stopImmediatePropagation();
               vmImgWrap.chooseStampUrl = e.target.style.backgroundImage;
-              console.log(vmImgWrap.chooseStampUrl);
+              // console.log(vmImgWrap.chooseStampUrl);
               confirmSubmit();
             })
           }
@@ -314,11 +314,11 @@ let vmCatchLetter = new Vue({
     }
   }
   function sendLikeMsg(e){
-    console.log(e.target);
+    // console.log(e.target);
     fetch(`./phps/likeMsg.php?memNo=${vmCatchLet.userNo}&msgNo=${e.target.value}`,{
       method:'GET',
     }).then(res=>res.json()).then(json=>{
-        console.log(json);
+        // console.log(json);
       })
       e.target.style.pointerEvents = 'none';
       e.target.style.background= "#aaa";
@@ -374,7 +374,7 @@ let vmCatchLetter = new Vue({
         body: new URLSearchParams(`memNo=${vmCatchLet.userNo}&msgNo=${vmCatchLet.reportMsgNo}&msgRepReason=${vmCatchLet.whyReportMsg}`),
       })
       .then(res=>res.json()).then(json=>{
-        console.log(json);
+        // console.log(json);
       })
       // e.target.style.pointerEvents = 'none';
       // e.target.style.background= "#aaa";
@@ -506,7 +506,7 @@ let vmCatchLetter = new Vue({
       body: new URLSearchParams(`memNo=${vmCatchLet.userNo}&letNo=${vmCatchLet.letNo}&letRepReason=${vmCatchLet.whyReport}`),
     })
     .then(res=>res.json()).then(json=>{
-      console.log(json);
+      // console.log(json);
       //解除禁止滾動
       document.body.removeEventListener('touchmove', wheel, { passive: false });
     })

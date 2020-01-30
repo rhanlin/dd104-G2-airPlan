@@ -297,7 +297,7 @@
         function onFulfilled(value){
           //登入成功 -> 取用戶彩繪圖案、用戶郵戳
           vmCatchLet.userNo = value;
-          console.log(`userNo: ${vmCatchLet.userNo}`);
+          // console.log(`userNo: ${vmCatchLet.userNo}`);
           
           fetch('./phps/fetchAllUserMat.php')
             .then(res=>res.json()).then(json=>{
@@ -308,7 +308,7 @@
                   vmCatchLet.stampValue.push(json.data[i].stampNo);//取 使用者飛機彩繪的編號得值(matPosNo)
                 }
               }
-              console.log(vmCatchLet.userStamp);
+              // console.log(vmCatchLet.userStamp);
             })
         }
         function onRejected(reason){
@@ -351,7 +351,7 @@
             xhr.onload = function () {
                 let member = JSON.parse(xhr.responseText);
                 if (member.memNo) {
-                  console.log(member.memNo);
+                  // console.log(member.memNo);
                   resolve(member.memNo);
                 }else{
                   reject(new Error('請先登入才能撈信'))

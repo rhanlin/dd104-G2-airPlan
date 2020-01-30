@@ -2,8 +2,8 @@ function catchNews(){
   fetch('https://newsapi.org/v2/top-headlines?' + 'country=us&' + 'apiKey=15d10159c7434cb08a1bb425ced4a544')
   .then(res=>res.json()).then(json=>{
     let randNews = rand(1,20)
-    console.log(json.articles[randNews])
-    console.log(randNews)
+    // console.log(json.articles[randNews])
+    // console.log(randNews)
     vmCatchLetter.letteTittle = json.articles[randNews].title;
     vmCatchLetter.letterContant_1 = json.articles[randNews].description;
     vmCatchLetter.letterContant_2 = json.articles[randNews].content;
@@ -32,7 +32,7 @@ function catchALetter(){
     body: new URLSearchParams(`memNo=${vmCatchLet.userNo}`),
   })
   .then(res=>res.json()).then(json=>{
-    console.log(json);
+    // console.log(json);
     vmCatchLetter.letteTittle = json.letter.letTitle;
     vmCatchLetter.letterContant_1 = json.letter.letContent;
     vmCatchLetter.publishedAt = `寄件時間: ${json.letter.letTime}`;
@@ -90,7 +90,7 @@ function catchALetter(){
     
   
 
-    console.log(`canvas: ${vmImgWrap.letUrl}`);
+    // console.log(`canvas: ${vmImgWrap.letUrl}`);
     
   }).catch(err=>console.log(err))
   
