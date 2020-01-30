@@ -324,6 +324,8 @@ $(document).ready(function () {
   $("#eraser").click(function () {
     if ($('#controlBox3').hasClass('clicked') == false) {
       canvas.freeDrawingBrush.color = '#ffffff';
+      canvas.freeDrawingBrush.shadow.color = '#ffffff';
+      canvas.freeDrawingBrush = squareBrush
       $(".lineWidthInput").val() = 10;
       canvas.freeDrawingBrush.width = $(".lineWidthInput").val()
     }
@@ -645,11 +647,11 @@ function resizeCanvas() {
     clipPath2 = clipPath2_3;
   } else if (window.innerWidth < 1330) {
 
-    canvasBox.width = (window.innerWidth * .50) + (window.innerWidth / 70);
+    canvasBox.width = (window.innerWidth * .50) + (window.innerWidth / 60);
     clipPath2 = clipPath3;
   } else if (window.innerWidth < 1500) {
 
-    canvasBox.width = 670 + (window.innerWidth / 55);
+    canvasBox.width = 670 + (window.innerWidth /45);
     clipPath2 = clipPath2_3;
   } else if (window.innerWidth < 1700) {
 
@@ -657,7 +659,7 @@ function resizeCanvas() {
     clipPath2 = clipPath2_2;
   } else {
     canvasBox.width = 700 + (window.innerWidth / 50)
-
+    canvas.setHeight(500);
   }
   canvas.setWidth(canvasBox.width)
 

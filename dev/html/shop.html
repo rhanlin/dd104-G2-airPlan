@@ -82,7 +82,7 @@
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                       <div class="card-body">
-                        <h5 @click="visibility='animal'">動物</h5>
+                        <h5 @click="visibility='animal'">造型</h5>
                         <h5 @click="visibility='handpattern'">手繪</h5>
                         <h5 @click="visibility='vector'">向量</h5>
                       </div>
@@ -142,7 +142,7 @@
                   郵戳
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <div class="dropdown-item" @click="visibility='countries'">地球村</div>
+                  <div class="dropdown-item" @click="visibility='countries'"> 地球村</div>
                   <div class="dropdown-item" @click="visibility='frame'">外框</div>
                   <div class="dropdown-item" @click="visibility='simple'">線條</div>
                 </div>
@@ -153,7 +153,7 @@
                   圖案
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <div class="dropdown-item" @click="visibility='animal'">動物</div>
+                  <div class="dropdown-item" @click="visibility='animal'">造型</div>
                   <div class="dropdown-item" @click="visibility='handpattern'">手繪</div>
                   <div class="dropdown-item" @click="visibility='vector'">向量</div>
                 </div>
@@ -181,8 +181,8 @@
                 <h6 id="infoInner"></h6>
               </div>
               <div class="chance_priceBox">
-                <h5>信件被撈機率加乘 : <span id="chanceInner"></span>
-                </h5>
+                <!-- <h5>信件被撈機率加乘 : <span id="chanceInner"></span>
+                </h5> -->
                 <h5>商品價格 :<span id="priceInner">50</span>
                 </h5>
               </div>
@@ -232,6 +232,12 @@
             <h6>滑鼠移入會提示您工具的使用方法喔</h6>
           </div>
         </div>
+      </div>
+      <div class="toolBtnTip">
+        <div class="blueCube"> </div>
+        <h6> 尚未購入</h6>
+        <div class="yellowCube"></div>
+        <h6> 已購入</h6>
       </div>
     </div>
     <section id="section2">
@@ -597,6 +603,21 @@
     window.addEventListener('load', function () {
       setTimeout(getMemberInfo, 500);
     }, false);
+  </script>
+  <script>
+    for (i = 0; i < 8; i++) {
+
+      document.querySelectorAll('.card-body h5')[i].onclick = changeColor;
+
+
+      function changeColor(e) {
+        for (y = 0; y < 8; y++) {
+          document.querySelectorAll('.card-body h5')[y].style.color = "#000";
+          e.target.style.color = "#487baa";
+        }
+
+      }
+    }
   </script>
 </body>
 

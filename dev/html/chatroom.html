@@ -67,7 +67,7 @@
                     get_chat(mem2[1]); //=====第一個要秀第一個的聊天內容
                     for (let i = 0; i < Mark.length; i++) {
                         Mark[i].addEventListener('click', function (e) {
-                            document.getElementsByClassName('sendText')[0].value = "";//=====清空輸入框內容
+                            document.getElementsByClassName('sendText')[0].value = ""; //=====清空輸入框內容
                             let mem2Name = e.currentTarget.getElementsByTagName("p")[0].innerText;
                             let mem2 = mem2Name.split("-");
                             get_chat(mem2[1]); //=====執行撈取資料，傳送memNo2
@@ -78,15 +78,15 @@
                             // console.log(memNo2.value)
                         })
                     };
-                    let timerId = setInterval(function(){
+                    let timerId = setInterval(function () {
                         get_Data(userMemNo);
                         get_chat(mem2[1]);
                         for (let j = 0; j < Mark.length; j++) {
-                                Mark[j].classList.remove("MarkRed"); //=====移除所有mark的顏色
-                            }
+                            Mark[j].classList.remove("MarkRed"); //=====移除所有mark的顏色
+                        }
                         Mark[0].classList.add("MarkRed"); //=====第一個mark顯示為紅色
                         document.getElementsByClassName('sendText')[0].value = "";
-                    }, 30000);
+                    }, 10000);
                 } else {
                     //=====聊天列表為空時
                     $('.sectionOver').append(
@@ -112,7 +112,7 @@
                     get_Data(userMemNo); //=====執行撈聊天列表
                 } else {
                     $('.sectionOver').append(
-                        `<div class='sectionMark1 MarkRed'><div class='overImg'><img src='./img/share/LOGO.png'></div><p>Air Plan</p></div>`
+                        `<div class='sectionMark1 MarkRed'><div class='overImg'><img style="margin-top:23%;" src='./img/share/LOGO.png'></div></div>`
                     );
                     $('.pageContent').append(
                         `<div class='contentYour'><div class='overImg'><img src='./img/share/LOGO.png'></div><p>請先登入</p></div>`
@@ -138,15 +138,30 @@
                     // console.log(overChil)
                 } else {
                     for (var i in data) {
-                        if (data[i].user2 != member.memNo) {
-                            console.log(data[i].matPosUrl)
-                            $('.sectionOver').append(
-                                `<div class='sectionMark1'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].mem2}-${data[i].user2}</p></div>`
-                            );
+                        if (i != 0) {
+                            if (data[i].user1 != member.memNo) {
+                                $('.sectionOver').append(
+                                    `<div class='sectionMark1'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].mem1}-${data[i].user1}</p></div>`
+                                );
+                            } else if (data[i].user1 == data[i - 1].user2) {
+
+                            } else {
+                                $('.sectionOver').append(
+                                    `<div class='sectionMark1'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].mem2}-${data[i].user2}</p></div>`
+                                );
+                            }
                         } else {
-                            $('.sectionOver').append(
-                                `<div class='sectionMark1'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].mem1}-${data[i].user1}</p></div>`
-                            );
+                            if (data[i].user1 != member.memNo) {
+                                $('.sectionOver').append(
+                                    `<div class='sectionMark1'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].mem1}-${data[i].user1}</p></div>`
+                                );
+                            } else if (data[i].user1 == data[1].user2) {
+                                break;
+                            } else {
+                                $('.sectionOver').append(
+                                    `<div class='sectionMark1'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].mem2}-${data[i].user2}</p></div>`
+                                );
+                            }
                         }
                     }
                     // console.log($('.sectionOver').children.length)
@@ -172,21 +187,12 @@
                         $('.pageContent').append(
                             `<div class='contentYour'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].chatContent}</p></div>`
                         );
-                    }                    
+                    }
                 } else {
                     $('.pageContent').append(
-                            `<div class='contentYour'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>你們已經是好友囉~快來聊天吧~~</p></div>`
-                        );
+                        `<div class='contentYour'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>哈囉~</p></div>`
+                    );
                 }
-                // if (data[i].memNo1 == member.memNo) {
-                //     $(`.pageContent`).append(
-                //         `<div class='contentMe'><p>${data[i].chatContent}</p></div>`);
-                //     // console.log(str['chat'][i].chatContent);
-                // } else {
-                //     $('.pageContent').append(
-                //         `<div class='contentYour'><div class='overImg'><img src='${data[i].matPosUrl}'></div><p>${data[i].chatContent}</p></div>`
-                //     );
-                // }
             }
         }
 

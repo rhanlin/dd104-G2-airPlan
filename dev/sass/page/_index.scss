@@ -1,55 +1,206 @@
-.bgimg{
-    background-image: url("../img/index/index_pic.png");
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
-    .bgimgwrap{
-        width: 100%;
-        height: 100%;
-        // background: radial-gradient(rgba(255, 255, 255, .3) 30%, rgba(255, 255, 255,0) 20%);
-        // background-size: 5px 5px;
-        // animation: gradient 10s ease-in-out infinite alternate;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        .logoBox{
-            width: 80%;
-            @include marginAuto;
-            .logopic{
-                width: 80%;
-                max-width: 500px;
-                display: block;
-                margin: 0 auto 100px;
+body {
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-size: 0;
+
+    .index_bg {
+        width: 100vw;
+        height: 100vh;
+
+        background: -webkit-radial-gradient(rgb(200, 200, 200) 10%, rgb(33, 44, 65) 10%);
+        background: radial-gradient(rgb(200, 200, 200) 10%, rgb(33, 44, 65) 10%);
+        background-size: 3vw 3vw;
+        position: relative;
+
+        .post {
+            width: 75vw;
+            height: 43vw;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0;
+
+            background: -webkit-linear-gradient(45deg, rgb(236, 128, 120) 45%, rgb(255, 255, 255) 45%, rgb(255, 255, 255) 55%, rgb(236, 128, 120) 55%);
+            background: linear-gradient(45deg, rgb(236, 128, 120) 45%, rgb(255, 255, 255) 45%, rgb(255, 255, 255) 55%, rgb(236, 128, 120) 55%);
+            background-size: 3vw 3vw;
+            -webkit-animation: lineScale 40s infinite linear;
+            animation: lineScale 40s infinite linear;
+
+            @-webkit-keyframes lineScale {
+                0% {
+                    background-position: 0 100%;
+                }
+
+                100% {
+                    background-position: 100% 100%;
+                }
             }
-            .btnWrap{
-                width: 50%;
-                display:flex;
-                @include marginAuto;
-                .forward{
+
+            @keyframes lineScale {
+                0% {
+                    background-position: 0 100%;
+                }
+
+                100% {
+                    background-position: 100% 100%;
+                }
+            }
+
+            .line_bg {
+                border: 0.2vw solid rgb(57, 77, 182);
+                width: 95%;
+                height: 91.5%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                .logo_bg {
+                    width: 100%;
+                    height: 25%;
+                    background-color: rgb(157, 246, 200);
+                    border-bottom: 0.2vw solid rgb(57, 77, 182);
+                    position: relative;
+
+                    img {
+                        height: 80%;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                .front_bg {
+                    display: inline-block;
                     width: 50%;
-                    .forwardBtn{
-                        display: block;
-                        text-decoration: none;
-                    }
-                    .forwardBtn:hover{
-                        background-color: rgba(255,255,255,.2);
-                        border-radius: 20px;
+                    height: 75%;
+                    border-right: 0.2vw solid rgb(57, 77, 182);
+                    background-color: rgb(252, 223, 225);
+                    position: relative;
+
+                    .front_blueLine {
+                        width: 80%;
+                        height: 73%;
+                        background: -webkit-linear-gradient(0deg, rgb(252, 223, 225) 95%, rgb(57, 77, 182) 95%);
+                        background: linear-gradient(0deg, rgb(252, 223, 225) 95%, rgb(57, 77, 182) 95%);
+                        background-size: 3vw 3vw;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+
+                        a {
+                            .front_shadow {
+                                width: 60%;
+                                height: 43%;
+                                background-color: rgb(57, 77, 182);
+                                position: absolute;
+                                top: 22%;
+                                left: 15%;
+
+                                .front_paper {
+                                    width: 100%;
+                                    height: 100%;
+                                    border: 0.2vw solid rgb(57, 77, 182);
+                                    background-color: rgb(252, 223, 225);
+                                    transition: transform 0.5s ease-in-out;
+
+                                    .front_textShadow {
+                                        font-size: 4vw;
+                                        font-family: $font;
+                                        color: rgb(129, 146, 226);
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        // text-shadow: -4px -4px rgb(57, 77, 182);
+                                        transition: text-shadow 0.5s ease-in-out 0.5s;
+                                    }
+                                }
+
+                                &:hover {
+                                    >.front_paper {
+                                        transform: translate(15%, 30%);
+                                    }
+
+                                    >.front_paper {
+                                        .front_textShadow {
+                                            text-shadow: -5px 0px rgb(57, 77, 182);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
                     }
                 }
-                .back{
-                    width: 50%;  
-                    .backBtn{
-                        display: block;
-                        text-decoration: none;
-                    }
-                    .backBtn:hover{
-                        background-color: rgba(255,255,255,.2);
-                        border-radius: 20px;
+
+                .back_bg {
+                    display: inline-block;
+                    width: 50%;
+                    height: 75%;
+                    background-color: rgb(246, 243, 136);
+                    position: relative;
+
+                    .back_blueLine {
+                        width: 80%;
+                        height: 73%;
+                        background: -webkit-linear-gradient(0deg, rgb(246, 243, 136) 95%, rgb(57, 77, 182) 95%);
+                        background: linear-gradient(0deg, rgb(246, 243, 136) 95%, rgb(57, 77, 182) 95%);
+                        background-size: 3vw 3vw;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+
+                        a {
+                            .back_shadow {
+                                width: 60%;
+                                height: 43%;
+                                background-color: rgb(57, 77, 182);
+                                position: absolute;
+                                top: 22%;
+                                right: 15%;
+
+                                .back_paper {
+                                    width: 100%;
+                                    height: 100%;
+                                    border: 0.2vw solid rgb(57, 77, 182);
+                                    background-color: rgb(246, 243, 136);
+                                    transition: transform 0.5s ease-in-out;
+
+                                    .back_textShadow {
+                                        font-size: 4vw;
+                                        font-family: $font;
+                                        color: rgb(129, 146, 226);
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        transition: text-shadow 0.5s ease-in-out 0.5s;
+                                    }
+                                }
+
+                                &:hover {
+                                    >.back_paper {
+                                        transform: translate(-15%, 30%);
+                                    }
+
+                                    >.back_paper {
+                                        .back_textShadow {
+                                            text-shadow: 5px 0px rgb(57, 77, 182);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
                     }
                 }
             }
+
         }
-        
     }
-    
 }
