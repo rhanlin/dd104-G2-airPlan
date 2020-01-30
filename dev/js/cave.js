@@ -41,7 +41,7 @@ $(document).ready(function () {
         /* 點擊歷史信件秀出對應信件標題、內文、圖片 */
         function letterContent(fullLet) {
           let firstLook = $(".cav-looking").find(".cav-letTitle").text();
-          console.log(firstLook);
+          // console.log(firstLook); 6
           for (let i = 0; i < fullLet.length; i++) {
             if (firstLook == fullLet[i][1]) {
               $(".letter-img").css("backgroundImage", "url(" + fullLet[i][0] + ")");
@@ -57,7 +57,7 @@ $(document).ready(function () {
               $(".letLike").attr("id", "letLike" + fullLet[i][5]);
               $(".letReport").attr("id", "letReport" + fullLet[i][5]);
               // $(".cav-letNo").text("no." + fullLet[i][3]);
-              console.log(fullLet[i][1]);
+              // console.log(fullLet[i][1]); 6
               console.log($(".letChat").attr("id", "letChat" + fullLet[i][4]));
 
               break;
@@ -134,8 +134,8 @@ $(document).ready(function () {
         $(function checkLetReport() {
           let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
           let letNum = $(".letReport").attr("data-letreport");
-          console.log(memNo);
-          console.log("信件編號", letNum);
+          // console.log(memNo); 6
+          // console.log("信件編號", letNum); 6
           $.ajax({
             url: "./phps/cav-checkReportLet.php",
             type: "GET",
@@ -144,16 +144,16 @@ $(document).ready(function () {
             success: function (chkReportRow) {
               let checkLetNo = new Array();
 
-              console.log("會員編號", memNo); 6
-              console.log("有打賞", chkReportRow); 6
+              // console.log("會員編號", memNo); 6
+              // console.log("有打賞", chkReportRow); 6
               for (i = 0; i < chkReportRow.length; i++) {
                 checkLetNo[i] = chkReportRow[i].letNo;
-                console.log(checkLetNo);
-                console.log($.inArray(letNum, checkLetNo));
-                console.log(memNo == chkReportRow[i].memNo);
+                // console.log(checkLetNo); 6
+                // console.log($.inArray(letNum, checkLetNo)); 6
+                // console.log(memNo == chkReportRow[i].memNo); 6
                 if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkReportRow[i].memNo) {
                   $("#letReport" + letNum).attr("disabled", true);
-                  console.log($("#letReport" + letNum));
+                  // console.log($("#letReport" + letNum)); 6
                 }
                 else {
                   $("#letReport" + letNum).attr("disabled", false);
@@ -301,7 +301,7 @@ $(document).ready(function () {
                           //撈出所有回覆
                           letReply = letterReply(
                             letReply,
-                            msgRow[j].memNo,
+                            msgRow[j].memName,
                             msgRow[j].msgTime,
                             msgRow[j].msgContent,
                             msgRow[j].msgNo,
@@ -359,8 +359,6 @@ $(document).ready(function () {
 
                   /* AJAX *註冊* 打賞留言跳金幣,並只能打賞一次 */
                   $(document).on("click", ".like", function (e) {
-                    e.stopPropagation;
-                    e.stopImmediatePropagation;
                     // console.log(e.target.parentNode);
                     let obj = e.target.parentNode.dataset.like;
                     console.log(obj);
@@ -462,7 +460,8 @@ $(document).ready(function () {
                   });
                 } else {
                   let letNoReply = "";
-                  letNoReply = letterNoReply();
+                  let msgRow = "";
+                  letNoReply = letterNoReply(msgRow);
                   $(".cav-replys").html(letNoReply);
                 }
 
@@ -589,7 +588,7 @@ $(document).ready(function () {
               letRowOther[i].letNo,
             ]); //單一信件所需內容
             // console.log(fullLet);
-            console.log(fullOtherLet);
+            // console.log(fullOtherLet); 6
             $(".cav-histLetter2").html(otherLet);
           }
 
@@ -683,7 +682,7 @@ $(document).ready(function () {
                           //撈出所有回覆
                           letReply = letterReply(
                             letReply,
-                            msgRow[j].memNo,
+                            msgRow[j].memName,
                             msgRow[j].msgTime,
                             msgRow[j].msgContent,
                             msgRow[j].msgNo,
@@ -844,7 +843,8 @@ $(document).ready(function () {
                   });
                 } else {
                   let letNoReply = "";
-                  letNoReply = letterNoReply();
+                  let msgRow = "";
+                  letNoReply = letterNoReply(msgRow);
                   $(".cav-replys").html(letNoReply);
                 }
 
@@ -913,8 +913,8 @@ $(document).ready(function () {
           $(function checkLetLike() {
             let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
             let letNum = $(".letLike").attr("data-letlike");
-            console.log(memNo);
-            console.log("信件編號", letNum);
+            // console.log(memNo); 6
+            // console.log("信件編號", letNum); 6
             $.ajax({
               url: "./phps/cav-checkLikeLet.php",
               type: "GET",
@@ -923,16 +923,16 @@ $(document).ready(function () {
               success: function (chkLikeLetRow) {
                 let checkLetNo = new Array();
 
-                console.log("會員編號", memNo); 6
-                console.log("有打賞", chkLikeLetRow); 6
+                // console.log("會員編號", memNo); 6
+                // console.log("有打賞", chkLikeLetRow); 6
                 for (i = 0; i < chkLikeLetRow.length; i++) {
                   checkLetNo[i] = chkLikeLetRow[i].letNo;
-                  console.log(checkLetNo);
-                  console.log($.inArray(letNum, checkLetNo));
-                  console.log(memNo == chkLikeLetRow[i].memNo);
+                  // console.log(checkLetNo); 6
+                  // console.log($.inArray(letNum, checkLetNo)); 6
+                  // console.log(memNo == chkLikeLetRow[i].memNo); 6
                   if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkLikeLetRow[i].memNo) {
                     $("#letLike" + letNum).attr("disabled", true);
-                    console.log($("#letLike" + letNum));
+                    // console.log($("#letLike" + letNum)); 6
                   }
                   else {
                     $("#letLike" + letNum).attr("disabled", false);
@@ -950,8 +950,8 @@ $(document).ready(function () {
           $(function checkLetReport() {
             let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
             let letNum = $(".letReport").attr("data-letreport");
-            console.log(memNo);
-            console.log("信件編號", letNum);
+            // console.log(memNo); 6
+            // console.log("信件編號", letNum); 6
             $.ajax({
               url: "./phps/cav-checkReportLet.php",
               type: "GET",
@@ -960,16 +960,16 @@ $(document).ready(function () {
               success: function (chkReportRow) {
                 let checkLetNo = new Array();
 
-                console.log("會員編號", memNo); 6
-                console.log("有打賞", chkReportRow); 6
+                // console.log("會員編號", memNo); 6
+                // console.log("有打賞", chkReportRow); 6
                 for (i = 0; i < chkReportRow.length; i++) {
                   checkLetNo[i] = chkReportRow[i].letNo;
-                  console.log(checkLetNo);
-                  console.log($.inArray(letNum, checkLetNo));
-                  console.log(memNo == chkReportRow[i].memNo);
+                  // console.log(checkLetNo); 6
+                  // console.log($.inArray(letNum, checkLetNo)); 6
+                  // console.log(memNo == chkReportRow[i].memNo); 6
                   if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkReportRow[i].memNo) {
                     $("#letReport" + letNum).attr("disabled", true);
-                    console.log($("#letReport" + letNum));
+                    // console.log($("#letReport" + letNum)); 6
                   }
                   else {
                     $("#letReport" + letNum).attr("disabled", false);
@@ -1195,7 +1195,7 @@ $(document).ready(function () {
                     //撈出所有回覆
                     letReply = letterReply(
                       letReply,
-                      msgRow[j].memNo,
+                      msgRow[j].memName,
                       msgRow[j].msgTime,
                       msgRow[j].msgContent,
                       msgRow[j].msgNo,
@@ -1411,7 +1411,8 @@ $(document).ready(function () {
             // });
           } else {
             let letNoReply = "";
-            letNoReply = letterNoReply();
+            let msgRow = "";
+            letNoReply = letterNoReply(msgRow);
             $(".cav-replys").html(letNoReply);
           }
 
@@ -1463,7 +1464,7 @@ $(document).ready(function () {
                     //撈出所有回覆
                     letReply = letterReply(
                       letReply,
-                      msgRow[j].memNo,
+                      msgRow[j].memName,
                       msgRow[j].msgTime,
                       msgRow[j].msgContent,
                       msgRow[j].msgNo,
@@ -1620,7 +1621,8 @@ $(document).ready(function () {
             });
           } else {
             let letNoReply = "";
-            letNoReply = letterNoReply();
+            let msgRow = "";
+            letNoReply = letterNoReply(msgRow);
             $(".cav-replys").html(letNoReply);
           }
 
@@ -1628,8 +1630,8 @@ $(document).ready(function () {
           $(function checkLetLike() {
             let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
             let letNum = $(".letLike").attr("data-letlike");
-            console.log(memNo);
-            console.log("信件編號", letNum);
+            // console.log(memNo);1
+            // console.log("信件編號", letNum);1
             $.ajax({
               url: "./phps/cav-checkLikeLet.php",
               type: "GET",
@@ -1638,20 +1640,20 @@ $(document).ready(function () {
               success: function (chkLikeLetRow) {
                 let checkLetNo = new Array();
 
-                console.log("會員編號", memNo); 6
-                console.log("有打賞", chkLikeLetRow); 6
+                // console.log("會員編號", memNo); 6
+                // console.log("有打賞", chkLikeLetRow); 6
                 for (i = 0; i < chkLikeLetRow.length; i++) {
                   checkLetNo[i] = chkLikeLetRow[i].letNo;
-                  console.log(checkLetNo);
-                  console.log($.inArray(letNum, checkLetNo));
-                  console.log(memNo == chkLikeLetRow[i].memNo);
+                  // console.log(checkLetNo); 6
+                  // console.log($.inArray(letNum, checkLetNo)); 6
+                  // console.log(memNo == chkLikeLetRow[i].memNo); 6
                   if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkLikeLetRow[i].memNo) {
                     $("#letLike" + letNum).attr("disabled", true);
-                    console.log($("#letLike" + letNum));
+                    // console.log($("#letLike" + letNum)); 6
                   }
                   else {
                     $("#letLike" + letNum).attr("disabled", false);
-                    console.log("沒有被打賞過");
+                    // console.log("沒有被打賞過"); 6
                   }
                 }
               },
@@ -1665,8 +1667,8 @@ $(document).ready(function () {
           $(function checkLetReport() {
             let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
             let letNum = $(".letReport").attr("data-letreport");
-            console.log(memNo);
-            console.log("信件編號", letNum);
+            // console.log(memNo); 6
+            // console.log("信件編號", letNum); 6
             $.ajax({
               url: "./phps/cav-checkReportLet.php",
               type: "GET",
@@ -1675,13 +1677,13 @@ $(document).ready(function () {
               success: function (chkReportRow) {
                 let checkLetNo = new Array();
 
-                console.log("會員編號", memNo); 6
-                console.log("有打賞", chkReportRow); 6
+                // console.log("會員編號", memNo); 6
+                // console.log("有打賞", chkReportRow); 6
                 for (i = 0; i < chkReportRow.length; i++) {
                   checkLetNo[i] = chkReportRow[i].letNo;
-                  console.log(checkLetNo);
-                  console.log($.inArray(letNum, checkLetNo));
-                  console.log(memNo == chkReportRow[i].memNo);
+                  // console.log(checkLetNo); 6
+                  // console.log($.inArray(letNum, checkLetNo)); 6
+                  // console.log(memNo == chkReportRow[i].memNo); 6
                   if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkReportRow[i].memNo) {
                     $("#letReport" + letNum).attr("disabled", true);
                     console.log($("#letReport" + letNum));
@@ -1710,7 +1712,6 @@ $(document).ready(function () {
 
   function cavJs() {
     //bookMarkL
-    // $(function () {
     $("a.tab1").on("click", function (e) {
       e.preventDefault();
 
@@ -1727,7 +1728,7 @@ $(document).ready(function () {
       $(".cav-botBlock." + $(this).attr("data-target")).addClass("-on");
 
     });
-    // });
+
 
 
     //bookMarkR
@@ -1866,12 +1867,12 @@ function otherLetter(i, otherLet, letTitle, letTime, letNo) {
 }
 
 /* 動態產生回復留言 */
-function letterReply(letReply, memNo, msgTime, msgContent, msgNo, msgStatus) {
+function letterReply(letReply, memName, msgTime, msgContent, msgNo, msgStatus) {
   if (msgStatus == 0) {
     letReply += `<div class="cav-letComment">
     <div class="cav-commMain">
         <div class="cav-commHead">
-            <div class="cav-commId">${memNo}</div>
+            <div class="cav-commId">${memName}</div>
             <div class="cav-commTime">${msgTime}</div>
         </div>
         <p class="cav-commText">${msgContent}</p>
@@ -1906,8 +1907,9 @@ function letterReply(letReply, memNo, msgTime, msgContent, msgNo, msgStatus) {
 }
 
 function letterNoReply(letNoReply) {
-  letNoReply += `<div class="cav-letComment">
-  <div class="cav-commMain">
+  letNoReply +=
+    `<div class="cav-letComment">
+    <div class="cav-commMain">
       <div class="cav-commHead">
           <div class="cav-commId"></div>
           <div class="cav-commTime"></div>
@@ -1917,13 +1919,13 @@ function letterNoReply(letNoReply) {
   <div class="cav-commOption" disabled="disabled">
       <div class="cav-commLike">
           <div class="circle threed">
-              <button id="like" class="circle button like" data-like="">
+              <button id="like" class="circle button like" data-like="" disabled="disabled">
                   <img src="./img/cave/coin.png" alt=""></i></button>
           </div>
       </div>
       <div class="cav-commReport">
           <div class="circle threed ">
-              <button id="report" class="circle button report" data-report="">
+              <button id="report" class="circle button report" data-report="" disabled="disabled">
                   <img src="./img/cave/exclamation-button.png"
                       alt=""></button>
           </div>
