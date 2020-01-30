@@ -5,6 +5,50 @@
     background-size: 10px 10px;
 }
 
+.chatroom-header {
+    .phone {
+        width: 15%;
+        position: absolute;
+        bottom: -34%;
+        right: 7%;
+        z-index: 99;
+        transform: rotate(25deg);
+    }
+
+    .shiny1 {
+        width: 4%;
+        position: absolute;
+        top: 8%;
+        right: 53%;
+        z-index: 99;
+    }
+
+    .shiny2 {
+        width: 2%;
+        position: absolute;
+        top: 36%;
+        right: 28%;
+        z-index: 99;
+    }
+
+    .paint {
+        width: 15%;
+        position: absolute;
+        bottom: 4%;
+        left: 38%;
+        z-index: 99;
+    }
+
+    .chat_talk {
+        width: 17%;
+        position: absolute;
+        top: 2%;
+        bottom: -25%;
+        right: 34%;
+        transform: rotate(-25deg);
+    }
+}
+
 .chatroom-main {
     width: 100%;
     max-width: 1260px;
@@ -55,11 +99,15 @@
             .overImg {
                 width: 70px;
                 margin: 10% auto;
-    
+
                 img {
                     width: 100%;
                 }
-    
+
+            }
+
+            p {
+                margin-top: -5%;
             }
         }
 
@@ -189,7 +237,7 @@
 
                                             img {
                                                 width: 100%;
-                                            }                                            
+                                            }
                                         }
 
 
@@ -224,7 +272,7 @@
                                             border-radius: 20px 0 20px 20px;
                                             display: inline-block;
                                             margin-bottom: 0px;
-                                            
+
                                         }
                                     }
                                 }
@@ -299,6 +347,7 @@
                                 .dashPage5 {
                                     .pageContent {
                                         overflow-y: scroll;
+
                                         .contentYour,
                                         .contentYour_1,
                                         .contentYour_2 {
@@ -388,6 +437,7 @@
 
                                     .pageContent {
                                         overflow-y: scroll;
+
                                         .contentYour,
                                         .contentYour_1,
                                         .contentYour_2 {
@@ -568,8 +618,6 @@
 
                     img {
                         width: 60px;
-                        border-radius: 50px;
-                        background-color: #fff;
                     }
                 }
             }
@@ -717,21 +765,67 @@
 }
 
 @include respond(iphone) {
-
     //375px;
+
+    .chatroom-header {
+        .phone {
+            width: 25%;
+            position: absolute;
+            bottom: -25%;
+            right: 7%;
+            z-index: 99;
+            transform: rotate(25deg);
+        }
+    
+        .shiny1 {
+            width: 6%;
+            position: absolute;
+            top: 8%;
+            right: 53%;
+            z-index: 99;
+        }
+    
+        .shiny2 {
+            width: 2%;
+            position: absolute;
+            top: 50%;
+            right: 28%;
+            z-index: 99;
+        }
+    
+        .paint {
+            width: 15%;
+            position: absolute;
+            bottom: 4%;
+            left: 38%;
+            z-index: 99;
+        }
+    
+        .chat_talk {
+            width: 20%;
+            position: absolute;
+            top: 20%;
+            right: 30%;
+            transform: rotate(-25deg);
+        }
+    }
+    
     .chatroom-main {
         overflow: hidden;
+        margin-top: 0;
 
         .mainSection {
-            width: calc(100% - 27px);
+            width: calc(100% - 20px);
             height: 100%;
             overflow-x: scroll;
             overflow-y: hidden;
             padding: 0;
             position: relative;
-            top: 178px;
+            top: 100px;
             left: 50%;
             transform: translateX(-50%);
+            margin-top: 0;
+            margin-bottom: 100px;
 
             &::-webkit-scrollbar {
                 height: 10px;
@@ -756,8 +850,10 @@
 
                     img {
                         width: 60px;
-                        border-radius: 50px;
-                        background-color: #fff;
+                    }
+
+                    p {
+                        margin-top: -10%;
                     }
                 }
             }
@@ -767,6 +863,8 @@
             width: 110%;
             margin-left: -5%;
             padding: 10px;
+            margin-top: -40%;
+            margin-bottom: 10%;
 
             .bookDashed {
                 padding: 15px 15px;
@@ -775,7 +873,7 @@
                     height: 100%;
                     padding: 0;
                     border: none;
-                    margin-top: 150px;
+                    margin-top: 34.5%;
 
                     .dashPage2 {
                         height: 100%;
@@ -816,6 +914,7 @@
                                         .contentYour {
                                             margin-bottom: 15px;
                                             margin-left: 0px;
+                                            display: block;
 
                                             img {
                                                 width: 15%;
@@ -823,47 +922,18 @@
                                             }
 
                                             p {
-                                                margin: 18% 0 0 0;
+                                                margin: 20% 0 0 3%;
                                                 max-width: 180px;
                                             }
 
                                         }
-
-                                        .contentYour_1 {
-                                            margin-bottom: 15px;
-                                            margin-left: 0px;
-
-                                            img {
-                                                width: 15%;
-                                                min-width: 55px;
-                                            }
-
-                                            p {
-                                                margin: 18% 0 0 0;
-                                                max-width: 180px;
-                                            }
-
-                                        }
-
-                                        .contentYour_2 {
-                                            margin-bottom: 15px;
-                                            margin-left: 0px;
-
-                                            img {
-                                                width: 15%;
-                                                min-width: 55px;
-                                            }
-
-                                            p {
-                                                margin: 18% 0 0 0;
-                                                max-width: 70%;
-                                            }
-
-                                        }
-
                                         .contentMe {
+                                            display: flex;
+                                            flex-direction: row-reverse;
+                                            float: none;
+
                                             p {
-                                                width: 100%;
+                                                width: auto;
                                                 max-width: 150px;
                                             }
                                         }

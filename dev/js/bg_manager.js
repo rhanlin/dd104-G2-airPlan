@@ -42,6 +42,7 @@ function patternWrap(managerMod, admNo, admName, admI, admPsw, admStatus, i) {//
         <td>
             <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
                 <button id="adminSave${i}" class="btn btn-block btn-outline-primary adminSave" type="button">儲存</button>
+                <button id="adminDrop${i}" class="btn btn-block btn-outline-primary adminDrop" type="button">刪除</button>
             </div>
         </td>
     </tr>
@@ -105,11 +106,15 @@ function getSignInfo() {//依登入者權限開放添加管理者功能
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         let admin = JSON.parse(xhr.responseText);
+        document.getElementById('bg_logout').innerText = '登出';
+        document.getElementById('adminUser').innerText = admin.admName;
         if (admin.admI) {
             // console.log("admin.admI", admin.admI);
             if (admin.admStatus == 0) {
                 // console.log("admin.admStatus", admin.admStatus);
+                // console.log("admin.admName", admin.admName);
                 document.getElementById('addAdmin').style.display = "none";
+                document.querySelectorAll('.adminDrop').style.display = "none";
             }
         }
     }

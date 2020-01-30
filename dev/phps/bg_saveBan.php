@@ -6,7 +6,7 @@ switch ($_POST['type']) {
     case "catching":
 
         try {
-            $sql = "update `letterreport` t,`letter` r set r.letStatus= 0 where t.letNo =r.letNo and t.letRepStatus != 1";
+            $sql = "update `letterreport` t,`letter` r set r.letStatus= 1 where t.letNo =r.letNo and t.letRepStatus = 1";
             $letter = $pdo->prepare($sql);
             $letter->execute();
 
@@ -42,7 +42,7 @@ switch ($_POST['type']) {
     case "catchingComment":
 
         try {
-            $sql = "update `messagereport` t,`message` r set r.msgStatus= 0 where t.msgNo =r.msgNo and t.msgRepStatus != 1";
+            $sql = "update `messagereport` t,`message` r set r.msgStatus= 1 where t.msgNo =r.msgNo and t.msgRepStatus = 1";
 
             $messager = $pdo->prepare($sql);
             $messager->execute();

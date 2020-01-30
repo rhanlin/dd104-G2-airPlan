@@ -42,8 +42,10 @@ function sendLogin(str) {
     if (data.admI) {
         document.getElementById("primaryModal").style = "display:none";
         clearBox();
+        window.location="bg_member.html"; 
+        // document.getElementById('adminUser').innerText = data.admName;
         alert("登入成功");
-        console.log(33333)
+        console.log(data.admName);
     } else {
         alert("您輸入的帳號或密碼錯誤");
     }
