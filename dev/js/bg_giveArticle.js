@@ -30,6 +30,13 @@ function giveArticleData(str) {
             var td = document.createElement('td');
             arr = [data[j].letLikeTime,data[j].letLikeNo, data[j].let_memNo, data[j].letNo, data[j].letTitle, data[j].letContent, data[j].like_memNo, data[j].mem_memName, data[j].letStatus];
             // console.log(td);
+
+            if(arr[8]==0){
+                arr[8]="未下架";
+            }else{
+                arr[8]="已下架";
+            }
+
             td.innerHTML = arr[i];
             tr.appendChild(td);
             // console.log(tr.childNodes[i]);

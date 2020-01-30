@@ -30,6 +30,14 @@ function giveCommentData(str) {
             var td = document.createElement('td');
             arr = [data[j].msgLikeTime,data[j].msgLikeNo, data[j].meg_memNo, data[j].letNo, data[j].msgContent, data[j].like_memNo, data[j].memName, data[j].msgStatus];
             // console.log(td);
+
+            if(arr[7]==0){
+                arr[7]="未下架";
+            }else{
+                arr[7]="已下架";
+            }
+
+
             td.innerHTML = arr[i];
             tr.appendChild(td);
             // console.log(tr.childNodes[i]);

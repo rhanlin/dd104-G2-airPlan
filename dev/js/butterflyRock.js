@@ -33,9 +33,9 @@
     butterflies = [];
     boids = [];
 
-    const skinMap = new THREE.TextureLoader().load('./phps/userPattern/stamp.jpg');
-    // skinMap.wrapS = skinMap.wrapT = THREE.RepeatWrapping;
-    var mat = new THREE.MeshLambertMaterial({//MeshBasicMaterial//MeshPhongMaterial
+    const skinMap = new THREE.TextureLoader().load('./phps/userPattern/plan-pattern-test.jpg');
+    skinMap.wrapS = skinMap.wrapT = THREE.RepeatWrapping;
+    var mat = new THREE.MeshBasicMaterial({//MeshBasicMaterial//MeshPhongMaterial
       // transparent: true, 
       // opacity: 0.5, 
       // reflectivity: 0.2,
@@ -44,7 +44,7 @@
       color: 0xffffff,
       // shading: THREE.FlatShading, color: Math.random()*0xffffff, 
       side: THREE.DoubleSide,
-      // map: skinMap,
+      map: skinMap,
     });
     
     for (var i = 0; i < 50; i++) {
