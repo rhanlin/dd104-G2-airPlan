@@ -870,7 +870,7 @@
                             height: 120%;
                             width: 55%;
                             transform: rotateX(-51deg) rotateY(2deg) rotateZ(44deg) translateX(25%);
-                            z-index: -99 !important;
+                            z-index: -1 !important;
                             position: absolute;
                             border: .15vw solid #212121;
                             display: none;
@@ -881,26 +881,7 @@
                                 animation-iteration-count: 1;
                                 animation-fill-mode: forwards;
 
-                                @keyframes paperActive {
-                                    0% {
-                                        top: -20%;
-                                        left: -5%;
-                                        opacity: 0;
-                                    }
-
-                                    50% {
-                                        top: 0%;
-                                        left: 13%;
-                                    }
-
-                                    100% {
-                                        top: 15%;
-                                        left: 13%;
-                                        opacity: 1;
-                                        background-size: cover;
-                                        background-repeat: no-repeat;
-                                    }
-                                }
+                                
                             }
                         }
                     }
@@ -1556,9 +1537,14 @@
                                 height: 110%;
                                 width: 74%;
                                 transform: rotateX(-51deg) rotateY(0deg) rotateZ(44deg) translate(6%, 5%);
-                                z-index: -99;
+                                z-index: -1 !important;
 
-                                &.active {}
+                                &.active {
+                                    display: block;
+                                animation: paperActive 1s ease;
+                                animation-iteration-count: 1;
+                                animation-fill-mode: forwards;
+                                }
                             }
                         }
 
@@ -1697,10 +1683,7 @@
                     width: 90%;
 
                     .blue-tape {
-                        width: 30vw;
-                        top: -2%;
-                        right: 5%;
-                        left: unset;
+                        display: none;
                     }
 
                     .num-one {
@@ -2087,9 +2070,11 @@
                                 height: 120%;
                                 width: 55%;
                                 transform: rotateX(-51deg) rotateY(2deg) rotateZ(44deg) translateX(25%);
-                                z-index: -99;
+                                z-index: -1 !important;
 
-                                &.active {}
+                                &.active {
+                                    display: none;
+                                }
                             }
                         }
 
@@ -2233,10 +2218,7 @@
                     width: 90%;
 
                     .blue-tape {
-                        width: 30vw;
-                        top: -2%;
-                        right: 5%;
-                        left: unset;
+                        display: none;
                     }
 
                     .num-one {
@@ -2627,8 +2609,10 @@
                                 height: 120%;
                                 width: 45%;
                                 transform: rotateX(-51deg) rotateY(2deg) rotateZ(44deg) translateX(40%);
-                                z-index: -99;
-                                &.active {}
+                                z-index: -99 !important;
+                                &.active {
+                                    display: none;
+                                }
                             }
                         }
 
@@ -2738,5 +2722,26 @@
             }
             }
         }
+    }
+}
+
+@keyframes paperActive {
+    0% {
+        top: -20%;
+        left: -5%;
+        opacity: 0;
+    }
+
+    50% {
+        top: 0%;
+        left: 13%;
+    }
+
+    100% {
+        top: 15%;
+        left: 13%;
+        opacity: 1;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 }
