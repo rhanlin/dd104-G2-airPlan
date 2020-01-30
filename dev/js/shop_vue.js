@@ -409,12 +409,12 @@
      //==============跳窗的購買btn點按後將已購素材傳回資料庫的material表格 目前會員編號寫死======================================
      mousemove(e) {
        e.stopPropagation()
-       console.log(e.target)
+      //  console.log(e.target)
        e.target.classList.add('hoverRotate');
      },
      mouseout(e) {
        e.stopPropagation()
-       console.log(e.target)
+      //  console.log(ownMatPrice)
        e.target.classList.remove('hoverRotate');
      },
      customerOrder(e) {
@@ -422,9 +422,8 @@
        // console.log(e.target);
        ownMatName = e.target.parentNode.parentNode.parentNode.parentNode.children[1].children[0].children[0]
          .innerHTML;
-       ownMatPrice = e.target.parentNode.parentNode.parentNode.parentNode.children[1].children[2].children[1]
+       ownMatPrice = e.target.parentNode.parentNode.parentNode.parentNode.children[1].children[2].children[0]
          .children[0].innerHTML;
-       // console.log(ownMatPrice);
        materialMatSort = "material";
        toolMatSort = "tool";
 
@@ -632,7 +631,7 @@
              // console.log(i);
              $('#titleInner').html(product[i].matNameCH);
              $('#infoInner').html(product[i].matInfo);
-             $('#chanceInner').html(product[i].matChance);
+            //  $('#chanceInner').html(product[i].matChance);
              $('#priceInner').html(product[i].prodPrice);
              // console.log(xhr.responseText)
            } else {
@@ -724,11 +723,11 @@
            console.log(toolInfo)
            arr1 = ['controlBox1', 'controlBox2', 'controlBox3', 'controlBox4', 'controlBox5', 'controlBox6',
              'controlBox7',
-             'controlBox8', 'controlBox9'
+             'controlBox8'
            ]
            arr2 = ['controlBtn1', 'controlBtn2', 'controlBtn3', 'controlBtn4', 'controlBtn5', 'controlBtn6',
              'controlBtn7',
-             'controlBtn8', 'controlBtn9'
+             'controlBtn8'
            ]
            for (i = 0; i < toolInfo.length; i++) {
 
@@ -744,7 +743,6 @@
                    document.getElementsByClassName(arr2[j])[0].classList.remove('clicked');
                  }
                }
-
              }
            }
          })
