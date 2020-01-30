@@ -248,11 +248,19 @@ $arrow_color: $gray !default;
                     padding: 0;
 
                     .card-body {
-
+                      &:hover{
+                        cursor: pointer;
+                      }
+                      &:focus {
+                      
+                     
                       // padding: 0;
                       // color: rgb(0, 57, 82);
                       // text-shadow: 2px 2px 3px rgb(161, 161, 161);
-                      h5 {}
+                      h5 {
+                        
+                        }
+                      }
                     }
                   }
                 }
@@ -2232,7 +2240,7 @@ $arrow_color: $gray !default;
               padding: 6% 7%;
 
               #canvas {
-                margin: 1% 0.5%;
+                margin: 0%;
               }
             }
           }

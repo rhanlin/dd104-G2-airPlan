@@ -324,6 +324,8 @@ $(document).ready(function () {
   $("#eraser").click(function () {
     if ($('#controlBox3').hasClass('clicked') == false) {
       canvas.freeDrawingBrush.color = '#ffffff';
+      canvas.freeDrawingBrush.shadow.color = '#ffffff';
+      canvas.freeDrawingBrush = squareBrush
       $(".lineWidthInput").val() = 10;
       canvas.freeDrawingBrush.width = $(".lineWidthInput").val()
     }

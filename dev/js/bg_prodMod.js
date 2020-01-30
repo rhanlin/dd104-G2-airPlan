@@ -175,7 +175,7 @@ function prodModify() {
             alert('已順利更新商品相關資料')
             location.reload();
           }).fail(function (data) {
-            alert("請上傳異動圖片");
+            alert("尚未更新圖片");
           }).always(function (data) {
             console.log(data)
             // always do the following, no matter if it fails or not
