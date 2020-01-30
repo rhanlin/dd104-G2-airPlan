@@ -79,12 +79,12 @@
     document.getElementById('planeContainer').appendChild(renderer.domElement);
 
 
-    stats = new Stats();
-    stats.domElement.style.position = 'absolute';
-    stats.domElement.style.display = 'inline-block';
-    stats.domElement.style.left = '0px';
-    stats.domElement.style.top = '0px';
-    document.getElementById('statsBox').appendChild(stats.domElement);
+    // stats = new Stats();
+    // stats.domElement.style.position = 'absolute';
+    // stats.domElement.style.display = 'inline-block';
+    // stats.domElement.style.left = '0px';
+    // stats.domElement.style.top = '0px';
+    // document.getElementById('statsBox').appendChild(stats.domElement);
 
     //
 
@@ -112,7 +112,7 @@
   function animate() {
     requestAnimationFrame(animate);
     render();
-    stats.update();
+    // stats.update();
   }
   // setInterval(animate,1000/30);
   // animate();
