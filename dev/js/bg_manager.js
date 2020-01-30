@@ -8,7 +8,7 @@ function newAdminForm() {//新增後台管理員
     xhr.onload = function () {
         let admin = JSON.parse(xhr.responseText);
         if (admin.admI) {
-            document.getElementById('adminDrop5').style.display = 'none';
+            // document.getElementById('adminDrop5').style.display = 'none';
             location.reload();
         }
     }
@@ -144,7 +144,7 @@ function getSignInfo() {//依登入者權限開放添加管理者功能
             }
         }
 
-            document.getElementById('adminDrop5').style.display = 'none';
+            // document.getElementById('adminDrop5').style.display = 'none';
         
     }
     xhr.open("get", "./phps/bg_getSignInfo.php", true);
