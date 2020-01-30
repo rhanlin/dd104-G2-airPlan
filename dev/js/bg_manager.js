@@ -8,6 +8,7 @@ function newAdminForm() {//新增後台管理員
     xhr.onload = function () {
         let admin = JSON.parse(xhr.responseText);
         if (admin.admI) {
+            // document.getElementById('adminDrop5').style.display = 'none';
             location.reload();
         }
     }
@@ -42,6 +43,7 @@ function patternWrap(managerMod, admNo, admName, admI, admPsw, admStatus, i) {//
         <td>
             <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
                 <button id="adminSave${i}" class="btn btn-block btn-outline-primary adminSave" type="button">儲存</button>
+                <button id="adminDrop${i}" class="btn btn-block btn-outline-primary adminDrop" type="button">刪除</button>
             </div>
         </td>
     </tr>
@@ -49,7 +51,7 @@ function patternWrap(managerMod, admNo, admName, admI, admPsw, admStatus, i) {//
     return managerMod;
 };
 
-function adminUpdate(i) {//資料修改儲存
+function adminUpdate(i) {//管理員資料修改儲存
     let admNo = document.getElementById("admNo" + i).innerText;
     let admName = document.getElementById("admName" + i).value;
     let admI = document.getElementById("admI" + i).value;
@@ -59,7 +61,21 @@ function adminUpdate(i) {//資料修改儲存
     xhr.open("post", "phps/bg_adminUpdate.php", true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
     xhr.send(adminSave);
-    alert('資料修改成功');
+    alert('管理員資料修改成功');
+}
+
+function adminDrop(i) {//資料刪除
+    let admNo = document.getElementById("admNo" + i).innerText;
+    // let admName = document.getElementById("admName" + i).value;
+    // let admI = document.getElementById("admI" + i).value;
+    // let admPsw = document.getElementById("admPsw" + i).value;
+    let xhr = new XMLHttpRequest();
+    let adminSave = `admNo=${admNo}`;
+    xhr.open("post", "phps/bg_adminDrop.php", true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    xhr.send(adminSave);
+    alert('已刪除該名管理員');
+    location.reload();
 }
 
 function managerMod() {//動態生成管理者資料
@@ -90,6 +106,14 @@ function managerMod() {//動態生成管理者資料
                     }
                 }(i)
             }
+            for (i = 0; i < managerModRow.length; i++) {//動態註冊儲存按鈕
+                document.getElementById('adminDrop' + i).onclick = function (i) {
+                    return function () {
+                        adminDrop(i);
+                    }
+                }(i)
+            }
+            
         } else {
             alert(xhr.status);
         };
@@ -105,13 +129,23 @@ function getSignInfo() {//依登入者權限開放添加管理者功能
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         let admin = JSON.parse(xhr.responseText);
+        document.getElementById('bg_logout').innerText = '登出';
+        document.getElementById('adminUser').innerText = admin.admName;
+        let adminDrop = document.querySelectorAll(".adminDrop");
         if (admin.admI) {
             // console.log("admin.admI", admin.admI);
             if (admin.admStatus == 0) {
                 // console.log("admin.admStatus", admin.admStatus);
+                // console.log("admin.admName", admin.admName);
                 document.getElementById('addAdmin').style.display = "none";
+                adminDrop.forEach(item => {//開啟登入燈箱
+                    item.style.display = "none";
+                })
             }
         }
+
+            // document.getElementById('adminDrop5').style.display = 'none';
+        
     }
     xhr.open("get", "./phps/bg_getSignInfo.php", true);
     xhr.send(null);

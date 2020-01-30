@@ -12,7 +12,8 @@ try {
                 // 聊天室內容
                 $sql = "select * 
                 from chat join `matpostmark` on (chat.memNo1 = matpostmark.memNo)
-                where (((memNo1 = :memNo1 and memNo2 = :memNo2) or (memNo2 = :memNo1 and memNo1 = :memNo2)) and chatNo > 0) and (matpostmark.mugStatus = 1);";
+                where (((memNo1 = :memNo1 and memNo2 = :memNo2) or (memNo2 = :memNo1 and memNo1 = :memNo2)) and chatNo > 0) and (matpostmark.mugStatus = 1)
+                order by chat.chatTime;";
                 $content = $pdo->prepare($sql);
                 $content->bindValue(":memNo1", $memNo1);
                 $content->bindValue(":memNo2", $_POST["memNo2"]);

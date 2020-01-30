@@ -1,4 +1,3 @@
-
 // 外部資源
 
 @import "./vendor/pace-progress/pace";
@@ -7,3 +6,19 @@
 
 // @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../../node_modules/@coreui/coreui/scss/coreui.scss";
+
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap&subset=chinese-traditional');
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+
+}
+
+th {
+    font-size: 16px;
+}
+
+.sidebar .nav-link.active {
+    background: #31cfd4;
+}

@@ -1,6 +1,7 @@
 body.open {
   overflow: hidden;
 }
+
 .nav-body {
   width: 100%;
   margin: 0 auto;
@@ -32,7 +33,7 @@ body.open {
       border-radius: 50%;
       position: fixed;
       border: 5px solid $main-black;
-      margin: 50px 20px 0 0;
+      margin: 5% 20px 0 0;
       z-index: 990;
       display: none;
 
@@ -216,7 +217,7 @@ body.open {
               text-align: center;
               font-weight: bolder;
 
-              > p {
+              >p {
                 white-space: nowrap;
                 font-size: 1.1rem;
                 margin: 0.8rem 0 0.5rem;
@@ -224,7 +225,7 @@ body.open {
                 &:hover {
                   color: $main-dark-red;
 
-                  + %nav-circle {
+                  +%nav-circle {
                     background-color: $main-yellow;
                     background-image: url(../img/share/nav-paper-plane.png);
                     background-position: 40% 55%;
@@ -265,7 +266,7 @@ body.open {
               .nav-now {
                 color: $main-dark-red;
 
-                + %nav-circle {
+                +%nav-circle {
                   background-color: $main-yellow;
                   background-image: url(../img/share/nav-paper-plane.png);
                   background-position: 40% 55%;
@@ -278,6 +279,7 @@ body.open {
 
           .hbg-littleNav {
             display: none;
+            margin-bottom: 50%;
           }
 
           .hbg-pc {
@@ -299,7 +301,7 @@ body.open {
 
             .nav-logo {
               display: inline-block;
-              width: 150px;
+              width: 100px;
               object-fit: cover;
 
               img {
@@ -342,13 +344,14 @@ body.open {
 
               .hbg-littleNav {
                 display: inline-block;
+                border: 3px dashed white;
 
-                > a {
+                >a {
                   display: inline-block;
                   height: 48px;
                   width: 48px;
 
-                  > i {
+                  >i {
                     font-size: 48px;
                     color: #aaa;
                     cursor: pointer;
@@ -361,12 +364,19 @@ body.open {
 
                 .showSigin {
                   cursor: pointer;
+                  color: $main-white;
 
                   &:hover {
                     color: $main-dark-red;
                   }
+
+                }
+
+                #signInStatusH {
+                  line-height: 48px;
                 }
               }
+
 
               .hbg-pc {
                 display: inline-block;
@@ -374,7 +384,7 @@ body.open {
               }
             }
 
-            + .nav-road {
+            +.nav-road {
               display: none;
             }
           }
@@ -389,7 +399,7 @@ body.open {
           background-color: #426e96;
           padding-top: 5px;
 
-          > div {
+          >div {
             border: 6px dashed #426e96;
             width: 100%;
             background-color: $main-yellow;
@@ -415,15 +425,17 @@ body.open {
       top: 36%;
       right: 2.5%;
       z-index: 998;
-      &:hover {
-      }
+
+      &:hover {}
+
       cursor: pointer;
-      > a {
+
+      >a {
         display: inline-block;
         height: 24px;
         width: 24px;
 
-        > i {
+        >i {
           font-size: 24px;
           color: #aaa;
           cursor: pointer;
@@ -510,7 +522,7 @@ body.open {
 
   .nav-navBgWrap {
     .nav-navBg {
-      > img {
+      >img {
         display: none;
       }
 
@@ -559,7 +571,7 @@ body.open {
       display: inline-block;
 
       .nav-navBg {
-        > img {
+        >img {
           display: none;
         }
 
@@ -609,7 +621,7 @@ body.open {
 
   .nav-navBgWrap {
     .nav-navBg {
-      > img {
+      >img {
         display: none;
       }
 
@@ -658,7 +670,7 @@ body.open {
 
   .nav-navBgWrap {
     .nav-navBg {
-      > img {
+      >img {
         display: none;
       }
 
@@ -937,9 +949,11 @@ body.open {
 }
 
 @include respond(mediumSize) {
+
   .signInBg,
   .registerBg,
   .forgetBg {
+
     .signInData,
     .registerData,
     .forgetBgData {
@@ -950,9 +964,11 @@ body.open {
 }
 
 @include respond(small) {
+
   .signInBg,
   .registerBg,
   .forgetBg {
+
     .signInData,
     .registerData,
     .forgetBgData {
@@ -963,9 +979,11 @@ body.open {
 }
 
 @include respond(note) {
+
   .signInBg,
   .registerBg,
   .forgetBg {
+
     .signInData,
     .registerData,
     .forgetBgData {
@@ -976,9 +994,11 @@ body.open {
 }
 
 @include respond(iphone) {
+
   .signInBg,
   .registerBg,
   .forgetBg {
+
     .signInData,
     .registerData,
     .forgetBgData {
