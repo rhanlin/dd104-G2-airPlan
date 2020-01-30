@@ -30,6 +30,13 @@ function memberData(str) {
             var td = document.createElement('td');
             arr = [data[j].memNo, data[j].memName, data[j].memPsw, data[j].memEmail, data[j].letCount, data[j].airCoin, data[j].intColor];
             // console.log(td);
+
+            if(arr[6]==0){
+                arr[6]="亮色";
+            }else{
+                arr[6]="暗色";
+            }
+
             td.innerHTML = arr[i];
             tr.appendChild(td);
             // console.log(tr.childNodes[i]);

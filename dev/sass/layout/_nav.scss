@@ -1,3 +1,6 @@
+body.open {
+  overflow: hidden;
+}
 .nav-body {
   width: 100%;
   margin: 0 auto;
@@ -213,7 +216,7 @@
               text-align: center;
               font-weight: bolder;
 
-              >p {
+              > p {
                 white-space: nowrap;
                 font-size: 1.1rem;
                 margin: 0.8rem 0 0.5rem;
@@ -221,7 +224,7 @@
                 &:hover {
                   color: $main-dark-red;
 
-                  +%nav-circle {
+                  + %nav-circle {
                     background-color: $main-yellow;
                     background-image: url(../img/share/nav-paper-plane.png);
                     background-position: 40% 55%;
@@ -262,7 +265,7 @@
               .nav-now {
                 color: $main-dark-red;
 
-                +%nav-circle {
+                + %nav-circle {
                   background-color: $main-yellow;
                   background-image: url(../img/share/nav-paper-plane.png);
                   background-position: 40% 55%;
@@ -340,12 +343,12 @@
               .hbg-littleNav {
                 display: inline-block;
 
-                >a {
+                > a {
                   display: inline-block;
                   height: 48px;
                   width: 48px;
 
-                  >i {
+                  > i {
                     font-size: 48px;
                     color: #aaa;
                     cursor: pointer;
@@ -371,7 +374,7 @@
               }
             }
 
-            +.nav-road {
+            + .nav-road {
               display: none;
             }
           }
@@ -386,7 +389,7 @@
           background-color: #426e96;
           padding-top: 5px;
 
-          >div {
+          > div {
             border: 6px dashed #426e96;
             width: 100%;
             background-color: $main-yellow;
@@ -412,14 +415,15 @@
       top: 36%;
       right: 2.5%;
       z-index: 998;
-      &:hover{}
+      &:hover {
+      }
       cursor: pointer;
-      >a {
+      > a {
         display: inline-block;
         height: 24px;
         width: 24px;
 
-        >i {
+        > i {
           font-size: 24px;
           color: #aaa;
           cursor: pointer;
@@ -506,7 +510,7 @@
 
   .nav-navBgWrap {
     .nav-navBg {
-      >img {
+      > img {
         display: none;
       }
 
@@ -555,7 +559,7 @@
       display: inline-block;
 
       .nav-navBg {
-        >img {
+        > img {
           display: none;
         }
 
@@ -605,7 +609,7 @@
 
   .nav-navBgWrap {
     .nav-navBg {
-      >img {
+      > img {
         display: none;
       }
 
@@ -654,7 +658,7 @@
 
   .nav-navBgWrap {
     .nav-navBg {
-      >img {
+      > img {
         display: none;
       }
 
@@ -705,7 +709,7 @@
     padding: 40px;
     width: 550px;
     height: 600px;
-    background:white;
+    background: white;
     background-image: url("../img/share/postCard-login2.jpg");
     background-size: 100% 100%;
     position: absolute;
@@ -786,7 +790,7 @@
     padding: 40px;
     width: 550px;
     height: 600px;
-    background:white;
+    background: white;
     background-image: url("../img/share/postCard-login2.jpg");
     background-size: 100% 100%;
     position: absolute;
@@ -875,7 +879,7 @@
     padding: 40px;
     width: 550px;
     height: 600px;
-    background:white;
+    background: white;
     background-image: url("../img/share/postCard-login2.jpg");
     background-size: 100% 100%;
     position: absolute;
@@ -933,11 +937,9 @@
 }
 
 @include respond(mediumSize) {
-
   .signInBg,
   .registerBg,
   .forgetBg {
-
     .signInData,
     .registerData,
     .forgetBgData {
@@ -948,11 +950,9 @@
 }
 
 @include respond(small) {
-
   .signInBg,
   .registerBg,
   .forgetBg {
-
     .signInData,
     .registerData,
     .forgetBgData {
@@ -963,11 +963,9 @@
 }
 
 @include respond(note) {
-
   .signInBg,
   .registerBg,
   .forgetBg {
-
     .signInData,
     .registerData,
     .forgetBgData {
@@ -978,11 +976,9 @@
 }
 
 @include respond(iphone) {
-
   .signInBg,
   .registerBg,
   .forgetBg {
-
     .signInData,
     .registerData,
     .forgetBgData {

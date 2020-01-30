@@ -143,7 +143,7 @@ let vm3 = new Vue({
           fetch('./phps/fetchAllUserMat.php')
             .then(res => res.json()).then(json => {
               //拆出 pattern
-              console.log(json);
+              // console.log(json);
 
               for (let i = 0; i < json.data.length; i++) {
                 if (json.data[i].patternNo) {
@@ -574,7 +574,7 @@ function submitToLetterTable() {
     if (xhr.status == 200) {
       let json = JSON.parse(xhr.responseText);
       // let json = xhr.responseText;
-      console.log(json);
+      // console.log(json);
       document.getElementById("cavPaperN").innerText = '信紙:' + json.letCount;
       document.getElementById("cavPaperH").innerText = '信紙:' + json.letCount;
       vmImgWrap.letUrl = `url('${json.data.letImgUrl}')`;//把圖片路徑塞去摺紙的畫面上
