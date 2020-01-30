@@ -27,7 +27,7 @@ const defaultCat = {
   template: `
     <div>
         <h3>分類說明:</h3>
-        <p>blablabla</p>
+        <p>請從三種分類中選擇一個最合適的主題！</p>
     </div>
     `
 }
@@ -97,6 +97,9 @@ let vm3 = new Vue({
     leftPosition: '0',
     clickCount: 0,
     origenCount:0,
+    stamp_leftPosition:'0',
+    clickCount_Stamp: 0,
+    origenCount_Stamp:0,
   },
   methods: {
     clickPattern(e, index) {
@@ -241,9 +244,11 @@ let vm3 = new Vue({
         //計算可以點擊的次數
         vm3.clickCount = document.querySelectorAll('#painteType .type').length-1;
         vm3.origenCount = document.querySelectorAll('#painteType .type').length-1;
+        
         //計算存放郵戳的總寬度
         let patBoxlength = document.querySelectorAll('#painteType .type').length;
         let oneWidth = document.querySelectorAll('#painteType .type')[0].offsetWidth;
+
         let allPercentage = Math.floor((oneWidth*patBoxlength)/document.body.clientWidth*100*0.83);
         // console.log(allPercentage);
         vm3.leftPosition = `${allPercentage}%`;
