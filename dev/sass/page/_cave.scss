@@ -199,12 +199,6 @@
               visibility: hidden;
               transition: all 0.5s;
 
-              // .cav-letNo{
-              //   position: absolute;
-              //   left: -5%;
-              //   top: -2%;
-              //   font-size: 1rem;
-              // }
               .cav-letClose {
                 position: absolute;
                 right: -5%;
@@ -212,14 +206,15 @@
                 cursor: pointer;
               }
               .letter-head {
-                // height: 26%;
                 height: 20vw;
                 width: 100%;
-                display: flex;
+                min-height: 150px;
+                // display: flex;
+                display: inline-block;
                 .letter-img {
                   height: 100%;
                   width: 100%;
-                  // background-image: url(../img/catch-letter/post-mark-test.png);
+
                   background-size: contain;
                   background-position: center;
                   background-repeat: no-repeat;
@@ -227,9 +222,9 @@
               }
 
               .letter-contant {
+                display: inline-block;
                 height: 70%;
                 width: 100%;
-                // padding: 3.5%;
 
                 .letter-tittle {
                   height: 100%;
@@ -1286,6 +1281,7 @@
         font-weight: bolder;
         font-size: 32px;
         text-align: center;
+        padding: 2%;
       }
 
       .cav-coin {
@@ -1294,6 +1290,7 @@
         font-weight: bolder;
         font-size: 32px;
         text-align: center;
+        padding: 2%;
       }
     }
   }
@@ -2122,7 +2119,6 @@
 
           .orderBtnBoxGroup {
             width: 60%;
-            // margin: 0;
 
             .orderBtnBox {
               position: relative;
@@ -2303,44 +2299,43 @@
                 .letter-wrap {
                   opacity: 1;
                   visibility: visible;
-                }
-              }
-            }
-          }
+                  width: 100%;
+                  margin: 0 auto;
+                  .cav-letClose {
+                    right: -18%;
+                    top: -4%;
+                    font-size: 30px;
+                  }
 
-          .cav-showLetterBack {
-            .cav-showLetter {
-              left: -20%;
+                  .letter-head {
+                    width: 130%;
+                    margin: -15% -15% 0 -15%;
+                  }
 
-              .letter-wrap {
-                width: 100%;
-                margin: 0 auto;
-                // .cav-letNo{
-                //   left: -18%;
-                //   top: -4%;
+                  .letter-contant {
+                    display: inline-block;
+                    width: 130%;
+                    margin-left: -15%;
 
-                // }
-                .cav-letClose {
-                  right: -20%;
-                  top: -4%;
-                }
-                .letter-head {
-                  width: 130%;
-                  margin: -15% -15% 0 -15%;
-                }
-                .letter-contant {
-                  width: 130%;
-                  margin: -15% -15% 0 -15%;
+                    .cav-letNavbar {
+                      height: 11vw;
+                    }
+                    .cav-h3 {
+                      margin: 40px 0;
+                    }
 
-                  .cav-letComment {
-                    .cav-commOption {
-                      justify-content: space-around;
+                    .cav-letComment {
+                      margin: 2% 0;
+                      min-height: 100px;
+                      .cav-commOption {
+                        justify-content: space-around;
 
-                      .cav-commLike {
-                        margin-top: -51%;
-                      }
-                      .cav-commReport {
-                        margin-top: -65%;
+                        .cav-commLike {
+                          margin-top: -51%;
+                        }
+                        .cav-commReport {
+                          margin-top: -65%;
+                        }
                       }
                     }
                   }
@@ -2399,6 +2394,18 @@
           }
         }
       }
+      .cav-pc {
+        .cav-paper {
+          font-size: 25px;
+          width: 40%;
+          padding: 3%;
+        }
+        .cav-coin {
+          font-size: 25px;
+          width: 60%;
+          padding: 3%;
+        }
+      }
     }
   }
   .cav-myItem {
@@ -2421,7 +2428,7 @@
             // margin: 0;
 
             .orderBtnBox {
-              position: relative; 
+              position: relative;
 
               .orderBtn {
                 font-size: 20px;
@@ -2470,7 +2477,6 @@
 
                 &:after {
                   content: "";
-                  position: absolute;
                   position: absolute;
                   width: 49%;
                   height: 40%;

@@ -1,4 +1,225 @@
 $(document).ready(function () {
+
+  /* 點擊歷史信件秀出對應信件標題、內文、圖片 */
+  function letterContent(fullLet) {
+    let firstLook = $(".cav-looking").find(".cav-letTitle").text();
+    // console.log(firstLook); 6
+    for (let i = 0; i < fullLet.length; i++) {
+      if (firstLook == fullLet[i][1]) {
+        $(".letter-img").css("backgroundImage", "url(" + fullLet[i][0] + ")");
+        $(".letter-tittle").children("h5").text(fullLet[i][1]);
+        $(".text").children("p").text(fullLet[i][2]);
+        $(".letter-time").text(fullLet[i][3]);
+        $(".letter-author").text("no." + fullLet[i][4]);
+        $(".letChat").attr("disabled", "disabled");
+        $(".letLike").attr("data-letLike", fullLet[i][5]);
+        $(".letReport").attr("data-letReport", fullLet[i][5]);
+        $(".letChat").attr("id", "letChat" + fullLet[i][5]);
+        $(".letLike").attr("id", "letLike" + fullLet[i][5]);
+        $(".letReport").attr("id", "letReport" + fullLet[i][5]);
+        console.log($(".letChat").attr("id", "letChat" + fullLet[i][4]));
+
+        break;
+      }
+    }
+    /* 點擊歷史信件秀出對應信件標題、內文、圖片 */
+    $(".cav-letters").on("click", function () {
+      let letTit = "";
+      letTit = $(this).find(".cav-letTitle").text();
+      console.log(letTit);
+      // console.log(fullLet)
+
+      for (let i = 0; i < fullLet.length; i++) {
+        if (letTit == fullLet[i][1]) {
+          $(".letter-img").css("backgroundImage", "url(" + fullLet[i][0] + ")");
+          $(".letter-tittle").children("h5").text(fullLet[i][1]);
+          $(".text").children("p").text(fullLet[i][2]);
+          $(".letter-time").text(fullLet[i][3]);
+          $(".letter-author").text("no." + fullLet[i][4]);
+          $(".letChat").attr("disabled", "disabled");
+          // $(".letChat").attr("data-letChat", fullLet[i][4]);
+          $(".letLike").attr("data-letLike", fullLet[i][5]);
+          $(".letReport").attr("data-letReport", fullLet[i][5]);
+          $(".letChat").attr("id", "letChat" + fullLet[i][5]);
+          $(".letLike").attr("id", "letLike" + fullLet[i][5]);
+          $(".letReport").attr("id", "letReport" + fullLet[i][5]);
+          // $(".cav-letNo").text("no." + fullLet[i][3]);
+          console.log(fullLet[i][1]);
+          break;
+        }
+      }
+    });
+  };
+
+  /* 檢查信件是否已被打賞 */
+  function checkLetLike() {
+    let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
+    let letNum = $(".letLike").attr("data-letlike");
+    // console.log(memNo);
+    // console.log("信件編號", letNum);
+    $.ajax({
+      url: "./phps/cav-checkLikeLet.php",
+      type: "GET",
+      dataType: "json",
+      data: { "memNo": memNo },
+      success: function (chkLikeLetRow) {
+        let checkLetNo = new Array();
+
+        // console.log("會員編號", memNo); 6
+        // console.log("有打賞", chkLikeLetRow); 6
+        for (i = 0; i < chkLikeLetRow.length; i++) {
+          checkLetNo[i] = chkLikeLetRow[i].letNo;
+          // console.log(checkLetNo);
+          // console.log($.inArray(letNum, checkLetNo));
+          // console.log(memNo == chkLikeLetRow[i].memNo);
+          if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkLikeLetRow[i].memNo) {
+            $("#letLike" + letNum).attr("disabled", true);
+            // console.log($("#letLike" + letNum));
+          }
+          else {
+            $("#letLike" + letNum).attr("disabled", false);
+            console.log("沒有被打賞過");
+          }
+        }
+      },
+      error: function () {
+        console.log("檢查打賞error");
+      },
+    });
+  };
+
+  /* 檢查檢舉信件是否已被檢舉 */
+  function checkLetReport() {
+    let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
+    let letNum = $(".letReport").attr("data-letreport");
+    // console.log(memNo); 6
+    // console.log("信件編號", letNum); 6
+    $.ajax({
+      url: "./phps/cav-checkReportLet.php",
+      type: "GET",
+      dataType: "json",
+      data: { "memNo": memNo },
+      success: function (chkReportRow) {
+        let checkLetNo = new Array();
+
+        // console.log("會員編號", memNo); 6
+        // console.log("有打賞", chkReportRow); 6
+        for (i = 0; i < chkReportRow.length; i++) {
+          checkLetNo[i] = chkReportRow[i].letNo;
+          // console.log(checkLetNo); 6
+          // console.log($.inArray(letNum, checkLetNo)); 6
+          // console.log(memNo == chkReportRow[i].memNo); 6
+          if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkReportRow[i].memNo) {
+            $("#letReport" + letNum).attr("disabled", true);
+            // console.log($("#letReport" + letNum)); 6
+          }
+          else {
+            $("#letReport" + letNum).attr("disabled", false);
+            console.log("沒有被檢舉過");
+          }
+        }
+      },
+      error: function (chkReportRow) {
+        console.log(chkReportRow);
+      },
+    });
+  };
+
+  /*自動撈取第一封信件回覆 */
+  function changeFirstMsg() {
+    let firstLookMsg = $(".cav-looking").find(".cav-letTitle").attr("data-letter-num");
+    $.ajax({
+      url: "./phps/cav-letMessage.php",
+      type: "GET",
+      dataType: "json",
+      data: { letNo: firstLookMsg },
+      success: function (msgRow) {
+        // console.log("信件回復", msgRow); 6
+        if ($.isEmptyObject(msgRow) == false) {
+          $(function checkClickedBefore() {
+            let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
+            // console.log(memNo); 6
+            $.ajax({
+              url: "./phps/cav-checkClickedBefore.php",
+              type: "GET",
+              dataType: "json",
+              data: { "memNo": memNo },
+              success: function (chkClickRow) {
+                // console.log(chkClickRow);
+                let letReply = "";
+                let msgNum = new Array();
+
+                // console.log("會員編號", memNo); 6
+                // console.log("有打賞", chkClickRow); 6
+                // console.log("留言", msgRow); 6
+                // console.log("有打賞過留言編號", chkClickRow[0].msgNo); 6
+                // console.log("留言編號", msgRow[0].msgNo); 6
+
+
+                for (let j = 0; j < msgRow.length; j++) {
+                  //撈出所有回覆
+                  letReply = letterReply(
+                    letReply,
+                    msgRow[j].memName,
+                    msgRow[j].msgTime,
+                    msgRow[j].msgContent,
+                    msgRow[j].msgNo,
+                    msgRow[j].msgStatus,
+                  );
+                  msgNum[j] = msgRow[j].msgNo;
+                  $(".cav-replys").html(letReply);
+                }
+                for (i = 0; i < chkClickRow.length; i++) {
+                  // console.log(chkClickRow[i].mlmsgNo);
+
+                  if ($.inArray(chkClickRow[i].mlmsgNo, msgNum) != -1 && memNo == chkClickRow[i].mlmemNo) {
+                    $("#like" + chkClickRow[i].mlmsgNo).attr({ "data-like": chkClickRow[i].mlmsgNo, "disabled": true });
+                    // console.log($("#like" + chkClickRow[i].mlmsgNo).attr({ "data-like": chkClickRow[i].mlmsgNo, "disabled": true }));
+                    // console.log($("#" + chkClickRow[i].msgNo).attr("disabled"));
+                    // console.log($("#like" + chkClickRow[i].mlmsgNo));
+                  }
+                  else {
+                    console.log("沒有被打賞過");
+                  }
+                }
+                // console.log(chkClickRow);
+                for (i = 0; i < chkClickRow.length; i++) {
+                  // console.log(chkClickRow[i].mrmsgNo);
+
+                  if ($.inArray(chkClickRow[i].mrmsgNo, msgNum) != -1 && memNo == chkClickRow[i].mrmemNo) {
+                    // console.log(msgNum);
+                    // console.log(chkClickRow[i].mrmsgNo);
+                    $("#report" + chkClickRow[i].mrmsgNo).attr({ "data-report": chkClickRow[i].mrmsgNo, "disabled": true });
+                  }
+                  else {
+                    console.log("沒有被檢舉過");
+                  }
+                }
+
+              },
+              error: function (chkClickRow) {
+                console.log(chkClickRow);
+              },
+            });
+          });
+
+        } else {
+          let letNoReply = "";
+          let msgRow = "";
+          letNoReply = letterNoReply(msgRow);
+          $(".cav-replys").html(letNoReply);
+        }
+
+      },
+      error: function (msgRow) {
+        console.log(msgRow);
+      }
+    });
+  };
+
+
+
+
   async function cavAjax() {
     /* AJAX  撈取我的信件、撈取信件內容  */
     await $.ajax({
@@ -12,7 +233,7 @@ $(document).ready(function () {
       success: function (letRow) {
         console.log(letRow);
         let myLet = "";
-        let letTit = "";
+        // let letTit = "";
         let fullLet = new Array();
         // console.log($("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1]);
 
@@ -37,135 +258,14 @@ $(document).ready(function () {
           $(".cav-histLetter2").html(myLet);
         }
 
-
-        /* 點擊歷史信件秀出對應信件標題、內文、圖片 */
-        function letterContent(fullLet) {
-          let firstLook = $(".cav-looking").find(".cav-letTitle").text();
-          // console.log(firstLook); 6
-          for (let i = 0; i < fullLet.length; i++) {
-            if (firstLook == fullLet[i][1]) {
-              $(".letter-img").css("backgroundImage", "url(" + fullLet[i][0] + ")");
-              $(".letter-tittle").children("h5").text(fullLet[i][1]);
-              $(".text").children("p").text(fullLet[i][2]);
-              $(".letter-time").text(fullLet[i][3]);
-              $(".letter-author").text("no." + fullLet[i][4]);
-              $(".letChat").attr("disabled", "disabled");
-              // $(".letChat").attr("data-letChat", fullLet[i][4]);
-              $(".letLike").attr("data-letLike", fullLet[i][5]);
-              $(".letReport").attr("data-letReport", fullLet[i][5]);
-              $(".letChat").attr("id", "letChat" + fullLet[i][5]);
-              $(".letLike").attr("id", "letLike" + fullLet[i][5]);
-              $(".letReport").attr("id", "letReport" + fullLet[i][5]);
-              // $(".cav-letNo").text("no." + fullLet[i][3]);
-              // console.log(fullLet[i][1]); 6
-              console.log($(".letChat").attr("id", "letChat" + fullLet[i][4]));
-
-              break;
-            }
-          }
-
-
-          $(".cav-letters").on("click", function () {
-            letTit = $(this).find(".cav-letTitle").text();
-            console.log(letTit);
-            // console.log(fullLet)
-
-            for (let i = 0; i < fullLet.length; i++) {
-              if (letTit == fullLet[i][1]) {
-                $(".letter-img").css("backgroundImage", "url(" + fullLet[i][0] + ")");
-                $(".letter-tittle").children("h5").text(fullLet[i][1]);
-                $(".text").children("p").text(fullLet[i][2]);
-                $(".letter-time").text(fullLet[i][3]);
-                $(".letter-author").text("no." + fullLet[i][4]);
-                $(".letChat").attr("disabled", "disabled");
-                // $(".letChat").attr("data-letChat", fullLet[i][4]);
-                $(".letLike").attr("data-letLike", fullLet[i][5]);
-                $(".letReport").attr("data-letReport", fullLet[i][5]);
-                $(".letChat").attr("id", "letChat" + fullLet[i][5]);
-                $(".letLike").attr("id", "letLike" + fullLet[i][5]);
-                $(".letReport").attr("id", "letReport" + fullLet[i][5]);
-                // $(".cav-letNo").text("no." + fullLet[i][3]);
-                console.log(fullLet[i][1]);
-                break;
-              }
-            }
-          });
-        }
+        /* 呼叫 點擊歷史信件秀出對應信件標題、內文、圖片 */
         letterContent(fullLet);
 
-        /* 檢查信件是否已被打賞 */
-        $(function checkLetLike() {
-          let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-          let letNum = $(".letLike").attr("data-letlike");
-          // console.log(memNo);
-          // console.log("信件編號", letNum);
-          $.ajax({
-            url: "./phps/cav-checkLikeLet.php",
-            type: "GET",
-            dataType: "json",
-            data: { "memNo": memNo },
-            success: function (chkLikeLetRow) {
-              let checkLetNo = new Array();
+        /* 呼叫 檢查信件是否已被打賞 */
+        checkLetLike();
 
-              // console.log("會員編號", memNo); 6
-              // console.log("有打賞", chkLikeLetRow); 6
-              for (i = 0; i < chkLikeLetRow.length; i++) {
-                checkLetNo[i] = chkLikeLetRow[i].letNo;
-                // console.log(checkLetNo);
-                // console.log($.inArray(letNum, checkLetNo));
-                // console.log(memNo == chkLikeLetRow[i].memNo);
-                if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkLikeLetRow[i].memNo) {
-                  $("#letLike" + letNum).attr("disabled", true);
-                  // console.log($("#letLike" + letNum));
-                }
-                else {
-                  $("#letLike" + letNum).attr("disabled", false);
-                  console.log("沒有被打賞過");
-                }
-              }
-            },
-            error: function () {
-              console.log("檢查打賞error");
-            },
-          });
-        });
-
-        /* 檢查檢舉信件是否已被檢舉 */
-        $(function checkLetReport() {
-          let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-          let letNum = $(".letReport").attr("data-letreport");
-          // console.log(memNo); 6
-          // console.log("信件編號", letNum); 6
-          $.ajax({
-            url: "./phps/cav-checkReportLet.php",
-            type: "GET",
-            dataType: "json",
-            data: { "memNo": memNo },
-            success: function (chkReportRow) {
-              let checkLetNo = new Array();
-
-              // console.log("會員編號", memNo); 6
-              // console.log("有打賞", chkReportRow); 6
-              for (i = 0; i < chkReportRow.length; i++) {
-                checkLetNo[i] = chkReportRow[i].letNo;
-                // console.log(checkLetNo); 6
-                // console.log($.inArray(letNum, checkLetNo)); 6
-                // console.log(memNo == chkReportRow[i].memNo); 6
-                if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkReportRow[i].memNo) {
-                  $("#letReport" + letNum).attr("disabled", true);
-                  // console.log($("#letReport" + letNum)); 6
-                }
-                else {
-                  $("#letReport" + letNum).attr("disabled", false);
-                  console.log("沒有被檢舉過");
-                }
-              }
-            },
-            error: function (chkReportRow) {
-              console.log(chkReportRow);
-            },
-          });
-        })
+        /* 呼叫 檢查檢舉信件是否已被檢舉 */
+        checkLetReport();
 
         /*---結束--- */
       },
@@ -189,7 +289,6 @@ $(document).ready(function () {
         success: function (letRow) {
           // console.log(letRow);
           let myLet = "";
-          // let letTit = "";
           let fullLet = new Array();
           // console.log($("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1]);
 
@@ -214,339 +313,17 @@ $(document).ready(function () {
             $(".cav-histLetter2").html(myLet);
           }
 
-          /* 點擊歷史信件秀出對應信件標題、內文、圖片 */
-          function letterContent(fullLet) {
-            let firstLook = $(".cav-looking").find(".cav-letTitle").text();
-            for (let i = 0; i < fullLet.length; i++) {
-              if (firstLook == fullLet[i][1]) {
-                $(".letter-img").css("backgroundImage", "url(" + fullLet[i][0] + ")");
-                $(".letter-tittle").children("h5").text(fullLet[i][1]);
-                $(".text").children("p").text(fullLet[i][2]);
-                $(".letter-time").text(fullLet[i][3]);
-                $(".letter-author").text("no." + fullLet[i][4]);
-                $(".letChat").attr("disabled", "disabled");
-                // $(".letChat").attr("data-letChat", fullLet[i][4]);
-                $(".letLike").attr("data-letLike", fullLet[i][5]);
-                $(".letReport").attr("data-letReport", fullLet[i][5]);
-                $(".letChat").attr("id", "letChat" + fullLet[i][5]);
-                $(".letLike").attr("id", "letLike" + fullLet[i][5]);
-                $(".letReport").attr("id", "letReport" + fullLet[i][5]);
-                console.log(fullLet[i][1]);
-                break;
-              }
-            }
-            $(".cav-letters").on("click", function () {
-              letTit = $(this).find(".cav-letTitle").text();
-              // console.log(letTit);
-              // console.log(fullLet)
-              for (let i = 0; i < fullLet.length; i++) {
-                if (letTit == fullLet[i][1]) {
-                  $(".letter-img").css("backgroundImage", "url(" + fullLet[i][0] + ")");
-                  $(".letter-tittle").children("h5").text(fullLet[i][1]);
-                  $(".text").children("p").text(fullLet[i][2]);
-                  $(".letter-time").text(fullLet[i][3]);
-                  $(".letter-author").text("no." + fullLet[i][4]);
-                  $(".letChat").attr("disabled", "disabled");
-                  // $(".letChat").attr("data-letChat", fullLet[i][4]);
-                  $(".letLike").attr("data-letLike", fullLet[i][5]);
-                  $(".letReport").attr("data-letReport", fullLet[i][5]);
-                  $(".letChat").attr("id", "letChat" + fullLet[i][5]);
-                  $(".letLike").attr("id", "letLike" + fullLet[i][5]);
-                  $(".letReport").attr("id", "letReport" + fullLet[i][5]);
-                  console.log(fullLet[i][1]);
-                  break;
-                }
-              }
-            });
-          }
+          /* 呼叫 點擊歷史信件秀出對應信件標題、內文、圖片 */
           letterContent(fullLet);
 
-          /*自動撈取第一封信件回覆 */
-          $(function changeFirstMsg() {
-            let firstLookMsg = $(".cav-looking").find(".cav-letTitle").attr("data-letter-num");
-            $.ajax({
-              url: "./phps/cav-letMessage.php",
-              type: "GET",
-              dataType: "json",
-              data: { letNo: firstLookMsg },
-              success: function (msgRow) {
-                // console.log("信件回復", msgRow); 6
-                // let letReply = "";
-                // console.log(msgRow);
-                // console.log($.isEmptyObject(msgRow) == false);
-                if ($.isEmptyObject(msgRow) == false) {
-                  $(function checkClickedBefore() {
-                    let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-                    // let mesgNo = msgRow[i].msgNo;
-                    // console.log(msgRow[j].msgNo);
-                    // console.log(memNo); 6
-                    $.ajax({
-                      url: "./phps/cav-checkClickedBefore.php",
-                      type: "GET",
-                      dataType: "json",
-                      data: { "memNo": memNo },
-                      success: function (chkClickRow) {
-                        // console.log(chkClickRow);
-                        let letReply = "";
-                        let msgNum = new Array();
+          /* 呼叫 自動撈取第一封信件回覆 */
+          changeFirstMsg();
 
-                        // console.log("會員編號", memNo); 6
-                        // console.log("有打賞", chkClickRow); 6
-                        // console.log("留言", msgRow); 6
-                        // console.log("有打賞過留言編號", chkClickRow[0].msgNo); 6
-                        // console.log("留言編號", msgRow[0].msgNo); 6
+          /* 呼叫 檢查信件是否已被打賞 */
+          checkLetLike();
 
-
-                        for (let j = 0; j < msgRow.length; j++) {
-                          //撈出所有回覆
-                          letReply = letterReply(
-                            letReply,
-                            msgRow[j].memName,
-                            msgRow[j].msgTime,
-                            msgRow[j].msgContent,
-                            msgRow[j].msgNo,
-                            msgRow[j].msgStatus,
-                          );
-                          msgNum[j] = msgRow[j].msgNo;
-                          $(".cav-replys").html(letReply);
-                        }
-
-                        // console.log(msgNum);
-                        // console.log(chkClickRow);
-                        for (i = 0; i < chkClickRow.length; i++) {
-                          // console.log(chkClickRow[i].mlmsgNo);
-
-                          if ($.inArray(chkClickRow[i].mlmsgNo, msgNum) != -1 && memNo == chkClickRow[i].mlmemNo) {
-                            // console.log(msgNum);
-                            // console.log(chkClickRow[i].mlmsgNo);
-                            // $("#" + chkClickRow[i].mlmsgNo).attr("disabled", true);
-                            $("#like" + chkClickRow[i].mlmsgNo).attr({ "data-like": chkClickRow[i].mlmsgNo, "disabled": true });
-                            // console.log($("#like" + chkClickRow[i].mlmsgNo).attr({ "data-like": chkClickRow[i].mlmsgNo, "disabled": true }));
-                            // console.log($("#" + chkClickRow[i].msgNo).attr("disabled"));
-                            // console.log($("#like"));
-                            // console.log(chkClickRow[i].mlmsgNo);
-                            // console.log($("#like" + chkClickRow[i].mlmsgNo));
-
-                          }
-                          else {
-                            console.log("沒有被打賞過");
-
-                          }
-                        }
-                        // console.log(chkClickRow);
-                        for (i = 0; i < chkClickRow.length; i++) {
-                          // console.log(chkClickRow[i].mrmsgNo);
-
-                          if ($.inArray(chkClickRow[i].mrmsgNo, msgNum) != -1 && memNo == chkClickRow[i].mrmemNo) {
-                            // console.log(msgNum);
-                            // console.log(chkClickRow[i].mrmsgNo);
-                            // $("#" + chkClickRow[i].msgNo).attr("disabled", true);
-                            $("#report" + chkClickRow[i].mrmsgNo).attr({ "data-report": chkClickRow[i].mrmsgNo, "disabled": true });
-                            // console.log($("#report" + chkClickRow[i].mrmsgNo).attr({ "data-report": chkClickRow[i].mrmsgNo, "disabled": true }));
-                            // console.log($("#" + chkClickRow[i].msgNo).attr("disabled"));
-                          }
-                          else {
-                            console.log("沒有被檢舉過");
-                          }
-                        }
-
-                      },
-                      error: function (chkClickRow) {
-                        console.log(chkClickRow);
-                      },
-                    });
-                  });
-
-                  /* AJAX *註冊* 打賞留言跳金幣,並只能打賞一次 */
-                  $(document).on("click", ".like", function (e) {
-                    // console.log(e.target.parentNode);
-                    let obj = e.target.parentNode.dataset.like;
-                    console.log(obj);
-                    // let likeThis = $(this).attr("data-like");
-                    let whoLike = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-                    let now = new Date();
-                    let likeTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() +
-                      " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-                    // console.log("被打賞留言編號:", likeThis);
-                    console.log("被打賞留言編號:", obj);
-                    console.log("打賞者", whoLike);
-                    console.log("打賞時間", likeTime);
-                    $.ajax({
-                      url: "./phps/cav-msgLike.php",
-                      type: "GET",
-                      dataType: "json",
-                      data: {
-                        "likeThis": obj,
-                        "whoLike": whoLike,
-                        "likeTime": likeTime,
-                      },
-                      success: function (likeRow) {
-                        console.log(likeRow);
-                        if (likeRow.status == 'success') {
-                          $("#like" + obj).attr("disabled", true);
-                          // obj.disabled = true; //這邊要改為指定按鈕 現在只是數字
-                          // console.log($("#like" + obj));
-                          // console.log(obj);
-                          // console.log(666);
-                        } else {
-                          console.log(111);
-                        }
-                      },
-                      error: function (likeRow) {
-                        console.log(likeRow);
-                      }
-                    });
-                    $(this).parents(".cav-letComment").find(".cav-commId").addClass("active");
-                    console.log("coin");
-                    setTimeout(() => {
-                      $(".cav-commId").removeClass("active");
-                    }, 1000);
-                    // $(this).attr("disabled", true);
-                  });
-
-                  /* AJAX *註冊* 檢舉留言跳窗 */
-                  var reportThis;
-                  $(".report").click(function (e) {
-                    obj1 = e.target.parentNode;
-                    reportThis = $(this).on("click").attr("data-report");//被檢舉留言
-                    $(".cav-reportList").toggle();
-                  });
-                  $(".closeTag").click(function () {
-                    $(".cav-reportList").css("display", "none");
-                  });
-                  $(".cav-sendReport").click(function () {
-                    if ($("#cav-reportSelector").val() == null) {
-                      alert("請選擇原因");
-                      console.log($("#cav-reportSelector").val());
-                    } else {
-                      $(".cav-reportList").toggle();
-                      alert("檢舉已送出，我們將盡速審核");
-                      let whoReport = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];//檢舉會員
-                      let now = new Date();//檢舉時間
-                      let reportTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() +
-                        " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-                      let msgRepReason = $("#cav-reportSelector").val();//檢舉原因
-                      console.log(reportThis);
-                      console.log(whoReport);
-                      console.log(reportTime);
-                      console.log(msgRepReason);
-                      $.ajax({
-                        url: "./phps/cav-msgReport.php",
-                        type: "GET",
-                        dataType: "json",
-                        data: {
-                          "whoReport": whoReport,
-                          "reportThis": reportThis,
-                          "reportTime": reportTime,
-                          "msgRepReason": msgRepReason,
-                        },
-                        success: function (reportRow) {
-                          console.log(reportRow);
-                          if (reportRow.status == 'success') {
-                            // obj1.disabled = true;
-                            $("#report" + obj1).attr("disabled", true);
-                            console.log(obj1);
-                            // console.log(666);
-                          } else {
-                            console.log(111);
-                          }
-                        },
-                        error: function (reportRow) {
-                          console.log(reportRow);
-                        }
-                      });
-                      // e.preventDefault();
-                    }
-                  });
-                } else {
-                  let letNoReply = "";
-                  let msgRow = "";
-                  letNoReply = letterNoReply(msgRow);
-                  $(".cav-replys").html(letNoReply);
-                }
-
-              },
-              error: function (msgRow) {
-                console.log(msgRow);
-              }
-            });
-          });
-
-          /*---結束--- */
-
-          /* 檢查信件是否已被打賞 */
-          $(function checkLetLike() {
-            let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-            let letNum = $(".letLike").attr("data-letlike");
-            console.log(memNo);
-            console.log("信件編號", letNum);
-            $.ajax({
-              url: "./phps/cav-checkLikeLet.php",
-              type: "GET",
-              dataType: "json",
-              data: { "memNo": memNo },
-              success: function (chkLikeLetRow) {
-                let checkLetNo = new Array();
-
-                console.log("會員編號", memNo); 6
-                console.log("有打賞", chkLikeLetRow); 6
-                for (i = 0; i < chkLikeLetRow.length; i++) {
-                  checkLetNo[i] = chkLikeLetRow[i].letNo;
-                  console.log(checkLetNo);
-                  console.log($.inArray(letNum, checkLetNo));
-                  console.log(memNo == chkLikeLetRow[i].memNo);
-                  if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkLikeLetRow[i].memNo) {
-                    $("#letLike" + letNum).attr("disabled", true);
-                    console.log($("#letLike" + letNum));
-                  }
-                  else {
-                    $("#letLike" + letNum).attr("disabled", false);
-                    console.log("沒有被打賞過");
-                  }
-                }
-              },
-              error: function (chkLikeLetRow) {
-                console.log(chkLikeLetRow);
-              },
-            });
-          });
-
-          /* 檢查檢舉信件是否已被檢舉 */
-          $(function checkLetReport() {
-            let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-            let letNum = $(".letReport").attr("data-letreport");
-            console.log(memNo);
-            console.log("信件編號", letNum);
-            $.ajax({
-              url: "./phps/cav-checkReportLet.php",
-              type: "GET",
-              dataType: "json",
-              data: { "memNo": memNo },
-              success: function (chkReportRow) {
-                let checkLetNo = new Array();
-
-                console.log("會員編號", memNo); 6
-                console.log("有打賞", chkReportRow); 6
-                for (i = 0; i < chkReportRow.length; i++) {
-                  checkLetNo[i] = chkReportRow[i].letNo;
-                  console.log(checkLetNo);
-                  console.log($.inArray(letNum, checkLetNo));
-                  console.log(memNo == chkReportRow[i].memNo);
-                  if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkReportRow[i].memNo) {
-                    $("#letReport" + letNum).attr("disabled", true);
-                    console.log($("#letReport" + letNum));
-                  }
-                  else {
-                    $("#letReport" + letNum).attr("disabled", false);
-                    console.log("沒有被檢舉過");
-                  }
-                }
-              },
-              error: function (chkReportRow) {
-                console.log(chkReportRow);
-              },
-            });
-          })
+          /* 呼叫 檢查檢舉信件是否已被檢舉 */
+          checkLetReport();
 
         },
         error: function (letRow) {
@@ -592,270 +369,11 @@ $(document).ready(function () {
             $(".cav-histLetter2").html(otherLet);
           }
 
-          /* 點擊撈的歷史信件秀出對應信件標題、內文、圖片 */
-          function letterContent(fullOtherLet) {
-            let firstLook = $(".cav-looking").find(".cav-letTitle").text();
-            // console.log(firstLook);
-            for (let i = 0; i < fullOtherLet.length; i++) {
-              if (firstLook == fullOtherLet[i][1]) {
-                $(".letter-img").css("backgroundImage", "url(" + fullOtherLet[i][0] + ")");
-                $(".letter-tittle").children("h5").text(fullOtherLet[i][1]);
-                $(".text").children("p").text(fullOtherLet[i][2]);
-                $(".letter-time").text(fullOtherLet[i][3]);
-                $(".letter-author").text("no." + fullOtherLet[i][4]);
-                $(".letChat").attr("data-letChat", fullOtherLet[i][4]);
-                $(".letChat").attr("disabled", false);
-                $(".letLike").attr("data-letLike", fullOtherLet[i][5]);
-                $(".letReport").attr("data-letReport", fullOtherLet[i][5]);
-                $(".letChat").attr("id", "letChat" + "-" + fullOtherLet[i][5]);
-                $(".letLike").attr("id", "letLike" + fullOtherLet[i][5]);
-                $(".letReport").attr("id", "letReport" + fullOtherLet[i][5]);
-                // $(".cav-letNo").text("no." + fullOtherLet[i][3]);
-                // console.log(fullOtherLet[i][4]);
-                break;
-              }
-            }
-            $(".cav-letters").on("click", function () {
-              letTit = $(this).find(".cav-letTitle").text();
-              // console.log(letTit);
-              // console.log(fullOtherLet)
-              for (let i = 0; i < fullOtherLet.length; i++) {
-                if (letTit == fullOtherLet[i][1]) {
-                  $(".letter-img").css("backgroundImage", "url(" + fullOtherLet[i][0] + ")");
-                  $(".letter-tittle").children("h5").text(fullOtherLet[i][1]);
-                  $(".text").children("p").text(fullOtherLet[i][2]);
-                  $(".letter-time").text(fullOtherLet[i][3]);
-                  $(".letter-author").text("no." + fullOtherLet[i][4]);
-                  $(".letChat").attr("data-letChat", fullOtherLet[i][4]);
-                  $(".letChat").attr("disabled", false);
-                  $(".letLike").attr("data-letLike", fullOtherLet[i][5]);
-                  $(".letReport").attr("data-letReport", fullOtherLet[i][5]);
-                  $(".letChat").attr("id", "letChat" + "-" + fullOtherLet[i][5]);
-                  $(".letLike").attr("id", "letLike" + fullOtherLet[i][5]);
-                  $(".letReport").attr("id", "letReport" + fullOtherLet[i][5]);
-                  console.log(fullOtherLet[i][1]);
-                  break;
-                }
-              }
-            });
-          }
+          /* 呼叫 點擊歷史信件秀出對應信件標題、內文、圖片 */
           letterContent(fullOtherLet);
 
-          /*自動撈取第一封信件回覆 */
-          $(function changeFirstMsg() {
-            let firstLookMsg = $(".cav-looking").find(".cav-letTitle").attr("data-letter-num");
-            $.ajax({
-              url: "./phps/cav-letMessage.php",
-              type: "GET",
-              dataType: "json",
-              data: { letNo: firstLookMsg },
-              success: function (msgRow) {
-                // console.log("信件回復", msgRow); 6
-                // let letReply = "";
-                // console.log(msgRow);
-                // console.log($.isEmptyObject(msgRow) == false);
-                if ($.isEmptyObject(msgRow) == false) {
-                  $(function checkClickedBefore() {
-                    let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-
-                    // let mesgNo = msgRow[i].msgNo;
-                    // console.log(msgRow[j].msgNo);
-                    // console.log(memNo); 6
-                    $.ajax({
-                      url: "./phps/cav-checkClickedBefore.php",
-                      type: "GET",
-                      dataType: "json",
-                      data: { "memNo": memNo },
-                      success: function (chkClickRow) {
-                        console.log(chkClickRow);
-                        let letReply = "";
-                        let msgNum = new Array();
-
-                        // console.log("會員編號", memNo); 6
-                        // console.log("有打賞", chkClickRow); 6
-                        // console.log("留言", msgRow); 6
-                        // console.log("有打賞過留言編號", chkClickRow[0].msgNo); 6
-                        // console.log("留言編號", msgRow[0].msgNo); 6
-
-
-                        for (let j = 0; j < msgRow.length; j++) {
-                          //撈出所有回覆
-                          letReply = letterReply(
-                            letReply,
-                            msgRow[j].memName,
-                            msgRow[j].msgTime,
-                            msgRow[j].msgContent,
-                            msgRow[j].msgNo,
-                            msgRow[j].msgStatus,
-                          );
-                          msgNum[j] = msgRow[j].msgNo;
-                          $(".cav-replys").html(letReply);
-                        }
-
-                        // console.log(msgNum);
-                        // console.log(chkClickRow);
-                        for (i = 0; i < chkClickRow.length; i++) {
-                          // console.log(chkClickRow[i].mlmsgNo);
-
-                          if ($.inArray(chkClickRow[i].mlmsgNo, msgNum) != -1 && memNo == chkClickRow[i].mlmemNo) {
-                            // console.log(msgNum);
-                            // console.log(chkClickRow[i].mlmsgNo);
-                            // $("#" + chkClickRow[i].mlmsgNo).attr("disabled", true);
-                            $("#like" + chkClickRow[i].mlmsgNo).attr({ "data-like": chkClickRow[i].mlmsgNo, "disabled": true });
-                            // console.log($("#like" + chkClickRow[i].mlmsgNo).attr({ "data-like": chkClickRow[i].mlmsgNo, "disabled": true }));
-                            // console.log($("#" + chkClickRow[i].msgNo).attr("disabled"));
-                            // console.log($("#like"));
-                            // console.log(chkClickRow[i].mlmsgNo);
-                            // console.log($("#like" + chkClickRow[i].mlmsgNo));
-
-                          }
-                          else {
-                            console.log("沒有被打賞過");
-
-                          }
-                        }
-                        // console.log(chkClickRow);
-                        for (i = 0; i < chkClickRow.length; i++) {
-                          // console.log(chkClickRow[i].mrmsgNo);
-
-                          if ($.inArray(chkClickRow[i].mrmsgNo, msgNum) != -1 && memNo == chkClickRow[i].mrmemNo) {
-                            // console.log(msgNum);
-                            // console.log(chkClickRow[i].mrmsgNo);
-                            // $("#" + chkClickRow[i].msgNo).attr("disabled", true);
-                            $("#report" + chkClickRow[i].mrmsgNo).attr({ "data-report": chkClickRow[i].mrmsgNo, "disabled": true });
-                            // console.log($("#report" + chkClickRow[i].mrmsgNo).attr({ "data-report": chkClickRow[i].mrmsgNo, "disabled": true }));
-                            // console.log($("#" + chkClickRow[i].msgNo).attr("disabled"));
-                          }
-                          else {
-                            console.log("沒有被檢舉過");
-                          }
-                        }
-
-                      },
-                      error: function (chkClickRow) {
-                        console.log(chkClickRow);
-                      },
-                    });
-                  });
-
-                  /* AJAX *註冊* 打賞留言跳金幣,並只能打賞一次 */
-                  $(document).on("click", ".like", function (e) {
-                    e.stopPropagation;
-                    e.stopImmediatePropagation;
-                    // console.log(e.target.parentNode);
-                    let obj = e.target.parentNode.dataset.like;
-                    console.log(obj);
-                    // let likeThis = $(this).attr("data-like");
-                    let whoLike = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-                    let now = new Date();
-                    let likeTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() +
-                      " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-                    // console.log("被打賞留言編號:", likeThis);
-                    console.log("被打賞留言編號:", obj);
-                    console.log("打賞者", whoLike);
-                    console.log("打賞時間", likeTime);
-                    $.ajax({
-                      url: "./phps/cav-msgLike.php",
-                      type: "GET",
-                      dataType: "json",
-                      data: {
-                        "likeThis": obj,
-                        "whoLike": whoLike,
-                        "likeTime": likeTime,
-                      },
-                      success: function (likeRow) {
-                        console.log(likeRow);
-                        if (likeRow.status == 'success') {
-                          $("#like" + obj).attr("disabled", true);
-                          // obj.disabled = true; //這邊要改為指定按鈕 現在只是數字
-                          // console.log($("#like" + obj));
-                          // console.log(obj);
-                          // console.log(666);
-                        } else {
-                          console.log(111);
-                        }
-                      },
-                      error: function (likeRow) {
-                        console.log(likeRow);
-                      }
-                    });
-                    $(this).parents(".cav-letComment").find(".cav-commId").addClass("active");
-                    console.log("coin");
-                    setTimeout(() => {
-                      $(".cav-commId").removeClass("active");
-                    }, 1000);
-                    // $(this).attr("disabled", true);
-                  });
-
-                  /* AJAX *註冊* 檢舉留言跳窗 */
-                  var reportThis;
-                  $(".report").click(function (e) {
-                    obj1 = e.target.parentNode;
-                    reportThis = $(this).on("click").attr("data-report");//被檢舉留言
-                    $(".cav-reportList").toggle();
-                  });
-                  $(".closeTag").click(function () {
-                    $(".cav-reportList").css("display", "none");
-                  });
-                  $(".cav-sendReport").click(function () {
-                    if ($("#cav-reportSelector").val() == null) {
-                      alert("請選擇原因");
-                      console.log($("#cav-reportSelector").val());
-                    } else {
-                      $(".cav-reportList").toggle();
-                      alert("檢舉已送出，我們將盡速審核");
-                      let whoReport = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];//檢舉會員
-                      let now = new Date();//檢舉時間
-                      let reportTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() +
-                        " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-                      let msgRepReason = $("#cav-reportSelector").val();//檢舉原因
-                      console.log(reportThis);
-                      console.log(whoReport);
-                      console.log(reportTime);
-                      console.log(msgRepReason);
-                      $.ajax({
-                        url: "./phps/cav-msgReport.php",
-                        type: "GET",
-                        dataType: "json",
-                        data: {
-                          "whoReport": whoReport,
-                          "reportThis": reportThis,
-                          "reportTime": reportTime,
-                          "msgRepReason": msgRepReason,
-                        },
-                        success: function (reportRow) {
-                          console.log(reportRow);
-                          if (reportRow.status == 'success') {
-                            // obj1.disabled = true;
-                            $("#report" + obj1).attr("disabled", true);
-                            console.log(obj1);
-                            // console.log(666);
-                          } else {
-                            console.log(111);
-                          }
-                        },
-                        error: function (reportRow) {
-                          console.log(reportRow);
-                        }
-                      });
-                      // e.preventDefault();
-                    }
-                  });
-                } else {
-                  let letNoReply = "";
-                  let msgRow = "";
-                  letNoReply = letterNoReply(msgRow);
-                  $(".cav-replys").html(letNoReply);
-                }
-
-              },
-              error: function (msgRow) {
-                console.log(msgRow);
-              }
-            });
-
-
-          });
+          /* 呼叫 自動撈取第一封信件回覆 */
+          changeFirstMsg();
 
           /* 與寫信者聊天，建立聊天室 */
           let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
@@ -909,79 +427,11 @@ $(document).ready(function () {
             console.log($("#letChat" + chatBtnId));
           }
 
-          /* 檢查信件是否已被打賞 */
-          $(function checkLetLike() {
-            let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-            let letNum = $(".letLike").attr("data-letlike");
-            // console.log(memNo); 6
-            // console.log("信件編號", letNum); 6
-            $.ajax({
-              url: "./phps/cav-checkLikeLet.php",
-              type: "GET",
-              dataType: "json",
-              data: { "memNo": memNo },
-              success: function (chkLikeLetRow) {
-                let checkLetNo = new Array();
+          /* 呼叫 檢查信件是否已被打賞 */
+          checkLetLike();
 
-                // console.log("會員編號", memNo); 6
-                // console.log("有打賞", chkLikeLetRow); 6
-                for (i = 0; i < chkLikeLetRow.length; i++) {
-                  checkLetNo[i] = chkLikeLetRow[i].letNo;
-                  // console.log(checkLetNo); 6
-                  // console.log($.inArray(letNum, checkLetNo)); 6
-                  // console.log(memNo == chkLikeLetRow[i].memNo); 6
-                  if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkLikeLetRow[i].memNo) {
-                    $("#letLike" + letNum).attr("disabled", true);
-                    // console.log($("#letLike" + letNum)); 6
-                  }
-                  else {
-                    $("#letLike" + letNum).attr("disabled", false);
-                    console.log("沒有被打賞過");
-                  }
-                }
-              },
-              error: function (chkLikeLetRow) {
-                console.log(chkLikeLetRow);
-              },
-            });
-          });
-
-          /* 檢查檢舉信件是否已被檢舉 */
-          $(function checkLetReport() {
-            let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-            let letNum = $(".letReport").attr("data-letreport");
-            // console.log(memNo); 6
-            // console.log("信件編號", letNum); 6
-            $.ajax({
-              url: "./phps/cav-checkReportLet.php",
-              type: "GET",
-              dataType: "json",
-              data: { "memNo": memNo },
-              success: function (chkReportRow) {
-                let checkLetNo = new Array();
-
-                // console.log("會員編號", memNo); 6
-                // console.log("有打賞", chkReportRow); 6
-                for (i = 0; i < chkReportRow.length; i++) {
-                  checkLetNo[i] = chkReportRow[i].letNo;
-                  // console.log(checkLetNo); 6
-                  // console.log($.inArray(letNum, checkLetNo)); 6
-                  // console.log(memNo == chkReportRow[i].memNo); 6
-                  if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkReportRow[i].memNo) {
-                    $("#letReport" + letNum).attr("disabled", true);
-                    // console.log($("#letReport" + letNum)); 6
-                  }
-                  else {
-                    $("#letReport" + letNum).attr("disabled", false);
-                    console.log("沒有被檢舉過");
-                  }
-                }
-              },
-              error: function (chkReportRow) {
-                console.log(chkReportRow);
-              },
-            });
-          })
+          /* 呼叫 檢查檢舉信件是否已被檢舉 */
+          checkLetReport();
           /*---結束--- */
         },
         error: function (letRow) {
@@ -990,9 +440,51 @@ $(document).ready(function () {
       });
     });
 
-
-
-
+    /* AJAX *註冊* 打賞留言跳金幣,並只能打賞一次 */
+    $(document).on("click", ".like", function (e) {
+      // console.log(e.target.parentNode);
+      let obj = e.target.parentNode.dataset.like;
+      console.log(obj);
+      let whoLike = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
+      let now = new Date();
+      let likeTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() +
+        " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+      // console.log("被打賞留言編號:", likeThis);
+      console.log("被打賞留言編號:", obj);
+      console.log("打賞者", whoLike);
+      console.log("打賞時間", likeTime);
+      $.ajax({
+        url: "./phps/cav-msgLike.php",
+        type: "GET",
+        dataType: "json",
+        data: {
+          "likeThis": obj,
+          "whoLike": whoLike,
+          "likeTime": likeTime,
+        },
+        success: function (likeRow) {
+          console.log(likeRow);
+          if (likeRow.status == 'success') {
+            $("#like" + obj).attr("disabled", true);
+            // obj.disabled = true; //這邊要改為指定按鈕 現在只是數字
+            // console.log($("#like" + obj));
+            // console.log(obj);
+            // console.log(666);
+          } else {
+            console.log(111);
+          }
+        },
+        error: function (likeRow) {
+          console.log(likeRow);
+        }
+      });
+      $(this).parents(".cav-letComment").find(".cav-commId").addClass("active");
+      console.log("coin");
+      setTimeout(() => {
+        $(".cav-commId").removeClass("active");
+      }, 1000);
+      // $(this).attr("disabled", true);
+    });
 
     //打賞信件跳金幣,並只能打賞一次
     $(".letLike").on("click", function (e) {
@@ -1096,7 +588,7 @@ $(document).ready(function () {
       }
     });
 
-    // //檢舉信件跳窗
+    //檢舉信件跳窗
     // var reportThis2;
     var objReport;
     $(document).on("click", ".letReport", function (e) {
@@ -1108,7 +600,7 @@ $(document).ready(function () {
     $(document).on("click", ".closeTagLet", function () {
       $(".cav-reportListLet").css("display", "none");
     });
-    $(document).on("click", ".cav-sendReportLet", function (e) {
+    $(document).on("click", ".cav-sendReportLet", function () {
       if ($("#cav-reportSelectorLet").val() == null) {
         alert("請選擇原因");
       } else {
@@ -1150,280 +642,8 @@ $(document).ready(function () {
       }
     });
 
-
-
-
-
     /*自動撈取第一封信件回覆 */
-    $(function changeFirstMsg() {
-      let firstLookMsg = $(".cav-looking").find(".cav-letTitle").attr("data-letter-num");
-      $.ajax({
-        url: "./phps/cav-letMessage.php",
-        type: "GET",
-        dataType: "json",
-        data: { letNo: firstLookMsg },
-        success: function (msgRow) {
-          console.log("信件回復", msgRow); 6
-          // let letReply = "";
-          // console.log(msgRow);
-          // console.log($.isEmptyObject(msgRow) == false);
-          if ($.isEmptyObject(msgRow) == false) {
-            $(function checkClickedBefore() {
-              let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-
-              // let mesgNo = msgRow[i].msgNo;
-              // console.log(msgRow[j].msgNo);
-              // console.log(memNo); 6
-              $.ajax({
-                url: "./phps/cav-checkClickedBefore.php",
-                type: "GET",
-                dataType: "json",
-                data: { "memNo": memNo },
-                success: function (chkClickRow) {
-                  console.log(chkClickRow);
-                  let letReply = "";
-                  let msgNum = new Array();
-
-                  // console.log("會員編號", memNo); 6
-                  // console.log("有打賞", chkClickRow); 6
-                  // console.log("留言", msgRow); 6
-                  // console.log("有打賞過留言編號", chkClickRow[0].msgNo); 6
-                  // console.log("留言編號", msgRow[0].msgNo); 6
-
-
-                  for (let j = 0; j < msgRow.length; j++) {
-                    //撈出所有回覆
-                    letReply = letterReply(
-                      letReply,
-                      msgRow[j].memName,
-                      msgRow[j].msgTime,
-                      msgRow[j].msgContent,
-                      msgRow[j].msgNo,
-                      msgRow[j].msgStatus,
-                    );
-                    msgNum[j] = msgRow[j].msgNo;
-                    $(".cav-replys").html(letReply);
-                  }
-
-                  // console.log(msgNum);
-                  // console.log(chkClickRow);
-                  for (i = 0; i < chkClickRow.length; i++) {
-                    // console.log(chkClickRow[i].mlmsgNo);
-
-                    if ($.inArray(chkClickRow[i].mlmsgNo, msgNum) != -1 && memNo == chkClickRow[i].mlmemNo) {
-                      // console.log(msgNum);
-                      // console.log(chkClickRow[i].mlmsgNo);
-                      // $("#" + chkClickRow[i].mlmsgNo).attr("disabled", true);
-                      $("#like" + chkClickRow[i].mlmsgNo).attr({ "data-like": chkClickRow[i].mlmsgNo, "disabled": true });
-                      // console.log($("#like" + chkClickRow[i].mlmsgNo).attr({ "data-like": chkClickRow[i].mlmsgNo, "disabled": true }));
-                      // console.log($("#" + chkClickRow[i].msgNo).attr("disabled"));
-                      // console.log($("#like"));
-                      // console.log(chkClickRow[i].mlmsgNo);
-                      // console.log($("#like" + chkClickRow[i].mlmsgNo));
-
-                    }
-                    else {
-                      console.log("沒有被打賞過");
-
-                    }
-                  }
-                  // console.log(chkClickRow);
-                  for (i = 0; i < chkClickRow.length; i++) {
-                    // console.log(chkClickRow[i].mrmsgNo);
-
-                    if ($.inArray(chkClickRow[i].mrmsgNo, msgNum) != -1 && memNo == chkClickRow[i].mrmemNo) {
-                      // console.log(msgNum);
-                      // console.log(chkClickRow[i].mrmsgNo);
-                      // $("#" + chkClickRow[i].msgNo).attr("disabled", true);
-                      $("#report" + chkClickRow[i].mrmsgNo).attr({ "data-report": chkClickRow[i].mrmsgNo, "disabled": true });
-                      // console.log($("#report" + chkClickRow[i].mrmsgNo).attr({ "data-report": chkClickRow[i].mrmsgNo, "disabled": true }));
-                      // console.log($("#" + chkClickRow[i].msgNo).attr("disabled"));
-                    }
-                    else {
-                      console.log("沒有被檢舉過");
-                    }
-                  }
-
-                },
-                error: function (chkClickRow) {
-                  console.log(chkClickRow);
-                },
-              });
-            });
-
-            /* AJAX *註冊* 打賞留言跳金幣,並只能打賞一次 */
-            $(document).on("click", ".like", function (e) {
-              e.stopPropagation;
-              e.stopImmediatePropagation;
-              // console.log(e.target.parentNode);
-              let obj = e.target.parentNode.dataset.like;
-              console.log(obj);
-              // let likeThis = $(this).attr("data-like");
-              let whoLike = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-              let now = new Date();
-              let likeTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() +
-                " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-              // console.log("被打賞留言編號:", likeThis);
-              // console.log("被打賞留言編號:", obj);
-              // console.log("打賞者", whoLike);
-              // console.log("打賞時間", likeTime);
-              $.ajax({
-                url: "./phps/cav-msgLike.php",
-                type: "GET",
-                dataType: "json",
-                data: {
-                  "likeThis": obj,
-                  "whoLike": whoLike,
-                  "likeTime": likeTime,
-                },
-                success: function (likeRow) {
-                  console.log(likeRow);
-                  if (likeRow.status == 'success') {
-                    $("#like" + obj).attr("disabled", true);
-                    // obj.disabled = true; //這邊要改為指定按鈕 現在只是數字
-                    // console.log($("#like" + obj));
-                    // console.log(obj);
-                    // console.log(666);
-                  } else {
-                    console.log(111);
-                  }
-                },
-                error: function (likeRow) {
-                  console.log(likeRow);
-                }
-              });
-              $(this).parents(".cav-letComment").find(".cav-commId").addClass("active");
-              console.log("coin");
-              setTimeout(() => {
-                $(".cav-commId").removeClass("active");
-              }, 1000);
-              // $(this).attr("disabled", true);
-            });
-
-            /* 註冊檢舉事件 原始 */
-            var reportThis;
-            $(".report").click(function (e) {
-              obj1 = e.target.parentNode;
-              reportThis = $(this).on("click").attr("data-report");//被檢舉留言
-              $(".cav-reportList").toggle();
-            });
-            $(".closeTag").click(function () {
-              $(".cav-reportList").css("display", "none");
-            });
-            $(".cav-sendReport").click(function () {
-              if ($("#cav-reportSelector").val() == null) {
-                alert("請選擇原因");
-                console.log($("#cav-reportSelector").val());
-              } else {
-                $(".cav-reportList").toggle();
-                alert("檢舉已送出，我們將盡速審核");
-                let whoReport = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];//檢舉會員
-                let now = new Date();//檢舉時間
-                let reportTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() +
-                  " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-                let msgRepReason = $("#cav-reportSelector").val();//檢舉原因
-                console.log(reportThis);
-                console.log(whoReport);
-                console.log(reportTime);
-                console.log(msgRepReason);
-                $.ajax({
-                  url: "./phps/cav-msgReport.php",
-                  type: "GET",
-                  dataType: "json",
-                  data: {
-                    "whoReport": whoReport,
-                    "reportThis": reportThis,
-                    "reportTime": reportTime,
-                    "msgRepReason": msgRepReason,
-                  },
-                  success: function (reportRow) {
-                    console.log(reportRow);
-                    if (reportRow.status == 'success') {
-                      // obj1.disabled = true;
-                      $("#report" + obj1).attr("disabled", true);
-                      console.log(obj1);
-                      // console.log(666);
-                    } else {
-                      console.log(111);
-                    }
-                  },
-                  error: function (reportRow) {
-                    console.log(reportRow);
-                  }
-                });
-                // e.preventDefault();
-              }
-            });
-
-            // /* AJAX *註冊* 檢舉留言跳窗  第一個*/
-            // var reportThis;
-            // $(document).on("click", ".report", function (e) {
-            //   obj1 = e.target.parentNode;
-            //   reportThis = $(this).on("click").attr("data-report");//被檢舉留言
-            //   $(".cav-reportList").toggle();
-            // });
-            // $(".closeTag").on("click", function () {
-            //   $(".cav-reportList").css("display", "none");
-            // });
-            // $(".cav-sendReport").click(function () {
-            //   if ($("#cav-reportSelector").val() == null) {
-            //     alert("請選擇原因");
-            //     // console.log($("#cav-reportSelector").val());
-            //   } else {
-            //     $(".cav-reportList").toggle();
-            //     alert("檢舉已送出，我們將盡速審核");
-            //     let whoReport = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];//檢舉會員
-            //     let now = new Date();//檢舉時間
-            //     let reportTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() +
-            //       " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-            //     let msgRepReason = $("#cav-reportSelector").val();//檢舉原因
-            //     // console.log(reportThis);
-            //     // console.log(whoReport);
-            //     // console.log(reportTime);
-            //     // console.log(msgRepReason);
-            //     $.ajax({
-            //       url: "./phps/cav-msgReport.php",
-            //       type: "GET",
-            //       dataType: "json",
-            //       data: {
-            //         "whoReport": whoReport,
-            //         "reportThis": reportThis,
-            //         "reportTime": reportTime,
-            //         "msgRepReason": msgRepReason,
-            //       },
-            //       success: function (reportRow) {
-            //         console.log(reportRow);
-            //         if (reportRow.status == 'success') {
-            //           // obj1.disabled = true;
-            //           $("#report" + obj1).attr("disabled", true);
-            //           console.log(obj1);
-            //           // console.log(666);
-            //         } else {
-            //           console.log(111);
-            //         }
-            //       },
-            //       error: function (reportRow) {
-            //         console.log(reportRow);
-            //       }
-            //     });
-            //     // e.preventDefault();
-            //   }
-            // });
-          } else {
-            let letNoReply = "";
-            let msgRow = "";
-            letNoReply = letterNoReply(msgRow);
-            $(".cav-replys").html(letNoReply);
-          }
-
-        },
-        error: function (msgRow) {
-          console.log(msgRow);
-        }
-      });
-
-
-    });
+    changeFirstMsg();
 
 
     /* 點擊不同信件更換顯示信件回復 */
@@ -1438,7 +658,6 @@ $(document).ready(function () {
         success: function (msgRow) {
           console.log("信件回復", msgRow); 6
 
-
           if ($.isEmptyObject(msgRow) == false) {
             $(function checkClickedBefore() {
               let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
@@ -1494,130 +713,17 @@ $(document).ready(function () {
 
                     if ($.inArray(chkClickRow[i].mrmsgNo, msgNum) != -1 && memNo == chkClickRow[i].mrmemNo) {
                       // console.log(msgNum);
-                      // console.log(chkClickRow[i].mrmsgNo);
-                      // $("#" + chkClickRow[i].msgNo).attr("disabled", true);
                       $("#report" + chkClickRow[i].mrmsgNo).attr({ "data-report": chkClickRow[i].mrmsgNo, "disabled": true });
-                      // console.log($("#report" + chkClickRow[i].mrmsgNo).attr({ "data-report": chkClickRow[i].mrmsgNo, "disabled": true }));
-                      // console.log($("#" + chkClickRow[i].msgNo).attr("disabled"));
                     }
                     else {
                       console.log("沒有被檢舉過");
                     }
                   }
-
                 },
                 error: function (chkClickRow) {
                   console.log(chkClickRow);
                 },
               });
-            });
-
-            /* AJAX 打賞留言跳金幣,並只能打賞一次 */
-            $(".like").click(function (e) {
-              // $(document).on("click", ".like", function (e) {
-              // console.log(e.target.parentNode);
-              let obj = e.target.parentNode.dataset.like;
-              // console.log(obj);
-              // let likeThis = $(this).attr("data-like");
-              let whoLike = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-              let now = new Date();
-              let likeTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() +
-                " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-              // console.log("被打賞留言編號:", likeThis);
-              // console.log("被打賞留言編號:", obj);
-              // console.log("打賞者", whoLike);
-              // console.log("打賞時間", likeTime);
-              $.ajax({
-                url: "./phps/cav-msgLike.php",
-                type: "GET",
-                dataType: "json",
-                data: {
-                  "likeThis": obj,
-                  "whoLike": whoLike,
-                  "likeTime": likeTime,
-                },
-                success: function (likeRow) {
-                  console.log(likeRow);
-                  if (likeRow.status == 'success') {
-                    $("#like" + obj).attr("disabled", true);
-                    // obj.disabled = true; //這邊要改為指定按鈕 現在只是數字
-
-                    console.log(obj);
-                    // console.log(666);
-                  } else {
-                    console.log(111);
-                  }
-                },
-                error: function (likeRow) {
-                  console.log(likeRow);
-                }
-              });
-              $(this).parents(".cav-letComment").find(".cav-commId").addClass("active");
-              console.log("coin");
-              setTimeout(() => {
-                $(".cav-commId").removeClass("active");
-              }, 1000);
-              // $(this).attr("disabled", true);
-            });
-
-            /* 檢舉留言跳窗 */
-            var reportThis;
-            $(".report").click(function (e) {
-              obj1 = e.target.parentNode;
-              reportThis = $(this).on("click").attr("data-report");//被檢舉留言
-              $(".cav-reportList").toggle();
-            });
-            $(".closeTag").click(function () {
-              // $(document).on("click", ".closeTag", function () {
-              $(".cav-reportList").css("display", "none");
-            });
-            $(".cav-sendReport").click(function () {
-              // $(document).on("click", ".cav-sendReport", function (e) {
-              if ($("#cav-reportSelector").val() == null) {
-                // e.stopPropagation;
-                alert("請選擇原因");
-                console.log($("#cav-reportSelector").val());
-                // e.preventDefault();
-              } else {
-                // e.stopPropagation;
-                $(".cav-reportList").toggle();
-                alert("檢舉已送出，我們將盡速審核");
-                let whoReport = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];//檢舉會員
-                let now = new Date();//檢舉時間
-                let reportTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() +
-                  " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-                let msgRepReason = $("#cav-reportSelector").val();//檢舉原因
-                console.log(reportThis);
-                console.log(whoReport);
-                console.log(reportTime);
-                console.log(msgRepReason);
-                $.ajax({
-                  url: "./phps/cav-msgReport.php",
-                  type: "GET",
-                  dataType: "json",
-                  data: {
-                    "whoReport": whoReport,
-                    "reportThis": reportThis,
-                    "reportTime": reportTime,
-                    "msgRepReason": msgRepReason,
-                  },
-                  success: function (reportRow) {
-                    console.log(reportRow);
-                    if (reportRow.status == 'success') {
-                      // obj1.disabled = true;
-                      $("#report" + obj1).attr("disabled", true);
-                      console.log(obj1);
-                      // console.log(666);
-                    } else {
-                      console.log(111);
-                    }
-                  },
-                  error: function (reportRow) {
-                    console.log(reportRow);
-                  }
-                });
-                // e.preventDefault();
-              }
             });
           } else {
             let letNoReply = "";
@@ -1627,79 +733,11 @@ $(document).ready(function () {
           }
 
           /* 檢查信件是否已被打賞 */
-          $(function checkLetLike() {
-            let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-            let letNum = $(".letLike").attr("data-letlike");
-            // console.log(memNo);1
-            // console.log("信件編號", letNum);1
-            $.ajax({
-              url: "./phps/cav-checkLikeLet.php",
-              type: "GET",
-              dataType: "json",
-              data: { "memNo": memNo },
-              success: function (chkLikeLetRow) {
-                let checkLetNo = new Array();
-
-                // console.log("會員編號", memNo); 6
-                // console.log("有打賞", chkLikeLetRow); 6
-                for (i = 0; i < chkLikeLetRow.length; i++) {
-                  checkLetNo[i] = chkLikeLetRow[i].letNo;
-                  // console.log(checkLetNo); 6
-                  // console.log($.inArray(letNum, checkLetNo)); 6
-                  // console.log(memNo == chkLikeLetRow[i].memNo); 6
-                  if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkLikeLetRow[i].memNo) {
-                    $("#letLike" + letNum).attr("disabled", true);
-                    // console.log($("#letLike" + letNum)); 6
-                  }
-                  else {
-                    $("#letLike" + letNum).attr("disabled", false);
-                    // console.log("沒有被打賞過"); 6
-                  }
-                }
-              },
-              error: function (chkLikeLetRow) {
-                console.log(chkLikeLetRow);
-              },
-            });
-          });
+          checkLetLike();
 
           /* 檢查檢舉信件是否已被檢舉 */
-          $(function checkLetReport() {
-            let memNo = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
-            let letNum = $(".letReport").attr("data-letreport");
-            // console.log(memNo); 6
-            // console.log("信件編號", letNum); 6
-            $.ajax({
-              url: "./phps/cav-checkReportLet.php",
-              type: "GET",
-              dataType: "json",
-              data: { "memNo": memNo },
-              success: function (chkReportRow) {
-                let checkLetNo = new Array();
-
-                // console.log("會員編號", memNo); 6
-                // console.log("有打賞", chkReportRow); 6
-                for (i = 0; i < chkReportRow.length; i++) {
-                  checkLetNo[i] = chkReportRow[i].letNo;
-                  // console.log(checkLetNo); 6
-                  // console.log($.inArray(letNum, checkLetNo)); 6
-                  // console.log(memNo == chkReportRow[i].memNo); 6
-                  if ($.inArray(letNum, checkLetNo) != -1 && memNo == chkReportRow[i].memNo) {
-                    $("#letReport" + letNum).attr("disabled", true);
-                    console.log($("#letReport" + letNum));
-                  }
-                  else {
-                    $("#letReport" + letNum).attr("disabled", false);
-                    console.log("沒有被檢舉過");
-                  }
-                }
-              },
-              error: function (chkReportRow) {
-                console.log(chkReportRow);
-              },
-            });
-          })
-
+          checkLetReport();
+          /*---結束--- */
         },
         error: function (msgRow) {
           console.log(msgRow);
@@ -1780,41 +818,33 @@ $(document).ready(function () {
 
 
     //選取所要套用的圖案
-    $(function () {
-      $("div.cav-prodI").on("click", function () {
-        $("div.cav-prodI").removeClass("wearing");
-        $(this).addClass("wearing");
-      });
+    $("div.cav-prodI").on("click", function () {
+      $("div.cav-prodI").removeClass("wearing");
+      $(this).addClass("wearing");
     });
 
+
     //選取所要套用的郵戳
-    $(function () {
-      $("div.cav-prodU").on("click", function () {
-        $("div.cav-prodU").removeClass("wearing");
-        $(this).addClass("wearing");
-      });
+    $("div.cav-prodU").on("click", function () {
+      $("div.cav-prodU").removeClass("wearing");
+      $(this).addClass("wearing");
     });
+
 
     //預覽要套用的圖案
     $(function () {
-      $(".cav-prodI")
-        .find("img")
-        .on("click", function () {
-          let ii = $(this).attr("src");
-          // console.log(ii);
-          $(".cav-mask-1").css("background-image", `url(${ii})`);
-        });
+      $(".cav-prodI").find("img").on("click", function () {
+        let ii = $(this).attr("src");
+        $(".cav-mask-1").css("background-image", `url(${ii})`);
+      });
     });
 
     //預覽要套用的郵戳
     $(function () {
-      $(".cav-prodU")
-        .find("img")
-        .on("click", function () {
-          let uu = $(this).attr("src");
-          // console.log(uu);
-          $(".cav-mask-2").css("background-image", `url(${uu})`);
-        });
+      $(".cav-prodU").find("img").on("click", function () {
+        let uu = $(this).attr("src");
+        $(".cav-mask-2").css("background-image", `url(${uu})`);
+      });
     });
   }
   window.addEventListener("load", function () {
