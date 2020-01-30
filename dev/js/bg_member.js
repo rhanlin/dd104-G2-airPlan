@@ -50,4 +50,20 @@ function memberData(str) {
 }
 
 
-window.addEventListener('load', showMember);
+// window.addEventListener('load', showMember);
+
+function getSignInfo() {//依登入者權限開放添加管理者功能
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        let admin = JSON.parse(xhr.responseText);
+        document.getElementById('bg_logout').innerText = '登出';
+        document.getElementById('adminUser').innerText = admin.admName;
+    }
+    xhr.open("get", "./phps/bg_getSignInfo.php", true);
+    xhr.send(null);
+}
+
+window.addEventListener("load", function () {
+    getSignInfo();
+    showMember();
+});

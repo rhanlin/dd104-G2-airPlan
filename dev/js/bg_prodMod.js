@@ -90,6 +90,8 @@ function post_items(event, form) {
     })
     .done(function (data) {
       console.log(data);
+      alert('管理員新增完成');//康加的
+      location.reload();//康加的
     }).fail(function (data) {
       alert("跳窗送出資料失敗");
     }).always(function (data) {
@@ -173,7 +175,7 @@ function prodModify() {
             alert('已順利更新商品相關資料')
             location.reload();
           }).fail(function (data) {
-            alert("請上傳異動圖片");
+            alert("尚未更新圖片");
           }).always(function (data) {
             console.log(data)
             // always do the following, no matter if it fails or not
@@ -237,4 +239,20 @@ function patternWrap(prodMod, prodNo, matNameCH, prodName, prodUrl, matInfo, pro
 };
 
 
-window.addEventListener('load', prodModify);
+// window.addEventListener('load', prodModify);
+
+function getSignInfo() {//依登入者權限開放添加管理者功能
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+      let admin = JSON.parse(xhr.responseText);
+      document.getElementById('bg_logout').innerText = '登出';
+      document.getElementById('adminUser').innerText = admin.admName;
+  }
+  xhr.open("get", "./phps/bg_getSignInfo.php", true);
+  xhr.send(null);
+}
+
+window.addEventListener("load", function () {
+  getSignInfo();
+  prodModify();
+});

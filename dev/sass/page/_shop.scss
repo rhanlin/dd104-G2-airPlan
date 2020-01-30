@@ -248,11 +248,18 @@ $arrow_color: $gray !default;
                     padding: 0;
 
                     .card-body {
+                      &:hover {
+                        cursor: pointer;
+                      }
 
-                      // padding: 0;
-                      // color: rgb(0, 57, 82);
-                      // text-shadow: 2px 2px 3px rgb(161, 161, 161);
-                      h5 {}
+                      &:focus {
+
+
+                        // padding: 0;
+                        // color: rgb(0, 57, 82);
+                        // text-shadow: 2px 2px 3px rgb(161, 161, 161);
+                        h5 {}
+                      }
                     }
                   }
                 }
@@ -1078,16 +1085,51 @@ $arrow_color: $gray !default;
 
           .manualTitle {
             padding-top: 2%;
-            width: 90%;
+            width: 80%;
             margin: 0 auto;
           }
 
           .manualinnerText {
-            width: 90%;
+            width: 80%;
             margin: 0 auto;
+
           }
         }
       }
+
+      .toolBtnTip {
+
+        border-radius: 0.5em;
+        width: 20%;
+        border: $border;
+        background-color: #fff;
+
+        .blueCube {
+          margin: 2%;
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background-color: #00E1FF;
+          border: 1px solid black;
+        }
+
+        .yellowCube {
+          margin: 2%;
+          width: 20px;
+          height: 20px;
+          background-color: #FFD139;
+          display: inline-block;
+          border: 1px solid black;
+        }
+
+        h6 {
+
+          width: 30%;
+          display: inline-block;
+
+        }
+      }
+
     }
 
     #section2 {
@@ -2232,7 +2274,7 @@ $arrow_color: $gray !default;
               padding: 6% 7%;
 
               #canvas {
-                margin: 1% 0.5%;
+                margin: 0%;
               }
             }
           }
@@ -3148,14 +3190,23 @@ $arrow_color: $gray !default;
 
       .container {
         .customize {
+          padding: 20% 0 10% 0;
+
+          .customizeTitle {
+            div {
+              font-size: 5vw;
+            }
+          }
+
           .manual {
-            transform: translate(10%, 50%);
-            width: 60%;
-            padding-top: 1%;
+            transform: translate(0%, 50%);
+            width: 50%;
+            background-size: cover;
+            padding-top: 0%;
 
             .manualTitle {
               h3 {
-                font-size: 3vw;
+                font-size: 2vw;
               }
             }
 
@@ -3165,6 +3216,10 @@ $arrow_color: $gray !default;
               padding-bottom: 1%;
             }
           }
+        }
+
+        .toolBtnTip {
+          width: 40%;
         }
       }
 
@@ -3730,9 +3785,12 @@ $arrow_color: $gray !default;
 
       .container {
         .customize {
+          .customizeTitle {
+          }
+
           .manual {
             transform: translate(0%, 0%);
-            width: 110%;
+            width: 40%;
             padding-bottom: 5%;
             background-size: cover;
 
@@ -3748,7 +3806,20 @@ $arrow_color: $gray !default;
               width: 90%;
               margin: 0 auto;
               padding-bottom: 1%;
+              padding-left: 1%;
+
+              h6 {
+                font-size: 2vw;
+              }
             }
+          }
+        }
+
+        .toolBtnTip {
+          width: 50%;
+
+          h6 {
+            font-size: 2vw;
           }
         }
       }
@@ -4446,7 +4517,7 @@ $arrow_color: $gray !default;
 
 
               .threed_text_box {
-                width: 35%;
+                width: 60%;
                 position: relative;
                 left: 0;
                 top: 10%;
@@ -4535,13 +4606,13 @@ $arrow_color: $gray !default;
           .customizeTitle {
             border: none;
             background: none;
-            width: 40%;
-            padding: 5% 0% 0% 10%;
+            width: 48%;
+            padding: 5% 0% 0% 2%;
           }
 
 
           .manual {
-            width: 60%;
+            width: 50%;
             padding-bottom: 5%;
             background-image: none;
 
@@ -4560,6 +4631,9 @@ $arrow_color: $gray !default;
               padding-bottom: 1%;
             }
           }
+        }
+        .toolBtnTip{
+          margin-left: 5%;
         }
       }
 
