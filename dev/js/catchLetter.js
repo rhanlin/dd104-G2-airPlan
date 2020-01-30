@@ -74,7 +74,7 @@ let vmCatchLetter = new Vue({
   function mouseDownFn() {
     net.style.transform = 'rotate(-45deg)';
     let successNum = getRandom(10);
-    successNum = 10;//.......測試用
+    // successNum = 10;//.......測試用
     missMsg.classList = "";
     if(successNum ==  10 ){
       missMsg.innerText = "Success!";
