@@ -230,11 +230,11 @@
     .btn-big-test:active {
         --box-deep: 1rem !important;
         .redBtn_light,
-        .blueBtn_light {
+        .yellowBtn_light {
             background: #aaa !important;
         }
         .redBtn,
-        .blueBtn {
+        .yellowBtn {
             background: #878787 !important;
         }
 
@@ -250,22 +250,22 @@
         --box-deep: 1rem !important;
 
         .redBtn_light,
-        .blueBtn_light {
+        .yellowBtn_light {
             background: #aaa !important;
         }
 
         .redBtn,
-        .blueBtn {
+        .yellowBtn {
             background: #878787 !important;
         }
     }
     .btn-big-test.quiet {
         .redBtn_light,
-        .blueBtn_light {
+        .yellowBtn_light {
             background: #aaa !important;
         }
         .redBtn,
-        .blueBtn {
+        .yellowBtn {
             background: #878787 !important;
         }
     }

@@ -422,7 +422,7 @@ let vmCatchLetter = new Vue({
         }else if(e.target.id == 'reportThis'){
           console.log('檢舉這封信');
           document.getElementById('reportActive').classList.add('active');
-          document.getElementById('likeActive').classList.add('active');
+          // document.getElementById('likeActive').classList.add('active');
 
           reportThis();
         }else{
@@ -482,7 +482,7 @@ let vmCatchLetter = new Vue({
     exit.addEventListener('click',()=>{
       document.getElementById('reportBox').style.display="none";
       document.getElementById('reportActive').classList.remove('active');
-      document.getElementById('likeActive').classList.remove('active');
+      // document.getElementById('likeActive').classList.remove('active');
       //解除禁止滾動
       document.body.removeEventListener('touchmove', wheel, { passive: false });
     })
