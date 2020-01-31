@@ -465,14 +465,9 @@
             <div class="owl-item figure16"><img src="" alt="" class="figure"></div>
             <div class="owl-item figure17"><img src="" alt="" class="figure"></div>
             <div class="owl-item figure18"><img src="" alt="" class="figure"></div>
-            <div class="owl-item figure19"><img src="" alt="" class="figure"></div>
-            <div class="owl-item figure20"><img src="" alt="" class="figure"></div>
-            <div class="owl-item figure21"><img src="" alt="" class="figure"></div>
-            <div class="owl-item figure22"><img src="" alt="" class="figure"></div>
-            <div class="owl-item figure23"><img src="" alt="" class="figure"></div>
-            <div class="owl-item figure24"><img src="" alt="" class="figure"></div>
           </div>
         </div>
+      </div>
     </section>
   </main>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
@@ -532,7 +527,7 @@
       coin = document.getElementById('coin');
       let MemberInfo = JSON.parse(jsonStr);
       // console.log(MemberInfo[0].airCoin)
-      console.log('555555555', MemberInfo)
+      // console.log('555555555', MemberInfo)
       if (MemberInfo[0].memName) {
         coin.innerHTML = MemberInfo[0].airCoin;
 
@@ -596,7 +591,7 @@
   <script>
     function itemCheck() {
       itemCard62 = document.getElementById('itemCard62')
-      console.log(itemCard62)
+      // console.log(itemCard62)
     }
 
     window.addEventListener('load', itemCheck);
