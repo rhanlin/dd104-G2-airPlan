@@ -209,7 +209,6 @@
                 height: 20vw;
                 width: 100%;
                 min-height: 150px;
-                // display: flex;
                 display: inline-block;
                 .letter-img {
                   height: 100%;
@@ -261,7 +260,6 @@
                   display: flex;
                   justify-content: flex-end;
                   width: 100%;
-                  // position: relative;
                   height: 3vw;
                   .cav-LetChat {
                     display: inline-block;
@@ -344,7 +342,6 @@
                           height: 106%;
                           margin-top: -4%;
                           margin-left: -30%;
-                          // pointer-events: none;
                         }
                       }
 
@@ -517,7 +514,6 @@
                             height: 106%;
                             margin-top: -4%;
                             margin-left: -30%;
-                            // pointer-events: none;
                           }
                         }
 
@@ -774,7 +770,6 @@
           background-position: center;
           background-size: contain;
           clip-path: circle(29% at 49.25% 49.25%);
-          // background-color: goldenrod;
           opacity: 0.8;
         }
       }
@@ -839,7 +834,6 @@
       .cav-prodWrap {
         border: $border;
         width: 100%;
-        // height: 100%;
         padding: 10px;
         display: flex;
         flex-wrap: wrap;
@@ -883,7 +877,6 @@
 
         .orderBtnBoxGroup {
           width: 50%;
-          // margin: 0;
 
           .orderBtnBox {
             position: relative;
@@ -926,9 +919,6 @@
                 bottom: -36%;
                 border-radius: 0.3em;
                 border: $border;
-                // background-color: #FFD139;
-                // background-image: url("../img/product/decorate/materail-04.svg");
-                // background-size: cover;
                 transform: rotate(90deg) skew(60deg);
                 background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
                 background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -945,9 +935,6 @@
                 bottom: -36%;
                 border-radius: 0.3em;
                 border: $border;
-                // background-color: #FFD139;
-                // background-image: url("../img/product/decorate/materail-04.svg");
-                // background-size: cover;
                 transform: rotate(90deg) skew(300deg);
                 background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
                 background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -999,7 +986,6 @@
 
         .orderBtnBoxGroup {
           width: 50%;
-          // margin: 0;
 
           .orderBtnBox {
             position: relative;
@@ -1042,9 +1028,6 @@
                 bottom: -36%;
                 border-radius: 0.3em;
                 border: $border;
-                // background-color: #FFD139;
-                // background-image: url("../img/product/decorate/materail-04.svg");
-                // background-size: cover;
                 transform: rotate(90deg) skew(60deg);
                 background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
                 background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -1061,9 +1044,6 @@
                 bottom: -36%;
                 border-radius: 0.3em;
                 border: $border;
-                // background-color: #FFD139;
-                // background-image: url("../img/product/decorate/materail-04.svg");
-                // background-size: cover;
                 transform: rotate(90deg) skew(300deg);
                 background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
                 background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -1169,7 +1149,6 @@
     position: relative;
 
     > .cav-rightBlockBM {
-      // border: 1px solid black;
       list-style: none;
       margin: 0;
       display: flex;
@@ -1177,10 +1156,8 @@
 
       > li {
         border: $border;
-        // border-radius: 1em 1em 0 0;
         width: 50%;
         text-align: center;
-        // padding: 0.8em;
         background-color: #2b8156;
         color: #fff;
         font-weight: 700;
@@ -1189,7 +1166,6 @@
         > a {
           cursor: pointer;
           display: block;
-          // border: 1px solid red;
           padding: 0.8em;
         }
 
@@ -1212,12 +1188,9 @@
       position: absolute;
       top: 7.4%;
       padding: 4% 3%;
-      // overflow: scroll;
       overflow-y: scroll;
 
       &::-webkit-scrollbar {
-        // border:1px solid firebrick;
-        // width: 9px;
         width: 0;
         background-color: #ccc;
         border-radius: 2px;
@@ -1230,7 +1203,6 @@
       }
 
       .cav-prodWrap {
-        // border: 1px solid red;
         width: 100%;
         height: 100%;
         display: flex;
@@ -1240,12 +1212,10 @@
 
         > img {
           width: 100%;
-          // height:100%;
           object-fit: cover;
         }
 
         > .cav-products {
-          // border: 1px solid blue;
           position: absolute;
           top: 1%;
           left: 3.3%;
@@ -1392,7 +1362,6 @@
           }
 
           .cav-whoLetter {
-            // border: 1px solid sandybrown;
             position: relative;
             width: 100%;
 
@@ -1592,7 +1561,6 @@
 
                 .cav-letNavbar {
                   .cav-letNavOption {
-                    // border: 1px solid tomato;
                     width: 35px;
                     height: 35px;
                     margin-left: 5px;
@@ -1639,7 +1607,6 @@
     .cav-tabWrap {
       min-height: 400px;
       max-height: 80%;
-      // height: 44vw;
       padding: 10px;
       overflow-y: scroll;
     }
@@ -1724,7 +1691,6 @@
 
           .orderBtnBoxGroup {
             width: 60%;
-            // margin: 0;
 
             .orderBtnBox {
               position: relative;
@@ -1767,9 +1733,6 @@
                   bottom: -22%;
                   border-radius: 0.3em;
                   border: $border;
-                  // background-color: #FFD139;
-                  // background-image: url("../img/product/decorate/materail-04.svg");
-                  // background-size: cover;
                   transform: rotate(90deg) skew(60deg);
                   background: -webkit-linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
                   background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -1786,9 +1749,6 @@
                   bottom: -22%;
                   border-radius: 0.3em;
                   border: $border;
-                  // background-color: #FFD139;
-                  // background-image: url("../img/product/decorate/materail-04.svg");
-                  // background-size: cover;
                   transform: rotate(90deg) skew(300deg);
                   background: -webkit-linear-gradient(220deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
                   background: linear-gradient(40deg, $main-yellow 45%, #000 45%, #000 55%, $main-yellow 55%);
@@ -1939,7 +1899,6 @@
         }
 
         .cav-boxFrontRight {
-          // display: none;
           position: absolute;
           top: 0;
           right: -200%;
@@ -2001,7 +1960,6 @@
 
                   .cav-letNavbar {
                     .cav-letNavOption {
-                      // border: 1px solid tomato;
                       width: 35px;
                       height: 35px;
                       margin-left: 5px;
@@ -2425,7 +2383,6 @@
 
           .orderBtnBoxGroup {
             width: 60%;
-            // margin: 0;
 
             .orderBtnBox {
               position: relative;
@@ -2534,7 +2491,6 @@
 
           .orderBtnBoxGroup {
             width: 60%;
-            // margin: 0;
 
             .orderBtnBox {
               position: relative;
