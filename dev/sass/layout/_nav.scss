@@ -279,7 +279,6 @@ body.open {
 
           .hbg-littleNav {
             display: none;
-            margin-bottom: 50%;
           }
 
           .hbg-pc {
@@ -303,6 +302,7 @@ body.open {
               display: inline-block;
               width: 100px;
               object-fit: cover;
+              margin: 3% 0;
 
               img {
                 width: 100%;
@@ -341,10 +341,13 @@ body.open {
 
             .hbg-botWrap {
               display: inline-block;
+              border: 3px dashed white;
+              height: auto;
+              padding: 0 3%;
+              margin-bottom: 5%;
 
               .hbg-littleNav {
                 display: inline-block;
-                border: 3px dashed white;
 
                 >a {
                   display: inline-block;
@@ -373,7 +376,9 @@ body.open {
                 }
 
                 #signInStatusH {
-                  line-height: 48px;
+                  vertical-align: text-bottom;
+                  display: flex;
+                  padding-left: 7%;
                 }
               }
 
@@ -426,7 +431,7 @@ body.open {
       right: 2.5%;
       z-index: 998;
 
-      &:hover {}
+      // &:hover {}
 
       cursor: pointer;
 
