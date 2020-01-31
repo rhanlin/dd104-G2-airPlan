@@ -75,7 +75,7 @@ $('.figure').mousedown(function (e) {
   // alert(e);
   if (e.target.tagName.toLowerCase() === 'img') {
     movingImage = e.target
-    console.log(movingImage)
+    // console.log(movingImage)
   }
 })
 
@@ -404,7 +404,7 @@ function output(formatType) {
         quality: 0.1
       });
 
-      console.log(dataURL)
+      // console.log(dataURL)
 
       cavMemberH = document.getElementById('cavMemberH').innerHTML;
       cavMemberH = cavMemberH.toString().substring(6);
@@ -484,7 +484,7 @@ function output(formatType) {
 // canvas.freeDrawingBrush.color = "rgba(0,0,0,0)";
 // canvas.freeDrawingBrush.width = 10;
 $(".brushSelect").change(function () {
-  console.log(this.value);
+  // console.log(this.value);
   if (this.value === "Square") {
     // canvas.freeDrawingBrush = new fabric.CircleBrush(canvas) 圓形畫筆
     // canvas.freeDrawingBrush = new fabric.SprayBrush(canvas)
@@ -522,7 +522,7 @@ $(".brushSelect").change(function () {
 //相片灰階濾鏡功能
 $(document).ready(function () {
   $('#filter_Grayscale').on("click", function () {
-    console.log($('#controlBox7').hasClass('clicked'))
+    // console.log($('#controlBox7').hasClass('clicked'))
     if ($('#controlBox7').hasClass('clicked') == false) {
       obj = canvas.getActiveObject();
       obj.filters.push(new fabric.Image.filters.Grayscale({
@@ -537,7 +537,7 @@ $(document).ready(function () {
 
 //文字功能
 $('#text').on("click", function () {
-  console.log(this)
+  // console.log(this)
   if ($('#controlBox6').hasClass('clicked') == false) {
     canvas.add(new fabric.IText('please key in text', {
       left: 0,
