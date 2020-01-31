@@ -17,7 +17,7 @@ $(document).ready(function () {
         $(".letChat").attr("id", "letChat" + fullLet[i][5]);
         $(".letLike").attr("id", "letLike" + fullLet[i][5]);
         $(".letReport").attr("id", "letReport" + fullLet[i][5]);
-        console.log($(".letChat").attr("id", "letChat" + fullLet[i][4]));
+        // console.log($(".letChat").attr("id", "letChat" + fullLet[i][4]));
 
         break;
       }
@@ -26,7 +26,7 @@ $(document).ready(function () {
     $(".cav-letters").on("click", function () {
       let letTit = "";
       letTit = $(this).find(".cav-letTitle").text();
-      console.log(letTit);
+      // console.log(letTit);
       // console.log(fullLet)
 
       for (let i = 0; i < fullLet.length; i++) {
@@ -44,7 +44,7 @@ $(document).ready(function () {
           $(".letLike").attr("id", "letLike" + fullLet[i][5]);
           $(".letReport").attr("id", "letReport" + fullLet[i][5]);
           // $(".cav-letNo").text("no." + fullLet[i][3]);
-          console.log(fullLet[i][1]);
+          // console.log(fullLet[i][1]);
           break;
         }
       }
@@ -78,12 +78,12 @@ $(document).ready(function () {
           }
           else {
             $("#letLike" + letNum).attr("disabled", false);
-            console.log("沒有被打賞過");
+            // console.log("沒有被打賞過");
           }
         }
       },
       error: function () {
-        console.log("檢查打賞error");
+        // console.log("檢查打賞error");
       },
     });
   };
@@ -115,7 +115,7 @@ $(document).ready(function () {
           }
           else {
             $("#letReport" + letNum).attr("disabled", false);
-            console.log("沒有被檢舉過");
+            // console.log("沒有被檢舉過");
           }
         }
       },
@@ -179,7 +179,7 @@ $(document).ready(function () {
                     // console.log($("#like" + chkClickRow[i].mlmsgNo));
                   }
                   else {
-                    console.log("沒有被打賞過");
+                    // console.log("沒有被打賞過");
                   }
                 }
                 // console.log(chkClickRow);
@@ -192,7 +192,7 @@ $(document).ready(function () {
                     $("#report" + chkClickRow[i].mrmsgNo).attr({ "data-report": chkClickRow[i].mrmsgNo, "disabled": true });
                   }
                   else {
-                    console.log("沒有被檢舉過");
+                    // console.log("沒有被檢舉過");
                   }
                 }
 
@@ -212,7 +212,7 @@ $(document).ready(function () {
 
       },
       error: function (msgRow) {
-        console.log(msgRow);
+        // console.log(msgRow);
       }
     });
   };
@@ -231,7 +231,7 @@ $(document).ready(function () {
       },
 
       success: function (letRow) {
-        console.log(letRow);
+        // console.log(letRow);
         let myLet = "";
         // let letTit = "";
         let fullLet = new Array();
@@ -270,7 +270,7 @@ $(document).ready(function () {
         /*---結束--- */
       },
       error: function (letRow) {
-        console.log(letRow);
+        // console.log(letRow);
       }
     });
 
@@ -335,7 +335,7 @@ $(document).ready(function () {
 
     /* 點擊觸發other 顯示撈的歷史信件*/
     $(".cav-otherLetter").on("click", function others() {
-      console.log("撈的");
+      // console.log("撈的");
       $.ajax({
         url: "./phps/cav-otherLetter.php",
         type: "POST",
@@ -344,7 +344,7 @@ $(document).ready(function () {
           memNo: $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1]
         },
         success: function (letRowOther) {
-          console.log(letRowOther);
+          // console.log(letRowOther);
           let otherLet = "";
           // let letTit = "";
           let fullOtherLet = new Array();
@@ -407,24 +407,24 @@ $(document).ready(function () {
                   // "likeTime": likeTime,
                 },
                 success: function (chatRow) {
-                  console.log(chatRow);
+                  // console.log(chatRow);
                   if (chatRow.status == 'success') {
                     $("#letChat-" + chatBtnId).attr("disabled", true);
                     // console.log($("#letChat" + whoGotChat));
                     // console.log(whoGotChat);
                   } else {
-                    console.log(elseChat);
+                    // console.log(elseChat);
                   }
                 },
                 error: function (chatRow) {
-                  console.log(chatRow);
+                  // console.log(chatRow);
                 }
               });
               // e.preventDefault();
             });
           } else {
             $("#letChat" + chatBtnId).attr("disabled", true);
-            console.log($("#letChat" + chatBtnId));
+            // console.log($("#letChat" + chatBtnId));
           }
 
           /* 呼叫 檢查信件是否已被打賞 */
@@ -435,7 +435,7 @@ $(document).ready(function () {
           /*---結束--- */
         },
         error: function (letRow) {
-          console.log(letRow);
+          // console.log(letRow);
         }
       });
     });
@@ -444,15 +444,15 @@ $(document).ready(function () {
     $(document).on("click", ".like", function (e) {
       // console.log(e.target.parentNode);
       let obj = e.target.parentNode.dataset.like;
-      console.log(obj);
+      // console.log(obj);
       let whoLike = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
       let now = new Date();
       let likeTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() +
         " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
       // console.log("被打賞留言編號:", likeThis);
-      console.log("被打賞留言編號:", obj);
-      console.log("打賞者", whoLike);
-      console.log("打賞時間", likeTime);
+      // console.log("被打賞留言編號:", obj);
+      // console.log("打賞者", whoLike);
+      // console.log("打賞時間", likeTime);
       $.ajax({
         url: "./phps/cav-msgLike.php",
         type: "GET",
@@ -463,7 +463,7 @@ $(document).ready(function () {
           "likeTime": likeTime,
         },
         success: function (likeRow) {
-          console.log(likeRow);
+          // console.log(likeRow);
           if (likeRow.status == 'success') {
             $("#like" + obj).attr("disabled", true);
             // obj.disabled = true; //這邊要改為指定按鈕 現在只是數字
@@ -471,15 +471,15 @@ $(document).ready(function () {
             // console.log(obj);
             // console.log(666);
           } else {
-            console.log(111);
+            // console.log(111);
           }
         },
         error: function (likeRow) {
-          console.log(likeRow);
+          // console.log(likeRow);
         }
       });
       $(this).parents(".cav-letComment").find(".cav-commId").addClass("active");
-      console.log("coin");
+      // console.log("coin");
       setTimeout(() => {
         $(".cav-commId").removeClass("active");
       }, 1000);
@@ -491,16 +491,14 @@ $(document).ready(function () {
       let obj = e.target.parentNode;
       let likeThis = e.target.parentNode.dataset.letlike;
       // let likeThis = $(this).parents(".letter-contant").find(".letter-author").text().split(".")[$(this).parents(".letter-contant").find(".letter-author").text().split(".").length - 1];
-      console.log(likeThis);
-      // let likeThis = $(this).attr("data-like");
-      console.log(likeThis);
+      // console.log(likeThis);
       let whoLike = $("#cavMemberN").text().split("-")[$("#cavMemberN").text().split("-").length - 1];
       let now = new Date();
       let likeTime = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() +
         " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-      console.log(likeThis);
-      console.log(whoLike);
-      console.log(likeTime);
+      // console.log(likeThis);
+      // console.log(whoLike);
+      // console.log(likeTime);
       $.ajax({
         url: "./phps/cav-letLike.php",
         type: "GET",
@@ -511,26 +509,24 @@ $(document).ready(function () {
           "likeTime": likeTime,
         },
         success: function (likeRowLet) {
-          console.log(likeRowLet);
-          console.log(whoLike)
+          // console.log(likeRowLet);
+          // console.log(whoLike)
           if (likeRowLet.status == 'success') {
             $("#letLike" + likeThis).attr("disabled", true);
-            console.log(obj);
-            // console.log(666);
+            // console.log(obj);
+
           } else {
-            console.log(111);
+            // console.log(111);
           }
         },
         error: function (likeRowLet) {
-          console.log(likeRowLet);
+          // console.log(likeRowLet);
         }
       });
       $(this).parents(".letter-contant").find(".letter-author").addClass("active");
-      console.log("coin");
       setTimeout(() => {
         $(".letter-author").removeClass("active");
       }, 1000);
-      // $(this).attr("disabled", true);
     });
 
     /* AJAX *註冊* 檢舉留言跳窗  第一個*/
@@ -570,18 +566,17 @@ $(document).ready(function () {
             "msgRepReason": msgRepReason,
           },
           success: function (reportRow) {
-            console.log(reportRow);
+            // console.log(reportRow);
             if (reportRow.status == 'success') {
               // obj1.disabled = true;
               $("#report" + obj1).attr("disabled", true);
-              console.log(obj1);
-              // console.log(666);
+              // console.log(obj1);
             } else {
-              console.log(111);
+              // console.log(111);
             }
           },
           error: function (reportRow) {
-            console.log(reportRow);
+            // console.log(reportRow);
           }
         });
         // e.preventDefault();
@@ -593,8 +588,7 @@ $(document).ready(function () {
     var objReport;
     $(document).on("click", ".letReport", function (e) {
       objReport = e.target.parentNode.dataset.letreport;
-      // objReport = e.target.parentNode.dataset.letReport;
-      console.log(objReport);
+      // console.log(objReport);
       $(".cav-reportListLet").toggle();
     });
     $(document).on("click", ".closeTagLet", function () {
@@ -626,17 +620,16 @@ $(document).ready(function () {
             "letRepReason": letRepReason,
           },
           success: function (reportRowLet) {
-            console.log(reportRowLet);
+            // console.log(reportRowLet);
             if (reportRowLet.status == 'success') {
               $("#letReport" + objReport).attr("disabled", true);
-              console.log(obj);
-              // console.log(666);
+              // console.log(obj);
             } else {
-              console.log(111);
+              // console.log(111);
             }
           },
           error: function (reportRowLet) {
-            console.log(reportRowLet);
+            // console.log(reportRowLet);
           }
         });
       }
@@ -656,7 +649,7 @@ $(document).ready(function () {
         dataType: "json",
         data: { letNo: witchLetMsg },
         success: function (msgRow) {
-          console.log("信件回復", msgRow); 6
+          // console.log("信件回復", msgRow); 6
 
           if ($.isEmptyObject(msgRow) == false) {
             $(function checkClickedBefore() {
@@ -668,7 +661,7 @@ $(document).ready(function () {
                 dataType: "json",
                 data: { "memNo": memNo },
                 success: function (chkClickRow) {
-                  console.log(chkClickRow);
+                  // console.log(chkClickRow);
                   let letReply = "";
                   let msgNum = new Array();
 
@@ -703,7 +696,7 @@ $(document).ready(function () {
                       $("#like" + chkClickRow[i].mlmsgNo).attr({ "data-like": chkClickRow[i].mlmsgNo, "disabled": true });
                     }
                     else {
-                      console.log("沒有被打賞過");
+                      // console.log("沒有被打賞過");
 
                     }
                   }
@@ -716,12 +709,12 @@ $(document).ready(function () {
                       $("#report" + chkClickRow[i].mrmsgNo).attr({ "data-report": chkClickRow[i].mrmsgNo, "disabled": true });
                     }
                     else {
-                      console.log("沒有被檢舉過");
+                      // console.log("沒有被檢舉過");
                     }
                   }
                 },
                 error: function (chkClickRow) {
-                  console.log(chkClickRow);
+                  // console.log(chkClickRow);
                 },
               });
             });
@@ -740,7 +733,7 @@ $(document).ready(function () {
           /*---結束--- */
         },
         error: function (msgRow) {
-          console.log(msgRow);
+          // console.log(msgRow);
         }
       });
     });

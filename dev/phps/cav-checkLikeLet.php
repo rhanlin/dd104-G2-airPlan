@@ -11,7 +11,6 @@ try {
     } else { //找得到
         //取回一筆資料
         $chkLikeLetRow = $chkLikeLet->fetchAll(PDO::FETCH_ASSOC);
-        // $memRow = $letter->fetchObject();  //$memRow->memName
         //送出json字串
         echo json_encode($chkLikeLetRow);
     }
