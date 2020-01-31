@@ -22,7 +22,7 @@ function writeData(str) {
     let data = JSON.parse(str);
     // document.getElementById("memNo").innerHTML=data[0].memNo;
 
-    console.log(data);
+    // console.log(data);
     // var arr = new Array();
     for (j = 0; j < data.length; j++) {
         var tr = document.createElement('tr');
@@ -37,7 +37,7 @@ function writeData(str) {
                 arr[8]="已下架";
             }
 
-            console.log(arr[5]);
+            // console.log(arr[5]);
 
             td.innerHTML = arr[i];
             tr.appendChild(td);

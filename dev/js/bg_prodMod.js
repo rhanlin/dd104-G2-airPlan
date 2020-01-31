@@ -89,13 +89,13 @@ function post_items(event, form) {
       processData: false
     })
     .done(function (data) {
-      console.log(data);
+      // console.log(data);
       alert('管理員新增完成');//康加的
       location.reload();//康加的
     }).fail(function (data) {
       alert("跳窗送出資料失敗");
     }).always(function (data) {
-      console.log(data)
+      // console.log(data)
       // always do the following, no matter if it fails or not
     })
 }
@@ -130,7 +130,7 @@ function prodModify() {
       select = document.getElementsByClassName('selectSort');
       var y = 60
       for (x = 0; x < prodModRow.length; x++) {
-        console.log(prodModRow[59].prodLSort)
+        // console.log(prodModRow[59].prodLSort)
 
         select[x].selectedIndex = prodModRow[y].prodLSort;
         var y = y - 1;
@@ -144,7 +144,7 @@ function prodModify() {
         let prodName_update = $(this).parent().parent().parent().children().next().first().children().val()
         let matNameCH_update = $(this).parent().parent().parent().children().next().next().first().children().val()
         let file_update = $(this).parent().parent().parent().children().next().next().next().first().children('.file')[0].files[0] // 單個檔案
-        console.log(file_update)
+        // console.log(file_update)
         let matInfo_update = $(this).parent().parent().parent().children().last().prev().prev().prev().prev().children().val()
         let prodPrice_update = $(this).parent().parent().parent().children().last().prev().prev().prev().children().val()
         let prodURL_update = $(this).parent().parent().parent().children().last().prev().prev().children().val()
@@ -177,7 +177,7 @@ function prodModify() {
           }).fail(function (data) {
             alert("尚未更新圖片");
           }).always(function (data) {
-            console.log(data)
+            // console.log(data)
             // always do the following, no matter if it fails or not
           })
       })
