@@ -22,7 +22,7 @@ function memberData(str) {
     let data = JSON.parse(str);
     // document.getElementById("memNo").innerHTML=data[0].memNo;
 
-    console.log(data);
+    // console.log(data);
     // var arr = new Array();
     for (j = 0; j < data.length; j++) {
         var tr = document.createElement('tr');
@@ -46,7 +46,7 @@ function memberData(str) {
         memberInfo.appendChild(tr);
     }
     // console.log(arr);
-    console.log(memberInfo);
+    // console.log(memberInfo);
 }
 
 

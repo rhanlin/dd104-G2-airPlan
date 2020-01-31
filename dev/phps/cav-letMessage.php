@@ -1,7 +1,6 @@
 <?php
 try {
     require_once("connectBook_root.php");
-    // $sql = "select * from `message` where letNo=:letNo order by msgTime DESC";
     $sql = "SELECT mem.memNo,mem.memName,msg.* FROM `member` mem JOIN `message` msg on(mem.memNo=msg.memNo) WHERE msg.letNo=:letNo order by msg.msgTime DESC";
     $replys = $pdo->prepare($sql);
     $replys->bindValue(":letNo", $_GET["letNo"]);

@@ -9,15 +9,9 @@ body.open {
   padding: 0;
   box-sizing: border-box;
   font-family: $font;
-  // border: 1px solid forestgreen;
-  // height: 3000px;
 
   .nav-hamPosition {
-    // position: absolute;
-    // top: 60px;
-    // right: 15vw;
     width: 1180px;
-    // border: 1px solid fuchsia;
     display: flex;
     justify-content: flex-end;
     position: fixed;
@@ -29,7 +23,6 @@ body.open {
       width: 70px;
       height: 70px;
       background-color: $main-yellow;
-      // border: 2px solid salmon;
       border-radius: 50%;
       position: fixed;
       border: 5px solid $main-black;
@@ -53,7 +46,6 @@ body.open {
           border-radius: 3px;
           transition: 0.4s;
           margin: 0 auto;
-          // border: 2px solid $main-black;
 
           &:nth-of-type(1) {
             animation: coLine1 0.5s forwards;
@@ -217,7 +209,7 @@ body.open {
               text-align: center;
               font-weight: bolder;
 
-              >p {
+              > p {
                 white-space: nowrap;
                 font-size: 1.1rem;
                 margin: 0.8rem 0 0.5rem;
@@ -225,7 +217,7 @@ body.open {
                 &:hover {
                   color: $main-dark-red;
 
-                  +%nav-circle {
+                  + %nav-circle {
                     background-color: $main-yellow;
                     background-image: url(../img/share/nav-paper-plane.png);
                     background-position: 40% 55%;
@@ -266,7 +258,7 @@ body.open {
               .nav-now {
                 color: $main-dark-red;
 
-                +%nav-circle {
+                + %nav-circle {
                   background-color: $main-yellow;
                   background-image: url(../img/share/nav-paper-plane.png);
                   background-position: 40% 55%;
@@ -279,7 +271,6 @@ body.open {
 
           .hbg-littleNav {
             display: none;
-            margin-bottom: 50%;
           }
 
           .hbg-pc {
@@ -303,6 +294,7 @@ body.open {
               display: inline-block;
               width: 100px;
               object-fit: cover;
+              margin: 3% 0;
 
               img {
                 width: 100%;
@@ -341,17 +333,20 @@ body.open {
 
             .hbg-botWrap {
               display: inline-block;
+              border: 3px dashed white;
+              height: auto;
+              padding: 0 3%;
+              margin-bottom: 5%;
 
               .hbg-littleNav {
                 display: inline-block;
-                border: 3px dashed white;
 
-                >a {
+                > a {
                   display: inline-block;
                   height: 48px;
                   width: 48px;
 
-                  >i {
+                  > i {
                     font-size: 48px;
                     color: #aaa;
                     cursor: pointer;
@@ -369,14 +364,14 @@ body.open {
                   &:hover {
                     color: $main-dark-red;
                   }
-
                 }
 
                 #signInStatusH {
-                  line-height: 48px;
+                  vertical-align: text-bottom;
+                  display: flex;
+                  padding-left: 7%;
                 }
               }
-
 
               .hbg-pc {
                 display: inline-block;
@@ -384,7 +379,7 @@ body.open {
               }
             }
 
-            +.nav-road {
+            + .nav-road {
               display: none;
             }
           }
@@ -399,7 +394,7 @@ body.open {
           background-color: #426e96;
           padding-top: 5px;
 
-          >div {
+          > div {
             border: 6px dashed #426e96;
             width: 100%;
             background-color: $main-yellow;
@@ -425,17 +420,14 @@ body.open {
       top: 36%;
       right: 2.5%;
       z-index: 998;
-
-      &:hover {}
-
       cursor: pointer;
 
-      >a {
+      > a {
         display: inline-block;
         height: 24px;
         width: 24px;
 
-        >i {
+        > i {
           font-size: 24px;
           color: #aaa;
           cursor: pointer;
@@ -467,7 +459,6 @@ body.open {
 
 .nav-navBgWrap.-on {
   position: fixed;
-  // animation: 0.2 all;
   top: -200%;
   transition: all 2s;
 }
@@ -522,7 +513,7 @@ body.open {
 
   .nav-navBgWrap {
     .nav-navBg {
-      >img {
+      > img {
         display: none;
       }
 
@@ -571,7 +562,7 @@ body.open {
       display: inline-block;
 
       .nav-navBg {
-        >img {
+        > img {
           display: none;
         }
 
@@ -597,7 +588,6 @@ body.open {
 
     .nav-navWrap {
       top: -200px !important;
-      // display: none;
     }
 
     .open {
@@ -621,7 +611,7 @@ body.open {
 
   .nav-navBgWrap {
     .nav-navBg {
-      >img {
+      > img {
         display: none;
       }
 
@@ -647,7 +637,6 @@ body.open {
 
   .nav-navWrap {
     top: -200px !important;
-    // display: none;
   }
 
   .open {
@@ -670,7 +659,7 @@ body.open {
 
   .nav-navBgWrap {
     .nav-navBg {
-      >img {
+      > img {
         display: none;
       }
 
@@ -696,7 +685,6 @@ body.open {
 
   .nav-navWrap {
     top: -200px !important;
-    // display: none;
   }
 
   .open {
@@ -768,8 +756,6 @@ body.open {
 
       .showForget,
       .showRegister {
-        // display: inline-block;
-
         cursor: pointer;
       }
 
@@ -949,11 +935,9 @@ body.open {
 }
 
 @include respond(mediumSize) {
-
   .signInBg,
   .registerBg,
   .forgetBg {
-
     .signInData,
     .registerData,
     .forgetBgData {
@@ -964,11 +948,9 @@ body.open {
 }
 
 @include respond(small) {
-
   .signInBg,
   .registerBg,
   .forgetBg {
-
     .signInData,
     .registerData,
     .forgetBgData {
@@ -979,11 +961,9 @@ body.open {
 }
 
 @include respond(note) {
-
   .signInBg,
   .registerBg,
   .forgetBg {
-
     .signInData,
     .registerData,
     .forgetBgData {
@@ -994,11 +974,9 @@ body.open {
 }
 
 @include respond(iphone) {
-
   .signInBg,
   .registerBg,
   .forgetBg {
-
     .signInData,
     .registerData,
     .forgetBgData {
