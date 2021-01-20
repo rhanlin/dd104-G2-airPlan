@@ -8,7 +8,7 @@
     "@coreui/icons": "^0.3.0",
     "bootstrap": "^4.4.1",
     "font-awesome": "^4.7.0",
-    "gsap": "^3.0.4",
+    "gsap": "^3.6.0",
     "gulp-concat": "^2.6.1",
     "gulp-prompt": "^1.2.0",
     "klouds": "^2.0.0",
